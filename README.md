@@ -6,5 +6,6 @@ This is the home of documentation for the Eve programming language. Documentatio
 
 - Language handbook
 - Eve Design and Architecture
+-- [Server protocol](https://github.com/witheve/docs/blob/master/drafts/protocol.md)
 - Tutorials: step by step instructions
 - Guides: In-depth explanations of certain topics related to Eve
