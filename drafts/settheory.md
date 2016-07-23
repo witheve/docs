@@ -1,6 +1,6 @@
 # Sets for the Eve Programmer
 
-Sets are collections of unique, unordered objects. For example `{1, 2, 3}` is a set, but `{1, 1, 2, 3}` is not, because the object `1` appears twice. In Eve, every collection is a set, so it's important for Eve programmers to understand what sets are, what tools are available, and how these tools are used to compose sets. In this document, we'll go over what sets are, what you can do with them, and how you use them in Eve.
+Sets are collections of unique, unordered elements. For example `{1, 2, 3}` is a set, but `{1, 1, 2, 3}` is not, because the element `1` appears twice. In Eve, every collection is a set, so it's important for Eve programmers to understand what sets are, what tools are available, and how these tools are used to compose sets. In this document, we'll go over what sets are, what you can do with them, and how you use them in Eve.
 
 ## Sets
 
