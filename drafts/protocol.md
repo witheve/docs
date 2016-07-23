@@ -1,4 +1,4 @@
-## Eve Protocol
+## Eve Server Protocol
 
 The Eve server supports the following JSON protocol
 
