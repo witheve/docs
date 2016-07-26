@@ -1,0 +1,39 @@
+# Freeze 
+
+We have two fences for the mutation phase, with differing behaviors. When you use `freeze`, you're telling Eve that you want the subsequent facts to persist in the database, irrespective of the supporting data. To see what I mean by this, For example, look at the last query:
+
+```
+create the party
+  [#session-connect]
+  freeze
+    [@"my party" date: 2]
+```
+
+We use `freeze` to indicate that this fact is frozen in time in the database, that time being when I connect to the Eve server. By contrast, consider:
+
+```
+invite friends who are not busy
+  [@"my party" date]
+  friend = [#friend busy-dates != date]
+  maintain
+    friend += [#invited]
+```
+
+In this case, the fence is `maintain`, so we're specifying that Eve will automatically keep `friend` up-to-date. The behavior of this code is that a `friend` is `#invited` as long as they are not busy during the date of the party. Let’s say my friend `@Arthur`’s calendar is initially clear, and so he is originally `#invited`. Then some time later, `@Arthur` suddenly adds the party date to his list of busy dates. Now, he no longer satisfies the conditions of the block, so Eve removes `#invited` from `@Arthur`, and he no longer shows up on the guest list, which also subsequently lowers the burger count. Had we used the freeze fence, then his initial admittance to the guest list would be permanent, and we would have too many burgers for the party.
+
+## freeze all
+
+By default, any mutations made to the database are per session, meaning any facts you add to the database, are only visible to the session that added them. `Freeze` can be optionally followed by the `all` keyword, which indicates that the subsequent mutations are available globally, to all sessions connected to Eve.
+
+This is useful if you want to create a networked application. For our example, I might ask all my friends to write the following query:
+
+```
+Hi friends. Please edit the following Eve code for my party planning app.
+Just fill in your name, the dates your are busy, and add your spouse as well.
+You can also add either of the following tags: #hungry, and #vegetarian.
+  [#session-connect]
+  freeze all
+    [#friend name busy-dates spouse]
+```
+
+Now, when my friends execute that block (filled in with their details), their data is available to my party planning application. 

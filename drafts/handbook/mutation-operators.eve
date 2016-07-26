@@ -1,0 +1,11 @@
+# Mutation Operators
+
+We have three operators for mutating objects in the Eve DB: add, set, and remove:
+
+- Add ( `+=` ) - adds attributes to an object.
+- Set ( `:=` ) - sets the value of attributes on an object
+- Remove ( `-=` ) - removes attributes from an object
+
+Mutation operators can be used in two ways. First, you can add/set/remove a specific attribute on an object. E.g. `object.attribute = value`. Values can be anything, including objects. The alternative way allows you to add/set/remove multiple attributes. E.g. `object += [attribute1: value, attribute2: value, ...]`.
+
+Mutations follow set semantics. If an attribute exists on an object, using += will just add it to the set. For instance, if `person.age = 10`, and `person.age += 20`, then `person.age = {10, 20}` (note, the curly braces are not part of the syntax, but are a standard way of indicating a set).

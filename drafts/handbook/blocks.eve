@@ -1,0 +1,19 @@
+# Blocks
+
+Let's focus in on the first block:
+
+```
+invite friends who are not busy
+  // Phase 1: Collect
+  [@"my party" date]
+  friend = [#friend busy-dates != date]
+  // Phase 2: Mutate
+  maintain
+    friend += [#invited]
+```
+
+Blocks themselves have their own structure as well. Each block is written in two phases: collect then mutate, mirroring the Eve commands outlined earlier. In the collect phase, we ask Eve for known facts, and we might transform those facts using temporary variables. In the mutate phase we tell Eve to remember new facts. Let's look at each of those phases now:
+
+## Phase 1: Collect
+
+## Phase 2: Mutate

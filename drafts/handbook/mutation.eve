@@ -1,0 +1,31 @@
+# Mutation
+
+(We're also not happy with the mutate nomenclature. Any suggestions are appreciated).
+
+In the mutate phase, we're ready to change the Eve DB in some way. The mutate phase is fenced off with either the `freeze` or `maintain` keywords (explained below). By convention, the mutate phase is indented twice, as a way to indicate the change in modality. The fence tells Eve that we're not longer interested in asking questions about objects. Thus we're no longer able to use any statements applicable to the collect phase e.g. `if`, `not`, aggregates, expressions, etc.
+
+Let's look at what happens in the mutate phase (this one comes from the first block in our party program):
+
+```
+ // maintain tells us that we are delegating Eve the responsibiliy to update the subsequent values
+  maintain
+    friend += [#invited] // Add #invited to every friend who is invited
+```
+
+## Adding and Removing Objects
+
+Objects can be "frozen" in the Eve DB just by adding them after a mutation fence:
+
+```
+create the party
+  [#session-connect]
+  freeze
+    [@"my party" date: 2]
+```
+
+Objects can be removed from Eve using the `none` keyword. For example, we could remove `@"my party"` like so:
+
+```
+freeze
+ [@"my party"] := none
+```
