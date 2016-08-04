@@ -1,55 +1,58 @@
 # Eve Roadmap
 
+
 ## Content
 
-- Design Docs 
-  - [ ] Architecture
-  - [ ] Distribution
-  - [ ] Errors and Integrity
-  - [ ] Evaluation
-  - [ ] Interaction
-  - [ ] Memory
-  - [ ] Protocol
-  - [ ] Rationale
-  - [ ] Semantics
-  - [ ] Time
+### Design Docs
 
-- Guides
-  - [ ] By Example
-  - [ ] For Programmers
-  - [ ] For Scientists
-  - [ ] For SQL
-  - [ ] Quickstart
-  - [ ] Relational Algevra
-  - [ ] Set Theory
-  - [ ] Solving Problems
-  - [ ] Style Guide
-  - [ ] What Eve Isn't
+- [ ] Architecture
+- [ ] Distribution
+- [ ] Errors and Integrity
+- [ ] Evaluation
+- [ ] Interaction
+- [ ] Memory
+- [ ] Protocol
+- [ ] Rationale
+- [ ] Semantics
+- [ ] Time
 
-- Handbook
-  - [ ] Aggregates
-  - [ ] Binding
-  - [ ] Expressions
-  - [ ] Commit Fence
-  - [ ] Functions
-  - [ ] If
-  - [ ] Installation
-  - [ ] Intro
-  - [ ] Bind Fence
-  - [ ] Model
-  - [ ] Action
-  - [ ] Mutation Operators
-  - [ ] Names
-  - [ ] Not
-  - [ ] Objects
-  - [ ] Standard Library
-    - [ ] Math
-    - [ ] String
+### Guides
+
+- [ ] By Example
+- [ ] For Programmers
+- [ ] For Scientists
+- [ ] For SQL
+- [ ] Quickstart
+- [ ] Relational Algevra
+- [ ] Set Theory
+- [ ] Solving Problems
+- [ ] Style Guide
+- [ ] What Eve Isn't
+
+### Handbook
+- [ ] Aggregates
+- [ ] Binding
+- [ ] Expressions
+- [ ] Commit Fence
+- [ ] Functions
+- [ ] If
+- [ ] Installation
+- [ ] Intro
+- [ ] Bind Fence
+- [ ] Model
+- [ ] Action
+- [ ] Mutation Operators
+- [ ] Names
+- [ ] Not
+- [ ] Objects
+- [ ] Standard Library
+  - [ ] Math
+  - [ ] String
     
-- Demo Media
-  - [ ] Demo Website
-  - [ ] Demo Video
+### Demo Media
 
+- [ ] Demo Website
+- [ ] Demo Video
 
 ## Editing
 
