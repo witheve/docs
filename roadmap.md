@@ -1,5 +1,6 @@
 # Eve Roadmap
 
+This roadmap lists the major work items we intend to work on over the next 2-3 months. This roadmap is subject to change, as we may reprioritize this list as needed.
 
 ## Content
 
