@@ -4,12 +4,12 @@ To really understand a syntax, you have to also understand the semantics of the 
 
 At its core, Eve only responds to two commands:
 
-1. What facts do you know about `x`?
-2. Remember a new fact about `x`.
+1. What facts do you know about this "object"?
+2. Remember a new fact about this "object".
 
 Communication with Eve happens through "objects", which are key-value pairs attached to a unique ID (object is a pretty generic and overloaded term, so let us know if you have ideas for what to call these guys). To access facts in the Eve DB, you use an object. To insert/remove facts into/from the Eve DB, you also use an object.
 
-Computation, occurs as a result of relationships between objects. For example, I might model myself as an object with an `age` and a `birth year`. There might also be an object representing the `current year`. Then I could compute my `age` as my `birth year` subtracted from the `current year`.
+Computation occurs as a result of relationships between objects. For example, I might model myself as an object with an `age` and a `birth year`. There might also be an object representing the `current year`. Then I could compute my `age` as my `birth year` subtracted from the `current year`.
 
 A key concept here is that age is a derived fact, supported by two other facts: `birth year` and `current year`. If either of those supporting facts are removed from the Eve DB, then `age` can no longer exist as well. For intuition, think about modeling this calculation in a spreadsheet using three cells, and what would happen to the `age` cell if you deleted one of the other two cells.
 
@@ -19,4 +19,4 @@ One last thing to note about control flow is that we have no concept of a loop i
 
 ## Set Semantics
 
-One other thing to know about Eve is that objects follow [set semantics](https://en.wikipedia.org/wiki/Set_(mathematics)). Sets are collections where every element of the collection is unique. This is in contrast to bag semantics, where elements can be duplicated. We’ll see the implications of this later, but it’s important to keep in mind
+One other thing to know about Eve is that objects follow [set semantics](https://en.wikipedia.org/wiki/Set_(mathematics)). Sets are collections where every element of the collection is unique. This is in contrast to bag semantics, where elements can be duplicated. We'll see the implications of this later, but it's important to keep in mind.
