@@ -9,3 +9,8 @@ total-burgers = sum[value: burgers, given: (burgers, guest)]
 One important consideration when using an aggregate is the input set. Due to set semantics, the result may not be what you expect if the input set contains duplicate elements.
 
 Recall that a set is an unordered collection of unique elements. In our example, `burgers = (3, 0, 1, 2, 1)`, which as a set is `{3, 0, 1, 2}`. Thus `sum[value: burgers, given: burgers] = 6`, which is not what we expect. However, when we say `sum[value: burgers, given: (burgers, guests)]` then each burger is associated with a corresponding guest, making each element unique, e.g. `(burgers, guest) = {{3, Arthur}, {0, Carol}, {1, Duncan}, {2, James}, {1, Sam}}`. Summing burgers given this set yields the expected result of `7`, because the duplicated 1 is now unique.
+
+## Available Aggregates
+
+- sum
+- count

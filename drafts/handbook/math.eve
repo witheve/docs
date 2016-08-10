@@ -1,5 +1,14 @@
 # Math
 
+## Arithemtic
+
+- plus (+)
+- minus (-)
+- times (*)
+- divide (/)
+
+## Trig
+
 - sin = {rename("sin", schemas.trig)},
 - cos = {rename("cos", schemas.trig)},
 - tan = {rename("tan", schemas.trig)},
