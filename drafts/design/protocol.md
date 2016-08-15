@@ -41,6 +41,10 @@ error:
 {
     type: "error"
     id: id
-    reason: reason
+    stage: parser, order, builder, executor
+    message: string
+    [stacktrace]
+    [offsets]
+    [data]
 }
 ```
