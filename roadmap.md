@@ -68,7 +68,7 @@ This roadmap lists the major work items we intend to work on over the next 2-3 m
 - [ ] UDP
 - [ ] Passing facts around
 - [ ] Timeful log _
-- [ ] Ops viea rules _
+- [ ] Ops via rules _
 
 ## UI
 
