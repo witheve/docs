@@ -6,7 +6,7 @@ This is the home of documentation for the Eve programming language. Documentatio
 
 - Eve Handbook
   - [Introduction](https://github.com/witheve/docs/blob/master/drafts/handbook/intro.eve)
-  - [Getting Eve](https://github.com/witheve/docs/blob/master/drafts/handbook/installation.eve)
+    - [Getting Eve](https://github.com/witheve/docs/blob/master/drafts/handbook/installation.eve)
   - [Programming Model](https://github.com/witheve/docs/blob/master/drafts/handbook/model.eve)
   - [Objects](https://github.com/witheve/docs/blob/master/drafts/handbook/objects.eve)
   - [Aggregates](https://github.com/witheve/docs/blob/master/drafts/handbook/aggregates.eve)
@@ -16,14 +16,14 @@ This is the home of documentation for the Eve programming language. Documentatio
   - [Freeze](https://github.com/witheve/docs/blob/master/drafts/handbook/freeze.eve)
   - [If](https://github.com/witheve/docs/blob/master/drafts/handbook/if.eve)
   - [Maintain](https://github.com/witheve/docs/blob/master/drafts/handbook/maintain.eve)
-  - [Math](https://github.com/witheve/docs/blob/master/drafts/handbook/math.eve)
-  - [Standard Library](https://github.com/witheve/docs/blob/master/drafts/handbook/standard-library.eve)
   - [Functions](https://github.com/witheve/docs/blob/master/drafts/handbook/functions.eve)
   - [Mutation](https://github.com/witheve/docs/blob/master/drafts/handbook/mutation.eve)
   - [Mutation Operators](https://github.com/witheve/docs/blob/master/drafts/handbook/mutation-operators.eve)
   - [Names](https://github.com/witheve/docs/blob/master/drafts/handbook/names.eve)
   - [Not](https://github.com/witheve/docs/blob/master/drafts/handbook/not.eve)
-  - [Strings](https://github.com/witheve/docs/blob/master/drafts/handbook/strings.eve)
+  - [Standard Library](https://github.com/witheve/docs/blob/master/drafts/handbook/standard-library.eve)
+    - [Strings](https://github.com/witheve/docs/blob/master/drafts/handbook/strings.eve)
+    - [Math](https://github.com/witheve/docs/blob/master/drafts/handbook/math.eve)
 - Eve Design and Architecture
   - [Architecture](https://github.com/witheve/docs/blob/master/drafts/design/architecture.eve)
   - [Distribution](https://github.com/witheve/docs/blob/master/drafts/design/distribution.eve)
