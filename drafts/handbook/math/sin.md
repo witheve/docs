@@ -1,6 +1,6 @@
 # sin
 
-Calculate the sine of an argument
+Calculate the sine of an angle
 
 ## Syntax
 
@@ -11,8 +11,8 @@ y = sin[degrees]
 
 ## Attributes
 
-- radians
-- degrees
+- radians - the angle in radians
+- degrees - the angle in degrees
 
 ## Description
 
@@ -21,10 +21,9 @@ Calculates the sine of an input in radians or degrees. `Sin` operates element-wi
 ## Examples
 
 ```
-y = sin[degrees]
 
 ```
 
 ## See Also
 
-cos | tan | atan | 
+cos | tan | 

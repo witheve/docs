@@ -1,6 +1,6 @@
 # cos
 
-Calculate the cosine of an argument
+Calculate the cosine of an angle
 
 ## Syntax
 
@@ -11,8 +11,8 @@ y = cos[degrees]
 
 ## Attributes
 
-- radians
-- degrees
+- radians - the angle in radians
+- degrees - the angle in degrees
 
 ## Description
 
@@ -21,7 +21,6 @@ Calculates the cosine of an input in radians or degrees. `Cos` operates element-
 ## Examples
 
 ```
-y = cos[degrees]
 
 ```
 
