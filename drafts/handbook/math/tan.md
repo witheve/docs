@@ -26,4 +26,4 @@ Calculates the tangent of an input in radians or degrees. `Sin` operates element
 
 ## See Also
 
-cos | sin | 
+[cos](cos.md) | [sin](sin.md) | 
