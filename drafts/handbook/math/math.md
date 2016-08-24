@@ -7,12 +7,6 @@
 - times (*)
 - divide (/)
 
-## Trig
-
-- [sin](sin.md) - Sine of an angle 
-- [cos](cos.md) - Cosine of an angle 
-- [tan](tan.md) - Tangent of an angle 
-
 ## General Math
 
 - [abs](abs.md) - Absolute value
@@ -20,3 +14,9 @@
 - [floor](floor.md) - Round a number down
 - [round](round.md) - Round a number
 - [mod](mod.md) - Modulo division
+
+## Trigonometry
+
+- [sin](sin.md) - Sine of an angle 
+- [cos](cos.md) - Cosine of an angle 
+- [tan](tan.md) - Tangent of an angle 
