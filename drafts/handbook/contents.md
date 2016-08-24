@@ -17,7 +17,7 @@
   - [Not](https://github.com/witheve/docs/blob/master/drafts/handbook/not.md)
   - Match Phase
     - [Aggregates](https://github.com/witheve/docs/blob/master/drafts/handbook/aggregates.md)
-    - [If](https://github.com/witheve/docs/blob/master/drafts/handbook/if.md)
+    - [If-Then](https://github.com/witheve/docs/blob/master/drafts/handbook/if.md)
     - [Functions](https://github.com/witheve/docs/blob/master/drafts/handbook/functions.md)
   - [Action](https://github.com/witheve/docs/blob/master/drafts/handbook/action-phase.md)
     - [Commit](https://github.com/witheve/docs/blob/master/drafts/handbook/commit.md)
