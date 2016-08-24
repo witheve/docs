@@ -27,4 +27,4 @@ y = round[value]
 
 ## See Also
 
-floor | ceil | fix
+[floor](floor.md) | [ceil](ceil.md) | [fix](fix.md)

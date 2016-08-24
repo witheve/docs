@@ -27,4 +27,4 @@ bind
 
 ## See Also
 
-ceil | fix | round
+[ceil](ceil.md) | [fix](fix.md) | [round](round.md)

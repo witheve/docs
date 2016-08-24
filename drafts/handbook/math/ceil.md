@@ -27,4 +27,4 @@ bind
 
 ## See Also
 
-floor | fix | round
+[floor](floor.md) | [fix](fix.md) | [round](round.md)

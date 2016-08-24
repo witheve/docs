@@ -9,14 +9,14 @@
 
 ## Trig
 
-- [sin](sin.md) - Sine 
-- [cos](cos.md) - Cosine 
-- [tan](tan.md) - Tangent 
+- [sin](sin.md) - Sine of an angle 
+- [cos](cos.md) - Cosine of an angle 
+- [tan](tan.md) - Tangent of an angle 
 
 ## General Math
 
-- abs - Absolute value
-- ceil - Ceiling 
-- floor - Floor
-- round - Round
-- mod - Modulo division
+- [abs](abs.md) - Absolute value
+- [ceil](ceil.md) - Round a number up 
+- [floor](floor.md) - Round a number down
+- [round](round.md) - Round a number
+- [mod](mod.md) - Modulo division

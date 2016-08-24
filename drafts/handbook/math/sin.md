@@ -26,4 +26,4 @@ Calculates the sine of an input in radians or degrees. `Sin` operates element-wi
 
 ## See Also
 
-cos | tan | 
+[cos](cos.md) | [tan](tan.md) 

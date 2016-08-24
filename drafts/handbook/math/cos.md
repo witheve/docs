@@ -26,4 +26,4 @@ Calculates the cosine of an input in radians or degrees. `Cos` operates element-
 
 ## See Also
 
-sin | tan | atan | 
+[sin](sin.md) | [tan](tan.md) 
