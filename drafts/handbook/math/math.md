@@ -2,10 +2,10 @@
 
 ## Arithemtic
 
-- plus (+)
-- minus (-)
-- times (*)
-- divide (/)
+- plus (`+`)
+- minus (`-`)
+- times (`*`)
+- divide (`/`)
 
 ## General Math
 
