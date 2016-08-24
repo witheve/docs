@@ -1,6 +1,6 @@
 # split
 
-splits a string according to a delimiter 
+splits a string at the given delimiter 
 
 ## Syntax
 
