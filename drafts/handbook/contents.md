@@ -8,7 +8,7 @@
   - [Getting Eve](https://github.com/witheve/docs/blob/master/drafts/handbook/installation.md)
   - [Running Eve](https://github.com/witheve/docs/blob/master/drafts/handbook/running.md)
 - [Programming Model](https://github.com/witheve/docs/blob/master/drafts/handbook/model.md)
-- [Syntax]
+- Syntax
   - [Blocks](https://github.com/witheve/docs/blob/master/drafts/handbook/blocks.md)
   - [Names](https://github.com/witheve/docs/blob/master/drafts/handbook/names.md)
   - [Records](https://github.com/witheve/docs/blob/master/drafts/handbook/records.md)
@@ -21,7 +21,7 @@
     - [Functions](https://github.com/witheve/docs/blob/master/drafts/handbook/functions.md)
   - [Action](https://github.com/witheve/docs/blob/master/drafts/handbook/action-phase.md)
     - [Commit](https://github.com/witheve/docs/blob/master/drafts/handbook/commit.md)
-    - [Maintain](https://github.com/witheve/docs/blob/master/drafts/handbook/maintain.md)
+    - [Bind](https://github.com/witheve/docs/blob/master/drafts/handbook/bind.md)
     - [Action Operators](https://github.com/witheve/docs/blob/master/drafts/handbook/action-operators.md)
 - [Standard Library](https://github.com/witheve/docs/blob/master/drafts/handbook/standard-library.md)
   - [Strings](https://github.com/witheve/docs/blob/master/drafts/handbook/strings/strings.md)
