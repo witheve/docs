@@ -1,6 +1,6 @@
 # Running
 
-To run Eve, in the `eve/build` execute:
+To run Eve, execute the following command in the `eve/build` directory:
 
 `./eve -e [eve_file]`
 
