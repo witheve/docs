@@ -7,6 +7,7 @@ This is the home of documentation for the Eve programming language. Documentatio
 - Eve Handbook
   - [Introduction](https://github.com/witheve/docs/blob/master/drafts/handbook/intro.md)
     - [Getting Eve](https://github.com/witheve/docs/blob/master/drafts/handbook/installation.md)
+    - [Running Eve](https://github.com/witheve/docs/blob/master/drafts/handbook/running.md)
   - [Programming Model](https://github.com/witheve/docs/blob/master/drafts/handbook/model.md)
   - [Records](https://github.com/witheve/docs/blob/master/drafts/handbook/records.md)
   - [Aggregates](https://github.com/witheve/docs/blob/master/drafts/handbook/aggregates.md)
