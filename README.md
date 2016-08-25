@@ -4,27 +4,7 @@
 
 This is the home of documentation for the Eve programming language. Documentation will be grouped into the following broad categories:
 
-- Eve Handbook
-  - [Introduction](https://github.com/witheve/docs/blob/master/drafts/handbook/intro.md)
-    - [Getting Eve](https://github.com/witheve/docs/blob/master/drafts/handbook/installation.md)
-    - [Running Eve](https://github.com/witheve/docs/blob/master/drafts/handbook/running.md)
-  - [Programming Model](https://github.com/witheve/docs/blob/master/drafts/handbook/model.md)
-  - [Records](https://github.com/witheve/docs/blob/master/drafts/handbook/records.md)
-  - [Aggregates](https://github.com/witheve/docs/blob/master/drafts/handbook/aggregates.md)
-  - [Blocks](https://github.com/witheve/docs/blob/master/drafts/handbook/blocks.md)
-  - [Binding](https://github.com/witheve/docs/blob/master/drafts/handbook/binding.md)
-  - [Expressions](https://github.com/witheve/docs/blob/master/drafts/handbook/expressions.md)
-  - [Commit](https://github.com/witheve/docs/blob/master/drafts/handbook/commit.md)
-  - [If](https://github.com/witheve/docs/blob/master/drafts/handbook/if.md)
-  - [Maintain](https://github.com/witheve/docs/blob/master/drafts/handbook/maintain.md)
-  - [Functions](https://github.com/witheve/docs/blob/master/drafts/handbook/functions.md)
-  - [Action](https://github.com/witheve/docs/blob/master/drafts/handbook/action-phase.md)
-  - [Action Operators](https://github.com/witheve/docs/blob/master/drafts/handbook/action-operators.md)
-  - [Names](https://github.com/witheve/docs/blob/master/drafts/handbook/names.md)
-  - [Not](https://github.com/witheve/docs/blob/master/drafts/handbook/not.md)
-  - [Standard Library](https://github.com/witheve/docs/blob/master/drafts/handbook/standard-library.md)
-    - [Strings](https://github.com/witheve/docs/blob/master/drafts/handbook/strings/strings.md)
-    - [Math](https://github.com/witheve/docs/blob/master/drafts/handbook/math/math.md)
+- [Eve Handbook](https://github.com/witheve/docs/blob/master/drafts/handbook/intro.md)
 - Eve Design and Architecture
   - [Architecture](https://github.com/witheve/docs/blob/master/drafts/design/architecture.md)
   - [Distribution](https://github.com/witheve/docs/blob/master/drafts/design/distribution.md)
