@@ -17,9 +17,9 @@ provides the current time
 
 ## Description
 
-Provides the current time in UTC. To convert the time to a specific timezone, use ...
+Provides the current time as reported by the system clock.
 
-Time updates at the frequency of the smallest unit of time selected.
+Time updates at the frequency of the smallest unit of time selected in the record.
 
 ## Examples
 
@@ -33,3 +33,5 @@ bind
 ```
 
 ## See Also
+
+[date](date.md)
