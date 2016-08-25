@@ -4,7 +4,7 @@
 
 This is the home of documentation for the Eve programming language. Documentation will be grouped into the following broad categories:
 
-- [Eve Handbook](https://github.com/witheve/docs/blob/master/drafts/handbook/intro.md)
+- [Eve Handbook](https://github.com/witheve/docs/blob/master/drafts/handbook/contents.md)
 - Eve Design and Architecture
   - [Architecture](https://github.com/witheve/docs/blob/master/drafts/design/architecture.md)
   - [Distribution](https://github.com/witheve/docs/blob/master/drafts/design/distribution.md)
