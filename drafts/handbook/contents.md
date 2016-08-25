@@ -19,7 +19,7 @@
     - [Aggregates](https://github.com/witheve/docs/blob/master/drafts/handbook/aggregates.md)
     - [If-Then](https://github.com/witheve/docs/blob/master/drafts/handbook/if.md)
     - [Functions](https://github.com/witheve/docs/blob/master/drafts/handbook/functions.md)
-  - [Action](https://github.com/witheve/docs/blob/master/drafts/handbook/action-phase.md)
+  - [Action Phase](https://github.com/witheve/docs/blob/master/drafts/handbook/action-phase.md)
     - [Commit](https://github.com/witheve/docs/blob/master/drafts/handbook/commit.md)
     - [Bind](https://github.com/witheve/docs/blob/master/drafts/handbook/bind.md)
     - [Action Operators](https://github.com/witheve/docs/blob/master/drafts/handbook/action-operators.md)
