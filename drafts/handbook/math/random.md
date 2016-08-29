@@ -30,11 +30,15 @@ commit
   [#div time: "{{minutes}}{{seconds}}"  text: x]
 ```
 
-Generate a random number between 5 and 10
+Generate a random number between `a` and `b`
 
 ```
 match
-  x = random[]
+  a = 5
+  b = 10
+  x = random[seed: 1] * (b - a) + a
+commit
+  [#div text: x]
 ```
 
 ## See Also
