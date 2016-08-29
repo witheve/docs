@@ -16,8 +16,6 @@
 - [mod](mod.md) - Modulo division
 - exp
 - log
-- log2
-- log10
 
 ## Trigonometric Functions
 
