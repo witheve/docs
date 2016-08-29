@@ -14,9 +14,30 @@
 - [floor](floor.md) - Round a number down
 - [round](round.md) - Round a number
 - [mod](mod.md) - Modulo division
+- exp
+- log
+- log2
+- log10
 
-## Trigonometry
+## Trigonometric Functions
 
 - [sin](sin.md) - Sine of an angle 
 - [cos](cos.md) - Cosine of an angle 
 - [tan](tan.md) - Tangent of an angle 
+- asin - Arc sine of an angle
+- acos - Arc cosine of an angle
+- atan - Arc tangent of an angle
+- atan2 - Arc tangent using sign to determine quadrant
+
+## Hyperbolic Functions
+
+- sinh - Hyperbolic sine of an angle
+- cosh - Hyperbolic cosine of an angle
+- tanh - Hyperbolic tangent of an angle
+- asinh - Hyperbolic arc sine of an angle
+- acosh - Hyperbolic arc cosine of an angle
+- atanh - Hyperbolic arc tangent of an angle
+
+## Random Functions
+
+- [random](random.md) - Generates a random number between 0 and 1
