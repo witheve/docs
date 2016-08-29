@@ -20,7 +20,7 @@ y = random[seed]
 
 ## Examples
 
-Prints a random number every second
+Prints a random number every second. The time attribute in `#div` is used to make each generated number unique for display purposes.
 
 ```
 match 
