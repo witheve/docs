@@ -30,13 +30,13 @@ commit
   [#div time: "{{minutes}}{{seconds}}"  text: x]
 ```
 
-Generate a random number between `a` and `b`
+Generate a random number between `min` and `max`
 
 ```
 match
-  a = 5
-  b = 10
-  x = random[seed: 1] * (b - a) + a
+  min = 5
+  max = 10
+  x = random[seed: 1] * (max - min) + min
 bind
   [#div text: x]
 ```
