@@ -37,7 +37,7 @@ match
   a = 5
   b = 10
   x = random[seed: 1] * (b - a) + a
-commit
+bind
   [#div text: x]
 ```
 
