@@ -27,3 +27,4 @@
   - [Strings](https://github.com/witheve/docs/blob/master/drafts/handbook/strings/strings.md)
   - [Math](https://github.com/witheve/docs/blob/master/drafts/handbook/math/math.md)
   - [Date & Time](https://github.com/witheve/docs/blob/master/drafts/handbook/datetime/datetime.md)
+  - [Statistics](https://github.com/witheve/docs/blob/master/drafts/handbook/statistics/statistics.md)
