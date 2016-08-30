@@ -22,7 +22,7 @@ y = count[given, per]
 
 ## Examples
 
-First let's add some students. Each `#student` has a `grade` and a `school`. Grades are one of 10, 11, or 12. Schools are one of "West" and "East".
+Before we get to the `count` examples, let's add some students. Each `#student` has a `grade` and a `school`. Grades are one of 10, 11, or 12. Schools are one of "West" and "East".
 
 ```
 commit
