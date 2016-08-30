@@ -10,8 +10,8 @@
 - [Programming Model](https://github.com/witheve/docs/blob/master/drafts/handbook/model.md)
 - Syntax
   - [Blocks](https://github.com/witheve/docs/blob/master/drafts/handbook/blocks.md)
-  - [Names](https://github.com/witheve/docs/blob/master/drafts/handbook/names.md)
   - [Records](https://github.com/witheve/docs/blob/master/drafts/handbook/records.md)
+  - [Names](https://github.com/witheve/docs/blob/master/drafts/handbook/names.md)
   - [Binding](https://github.com/witheve/docs/blob/master/drafts/handbook/binding.md)
   - [Expressions](https://github.com/witheve/docs/blob/master/drafts/handbook/expressions.md)
   - Match Phase
@@ -23,6 +23,10 @@
     - [Commit](https://github.com/witheve/docs/blob/master/drafts/handbook/commit.md)
     - [Bind](https://github.com/witheve/docs/blob/master/drafts/handbook/bind.md)
     - [Action Operators](https://github.com/witheve/docs/blob/master/drafts/handbook/action-operators.md)
+      - Set
+      - Add
+      - Remove
+      - Merge
 - [Standard Library](https://github.com/witheve/docs/blob/master/drafts/handbook/standard-library.md)
   - [Strings](https://github.com/witheve/docs/blob/master/drafts/handbook/strings/strings.md)
   - [Math](https://github.com/witheve/docs/blob/master/drafts/handbook/math/math.md)
