@@ -83,7 +83,3 @@ bind
 - [TodoMVC](https://github.com/witheve/Eve/blob/master/examples/todomvc.eve#L31)
 - [Tic-Tac-Toe](https://github.com/witheve/Eve/blob/master/examples/tic-tac-toe.eve#L67)
 
-## See Also
-
-[sum](sum.md)
-
