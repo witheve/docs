@@ -35,7 +35,3 @@
 - asinh - Hyperbolic arc sine of an angle
 - acosh - Hyperbolic arc cosine of an angle
 - atanh - Hyperbolic arc tangent of an angle
-
-## Random Functions
-
-- [random](random.md) - Generates a random number between 0 and 1
