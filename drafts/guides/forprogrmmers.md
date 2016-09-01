@@ -6,6 +6,16 @@ Practitioners of these languages may find Eve a little foreign at first, because
 
 The purpose of this document is to demystify declarative programming, and enourage you to approach problem solving with a declarative mindset. Let's start by going deeper into what declarative programming is, and how it fits into the imperative world you know so well. 
 
+## Open Your Mind
+
+Before we dive into how to write Eve programs, take a moment to clear your mind of any preconceived notions about what it means to program. Programming in Eve is very different from programming in other languages, so your intuition as a programmer might work against you in some cases.
+
+For example, Eve does not make heavy use of functions, and it has no looping or control flow constructs. What's important in Eve is data. We've found the following pointers to be helpful when starting to learn Eve:
+
+- Pay attention to the presence or absence of data. 
+- Pay attention to the shape of records and what makes the data in a record unique
+- Don't think in terms of how the machine executes your program.
+
 ## Delcarative vs. Imperative Programs
 
 Let's take a look at the difference between imperative and declarative programming with an example. Say we are going to the local deli for a sandwich. The imperative programmer in me would order a sandwich like this:
