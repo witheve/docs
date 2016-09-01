@@ -11,7 +11,7 @@
   - [Running Eve](running.md)
   - [Getting Help](help.md)
 - [Programming Model](model.md)
-- Syntax
+- Core Language
   - [Blocks](blocks.md)
   - [Records](records.md)
   - [Names](names.md)
