@@ -2,6 +2,8 @@
   <img src="http://www.witheve.com/logo.png" alt="Eve logo" width="10%" />
 </p>
 
+---
+
 # Table of Contents
 
 - [Introduction](https://github.com/witheve/docs/blob/master/drafts/handbook/intro.md)
@@ -35,3 +37,5 @@
   - [Statistics](https://github.com/witheve/docs/blob/master/drafts/handbook/statistics/statistics.md)
 - Appendix
   - [Appendix A: Formal Syntax Specification](ebnf.md)
+- [Glossary](glossary.md)
+- [Index](index.md)
