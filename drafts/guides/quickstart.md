@@ -28,21 +28,21 @@ commit
   [#div text: "Hello World!"]
 ```
 
-What's going on here? When you first start Eve, there are no facts in the database, so the only thing you can do is create a new record. The record we create is `[#div text: "Hello World!"]`. This record has a "div" tag with a text attribute "Hello World". The `#` operator is a shortcut for the tag attribute (`[#div]` is the same as `[tag: "div"]`). This record is added to the Eve database using the `commit` command. You can think of `commit` just like a commit to a repository; we're adding an unchanging record to the database at a specific point in time.
+What's going on here? When you first start Eve, there are no records in the database, so the only thing you can do is create a new record. The record we create is `[#div text: "Hello World!"]`. This record has a "div" tag with a text attribute "Hello World". The `#` operator is a shortcut for the tag attribute (`[#div]` is the same as `[tag: "div"]`). This record is added to the Eve database using the `commit` command. You can think of `commit` just like a commit to a repository; we're adding an unchanging record to the database at a specific point in time.
 
 ## Matching Records
 
-Once there are facts in the Eve DB, you can match records. Let's add some facts about students to the Eve DB. This is no different than the Hello World example in the previous block, except this time we're adding four new records about Diedra, Celia, Michaela, and Jermaine:
+Once there are facts in the Eve DB, you can match records. Let's add some facts about students to the Eve DB. This is no different than the Hello World example in the previous block, except this time we're adding four new records about some people:
 
 ```
 commit
-  [#person #student #graduated @Diedra grade: 12 school: "West"]
+  [#person #student @Diedra grade: 12 school: "West"]
   [#person #student @Celia grade: 10 school: "West"]
-  [#person #student @Michaela grade: 11 school: "West"]
+  [#person #student @Michaela grade: 11 school: "East"]
   [#person @Jermaine]
 ```
 
-Similar to `#`, the `@` operator is a shortcut for the name attribute (`[@Sally]` is the same as `[name: "Sally"]`). Notice also that records can have multiple tags.
+Similar to `#`, the `@` operator is a shortcut for the name attribute (`[@Diedra]` is the same as `[name: "Diedra"]`). Notice also that records can have multiple tags.
 
 Next we can display those records as text:
 
@@ -56,7 +56,7 @@ bind
 
 This second block is a little different from what we've seen so far. Here, we can see the two phases of a code block in practice:
 
-1. __Match__ - Eve uses patterns to match records in the database. The record in this case is `[#person name age]`, which is asking for all records matching a tag "person", with a name attribute, and an age attribute. Records in the match phase are called "supporting records" because their 
+1. __Match__ - Eve uses patterns to match records in the database. The record in this case is `[#student name]`, which is asking for all records matching a tag "student", with a name attribute. Records in the match phase are called "supporting records" because their 
 
 2. __Action__ - The action phase uses the data gathered in the match phase to update or create records. The action in this case is a `bind`, which adds or updates a record continuously as their supporting records change. If the data that supports a bound record disappears, the bound record disappears as well.
 
