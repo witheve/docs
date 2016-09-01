@@ -29,6 +29,6 @@ commit
   [#div sort: y, text: y]
 ```
 
-### Example Programs
+### Example Usage
 
 - [Tic-Tac-Toe](https://github.com/witheve/Eve/blob/master/examples/tic-tac-toe.eve#L25)

@@ -41,6 +41,6 @@ bind
   [#div text: x]
 ```
 
-### Example Programs
+### Example Usage
 
 - [Flappy Bird](https://github.com/witheve/Eve/blob/master/examples/flappy.eve)

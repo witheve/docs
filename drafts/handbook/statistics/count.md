@@ -78,7 +78,7 @@ bind
   [#div sort: 4 text: "{{grade-school-enrollment}} students are in {{grade}}th grade at {{school}}"]
 ```
 
-### Example Programs
+### Example Usage
 
 - [TodoMVC](https://github.com/witheve/Eve/blob/master/examples/todomvc.eve#L31)
 - [Tic-Tac-Toe](https://github.com/witheve/Eve/blob/master/examples/tic-tac-toe.eve#L67)

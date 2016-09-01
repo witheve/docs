@@ -17,7 +17,7 @@ click event
 
 ## Description
 
-When an element in the DOM is clicked, a `#click` record is created. This record comes with a #direct-target
+When an element in the DOM is clicked, a `#click` record is created.
 
 ## Examples
 
