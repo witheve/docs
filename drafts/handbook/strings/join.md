@@ -20,12 +20,23 @@ Takes `tokens` and their `indices` and joins them together with `with`, returnin
 
 ## Examples
 
+Split a sentence into tokens
+
 ```
 match
-  (token, index) = split[text: "hello, world", by: " "]
+  (token, index) = split[text: "the quick brown fox", by: " "]
 bind
-  [#div text: token]
-  [#div text: index]
+  [#token token index]
+```
+
+Join the tokens into a sentence again, but with hyphens instead of spaces
+
+```
+match
+  [#token token index]
+  text = join[token, index, with: " "]
+bind
+  [#div text] // Expected "the-quick-brown-fox"
 ```
 
 ## See Also

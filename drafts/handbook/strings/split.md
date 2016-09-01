@@ -40,7 +40,6 @@ bind
   [#div sort: index, text: token]
 ```
 
-
 ## See Also
 
 [concat](concat.md) | [join](join.md) | [char-at](char-at.md) | [find](find.md) | [length](length.md) | [replace](replace.md)
