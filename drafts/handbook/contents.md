@@ -31,6 +31,7 @@
       - [Add](add.md)
       - [Remove](remove.md)
       - [Merge](merge.md)
+  - [Contexts](context.md)
 - [Standard Library](standard-library.md)
   - [Strings](strings/strings.md)
   - [Math](math/math.md)
