@@ -7,6 +7,7 @@
 - [Introduction](https://github.com/witheve/docs/blob/master/drafts/handbook/intro.md)
   - [Getting Eve](https://github.com/witheve/docs/blob/master/drafts/handbook/installation.md)
   - [Running Eve](https://github.com/witheve/docs/blob/master/drafts/handbook/running.md)
+  - [Getting Help](https://github.com/witheve/docs/blob/master/drafts/handbook/help.md)
 - [Programming Model](https://github.com/witheve/docs/blob/master/drafts/handbook/model.md)
 - Syntax
   - [Blocks](https://github.com/witheve/docs/blob/master/drafts/handbook/blocks.md)
@@ -32,3 +33,5 @@
   - [Math](https://github.com/witheve/docs/blob/master/drafts/handbook/math/math.md)
   - [Date & Time](https://github.com/witheve/docs/blob/master/drafts/handbook/datetime/datetime.md)
   - [Statistics](https://github.com/witheve/docs/blob/master/drafts/handbook/statistics/statistics.md)
+- Appendix
+  - [Appendix A: Formal Syntax Specification](ebnf.md)
