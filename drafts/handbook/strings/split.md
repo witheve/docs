@@ -10,22 +10,36 @@ splits a string at the given delimiter
 
 ## Attributes
 
-- text
-- by 
+- text - the text to be split 
+- by - the delimiter at which to split the text. An empty string will split the text at every character.
+- token - the recovered tokens after the split
+- index - the indices of the tokens in the original text  
 
 ## Description
 
-Splits a `text` into elements according to the given delimiter, `by`. Returns the `tokens` and the `indices` of those tokens in the original string.
+Splits a `text` into `tokens` according to the given delimiter, `by`. Returns the `tokens` and the `indices` of those tokens in the original string.
 
 ## Examples
 
+Splits a string at every character
+
 ```
 match
-  (token, index) = split[text: "hello, world", by: " "]
+  (token, index) = split[text: "hello, world", by: ""]
 bind
   [#div text: token]
   [#div text: index]
 ```
+
+Split a sentence into words and display them in order
+
+```
+match
+  (token, index) = split[text: "the quick brown fox", by: " "]
+bind
+  [#div sort: index, text: token]
+```
+
 
 ## See Also
 
