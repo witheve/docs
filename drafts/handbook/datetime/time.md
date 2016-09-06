@@ -13,7 +13,7 @@ provides the current time
 - hours - current hour
 - minutes - current minute
 - seconds - current second
-- milliseconds - current millisecond
+- milliseconds - current millisecond **Not Yet Implemented**
 
 ## Description
 
