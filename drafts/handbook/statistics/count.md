@@ -18,7 +18,7 @@ y = count[given, per]
 
 `y = count[given]` counts the number of elements in `given`.
 
-`y = count[given, per]` counts the number of elements in `given`, grouped by the attribute(s) provided in `per`. For instance, `class-size = count[given: students, per: grade]` would count the number of students in each grade. You can group along multiple axes; the pervious example could be extended to work across multiple schools by doing `class-size = count[given: students, per: (grade, school)`. See the examples section to see these in action.
+`y = count[given, per]` counts the number of elements in `given`, grouped by the attribute(s) provided in `per`. For instance, `class-size = count[given: students, per: grade]` would count the number of students in each grade. You can group along multiple axes; the pervious example could be extended to work across multiple schools by doing `class-size = count[given: students, per: (grade, school)]`. See the examples section to see these in action.
 
 ## Examples
 
