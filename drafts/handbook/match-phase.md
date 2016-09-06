@@ -1,5 +1,14 @@
 # Phase 1: Match
 
+## Syntax
+
+```
+match
+match @context
+match (@context1, @context2, ... @contextN)
+```
+
+
 The `match` phase is used to gather all the information you need to complete your block. The `match` phase is prefaced with the `match` keyword, and can potentially be omitted.
 
 In the following block, we want to count all the guests coming to the party. To do this, we need the date of the party, a list of all my friends and their availability, and then a count of the guests on the list. Below, I've annotated what's going on in the `match` phase.
