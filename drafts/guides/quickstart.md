@@ -67,6 +67,7 @@ Celia is cool and all, but let's add some more students to our database:
 ```
 commit
   [#student @Diedra grade: 12 school: "West"]
+  [@Diedra school: "West" grade: 12 #student]
   [#student @Michaela grade: 12 school: "West"]
   [#student @Jermaine grade: 9]
 ```
@@ -74,6 +75,8 @@ commit
 Notice that after these student are added, two more sentences appear on the screen about `@Diedra` and `@Michaela`. That's because Eve works on sets, so when we ask for `[#student name grade school]`, we want _all_ the records that match, which includes `@Celia`, and now Diedra and Michaela. Furthermore, **Eve's functions and operators work over sets**. This means we can write a statement as if it applies to a single element, but that statement will work even if there are more elements in the set. Therefore, even though we haven't expressed any loops, the sentence is printed as many times as there are matched records. 
 
 But what about poor `@Jermaine`? Why isn't he in the list? The reason is that he doesn't have a `school`, so he doesn't satisfy the match. Go ahead and add one, and he'll show up on the list.
+
+And why doesn't `@Diedra` show up twice in the list? Eve works in sets, which are collections of unique and unordered elements. Diedra is defined twice in this block, and the only thing different between definitions is the order of attributes. For sets, this does not distinguish the two. Since they have the same elements, they are one and the same.
 
 Notice also that the list is not (necessarliy) in the order that the students were added in the list. Recompile the program a few times to see that thte order changes. That's because **there is no ordering in Eve; blocks are not ordered, statements are not ordered, and results are therefore not ordered**. If you want the students to be ordered, you have to impose an ordering. Let's sort them alphabetically by name, by adding a `sort` attribute to the `#div`.   
 
