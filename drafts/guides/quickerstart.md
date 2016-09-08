@@ -32,7 +32,7 @@ commit
   [name: "Celia"]
 ```
 
-- Eve has no order; you can use records before they are defined.
+- Eve has no order; you can use records before they are defined. When the record becomes available, then any blocks matching that record will be satisfied.
 
 - `commit` starts the action phase and tells eve to create new records as their supporting data changes. The old record persists.
 
