@@ -17,15 +17,15 @@ bind @browser
 
 - Blocks have two phases, a match phase and an action phase.
 
-- In the match phase, you gather records from Eve using patterns.
+- In the match phase, you gather records from Eve using patterns. The match phase begins with the `match` keyword.
 
-- In the action phase, you create or modify records. 
+- In the action phase, you create or modify records. The action phase begins with either the `bind` or `commit` keywords. 
 
 - The action phase only executes if every record if the match phase is fully satisfied i.e. every record in the match phase has at least one result.
 
 - Within a block, variables with the same name are equivalent.
 
-- Bind tells Eve to update records continuously as their supporting records change. The old record is overwritten.
+- `bind` starts the action phase, and tells Eve to update records continuously as their supporting records change. The old record is overwritten.
 
 ```
 commit
@@ -34,7 +34,7 @@ commit
 
 - Eve has no order; you can use records before they are defined.
 
-- Commit tells eve to create new records as their supporting data changes. The old record persists.
+- `commit` starts the action phase and tells eve to create new records as their supporting data changes. The old record persists.
 
 ```
 match
@@ -57,6 +57,8 @@ bind
 ```
 
 - You can equate a record with a variable.
+
+- The `=` operator means equality. Eve does not have assignment.
 
 - `@` is a shortcut for the `name` attribute
 
@@ -107,7 +109,7 @@ bind
 
 - We can match two records and then "join" them together by associating attributes from one record with the other
 
-- attributes can be accessed on records using dot notation.
+- Attributes can be accessed on records using dot notation.
 
 ## Part 4
 
@@ -129,7 +131,9 @@ bind
 
 - Whitespace matters for expressions. Whitespace is required around operators for readability.
 
-- `if-then` is an expression with a return value. 
+- `if-then` is an expression with a return value.
+
+- `:=` sets an attribute to a value, overwriting the previous value. 
 
 ```
 match
