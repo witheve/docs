@@ -1,13 +1,79 @@
 # Records
 
- are the predominant datatype in Eve. In the proposed syntax, records are a set of attribute:value pairs enclosed in square brackets:
+Records are `attribute: value` pairs associated to a unique ID
+
+## Syntax
 
 ```
-record = [ attribute1: value1 attribute2: value2 ... attributeN: valueN]
+[attribute]
+[attribute: value]
+[attribute1: value1, ... , attributeN: valueN]
+[attribute1: [attribute2: value]]
+r = [attribute ...]
+r.attribute
 ```
 
- are essentially pattern matches against the Eve DB, i.e. records ask Eve to find all the entities that match the supplied attribute shape. For example, our first record in the program is `[@"my party" date]`. The resulting record will consist of all the facts matching a `name` attribute with value "my party" and a date attribute with any value.
+## Description
 
-The record also binds `date` to the top level `date` variable, accessible outside of the record (but only within the block). If you want to use `date` to mean something else, then you can alias it using the bind operator (see the next section).
+Records are the predominate datatype in Eve. Records are used in two ways:
 
- can be bound to a variable, e.g. `party = [@"my party" date]`. This provides a handle to the record, allowing you to access and mutate attributes using dot notation, e.g. `party.date`.
+1. In the match phase, you supply a pattern of attributes to match records in the Eve DB.
+2. In the action phase, you supply a pattern of attributes to insert into the Eve DB.
+
+`[attribute]` matches all records with the given attribute.
+
+`[attribute: value]` matches all records with the given attribute filtered on specified value.
+
+`[attribute1: value1, ... , attributeN: valueN]` is the general case for records. This matches all records with all of the given attributes filtered on the given value.
+
+`[attribute1: [attribute2: value]]` nests a record within another record.
+
+`r = [attribute ...]` equates a record to a variable `r`.
+
+`r.attribute` attributes of records can be accessed using dot notation.
+
+## Examples
+
+Match all records with a name, and bind a `#div` for each one.
+
+```
+match
+  [name]
+bind
+  [#div text: name]
+```
+
+Records can have multiple attributes
+
+```
+match
+  [#student name grade school]
+bind
+  [#div text: "{{name}} is in {{grade}}th grade at {{school}}"]
+```
+
+Join records by binding attributes from one record into another record. Equate records with variables. Access record attributes using dot notation. 
+
+```
+match
+  school = [#school name address]
+  student = [#student school: name]
+bind
+  [#div text: "{{student.name}} attends {{school.name}} at {{address}}"]
+```
+
+Records can be nested.
+
+```
+commit
+  [@Jeremey spouse: [@Wendy]]
+```
+
+Dot notation can be composed for deep access to records
+
+```
+match
+  jeremy = [@Jeremy]
+bind
+  [#div text: "{{jeremy.name}} is married to {{jeremy.spouse.name}}"]
+```
