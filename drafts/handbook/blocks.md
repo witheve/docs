@@ -6,16 +6,16 @@ Eve programs are composed of blocks
 
 
 
-  ```
-  match
+    ```
+    match
+      ...
+    bind or commit
     ...
-  bind or commit
-    ...
-  ```
-  ```
-  bind or commit
-    ...
-  ```
+    ```
+    ```
+    bind or commit
+      ...
+    ```
 
 
 ## Description
