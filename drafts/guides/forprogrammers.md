@@ -1,10 +1,13 @@
-# Eve for the Imperative Programmer
+## What is Eve?
 
-If you're anything like the typical programmer, you've used imperative programming languages your entire career. Javascript, C, C++, Python, Ruby, Java, Rust, Go -- these are all examples of imperative programming languages.
+Eve is a "batteries-included" general purpose programming platform composed of a database, a compiler, and a suite of tools for building programs. Eve is different from most languages in that it's a pattern matching language; everything you do in Eve is about finding records that match a pattern, and then performing actions based on what was found.   
 
-Practitioners of these languages may find Eve a little foreign at first, because Eve is a type of declarative language. How do you achieve iteration if you can't use a loop? How do you create resuable, maintainable code if you can't create functions?
+Eve programs are composed of "blocks". Each block has the same flow:
 
-The purpose of this document is to demystify declarative programming, and enourage you to approach problem solving with a declarative mindset. Let's start by going deeper into what declarative programming is, and how it fits into the imperative world you know so well. 
+1. Match Phase: Match records using patterns. If the records are matched, then the block can perform an action. If any of the records are not matched, then no action is performed.
+2. Action Phase: Perform an action (update or create records) using what was found in the match phase.
+
+Blocks tie together by matching records that other blocks create or modify. By creating these interconnected blocks, the Eve programmer defines how data flows through a program.
 
 ## Open Your Mind
 
@@ -15,6 +18,20 @@ For example, Eve does not make heavy use of functions, and it has no looping or 
 - Pay attention to the presence or absence of data. 
 - Pay attention to the shape of records and what makes the data in a record unique
 - Don't think in terms of how the machine executes your program.
+
+## Some Terminology
+
+- **Entity** - Entities are unique IDs in the Eve DB. An entity can represent anything - a person, a business, a message, an application, a button, etc.
+- **Fact** - Facts describe entities. Each fact is composed of an attribute and a value, and is associated with a specific entity. Facts might be a person's age, an employee's salary, a department's budget, etc.
+- **Record** - Records are composed of facts. In Eve, you select records from the database by supplying a pattern of attributes, and any records matching that pattern are returned to you. For example, a record might be the ages, salaries, and departments of employees.
+
+# Eve for the Imperative Programmer
+
+If you're anything like the typical programmer, you've used imperative programming languages your entire career. Javascript, C, C++, Python, Ruby, Java, Rust, Go -- these are all examples of imperative programming languages.
+
+Practitioners of these languages may find Eve a little foreign at first, because Eve is a type of declarative language. How do you achieve iteration if you can't use a loop? How do you create resuable, maintainable code if you can't create functions?
+
+The purpose of this document is to demystify declarative programming, and enourage you to approach problem solving with a declarative mindset. Let's start by going deeper into what declarative programming is, and how it fits into the imperative world you know so well. 
 
 ## Delcarative vs. Imperative Programs
 
