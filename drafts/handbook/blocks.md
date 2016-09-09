@@ -10,13 +10,13 @@ Eve programs are composed of blocks
     match
       ...
     bind or commit
-    ...
+      ...
     ```
+    
     ```
     bind or commit
       ...
     ```
-
 
 ## Description
 
