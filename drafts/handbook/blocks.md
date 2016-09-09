@@ -5,19 +5,18 @@ Eve programs are composed of blocks
 ## Syntax
 
 
-``````
-```
-match
-  ...
-bind or commit
-  ...
-```
 
-```
-bind or commit
-  ...
-```
-```````
+  ```
+  match
+    ...
+  bind or commit
+    ...
+  ```
+  ```
+  bind or commit
+    ...
+  ```
+
 
 ## Description
 
