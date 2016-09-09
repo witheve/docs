@@ -14,6 +14,7 @@ If you're still stick, you can get in touch with the developers and the communit
 
 Hare are some more resources to help you learn Eve:
 
+- Read the [quick start tutorial](https://github.com/witheve/docs/blob/master/drafts/guides/quickstart.md)
 - Browser our growing [catalog of example applications](https://github.com/witheve/Eve/tree/master/examples) for something similar to what you're doing
 - Read tutorials
 - Read guides
