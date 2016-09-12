@@ -1,6 +1,6 @@
 # Name Selector
 
-The name selector is a shortcut for the `name` attribute
+The name selector is a shortcut for the `name` attribute on records
 
 ## Syntax
 
