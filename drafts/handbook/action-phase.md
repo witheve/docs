@@ -1,21 +1,28 @@
-# Phase 2: Action
+# Action Phase
 
-The `action` phase of a block indicates that we are changing the Eve DB in some way. This phase is preceded by either the `bind` or `commit` fences (explained below). While the `match` phase can be omitted, omitting the `action` phase is probably an error, i.e. the block doesn't do anything without an `action`.
+used to update or create records
 
-The transition to the `action` phase means we're no longer able to use any statements available in the `match` phase, e.g. `if`, `not`, aggregates, expressions, etc.
+## Description
 
-##### Adding and Removing Objects
+In the action phase of a block, you can add or modify records using information collected in the match phase.  
 
-Objects can be added to Eve after an `action` fence:
+The `action` phase of a block indicates that we are changing the Eve DB in some way. This phase is preceded by either `bind` or `commit`. While the `match` phase can be omitted, the `action` phase is required; the block doesn't do anything without an `action`.
+
+The transition to the `action` phase means we're no longer able to use any statements available in the `match` phase, e.g. `if`, `not`, aggregates, some expressions, etc.
+
+## Records and the Action Phase
+
+In the action phase, you create or update records, whereas in the match phase you match records in the Eve DB.
+
+## Examples
+
+A block with only an action phase
 
 ```
-commit
-  [@"my party" date: 2]
+bind
+  [#div text: "Hello, world"]
 ```
 
-Objects can be removed from Eve using the `none` keyword. For example, we could remove `@"my party"` like so:
+## See Also
 
-```
-commit
-  [@"my party"] := none
-```
+[bind](bind.md) | [commit](commit.md) | [match](match.md) | [match phase](match-phase.md) | [contexts](context.md)
