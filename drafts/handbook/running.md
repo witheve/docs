@@ -4,7 +4,9 @@
 
 To run Eve, execute the following command in the `eve/build` directory:
 
-`./eve`
+```
+./eve
+```
 
 This command launches a server hosted at `http://localhost:8080`. You can access the Eve editor by directing your browser to that address. We recommend using Chrome, since we haven't tested on other browsers. You can configure the port with the `--port` flag e.g. `./eve --port 1234`.
 
