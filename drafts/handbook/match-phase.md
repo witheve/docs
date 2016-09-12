@@ -1,4 +1,6 @@
-# Phase 1: Match
+# Match phase
+
+The match phase is used to gather information from one or more databases.
 
 ## Syntax
 
@@ -8,15 +10,30 @@ match @context
 match (@context1, @context2, ... @contextN)
 ```
 
+## Description
 
-The `match` phase is used to gather all the information you need to complete your block. The `match` phase is prefaced with the `match` keyword, and can potentially be omitted.
+In the match phase of a block, you gather all the information you need to complete the block. This phase is prefaced with the `match` keyword, and continues until the action phase, as indicated by a  `bind` or `commit`. 
 
-In the following block, we want to count all the guests coming to the party. To do this, we need the date of the party, a list of all my friends and their availability, and then a count of the guests on the list. Below, I've annotated what's going on in the `match` phase.
+The match phase is all-or-nothing; if all of the records in the match phase are found, then the block proceeds to the action phase. If any of the records in the match phase are not found, then the action phase cannot proceed.
+
+## Examples
+
+Match a record
 
 ```
 match
-  party = [@"my party" date]              // Select the party and the date of the party
-  friend = [#friend busy-dates != date]   // Select friends who are not busy during the date of the party
+  [name]
+bind
+  [#div text: name]  
 ```
 
-Let's take a look at other things you can do in the `match` phase:
+Omit the match phase
+
+```
+bind
+  [#div text: "Hello, world"]
+```
+
+## See Also
+
+[bind](bind.md) | [commit](commit.md) | [contexts](context.md)
