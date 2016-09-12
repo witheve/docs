@@ -31,7 +31,6 @@ result = if record then value
 (result1, ..., resultN) = if record1 then (value, ..., valueN)
                           else if record2 then (value, ..., valueN)
 
-
 (result1, ..., resultN) = if record1 then (value, ..., valueN)
                           else if record2 then (value, ..., valueN)
                           else (value, ..., valueN)                                          
