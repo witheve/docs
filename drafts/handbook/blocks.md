@@ -1,6 +1,6 @@
 # Blocks
 
-Eve programs are composed of blocks
+Blocks compose Eve programs
 
 ## Syntax
 
@@ -20,7 +20,7 @@ Eve programs are composed of blocks
 
 ## Description
 
-Each block is written in two phases: `match` then `action`. These phases mirror the two Eve commands outlined earlier. In the `match` phase, we ask Eve for known facts, and we might transform those facts using temporary variables. In the `action` phase we perform some action on the Eve DB to either add or remove facts.
+Each block is written in two phases: `match` then `action`. In the `match` phase, we ask Eve for known facts, and we might transform those facts using temporary variables. In the `action` phase we perform some action on the Eve DB to either add or remove facts.
 
 ## Examples
 
