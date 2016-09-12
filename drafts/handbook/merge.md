@@ -20,4 +20,4 @@ record <- [attribute: value, ... ]
 
 ## See Also
 
-[set operator](set.md) | [add operator](add.md) | [merge operator](merge.md) | [action phase](action-phase.md)
+[set operator](set.md) | [add operator](add.md) | [remove operator](remove.md) | [action phase](action-phase.md)
