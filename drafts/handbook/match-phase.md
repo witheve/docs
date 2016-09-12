@@ -1,14 +1,6 @@
-# Match phase
+# Match Phase
 
-The match phase is used to gather information from one or more databases.
-
-## Syntax
-
-```
-match
-match @context
-match (@context1, @context2, ... @contextN)
-```
+used to gather information from one or more databases
 
 ## Description
 
@@ -16,24 +8,12 @@ In the match phase of a block, you gather all the information you need to comple
 
 The match phase is all-or-nothing; if all of the records in the match phase are found, then the block proceeds to the action phase. If any of the records in the match phase are not found, then the action phase cannot proceed.
 
-## Examples
+## Records in the Match Phase
 
-Match a record
+In the match phase, you match records in the Eve DB, whereas in the action phase, you can create or update records.
 
-```
-match
-  [name]
-bind
-  [#div text: name]  
-```
-
-Omit the match phase
-
-```
-bind
-  [#div text: "Hello, world"]
-```
+`[attribute: value, ...]` matches records with the given attributes in the Eve DB.
 
 ## See Also
 
-[bind](bind.md) | [commit](commit.md) | [contexts](context.md)
+[match](match.md) | [bind](bind.md) | [commit](commit.md) | [contexts](context.md)
