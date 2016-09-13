@@ -1,6 +1,18 @@
 # Functions
 
-**Note: This section of the proposal is not implemented yet**
+## syntax
+
+```
+value = fn[argument]
+
+value = fn[argument1, ..., argumentN]
+
+(value1, value2) = fn[argument1, ..., argumentN]
+
+[@fn #function argument1, ... argumentN, value1, ..., valueN]
+```
+
+## Description
 
 It turns out that functions as they exist in other languages are mostly obviated by Eve's tag semantics. Consider the following two statements
 
