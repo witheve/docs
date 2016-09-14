@@ -14,8 +14,13 @@ record <- [attribute: value, ... ]
 
 ## Examples
 
-```
+Match celia and merge a record
 
+```
+match
+  celia = [@Celia]
+bind
+  celia <- [#student grade: 10, school: "East"]
 ```
 
 ## See Also
