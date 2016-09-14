@@ -10,7 +10,7 @@ record <- [attribute: value, ... ]
 
 ## Description
 
-
+`record <- [attribute: value, ... ]` merges the anonymous record `[attribute: value, ... ]` into the record bound to `record`. This is useful in setting multiple attributes on a record at once.
 
 ## Examples
 
