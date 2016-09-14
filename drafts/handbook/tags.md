@@ -23,7 +23,7 @@ Multiple tags can be used to further specify a record. For instance:
 ```
 [#employee #full-time wage]
 [#employee #part-time wage]
-``` 
+```
 
 The first record matches `#employees` who are `#full-time`, while the second matches those who are `#part-time`. Any number of tags can be used in this way.
 
