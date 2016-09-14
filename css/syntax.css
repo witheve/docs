@@ -1,0 +1,73 @@
+.highlight .c { color:#336666; font-style:normal; } /* Comment */
+.highlight .cm { color:#336666; font-style:normal; } /* Comment.Multiline */
+.highlight .cp { color:#336666; font-style:normal; } /* Comment.Preproc */
+.highlight .cs { color:#336666; font-style:normal; } /* Comment.Special */
+
+.highlight .kc { color:#0000aa; } /* Keyword.Constant */
+.highlight .kd { color:#cd950c; } /* Keyword.Declaration */
+.highlight .kp { color:#0000aa; } /* Keyword.Pseudo */
+.highlight .kr { color:#0000aa; } /* Keyword.Reserved */
+.highlight .kt { color:#0000aa; } /* Keyword.Type */
+
+.highlight .gd { color: #c2c2c2; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #c2c2c2; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { color: #c2c2c2; font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #c2c2c2; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #c2c2c2; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+
+.highlight .m { color: #008080; } /* Literal.Number */
+.highlight .mf { color: #008080; } /* Literal.Number.Float */
+.highlight .mh { color: #008080; } /* Literal.Number.Hex */
+.highlight .mo { color: #008080; } /* Literal.Number.Oct */
+.highlight .il { color: #008080; } /* Literal.Number.Integer.Long */
+
+.highlight .sb { color: #008080 } /* Literal.String.Backtick */
+.highlight .sc { color: #008080 } /* Literal.String.Char */
+.highlight .sd { color: #008080 } /* Literal.String.Doc */
+.highlight .s2 { color: #008080 } /* Literal.String.Double */
+.highlight .se { color: #008080 } /* Literal.String.Escape */
+.highlight .sh { color: #008080 } /* Literal.String.Heredoc */
+.highlight .si { color: #008080 } /* Literal.String.Interpol */
+.highlight .sx { color: #008080 } /* Literal.String.Other */
+.highlight .sr { color: #008080 } /* Literal.String.Regex */
+.highlight .s1 { color: #008080 } /* Literal.String.Single */
+
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #d1d9e1 !important; } /* Name.Constant */
+
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+
+
+.highlight .ow { color:#444; font-weight: bold; } /* Operator.Word */
+
+.highlight .w { color: #555 } /* Text.Whitespace */
+
+
+
+.highlight .ss { color: #a5f !important; } /* CHRIS: symbols Literal.String.Symbol */
+.highlight .c1 { color:#999 !important; font-style:normal; } /* Comment.Single */
+.highlight .mi { color: #29b; } /* CHRIS: Literal.Number.Integer */
+.highlight .s { color: #29b !important; } /* CHRIS: Literal.String */
+.highlight .nb { color:#07d !important } /* CHRIS: clojure funcs */
+.highlight .nf { color: #07d !important; font-weight:normal !important; } /* CHRIS: function names */
+.highlight .nv { color: #555 !important; } /* CHRIS: clojure vars */
+.highlight .kd { color: #07d !important; } /* CHRIS: clojure vars */
+.highlight .o { color:#777 !important; } /* CHRIS: . and # */
+.highlight .p { color:#777; } /* paren */
+.highlight .k { color:#07d !important; } /* CHRIS: clojure special forms */
+

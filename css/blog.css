@@ -1,0 +1,162 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  list-style: none;
+  text-decoration: none;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@font-face {
+    font-family: 'GRN';
+    src: url('/fonts/Ubuntu-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'GRL';
+    src: url('/fonts/Ubuntu-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'GRB';
+    src: url('/fonts/Ubuntu-Bold.ttf') format('truetype');
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+
+html, body { min-height:100%;}
+body { background: url('/images/grid.png');  }
+.uberwrapper {}
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ddd; margin: 1em 0; padding: 0; padding-bottom:10px;  }
+
+header { position:fixed; left: 50px; top:40px; }
+header h1 { display:block; font-size: 18pt; font-family: "GRL"; text-align: center; }
+header h1 a {  color:#555;}
+.nav { display:block; font-size:12pt; font-family:"GRL"; margin-top:6px; }
+.nav li {display: list-item; margin-bottom: 10px; margin-left: 0px;}
+.nav a {color: rgb(91,89,164); color: #555; }
+
+#blogposts { margin:0 auto; width:700px; padding-bottom:100px; }
+
+.post h2 { text-align: center; }
+.post .title { text-align:center; font-family: "GRL"; font-size: 32px; color: rgb(91,89,164); display: inline-block; margin: 40px 0px 5px 0px;}
+.post a.title:hover { color: rgb(91,89,164); text-shadow: 1px 1px 3px rgba(70, 70, 90, .1); text-decoration:none; }
+.date { text-align:center; font-family: "GRL"; font-size: 12pt; color: #778c98; padding-bottom: 45px; text-transform: none;}
+
+.post { font-family: "Open Sans"; font-size: 12pt; color: #555; }
+.post p { line-height: 155%; margin-bottom:30px; }
+.post img { max-width: 700px; border-radius:3px; margin:5px auto; width:auto; }
+.post object, .post iframe { max-width: 700px; border-radius:3px; margin:35px 0; margin-top:10px; width:100%; }
+.post h3 { text-align:left; font-family: "GRL"; font-size: 24px; color: rgb(91,89,164); display: block; margin-top:25px; margin-bottom:25px; }
+.post h4, .post h5 { text-align:left; font-family: "GRL"; font-size: 18px; color: rgb(91,89,164); display: block; }
+.post a { color: rgb(65, 161, 221); text-decoration:none; }
+.post a:hover { color: rgb(65, 161, 221); text-decoration:underline; }
+.post .date { margin-bottom: 10px; }
+.post ul { list-style:disc; margin-bottom:30px; }
+.post li { list-style: disc; margin-left:30px; margin-bottom:10px; line-height: 155%; }
+.post p code { padding:2px 5px; background:#ECECEC; color:#444; border-radius:3px; font-family:"Inconsolata", "Menlo", "Consolas", monospace; }
+.post pre { overflow:auto; background:#ECECEC; margin-bottom:30px; padding: 10px 10px; border-radius:3px; border:0px solid #ddd; font-family:"Inconsolata", "Consolas", monospace; }
+.post em { font-style:italic; }
+.post strong { font-weight: bold; }
+
+
+#related { font-family: "Open Sans"; font-size:12pt; margin-top:30px; margin-bottom:80px; }
+#related h3 { font-family: "GRL"; font-size: 24px; color: #555; display: inline-block; margin-top:20px; margin-bottom:12px; }
+#related a { color: rgb(65, 161, 221); text-decoration:none; }
+#related a:hover { color: rgb(65, 161, 221); text-decoration:underline; }
+#related .posts li { margin-left: 25px; margin-bottom:8px; }
+#related .posts li:before { content: "-> "; color: #999; }
+
+.archive { font-family: "Open Sans"; font-size:12pt; }
+.archive h2 { font-family: "GRL"; font-size: 32px; color: #555; display: inline-block; margin-top:40px; margin-bottom:30px; }
+.archive a { color: rgb(65, 161, 221); text-decoration:none; }
+.archive a:hover { color: rgb(65, 161, 221); text-decoration:underline; }
+.archive li { margin-bottom:10px; }
+.archive span { float:right; color: #555;}
+
+#backed { list-style:none; margin-top:10px; }
+#backed li { list-style:none; display:inline-block; margin-left:0; margin-right: 20px;}
+
+.hiring h4 { margin-top:20px; }
+
+.logo {margin-bottom: 10px;}
+
+@media only screen
+and (max-width : 1350px) {
+  #blogposts { width: 600px; }
+  .post img, .post object, .post iframe { max-width: 600px;}
+  .nav li {display: list-item; margin-bottom: 10px; margin-left: 0px;}
+}
+
+/*
+@media only screen
+and (max-width : 1260px) {
+  header { text-align:center; width:100%; position:static; padding:0 15px; margin-bottom:10px; margin-top:20px; }
+  header h1 { display:inline-block; }
+  header h1 a { font-size:18pt; }
+  .nav { display:inline-block; margin-left:35px; margin-top:2px; padding:0; }
+  .nav li { display:inline-block; margin-left:8px; }
+}*/
+
+@media only screen
+and (max-width : 900px) {
+  #blogposts { width:100%; }
+  header { text-align: center; width:100%; position:static; padding:0 15px; margin-bottom:40px; margin-top:20px; }
+  header h1 { display:inline-block; }
+  header h1 a { font-size:14pt; }
+  .nav { display:block; margin-left:0px; margin-top:2px; padding:0; }
+  .nav li { display:inline-block; margin:0; }
+  .nav li + li { margin-left: 8px; }
+
+  .post { margin-top: 20px;}
+  .post { margin-bottom:40px; }
+  .post .title { font-size:18pt; margin-top:0; }
+  .post h3 { font-size:13pt; }
+
+  #blogposts { margin:0; width:100%; padding:0 15px; margin-top: 0; }
+  #blogposts img, #blogposts object, #blogposts iframe { max-width:100%; }
+
+  .archive h2 { margin-top:0; font-size:14pt; margin-bottom:20px; }
+  .archive span { display:block; float:none; margin-top:2px; color:#999;}
+}
