@@ -12,9 +12,11 @@ match (@context1, @context2, ... @contextN)
 
 ## Description
 
-In the match phase of a block, you gather all the information you need to complete the block. This phase is prefaced with the `match` keyword, and continues until the action phase, as indicated by a  `bind` or `commit`. 
+`match` signifies the beginning of the match phase of a block. By default, matched records are drawn from a default local context.
 
-The match phase is all-or-nothing; if all of the records in the match phase are found, then the block proceeds to the action phase. If any of the records in the match phase are not found, then the action phase cannot proceed.
+`match @context` draws matched records from a particular context.
+
+`match (@context1, ... @contextN)` draws matched records from multiple contexts.
 
 ## Examples
 
