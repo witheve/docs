@@ -1,3 +1,8 @@
+---
+layout: page
+category: handbook
+---
+
 # Installation
 
 ## From Source
