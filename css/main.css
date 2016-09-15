@@ -1,0 +1,93 @@
+#palette {
+  color: rgb(74,64,136);
+  color: rgb(91,89,164);
+  color: rgb(107,103,173);
+  color: rgb(0,121,177);
+  color: rgb(0,158,224);
+  color: rgb(0,184,241);
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  line-height: 20px;
+}
+
+h1 {
+ color: rgb(0,121,177); 
+}
+
+h2 { 
+  color: rgb(91,89,164);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+#logo {
+  margin-bottom: 20px;
+}
+
+#navigation {
+ background-color: rgb(23,30,39);
+ margin: 0px;
+ margin-left: -15px;
+ padding: 20px;
+ line-height: 30px;
+ font-size: 14px;
+}
+
+#navigation ul {
+ margin: 0px;
+ color: #FFF;
+ padding-left: 10px;
+ list-style-type: none;
+}
+
+#navigation a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+#content {
+  max-width: 700px;
+  margin: 40px;
+  margin-top: 0px;
+}
+
+code {
+  background-color: rgb(23,30,39);
+  color: rgb(245,245,245);
+  padding: 4px;
+}
+
+.highlight {
+  background-color: rgb(23,30,39);
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table a {
+  color: rgb(0,158,224);
+  text-decoration: none;
+}
+
+td {
+  border-right: 1px solid #777;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin: 0px;
+}
+
+tr {
+  padding: 0px;
+  margin: 0px;
+}
