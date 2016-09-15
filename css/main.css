@@ -62,6 +62,7 @@ code {
   background-color: rgb(23,30,39);
   color: rgb(245,245,245);
   padding: 4px;
+  border-radius: 3px;
 }
 
 .highlight {
