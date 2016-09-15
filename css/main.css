@@ -82,7 +82,8 @@ body.rtl ul, body.rtl ol {
     margin: 0 25px 10px 0;
 }
 
-ul {
+.navigation ul {
+    padding-left: 0px;
     list-style-type: none;
 }
 
