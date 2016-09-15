@@ -16,8 +16,8 @@
 title: Eve Documentation
 email: info@witheve.com
 description: Documentation for the Eve programming language
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://witheve.github.io/docs" # the base hostname & protocol for your site
+baseurl: "/docs" # the subpath of your site, e.g. /blog
+url: "http://witheve.github.io" # the base hostname & protocol for your site
 
 # if you wish to integrate disqus on pages set your shortname here
 disqus_shortname: ''
