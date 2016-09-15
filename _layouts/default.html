@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width">
-
+        <link rel="stylesheet" href="witheve.github.io/docs/css/syntax.css">
+        <link rel="stylesheet" href="witheve.github.io/docs/css/main.css">
         <title>{{ site.title }}{% if page.title %} : {{ page.title }}{% endif %}</title>
         <meta name="description" content="{{ site.subtitle }}">
     </head>
@@ -16,15 +17,47 @@
                 {% assign post_count = site.posts|size %}
                 {% if site.navigation != 0 and site.navigation == 1 or post_count > 0 %}
                     <div id="navigation" class="col-sm-2">
+                        <center>
+                          <img id="logo" width="50px" src="https://github.com/witheve/assets/blob/master/images/logo_only.png?raw=true" />
+                        </center>
                         <ul>
-                            <li><a href="{{site.baseurl}}/docs/handbook/intro.html">Introduction</a></li>
+                            <li><a href="/docs/handbook/intro.html">Introduction</a></li>
                             <li>
-                                <ul>
-                                    <li><a href="{{site.baseurl}}/docs/handbook/installation.html">Installation</a></li>
-                                    <li><a href="{{site.baseurl}}/docs/handbook/running.html">Running</a></li>
-                                </ul>
+                              <ul>
+                                <li><a href="/docs/handbook/installation.html">Installation</a></li>
+                                <li><a href="/docs/handbook/running.html">Running</a></li>
+                              </ul>
                             </li>
-                            <li><a href="{{site.baseurl}}/docs/handbook/records.html">Records</a></li>
+                            <li><a href="/docs/handbook/records.html">Core Language</a></li>
+                            <li>
+                              <ul>
+                                <li><a href="/docs/handbook/block.html">Blocks</a></li>
+                                <li><a href="/docs/handbook/records.html">Records</a></li>
+                                <li><a href="/docs/handbook/records.html">Equivalence</a></li>
+                                <li><a href="/docs/handbook/records.html">Names</a></li>
+                                <li><a href="/docs/handbook/records.html">Tags</a></li>
+                                <li><a href="/docs/handbook/records.html">Match Phase</a></li>
+                                <li>
+                                  <ul>
+                                    <li><a href="/docs/handbook/block.html">match</a></li>
+                                    <li><a href="/docs/handbook/records.html">Expressions</a></li>
+                                    <li><a href="/docs/handbook/records.html">Aggregates</a></li>
+                                    <li><a href="/docs/handbook/records.html">Functions</a></li>
+                                    <li><a href="/docs/handbook/records.html">if-then</a></li>
+                                    <li><a href="/docs/handbook/records.html">not</a></li>
+                                    <li><a href="/docs/handbook/records.html">is</a></li>
+                                  </ul>
+                                </li>
+                                <li><a href="/docs/handbook/records.html">Action Phase</a></li>
+                                <li>
+                                  <ul>
+                                    <li><a href="/docs/handbook/block.html">commit</a></li>
+                                    <li><a href="/docs/handbook/records.html">bind</a></li>
+                                    <li><a href="/docs/handbook/records.html">Action Operators</a></li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
                         </ul>
                     </div>
 
