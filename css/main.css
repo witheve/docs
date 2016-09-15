@@ -82,6 +82,9 @@ body.rtl ul, body.rtl ol {
     margin: 0 25px 10px 0;
 }
 
+    list-style-type: none;
+}
+
 table {
   margin-bottom: 1rem;
   border: 1px solid #e5e5e5;
