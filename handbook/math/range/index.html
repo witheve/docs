@@ -9,16 +9,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Blocks - Eve Documentation</title>
+    <title> - Eve Documentation</title>
     <meta name="generator" content="Hugo 0.16" />
 
     
-    <link rel="canonical" href="https://witheve.github.io/docs/handbook/block/">
+    <link rel="canonical" href="https://witheve.github.io/docs/handbook/math/range/">
     
     <meta name="author" content="Eve">
     
 
-    <meta property="og:url" content="https://witheve.github.io/docs/handbook/block/">
+    <meta property="og:url" content="https://witheve.github.io/docs/handbook/math/range/">
     <meta property="og:title" content="Eve Documentation">
     <meta property="og:image" content="https://witheve.github.io/docs/images/logo_only.png">
     <meta name="apple-mobile-web-app-title" content="Eve Documentation">
@@ -95,7 +95,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Block
+        
       </div>
     </div>
 
@@ -250,52 +250,46 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Blocks </h1>
+			<h1> </h1>
 
 			
 
-<h1 id="blocks">Blocks</h1>
+<h1 id="range">range</h1>
 
-<p>Blocks compose Eve programs</p>
+<p>Generates a set of numbers between two values</p>
 
 <h2 id="syntax">Syntax</h2>
 
-<pre><code>```
-match
-  ...
-bind or commit
-  ...
-```
-
-```
-bind or commit
-  ...
-```
+<pre><code>y = range[from, to]
+y = range[from, to, increment] // Not implemented yet
 </code></pre>
+
+<h2 id="attributes">Attributes</h2>
+
+<ul>
+<li>from - the start of the range. Does not need to be an integer.</li>
+<li>to - the end of the range. Does not need to be an integer.</li>
+</ul>
 
 <h2 id="description">Description</h2>
 
-<p>Each block is written in two phases: <code>match</code> then <code>action</code>. In the <code>match</code> phase, we ask Eve for known facts, and we might transform those facts using temporary variables. In the <code>action</code> phase we perform some action on the Eve DB to either add or remove facts.</p>
+<p><code>y = range[from, to]</code> generates a set of numbers starting at <code>from</code> and ending at <code>to</code>, in increments of 1. The current behavior of range is to exclude <code>to</code> from the generated set.</p>
 
 <h2 id="examples">Examples</h2>
 
-<p>A block with match and action phases</p>
+<p>Generate and display the numbers between 1 and 10. In this example, <code>y</code> should be <code>{1, 2, 3, 4, 5, 6, 7, 8, 9}</code></p>
 
 <pre><code>match
-  [name]
-bind
-  [#div text: name]
+  y = range[from: 1, to: 10]
+commit
+  [#div sort: y, text: y]
 </code></pre>
 
-<p>A black with only a commit phase</p>
+<h3 id="example-usage">Example Usage</h3>
 
-<pre><code>commit
-  [@Stephanie]
-</code></pre>
-
-<h2 id="see-also">See Also</h2>
-
-<p><a href="match-phase.md">match phase</a> | <a href="action-phase.md">action phase</a> | <a href="match.md">match</a> | <a href="bind.md">bind</a> | <a href="commit.md">commit</a></p>
+<ul>
+<li><a href="https://github.com/witheve/Eve/blob/master/examples/tic-tac-toe.eve#L25">Tic-Tac-Toe</a></li>
+</ul>
 
 
 			<aside class="copyright" role="note">
@@ -312,7 +306,7 @@ bind
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://witheve.github.io/docs/handbook/math/tan/" title="">
+      <a href="https://witheve.github.io/docs/handbook/math/mod/" title="">
         <span class="direction">
           Previous
         </span>
@@ -332,14 +326,14 @@ bind
 
   <div class="next">
   
-      <a href="https://witheve.github.io/docs/handbook/equivalence/" title="Equivalence">
+      <a href="https://witheve.github.io/docs/handbook/math/round/" title="">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Equivalence
+              
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

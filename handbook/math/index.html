@@ -9,16 +9,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Blocks - Eve Documentation</title>
+    <title> - Eve Documentation</title>
     <meta name="generator" content="Hugo 0.16" />
 
     
-    <link rel="canonical" href="https://witheve.github.io/docs/handbook/block/">
+    <link rel="canonical" href="https://witheve.github.io/docs/handbook/math/">
     
     <meta name="author" content="Eve">
     
 
-    <meta property="og:url" content="https://witheve.github.io/docs/handbook/block/">
+    <meta property="og:url" content="https://witheve.github.io/docs/handbook/math/">
     <meta property="og:title" content="Eve Documentation">
     <meta property="og:image" content="https://witheve.github.io/docs/images/logo_only.png">
     <meta name="apple-mobile-web-app-title" content="Eve Documentation">
@@ -95,7 +95,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Block
+        
       </div>
     </div>
 
@@ -250,52 +250,55 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Blocks </h1>
+			<h1> </h1>
 
 			
 
-<h1 id="blocks">Blocks</h1>
+<h1 id="math">Math</h1>
 
-<p>Blocks compose Eve programs</p>
+<h2 id="arithemtic">Arithemtic</h2>
 
-<h2 id="syntax">Syntax</h2>
+<ul>
+<li>plus (<code>+</code>)</li>
+<li>minus (<code>-</code>)</li>
+<li>times (<code>*</code>)</li>
+<li>divide (<code>/</code>)</li>
+</ul>
 
-<pre><code>```
-match
-  ...
-bind or commit
-  ...
-```
+<h2 id="general-math">General Math</h2>
 
-```
-bind or commit
-  ...
-```
-</code></pre>
+<ul>
+<li><a href="abs/">abs</a> - Absolute value</li>
+<li><a href="ceil/">ceil</a> - Round a number up</li>
+<li><a href="floor/">floor</a> - Round a number down</li>
+<li><a href="round/">round</a> - Round a number</li>
+<li><a href="mod/">mod</a> - Modulo division</li>
+<li>exp</li>
+<li>log</li>
+</ul>
 
-<h2 id="description">Description</h2>
+<h2 id="trigonometric-functions">Trigonometric Functions</h2>
 
-<p>Each block is written in two phases: <code>match</code> then <code>action</code>. In the <code>match</code> phase, we ask Eve for known facts, and we might transform those facts using temporary variables. In the <code>action</code> phase we perform some action on the Eve DB to either add or remove facts.</p>
+<ul>
+<li><a href="sin/">sin</a> - Sine of an angle</li>
+<li><a href="cos/">cos</a> - Cosine of an angle</li>
+<li><a href="tan/">tan</a> - Tangent of an angle</li>
+<li>asin - Arc sine of an angle</li>
+<li>acos - Arc cosine of an angle</li>
+<li>atan - Arc tangent of an angle</li>
+<li>atan2 - Arc tangent using sign to determine quadrant</li>
+</ul>
 
-<h2 id="examples">Examples</h2>
+<h2 id="hyperbolic-functions">Hyperbolic Functions</h2>
 
-<p>A block with match and action phases</p>
-
-<pre><code>match
-  [name]
-bind
-  [#div text: name]
-</code></pre>
-
-<p>A black with only a commit phase</p>
-
-<pre><code>commit
-  [@Stephanie]
-</code></pre>
-
-<h2 id="see-also">See Also</h2>
-
-<p><a href="match-phase.md">match phase</a> | <a href="action-phase.md">action phase</a> | <a href="match.md">match</a> | <a href="bind.md">bind</a> | <a href="commit.md">commit</a></p>
+<ul>
+<li>sinh - Hyperbolic sine of an angle</li>
+<li>cosh - Hyperbolic cosine of an angle</li>
+<li>tanh - Hyperbolic tangent of an angle</li>
+<li>asinh - Hyperbolic arc sine of an angle</li>
+<li>acosh - Hyperbolic arc cosine of an angle</li>
+<li>atanh - Hyperbolic arc tangent of an angle</li>
+</ul>
 
 
 			<aside class="copyright" role="note">
@@ -312,7 +315,7 @@ bind
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://witheve.github.io/docs/handbook/math/tan/" title="">
+      <a href="https://witheve.github.io/docs/handbook/math/floor/" title="">
         <span class="direction">
           Previous
         </span>
@@ -332,14 +335,14 @@ bind
 
   <div class="next">
   
-      <a href="https://witheve.github.io/docs/handbook/equivalence/" title="Equivalence">
+      <a href="https://witheve.github.io/docs/handbook/math/mod/" title="">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Equivalence
+              
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

@@ -74,348 +74,580 @@ it up and running.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Blocks</title>
-      <link>https://witheve.github.io/docs/handbook/block/</link>
+      <title></title>
+      <link>https://witheve.github.io/docs/handbook/datetime/date/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://witheve.github.io/docs/handbook/block/</guid>
+      <guid>https://witheve.github.io/docs/handbook/datetime/date/</guid>
       <description>
 
-&lt;h1 id=&#34;blocks&#34;&gt;Blocks&lt;/h1&gt;
+&lt;h2 id=&#34;not-yet-implemented&#34;&gt;Not Yet Implemented&lt;/h2&gt;
 
-&lt;p&gt;Blocks compose Eve programs&lt;/p&gt;
+&lt;h1 id=&#34;date&#34;&gt;date&lt;/h1&gt;
+
+&lt;p&gt;provides the current date&lt;/p&gt;
 
 &lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;```
-match
-  ...
-bind or commit
-  ...
-```
-
-```
-bind or commit
-  ...
-```
+&lt;pre&gt;&lt;code&gt;[#date day month year]
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;day - current numeric day&lt;/li&gt;
+&lt;li&gt;month - current numeric month&lt;/li&gt;
+&lt;li&gt;year - current numeric year&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 
-&lt;p&gt;Each block is written in two phases: &lt;code&gt;match&lt;/code&gt; then &lt;code&gt;action&lt;/code&gt;. In the &lt;code&gt;match&lt;/code&gt; phase, we ask Eve for known facts, and we might transform those facts using temporary variables. In the &lt;code&gt;action&lt;/code&gt; phase we perform some action on the Eve DB to either add or remove facts.&lt;/p&gt;
+&lt;p&gt;Provides the current day as reported by the system clock.&lt;/p&gt;
+
+&lt;p&gt;Time updates at the frequency of the smallest selected in the record.&lt;/p&gt;
 
 &lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
 
-&lt;p&gt;A block with match and action phases&lt;/p&gt;
+&lt;p&gt;Prints the current date as a formatted string.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;match
-  [name]
+  [#date month day year]
 bind
-  [#div text: name]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A black with only a commit phase&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;commit
-  [@Stephanie]
+  [#div text: &amp;quot;Today is {{month}}/{{day}}/{{year}}&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;match-phase.md&#34;&gt;match phase&lt;/a&gt; | &lt;a href=&#34;action-phase.md&#34;&gt;action phase&lt;/a&gt; | &lt;a href=&#34;match.md&#34;&gt;match&lt;/a&gt; | &lt;a href=&#34;bind.md&#34;&gt;bind&lt;/a&gt; | &lt;a href=&#34;commit.md&#34;&gt;commit&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;time.md&#34;&gt;time&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Equivalence</title>
-      <link>https://witheve.github.io/docs/handbook/equivalence/</link>
+      <title></title>
+      <link>https://witheve.github.io/docs/handbook/datetime/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://witheve.github.io/docs/handbook/equivalence/</guid>
+      <guid>https://witheve.github.io/docs/handbook/datetime/</guid>
       <description>
 
-&lt;h1 id=&#34;equivalence&#34;&gt;Equivalence&lt;/h1&gt;
+&lt;h1 id=&#34;date-time&#34;&gt;Date &amp;amp; Time&lt;/h1&gt;
 
-&lt;p&gt;Equivalence is used to match and join records&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;time.md&#34;&gt;time&lt;/a&gt; - The current system time&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;date.md&#34;&gt;date&lt;/a&gt; - The current system date&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://witheve.github.io/docs/handbook/datetime/time/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/datetime/time/</guid>
+      <description>
+
+&lt;h1 id=&#34;time&#34;&gt;time&lt;/h1&gt;
+
+&lt;p&gt;provides the current time&lt;/p&gt;
 
 &lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;// Bind attribute to value
-[attribute: value]
-
-// Also bind an attribute to a value
-[attribute]
-attribute = value
-
-// Join two records using a bind
-[#record1 attribute1]
-[#record2 attribute2: attribute1]
-
-// Join two records using a name
-[#record1 attribute]
-[#record2 attribute]
-
-// Bind a nested record
-[attribute1: [attribute2]]
-
-// Filter attributes
-[attribute &amp;gt; value]
-[attribute &amp;gt;= value]
-[attribute &amp;lt; value]
-[attribute &amp;lt;= value]
-[attribute = value]
-[attribute != value]
+&lt;pre&gt;&lt;code&gt;[#time hours minutes seconds milliseconds]
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;hours - current hour&lt;/li&gt;
+&lt;li&gt;minutes - current minute&lt;/li&gt;
+&lt;li&gt;seconds - current second&lt;/li&gt;
+&lt;li&gt;milliseconds - current millisecond &lt;strong&gt;Not Yet Implemented&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;[attribute: value]&lt;/code&gt; binds &lt;code&gt;value&lt;/code&gt; to &lt;code&gt;attribute&lt;/code&gt; using the bind operator &lt;code&gt;:&lt;/code&gt;. This says that the two are equivalent, and therefore matches only records that satisfy this assertion.&lt;/p&gt;
+&lt;p&gt;Provides the current time as reported by the system clock.&lt;/p&gt;
 
-&lt;p&gt;The bind operator can apply to values, variables, or records. &lt;code&gt;[attribute2: attribute1]&lt;/code&gt; binds &lt;code&gt;attribute1&lt;/code&gt; to &lt;code&gt;attribute2&lt;/code&gt;, joining two records together.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;[attribute1: [attribute2]]&lt;/code&gt; shows a nested record. This nesting can be inline as shown, or it can be through a variable e.g.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;record = [...]
-[attribute: record]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Names are another way to say one thing is equivalent to another; within a block, variables with the same name represent the same object or attribute of an object.&lt;/p&gt;
-
-&lt;p&gt;Names are a little more permissive in our syntax than other languages. We allow most symbols in a name (with the exception of space, @, #, //, period, question, comma, colon, and grouping symbols). So operators like &lt;code&gt;-&lt;/code&gt; and &lt;code&gt;+&lt;/code&gt; are valid symbols in a name. Furthermore, we support Unicode, so you can include symbols (such as letters from the Greek alphabet). Such permissive naming comes at the cost of requiring whitespace in expressions. For example &lt;code&gt;friend-age&lt;/code&gt; is a name, whereas &lt;code&gt;friend - age&lt;/code&gt; is subtracting &lt;code&gt;age&lt;/code&gt; from &lt;code&gt;friend&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;tip&#34;&gt;Tip&lt;/h2&gt;
-
-&lt;p&gt;In Eve, the equality operator &lt;code&gt;=&lt;/code&gt; and the bind operator &lt;code&gt;:&lt;/code&gt; have the same semantic meaning; they both assert the equivalence of two clauses, and therefore could be used interchangeably. However, by convention &lt;code&gt;:&lt;/code&gt; is used within records, while &lt;code&gt;=&lt;/code&gt; is used everywhere else.&lt;/p&gt;
+&lt;p&gt;Time updates at the frequency of the smallest unit of time selected in the record.&lt;/p&gt;
 
 &lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
 
-&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Eve Handbook</title>
-      <link>https://witheve.github.io/docs/handbook/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://witheve.github.io/docs/handbook/</guid>
-      <description>
-
-&lt;h2 id=&#34;running&#34;&gt;Running&lt;/h2&gt;
-
-&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
-
-&lt;h2 id=&#34;eve-core&#34;&gt;Eve Core&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Installation</title>
-      <link>https://witheve.github.io/docs/handbook/installation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://witheve.github.io/docs/handbook/installation/</guid>
-      <description>
-
-&lt;h1 id=&#34;installation&#34;&gt;Installation&lt;/h1&gt;
-
-&lt;h2 id=&#34;from-source&#34;&gt;From Source&lt;/h2&gt;
-
-&lt;p&gt;Before you can install Eve you&amp;rsquo;ll need need LuaJIT, gcc, make, and python. Currently, building from source is only supported on Linux and OSX. On Windows, we&amp;rsquo;ve managed to compile Eve in cygwin, but have not gotten it to run yet. Contributions are welcome on this front.&lt;/p&gt;
-
-&lt;p&gt;First install gcc, make, and python using your operating system&amp;rsquo;s standard channels. Chances are you already have these. Install luajit by downloading &lt;a href=&#34;http://luajit.org/download.html&#34;&gt;LuaJIT-2.1.0-beta2&lt;/a&gt; and then in the LuaJIT directory:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;make
-make install
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;By default, LuaJIT is not added to your path, so you&amp;rsquo;ll need to do that as well:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ln -sf luajit-2.1.0-beta2 /usr/local/bin/luajit
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Next you&amp;rsquo;ll need to download the Eve source, either by cloning our repository&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/witheve/Eve.git
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;or downloading the source &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;directly&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;To build Eve, execute &lt;code&gt;make&lt;/code&gt; in the &lt;code&gt;eve/build&lt;/code&gt; directory.&lt;/p&gt;
-
-&lt;h2 id=&#34;docker&#34;&gt;Docker&lt;/h2&gt;
-
-&lt;p&gt;Eve is also on &lt;a href=&#34;https://hub.docker.com/r/witheve/eve/&#34;&gt;Docker Hub&lt;/a&gt;. You can get our container with the following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;docker pull witheve/eve
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Windows Users - Docker for Windows requires Microsoft Hyper-V, which requires Windows 10. For users of earlier Windows versions, binaries are forthcoming.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Records</title>
-      <link>https://witheve.github.io/docs/handbook/records/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://witheve.github.io/docs/handbook/records/</guid>
-      <description>
-
-&lt;h1 id=&#34;records&#34;&gt;Records&lt;/h1&gt;
-
-&lt;p&gt;Records are &lt;code&gt;attribute: value&lt;/code&gt; pairs associated to a unique ID&lt;/p&gt;
-
-&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;[attribute]
-[attribute: value]
-[attribute1: value1, ... , attributeN: valueN]
-[attribute1: [attribute2: value]]
-r = [attribute ...]
-r.attribute
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;Records are the predominate datatype in Eve. Records are used in two ways:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;In the match phase, you supply a pattern of attributes to match records in the Eve DB.&lt;/li&gt;
-&lt;li&gt;In the action phase, you supply a pattern of attributes to insert into the Eve DB.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;code&gt;[attribute]&lt;/code&gt; matches all records with the given attribute.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;[attribute: value]&lt;/code&gt; matches all records with the given attribute filtered on specified value.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;[attribute1: value1, ... , attributeN: valueN]&lt;/code&gt; is the general case for records. This matches all records with all of the given attributes filtered on the given value.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;[attribute1: [attribute2: value]]&lt;/code&gt; nests a record within another record.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;r = [attribute ...]&lt;/code&gt; equates a record to a variable &lt;code&gt;r&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;r.attribute&lt;/code&gt; attributes of records can be accessed using dot notation.&lt;/p&gt;
-
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-
-&lt;p&gt;Match all records with a name, and bind a &lt;code&gt;#div&lt;/code&gt; for each one.&lt;/p&gt;
+&lt;p&gt;Prints the current time as a formatted string.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;match
-  [name]
+  [#time hours minutes seconds]
 bind
-  [#div text: name]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Records can have multiple attributes&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;match
-  [#student name grade school]
-bind
-  [#div text: &amp;quot;{{name}} is in {{grade}}th grade at {{school}}&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Join records by binding attributes from one record into another record. Equate records with variables. Access record attributes using dot notation.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;match
-  school = [#school name address]
-  student = [#student school: name]
-bind
-  [#div text: &amp;quot;{{student.name}} attends {{school.name}} at {{address}}&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Records can be nested.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;commit
-  [@Jeremey spouse: [@Wendy]]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Dot notation can be composed for deep access to records&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;match
-  jeremy = [@Jeremy]
-bind
-  [#div text: &amp;quot;{{jeremy.name}} is married to {{jeremy.spouse.name}}&amp;quot;]
+  [#div text: &amp;quot;The time is {{hours}}:{{minutes}}:{{seconds}}&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;binding.md&#34;&gt;binding&lt;/a&gt; | &lt;a href=&#34;match-phase.md&#34;&gt;match phase&lt;/a&gt; | &lt;a href=&#34;action-phase.md&#34;&gt;action phase&lt;/a&gt; | &lt;a href=&#34;names.md&#34;&gt;name selector&lt;/a&gt; | &lt;a href=&#34;tags.md&#34;&gt;tag selector&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;date.md&#34;&gt;date&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Running</title>
-      <link>https://witheve.github.io/docs/handbook/running/</link>
+      <title></title>
+      <link>https://witheve.github.io/docs/handbook/math/abs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://witheve.github.io/docs/handbook/running/</guid>
+      <guid>https://witheve.github.io/docs/handbook/math/abs/</guid>
       <description>
 
-&lt;h1 id=&#34;running&#34;&gt;Running&lt;/h1&gt;
+&lt;h2 id=&#34;not-yet-implemented&#34;&gt;Not Yet Implemented&lt;/h2&gt;
 
-&lt;h2 id=&#34;native&#34;&gt;Native&lt;/h2&gt;
+&lt;h1 id=&#34;abs&#34;&gt;abs&lt;/h1&gt;
 
-&lt;p&gt;To run Eve, execute the following command in the &lt;code&gt;eve/build&lt;/code&gt; directory:&lt;/p&gt;
+&lt;p&gt;The absolute value of a number&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;./eve
+&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;y = abs[value]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This command launches a server hosted at &lt;code&gt;http://localhost:8080&lt;/code&gt;. You can access the Eve editor by directing your browser to that address. We recommend using Chrome, since we haven&amp;rsquo;t tested on other browsers. You can configure the port with the &lt;code&gt;--port&lt;/code&gt; flag e.g. &lt;code&gt;./eve --port 1234&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
 
-&lt;p&gt;If you want to compile an existing program, use the &lt;code&gt;-e&lt;/code&gt; flag and provide a path to a &lt;code&gt;*.eve&lt;/code&gt; file e.g. &lt;code&gt;./eve -e ../examples/tic-tac-toe.eve&lt;/code&gt;. As you make changes in the editor, they will be reflected back into this file.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;value - a set of numbers&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h2 id=&#34;docker&#34;&gt;Docker&lt;/h2&gt;
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 
-&lt;p&gt;To run the Docker container, execute:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;docker run -p [port]:8080 witheve/eve [eve_file]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;[port]&lt;/code&gt; is an available port on your local machine. It can be &lt;code&gt;8080&lt;/code&gt; or any other port you would like. Then direct your browser to &lt;code&gt;http://localhost:[port]&lt;/code&gt; to access the editor.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;[eve_file]&lt;/code&gt; is a path to a &lt;code&gt;*.eve&lt;/code&gt; file you would like to build. The working directory of the container is &lt;code&gt;eve/build&lt;/code&gt;, so to run a program in the &lt;code&gt;eve/examples&lt;/code&gt; directory, you need to provide a relative path e.g.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;docker -p 8080:8080 witheve/eve ../examples/clock.eve
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To pass Eve files on your local machine into the container, you&amp;rsquo;ll need to mount a &lt;a href=&#34;https://docs.docker.com/engine/tutorials/dockervolumes/&#34;&gt;docker volume&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;flags&#34;&gt;Flags&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;flag  long flag  description                 
-p     parse      parse and print structure   
-a     analyze    parse order print structure
-r     run        execute eve
-S     seve       use the subsequent eve file to serve http requests  
-e     exec       read eve file and serve
-p     port       serve http on passed port
-h     help       print help
-j     json       source json object from file
-t     tracing    enable per-statement tracing
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;y = abs[value]&lt;/code&gt; returns the absolute value of the elements in &lt;code&gt;value&lt;/code&gt;. Every positive number is kept positive, but every negative number is made positive.&lt;/p&gt;
 
 &lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
 
-&lt;p&gt;Execute a &lt;code&gt;*.eve&lt;/code&gt; file.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;./eve -e ../example/clock.eve
+&lt;pre&gt;&lt;code&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;A &lt;code&gt;*.eve&lt;/code&gt; file can be passed as a default argument&lt;/p&gt;
+&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;./eve ../example.clock.eve
+&lt;p&gt;sign&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://witheve.github.io/docs/handbook/math/ceil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/math/ceil/</guid>
+      <description>
+
+&lt;h1 id=&#34;ceil&#34;&gt;ceil&lt;/h1&gt;
+
+&lt;p&gt;Round a number up to the nearest integer.&lt;/p&gt;
+
+&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;y = ceil[value]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Use a custom port&lt;/p&gt;
+&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;./eve -p 3000
+&lt;ul&gt;
+&lt;li&gt;value - a set of numbers&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;y = ceil[value]&lt;/code&gt; rounds the elements of &lt;code&gt;value&lt;/code&gt; up to the nearest integers.&lt;/p&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;match
+  y = ceil[value: 34.2]
+bind
+  [#div text: value]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Launch Eve using Docker&lt;/p&gt;
+&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;docker run -p 8080:8080 witheve/eve ../examples/clock.eve
+&lt;p&gt;&lt;a href=&#34;floor.md&#34;&gt;floor&lt;/a&gt; | &lt;a href=&#34;fix.md&#34;&gt;fix&lt;/a&gt; | &lt;a href=&#34;round.md&#34;&gt;round&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://witheve.github.io/docs/handbook/math/cos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/math/cos/</guid>
+      <description>
+
+&lt;h1 id=&#34;cos&#34;&gt;cos&lt;/h1&gt;
+
+&lt;p&gt;Calculate the cosine of an angle&lt;/p&gt;
+
+&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;y = cos[radians]
+y = cos[degrees]
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;radians - the angle in radians &lt;strong&gt;Not yet implemented&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;degrees - the angle in degrees &lt;strong&gt;Not yet implemented&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;angle - the angle in degrees&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;Calculates the cosine of an input in radians or degrees. &lt;code&gt;Cos&lt;/code&gt; operates element-wise on its inputs.&lt;/p&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;sin.md&#34;&gt;sin&lt;/a&gt; | &lt;a href=&#34;tan.md&#34;&gt;tan&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://witheve.github.io/docs/handbook/math/fix/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/math/fix/</guid>
+      <description>
+
+&lt;h2 id=&#34;not-yet-implemented&#34;&gt;Not yet implemented&lt;/h2&gt;
+
+&lt;h1 id=&#34;fix&#34;&gt;fix&lt;/h1&gt;
+
+&lt;p&gt;Round a number toward zero.&lt;/p&gt;
+
+&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;y = fix[value]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;value - a set of numbers&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;y = fix[value]&lt;/code&gt; rounds the elements of &lt;code&gt;value&lt;/code&gt; toward zero. This means that negative numbers will be rounded up to the nearest integer, while positive numbers will be rounded down.&lt;/p&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;floor.md&#34;&gt;floor&lt;/a&gt; | &lt;a href=&#34;ceil.md&#34;&gt;ceil&lt;/a&gt; | &lt;a href=&#34;round.md&#34;&gt;round&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://witheve.github.io/docs/handbook/math/floor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/math/floor/</guid>
+      <description>
+
+&lt;h1 id=&#34;floor&#34;&gt;floor&lt;/h1&gt;
+
+&lt;p&gt;Round a number down to the nearest integer.&lt;/p&gt;
+
+&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;y = floor[value]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;value - a set of numbers&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;y = floor[value]&lt;/code&gt; rounds the elements of &lt;code&gt;value&lt;/code&gt; down to the nearest integers.&lt;/p&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;match
+  y = floor[value: 34.2]
+bind
+  [#div text: value]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;ceil.md&#34;&gt;ceil&lt;/a&gt; | &lt;a href=&#34;fix.md&#34;&gt;fix&lt;/a&gt; | &lt;a href=&#34;round.md&#34;&gt;round&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://witheve.github.io/docs/handbook/math/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/math/</guid>
+      <description>
+
+&lt;h1 id=&#34;math&#34;&gt;Math&lt;/h1&gt;
+
+&lt;h2 id=&#34;arithemtic&#34;&gt;Arithemtic&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;plus (&lt;code&gt;+&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;minus (&lt;code&gt;-&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;times (&lt;code&gt;*&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;divide (&lt;code&gt;/&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;general-math&#34;&gt;General Math&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;abs/&#34;&gt;abs&lt;/a&gt; - Absolute value&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;ceil/&#34;&gt;ceil&lt;/a&gt; - Round a number up&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;floor/&#34;&gt;floor&lt;/a&gt; - Round a number down&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;round/&#34;&gt;round&lt;/a&gt; - Round a number&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;mod/&#34;&gt;mod&lt;/a&gt; - Modulo division&lt;/li&gt;
+&lt;li&gt;exp&lt;/li&gt;
+&lt;li&gt;log&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;trigonometric-functions&#34;&gt;Trigonometric Functions&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;sin/&#34;&gt;sin&lt;/a&gt; - Sine of an angle&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;cos/&#34;&gt;cos&lt;/a&gt; - Cosine of an angle&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;tan/&#34;&gt;tan&lt;/a&gt; - Tangent of an angle&lt;/li&gt;
+&lt;li&gt;asin - Arc sine of an angle&lt;/li&gt;
+&lt;li&gt;acos - Arc cosine of an angle&lt;/li&gt;
+&lt;li&gt;atan - Arc tangent of an angle&lt;/li&gt;
+&lt;li&gt;atan2 - Arc tangent using sign to determine quadrant&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;hyperbolic-functions&#34;&gt;Hyperbolic Functions&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;sinh - Hyperbolic sine of an angle&lt;/li&gt;
+&lt;li&gt;cosh - Hyperbolic cosine of an angle&lt;/li&gt;
+&lt;li&gt;tanh - Hyperbolic tangent of an angle&lt;/li&gt;
+&lt;li&gt;asinh - Hyperbolic arc sine of an angle&lt;/li&gt;
+&lt;li&gt;acosh - Hyperbolic arc cosine of an angle&lt;/li&gt;
+&lt;li&gt;atanh - Hyperbolic arc tangent of an angle&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://witheve.github.io/docs/handbook/math/mod/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/math/mod/</guid>
+      <description>
+
+&lt;h1 id=&#34;mod&#34;&gt;mod&lt;/h1&gt;
+
+&lt;p&gt;Return the modulus after division&lt;/p&gt;
+
+&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;y = mod[value, by]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;value - the number to be divided&lt;/li&gt;
+&lt;li&gt;by - the number by which to divide &lt;code&gt;value&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;Modulo division calculates the modulus (the remainder) after dividing &lt;code&gt;value&lt;/code&gt; by &lt;code&gt;by&lt;/code&gt;. If &lt;code&gt;value&lt;/code&gt; is a set of size &lt;code&gt;N&lt;/code&gt;, then &lt;code&gt;by&lt;/code&gt; can either be a scalar or another set of size &lt;code&gt;N&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://witheve.github.io/docs/handbook/math/range/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/math/range/</guid>
+      <description>
+
+&lt;h1 id=&#34;range&#34;&gt;range&lt;/h1&gt;
+
+&lt;p&gt;Generates a set of numbers between two values&lt;/p&gt;
+
+&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;y = range[from, to]
+y = range[from, to, increment] // Not implemented yet
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;from - the start of the range. Does not need to be an integer.&lt;/li&gt;
+&lt;li&gt;to - the end of the range. Does not need to be an integer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;y = range[from, to]&lt;/code&gt; generates a set of numbers starting at &lt;code&gt;from&lt;/code&gt; and ending at &lt;code&gt;to&lt;/code&gt;, in increments of 1. The current behavior of range is to exclude &lt;code&gt;to&lt;/code&gt; from the generated set.&lt;/p&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;p&gt;Generate and display the numbers between 1 and 10. In this example, &lt;code&gt;y&lt;/code&gt; should be &lt;code&gt;{1, 2, 3, 4, 5, 6, 7, 8, 9}&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;match
+  y = range[from: 1, to: 10]
+commit
+  [#div sort: y, text: y]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;example-usage&#34;&gt;Example Usage&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/witheve/Eve/blob/master/examples/tic-tac-toe.eve#L25&#34;&gt;Tic-Tac-Toe&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://witheve.github.io/docs/handbook/math/round/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/math/round/</guid>
+      <description>
+
+&lt;h1 id=&#34;round&#34;&gt;round&lt;/h1&gt;
+
+&lt;p&gt;Round a number to the nearest integer&lt;/p&gt;
+
+&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;y = round[value]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;value - a set of numbers&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;y = round[value]&lt;/code&gt; rounds the elements of &lt;code&gt;value&lt;/code&gt; toward the nearest integers.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For positive numbers - if the fractional part of the number is greater than or equal to 0.5, then the number is rounded up. Otherwise, it is rounded down.&lt;/li&gt;
+&lt;li&gt;For negative numbers - if the fractional part of the number is greater than or equal to -0.5, then the number is rounded down to the nearest negative integer. Otherwise, it is rounded up.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;floor.md&#34;&gt;floor&lt;/a&gt; | &lt;a href=&#34;ceil.md&#34;&gt;ceil&lt;/a&gt; | &lt;a href=&#34;fix.md&#34;&gt;fix&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://witheve.github.io/docs/handbook/math/sin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/math/sin/</guid>
+      <description>
+
+&lt;h1 id=&#34;sin&#34;&gt;sin&lt;/h1&gt;
+
+&lt;p&gt;Calculate the sine of an angle&lt;/p&gt;
+
+&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;y = sin[radians]
+y = sin[degrees]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;radians - the angle in radians &lt;strong&gt;Not yet implemented&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;degrees - the angle in degrees &lt;strong&gt;Not yet implemented&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;angle - the angle in degrees&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;Calculates the sine of an input in radians or degrees. &lt;code&gt;Sin&lt;/code&gt; operates element-wise on its inputs.&lt;/p&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;cos.md&#34;&gt;cos&lt;/a&gt; | &lt;a href=&#34;tan.md&#34;&gt;tan&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://witheve.github.io/docs/handbook/math/sum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/math/sum/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Not yet implemented&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;sum&#34;&gt;sum&lt;/h1&gt;
+
+&lt;p&gt;Sum the elements in a set&lt;/p&gt;
+
+&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;y = sum[given, per]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;arguments&#34;&gt;Arguments&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;given - the variable to be summed&lt;/li&gt;
+&lt;li&gt;per - specifies the set over which you are summing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;Returns the sum of elements in a set. The set must be entirely numeric or a runtime-error occurs.&lt;/p&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;sum[given: salaries, per: department]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
 </description>
     </item>
     

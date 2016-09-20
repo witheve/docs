@@ -9,16 +9,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Blocks - Eve Documentation</title>
+    <title> - Eve Documentation</title>
     <meta name="generator" content="Hugo 0.16" />
 
     
-    <link rel="canonical" href="https://witheve.github.io/docs/handbook/block/">
+    <link rel="canonical" href="https://witheve.github.io/docs/handbook/math/cos/">
     
     <meta name="author" content="Eve">
     
 
-    <meta property="og:url" content="https://witheve.github.io/docs/handbook/block/">
+    <meta property="og:url" content="https://witheve.github.io/docs/handbook/math/cos/">
     <meta property="og:title" content="Eve Documentation">
     <meta property="og:image" content="https://witheve.github.io/docs/images/logo_only.png">
     <meta name="apple-mobile-web-app-title" content="Eve Documentation">
@@ -95,7 +95,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Block
+        
       </div>
     </div>
 
@@ -250,52 +250,40 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Blocks </h1>
+			<h1> </h1>
 
 			
 
-<h1 id="blocks">Blocks</h1>
+<h1 id="cos">cos</h1>
 
-<p>Blocks compose Eve programs</p>
+<p>Calculate the cosine of an angle</p>
 
 <h2 id="syntax">Syntax</h2>
 
-<pre><code>```
-match
-  ...
-bind or commit
-  ...
-```
-
-```
-bind or commit
-  ...
-```
+<pre><code>y = cos[radians]
+y = cos[degrees]
 </code></pre>
+
+<h2 id="attributes">Attributes</h2>
+
+<ul>
+<li>radians - the angle in radians <strong>Not yet implemented</strong></li>
+<li>degrees - the angle in degrees <strong>Not yet implemented</strong></li>
+<li>angle - the angle in degrees</li>
+</ul>
 
 <h2 id="description">Description</h2>
 
-<p>Each block is written in two phases: <code>match</code> then <code>action</code>. In the <code>match</code> phase, we ask Eve for known facts, and we might transform those facts using temporary variables. In the <code>action</code> phase we perform some action on the Eve DB to either add or remove facts.</p>
+<p>Calculates the cosine of an input in radians or degrees. <code>Cos</code> operates element-wise on its inputs.</p>
 
 <h2 id="examples">Examples</h2>
 
-<p>A block with match and action phases</p>
-
-<pre><code>match
-  [name]
-bind
-  [#div text: name]
-</code></pre>
-
-<p>A black with only a commit phase</p>
-
-<pre><code>commit
-  [@Stephanie]
+<pre><code>
 </code></pre>
 
 <h2 id="see-also">See Also</h2>
 
-<p><a href="match-phase.md">match phase</a> | <a href="action-phase.md">action phase</a> | <a href="match.md">match</a> | <a href="bind.md">bind</a> | <a href="commit.md">commit</a></p>
+<p><a href="sin.md">sin</a> | <a href="tan.md">tan</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -312,7 +300,7 @@ bind
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://witheve.github.io/docs/handbook/math/tan/" title="">
+      <a href="https://witheve.github.io/docs/handbook/math/ceil/" title="">
         <span class="direction">
           Previous
         </span>
@@ -332,14 +320,14 @@ bind
 
   <div class="next">
   
-      <a href="https://witheve.github.io/docs/handbook/equivalence/" title="Equivalence">
+      <a href="https://witheve.github.io/docs/handbook/math/fix/" title="">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Equivalence
+              
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

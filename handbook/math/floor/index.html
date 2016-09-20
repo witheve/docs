@@ -9,16 +9,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Blocks - Eve Documentation</title>
+    <title> - Eve Documentation</title>
     <meta name="generator" content="Hugo 0.16" />
 
     
-    <link rel="canonical" href="https://witheve.github.io/docs/handbook/block/">
+    <link rel="canonical" href="https://witheve.github.io/docs/handbook/math/floor/">
     
     <meta name="author" content="Eve">
     
 
-    <meta property="og:url" content="https://witheve.github.io/docs/handbook/block/">
+    <meta property="og:url" content="https://witheve.github.io/docs/handbook/math/floor/">
     <meta property="og:title" content="Eve Documentation">
     <meta property="og:image" content="https://witheve.github.io/docs/images/logo_only.png">
     <meta name="apple-mobile-web-app-title" content="Eve Documentation">
@@ -95,7 +95,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Block
+        
       </div>
     </div>
 
@@ -250,52 +250,40 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Blocks </h1>
+			<h1> </h1>
 
 			
 
-<h1 id="blocks">Blocks</h1>
+<h1 id="floor">floor</h1>
 
-<p>Blocks compose Eve programs</p>
+<p>Round a number down to the nearest integer.</p>
 
 <h2 id="syntax">Syntax</h2>
 
-<pre><code>```
-match
-  ...
-bind or commit
-  ...
-```
-
-```
-bind or commit
-  ...
-```
+<pre><code>y = floor[value]
 </code></pre>
+
+<h2 id="attributes">Attributes</h2>
+
+<ul>
+<li>value - a set of numbers</li>
+</ul>
 
 <h2 id="description">Description</h2>
 
-<p>Each block is written in two phases: <code>match</code> then <code>action</code>. In the <code>match</code> phase, we ask Eve for known facts, and we might transform those facts using temporary variables. In the <code>action</code> phase we perform some action on the Eve DB to either add or remove facts.</p>
+<p><code>y = floor[value]</code> rounds the elements of <code>value</code> down to the nearest integers.</p>
 
 <h2 id="examples">Examples</h2>
 
-<p>A block with match and action phases</p>
-
 <pre><code>match
-  [name]
+  y = floor[value: 34.2]
 bind
-  [#div text: name]
-</code></pre>
-
-<p>A black with only a commit phase</p>
-
-<pre><code>commit
-  [@Stephanie]
+  [#div text: value]
 </code></pre>
 
 <h2 id="see-also">See Also</h2>
 
-<p><a href="match-phase.md">match phase</a> | <a href="action-phase.md">action phase</a> | <a href="match.md">match</a> | <a href="bind.md">bind</a> | <a href="commit.md">commit</a></p>
+<p><a href="ceil.md">ceil</a> | <a href="fix.md">fix</a> | <a href="round.md">round</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -312,7 +300,7 @@ bind
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://witheve.github.io/docs/handbook/math/tan/" title="">
+      <a href="https://witheve.github.io/docs/handbook/math/fix/" title="">
         <span class="direction">
           Previous
         </span>
@@ -332,14 +320,14 @@ bind
 
   <div class="next">
   
-      <a href="https://witheve.github.io/docs/handbook/equivalence/" title="Equivalence">
+      <a href="https://witheve.github.io/docs/handbook/math/" title="">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Equivalence
+              
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
