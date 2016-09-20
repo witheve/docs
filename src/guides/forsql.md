@@ -1,1 +1,0 @@
-# Eve for the SQL Programmer
