@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Handbooks on Eve Documentation</title>
+    <link>https://witheve.github.io/docs/handbook/</link>
+    <description>Recent content in Handbooks on Eve Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://witheve.github.io/docs/handbook/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Blocks</title>
+      <link>https://witheve.github.io/docs/handbook/block/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/block/</guid>
+      <description>
+
+&lt;h1 id=&#34;blocks&#34;&gt;Blocks&lt;/h1&gt;
+
+&lt;p&gt;Blocks compose Eve programs&lt;/p&gt;
+
+&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;```
+match
+  ...
+bind or commit
+  ...
+```
+
+```
+bind or commit
+  ...
+```
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;Each block is written in two phases: &lt;code&gt;match&lt;/code&gt; then &lt;code&gt;action&lt;/code&gt;. In the &lt;code&gt;match&lt;/code&gt; phase, we ask Eve for known facts, and we might transform those facts using temporary variables. In the &lt;code&gt;action&lt;/code&gt; phase we perform some action on the Eve DB to either add or remove facts.&lt;/p&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;p&gt;A block with match and action phases&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;match
+  [name]
+bind
+  [#div text: name]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A black with only a commit phase&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;commit
+  [@Stephanie]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;match-phase.md&#34;&gt;match phase&lt;/a&gt; | &lt;a href=&#34;action-phase.md&#34;&gt;action phase&lt;/a&gt; | &lt;a href=&#34;match.md&#34;&gt;match&lt;/a&gt; | &lt;a href=&#34;bind.md&#34;&gt;bind&lt;/a&gt; | &lt;a href=&#34;commit.md&#34;&gt;commit&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Equivalence</title>
+      <link>https://witheve.github.io/docs/handbook/equivalence/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/equivalence/</guid>
+      <description>
+
+&lt;h1 id=&#34;equivalence&#34;&gt;Equivalence&lt;/h1&gt;
+
+&lt;p&gt;Equivalence is used to match and join records&lt;/p&gt;
+
+&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;// Bind attribute to value
+[attribute: value]
+
+// Also bind an attribute to a value
+[attribute]
+attribute = value
+
+// Join two records using a bind
+[#record1 attribute1]
+[#record2 attribute2: attribute1]
+
+// Join two records using a name
+[#record1 attribute]
+[#record2 attribute]
+
+// Bind a nested record
+[attribute1: [attribute2]]
+
+// Filter attributes
+[attribute &amp;gt; value]
+[attribute &amp;gt;= value]
+[attribute &amp;lt; value]
+[attribute &amp;lt;= value]
+[attribute = value]
+[attribute != value]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;[attribute: value]&lt;/code&gt; binds &lt;code&gt;value&lt;/code&gt; to &lt;code&gt;attribute&lt;/code&gt; using the bind operator &lt;code&gt;:&lt;/code&gt;. This says that the two are equivalent, and therefore matches only records that satisfy this assertion.&lt;/p&gt;
+
+&lt;p&gt;The bind operator can apply to values, variables, or records. &lt;code&gt;[attribute2: attribute1]&lt;/code&gt; binds &lt;code&gt;attribute1&lt;/code&gt; to &lt;code&gt;attribute2&lt;/code&gt;, joining two records together.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;[attribute1: [attribute2]]&lt;/code&gt; shows a nested record. This nesting can be inline as shown, or it can be through a variable e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;record = [...]
+[attribute: record]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Names are another way to say one thing is equivalent to another; within a block, variables with the same name represent the same object or attribute of an object.&lt;/p&gt;
+
+&lt;p&gt;Names are a little more permissive in our syntax than other languages. We allow most symbols in a name (with the exception of space, @, #, //, period, question, comma, colon, and grouping symbols). So operators like &lt;code&gt;-&lt;/code&gt; and &lt;code&gt;+&lt;/code&gt; are valid symbols in a name. Furthermore, we support Unicode, so you can include symbols (such as letters from the Greek alphabet). Such permissive naming comes at the cost of requiring whitespace in expressions. For example &lt;code&gt;friend-age&lt;/code&gt; is a name, whereas &lt;code&gt;friend - age&lt;/code&gt; is subtracting &lt;code&gt;age&lt;/code&gt; from &lt;code&gt;friend&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;tip&#34;&gt;Tip&lt;/h2&gt;
+
+&lt;p&gt;In Eve, the equality operator &lt;code&gt;=&lt;/code&gt; and the bind operator &lt;code&gt;:&lt;/code&gt; have the same semantic meaning; they both assert the equivalence of two clauses, and therefore could be used interchangeably. However, by convention &lt;code&gt;:&lt;/code&gt; is used within records, while &lt;code&gt;=&lt;/code&gt; is used everywhere else.&lt;/p&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Eve Handbook</title>
+      <link>https://witheve.github.io/docs/handbook/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/</guid>
+      <description>
+
+&lt;h2 id=&#34;running&#34;&gt;Running&lt;/h2&gt;
+
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;h2 id=&#34;eve-core&#34;&gt;Eve Core&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Installation</title>
+      <link>https://witheve.github.io/docs/handbook/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/installation/</guid>
+      <description>
+
+&lt;h1 id=&#34;installation&#34;&gt;Installation&lt;/h1&gt;
+
+&lt;h2 id=&#34;from-source&#34;&gt;From Source&lt;/h2&gt;
+
+&lt;p&gt;Before you can install Eve you&amp;rsquo;ll need need LuaJIT, gcc, make, and python. Currently, building from source is only supported on Linux and OSX. On Windows, we&amp;rsquo;ve managed to compile Eve in cygwin, but have not gotten it to run yet. Contributions are welcome on this front.&lt;/p&gt;
+
+&lt;p&gt;First install gcc, make, and python using your operating system&amp;rsquo;s standard channels. Chances are you already have these. Install luajit by downloading &lt;a href=&#34;http://luajit.org/download.html&#34;&gt;LuaJIT-2.1.0-beta2&lt;/a&gt; and then in the LuaJIT directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;make
+make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;By default, LuaJIT is not added to your path, so you&amp;rsquo;ll need to do that as well:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ln -sf luajit-2.1.0-beta2 /usr/local/bin/luajit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next you&amp;rsquo;ll need to download the Eve source, either by cloning our repository&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/witheve/Eve.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or downloading the source &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;directly&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To build Eve, execute &lt;code&gt;make&lt;/code&gt; in the &lt;code&gt;eve/build&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;h2 id=&#34;docker&#34;&gt;Docker&lt;/h2&gt;
+
+&lt;p&gt;Eve is also on &lt;a href=&#34;https://hub.docker.com/r/witheve/eve/&#34;&gt;Docker Hub&lt;/a&gt;. You can get our container with the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker pull witheve/eve
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Windows Users - Docker for Windows requires Microsoft Hyper-V, which requires Windows 10. For users of earlier Windows versions, binaries are forthcoming.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Records</title>
+      <link>https://witheve.github.io/docs/handbook/records/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/records/</guid>
+      <description>
+
+&lt;h1 id=&#34;records&#34;&gt;Records&lt;/h1&gt;
+
+&lt;p&gt;Records are &lt;code&gt;attribute: value&lt;/code&gt; pairs associated to a unique ID&lt;/p&gt;
+
+&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;[attribute]
+[attribute: value]
+[attribute1: value1, ... , attributeN: valueN]
+[attribute1: [attribute2: value]]
+r = [attribute ...]
+r.attribute
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;Records are the predominate datatype in Eve. Records are used in two ways:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;In the match phase, you supply a pattern of attributes to match records in the Eve DB.&lt;/li&gt;
+&lt;li&gt;In the action phase, you supply a pattern of attributes to insert into the Eve DB.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code&gt;[attribute]&lt;/code&gt; matches all records with the given attribute.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;[attribute: value]&lt;/code&gt; matches all records with the given attribute filtered on specified value.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;[attribute1: value1, ... , attributeN: valueN]&lt;/code&gt; is the general case for records. This matches all records with all of the given attributes filtered on the given value.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;[attribute1: [attribute2: value]]&lt;/code&gt; nests a record within another record.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;r = [attribute ...]&lt;/code&gt; equates a record to a variable &lt;code&gt;r&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;r.attribute&lt;/code&gt; attributes of records can be accessed using dot notation.&lt;/p&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;p&gt;Match all records with a name, and bind a &lt;code&gt;#div&lt;/code&gt; for each one.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;match
+  [name]
+bind
+  [#div text: name]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Records can have multiple attributes&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;match
+  [#student name grade school]
+bind
+  [#div text: &amp;quot;{{name}} is in {{grade}}th grade at {{school}}&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Join records by binding attributes from one record into another record. Equate records with variables. Access record attributes using dot notation.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;match
+  school = [#school name address]
+  student = [#student school: name]
+bind
+  [#div text: &amp;quot;{{student.name}} attends {{school.name}} at {{address}}&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Records can be nested.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;commit
+  [@Jeremey spouse: [@Wendy]]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Dot notation can be composed for deep access to records&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;match
+  jeremy = [@Jeremy]
+bind
+  [#div text: &amp;quot;{{jeremy.name}} is married to {{jeremy.spouse.name}}&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;binding.md&#34;&gt;binding&lt;/a&gt; | &lt;a href=&#34;match-phase.md&#34;&gt;match phase&lt;/a&gt; | &lt;a href=&#34;action-phase.md&#34;&gt;action phase&lt;/a&gt; | &lt;a href=&#34;names.md&#34;&gt;name selector&lt;/a&gt; | &lt;a href=&#34;tags.md&#34;&gt;tag selector&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Running</title>
+      <link>https://witheve.github.io/docs/handbook/running/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/running/</guid>
+      <description>
+
+&lt;h1 id=&#34;running&#34;&gt;Running&lt;/h1&gt;
+
+&lt;h2 id=&#34;native&#34;&gt;Native&lt;/h2&gt;
+
+&lt;p&gt;To run Eve, execute the following command in the &lt;code&gt;eve/build&lt;/code&gt; directory:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./eve
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This command launches a server hosted at &lt;code&gt;http://localhost:8080&lt;/code&gt;. You can access the Eve editor by directing your browser to that address. We recommend using Chrome, since we haven&amp;rsquo;t tested on other browsers. You can configure the port with the &lt;code&gt;--port&lt;/code&gt; flag e.g. &lt;code&gt;./eve --port 1234&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you want to compile an existing program, use the &lt;code&gt;-e&lt;/code&gt; flag and provide a path to a &lt;code&gt;*.eve&lt;/code&gt; file e.g. &lt;code&gt;./eve -e ../examples/tic-tac-toe.eve&lt;/code&gt;. As you make changes in the editor, they will be reflected back into this file.&lt;/p&gt;
+
+&lt;h2 id=&#34;docker&#34;&gt;Docker&lt;/h2&gt;
+
+&lt;p&gt;To run the Docker container, execute:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker run -p [port]:8080 witheve/eve [eve_file]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;[port]&lt;/code&gt; is an available port on your local machine. It can be &lt;code&gt;8080&lt;/code&gt; or any other port you would like. Then direct your browser to &lt;code&gt;http://localhost:[port]&lt;/code&gt; to access the editor.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;[eve_file]&lt;/code&gt; is a path to a &lt;code&gt;*.eve&lt;/code&gt; file you would like to build. The working directory of the container is &lt;code&gt;eve/build&lt;/code&gt;, so to run a program in the &lt;code&gt;eve/examples&lt;/code&gt; directory, you need to provide a relative path e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker -p 8080:8080 witheve/eve ../examples/clock.eve
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To pass Eve files on your local machine into the container, you&amp;rsquo;ll need to mount a &lt;a href=&#34;https://docs.docker.com/engine/tutorials/dockervolumes/&#34;&gt;docker volume&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;flags&#34;&gt;Flags&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;flag  long flag  description                 
+p     parse      parse and print structure   
+a     analyze    parse order print structure
+r     run        execute eve
+S     seve       use the subsequent eve file to serve http requests  
+e     exec       read eve file and serve
+p     port       serve http on passed port
+h     help       print help
+j     json       source json object from file
+t     tracing    enable per-statement tracing
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;p&gt;Execute a &lt;code&gt;*.eve&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./eve -e ../example/clock.eve
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A &lt;code&gt;*.eve&lt;/code&gt; file can be passed as a default argument&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./eve ../example.clock.eve
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Use a custom port&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./eve -p 3000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Launch Eve using Docker&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker run -p 8080:8080 witheve/eve ../examples/clock.eve
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
