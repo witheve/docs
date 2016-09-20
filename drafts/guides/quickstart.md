@@ -7,9 +7,13 @@ Welcome to the Eve quickstart tutorial. We're going to get you writing your firs
 Eve is a pattern matching language; all you do in Eve is use patterns to match "data", and then update or create new "data" based on what you found. Before we get into what "data" means in Eve, let's get something on the screen:
 
 ```
-bind @browser
+bind
   [tag: "div", text: "Hello, world"]
-``` 
+```
+
+**Notes:**
+* Click *compile and run* button to see output
+* As Eve is valid [markdown][1] you must enclose code blocks in ``` (see [the raw version][2]).
 
 What's going on here? Based on the keywords alone, it looks like we're binding some text in a div to the browser. And that's exactly what this code does. The `bind` keyword tells Eve that we are binding data to a `record`. In Eve, records are sets of `attribute:value` pairs associated with a unique ID. Records live in a database, a place to store all the relevant data and state your program needs. In the `block` of code above, we're creating a new record `[tag: "div", text: "Hello, world"]` and "binding" it to the `@browser` database. 
 
@@ -18,7 +22,7 @@ That's how you create records, but how do you match records already in a databas
 ```
 match
   [name]
-bind @browser
+bind
   [tag: "div", text: "Hello, world"]
 ```
 
@@ -38,8 +42,8 @@ We can use matched records by referencing their attributes:
 ```
 match
   [name]
-bind @browser
-  [#div", text: "Hello, {{name}}"]
+bind
+  [#div, text: "Hello, {{name}}"]
 ```
 
 This block will print "Hello, Celia". Notice that instead of `tag: "div"` this time we've used the shortcut `#div`. Tags are a useful way to refer to collections of related records, so we've made it easy to use tags, but they are the same as any other attribute on a record.
@@ -49,7 +53,7 @@ Let's get a little more complicated; let's display the grade and school of stude
 ```
 match
   [#student name grade school]
-bind @browser
+bind
   [#div text: "{{name}} is a {{grade}}th grade student at {{school}}."]
 ```
 
@@ -80,8 +84,8 @@ Try re-compiling the program a couple times, and you'll see the order of sentenc
 ```
 match
   [#student name grade school]
-bind @browser
-  [#div sort: name, text: "{{name}} is a {{grade}}th grade student at {{school}}."]
+bind
+  [#div sort: name, text: "{{name}} is a student at {{school}} in grade {{grade}}."]
 ```
 
 This time when you recompile your program, the order will stay fixed.
@@ -100,7 +104,7 @@ Now let's the name of the students, and the address of the school they each atte
 match
   school = [#school name address]
   student = [#student school: name]
-bind @browser
+bind
   [#div text: "{{student.name}} attends {{school.name}} at {{address}}"]
 ```
 
@@ -110,7 +114,7 @@ bind @browser
 match
   school = [#school name address]
   student = [#student name school: name]
-bind @browser
+bind
   [#div text: "{{student.name}} attends {{school.name}} at {{address}}"]
 ```
 
@@ -123,7 +127,7 @@ Recall back in Part 1 that we added an `age` attribute to `@Celia`, but the othe
 ```
 match
   [#student name age]
-bind @browser
+bind
   [#div text: "{{name}} is {{age}} years old"]
 ```
 
@@ -146,7 +150,7 @@ An important class of expressions in Eve are aggregates, which take a set of val
 match
   students = [#student]
   total-students = count[given: students]
-bind @browser
+bind
   [#div text: "{{total-students}} are in the school district"]
 ```
 
@@ -219,3 +223,6 @@ Now that you've learned the basics of Eve, you're ready to learn more advanced c
 - Tutorials
 - Guides
 - Community
+ 
+[1]: http://incidentalcomplexity.com/#eve--markdown
+[2]: https://raw.githubusercontent.com/witheve/docs/master/drafts/guides/quickstart.md
