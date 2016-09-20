@@ -11,9 +11,11 @@ bind @browser
   [tag: "div", text: "Hello, world"]
 ``` 
 
-What's going on here? Based on the keywords alone, it looks like we're binding some text in a div to the browser. And that's exactly what this code does. The `bind` keyword tells Eve that we are binding data to a `record`. In Eve, records are sets of `attribute:value` pairs associated with a unique ID. Records live in a database, a place to store all the relevant data and state your program needs. In the `block` of code above, we're creating a new record `[tag: "div", text: "Hello, world"]` and "binding" it to the `@browser` database. 
+This is a `block` of Eve code. Blocks compose Eve programs, and are delineated by code fences (` ``` `) before and after the code. Everything inside a fence is code, everything outside of a fence is treated as a comment.  
 
-That's how you create records, but how do you match records already in a database? Let's look at another block of code:
+What's going on in this block of code? Based on the keywords alone, it looks like we're binding some text in a div to the browser. And that's exactly what this block does. The `bind` keyword tells Eve that we are binding data to a `record`. In Eve, records are sets of `attribute:value` pairs associated with a unique ID. Records live in a database, a place to store all the relevant data and state your program needs. In this block, we're creating a new record `[tag: "div", text: "Hello, world"]` and binding it to the `@browser` database.
+
+That's how you create records, but Eve is a pattern matching language, so let's match a record:
 
 ```
 match
@@ -22,16 +24,16 @@ bind @browser
   [tag: "div", text: "Hello, world"]
 ```
 
-You'll notice with this new block, the text in the browser has disappeared. Where did it go? Eve programs are composed of `blocks`, each of which follow a specific pattern: in the `match phase`, Eve matches the specified records against a database. If all of the records are matched, then the block continues to the `action phase` to update or create new records. One example of an action is a `bind`. 
+You'll notice this block doesn't provide any new output. Why not? Blocks follow a two-phase pattern: in the `match phase`, Eve matches the specified records against a database. If all of the records are matched, then the block continues to the `action phase`, where records are created or updated. One example of an action is a `bind`. 
 
-The first block omitted the match phase, so the bind is always satisfied, and thus the bound text was displayed. However, the second block contains a match phase, which is matching records with a `name` attribute. We need at least on record with a `name` attribute to satisfy this block, so let's add that:   
+The first block omitted the match phase, so the bind is always satisfied, and thus the bound text is always displayed. The second block, however, includes a match phase, which is matching records with a `name` attribute. We need at least on record with a `name` attribute to satisfy this block, so let's add that:   
 
 ```
 commit
   [name: "Celia"]
 ```
 
-`commit` is the other action Eve can take aside from `bind`. Without worrying about the difference between commit and bind, you can see that since we added a record with a `name` attribute, this satisfied the `match` in the previous block, which then wrote "Hello, world" back to the screen.
+`commit` is the other action Eve can take aside from `bind`. Without worrying about the difference between commit and bind (you can learn [here]() if you want), you can see that since we added a record with a `name` attribute, this satisfied the `match` in the previous block, which then wrote "Hello, world" to the screen.
 
 We can use matched records by referencing their attributes:
 
@@ -42,9 +44,9 @@ bind @browser
   [#div", text: "Hello, {{name}}"]
 ```
 
-This block will print "Hello, Celia". Notice that instead of `tag: "div"` this time we've used the shortcut `#div`. Tags are a useful way to refer to collections of related records, so we've made it easy to use tags, but they are the same as any other attribute on a record.
+This block will print "Hello, Celia". Notice that instead of `tag: "div"` this time we've used the shortcut `#div`. Tags are a useful way to refer to collections of related records, so we've made it easy to use tags. Nonetheless, they are the same as any other attribute on a record.
 
-Let's get a little more complicated; let's display the grade and school of students. Even though there are no students in the database yet, we can still write the code that would display them:
+Getting a little more complicated, let's display the grade and school of some students. Even though there are no students in the database yet, we can still write the code that would display them:
 
 ```
 match
@@ -53,7 +55,7 @@ bind @browser
   [#div text: "{{name}} is a {{grade}}th grade student at {{school}}."]
 ```
 
- Now that we're matching on more attributes, this block is no longer satisfied by the record we added earlier; we're missing a "student" tag, as well as grade and school attributes. Let's add them to Celia:
+Now that we're matching on more attributes, this block is no longer satisfied by the record we added earlier; we're missing a "student" tag, as well as grade and school attributes. Let's add them to Celia:
 
 ```
 match
@@ -211,11 +213,17 @@ commit
 
 ## Learning more
 
-Now that you've learned the basics of Eve, you're ready to learn more advanced concepts. You can learn more using the following resources:
+Now that you've learned the basics of Eve, we have some resources for learning the rest:
 
-- The Eve Handbook
-- Eve syntax reference
-- Example applications
-- Tutorials
-- Guides
-- Community
+- [The Eve Handbook](https://witheve.github.io/docs) - Everything you need to know about Eve.
+- [Eve syntax reference](https://witheve.github.io/assets/docs/SyntaxReference.pdf) - Eve's syntax in one page.
+- Example applications - See some working programs and explore how they work.
+- Tutorials - Step by step instructions on building Eve applications.
+- Guides - In-depth documents on topics relating to Eve.
+
+Also, we invite you to join the Eve community. There are several ways to get involved:
+
+- Join our [mailing list](https://groups.google.com/forum/#!forum/eve-talk) and get involved with the latest discussions on Eve.
+- Impact the future of Eve by getting involved with our [Request for Comments](https://github.com/witheve/rfcs) process.
+- Read our [development diary](http://incidentalcomplexity.com/).
+- Follow us on [twitter](https://twitter.com/with_eve).
