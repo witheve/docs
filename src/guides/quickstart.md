@@ -2,7 +2,7 @@
 
 Welcome to the Eve quickstart tutorial. We're going to get you writing your first Eve program, so let's get started! 
 
-## The Basics
+## Introductory Eve
 
 Eve is a pattern matching language; all you do in Eve is use patterns to match "data", and then update or create new "data" based on what you found. Before we get into what "data" means in Eve, let's get something on the screen:
 
