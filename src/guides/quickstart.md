@@ -170,10 +170,11 @@ This block will output the number of students who attend each school.
 
 At this point, you know everything necessary about Eve to complete this extra credit portion (the only additional knowledge you need is knowledge of HTML and forms). Let's review some of the key concepts:
 
-- Records are sets of attribute:value pairs.
+- Eve programs are composed of blocks of code that follow a match/action pattern.
+- Records are sets of `attribute:value` pairs.
 - You do everything in Eve by matching records and creating/updating records.
 - Records live in databases.
-- There is no ordering in Eve.
+- Eve works with sets, which have no ordering.
 - Things with the same name are the same.
 
 Your extra credit task is to build a form that allows you to add students to the database. Take a moment to think about how this might be done in Eve, given everything above. 
