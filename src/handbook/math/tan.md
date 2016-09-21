@@ -11,9 +11,8 @@ y = tan[degrees]
 
 ## Attributes
 
-- radians - the angle in radians **Not yet implemented**
-- degrees - the angle in degrees **Not yet implemented**
-- angle - the angle in degrees
+- radians - the angle in radians
+- degrees - the angle in degrees
 
 ## Description
 

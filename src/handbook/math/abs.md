@@ -1,5 +1,3 @@
-## Not Yet Implemented
-
 # abs
 
 The absolute value of a number
