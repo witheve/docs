@@ -12,6 +12,46 @@
   </url>
   
   <url>
+    <loc>https://witheve.github.io/docs/handbook/action-operators/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/action-phase/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/add/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/aggregates/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/bind/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/blocks/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/commit/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/contents/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/context/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/core/</loc>
+  </url>
+  
+  <url>
     <loc>https://witheve.github.io/docs/handbook/datetime/date/</loc>
   </url>
   
@@ -21,6 +61,66 @@
   
   <url>
     <loc>https://witheve.github.io/docs/handbook/datetime/time/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/ebnf/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/equivalence/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/events/click/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/events/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/expressions/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/functions/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/glossary/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/help/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/if/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/installation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/intro/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/is/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/match-phase/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/match/</loc>
   </url>
   
   <url>
@@ -72,19 +172,19 @@
   </url>
   
   <url>
-    <loc>https://witheve.github.io/docs/handbook/block/</loc>
+    <loc>https://witheve.github.io/docs/handbook/merge/</loc>
   </url>
   
   <url>
-    <loc>https://witheve.github.io/docs/handbook/equivalence/</loc>
+    <loc>https://witheve.github.io/docs/handbook/model/</loc>
   </url>
   
   <url>
-    <loc>https://witheve.github.io/docs/handbook/</loc>
+    <loc>https://witheve.github.io/docs/handbook/names/</loc>
   </url>
   
   <url>
-    <loc>https://witheve.github.io/docs/handbook/installation/</loc>
+    <loc>https://witheve.github.io/docs/handbook/not/</loc>
   </url>
   
   <url>
@@ -92,7 +192,55 @@
   </url>
   
   <url>
+    <loc>https://witheve.github.io/docs/handbook/remove/</loc>
+  </url>
+  
+  <url>
     <loc>https://witheve.github.io/docs/handbook/running/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/set/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/standard-library/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/statistics/count/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/statistics/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/statistics/random/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/string-interpolation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/strings/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/strings/join/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/strings/split/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/structure/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/tags/</loc>
   </url>
   
 </urlset>
