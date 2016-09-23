@@ -48,4 +48,4 @@ Instead of keeping the old record, bind replaces it with a new record. Therefore
 
 ## See Also
 
-[commit](../commit) | [contexts](../context) | [match](../match) | [match phase](../match-phase) | [action phase](../action-phase)
+[commit](../commit) | [databases](../databases) | [match](../match) |

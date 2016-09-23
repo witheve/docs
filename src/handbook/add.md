@@ -18,4 +18,4 @@ record.attribute += value
 
 ## See Also
 
-[set operator](../set) | [remove operator](../remove) | [merge operator](../merge) | [action phase](../action-phase)
+[set operator](../set) | [remove operator](../remove) | [merge operator](../merge) | [bind](../bind) | [commit](../commit)
