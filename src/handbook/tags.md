@@ -4,7 +4,7 @@ The tag selector is a shortcut for the `tag` attribute on records
 
 ## Syntax
 
-```
+```eve
 #tag
 
 #"tag with spaces"
@@ -20,7 +20,7 @@ Tags are useful for making a record unique. For instance, in a single database, 
 
 Multiple tags can be used to further specify a record. For instance:
 
-```
+```eve
 [#employee #full-time wage]
 [#employee #part-time wage]
 ```
@@ -35,7 +35,7 @@ Tags are useful for switching. Add a tag to a record to include it in a set. The
 
 Match students and display their names and the grade they're in.
 
-```
+```eve
 match
   [#student name grade]
 bind
@@ -44,7 +44,7 @@ bind
 
 Add students with good marks to the honor roll. When a student's GPA falls below 3.5, he or she will not make the honor roll because this block will not add the `#honor-roll` tag.
 
-```
+```eve
 match
   students = [#student gpa >= 3.5]
 bind
@@ -53,7 +53,7 @@ bind
 
 Display the honor roll 
 
-```
+```eve
 match
   [#student #honor-roll name]
 bind
@@ -62,4 +62,4 @@ bind
 
 ## See Also
 
-[name selector](names.md) | [records](records.md)
+[name selector](../names) | [records](../records)

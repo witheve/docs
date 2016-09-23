@@ -4,19 +4,28 @@ Blocks compose Eve programs
 
 ## Syntax
 
+~~~eve
+// A block with a match phase and an action phase
+```
+match
+  .....
+bind
+  .....
+commit
+  .....
+```
 
+// Blocks that omit the match phase are satisfied by default
+```
+bind
+  .....
+```
 
-    ```
-    match
-      ...
-    bind or commit
-      ...
-    ```
-    
-    ```
-    bind or commit
-      ...
-    ```
+```
+commit
+  .....
+```
+~~~
 
 ## Description
 
@@ -26,7 +35,7 @@ Each block is written in two phases: `match` then `action`. In the `match` phase
 
 A block with match and action phases
 
-```
+```eve
 match
   [name]
 bind
@@ -35,11 +44,11 @@ bind
 
 A black with only a commit phase
 
-```
+```eve
 commit
   [@Stephanie]
 ```
 
 ## See Also
 
-[match phase](match-phase.md) | [action phase](action-phase.md) | [match](match.md) | [bind](bind.md) | [commit](commit.md)
+[match phase](../match-phase) | [action phase](../action-phase) | [match](../match) | [bind](../bind) | [commit](../commit)

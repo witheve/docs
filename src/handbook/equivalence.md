@@ -4,7 +4,7 @@ Equivalence is used to match and join records
 
 ## Syntax
 
-```
+```eve
 // Bind attribute to value
 [attribute: value]
 
@@ -40,7 +40,7 @@ The bind operator can apply to values, variables, or records. `[attribute2: attr
 
 `[attribute1: [attribute2]]` shows a nested record. This nesting can be inline as shown, or it can be through a variable e.g.
 
-```
+```eve
 record = [...]
 [attribute: record]
 ``` 
@@ -51,7 +51,7 @@ Names are a little more permissive in our syntax than other languages. We allow 
 
 ## Tip
 
-In Eve, the equality operator `=` and the bind operator `:` have the same semantic meaning; they both assert the equivalence of two clauses, and therefore could be used interchangeably. However, by convention `:` is used withing records, while `=` is used everywhere else. 
+In Eve, the equality operator `=` and the bind operator `:` have the same semantic meaning; they both assert the equivalence of two clauses, and therefore could be used interchangeably. However, by convention `:` is used within records, while `=` is used everywhere else. 
 
 ## Examples
 

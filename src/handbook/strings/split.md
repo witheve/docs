@@ -4,26 +4,26 @@ splits a string at the given delimiter
 
 ## Syntax
 
-```
+```eve
 (token, index) = split[text, by]
 ```
 
 ## Attributes
 
-- text - the text to be split 
-- by - the delimiter at which to split the text. An empty string will split the text at every character.
-- token - the recovered tokens after the split
-- index - the indices of the tokens in the original text  
+- `text` - the text to be split 
+- `by` - the delimiter at which to split the text. An empty string will split the text at every character.
+- `token` - the recovered tokens after the split
+- `index` - the indices of the tokens in the original text  
 
 ## Description
 
-Splits a `text` into `tokens` according to the given delimiter, `by`. Returns the `tokens` and the `indices` of those tokens in the original string.
+`(token, index) = split[text, by]` splits a `text` into `tokens` according to the given delimiter, `by`. Returns `token` and `index` of those tokens in the original string.
 
 ## Examples
 
 Splits a string at every character
 
-```
+```eve
 match
   (token, index) = split[text: "hello, world", by: ""]
 bind
@@ -33,7 +33,7 @@ bind
 
 Split a sentence into words and display them in order
 
-```
+```eve
 match
   (token, index) = split[text: "the quick brown fox", by: " "]
 bind
@@ -42,4 +42,4 @@ bind
 
 ## See Also
 
-[concat](concat.md) | [join](join.md) | [char-at](char-at.md) | [find](find.md) | [length](length.md) | [replace](replace.md)
+[concat](../concat) | [join](../join) | [char-at](../char-at) | [find](../find) | [length](../length) | [replace](../replace)

@@ -4,7 +4,7 @@ signifies the beginning of the match phase
 
 ## Syntax
 
-```
+```eve
 match
 match @context
 match (@context1, @context2, ... @contextN)
@@ -22,7 +22,7 @@ match (@context1, @context2, ... @contextN)
 
 Match a record
 
-```
+```eve
 match
   [name]
 bind
@@ -31,11 +31,11 @@ bind
 
 Omit the match phase
 
-```
+```eve
 bind
   [#div text: "Hello, world"]
 ```
 
 ## See Also
 
-[bind](bind.md) | [commit](commit.md) | [contexts](context.md) | [match phase](match-phase.md) | [action phase](action-phase.md)
+[bind](../bind) | [commit](../commit) | [contexts](../context) | [match phase](../match-phase) | [action phase](../action-phase)

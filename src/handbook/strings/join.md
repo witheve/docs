@@ -4,25 +4,25 @@ Joins a set of strings into a single string
 
 ## Syntax
 
-```
+```eve
 text = join[token, index, with]
 ```
 
 ## Attributes
 
-- token - set of elements to be joined
-- index - indicates the order of the `tokens` in the joined string
-- with - inserted between every element in `tokens`
+- `token` - set of elements to be joined
+- `index` - indicates the order of the `tokens` in the joined string
+- `with` - inserted between every element in `tokens`
 
 ## Description
 
-Takes `tokens` and their `indices` and joins them together with `with`, returning the full string as text.
+`text = join[token, index, with]` takes `tokens` tokens together using `with` in an order specified by `index`. Returns the joined string.
 
 ## Examples
 
 Split a sentence into tokens
 
-```
+```eve
 match
   (token, index) = split[text: "the quick brown fox", by: " "]
 bind
@@ -31,7 +31,7 @@ bind
 
 Join the tokens into a sentence again, but with hyphens instead of spaces
 
-```
+```eve
 match
   [#token token index]
   text = join[token, index, with: " "]
@@ -41,4 +41,4 @@ bind
 
 ## See Also
 
-[concat](concat.md) | [join](join.md) | [split](split.md) | [char-at](char-at.md) | [find](find.md) | [length](length.md) | [replace](replace.md)
+[concat](../concat) | [join](../join) | [split](../split) | [char-at](../char-at) | [find](../find) | [length](../length) | [replace](../replace)

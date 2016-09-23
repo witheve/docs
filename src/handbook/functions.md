@@ -1,8 +1,8 @@
 # Functions
 
-## syntax
+## Syntax
 
-```
+```eve
 value = fn[argument]
 
 value = fn[argument1, ..., argumentN]
@@ -14,23 +14,23 @@ value = fn[argument1, ..., argumentN]
 
 ## Description
 
-It turns out that functions as they exist in other languages are mostly obviated by Eve's tag semantics. Consider the following two statements
+Functions as they exist in other languages are mostly obviated by Eve's tag semantics. Consider the following two statements
 
-```
+```eve
 x = sin(90)                // A typical function call
-[#sin deg: 90, return: x]  // An Eve object
+[#sin deg: 90, return: x]  // An Eve record
 ```
 
-These statements accomplish the same objective, of storing the sine of an angle in a result variable. The Eve syntax is at a disadvantage though, because it cannot be composed into an expression like a typical function. Therefore, we propose the following syntax for functions in Eve:
+These statements accomplish the same objective, of storing the sine of an angle in a result variable. The Eve syntax is at a disadvantage though, because it cannot be composed into an expression like a typical function. Therefore, specific Eve records can be used as if they were functions:
 
-```
-x = sin[deg: 90]
+```eve
+x = sin[degrees: 90]
 ```
 
 which is sugar for:
 
-```
-[#sin #function deg: 90, return: x]
+```eve
+[#sin #function degrees: 90, return: x]
 ```
 
 The return attribute is implicitly the value of `sin[deg]`, so now the object can be used and composed like functions in other languages. We're proposing this syntax for several reasons.
@@ -40,17 +40,22 @@ The return attribute is implicitly the value of `sin[deg]`, so now the object ca
 - Explicit parameters permit arguments in any order, which makes optional arguments easy to implement.
 - Finally, since functions are really just objects, you can extend a function so it can be used in new ways. For example, we could extend the `sin` function to support radians:
 
-
-        Calculate the sine of an angle given in radians
-        ```
-        match
-          return = sin[angle: value? * π / 180]
-        bind
-          sin[rad: value?, return]
-        ```
+~~~eve
+Calculate the sine of an angle given in radians
+```
+match
+  return = sin[degrees: value? * π / 180]
+bind
+  sin[custom-coordinates: value?, return]
+```
+~~~
 
 The `?` notation here indicates that the value is an input. We can use the extended function like so:
 
+```eve
+x = sin[custom-coordinates: π / 2]
 ```
-x = sin[rad: π / 2]
-```
+
+## Examples
+
+## See Also

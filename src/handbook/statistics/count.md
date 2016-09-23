@@ -4,15 +4,15 @@ Returns the number of elements in a set
 
 ## Syntax
 
-```
+```eve
 y = count[given]
 y = count[given, per]
 ```
 
 ## Attributes
 
-- given - the set to count over
-- per - _optional_ - one or more attributes by which to group `given`.
+- `given` - the set to count over
+- `per` - _optional_ - one or more attributes by which to group `given`.
 
 ## Description
 
@@ -24,7 +24,7 @@ y = count[given, per]
 
 Before we get to the `count` examples, let's add some students. Each `#student` has a `grade` and a `school`. Grades are one of 10, 11, or 12. Schools are one of "West" and "East".
 
-```
+```eve
 commit
   [#student @Diedra grade: 10 school: "West"]
   [#student @Celia grade: 10 school: "West"]
@@ -40,7 +40,7 @@ commit
 
 First let's count the total number of students in the school district.
 
-```
+```eve
 match
   students = [#student]
   enrollment = count[given: students]
@@ -50,7 +50,7 @@ bind
 
 Now let's count the number of students in each school.
 
-```
+```eve
 match
   students = [#student school]
   school-enrollment = count[given: students, per: school]
@@ -60,7 +60,7 @@ bind
 
 We could have similarly counted the number of students in each grade across the district.
 
-```
+```eve
 match
   students = [#student grade]
   grade-enrollment = count[given: students, per: grade]
@@ -70,7 +70,7 @@ bind
 
 Finally, we can count the number of students per grade, per school. 
 
-```
+```eve
 match
   students = [#student grade school]
   grade-school-enrollment = count[given: students, per: (grade, school)]
@@ -83,3 +83,4 @@ bind
 - [TodoMVC](https://github.com/witheve/Eve/blob/master/examples/todomvc.eve#L31)
 - [Tic-Tac-Toe](https://github.com/witheve/Eve/blob/master/examples/tic-tac-toe.eve#L67)
 
+## See Also

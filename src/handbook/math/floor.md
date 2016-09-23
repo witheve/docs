@@ -4,13 +4,13 @@ Round a number down to the nearest integer.
 
 ## Syntax
 
-```
+```eve
 y = floor[value]
 ```
 
 ## Attributes
 
-- value - a set of numbers
+- `value` - a set of numbers
 
 ## Description
 
@@ -18,12 +18,16 @@ y = floor[value]
 
 ## Examples
 
-```
+Calculate the floor of `34.2`
+
+```eve
 match
   y = floor[value: 34.2]
 bind
   [#div text: value]
 ```
+
+The result is `34`.
 
 ## See Also
 

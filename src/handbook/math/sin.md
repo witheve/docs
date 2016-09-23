@@ -4,26 +4,33 @@ Calculate the sine of an angle
 
 ## Syntax
 
-```
+```eve
 y = sin[radians]
 y = sin[degrees]
 ```
 
 ## Attributes
 
-- radians - the angle in radians
-- degrees - the angle in degrees
+- `radians` - the angle in radians
+- `degrees` - the angle in degrees
 
 ## Description
 
-Calculates the sine of an input in radians or degrees. `Sin` operates element-wise on its inputs.
+`y = sin[degrees]` calculates the sine of an input in degrees. 
+
+`y = sin[radians]` calculates the sine of an input in radians.
+
+`sin` operates element-wise on its inputs.
 
 ## Examples
 
-```
-
+```eve
+match
+  y = sin[degrees: 90]
+bind @browser
+  [#div text: y]
 ```
 
 ## See Also
 
-[cos](cos.md) | [tan](tan.md) 
+[cos](../cos) | [tan](../tan) 

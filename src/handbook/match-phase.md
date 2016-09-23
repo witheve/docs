@@ -16,4 +16,4 @@ In the match phase, you match records in the Eve DB, whereas in the action phase
 
 ## See Also
 
-[match](match.md) | [bind](bind.md) | [commit](commit.md) | [contexts](context.md)
+[match](../match) | [bind](../bind) | [commit](../commit) | [contexts](../context)

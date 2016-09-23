@@ -4,7 +4,7 @@ Records are `attribute: value` pairs associated to a unique ID
 
 ## Syntax
 
-```
+```eve
 [attribute]
 [attribute: value]
 [attribute1: value1, ... , attributeN: valueN]
@@ -36,7 +36,7 @@ Records are the predominate datatype in Eve. Records are used in two ways:
 
 Match all records with a name, and bind a `#div` for each one.
 
-```
+```eve
 match
   [name]
 bind
@@ -45,7 +45,7 @@ bind
 
 Records can have multiple attributes
 
-```
+```eve
 match
   [#student name grade school]
 bind
@@ -54,7 +54,7 @@ bind
 
 Join records by binding attributes from one record into another record. Equate records with variables. Access record attributes using dot notation. 
 
-```
+```eve
 match
   school = [#school name address]
   student = [#student school: name]
@@ -64,14 +64,14 @@ bind
 
 Records can be nested.
 
-```
+```eve
 commit
   [@Jeremey spouse: [@Wendy]]
 ```
 
 Dot notation can be composed for deep access to records
 
-```
+```eve
 match
   jeremy = [@Jeremy]
 bind
@@ -80,4 +80,4 @@ bind
 
 ## See Also
 
-[binding](binding.md) | [match phase](match-phase.md) | [action phase](action-phase.md) | [name selector](names.md) | [tag selector](tags.md)
+[bind](../bind) | [match phase](../match-phase) | [action phase](../action-phase) | [name selector](../names) | [tag selector](../tags)

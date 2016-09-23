@@ -4,7 +4,7 @@ The name selector is a shortcut for the `name` attribute on records
 
 ## Syntax
 
-```
+```eve
 @name
 
 @"name with spaces"
@@ -18,21 +18,21 @@ The name selector is used to select a specific named record from the Eve DB. Nam
 
 Add someone with a name
 
-```
+```eve
 commit
   [name: "Celia"]
 ```
 
 Add someone with a name using the name operator
 
-```
+```eve
 commit
   [@Celia]
 ```
 
 Match someone with a name, then use the name attribute
 
-```
+```eve
 match
   celia = [@Celia]
 bind
@@ -41,4 +41,4 @@ bind
 
 ## See Also
 
-[tag selector](tags.md) | [records](records.md)
+[tag selector](../tags) | [records](../records)

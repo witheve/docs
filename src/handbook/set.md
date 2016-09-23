@@ -4,13 +4,13 @@ Sets the value of an attribute on a record
 
 ## Syntax
 
-```
+```eve
 record.attribute := value
 ```
 
 ## Description
 
-`record.attribute := value` sets `attribute` to `value`. If `record` already has an attribute with a value, then this will overwrite it. If `record` doesn't have an attribute with this name already, then this will create the attribute and set it to `value`.
+`record.attribute := value` sets `attribute` to `value`. If `record` already has an attribute with a value, then this will overwrite it. Otherwise, if `record` doesn't have an attribute with this name already, then `:=` will create the attribute and set it to `value`.
 
 `attribute` can be an attribute already on the record, or it can be a new attribute.
 
@@ -18,9 +18,9 @@ record.attribute := value
 
 ## Examples
 
-Set the `age` of `#student`s that don't have one already
+Set the `age` of `#student`s that don't already have an age.
 
-```
+```eve
 match
   student = [#student]
   age = if student.age then student.age
@@ -31,4 +31,4 @@ bind
 
 ## See Also
 
-[add operator](add.md) | [remove operator](remove.md) | [merge operator](merge.md) | [action phase](action-phase.md)
+[add operator](../add) | [remove operator](../remove) | [merge operator](../merge) | [action phase](../action-phase)

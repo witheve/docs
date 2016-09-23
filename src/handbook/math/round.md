@@ -4,13 +4,13 @@ Round a number to the nearest integer
 
 ## Syntax
 
-```
+```eve
 y = round[value]
 ```
 
 ## Attributes
 
-- value - a set of numbers
+- `value` - a set of numbers
 
 ## Description
 
@@ -21,10 +21,15 @@ y = round[value]
 
 ## Examples
 
-```
-
+```eve
+match
+  y = round[value: 34.5]
+  z = round[value: 34.4]
+bind
+  [#div text: "The round of 34.5 is {{y}}"]
+  [#div text: "The round of -34.4 is {{z}}"]
 ```
 
 ## See Also
 
-[floor](floor.md) | [ceil](ceil.md) | [fix](fix.md)
+[floor](../floor) | [ceil](../ceil) | [fix](../fix)

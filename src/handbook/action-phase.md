@@ -18,11 +18,20 @@ In the action phase, you create or update records, whereas in the match phase yo
 
 A block with only an action phase
 
+```eve
+commit
+  [@Corey]
 ```
-bind
-  [#div text: "Hello, world"]
+
+A block with a match phase and an action phase
+
+```eve
+match // Match phase
+  [name]
+bind @browser // Action phase
+  [#div text: "Hello, {{name}}"]
 ```
 
 ## See Also
 
-[bind](bind.md) | [commit](commit.md) | [match](match.md) | [match phase](match-phase.md) | [contexts](context.md)
+[bind](../bind) | [commit](../commit) | [match](../match) | [match phase](../match-phase) | [contexts](../context)

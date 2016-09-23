@@ -2,7 +2,7 @@
 
 Aggregates are functions that take an input set and produce an output set, typically with a different cardinality than the input set. Aggregates are called just like other functions in Eve. For example, `count` takes an input set of cardinality `N` and produces a set of cardinality `1` as the result. A familiar analogue in other languages is the `reduce()` function. Here is an example of an aggregate in use:
 
-```
+```eve
 total-burgers = sum[value: burgers, given: (burgers, guest)]
 ```
 

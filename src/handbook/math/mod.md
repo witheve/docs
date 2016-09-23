@@ -4,14 +4,14 @@ Return the modulus after division
 
 ## Syntax
 
-```
+```eve
 y = mod[value, by]
 ```
 
 ## Attributes
 
-- value - the number to be divided
-- by - the number by which to divide `value`
+- `value` - the number to be divided
+- `by` - the number by which to divide `value`
 
 ## Description
 
@@ -22,3 +22,5 @@ Modulo division calculates the modulus (the remainder) after dividing `value` by
 ```
 
 ```
+
+## See Also

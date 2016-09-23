@@ -4,7 +4,7 @@ Conditional equivalence
 
 ## Syntax
 
-```
+```eve
 result = if record then value
   
 result = if record then value
@@ -52,21 +52,21 @@ A final feature of the if statement is multiple returns. For instance, we could 
 
 Basic usage
 
-```
+```eve
 burger-switch = if guest.burgers = 1 then "burger"
                 else "burgers"
 ```
 
-```
+```eve
 [@"my party" date]
 friend = [#friend busy-dates != date]
 guest = if friend then friend
         if friend.spouse then friend.spouse
 ```
 
-Using `else-if`
+Using `else if`
 
-```
+```eve
 burgers = if guest = [@Arthur] then 3
           else if guest = [#hungry] then 2
           else if guest = [#vegetarian] then 0
@@ -75,11 +75,11 @@ burgers = if guest = [@Arthur] then 3
 
 Multiple returns
 
-```
+```eve
 (burgers, status) = if guest = [@Arthur] then (3, #fed)
                     else if guest = [#hungry] then (2, #fed)
                     else if guest = [#vegetarian] then (0, #needsfood)
                     else (1, #fed)
 ```
 
-## SEe Also
+## See Also

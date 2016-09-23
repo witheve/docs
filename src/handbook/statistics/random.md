@@ -4,13 +4,13 @@ Generates a random number between 0 and 1
 
 ## Syntax
 
-```
+```eve
 y = random[seed]
 ```
 
 ## Attributes
 
-- seed - initializes the random number generator. The seed itself does not need to be random.
+- `seed` - initializes the random number generator. The seed itself does not need to be random.
 
 ## Description
 
@@ -22,7 +22,7 @@ y = random[seed]
 
 Prints a random number every second. The time attribute in `#div` is used to make each generated number unique for display purposes.
 
-```
+```eve
 match 
   [#time minutes seconds]
   x = random[seed: seconds]
@@ -32,7 +32,7 @@ commit
 
 Generate a random number between `min` and `max`
 
-```
+```eve
 match
   min = 5
   max = 10
@@ -44,3 +44,5 @@ bind
 ### Example Usage
 
 - [Flappy Bird](https://github.com/witheve/Eve/blob/master/examples/flappy.eve)
+
+## See Also

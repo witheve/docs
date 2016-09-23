@@ -4,13 +4,13 @@ The absolute value of a number
 
 ## Syntax
 
-```
+```eve
 y = abs[value]
 ```
 
 ## Attributes
 
-- value - a set of numbers
+- `value` - a set of numbers
 
 ## Description
 
@@ -18,10 +18,17 @@ y = abs[value]
 
 ## Examples
 
+Get the absolute value of a number
+
+```eve
+match
+  y = abs[value: -3]
+bind @browser
+  [#div text: y]
 ```
 
-```
+Displays the number `3`.
 
 ## See Also
 
-sign
+[sign](../sign) |

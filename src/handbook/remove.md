@@ -4,7 +4,7 @@ Removes a value from an attribute on a record
 
 ## Syntax
 
-```
+```eve
 record.attribute -= value
 ```
 
@@ -18,4 +18,4 @@ record.attribute -= value
 
 ## See Also
 
-[set operator](set.md) | [add operator](add.md) | [merge operator](merge.md) | [action phase](action-phase.md)
+[set operator](../set) | [add operator](../add) | [merge operator](../merge) | [action phase](../action-phase)

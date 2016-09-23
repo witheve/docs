@@ -2,7 +2,7 @@
 
 We support string interpolation (concatenation) using double curly braces embedded in a string, e.g. `"{{ }}"`. In the party program, when we print output, we use string interpolation to format the results:
 
-```
+```eve
 bind
   [#div children:
     [#h1 text: "Guest List"]

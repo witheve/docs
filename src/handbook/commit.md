@@ -4,7 +4,7 @@ adds or updates records while keeping old versions
 
 ## Syntax
 
-```
+```eve
 commit
 
 commit @context
@@ -24,7 +24,7 @@ commit (@context1, ..., @contextN)
 
 Bind and commit are both action fences, so they have close but very different behavior. Let's look at how the two differ. Consider the following block that reads the current time, and prints it to the screen:
 
-```
+```eve
 match
   [#time seconds]
 commit
@@ -35,7 +35,7 @@ When you run this, you'll see that every second you a new number gets added to t
 
 Now let's look at what bind does:
 
-```
+```eve
 match
   [#time seconds]
 bind
@@ -57,4 +57,4 @@ If you `bind` on the event, then the result will disappear as soon as the event 
 
 ## See Also
 
-[bind](bind.md) | [contexts](context.md) | [match](match.md) | [match phase](match-phase.md) | [action phase](action-phase.md)
+[bind](../bind) | [contexts](../context) | [match](../match) | [match phase](../match-phase) | [action phase](../action-phase)

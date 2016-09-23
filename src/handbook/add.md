@@ -4,7 +4,7 @@ Adds a value to an attribute on a record
 
 ## Syntax
 
-```
+```eve
 record.attribute += value
 ```
 
@@ -18,4 +18,4 @@ record.attribute += value
 
 ## See Also
 
-[set operator](set.md) | [remove operator](remove.md) | [merge operator](merge.md) | [action phase](action-phase.md)
+[set operator](../set) | [remove operator](../remove) | [merge operator](../merge) | [action phase](../action-phase)
