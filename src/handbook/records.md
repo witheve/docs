@@ -88,4 +88,4 @@ bind
 
 ## See Also
 
-[bind](../bind) | [match phase](../match-phase) | [action phase](../action-phase) | [name selector](../names) | [tag selector](../tags)
+[match](../match) | [bind](../bind) | [commit](../commit) | [name selector](../names) | [tag selector](../tags)
