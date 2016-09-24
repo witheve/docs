@@ -1,4 +1,11 @@
-# Eve Quickstart Tutorial
+---
+menu:
+  main:
+    parent: "Guides"
+title: "Quickstart"
+---
+
+# Eve Quickstart Guide
 
 Welcome to the Eve quickstart tutorial. We're going to get you writing your first Eve program, so let's get started! 
 
@@ -6,7 +13,7 @@ Welcome to the Eve quickstart tutorial. We're going to get you writing your firs
 
 Eve is a pattern matching language; all you do in Eve is use patterns to match "data", and then update or create new "data" based on what you found. Before we get into what "data" means in Eve, let's get something on the screen:
 
-```
+```eve
 bind @browser
   [tag: "div", text: "Hello, world"]
 ``` 
@@ -17,7 +24,7 @@ What's going on in this block of code? Based on the keywords alone, it looks lik
 
 That's how you create records, but Eve is a pattern matching language, so let's match a record:
 
-```
+```eve
 match
   [name]
 bind @browser
@@ -28,7 +35,7 @@ You'll notice this block doesn't provide any new output. Why not? Blocks follow 
 
 The first block omitted the match phase, so the bind is always satisfied, and thus the bound text is always displayed. The second block, however, includes a match phase, which is matching records with a `name` attribute. We need at least on record with a `name` attribute to satisfy this block, so let's add that:   
 
-```
+```eve
 commit
   [name: "Celia"]
 ```
@@ -37,7 +44,7 @@ commit
 
 We can use matched records by referencing their attributes:
 
-```
+```eve
 match
   [name]
 bind @browser
@@ -48,7 +55,7 @@ This block will print "Hello, Celia". Notice that instead of `tag: "div"` this t
 
 Getting a little more complicated, let's display the grade and school of some students. Even though there are no students in the database yet, we can still write the code that would display them:
 
-```
+```eve
 match
   [#student name grade school]
 bind @browser
@@ -57,7 +64,7 @@ bind @browser
 
 Now that we're matching on more attributes, this block is no longer satisfied by the record we added earlier; we're missing a "student" tag, as well as grade and school attributes. Let's add them to Celia:
 
-```
+```eve
 match
   celia = [@Celia]
 bind
@@ -68,7 +75,7 @@ In a similar fashion to `#`, the `@` operator is shorthand for the name attribut
 
 Celia is cool and all, but let's add some more students to our database:
 
-```
+```eve
 commit
   [#student @Diedra grade: 12 school: "West"]
   [#student @Michaela grade: 11 school: "West"]
@@ -79,7 +86,7 @@ Three sentences are now printed, one for each student that satisfies the record.
 
 Try re-compiling the program a couple times, and you'll see the order of sentences sometimes changes. This is because **there is no ordering in Eve; blocks are not ordered, statements are not ordered, and results are therefore not ordered**. If you want to order elements, you must impose an ordering yourself. We can ask the browser to draw elements in an order with the "sort" attribute: 
 
-```
+```eve
 match
   [#student name grade school]
 bind @browser
@@ -90,7 +97,7 @@ This time when you recompile your program, the order will stay fixed.
 
 Let's make thing a little more interesting. We'll add some records about the schools the students attend:
 
-```
+```eve
 commit
   [#school @West address: "1234 Main Street"]
   [#school @East address: "5678 Broad Street"]
@@ -98,7 +105,7 @@ commit
 
 Now let's the name of the students, and the address of the school they each attend. How? **We can match two records and then "join" them together by associating attributes from one record with the other**:
 
-```
+```eve
 match
   school = [#school name address]
   student = [#student school: name]
@@ -108,7 +115,7 @@ bind @browser
 
 **In Eve, things named the same are the same**. So, `name` in the student record is the same `name` in the school record. By using `name` in both records, we join them together. Be careful though, because this will be wrong:
 
-```
+```eve
 match
   school = [#school name address]
   student = [#student name school: name]
@@ -118,11 +125,11 @@ bind @browser
 
 This asks for students with the same name as their school, which doesn't match any records; there are no students with the name "East" or "West". Instead, we can access the school's name using the dot operator.
 
-## Advanced Eve
+## Intermediate Eve
 
 Recall back in Part 1 that we added an `age` attribute to `@Celia`, but the other `#students` don't have ages. Therefore the following block only displays Celia's age: 
 
-```
+```eve
 match
   [#student name age]
 bind @browser
@@ -131,7 +138,7 @@ bind @browser
 
 Let's pretend that all students entered first grade at 6 years old? Therefore, with a student's grade we can calculate their age and add it to the student's record.
 
-```
+```eve
 match
   student = [#student]
   age = if student.age then student.age
@@ -144,7 +151,7 @@ This block selects all students, and uses `if-then` to conditionally set the stu
 
 An important class of expressions in Eve are aggregates, which take a set of values and turn them into a single value. This is akin to the "fold" or "reduce" function in many language. Let's count the total number of `#students` in the school district:  
 
-```
+```eve
 match
   students = [#student]
   total-students = count[given: students]
@@ -156,7 +163,7 @@ Notice the syntax for `count`. Count is like a function in other languages becau
 
 One special thing about functions and aggregates in general are that the arguments are explicit. This means you can pass in arguments in any order, and you can provide optional arguments or alternative calling patterns. For instance, count has an optional argument `per` that allows you group the output:
 
-```
+```eve
 match
   students = [#student school]
   students-per-school = count[given: students, per: school]
@@ -181,7 +188,7 @@ Your extra credit task is to build a form that allows you to add students to the
 
 First, let's make the form. You've already displayed a `#div`, and in the same way we can draw `#input`s and a `#button`:
 
-```
+```eve
 bind
   [#div children: 
     [#div    sort: 1, text: "Name:"]
@@ -197,7 +204,7 @@ We've added some names to the inputs and the button so we can easily match them 
 
 Remember, everything in Eve is a record, and the `#click` event is no different. We can react to a `#click` by matching on it, and the form elements we just created. Then we take their values, create a record, and reset the inputs: 
 
-```
+```eve
 match
   [#click element: [@submit]]
   name = [@name-input]

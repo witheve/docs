@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: "Guides"
+title: "blocks"
+---
+
 # Blocks
 
 Blocks compose Eve programs

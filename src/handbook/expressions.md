@@ -1,3 +1,11 @@
+---
+menu:
+  main:
+    parent: "Handbook"
+title: "Expressions"
+weight: 3
+---
+
 # Expressions
 
 Expressions are used to perform calculations using constants and attributes of objects, e.g. `party.burgers / party.guest-count` would calculate the ratio of burgers to the number of guests. Note that `guest-count` is a variable, not an expression. In expressions, you are required to add whitespace between operators. This helps with readability, but it also allows us to add more characters to names.

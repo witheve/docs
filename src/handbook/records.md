@@ -1,3 +1,11 @@
+---
+menu:
+  main:
+    parent: "Handbook"
+title: "Records"
+weight: 1
+---
+
 # Records
 
 Records are `attribute: value` pairs associated to a unique ID
@@ -17,8 +25,8 @@ r.attribute
 
 Records are the predominate datatype in Eve. Records are used in two ways:
 
-1. In the match phase, you supply a pattern of attributes to match records in the Eve DB.
-2. In the action phase, you supply a pattern of attributes to insert into the Eve DB.
+1. In a `match` you supply a pattern of attributes to match records in the Eve DB.
+2. In a `bind` or `commit`, you supply a pattern of attributes to insert into the Eve DB.
 
 `[attribute]` matches all records with the given attribute.
 
