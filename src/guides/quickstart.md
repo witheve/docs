@@ -26,7 +26,7 @@ bind
 
 You'll notice this block doesn't provide any new output. Why not? Blocks follow a two-phase pattern: in the `match phase`, Eve matches the specified records against a database. If all of the records are matched, then the block continues to the `action phase`, where records are created or updated. One example of an action is a `bind`. 
 
-The first block omitted the match phase, so the bind is always satisfied, and thus the bound text is always displayed. The second block, however, includes a match phase, which is matching records with a `name` attribute. We need at least on record with a `name` attribute to satisfy this block, so let's add that:   
+The first block omitted the match phase, so the bind is always satisfied, and thus the bound text is always displayed. The second block, however, includes a match phase, which is matching records with a `name` attribute. We need at least one record with a `name` attribute to satisfy this block, so let's add that:   
 
 ```
 commit
