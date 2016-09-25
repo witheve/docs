@@ -11,7 +11,7 @@ bind
   [tag: "div", text: "Hello, world"]
 ``` 
 
-This is a [`block`](https://witheve.github.io/docs/handbook/block) of Eve code. Blocks compose Eve programs, and are delineated by code fences, which are three backticks (```) in a row on a newline before and after the code (click [here](docs.) to see the code fences in the source of this document). Everything inside a fence is code, everything outside of a fence is treated as a comment.  
+This is a [`block`](https://witheve.github.io/docs/handbook/block) of Eve code. Blocks compose Eve programs, and are delineated by code fences, which are three backticks (```) in a row on a newline before and after the code (click [here](../../../../raw/master/src/guides/quickstart.md) to see the code fences in the source of this document). Everything inside a fence is code, everything outside of a fence is treated as a comment.  
 
 What's going on in this block of code? Based on the keywords alone, it looks like we're binding some text in a div to the browser. And that's exactly what this block does. The `bind` keyword tells Eve that we are binding data to a `record`. In Eve, records are sets of `attribute:value` pairs associated with a unique ID. Records live in a database, a place to store all the relevant data and state your program needs. In this block, we're creating a new record `[tag: "div", text: "Hello, world"]` and binding it to the database.
 
