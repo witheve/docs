@@ -33,7 +33,7 @@ commit
   [name: "Celia"]
 ```
 
-`commit` is the other action Eve can take aside from `bind`. Without worrying about the difference between commit and bind (you can learn [here]() if you want), you can see that since we added a record with a `name` attribute, this satisfied the `match` in the previous block, which then wrote "Hello, world" to the screen.
+`commit` is the other action Eve can take aside from `bind`. Without worrying about the difference between commit and bind (you can learn [here](../handbook/bind.md#bind-vs-commit) if you want), you can see that since we added a record with a `name` attribute, this satisfied the `match` in the previous block, which then wrote "Hello, world" to the screen.
 
 We can use matched records by referencing their attributes:
 
