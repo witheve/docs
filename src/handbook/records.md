@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: "Handbook"
+    parent: "Core Language"
 title: "Records"
 weight: 1
 ---

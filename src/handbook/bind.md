@@ -1,10 +1,3 @@
----
-menu:
-  main:
-    parent: "Actions"
-title: "bind"
----
-
 # bind
 
 adds or updates records while overwriting old versions

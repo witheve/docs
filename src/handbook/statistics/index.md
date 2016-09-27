@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: "Standard Library"
+title: "Statistics"
+---
+
 # Statistics
 
 - [count](count) - counts the number of elements in a set

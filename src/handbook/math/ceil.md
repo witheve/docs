@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: "Math"
+title: "ceil"
+---
+
 # ceil
 
 Round a number up to the nearest integer.

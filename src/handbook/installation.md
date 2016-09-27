@@ -1,4 +1,4 @@
-# Installation
+# Getting Eve
 
 ## From Source
 

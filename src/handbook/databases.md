@@ -1,10 +1,11 @@
 ---
 menu:
   main:
-    parent: "Handbook"
+    parent: "Core Language"
 title: "Databases"
-weight: 5
+weight: 4
 ---
+
 
 # Databases
 

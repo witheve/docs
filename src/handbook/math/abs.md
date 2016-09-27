@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: "Math"
+title: "abs"
+---
+
 # abs
 
 The absolute value of a number

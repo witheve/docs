@@ -1,10 +1,3 @@
----
-menu:
-  main:
-    parent: "Handbook"
-title: "Handbook TOC"
----
-
 # Handbook Table of Contents
 
 ## Introduction

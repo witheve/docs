@@ -1,10 +1,3 @@
----
-menu:
-  main:
-    parent: "Programs"
-title: "blocks"
----
-
 # Blocks
 
 Blocks compose Eve programs

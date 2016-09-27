@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: "Math"
+title: "cos"
+---
+
 # cos
 
 Calculate the cosine of an angle

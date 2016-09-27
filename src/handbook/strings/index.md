@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: "Standard Library"
+title: "Strings"
+---
+
 # Strings
 
 - [length](length)

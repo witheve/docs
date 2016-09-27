@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: "Math"
+title: "fix"
+---
+
 # fix
 
 Round a number toward zero.
