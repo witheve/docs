@@ -1,3 +1,12 @@
+---
+menu:
+  main:
+    parent: "Appendix"
+title: "Grammar"
+weight: 1
+---
+
+
 # Eve EBNF grammar
 
 The following specification is expressed in [Extended Backus–Naur Form](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_Form)
@@ -34,7 +43,8 @@ then = "then";
 else = "else";
 is = "is";
 not = "not";
-keyword = match | action | if | then | else | boolean | is | not
+none = "none";
+keyword = match | action | if | then | else | boolean | is | not | none
 non-special-non-numeric = non-special - numeric
 identifier = (non-special-non-numeric {non-special}) - keyword - "```";
 ```
@@ -55,7 +65,7 @@ infix = expression infix-op expression;
 function = identifier "[" [attribute] {whitespace+ attribute} "]";
 ```
 
-## Records and attributes
+## Records and Attributes
 
 ```ebnf
 record = "[" [attribute] {whitespace+ attribute} "]"
@@ -66,7 +76,7 @@ attribute-not = not "(" whitespace* identifier [comparator whitespace+ expressio
 attribute-access = identifier whitespace* {"." whitespace* identifier}+
 ```
 
-## Special forms
+## Special Forms
 
 ```ebnf
 not-statement = not "(" statement {whitespace+ statement} ")";
@@ -86,7 +96,7 @@ comment = "//" {unicode | whitespace - newline} newline
 statement = record | function | not-statement | if-statement | comparison | comment
 ```
 
-## Action statements
+## Action Statements
 
 ```ebnf
 create-action = (identifier whitespace+ equality whitespace+ record) | record
@@ -112,17 +122,16 @@ if-statement = (identifier | binding-group) whitespace+ equality whitespace+
                [else-expression]
 ```
 
-
 ## Sections
 
 ```ebnf
-context-declaration = name | "(" {name whitespace+} ")"
-match-section = match whitespace+ [context-declaration whitespace+] {statement whitespace}
-action-section = action whitespace+ [context-declaration whitespace+] {action-statement whitespace}
+database-declaration = name | "(" {name whitespace+} ")"
+match-section = match whitespace+ [database-declaration whitespace+] {statement whitespace}
+action-section = action whitespace+ [database-declaration whitespace+] {action-statement whitespace}
 section = match-sectiong | action-section
 ```
 
-## Program and blocks
+## Program and Blocks
 
 ```ebnf
 fence-symbol = "```"

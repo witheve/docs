@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: "Math"
+title: "range"
+---
+
 # range
 
 Generates a set of numbers between two values 

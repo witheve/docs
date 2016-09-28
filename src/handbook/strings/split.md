@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: "Strings"
+title: "split"
+---
+
 # split
 
 splits a string at the given delimiter 

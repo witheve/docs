@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: "Math"
+title: "sum"
+---
+
 # sum
 
 Sum the elements in a set

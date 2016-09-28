@@ -1,3 +1,11 @@
+---
+menu:
+  main:
+    parent: "Actions"
+title: "commit"
+weight: 3
+---
+
 # commit
 
 adds or updates records while keeping old versions
@@ -52,7 +60,7 @@ If you `bind` on the event, then the result will disappear as soon as the event 
 
 ## Examples
 
-```
+```eve
 ```
 
 ## See Also

@@ -1,13 +1,28 @@
 ---
 menu:
   main:
-    parent: "Update Operators"
-title: "Records"
+    parent: "Core Language"
+title: "Update Operators"
 weight: 4
 ---
 
-
 # Update Operators
+
+## Syntax
+
+```eve
+// Add operator
+record.attribute += value
+
+// Remove operator
+record.attribute -= value
+
+// Set operator
+record.attribute := value
+
+// Merge operator
+record <- [ ... ]
+```
 
 ## Description
 

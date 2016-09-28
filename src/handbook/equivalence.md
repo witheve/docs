@@ -1,3 +1,11 @@
+---
+menu:
+  main:
+    parent: "Records"
+title: "Equivalence"
+weight: 3
+---
+
 # Equivalence
 
 Equivalence is used to match and join records 

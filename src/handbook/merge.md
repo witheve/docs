@@ -1,3 +1,11 @@
+---
+menu:
+  main:
+    parent: "Update Operators"
+title: "Merge <-"
+weight: 4
+---
+
 # Merge Operator
 
 Merges one record into another

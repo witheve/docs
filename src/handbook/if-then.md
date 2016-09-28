@@ -1,3 +1,11 @@
+---
+menu:
+  main:
+    parent: "Expressions"
+title: "if-then"
+weight: 3
+---
+
 # If-Then
 
 Conditional equivalence

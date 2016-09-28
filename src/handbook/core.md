@@ -1,3 +1,1 @@
 # Core Language
-
-Coming soon...

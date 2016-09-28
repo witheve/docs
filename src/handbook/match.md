@@ -1,3 +1,11 @@
+---
+menu:
+  main:
+    parent: "Actions"
+title: "match"
+weight: 1
+---
+
 # match
 
 signifies the beginning of the match phase
@@ -6,7 +14,9 @@ signifies the beginning of the match phase
 
 ```eve
 match
+
 match @context
+
 match (@context1, @context2, ... @contextN)
 ```
 

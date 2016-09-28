@@ -1,3 +1,11 @@
+---
+menu:
+  main:
+    parent: "Introduction"
+title: "Getting Help"
+weight: 3
+---
+
 # Getting Help
 
 If you have any questions or get stuck while you are learning Eve, there are several ways to get help:

@@ -1,3 +1,12 @@
+---
+menu:
+  main:
+    parent: "Records"
+title: "Tags"
+weight: 2
+---
+
+
 # Tag Selector
 
 The tag selector is a shortcut for the `tag` attribute on records

@@ -1,4 +1,9 @@
-## Not Yet Implemented
+---
+menu:
+  main:
+    parent: "Date & Time"
+title: "date"
+---
 
 # date
 
@@ -6,15 +11,15 @@ provides the current date
 
 ## Syntax
 
-```
+```eve
 [#date day month year]
 ```
 
 ## Attributes
 
-- day - current numeric day
-- month - current numeric month
-- year - current numeric year
+- `day` - current numeric day
+- `month` - current numeric month
+- `year` - current numeric year
 
 ## Description
 
@@ -26,7 +31,7 @@ Time updates at the frequency of the smallest selected in the record.
 
 Prints the current date as a formatted string.
 
-```
+```eve
 match
   [#date month day year]
 bind

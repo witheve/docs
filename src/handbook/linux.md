@@ -2,14 +2,10 @@
 menu:
   main:
     parent: "Getting Eve"
-title: "Windows"
+title: "Linux"
 ---
 
-# Installing Eve on Windows
-
-Currently, Eve only installs natively on OSX and Linux. However, Windows 10 users have two options: first, you can run Eve via Docker. To do this, follow the instructions below. The second way to run Eve on Windows 10 is via Ubuntu on Windows. Follow the linked instructions and then in a command line run bash. This will start a bash environment in the command line. From there, follow the rest of the Eve installation instructions as if you were installing under Ubuntu.
-
-Unfortunately, users of earlier verision of Windows will not be able to run Eve at this time.
+# Installing Eve on Linux
 
 ## From Source
 

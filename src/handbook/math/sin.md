@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: "Math"
+title: "sin"
+---
+
 # sin
 
 Calculate the sine of an angle

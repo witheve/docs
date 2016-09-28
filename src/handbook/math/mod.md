@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: "Math"
+title: "mod"
+---
+
 # mod
 
 Return the modulus after division

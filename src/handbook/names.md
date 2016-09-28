@@ -1,3 +1,11 @@
+---
+menu:
+  main:
+    parent: "Records"
+title: "Names"
+weight: 1
+---
+
 # Name Selector
 
 The name selector is a shortcut for the `name` attribute on records

@@ -1,3 +1,11 @@
+---
+menu:
+  main:
+    parent: "Expressions"
+title: "Functions"
+weight: 2
+---
+
 # Functions
 
 ## Syntax

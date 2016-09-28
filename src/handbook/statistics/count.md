@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: "Statistics"
+title: "count"
+---
+
 # count
 
 Returns the number of elements in a set

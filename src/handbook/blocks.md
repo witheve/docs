@@ -1,3 +1,11 @@
+---
+menu:
+  main:
+    parent: "Eve Programs"
+title: "Blocks"
+weight: 4
+---
+
 # Blocks
 
 Blocks compose Eve programs

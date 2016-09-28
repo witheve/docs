@@ -1,3 +1,11 @@
+---
+menu:
+  main:
+    parent: "Introduction"
+title: "Running Eve"
+weight: 2
+---
+
 # Running Eve
 
 ## Native

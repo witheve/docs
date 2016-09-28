@@ -6,9 +6,6 @@ title: "Actions"
 weight: 2
 ---
 
-
-# Actions
-
 ## Description
 
 ## Examples

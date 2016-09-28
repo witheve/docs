@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: "Math"
+title: "round"
+---
+
 # round
 
 Round a number to the nearest integer

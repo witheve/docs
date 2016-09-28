@@ -223,7 +223,7 @@ commit
 
 Now that you've learned the basics of Eve, we have some resources for learning the rest:
 
-- [The Eve Handbook](https://witheve.github.io/docs) - Everything you need to know about Eve.
+- [The Eve Handbook](../../) - Everything you need to know about Eve.
 - [Eve syntax reference](https://witheve.github.io/assets/docs/SyntaxReference.pdf) - Eve's syntax in one page.
 - Example applications - See some working programs and explore how they work.
 - Tutorials - Step by step instructions on building Eve applications.

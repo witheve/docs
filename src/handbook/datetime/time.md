@@ -1,19 +1,26 @@
+---
+menu:
+  main:
+    parent: "Date & Time"
+title: "time"
+---
+
 # time
 
 provides the current time
 
 ## Syntax
 
-```
+```eve
 [#time hours minutes seconds milliseconds]
 ```
 
 ## Attributes
 
-- hours - current hour
-- minutes - current minute
-- seconds - current second
-- milliseconds - current millisecond **Not Yet Implemented**
+- `hours` - current hour
+- `minutes` - current minute
+- `seconds` - current second
+- `milliseconds` - current millisecond
 
 ## Description
 
@@ -25,7 +32,7 @@ Time updates at the frequency of the smallest unit of time selected in the recor
 
 Prints the current time as a formatted string.
 
-```
+```eve
 match
   [#time hours minutes seconds]
 bind
@@ -34,4 +41,4 @@ bind
 
 ## See Also
 
-[date](date.md)
+[date](date.md) | 

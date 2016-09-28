@@ -1,3 +1,11 @@
+---
+menu:
+  main:
+    parent: "Expressions"
+title: "is"
+weight: 4
+---
+
 # is
 
 Tests the truth of a statement

@@ -1,3 +1,11 @@
+---
+menu:
+  main:
+    parent: "Actions"
+title: "bind"
+weight: 2
+---
+
 # bind
 
 adds or updates records while overwriting old versions
@@ -45,6 +53,9 @@ bind
 Instead of keeping the old record, bind replaces it with a new record. Therefore we only ever have one time on the screen, the current time. That's because the display of the old time was supported by data that is no longer there. With a bind, **if the supporting records are removed, then the bound records are removed**.
 
 ## Examples
+
+```eve
+```
 
 ## See Also
 

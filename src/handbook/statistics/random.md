@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: "Statistics"
+title: "random"
+---
+
 # random
 
 Generates a random number between 0 and 1

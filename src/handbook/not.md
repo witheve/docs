@@ -1,3 +1,11 @@
+---
+menu:
+  main:
+    parent: "Records"
+title: "not"
+weight: 4
+---
+
 # not
 
 excludes records from the results

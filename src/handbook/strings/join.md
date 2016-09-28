@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: "Strings"
+title: "join"
+---
+
 # join
 
 Joins a set of strings into a single string 

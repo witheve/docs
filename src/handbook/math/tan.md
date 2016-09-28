@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: "Math"
+title: "tan"
+---
+
 # tan
 
 Calculate the tangent of an angle
