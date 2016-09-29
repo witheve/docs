@@ -1,9 +1,9 @@
 ---
 menu:
   main:
-    parent: "Records"
+    parent: "Core Language"
 title: "Equivalence"
-weight: 3
+weight: 2
 ---
 
 # Equivalence

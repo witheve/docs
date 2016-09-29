@@ -54,15 +54,29 @@ Instead of keeping the old record, bind replaces it with a new record. Therefore
 
 ## Tips
 
-When matching on an event like a `#click`, a `commit` is usually more appropriate. When an event occurs, a record representing the event is added to the Eve DB. That record exists for exactly one "instant", and then it is removed from the database. During that "instant", any block matching on that event will be satisfied. 
+When matching on an event like a `#click`, a `commit` is usually more appropriate than bind. When an event occurs, a record representing the event is added to a database. That record exists for exactly one "instant", and then it is removed from the database. During that "instant", any block matching on that event will be satisfied. 
 
-If you `bind` on the event, then the result will disappear as soon as the event does. Essentially, the result will be instantaneous, and it may appear the event never fired. However, If you `commit` on the event, then that effect will persist after the event has been removed.
+If you `bind` on the event, then the result will disappear as soon as the event does. This means the result will be ephemeral, disappearing as soon as the event does. However, If you `commit` on the event, then that result will persist after the event has been removed.
 
 ## Examples
 
+Initialize a counter when a session connects
+
 ```eve
+match
+  [#session-connect]
+commit
+  [#counter count: 0]
+```
+Increment a counter when a button is clicked
+
+```eve
+match
+  [#click element: [#count-button diff counter]]
+commit
+  counter.count := counter.count + diff
 ```
 
 ## See Also
 
-[bind](../bind) | [contexts](../context) | [match](../match) | [match phase](../match-phase) | [action phase](../action-phase)
+[bind](../bind) | [databases](../databases) | [match](../match)

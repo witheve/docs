@@ -3,7 +3,7 @@ menu:
   main:
     parent: "Core Language"
 title: "Expressions"
-weight: 3
+weight: 4
 ---
 
 # Expressions

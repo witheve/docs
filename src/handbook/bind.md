@@ -39,7 +39,7 @@ commit
   [#div text: seconds]
 ```
 
-When you run this, you'll see that every second you a new number gets added to the screen, while all the previous numbers remain. That's the behavior of commit. When you commit something, you're adding it to the database permanently i.e. **if the supporting records are removed, the committed records stay**.
+When you run this, you'll see that every second a new second gets added to the screen, while all the previous seconds remain. That's the behavior of commit. When you commit something, you're adding it to a database permanently i.e. **if the supporting records are removed, the committed records stay**.
 
 Now let's look at what bind does:
 
@@ -50,13 +50,26 @@ bind
   [#div text: seconds]
 ```
 
-Instead of keeping the old record, bind replaces it with a new record. Therefore we only ever have one time on the screen, the current time. That's because the display of the old time was supported by data that is no longer there. With a bind, **if the supporting records are removed, then the bound records are removed**.
+Instead of keeping the old record, bind replaces it with a new record. Therefore this block only ever displays the current second. With a bind, **if the supporting records are removed, then the bound records are removed as well**.
+
+## Tips
+
+When you want to display data in an interface element like a `#div`, a bind is usually the more appropriate choice comapred to a commit. A bind will keep the interface element always up-to-date, whereas a commit will leave lingering elements that no longer reflect the current state of the program.
 
 ## Examples
 
+Display a formatted time:
+
 ```eve
+match
+  [#time hours minutes seconds]
+  (am/pm, adjusted-hours) = if hours >= 12 then ("PM", hours - 12)
+                            else if hours = 0 then ("AM", 12)
+          									else ("AM", hours)
+bind @browser
+  [#div text: "The current time is {{adjusted-hours}}:{{minutes}}:{{seconds}} {{am/pm}}"]
 ```
 
 ## See Also
 
-[commit](../commit) | [databases](../databases) | [match](../match) |
+[commit](../commit) | [databases](../databases) | [match](../match)

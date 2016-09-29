@@ -8,12 +8,12 @@ weight: 4
 
 # Blocks
 
-Blocks compose Eve programs
+blocks compose Eve programs
 
 ## Syntax
 
 ~~~eve
-// A block with a match phase and an action phase
+// A block with all three actions
 ```
 match
   .....
@@ -23,7 +23,7 @@ commit
   .....
 ```
 
-// Blocks that omit the match phase are satisfied by default
+// Blocks that omit the match action are satisfied by default
 ```
 bind
   .....
@@ -37,11 +37,13 @@ commit
 
 ## Description
 
-Each block is written in two phases: `match` then `action`. In the `match` phase, we ask Eve for known facts, and we might transform those facts using temporary variables. In the `action` phase we perform some action on the Eve DB to either add or remove facts.
+A `block` is the smallest u 
+
+
 
 ## Examples
 
-A block with match and action phases
+A block with match and bind actions
 
 ```eve
 match
@@ -50,7 +52,7 @@ bind
   [#div text: name]
 ```
 
-A black with only a commit phase
+A block with only a commit action
 
 ```eve
 commit
