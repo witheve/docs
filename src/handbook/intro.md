@@ -15,3 +15,7 @@
 - Eve programs are naturally tiny.
 
 - Correctness can be defined globally through integrity constraints, allowing people to safely contribute to an application without worrying about checking every possible invariant locally.
+
+## See Also
+
+[getting eve](../installation) | [running eve](../running) | [eve programs](../programs) | [core language](../core-language)

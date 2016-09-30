@@ -8,6 +8,8 @@ weight: 3
 
 # Joins
 
+joins allow you to relate to records
+
 ## Syntax
 
 ```eve
@@ -26,4 +28,4 @@ weight: 3
 
 ## See Also
 
-[equality](../equality) | [inequality](../inequality)
+[equality](../equality) | [inequality](../inequality) | [records](../records)

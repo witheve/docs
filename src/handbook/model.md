@@ -25,3 +25,7 @@ A key concept here is that age is a derived fact, supported by two other facts: 
 Thus the presence or absence of facts can be used to control the flow of a program. To see how this works, consider how a navigation button on a webpage might work. When the button is clicked, a fact is inserted into the Eve DB noting the element that was clicked. This click fact would support a record that defines the page to be rendered. This in turn would support the page renderer, whose job it is to display the page.
 
 One last thing to note about control flow is that we have no concept of a loop in Eve. Recursion is one way to recover looping, but set semantics and aggregates often obviate the need for recursion. In Eve, every value is actually a set. With operators defined over sets (think `map()`) and aggregation (think `reduce()`) we can actually do away with most cases where we would be tempted to use a loop.
+
+## See also
+
+[blocks](../blocks) | [literate programming](../literate-programming) | [sets](../sets)

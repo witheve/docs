@@ -45,4 +45,4 @@ bind
 
 ## See Also
 
-[add operator](../add) | [remove operator](../remove) | [merge operator](../merge) | [action phase](../action-phase)
+[add operator](../add) | [remove operator](../remove) | [merge operator](../merge)

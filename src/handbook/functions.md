@@ -8,62 +8,61 @@ weight: 2
 
 # Functions
 
+Functions map one or more arguments to one or more values.
+
 ## Syntax
 
 ```eve
+// A typical function call
 value = fn[argument]
 
+// A function call with multiple arguments
 value = fn[argument1, ..., argumentN]
 
+// A function call with multiple arguments and multiple return values
 (value1, value2) = fn[argument1, ..., argumentN]
 
+// A desugared function call
 [@fn #function argument1, ... argumentN, value1, ..., valueN]
 ```
 
 ## Description
 
-Functions as they exist in other languages are mostly obviated by Eve's tag semantics. Consider the following two statements
+Functions as they exist in other languages are mostly obviated by Eve's tag semantics. Consider the following function call in a C-family language.
+
+```c
+// A typical function call
+x = sin(1.5);                              
+```
+In Eve, we could match a record that operates similarly:
 
 ```eve
-x = sin(90)                // A typical function call
-[#sin deg: 90, return: x]  // An Eve record
+[@sin #function radians: 1.5, return: x]
 ```
 
-These statements accomplish the same objective, of storing the sine of an angle in a result variable. The Eve syntax is at a disadvantage though, because it cannot be composed into an expression like a typical function. Therefore, specific Eve records can be used as if they were functions:
+These statements accomplish the same objective: store the sine of an angle in a result variable. The Eve syntax is at a disadvantage though, because it cannot be composed into an expression like a typical function. Therefore, specific Eve records can be used as traditional functions:
 
 ```eve
-x = sin[degrees: 90]
+x = sin[radians: 1.5]
 ```
 
-which is sugar for:
+Let's look at what makes Eve functions different.
 
-```eve
-[#sin #function degrees: 90, return: x]
-```
+## Explicit Arguments
 
-The return attribute is implicitly the value of `sin[deg]`, so now the object can be used and composed like functions in other languages. We're proposing this syntax for several reasons.
+A function's arguments are enclosed in square brackets to draw attention to the fact that functions in Eve are just regular records. Also like records, arguments are stateted explicitly. This has several advantages over typical calling patterns:
 
-- Square brackets draw attention to the fact that the function call is nothing more than a regular object.
-- Explicit parameters are self-documenting, which makes the code more readable if you're not familiar with the function signature.
-- Explicit parameters permit arguments in any order, which makes optional arguments easy to implement.
-- Finally, since functions are really just objects, you can extend a function so it can be used in new ways. For example, we could extend the `sin` function to support radians:
+- Explicit arguments are self-documenting, so a reader unfamiliar with the function can understand more about the function without looking up exactly how it works. In the case of `sin`, you don't have to know whether the inputs have to be in radians or degrees; the call-site tells you.
 
-~~~eve
-Calculate the sine of an angle given in radians
-```
-match
-  return = sin[degrees: value? * π / 180]
-bind
-  sin[custom-coordinates: value?, return]
-```
-~~~
+- Eve provides alternative calling patterns for functions. Some languages have two `sin` functions, one for angles in randians and another for angles in degrees. By contrast, Eve has a single `sin` function. If your angles are in randians, you call `sin[radians]`, whereas if your angles are in degrees, you call `sin[degrees]`.
 
-The `?` notation here indicates that the value is an input. We can use the extended function like so:
+- Like all records, you can state arguments in any order. This opens up an easy path for optional arguments: include the arguments you want and leave out the ones you don't.
 
-```eve
-x = sin[custom-coordinates: π / 2]
-```
+## Referential Transparency
 
-## Examples
+All expressions in Eve are referntially transparent, meaning you can replace the expression with its result and the behavior of the program will not change. This in turn means that expressions are side-effect free, and the only thing they depend on is their input arguments. Referential transparency is key to enabling some key features in Eve, like time travel debugging and provenance.
 
 ## See Also
+
+[aggregate](../aggregates)
+

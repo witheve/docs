@@ -26,4 +26,4 @@ record.attribute -= value
 
 ## See Also
 
-[set operator](../set) | [add operator](../add) | [merge operator](../merge) | [action phase](../action-phase)
+[set operator](../set) | [add operator](../add) | [merge operator](../merge) | [bind](../bind) | [commit](../commit)

@@ -16,13 +16,13 @@ This description fits with the ethos of Eve - that programming is primarily mean
 
 Writing code this way has several properties that result in higher quality programs:
 
-- Literate programming forces you to consider a human audience. While this is usually the first step in writing any document, in programming the audience is typically a machine. For an Eve program, the audience might be your collaborators, your boss, or even your future self when revisiting the program in a year. By considering the audience of your program source, you create an anchor from which the narrative of your program flows, leading to a more coherent document.
+- **Literate programming forces you to consider a human audience.** While this is usually the first step in writing any document, in programming the audience is typically a machine. For an Eve program, the audience might be your collaborators, your boss, or even your future self when revisiting the program in a year. By considering the audience of your program source, you create an anchor from which the narrative of your program flows, leading to a more coherent document.
 
-- The human brain is wired to engage with and remember stories. Think back to a book you read (or maybe a show you watched) last year. You probably remember in great detail all of the characters and their personalities, the pivotal moments of the plot, the descriptions of the various settings, etc. But how much can you remember of a piece of code you haven't looked at for a year? Literate programming adds another dimension to your code that will help you keep more of your program in working memory.
+- **The human brain is wired to engage with and remember stories.** Think back to a book you read (or maybe a show you watched) last year. You probably remember in great detail all of the characters and their personalities, the pivotal moments of the plot, the descriptions of the various settings, etc. But how much can you remember of a piece of code you haven't looked at for a year? Literate programming adds another dimension to your code that will help you keep more of your program in working memory.
 
-- Since Eve code blocks can be arranged in any order, literate programming encourages the programmer to arrange them in an way that makes narrative sense. Code can have a beginning, middle, and end just like a short story. Or like an epic novel, code can have many interwoven storylines. Either way, the structure of the code should follow an order imposed by a narrative, not one imposed by the compiler.
+- **Since Eve code blocks can be arranged in any order, literate programming encourages the programmer to arrange them in an way that makes narrative sense.** Code can have a beginning, middle, and end just like a short story. Or like an epic novel, code can have many interwoven storylines. Either way, the structure of the code should follow an order imposed by a narrative, not one imposed by the compiler.
 
-- It's often said that you don't really understand something until you explain it to someone else. Literate programming can reveal edge cases, incorrect assumptions, gaps in understanding the problem domain, and shaky implementation details before any code is even written.
+- **Literate programming can help you think about your program more thoroughly.** Through practicing literate programming, you can reveal edge cases, incorrect assumptions, gaps in understanding the problem domain, and shaky implementation details before any code is even written.
 
 Literate programming is a first-class design concept in Eve. We will be writing all of our programs in this manner, and will encourage others to do the same for the reasons above. That said, there is nothing in the syntax that specifically requires literate programming; you can write your program as a series of code blocks without any prose, and it will be perfectly valid.
 
@@ -37,7 +37,7 @@ Eve is [CommonMark][1] compatible.
 
 ## See Also
 
-[blocks](../blocks) | [programming model](../model) 
+[blocks](../blocks) | [programming model](../model) | [CommonMark](../commonmark)
 
 [0]: http://www.literateprogramming.com/knuthweb.pdf
 [1]: http://commonmark.org/

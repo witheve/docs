@@ -24,4 +24,4 @@ weight: 2
 
 ## See Also
 
-[equality](../equality) | [joins](../joins)
+[equality](../equality) | [joins](../joins) | [equivalence](,,/equivalence)

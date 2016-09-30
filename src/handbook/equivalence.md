@@ -8,40 +8,6 @@ weight: 2
 
 # Equivalence
 
-Equivalence is used to match and join records 
-
-## Syntax
-
-```eve
-// Bind attribute to value
-[attribute: value]
-
-// Also bind an attribute to a value
-[attribute]
-attribute = value
-
-// Join two records using a bind
-[#record1 attribute1]
-[#record2 attribute2: attribute1]
-
-// Join two records using a name
-[#record1 attribute]
-[#record2 attribute]
-
-// Bind a nested record
-[attribute1: [attribute2]]
-
-// Filter attributes
-[attribute > value]
-[attribute >= value]
-[attribute < value]
-[attribute <= value]
-[attribute = value]
-[attribute != value]
-```
-
-## Description
-
 `[attribute: value]` binds `value` to `attribute` using the bind operator `:`. This says that the two are equivalent, and therefore matches only records that satisfy this assertion.
 
 The bind operator can apply to values, variables, or records. `[attribute2: attribute1]` binds `attribute1` to `attribute2`, joining two records together.
@@ -64,3 +30,5 @@ In Eve, the equality operator `=` and the bind operator `:` have the same semant
 ## Examples
 
 ## See Also
+
+[equality](../equality) | [inequality](../inequality) | [joins](../joins)
