@@ -1,9 +1,15 @@
-/* 
- * overwrite the current primary color of the 
- * theme that is used as fallback in codeblocks 
- */
+.article pre {
+	background-color: rgb(38,38,38);
+	border-radius: 5px;
+	border: 1px solid rgb(0,0,0);
+}
+
 .article pre code {
 	color: rgb(200,200,200);
+	background-color: rgb(38,38,38);
+	padding: 0px;
+  border-radius: 0px;
+	border: 0px;
 }
 
 .kr {
@@ -36,4 +42,8 @@
 
 .nf {
 	color: gray;
+}
+
+.s2 {
+	color: #acaaff;
 }
