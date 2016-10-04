@@ -62,7 +62,11 @@ A function's arguments are enclosed in square brackets to draw attention to the 
 
 All expressions in Eve are referntially transparent, meaning you can replace the expression with its result and the behavior of the program will not change. This in turn means that expressions are side-effect free, and the only thing they depend on is their input arguments. Referential transparency is key to enabling some key features in Eve, like time travel debugging and provenance.
 
+## Set Semantics
+
+...
+
 ## See Also
 
-[aggregate](../aggregates)
+[aggregate](../aggregates) | [set semantics](../sets)
 

@@ -8,6 +8,8 @@ weight: 5
 
 # Update Operators
 
+Update operates are used to modify records
+
 ## Syntax
 
 ```eve

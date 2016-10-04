@@ -17,4 +17,4 @@ One other thing to know about Eve is that records follow [set semantics](https:/
 
 ## See Also
 
-[programming model](../model) | 
+[programming model](../model) | [functions](../functions) | [aggregates](../aggregates)
