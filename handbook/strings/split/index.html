@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-us">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title> - Eve Documentation</title>
+    <meta name="generator" content="Hugo 0.16" />
+
+    
+    <link rel="canonical" href="https://witheve.github.io/docs/handbook/strings/split/">
+    
+    <meta name="author" content="Eve">
+    
+
+    <meta property="og:url" content="https://witheve.github.io/docs/handbook/strings/split/">
+    <meta property="og:title" content="Eve Documentation">
+    
+    <meta name="apple-mobile-web-app-title" content="Eve Documentation">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://witheve.github.io/docs/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="https://witheve.github.io/docs/images/favicon.png">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('https://witheve.github.io/docs/fonts/icon.eot?52m981');
+        src: url('https://witheve.github.io/docs/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+             url('https://witheve.github.io/docs/fonts/icon.woff?52m981')
+               format('woff'),
+             url('https://witheve.github.io/docs/fonts/icon.ttf?52m981')
+               format('truetype'),
+             url('https://witheve.github.io/docs/fonts/icon.svg?52m981#icon')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="https://witheve.github.io/docs/stylesheets/application.css">
+    <link rel="stylesheet" href="https://witheve.github.io/docs/stylesheets/temporary.css">
+    <link rel="stylesheet" href="https://witheve.github.io/docs/stylesheets/palettes.css">
+    <link rel="stylesheet" href="https://witheve.github.io/docs/stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="https://witheve.github.io/docs/javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-blue palette-accent-purple">
+
+
+
+	
+	
+
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="https://github.com/witheve/eve" class="project">
+    <div class="banner">
+      
+      <div class="name">
+        <strong>Eve Documentation </strong>
+        
+          <br>
+          witheve/eve
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            <a href="https://github.com/witheve/eve/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/witheve/eve/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Handbook" href="https://witheve.github.io/docs/handbook/">
+	
+	Handbook
+</a>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Guides" href="https://witheve.github.io/docs/guides/">
+	
+	Guides
+</a>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorials" href="https://witheve.github.io/docs/tutorials/">
+	
+	Tutorials
+</a>
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+        <hr>
+        <span class="section">The author</span>
+        
+        <ul>
+          
+
+          
+          <li>
+            <a href="https://github.com/witheve" target="_blank" title="@witheve on GitHub">
+              @witheve on GitHub
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+	<article class="article">
+		<div class="wrapper">
+
+			
+
+<h1 id="split">split</h1>
+
+<p>splits a string at the given delimiter</p>
+
+<h2 id="syntax">Syntax</h2>
+
+<pre><code>(token, index) = split[text, by]
+</code></pre>
+
+<h2 id="attributes">Attributes</h2>
+
+<ul>
+<li>text - the text to be split</li>
+<li>by - the delimiter at which to split the text. An empty string will split the text at every character.</li>
+<li>token - the recovered tokens after the split</li>
+<li>index - the indices of the tokens in the original text<br /></li>
+</ul>
+
+<h2 id="description">Description</h2>
+
+<p>Splits a <code>text</code> into <code>tokens</code> according to the given delimiter, <code>by</code>. Returns the <code>tokens</code> and the <code>indices</code> of those tokens in the original string.</p>
+
+<h2 id="examples">Examples</h2>
+
+<p>Splits a string at every character</p>
+
+<pre><code>match
+  (token, index) = split[text: &quot;hello, world&quot;, by: &quot;&quot;]
+bind
+  [#div text: token]
+  [#div text: index]
+</code></pre>
+
+<p>Split a sentence into words and display them in order</p>
+
+<pre><code>match
+  (token, index) = split[text: &quot;the quick brown fox&quot;, by: &quot; &quot;]
+bind
+  [#div sort: index, text: token]
+</code></pre>
+
+<h2 id="see-also">See Also</h2>
+
+<p><a href="concat.md">concat</a> | <a href="join.md">join</a> | <a href="char-at.md">char-at</a> | <a href="find.md">find</a> | <a href="length.md">length</a> | <a href="replace.md">replace</a></p>
+
+
+		</div>
+	</article>
+
+</main>
+

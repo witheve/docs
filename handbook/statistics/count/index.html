@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-us">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title> - Eve Documentation</title>
+    <meta name="generator" content="Hugo 0.16" />
+
+    
+    <link rel="canonical" href="https://witheve.github.io/docs/handbook/statistics/count/">
+    
+    <meta name="author" content="Eve">
+    
+
+    <meta property="og:url" content="https://witheve.github.io/docs/handbook/statistics/count/">
+    <meta property="og:title" content="Eve Documentation">
+    
+    <meta name="apple-mobile-web-app-title" content="Eve Documentation">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://witheve.github.io/docs/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="https://witheve.github.io/docs/images/favicon.png">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('https://witheve.github.io/docs/fonts/icon.eot?52m981');
+        src: url('https://witheve.github.io/docs/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+             url('https://witheve.github.io/docs/fonts/icon.woff?52m981')
+               format('woff'),
+             url('https://witheve.github.io/docs/fonts/icon.ttf?52m981')
+               format('truetype'),
+             url('https://witheve.github.io/docs/fonts/icon.svg?52m981#icon')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="https://witheve.github.io/docs/stylesheets/application.css">
+    <link rel="stylesheet" href="https://witheve.github.io/docs/stylesheets/temporary.css">
+    <link rel="stylesheet" href="https://witheve.github.io/docs/stylesheets/palettes.css">
+    <link rel="stylesheet" href="https://witheve.github.io/docs/stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="https://witheve.github.io/docs/javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-blue palette-accent-purple">
+
+
+
+	
+	
+
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="https://github.com/witheve/eve" class="project">
+    <div class="banner">
+      
+      <div class="name">
+        <strong>Eve Documentation </strong>
+        
+          <br>
+          witheve/eve
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            <a href="https://github.com/witheve/eve/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/witheve/eve/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Handbook" href="https://witheve.github.io/docs/handbook/">
+	
+	Handbook
+</a>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Guides" href="https://witheve.github.io/docs/guides/">
+	
+	Guides
+</a>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Tutorials" href="https://witheve.github.io/docs/tutorials/">
+	
+	Tutorials
+</a>
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+        <hr>
+        <span class="section">The author</span>
+        
+        <ul>
+          
+
+          
+          <li>
+            <a href="https://github.com/witheve" target="_blank" title="@witheve on GitHub">
+              @witheve on GitHub
+            </a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+	<article class="article">
+		<div class="wrapper">
+
+			
+
+<h1 id="count">count</h1>
+
+<p>Returns the number of elements in a set</p>
+
+<h2 id="syntax">Syntax</h2>
+
+<pre><code>y = count[given]
+y = count[given, per]
+</code></pre>
+
+<h2 id="attributes">Attributes</h2>
+
+<ul>
+<li>given - the set to count over</li>
+<li>per - <em>optional</em> - one or more attributes by which to group <code>given</code>.</li>
+</ul>
+
+<h2 id="description">Description</h2>
+
+<p><code>y = count[given]</code> counts the number of elements in <code>given</code>.</p>
+
+<p><code>y = count[given, per]</code> counts the number of elements in <code>given</code>, grouped by the attribute(s) provided in <code>per</code>. For instance, <code>class-size = count[given: students, per: grade]</code> would count the number of students in each grade. You can group along multiple axes; the pervious example could be extended to work across multiple schools by doing <code>class-size = count[given: students, per: (grade, school)]</code>. See the examples section to see these in action.</p>
+
+<h2 id="examples">Examples</h2>
+
+<p>Before we get to the <code>count</code> examples, let&rsquo;s add some students. Each <code>#student</code> has a <code>grade</code> and a <code>school</code>. Grades are one of 10, 11, or 12. Schools are one of &ldquo;West&rdquo; and &ldquo;East&rdquo;.</p>
+
+<pre><code>commit
+  [#student @Diedra grade: 10 school: &quot;West&quot;]
+  [#student @Celia grade: 10 school: &quot;West&quot;]
+  [#student @Michaela grade: 11 school: &quot;West&quot;]
+  [#student @Jermaine grade: 11 school: &quot;West&quot;]
+  [#student @Issac grade: 12 school: &quot;West&quot;]
+  [#student @Jamar grade: 12 school: &quot;West&quot;]
+  [#student @Yee grade: 10 school: &quot;East&quot;]
+  [#student @Johanne grade: 10 school: &quot;East&quot;]
+  [#student @Mertie grade: 10 school: &quot;East&quot;]
+  [#student @Elmira grade: 11 school: &quot;East&quot;]
+</code></pre>
+
+<p>First let&rsquo;s count the total number of students in the school district.</p>
+
+<pre><code>match
+  students = [#student]
+  enrollment = count[given: students]
+bind
+  [#div sort: 1 text: &quot;There are {{enrollment}} students in the district&quot;]
+</code></pre>
+
+<p>Now let&rsquo;s count the number of students in each school.</p>
+
+<pre><code>match
+  students = [#student school]
+  school-enrollment = count[given: students, per: school]
+bind
+  [#div sort: 2 text: &quot;{{school-enrollment}} attend {{school}}&quot;]
+</code></pre>
+
+<p>We could have similarly counted the number of students in each grade across the district.</p>
+
+<pre><code>match
+  students = [#student grade]
+  grade-enrollment = count[given: students, per: grade]
+bind
+  [#div sort: 3 text: &quot;{{grade-enrollment}} students are in {{grade}}th grade&quot;]
+</code></pre>
+
+<p>Finally, we can count the number of students per grade, per school.</p>
+
+<pre><code>match
+  students = [#student grade school]
+  grade-school-enrollment = count[given: students, per: (grade, school)]
+bind
+  [#div sort: 4 text: &quot;{{grade-school-enrollment}} students are in {{grade}}th grade at {{school}}&quot;]
+</code></pre>
+
+<h3 id="example-usage">Example Usage</h3>
+
+<ul>
+<li><a href="https://github.com/witheve/Eve/blob/master/examples/todomvc.eve#L31">TodoMVC</a></li>
+<li><a href="https://github.com/witheve/Eve/blob/master/examples/tic-tac-toe.eve#L67">Tic-Tac-Toe</a></li>
+</ul>
+
+
+		</div>
+	</article>
+
+</main>
+
