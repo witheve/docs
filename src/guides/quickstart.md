@@ -11,7 +11,7 @@ bind
   [tag: "div", text: "Hello, world"]
 ``` 
 
-This is a [`block`](https://witheve.github.io/docs/handbook/block) of Eve code. Blocks compose Eve programs, and are delineated by code fences, which are three backticks (```) in a row on a newline before and after the code (click [here](docs.) to see the code fences in the source of this document). Everything inside a fence is code, everything outside of a fence is treated as a comment.  
+This is a [`block`](https://witheve.github.io/docs/handbook/block) of Eve code. Blocks compose Eve programs, and are delineated by code fences, which are three backticks (```) in a row on a newline before and after the code (click [here](../../../../raw/master/src/guides/quickstart.md) to see the code fences in the source of this document). Everything inside a fence is code, everything outside of a fence is treated as a comment.  
 
 What's going on in this block of code? Based on the keywords alone, it looks like we're binding some text in a div to the browser. And that's exactly what this block does. The `bind` keyword tells Eve that we are binding data to a `record`. In Eve, records are sets of `attribute:value` pairs associated with a unique ID. Records live in a database, a place to store all the relevant data and state your program needs. In this block, we're creating a new record `[tag: "div", text: "Hello, world"]` and binding it to the database.
 
@@ -26,14 +26,14 @@ bind
 
 You'll notice this block doesn't provide any new output. Why not? Blocks follow a two-phase pattern: in the `match phase`, Eve matches the specified records against a database. If all of the records are matched, then the block continues to the `action phase`, where records are created or updated. One example of an action is a `bind`. 
 
-The first block omitted the match phase, so the bind is always satisfied, and thus the bound text is always displayed. The second block, however, includes a match phase, which is matching records with a `name` attribute. We need at least on record with a `name` attribute to satisfy this block, so let's add that:   
+The first block omitted the match phase, so the bind is always satisfied, and thus the bound text is always displayed. The second block, however, includes a match phase, which is matching records with a `name` attribute. We need at least one record with a `name` attribute to satisfy this block, so let's add that:   
 
 ```
 commit
   [name: "Celia"]
 ```
 
-`commit` is the other action Eve can take aside from `bind`. Without worrying about the difference between commit and bind (you can learn [here]() if you want), you can see that since we added a record with a `name` attribute, this satisfied the `match` in the previous block, which then wrote "Hello, world" to the screen.
+`commit` is the other action Eve can take aside from `bind`. Without worrying about the difference between commit and bind (you can learn [here](../handbook/bind.md#bind-vs-commit) if you want), you can see that since we added a record with a `name` attribute, this satisfied the `match` in the previous block, which then wrote "Hello, world" to the screen.
 
 We can use matched records by referencing their attributes:
 
