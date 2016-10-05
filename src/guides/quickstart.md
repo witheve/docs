@@ -5,233 +5,265 @@ menu:
 title: "Quickstart"
 ---
 
-# Eve Quickstart Guide
+# Eve Quick Start Tutorial
 
-Welcome to the Eve quickstart tutorial. We're going to get you writing your first Eve program, so let's get started! 
+~~~eve
+```
+bind @browser
+  [tag: "div", text: "Hello, world"]
+```
+~~~
 
-## Introductory Eve
+Hello world! At its core, Eve is a pattern matching language. You match patterns of data by searching a database, then update or create new data based on what you've found. In this example, we created a [`record`][records] that has two attributes: a tag attribute with the value `"div"` and a text attribute with the value `"Hello, world"`. We bound this record to the browser, which is how we displayed our venerable message.
 
-Eve is a pattern matching language; all you do in Eve is use patterns to match "data", and then update or create new "data" based on what you found. Before we get into what "data" means in Eve, let's get something on the screen:
+The three backticks ``` are called a code fence. Code fences let us embed Eve code in normal documents written in Markdown. That’s how Eve programs are written, by the way; everything in a code fence is a [block][blocks] of Eve code, while everything outside is prose describing the program. In fact, this quick start guide is an example of an executable Eve program! In the subsequent blocks, you won’t see any code fences, but they still exist in the [document’s source][quickstart-source].
+
+So far we’ve created a record that displays “Hello, world!” but as I said, Eve is a pattern matching language. Let’s search for something:
 
 ```eve
+search
+  [name]
+
 bind @browser
-  [tag: "div", text: "Hello, world"]
-``` 
-
-This is a [`block`](https://witheve.github.io/docs/handbook/block) of Eve code. Blocks compose Eve programs, and are delineated by code fences, which are three backticks (```) in a row on a newline before and after the code (click [here](https://raw.githubusercontent.com/witheve/docs/draft/src/guides/quickstart.md) to see the code fences in the source of this document). Everything inside a fence is code, everything outside of a fence is treated as a comment.  
-
-What's going on in this block of code? Based on the keywords alone, it looks like we're binding some text in a div to the browser. And that's exactly what this block does. The `bind` keyword tells Eve that we are binding data to a `record`. In Eve, records are sets of `attribute:value` pairs associated with a unique ID. Records live in a database, a place to store all the relevant data and state your program needs. In this block, we're creating a new record `[tag: "div", text: "Hello, world"]` and binding it to the `@browser` database.
-
-That's how you create records, but Eve is a pattern matching language, so let's match a record:
-
-```eve
-match
-  [name]
-bind @browser
-  [tag: "div", text: "Hello, world"]
+  [tag: "div", text: "Hello, world"]
 ```
 
-You'll notice this block doesn't provide any new output. Why not? Blocks follow a two-phase pattern: in the `match phase`, Eve matches the specified records against a database. If all of the records are matched, then the block continues to the `action phase`, where records are created or updated. One example of an action is a `bind`. 
+Our message disappeared! Before, we bound without searching, so the message displayed by default. Now we're binding in the presence of a search, so the bound record only exists if all the searched records are found. Here, we're searching for all records with a `name` attribute, but we haven't added any to Eve so none are found. With no matching records, the `bind` cannot execute, so the message disappears from the screen.
 
-The first block omitted the match phase, so the bind is always satisfied, and thus the bound text is always displayed. The second block, however, includes a match phase, which is matching records with a `name` attribute. We need at least on record with a `name` attribute to satisfy this block, so let's add that:   
+This is the flow of an Eve block: you search for records in a database, and if all the records you searched for are found, you can modify the found records or create new ones. If any of the records you search for are not found, then you cannot perform any actions on the database.
+
+So to display our message, all we need is a record with a name attribute. We can create a permanent that satisfies this search with the [`commit`][commit] action: 
 
 ```eve
 commit
-  [name: "Celia"]
+  [name: "Celia"]
 ```
 
-`commit` is the other action Eve can take aside from `bind`. Without worrying about the difference between commit and bind (you can learn [here]() if you want), you can see that since we added a record with a `name` attribute, this satisfied the `match` in the previous block, which then wrote "Hello, world" to the screen.
+Hello, world… again! [`commit`][commit] permanently updates or creates a record that will persist even if its supporting records change. Since we aren't searching for anything in this block, the commit executes by default and adds a record with a name attribute of `"Celia"`. The addition of this new record satisfies the search in the previous block, so “Hello, world!” appears on the screen again.
 
-We can use matched records by referencing their attributes:
+But why search for records? Well, we can use the matching records to created new records:
 
 ```eve
-match
+search
   [name]
+
 bind @browser
-  [#div", text: "Hello, {{name}}"]
+  [#div, text: "Hello, {{name}}"]
 ```
 
-This block will print "Hello, Celia". Notice that instead of `tag: "div"` this time we've used the shortcut `#div`. Tags are a useful way to refer to collections of related records, so we've made it easy to use tags. Nonetheless, they are the same as any other attribute on a record.
-
-Getting a little more complicated, let's display the grade and school of some students. Even though there are no students in the database yet, we can still write the code that would display them:
+Since we matched on a record with a name attribute, we now have a reference to that name, and we can inject it in a string using `{{ ... }}` embedding. We can also swap out `tag: "div"` for the sugared `#div`. Tags are used a lot in Eve to talk about collections of related records. For example, we could search for all records with a `#student` tag, with name, grade, and school attributes.
 
 ```eve
-match
-  [#student name grade school]
+search
+ [#student name grade school]
+
 bind @browser
-  [#div text: "{{name}} is a {{grade}}th grade student at {{school}}."]
+ [#div text: "{{name}} is a {{grade}}th grade student at {{school}}."]
 ```
 
-Now that we're matching on more attributes, this block is no longer satisfied by the record we added earlier; we're missing a "student" tag, as well as grade and school attributes. Let's add them to Celia:
+Since we're matching on more attributes, this block is no longer satisfied by the record we added earlier; we're missing a `#student` tag, as well as grade and school attributes. Even though these are missing at this moment, we can still write the code that would display them.
+
+Let’s get our div back by adding the missing attributes to Celia:
 
 ```eve
-match
-  celia = [@Celia]
+search
+  celia = [name: “Celia”]
+
 bind
   celia <- [#student grade: 10, school: "East", age: 16]
 ```
 
-In a similar fashion to `#`, the `@` operator is shorthand for the name attribute, so `[@Celia]` is the same as `[name: "Celia"]`. We set this record equal to the variable `celia`. **In Eve, the equality operator `=` means equality, not assignment**. We can use this variable in several ways, one way being to merge data into the record using the merge operator `<-`. With the addition of this block, you should see the sentence "Celia is a 10th grade student at East." in the browser. 
+You can define variables within blocks. Variables are handles on records that allow you to change them. In this case, we’re using the merge operator `<-` to combine two records. With the addition of this block, the sentence "Celia is a 10th grade student at East." appears in the browser.
 
 Celia is cool and all, but let's add some more students to our database:
 
 ```eve
 commit
-  [#student @Diedra grade: 12 school: "West"]
-  [#student @Michaela grade: 11 school: "West"]
-  [#student @Jermaine grade: 9]
+  [#student name: “Diedra”, grade: 12, school: "West"]
+  [#student name: “Michelle”, grade: 11, school: "West"]
+  [#student name: “Jermaine”, grade: 9]
 ```
 
-Three sentences are now printed, one for each student that satisfies the record. Eve works on sets, so when we match `[#student name grade school]`, we match _all_ the records with the given pattern. This includes `@Celia`, `@Diedra` and `@Michaela`. Therefore, when we bind the record `[#div text: "{{name}} ... "]`, we are actually binding three records, one for each matching `#student`.
+Three sentences are now printed, one for each student that matches the search. Eve works on sets, so when we search for `[#student name grade school]`, we find _all_ records that match the given pattern. This includes Celia, Diedra and Michelle. Therefore, when we bind the record `[#div text: "{{name}} is a ... "]`, we are actually binding three records, one for each matching `#student`.
 
-Try re-compiling the program a couple times, and you'll see the order of sentences sometimes changes. This is because **there is no ordering in Eve; blocks are not ordered, statements are not ordered, and results are therefore not ordered**. If you want to order elements, you must impose an ordering yourself. We can ask the browser to draw elements in an order with the "sort" attribute: 
+If you re-compile the program a couple times, you'll see the order of sentences changes. This is because **there is no ordering in Eve; blocks are not ordered, statements are not ordered, and results are not ordered**. If you want to order elements, you must impose an ordering yourself. We can ask the browser to draw elements in an order with the "sort" attribute: 
 
 ```eve
-match
-  [#student name grade school]
+search
+  [#student name grade school]
+
 bind @browser
   [#div sort: name, text: "{{name}} is a {{grade}}th grade student at {{school}}."]
 ```
 
-This time when you recompile your program, the order will stay fixed.
+This time when you recompile your program, the order will stay fixed, sorted aphabetically by name.
 
-Let's make thing a little more interesting. We'll add some records about the schools the students attend:
+Let's make things a little more interesting by adding some records about the schools the students attend:
 
 ```eve
 commit
-  [#school @West address: "1234 Main Street"]
-  [#school @East address: "5678 Broad Street"]
+  [#school name: “West”, address: "1234 Main Street"]
+  [#school name: “East”, address: "5678 Broad Street"]
 ```
 
-Now let's the name of the students, and the address of the school they each attend. How? **We can match two records and then "join" them together by associating attributes from one record with the other**:
+Let's display the address of the school each student attends. Although `#student`s and `#school`s are in different records, **we can relate two records by associating attributes from one record with attributes from the other.** In this case, we want to relate the `name` attribute on `#schools` with the `school` attribute on `#students`. This compares the values of the attributes between records, and matches up those with the same value. For instance, since Celia's school is "East", she can join with the `#school` named "East".
+
+Our first attempt may come out looking a little something like this:
 
 ```eve
-match
-  school = [#school name address]
-  student = [#student school: name]
+search
+  school = [#school name address]
+  student = [#student name school: name] 
+
 bind @browser
   [#div text: "{{student.name}} attends {{school.name}} at {{address}}"]
 ```
 
-**In Eve, things named the same are the same**. So, `name` in the student record is the same `name` in the school record. By using `name` in both records, we join them together. Be careful though, because this will be wrong:
+But that didn’t work. How come? We’re trying to match for students who attend one of schools from the `#school` records, but in Eve, **things with the same name are identical**. That means in this example we're searching for `#student`s that have the same name as a `#school`. This won’t match any records in the database.
+
+Instead, we can use the dot operator to specifically ask for the name attribute in the `#school` records, and rename our variables to get a cleaner block:
 
 ```eve
-match
-  school = [#school name address]
-  student = [#student name school: name]
+search
+  schools = [#school address]
+  students = [#student school: school.name]
+
 bind @browser
-  [#div text: "{{student.name}} attends {{school.name}} at {{address}}"]
+  [#div text: "{{students.name}} attends {{schools.name}} at {{address}}"]
 ```
 
-This asks for students with the same name as their school, which doesn't match any records; there are no students with the name "East" or "West". Instead, we can access the school's name using the dot operator.
-
-## Intermediate Eve
-
-Recall back in Part 1 that we added an `age` attribute to `@Celia`, but the other `#students` don't have ages. Therefore the following block only displays Celia's age: 
+This creates an implicit [join][joins] over the school name without mixing up the names of the students and the names of the schools, giving us our desired output. You can actually bind attributes to any name you want to avoid collisions in a block:
 
 ```eve
-match
-  [#student name age]
+search
+  [#school name: school-name address]
+  [#student name: student-name school: school-name]
+
 bind @browser
-  [#div text: "{{name}} is {{age}} years old"]
+  [#div text: "{{student-name}} attends {{school-name}} at {{address}}"]
 ```
 
-Let's pretend that all students entered first grade at 6 years old? Therefore, with a student's grade we can calculate their age and add it to the student's record.
+## Advanced Eve
+
+Recall when we added our students, Celia was the only one we added an `age` to. Therefore, the following block only displays Celia's age, even though we ask for all the `#student`s:
 
 ```eve
-match
+search
+ [#student name age]
+
+bind @browser
+ [#div text: "{{name}} is {{age}} years old"]
+```
+
+Let's pretend that all students enter first grade at six years old. Therefore, if we know a student's grade, we can calculate their age and add it to the student's record:
+
+```eve
+search
   student = [#student]
-  age = if student.age then student.age
-        else if student.grade then student.grade + 6
-bind
-  student.age := age
-```
+  calculated-age = if student.age then student.age
+                   else if student.grade then student.grade + 5
 
-This block selects all students, and uses `if-then` to conditionally set the student's age. If the student already has an age, we set it to that. Otherwise, if the student has a grade, we can calculate the age. We set the value on an attribute with the `:=` operator, which sets an attribute to a specified value regardless of what it was before the block executed. That value can be anything, from a number, to a string, to another record.
-
-An important class of expressions in Eve are aggregates, which take a set of values and turn them into a single value. This is akin to the "fold" or "reduce" function in many language. Let's count the total number of `#students` in the school district:  
-
-```eve
-match
-  students = [#student]
-  total-students = count[given: students]
 bind @browser
-  [#div text: "{{total-students}} are in the school district"]
+  student.age := calculated-age
 ```
 
-Notice the syntax for `count`. Count is like a function in other languages because it has a return value, so it can be used inline in expressions. But in actuality it is the same as any other record in Eve; `total = count[given: students]` is shorthand for `[@count #function given: students, value: total]`. 
+This block selects all students, and uses `if-then` to set the student's calculated age. If the student already has an age, we set it to that. Otherwise, if the student has no age, we can calculate it with some arithmetic. The `:=` operator sets an attribute to a specified value regardless of what it was before the block executed. That value can be anything, from a number, to a string, to another record.
 
-One special thing about functions and aggregates in general are that the arguments are explicit. This means you can pass in arguments in any order, and you can provide optional arguments or alternative calling patterns. For instance, count has an optional argument `per` that allows you group the output:
+## Aggregates
+
+So far everything we’ve done has used one record at a time, but what happens when we want to work over a group of records, such as counting how many students there are? To solve such a problem, we’ll need to use an aggregate. Aggregates take a set of values and turn them into a single value, akin to "fold" or "reduce" functions in other languages. In this case, we’ll use the aggregate `count` to see how many `#students` are in the school district:  
 
 ```eve
-match
-  students = [#student school]
-  students-per-school = count[given: students, per: school]
-bind
-  [#div text: "{{students-per-school}} attend {{school}}"]
+search
+ students = [#student]
+ total-students = count[given: students]
+
+bind 
+ [#div text: "{{total-students}} are in the school district"]
 ```
 
-This block will output the number of students who attend each school.
+A quick note on the syntax for `count` - it feels a lot like a function in other languages, since it has a return value and can be used inline in expressions, which may leave some of you wondering why there are square brackets instead of parens. This is because under the hood in Eve, it’s actually a record; `total = count[given: students]` is shorthand for `[@count #function given: students, value: total]`. This distinction won’t materially change the way you use count, but it goes to show that everything in Eve resolves down to working with records.
+
+While ‘given:’ is a required argument in count, aggregates can also have optional arguments to refine the output. In our case, we want to know how many students attend each school, so we’ll use the optional argument `per` to group them.
+
+```eve
+search
+ students = [#student school]
+ students-per-school = count[given: students, per: school]
+
+bind
+ [#div text: "{{students-per-school}} attend {{school}}"]
+```
+
+All function-like records in Eve specify their arguments as attributes.  This means you specify the argument and its value, unlike in other languages where the order of the values determines to which attribute they belong. As with everything else in Eve, order doesn’t matter.
 
 ## Extra Credit
 
 At this point, you know everything necessary about Eve to complete this extra credit portion (the only additional knowledge you need is knowledge of HTML and forms). Let's review some of the key concepts:
 
-- Eve programs are composed of blocks of code that follow a match/action pattern.
-- Records are sets of `attribute:value` pairs.
-- You do everything in Eve by matching records and creating/updating records.
-- Records live in databases.
+- Eve programs are composed of blocks of code that search for and update records.
+- Records are sets of `attribute: value` pairs.
+- You do everything in Eve by searching for records and creating/updating records.
 - Eve works with sets, which have no ordering.
-- Things with the same name are the same.
+- Things with the same name are equivalent.
 
-Your extra credit task is to build a form that allows you to add students to the database. Take a moment to think about how this might be done in Eve, given everything above. 
+Your extra credit task is to build a form that allows you to add students to the database. Take a moment to think about how this might be done in Eve, given everything we’ve learned so far.. 
 
-First, let's make the form. You've already displayed a `#div`, and in the same way we can draw `#input`s and a `#button`:
+First, let's make the form. We’ve already displayed a `#div`, and in the same way we can draw `#input`s and a `#button`:
 
 ```eve
-bind
+bind @browser
   [#div children: 
-    [#div    sort: 1, text: "Name:"]
-    [#input  sort: 2, @name-input]
-    [#div    sort: 3, text: "Grade:"]
-    [#input  sort: 4, @grade-input]
-    [#div    sort: 5, text: "School:"]
-    [#input  sort: 6, @school-input]
-    [#button sort: 7, @submit text: "submit"]]
+    [#div sort: 1, text: "Name:"]
+    [#input #name-input sort: 2]
+    [#div sort: 3, text: "Grade:"]
+    [#input #grade-input sort: 4]
+    [#div sort: 5, text: "School:"]
+    [#input #school-input sort: 6]
+    [#button #submit sort: 7 text: "submit"]]
 ```
 
 We've added some names to the inputs and the button so we can easily match them from other blocks. Now that we have a form, we need to take the values in the inputs, and create a new record when the submit button is clicked.
 
-Remember, everything in Eve is a record, and the `#click` event is no different. We can react to a `#click` by matching on it, and the form elements we just created. Then we take their values, create a record, and reset the inputs: 
+Remember, since everything in Eve is a record, the `#click` event is no different. We can react to a `#click` by matching on it and the form elements we just created. We then take their values, create a record, and reset the inputs: 
 
 ```eve
-match
-  [#click element: [@submit]]
-  name = [@name-input]
-  grade = [@grade-input]
-  school = [@school-input]
+search
+ [#click element: [#submit]]
+ name = [#name-input]
+ grade = [#grade-input]
+ school = [#school-input]
+
 commit
-  // save the new student
-  [#student name: name.value, grade: grade.value, school: school.value]
-  // Reset the form
-  name.value := ""
-  grade.value := ""
-  school.value := ""
+ // save the new student
+ [#student name: name.value, grade: grade.value, school: school.value]
+ // reset the form
+ name.value := ""
+ grade.value := ""
+ school.value := ""
 ```
 
 ## Learning more
 
-Now that you've learned the basics of Eve, we have some resources for learning the rest:
+If you want to learn more about Eve, we have some resources to help with that:
 
-- [The Eve Handbook](../../) - Everything you need to know about Eve.
-- [Eve syntax reference](https://witheve.github.io/assets/docs/SyntaxReference.pdf) - Eve's syntax in one page.
 - Example applications - See some working programs and explore how they work.
 - Tutorials - Step by step instructions on building Eve applications.
+- [The Eve Handbook](https://witheve.github.io/docs) - Everything you need to know about Eve.
+- [Eve syntax reference](https://witheve.github.io/assets/docs/SyntaxReference.pdf) - Eve's syntax in one page.
 - Guides - In-depth documents on topics relating to Eve.
 
-Also, we invite you to join the Eve community. There are several ways to get involved:
+We also invite you to join the Eve community! There are several ways to get involved:
 
 - Join our [mailing list](https://groups.google.com/forum/#!forum/eve-talk) and get involved with the latest discussions on Eve.
 - Impact the future of Eve by getting involved with our [Request for Comments](https://github.com/witheve/rfcs) process.
 - Read our [development diary](http://incidentalcomplexity.com/).
 - Follow us on [twitter](https://twitter.com/with_eve).
+
+
+[records]: https://witheve.github.io/docs/handbook/records/
+[blocks]: https://witheve.github.io/docs/handbook/blocks/
+[bind]: https://witheve.github.io/docs/handbook/bind/
+[commit]: https://witheve.github.io/docs/handbook/commit/
+[joins]: https://witheve.github.io/docs/handbook/joins/
+[quickstart-source]: https://raw.githubusercontent.com/witheve/docs/src/guides/quickstart.md
