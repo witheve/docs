@@ -7,12 +7,10 @@ title: "Quickstart"
 
 # Eve Quick Start Tutorial
 
-~~~eve
-```
-bind @browser
-  [tag: "div", text: "Hello, world"]
-```
-~~~
+    ```
+      bind @browser
+        [tag: "div", text: "Hello, world"]
+    ```
 
 Hello world! At its core, Eve is a pattern matching language. You match patterns of data by searching a database, then update or create new data based on what you've found. In this example, we created a [`record`][records] that has two attributes: a tag attribute with the value `"div"` and a text attribute with the value `"Hello, world"`. We bound this record to the browser, which is how we displayed our venerable message.
 
