@@ -61,7 +61,7 @@ Now, instead of adding numbers to `time-history` we are adding records, which ar
 
 ---
 
-Add the `#honor-student` to any `#student` with a GPA greater than 3.75:
+Add the `#honor-student` tag to any `#student` with a GPA greater than 3.75:
 
 ```eve
 match

@@ -13,11 +13,22 @@ Records are `attribute: value` pairs associated to a unique ID
 ## Syntax
 
 ```eve
+// A record with an attribute
 [attribute]
+
+// A record with an attribute of given value
 [attribute: value]
+
+// A record with N attributes of given values
 [attribute1: value1, ... , attributeN: valueN]
+
+// A record nested within another record
 [attribute1: [attribute2: value]]
+
+// Equates a record and a variable
 r = [attribute ...]
+
+// Accessing an attribute on a record
 r.attribute
 ```
 
@@ -32,13 +43,13 @@ Records are the predominate datatype in Eve. Records are used in two ways:
 
 `[attribute: value]` matches all records with the given attribute filtered on specified value.
 
-`[attribute1: value1, ... , attributeN: valueN]` is the general case for records. This matches all records with all of the given attributes filtered on the given value.
+`[attribute1: value1, ... , attributeN: valueN]` is the general case for records. This matches all records with all of the given attributes filtered on the given values.
 
 `[attribute1: [attribute2: value]]` nests a record within another record.
 
 `r = [attribute ...]` equates a record to a variable `r`.
 
-`r.attribute` attributes of records can be accessed using dot notation.
+`r.attribute` accesses the value of `attribute` on variable `r`.
 
 ## Examples
 

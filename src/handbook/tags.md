@@ -29,11 +29,11 @@ Tags are useful for making a record unique. For instance, in a single database, 
 Multiple tags can be used to further specify a record. For instance:
 
 ```eve
-[#employee #full-time wage]
+[#employee wage]
 [#employee #part-time wage]
 ```
 
-The first record matches `#employees` who are `#full-time`, while the second matches those who are `#part-time`. Any number of tags can be used in this way.
+The first record matches all `#employees`, while the second matches only those who are also `#part-time`. Any number of tags can be used in this way.
 
 ## Tips
 
@@ -41,33 +41,36 @@ Tags are useful for switching. Add a tag to a record to include it in a set. The
 
 ## Examples
 
-Match students and display their names and the grade they're in.
+Search for students and display their names and the grade they're in.
 
 ```eve
-match
+search
   [#student name grade]
-bind
+
+bind @browser
   [#div text: "{{name}} is in {{grade}}th grade."]
 ```
 
 Add students with good marks to the honor roll. When a student's GPA falls below 3.5, he or she will not make the honor roll because this block will not add the `#honor-roll` tag.
 
 ```eve
-match
+search
   students = [#student gpa >= 3.5]
+
 bind
   students += #honor-roll
 ```
 
-Display the honor roll 
+Display the honor roll
 
 ```eve
-match
+search
   [#student #honor-roll name]
-bind
+
+bind @browser
   [#div text: "{{name}} is a smarty pants"]
 ```
 
 ## See Also
 
-[name selector](../names) | [records](../records)
+[records](../records) | [search](../search) | [sets](../sets) 

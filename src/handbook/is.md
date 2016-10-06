@@ -23,10 +23,11 @@ y = is( ... )
 ## Examples
 
 ```eve
-match
+search
   x = 10
   y = is(20 = x)
   z = is(20 = x * 2)
+
 bind @browser
   [#div text: "y is {{y}}"]
   [#div text: "z is {{x}}"]

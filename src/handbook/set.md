@@ -35,10 +35,11 @@ record.attribute := none
 Set the `age` of `#student`s that don't already have an age.
 
 ```eve
-match
+search
   student = [#student]
   age = if student.age then student.age
         else if student.grade then student.grade + 6
+        
 bind
   student.age := age
 ```
