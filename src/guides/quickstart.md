@@ -7,10 +7,12 @@ title: "Quickstart"
 
 # Eve Quick Start Tutorial
 
-    ```
-      bind @browser
-        [tag: "div", text: "Hello, world"]     
-    ```
+~~~eve
+```
+bind @browser
+  [tag: "div", text: "Hello, world"]
+```
+~~~
 
 Hello world! At its core, Eve is a pattern matching language. You match patterns of data by searching a database, then update or create new data based on what you've found. In this example, we created a [`record`][records] that has two attributes: a tag attribute with the value `"div"` and a text attribute with the value `"Hello, world"`. We bound this record to the browser, which is how we displayed our venerable message.
 
@@ -53,10 +55,10 @@ Since we matched on a record with a name attribute, we now have a reference to t
 
 ```eve
 search
- [#student name grade school]
+  [#student name grade school]
 
 bind @browser
- [#div text: "{{name}} is a {{grade}}th grade student at {{school}}."]
+  [#div text: "{{name}} is a {{grade}}th grade student at {{school}}."]
 ```
 
 Since we're matching on more attributes, this block is no longer satisfied by the record we added earlier; we're missing a `#student` tag, as well as grade and school attributes. Even though these are missing at this moment, we can still write the code that would display them.
@@ -147,10 +149,10 @@ Recall when we added our students, Celia was the only one we added an `age` to. 
 
 ```eve
 search
- [#student name age]
+  [#student name age]
 
 bind @browser
- [#div text: "{{name}} is {{age}} years old"]
+  [#div text: "{{name}} is {{age}} years old"]
 ```
 
 Let's pretend that all students enter first grade at six years old. Therefore, if we know a student's grade, we can calculate their age and add it to the student's record:
@@ -169,43 +171,42 @@ This block selects all students, and uses `if-then` to set the student's calcula
 
 ## Aggregates
 
-So far everything we’ve done has used one record at a time, but what happens when we want to work over a group of records, such as counting how many students there are? To solve such a problem, we’ll need to use an aggregate. Aggregates take a set of values and turn them into a single value, akin to "fold" or "reduce" functions in other languages. In this case, we’ll use the aggregate `count` to see how many `#students` are in the school district:  
+So far everything we’ve done has used one record at a time, but what happens when we want to work over a group of records, such as counting how many students there are? To solve such a problem, we’ll need to use an aggregate. Aggregates take a set of values and turn them into a single value, akin to "fold" or "reduce" functions in other languages. In this case, we’ll use the aggregate `count` to figure out how many `#students` are in the school district:  
 
 ```eve
 search
- students = [#student]
- total-students = count[given: students]
+  students = [#student]
+  total-students = count[given: students]
 
 bind 
- [#div text: "{{total-students}} are in the school district"]
+  [#div text: "{{total-students}} are in the school district"]
 ```
 
-A quick note on the syntax for `count` - it feels a lot like a function in other languages, since it has a return value and can be used inline in expressions, which may leave some of you wondering why there are square brackets instead of parens. This is because under the hood in Eve, it’s actually a record; `total = count[given: students]` is shorthand for `[@count #function given: students, value: total]`. This distinction won’t materially change the way you use count, but it goes to show that everything in Eve resolves down to working with records.
+A quick note on the syntax for `count` - it feels a lot like a function in other languages, since it has a return value and can be used inline in expressions. Under the hood, functions are actually records; `total = count[given: students]` is shorthand for `[#count #function given: students, value: total]`. This distinction won’t materially change the way you use `count`, but it goes to show that everything in Eve resolves down to working with records.
 
-While ‘given:’ is a required argument in count, aggregates can also have optional arguments to refine the output. In our case, we want to know how many students attend each school, so we’ll use the optional argument `per` to group them.
+While `given` is a required argument in `count`, aggregates (and functions in general) can also have optional arguments. Let's say we want to know how many students attend each school. We can use the optional argument `per` to count students grouped by the school they attend:
 
 ```eve
 search
- students = [#student school]
- students-per-school = count[given: students, per: school]
+  students = [#student school]
+  students-per-school = count[given: students, per: school]
 
 bind
- [#div text: "{{students-per-school}} attend {{school}}"]
+  [#div text: "{{students-per-school}} attend {{school}}"]
 ```
 
 All function-like records in Eve specify their arguments as attributes.  This means you specify the argument and its value, unlike in other languages where the order of the values determines to which attribute they belong. As with everything else in Eve, order doesn’t matter.
 
 ## Extra Credit
 
-At this point, you know everything necessary about Eve to complete this extra credit portion (the only additional knowledge you need is knowledge of HTML and forms). Let's review some of the key concepts:
+At this point, you know everything necessary about Eve to complete this extra credit portion (the only additional knowledge you need is domain knowledge of HTML and forms). Let's review some of the key concepts:
 
 - Eve programs are composed of blocks of code that search for and update records.
-- Records are sets of `attribute: value` pairs.
-- You do everything in Eve by searching for records and creating/updating records.
-- Eve works with sets, which have no ordering.
+- Records are sets of `attribute: value` pairs attached to a unique ID.
+- Eve works with sets, which have no ordering and contain unique elements.
 - Things with the same name are equivalent.
 
-Your extra credit task is to build a form that allows you to add students to the database. Take a moment to think about how this might be done in Eve, given everything we’ve learned so far.. 
+Your extra credit task is to build a form that allows you to add students to the database. Take a moment to think about how this might be done in Eve, given everything we’ve learned so far.
 
 First, let's make the form. We’ve already displayed a `#div`, and in the same way we can draw `#input`s and a `#button`:
 
@@ -221,24 +222,26 @@ bind @browser
     [#button #submit sort: 7 text: "submit"]]
 ```
 
-We've added some names to the inputs and the button so we can easily match them from other blocks. Now that we have a form, we need to take the values in the inputs, and create a new record when the submit button is clicked.
+We've added some tags to the inputs and the button so we can easily search for them from other blocks. Now that we have a form, we need to define what happens when the submit button is clicked.
 
-Remember, since everything in Eve is a record, the `#click` event is no different. We can react to a `#click` by matching on it and the form elements we just created. We then take their values, create a record, and reset the inputs: 
+Remember, since everything in Eve is a record, the `#click` event is no different. When a user clicks the mouse, Eve records that click in the database. 
+
+This record exists only for an instant, but we can react to it by searching for `[#click element: [#submit]]`. This record represents a `#click` on our `#submit` button. Then, all we need to do is capture the values of the input boxes and save them as a `#student` record:
 
 ```eve
 search
- [#click element: [#submit]]
- name = [#name-input]
- grade = [#grade-input]
- school = [#school-input]
+  [#click element: [#submit]]
+  name = [#name-input]
+  grade = [#grade-input]
+  school = [#school-input]
 
 commit
- // save the new student
- [#student name: name.value, grade: grade.value, school: school.value]
- // reset the form
- name.value := ""
- grade.value := ""
- school.value := ""
+  // save the new student
+  [#student name: name.value, grade: grade.value, school: school.value]
+  // reset the form
+  name.value := ""
+  grade.value := ""
+  school.value := ""
 ```
 
 ## Learning more
