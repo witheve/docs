@@ -22,7 +22,7 @@ title: "Math"
 - [round](round) - Round a number
 - [mod](mod) - Modulo division
 - exp - The number `e` raised to a power
-- log - Calculat the logaraithm of a number
+- log - Calculate the logarithm of a number
 
 ## Trigonometric Functions
 

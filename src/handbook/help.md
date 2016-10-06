@@ -15,7 +15,7 @@ Before reaching out, make sure you've looked at the following resources:
 - Read the [quick start guide](../../guides/quickstart). It contains everything you'll need to build your first Eve program.
 - Read the [syntax reference](https://witheve.github.io/assets/docs/SyntaxReference.pdf). It summarized the syntax of Eve in a single page.
 
-If you're still stick, you can get in touch with Eve developers and the community through these channels:
+If you're still stuck, you can get in touch with Eve developers and the community through these channels:
 
 - Send a message to the [mailing list](https://groups.google.com/forum/#!forum/eve-talk). We generally respond to messages within a day.
 - Join the Eve Slack channel to talk with Eve developers and the community in real time _(coming soon)_

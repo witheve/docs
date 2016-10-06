@@ -37,7 +37,7 @@ The first record matches all `#employees`, while the second matches only those w
 
 ## Tips
 
-Tags are useful for switching. Add a tag to a record to include it in a set. Then When you don't want that record in the set anymore, just remove the tag, and the record will no longer match the set. 
+Tags are useful for creating switches. Add a tag to a record to include it in a set. Then, when you don't want that record in the set anymore, just remove the tag. The record will no longer match the set. 
 
 ## Examples
 
