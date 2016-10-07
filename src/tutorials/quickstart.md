@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: "Guides"
+    parent: "Tutorials"
 title: "Quickstart"
 ---
 
