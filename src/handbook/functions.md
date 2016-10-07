@@ -69,4 +69,3 @@ All expressions in Eve are referentially transparent, meaning you can replace th
 ## See Also
 
 [aggregate](../aggregates) | [set semantics](../sets)
-

@@ -13,18 +13,20 @@ blocks compose Eve programs
 ## Syntax
 
 ~~~eve
-// A block with all three actions
 ```
-match
+// A block with all three actions
+search
   .....
+
 bind
   .....
+
 commit
   .....
 ```
 
-// Blocks that omit the match action are satisfied by default
 ```
+// Blocks that omit the match action are satisfied by default
 bind
   .....
 ```
@@ -37,17 +39,15 @@ commit
 
 ## Description
 
-A `block` is the smallest u 
-
-
 
 ## Examples
 
 A block with match and bind actions
 
 ```eve
-match
+search
   [name]
+
 bind
   [#div text: name]
 ```
@@ -61,4 +61,4 @@ commit
 
 ## See Also
 
-[match](../match) | [bind](../bind) | [commit](../commit)
+[search](../search) | [bind](../bind) | [commit](../commit)
