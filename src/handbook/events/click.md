@@ -1,3 +1,10 @@
+---
+menu:
+  main:
+    parent: "Events"
+title: "click"
+---
+
 # click
 
 click event
@@ -12,12 +19,12 @@ click event
 
 ## Attributes
 
-- #direct-target - 
-- element - the element that was clicked
+- `#direct-target` - selects only directly clicked elements, as opposed to elements to which the event bubbles.
+- `element` - the element that was clicked.
 
 ## Description
 
-When an element in the DOM is clicked, a `#click` record is created.
+When an element in the DOM is clicked, a `#click` record is created in the `@event` database.
 
 ## Examples
 

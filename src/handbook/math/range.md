@@ -33,28 +33,31 @@ y = range[from, to, increment]
 Generate and display the integers between 1 and 10. In this example, `y = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}`:
 
 ```eve
-match
+search
   y = range[from: 1, to: 10]
-commit
+
+bind @browser
   [#div sort: y, text: y]
 ```
 
 Generate and display the odd integers between 1 and 10. In this example, `y = {1, 3, 5, 6, 9}`. Notice the set does not include `10` in this case.
 
 ```eve
-match
+search
   y = range[from: 1, to: 10, increment: 2]
-commit
+
+bind @browser
   [#div sort: y, text: y]
 ```
 
 We can use range and Eve's join semantics to generate indicies for a grid of cells.
 
 ```eve
-match
+search
   i = range[from: 1 to: 5]
   j = range[from: 1 to: 5]
   coordinate = "({{i}}, {{j}})"
+
 bind @browser
   [#div sort: coordinate, text: coordinate]
 ``` 
@@ -75,3 +78,4 @@ Will display:
 - [Tic-Tac-Toe](https://github.com/witheve/Eve/blob/master/examples/tic-tac-toe.eve#L25)
 
 ## See Also
+

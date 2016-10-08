@@ -26,7 +26,7 @@ commit
 ```
 
 ```
-// Blocks that omit the match action are satisfied by default
+// Blocks that omit the search action are satisfied by default
 bind
   .....
 ```
@@ -40,6 +40,8 @@ commit
 ## Description
 
 
+
+
 ## Examples
 
 A block with match and bind actions
@@ -48,15 +50,15 @@ A block with match and bind actions
 search
   [name]
 
-bind
+bind @browser
   [#div text: name]
 ```
 
-A block with only a commit action
+A block with only a commit action, 
 
 ```eve
 commit
-  [@Stephanie]
+  [name: "Roger"]
 ```
 
 ## See Also

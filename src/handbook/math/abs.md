@@ -28,8 +28,9 @@ y = abs[value]
 Get the absolute value of a number
 
 ```eve
-match
+search
   y = abs[value: -3]
+  
 bind @browser
   [#div text: y]
 ```
@@ -38,4 +39,4 @@ Displays the number `3`.
 
 ## See Also
 
-[sign](../sign) |
+[sign](../sign)

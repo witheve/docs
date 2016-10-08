@@ -28,7 +28,14 @@ y = sum[given, per]
 ## Examples
 
 ```eve
-sum[given: salaries, per: department]
+search @test-data
+  [#employee salary department]
+  department-salary-budgets = sum[given: salary, per: department]
+
+bind @browser
+  [#div text: "{{ department }}: {{ department-salary-budgets }}"]
 ```
 
 ## See Also
+
+[count](../../statistics/count) | [aggregates](../../aggregates)

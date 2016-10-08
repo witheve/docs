@@ -28,10 +28,11 @@ y = fix[value]
 Calculate the fix of `34.7` and `-34.7`
 
 ```eve
-match
+search
   y = fix[value: 34.7]
   z = fix[value: -34.7]
-bind
+
+bind @browser
   [#div text: "The fix of 34.7 is {{y}}"]
   [#div text: "The fix of -34.7 is {{z}}"]
 ```
@@ -39,10 +40,11 @@ bind
 We see that the fix of `34.7` is `34`, while the fix of `-34.7` is `-34`. Compare this to rounding the numbers:
 
 ```eve
-match
+search
   y = round[value: 34.7]
   z = round[value: -34.7]
-bind
+
+bind @browser
   [#div text: "The round of 34.7 is {{y}}"]
   [#div text: "The round of -34.7 is {{z}}"]
 ```

@@ -26,4 +26,4 @@ Expressions and actions in Eve work over sets.
 
 ## See Also
 
-[programming model](../model) | [functions](../functions) | [aggregates](../aggregates)
+[programming model](../model) | [functions](../functions) | [aggregates](../aggregates) | [cartesian product](../glossary/#cartesian-product)

@@ -32,8 +32,9 @@ y = sin[degrees]
 ## Examples
 
 ```eve
-match
+search
   y = sin[degrees: 90]
+  
 bind @browser
   [#div text: y]
 ```

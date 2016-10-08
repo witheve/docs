@@ -26,8 +26,21 @@ Modulo division calculates the modulus (the remainder) after dividing `value` by
 
 ## Examples
 
-```
+Keeps the value of an angle between the range [π, -π]:
 
+```eve
+search
+  [#angle value]
+  pi = 3.141592654
+  angle = mod[value, by: 2 * pi]
+  pi2pi = if angle > pi then angle - 2 * pi
+        if angle < pi * -1 then angle + 2 * pi
+        else angle
+        
+bind @browser
+  [#div text: "{{value}} -> {{pi2pi}}"]
 ```
 
 ## See Also
+
+[ceil](ceil.md) | [floor](floor.md) | [round](round.md)

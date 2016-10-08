@@ -28,8 +28,9 @@ y = ceil[value]
 Calculate the ceiling of `34.2`
 
 ```eve
-match
+search
   y = ceil[value: 34.2]
+  
 bind
   [#div text: y]
 ```

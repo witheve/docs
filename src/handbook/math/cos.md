@@ -34,8 +34,9 @@ y = cos[degrees]
 Calculate the cosine of 90 degrees
 
 ```eve
-match
+search
   y = cos[degrees: 90]
+  
 bind @browser
   [#div text: y]
 ```

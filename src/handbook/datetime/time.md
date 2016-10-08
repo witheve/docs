@@ -41,4 +41,4 @@ bind
 
 ## See Also
 
-[date](date.md) | 
+[date](date.md)
