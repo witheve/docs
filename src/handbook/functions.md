@@ -3,7 +3,7 @@ menu:
   main:
     parent: "Expressions"
 title: "Functions"
-weight: 2
+weight: 1
 ---
 
 # Functions
@@ -64,7 +64,29 @@ All expressions in Eve are referentially transparent, meaning you can replace th
 
 ## Set Semantics
 
-...
+In Eve, functions work over sets, meaning that a function will be applied to all elements of the input sets, resulting in an output that is itself a set. For example, lets say we have some points with x and y coordinates:
+
+```eve
+commit
+  [#point x: 5, y: 4]
+  [#point x: 3, y: 7]
+  [#point x: 1, y: 2]
+```
+
+We can calculate the distance from each of these points to every other point:
+
+```eve
+search
+  p1 = [#point x: x1, y: y1]
+  p2 = [#point x: x2, y: y2]
+  dx = x1 - x2 
+  dy = y1 - y2
+  
+bind @browser
+ [#div sort: x1, text: "({{x1}}, {{y1}}) - ({{x2}}, {{y2}}) = ({{dx}}, {{dy}})"]
+ ```
+
+In imperative languages, you would need a nested loop to cover all of the combinations. In Eve, functions (and infix operators like `-`, which are just sugar for a function) operate over sets, so this loop is implicitly handled by Eve.
 
 ## See Also
 

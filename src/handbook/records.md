@@ -30,18 +30,24 @@ r = [attribute ...]
 
 // Accessing an attribute on a record
 r.attribute
+
+// Join two records
+[attribute1: attribute2]
+[attribute2]
 ```
 
 ## Description
 
 Records are the predominate datatype in Eve. Records are used in two ways:
 
-1. In a `match` you supply a pattern of attributes to match records in the Eve DB.
-2. In a `bind` or `commit`, you supply a pattern of attributes to insert into the Eve DB.
+1. In a `search` you supply a pattern of attributes to match records in a supplied database.
+2. In a `bind` or `commit`, you supply a pattern of attributes to insert into a database.
 
 `[attribute]` matches all records with the given attribute.
 
-`[attribute: value]` matches all records with the given attribute filtered on specified value.
+`[attribute: value]` matches all records with the given attribute bound to specified value.
+
+`[attribute > value]` matches all records with the given attribute bound filtered on a value. The inequality `>` can be one of the inequality operators.
 
 `[attribute1: value1, ... , attributeN: valueN]` is the general case for records. This matches all records with all of the given attributes filtered on the given values.
 
@@ -56,28 +62,31 @@ Records are the predominate datatype in Eve. Records are used in two ways:
 Match all records with a name, and bind a `#div` for each one.
 
 ```eve
-match
+search
   [name]
-bind
+
+bind @browser
   [#div text: name]
 ```
 
 Records can have multiple attributes
 
 ```eve
-match
+search
   [#student name grade school]
-bind
+  
+bind @browser
   [#div text: "{{name}} is in {{grade}}th grade at {{school}}"]
 ```
 
 Join records by binding attributes from one record into another record. Equate records with variables. Access record attributes using dot notation. 
 
 ```eve
-match
+search
   school = [#school name address]
   student = [#student school: name]
-bind
+
+bind @browser
   [#div text: "{{student.name}} attends {{school.name}} at {{address}}"]
 ```
 
@@ -85,18 +94,19 @@ Records can be nested.
 
 ```eve
 commit
-  [@Jeremey spouse: [@Wendy]]
+  [name: "Jeremey" spouse: [name: "Wendy"]]
 ```
 
 Dot notation can be composed for deep access to records
 
 ```eve
-match
-  jeremy = [@Jeremy]
-bind
+search
+  jeremy = [name: "Jeremy"]
+
+bind @browser
   [#div text: "{{jeremy.name}} is married to {{jeremy.spouse.name}}"]
 ```
 
 ## See Also
 
-[match](../match) | [bind](../bind) | [commit](../commit) | [name selector](../names) | [tag selector](../tags)
+[search](../search) | [bind](../bind) | [commit](../commit) | [tags](../tags) | [databases](../databases) | [equality](../equality) | [inequality](../inequality) | [joins](../joins)

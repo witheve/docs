@@ -30,7 +30,7 @@ Calculate the floor of `34.2`
 ```eve
 search
   y = floor[value: 34.2]
-  
+
 bind
   [#div text: value]
 ```

@@ -19,9 +19,6 @@ weight: 1
 // Use = outside a record to bind an attribute to a value
 [attribute]
 attribute = value
-
-// Bind a nested record
-[attribute1: [attribute2]]
 ```
 
 ## Description
