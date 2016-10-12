@@ -34,6 +34,7 @@ Functions as they exist in other languages are mostly obviated by Eve's tag sema
 // A typical function call
 x = sin(1.5);                              
 ```
+
 In Eve, we could match a record that operates similarly:
 
 ```eve
