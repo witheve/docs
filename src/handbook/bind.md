@@ -15,9 +15,7 @@ updates or creates records, syncing them with matched records
 ```eve
 bind
 
-bind @database
-
-bind (@database1, ..., @databaseN)
+bind @database1, ..., @databaseN
 ```
 
 ## Description
@@ -26,9 +24,7 @@ bind (@database1, ..., @databaseN)
 
 By default, bound records are directed to a default local database.
 
-`bind @database` directs bound records to a particular database.
-
-`bind (@database1, ..., @databaseN)` directs bound records to multiple database.
+`bind @database1, ..., @databaseN` directs bound records to one or more databases.
 
 ## Bind vs. Commit
 

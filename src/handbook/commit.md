@@ -15,18 +15,14 @@ updates or creates records that persist until intentionally removed
 ```eve
 commit
 
-commit @database
-
-commit (@database1, ..., @databaseN)
+commit @database1, ..., @databaseN
 ```
 
 ## Description
 
 `commmit` updates or creates new records that persist in a database until they are intentionally removed. If supporting records change or are removed, the original committed records remain in tact, and can still be searched by other blocks. By default, committed records are directed to a local database.
 
-`commit @database` directs committed records to a particular databases.
-
-`commit (@database1, ..., @databaseN)` directs committed records to multiple databases.
+`commit @database1, ..., @databaseN` directs committed records one or more databases.
 
 ## Bind vs. Commit
 

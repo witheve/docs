@@ -23,7 +23,7 @@ value = fn[argument1, ..., argumentN]
 (value1, value2) = fn[argument1, ..., argumentN]
 
 // A desugared function call
-[@fn #function argument1, ... argumentN, value1, ..., valueN]
+[#fn #function argument1, ... argumentN, value1, ..., valueN]
 ```
 
 ## Description
@@ -38,7 +38,7 @@ x = sin(1.5);
 In Eve, we could match a record that operates similarly:
 
 ```eve
-[@sin #function radians: 1.5, return: x]
+[#sin #function radians: 1.5, return: x]
 ```
 
 These statements accomplish the same objective: store the sine of an angle in a result variable. The Eve syntax is at a disadvantage though, because it cannot be composed into an expression like a typical function. Therefore, specific Eve records can be used as traditional functions:

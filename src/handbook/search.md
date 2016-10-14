@@ -15,18 +15,14 @@ signifies the beginning of the search phase
 ```eve
 search
 
-search @context
-
-search (@context1, @context2, ... @contextN)
+search @database1, ..., @databaseN
 ```
 
 ## Description
 
-`search` signifies the beginning of the search phase of a block. By default, searched records are drawn from a default local context.
+`search` signifies the beginning of the search phase of a block. By default, searched records are drawn from a default local database.
 
-`search @context` draws searched records from a particular context.
-
-`search (@context1, ... @contextN)` draws searched records from multiple contexts.
+`search @database1, ... @databaseN` draws searched records from one or more databases.
 
 ## Examples
 
