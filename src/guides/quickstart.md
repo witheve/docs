@@ -41,7 +41,7 @@ We can use matched records by referencing their attributes:
 match
   [name]
 bind 
-  [#div", text: "Hello, {{name}}"]
+  [#div, text: "Hello, {{name}}"]
 ```
 
 This block will print "Hello, Celia". Notice that instead of `tag: "div"` this time we've used the shortcut `#div`. Tags are a useful way to refer to collections of related records, so we've made it easy to use tags. Nonetheless, they are the same as any other attribute on a record.
