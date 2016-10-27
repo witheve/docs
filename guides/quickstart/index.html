@@ -398,7 +398,7 @@
 
 <p>You&rsquo;ll notice this block doesn&rsquo;t provide any new output. Why not? Blocks follow a two-phase pattern: in the <code>match phase</code>, Eve matches the specified records against a database. If all of the records are matched, then the block continues to the <code>action phase</code>, where records are created or updated. One example of an action is a <code>bind</code>.</p>
 
-<p>The first block omitted the match phase, so the bind is always satisfied, and thus the bound text is always displayed. The second block, however, includes a match phase, which is matching records with a <code>name</code> attribute. We need at least on record with a <code>name</code> attribute to satisfy this block, so let&rsquo;s add that:</p>
+<p>The first block omitted the match phase, so the bind is always satisfied, and thus the bound text is always displayed. The second block, however, includes a match phase, which is matching records with a <code>name</code> attribute. We need at least one record with a <code>name</code> attribute to satisfy this block, so let&rsquo;s add that:</p>
 <div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">commit</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Celia&quot;</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
