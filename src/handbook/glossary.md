@@ -10,11 +10,11 @@ weight: 100
 
 ## Cardinality
 
-[Cardinality](https://en.wikipedia.org/wiki/Cardinality) is the number of elements in a set. For example, the set `{5, 4, 2}` contains three elements, so the cardinality of the set is 3.
+[Cardinality](https://en.wikipedia.org/wiki/Cardinality) is the number of elements in a set. For example, the set `(5, 4, 2)` contains three elements, so the cardinality of the set is 3.
 
 ## Cartesian Product
 
-The [Cartesian product](https://en.wikipedia.org/wiki/Cartesian_product) `A × B` of two sets `A` and `B` is the set of ordered pairs `(a,b)` where `a ∈ A` and `b ∈ B`. For example, if `A = {1, 2}` and `B = {"A", "B"}`, then `A x B = {(1,"A"), (1, "B"), (2, "A"), (2, "B")}`.
+The [Cartesian product](https://en.wikipedia.org/wiki/Cartesian_product) `A × B` of two sets `A` and `B` is the set of ordered pairs `(a,b)` where `a ∈ A` and `b ∈ B`. For example, if `A = (1, 2)` and `B = ("A", "B")`, then `A x B = ((1,"A"), (1, "B"), (2, "A"), (2, "B"))`.
 
 ## Entity
 
@@ -38,5 +38,5 @@ An expression is [referentially transparency](https://en.wikipedia.org/wiki/Refe
 
 ## Set
 
-In mathematics, a [set](https://en.wikipedia.org/wiki/Set_(mathematics)) is a collection of elements where each element is unique. Sets have no order, so position in the set does not imply uniqueness. For example `{1, 2, 3}` is a set, whereas `{1, 2, 1, 3}` is not a set, because 1 appears twice. Furthermore, this means that `{1, 2, 3}` is equivalent to `{3, 1, 2}`, `{3, 2, 1}`, and `{1, 3, 2}` because they have the same elements regardless of order. Elements of a set can be anything, and therefore can be sets themselves. To make the previous collection a set we could do the following: `{{1,A}, {2,B}, {1,C}, {3,D}}`.
+In mathematics, a [set](https://en.wikipedia.org/wiki/Set_(mathematics)) is a collection of elements where each element is unique. Sets have no order, so position in the set does not imply uniqueness. For example `(1, 2, 3)` is a set, whereas `(1, 2, 1, 3)` is not a set, because 1 appears twice. Furthermore, this means that `(1, 2, 3)` is equivalent to `(3, 1, 2)`, `(3, 2, 1)`, and `(1, 3, 2)` because they have the same elements regardless of order. Elements of a set can be anything, and therefore can be sets themselves. To make the previous collection a set we could do the following: `((1,A), (2,B), (1,C), (3,D))`.
 
