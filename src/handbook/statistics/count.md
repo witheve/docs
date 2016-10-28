@@ -33,55 +33,59 @@ Before we get to the `count` examples, let's add some students. Each `#student` 
 
 ```eve
 commit
-  [#student @Diedra grade: 10 school: "West"]
-  [#student @Celia grade: 10 school: "West"]
-  [#student @Michaela grade: 11 school: "West"]
-  [#student @Jermaine grade: 11 school: "West"]
-  [#student @Issac grade: 12 school: "West"]
-  [#student @Jamar grade: 12 school: "West"]
-  [#student @Yee grade: 10 school: "East"]
-  [#student @Johanne grade: 10 school: "East"]
-  [#student @Mertie grade: 10 school: "East"]
-  [#student @Elmira grade: 11 school: "East"]
+  [#student name: "Diedra" grade: 10 school: "West"]
+  [#student name: "Celia" grade: 10 school: "West"]
+  [#student name: "Michaela" grade: 11 school: "West"]
+  [#student name: "Jermaine" grade: 11 school: "West"]
+  [#student name: "Issac" grade: 12 school: "West"]
+  [#student name: "Jamar" grade: 12 school: "West"]
+  [#student name: "Yee" grade: 10 school: "East"]
+  [#student name: "Johanne" grade: 10 school: "East"]
+  [#student name: "Mertie" grade: 10 school: "East"]
+  [#student name: "Elmira" grade: 11 school: "East"]
 ```
 
 First let's count the total number of students in the school district.
 
 ```eve
-match
+search
   students = [#student]
   enrollment = count[given: students]
-bind
+
+bind @browser
   [#div sort: 1 text: "There are {{enrollment}} students in the district"]
 ```
 
 Now let's count the number of students in each school.
 
 ```eve
-match
+search
   students = [#student school]
   school-enrollment = count[given: students, per: school]
-bind
+
+bind @browser
   [#div sort: 2 text: "{{school-enrollment}} attend {{school}}"]
 ```
 
 We could have similarly counted the number of students in each grade across the district.
 
 ```eve
-match
+search
   students = [#student grade]
   grade-enrollment = count[given: students, per: grade]
-bind
+
+bind @browser
   [#div sort: 3 text: "{{grade-enrollment}} students are in {{grade}}th grade"]
 ```
 
 Finally, we can count the number of students per grade, per school. 
 
 ```eve
-match
+search
   students = [#student grade school]
   grade-school-enrollment = count[given: students, per: (grade, school)]
-bind
+
+bind @browser
   [#div sort: 4 text: "{{grade-school-enrollment}} students are in {{grade}}th grade at {{school}}"]
 ```
 

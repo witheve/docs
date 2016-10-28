@@ -30,9 +30,10 @@ y = random[seed]
 Prints a random number every second. The time attribute in `#div` is used to make each generated number unique for display purposes.
 
 ```eve
-match 
+search 
   [#time minutes seconds]
   x = random[seed: seconds]
+
 commit
   [#div time: "{{minutes}}{{seconds}}"  text: x]
 ```
@@ -40,10 +41,22 @@ commit
 Generate a random number between `min` and `max`
 
 ```eve
-match
+search
   min = 5
   max = 10
   x = random[seed: 1] * (max - min) + min
+
+bind
+  [#div text: x]
+```
+
+Generate 10 random numbers
+
+```eve
+search
+  i = range[from: 1, to: 10]
+  x = random[seed: i]
+
 bind
   [#div text: x]
 ```

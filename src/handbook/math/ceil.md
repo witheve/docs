@@ -31,7 +31,7 @@ Calculate the ceiling of `34.2`
 search
   y = ceil[value: 34.2]
   
-bind
+bind @browser
   [#div text: y]
 ```
 

@@ -33,9 +33,10 @@ Time updates at the frequency of the smallest unit of time selected in the recor
 Prints the current time as a formatted string.
 
 ```eve
-match
+search
   [#time hours minutes seconds]
-bind
+
+bind @browser
   [#div text: "The time is {{hours}}:{{minutes}}:{{seconds}}"]
 ```
 

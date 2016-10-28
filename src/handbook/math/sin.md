@@ -34,9 +34,11 @@ y = sin[degrees]
 ```eve
 search
   y = sin[degrees: 90]
+  x = sin[radians: 3.14 / 2]
   
 bind @browser
   [#div text: y]
+  [#div text: x]
 ```
 
 ## See Also

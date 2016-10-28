@@ -26,7 +26,7 @@ commit @database1, ..., @databaseN
 
 ## Bind vs. Commit
 
-While bind and commit both update records in a database, they do so with slightly different behavior; whereas bind is a function over the records in the database, commit is a stateful update of those records. With bind, if matched records change so do the previously results. With commit, if matched records change you add more state. Let's take a closer look at this distinction and what the implications are for a program.
+While bind and commit both update records in a database, they do so with slightly different behavior; a bound record has the same lifetime as its supporting records, whereas a committed record exists in the database until it is removed intentionally. Let's take a closer look at this distinction and what the implications are.
 
 Consider the following block that reads the current time, and prints it to the screen:
 

@@ -32,9 +32,10 @@ Time updates at the frequency of the smallest selected in the record.
 Prints the current date as a formatted string.
 
 ```eve
-match
+search
   [#date month day year]
-bind
+
+bind @browser
   [#div text: "Today is {{month}}/{{day}}/{{year}}"]
 ```
 

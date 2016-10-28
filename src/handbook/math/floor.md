@@ -31,7 +31,7 @@ Calculate the floor of `34.2`
 search
   y = floor[value: 34.2]
 
-bind
+bind @browser
   [#div text: value]
 ```
 

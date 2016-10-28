@@ -1,105 +1,49 @@
-/* 
- * overwrite the current primary color of the 
- * theme that is used as fallback in codeblocks 
- */
+.article pre {
+	background-color: rgb(38,38,38);
+	border-radius: 5px;
+	border: 1px solid rgb(0,0,0);
+}
+
 .article pre code {
-	color: rgba(0, 0, 0, 0.8) !important;
+	color: rgb(200,200,200);
+	background-color: rgb(38,38,38);
+	padding: 0px;
+  border-radius: 0px;
+	border: 0px;
 }
 
-
-/*	
-	HIGHLIGHT.JS THEME 
-
-	tweaked version of the Github theme
-*/
-
-.hljs {
-display:block;
-overflow-x:auto;
+.kr {
+  color: #63b6e7;
 }
 
-.hljs-comment,
-.hljs-quote {
-color:#998;
-font-style:italic;
+.c1 {
+	color: #747474;
 }
 
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-subst {
-color:#333;
-font-weight:700;
+.nt {
+	color: #4bcbd3;
 }
 
-.hljs-number,
-.hljs-literal,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag .hljs-attr {
-color:teal;
+.s {
+  color: #acaaff;  	
 }
 
-.hljs-string,
-.hljs-doctag {
-color:#d14;
+.m {
+	color: #acaaff;
 }
 
-.hljs-title,
-.hljs-section,
-.hljs-selector-id {
-color:#900;
-font-weight:700;
+.l {
+	color: #acaaff;
 }
 
-.hljs-subst {
-font-weight:400;
+.p {
+	color: gray;
 }
 
-.hljs-type,
-.hljs-class .hljs-title {
-color:#458;
-font-weight:700;
+.nf {
+	color: gray;
 }
 
-.hljs-tag,
-.hljs-name,
-.hljs-attribute {
-color:navy;
-font-weight:400;
-}
-
-.hljs-regexp,
-.hljs-link {
-color:#009926;
-}
-
-.hljs-symbol,
-.hljs-bullet {
-color:#990073;
-}
-
-.hljs-built_in,
-.hljs-builtin-name {
-color:#0086b3;
-}
-
-.hljs-meta {
-color:#999;
-font-weight:700;
-}
-
-.hljs-deletion {
-background:#fdd;
-}
-
-.hljs-addition {
-background:#dfd;
-}
-
-.hljs-emphasis {
-font-style:italic;
-}
-
-.hljs-strong {
-font-weight:700;
+.s2 {
+	color: #acaaff;
 }
