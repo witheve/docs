@@ -1,83 +1,112 @@
+---
+menu:
+  main:
+    parent: "Core Language"
+title: "Records"
+weight: 1
+---
+
 # Records
 
 Records are `attribute: value` pairs associated to a unique ID
 
 ## Syntax
 
-```
+```eve
+// A record with an attribute
 [attribute]
+
+// A record with an attribute of given value
 [attribute: value]
+
+// A record with N attributes of given values
 [attribute1: value1, ... , attributeN: valueN]
+
+// A record nested within another record
 [attribute1: [attribute2: value]]
+
+// Equates a record and a variable
 r = [attribute ...]
+
+// Accessing an attribute on a record
 r.attribute
+
+// Join two records
+[attribute1: attribute2]
+[attribute2]
 ```
 
 ## Description
 
 Records are the predominate datatype in Eve. Records are used in two ways:
 
-1. In the match phase, you supply a pattern of attributes to match records in the Eve DB.
-2. In the action phase, you supply a pattern of attributes to insert into the Eve DB.
+1. In a `search` you supply a pattern of attributes to match records in a supplied database.
+2. In a `bind` or `commit`, you supply a pattern of attributes to insert into a database.
 
 `[attribute]` matches all records with the given attribute.
 
-`[attribute: value]` matches all records with the given attribute filtered on specified value.
+`[attribute: value]` matches all records with the given attribute bound to specified value.
 
-`[attribute1: value1, ... , attributeN: valueN]` is the general case for records. This matches all records with all of the given attributes filtered on the given value.
+`[attribute > value]` matches all records with the given attribute bound filtered on a value. The inequality `>` can be one of the inequality operators.
+
+`[attribute1: value1, ... , attributeN: valueN]` is the general case for records. This matches all records with all of the given attributes filtered on the given values.
 
 `[attribute1: [attribute2: value]]` nests a record within another record.
 
 `r = [attribute ...]` equates a record to a variable `r`.
 
-`r.attribute` attributes of records can be accessed using dot notation.
+`r.attribute` accesses the value of `attribute` on variable `r`.
 
 ## Examples
 
 Match all records with a name, and bind a `#div` for each one.
 
-```
-match
+```eve
+search
   [name]
-bind
+
+bind @browser
   [#div text: name]
 ```
 
 Records can have multiple attributes
 
-```
-match
+```eve
+search
   [#student name grade school]
-bind
+  
+bind @browser
   [#div text: "{{name}} is in {{grade}}th grade at {{school}}"]
 ```
 
 Join records by binding attributes from one record into another record. Equate records with variables. Access record attributes using dot notation. 
 
-```
-match
+```eve
+search
   school = [#school name address]
   student = [#student school: name]
-bind
+
+bind @browser
   [#div text: "{{student.name}} attends {{school.name}} at {{address}}"]
 ```
 
 Records can be nested.
 
-```
+```eve
 commit
-  [@Jeremey spouse: [@Wendy]]
+  [name: "Jeremey" spouse: [name: "Wendy"]]
 ```
 
 Dot notation can be composed for deep access to records
 
-```
-match
-  jeremy = [@Jeremy]
-bind
+```eve
+search
+  jeremy = [name: "Jeremy"]
+
+bind @browser
   [#div text: "{{jeremy.name}} is married to {{jeremy.spouse.name}}"]
 ```
 
 ## See Also
 
-[binding](binding.md) | [match phase](match-phase.md) | [action phase](action-phase.md) | [name selector](names.md) | [tag selector](tags.md)
+[search](../search) | [bind](../bind) | [commit](../commit) | [tags](../tags) | [databases](../databases) | [equality](../equality) | [inequality](../inequality) | [joins](../joins)

@@ -1,16 +1,38 @@
+---
+menu:
+  main:
+    parent: "Expressions"
+title: "Aggregates"
+weight: 2
+---
+
 # Aggregates
 
-Aggregates are functions that take an input set and produce an output set, typically with a different cardinality than the input set. Aggregates are called just like other functions in Eve. For example, `count` takes an input set of cardinality `N` and produces a set of cardinality `1` as the result. A familiar analogue in other languages is the `reduce()` function. Here is an example of an aggregate in use:
+aggregates reduce a set of values to a single value
 
+## Description
+
+Aggregates are functions that take an input set and produce an output set, typically with a different cardinality than the input set. Examples of aggregates include `sum`, `count`, and `average`. Each of these takes a set of numbers as an input, and typically produces a single number as output.
+
+Aggregates are called just like other functions in Eve. For instance, the `count` aggregate is called like so:
+
+```eve
+employee-count = count[value: employees]
 ```
-total-burgers = sum[value: burgers, given: (burgers, guest)]
+
+Aggregates don't always produce a single output value. In some instances, you may want to group your input according to a desired dimension (department, grade, state, country, zip code, etc.) and then aggregate based on those groupings. Extending the example above, we could count the employees in each department:
+
+```eve
+employee-count = count[value: employees, per: department]
 ```
 
-One important consideration when using an aggregate is the input set. Due to set semantics, the result may not be what you expect if the input set contains duplicate elements.
+Now, `employee-count` will have a count for each department, instead of a single count over all departments. For more complete examples, see the doc files for specific aggregates.
 
-Recall that a set is an unordered collection of unique elements. In our example, `burgers = (3, 0, 1, 2, 1)`, which as a set is `{3, 0, 1, 2}`. Thus `sum[value: burgers, given: burgers] = 6`, which is not what we expect. However, when we say `sum[value: burgers, given: (burgers, guests)]` then each burger is associated with a corresponding guest, making each element unique, e.g. `(burgers, guest) = {{3, Arthur}, {0, Carol}, {1, Duncan}, {2, James}, {1, Sam}}`. Summing burgers given this set yields the expected result of `7`, because the duplicated 1 is now unique.
+## Tip
 
-## Available Aggregates
+Aggregates have similar behavior to the `reduce()` function in many other langauges.
 
-- sum
-- count
+## See Also
+
+[count](../statistics/count)
+

@@ -1,38 +1,17 @@
-# Installation
+---
+menu:
+  main:
+    parent: "Introduction"
+title: "Getting Eve"
+weight: 1
+---
 
-## From Source
+# Getting Eve
 
-Before you can install Eve you'll need need LuaJIT, gcc, make, and python. Currently, building from source is only supported on Linux and OSX. On Windows, we've managed to compile Eve in cygwin, but have not gotten it to run yet. Contributions are welcome on this front.
+There are several ways to get Eve. If you're running [Mac](../mac) or [Linux](../linux), you can install Eve natively on your system. If you're running [Windows 10](../windows), you can install Eve via Ubuntu for Windows. Unfortunately, Eve is not supported on earlier versions of Windows at this time.
 
-First install gcc, make, and python using your operating system's standard channels. Chances are you already have these. Install luajit by downloading [LuaJIT-2.1.0-beta2](http://luajit.org/download.html) and then in the LuaJIT directory:
+You can also install Eve via [Docker](../docker). This works across Linux, Mac, and Windows 10.
 
-```
-make
-make install
-```
+## See Also
 
-By default, LuaJIT is not added to your path, so you'll need to do that as well:
-
-```
-ln -sf luajit-2.1.0-beta2 /usr/local/bin/luajit
-```
-
-Next you'll need to download the Eve source, either by cloning our repository
-
-```
-git clone https://github.com/witheve/Eve.git
-```
-
-or downloading the source [directly](https://github.com/witheve/Eve/archive/master.zip).
-
-To build Eve, execute `make` in the `eve/build` directory.
-
-## Docker
-
-Eve is also on [Docker Hub](https://hub.docker.com/r/witheve/eve/). You can get our container with the following command:
-
-```
-docker pull witheve/eve
-```
-
-Windows Users - Docker for Windows requires Microsoft Hyper-V, which requires Windows 10. For users of earlier Windows versions, binaries are forthcoming.
+[linux](../linux) | [mac](../mac) | [windows](../windows) | [docker](../docker) | [running](../running)

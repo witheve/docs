@@ -1,13 +1,52 @@
+---
+menu:
+  main:
+    parent: "Expressions"
+title: "String Interpolation"
+weight: 5
+---
+
 # String Interpolation
 
-We support string interpolation (concatenation) using double curly braces embedded in a string, e.g. `"{{ }}"`. In the party program, when we print output, we use string interpolation to format the results:
+injects the value of an attribute or variable into a string
 
-```
-bind
-  [#div children:
-    [#h1 text: "Guest List"]
-    [#div text: "{{name}} will eat {{guest.burgers}} {{burger-switch}}" sort: name]
-    [#h2 text: "Total burgers needed: {{burgers}}"]]
+## Syntax
+
+```eve 
+"{{ variable }}"
 ```
 
-The `div` that prints the guest name is only written once, but because of set semantics, it will be printed as many times as there are elements in the set (in this case we'd expect it to be printed five times). For the same reason, the total burger count will only be printed once.
+## Description
+
+`"{{ variable }}"` embeds the value of `variable` within a string. `Variable` should be an attribute on a record or the result of an expression.
+
+String interpolation works element-wise on its input. This means the string will be repeated for every unique value in `variable`. 
+
+Multiple variables can be interpolatd into strings. If the variables have no relation to eacother (i.e. they are not joined or part of the same record), then string interpolation is applied to the cartesian product of the sets. 
+
+## Examples
+
+Display student name, grade and school:
+
+```eve
+search
+  [#student name grade school]
+
+bind @browser
+  [#div text: "{{name}} is a {{grade}}th grade student at {{school}}."]
+```
+
+Use string interpolation to display pairs of numbers:
+
+```eve
+search 
+  i = range[from: 1, to: 10]
+  j = range[from: 1, to: 10]
+
+bind @browser
+  [#div text: "({{ i }}, {{ j }})"]
+```
+
+## See Also
+
+[strings](../strings) | [expressions](../expressions)

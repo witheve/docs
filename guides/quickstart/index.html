@@ -385,7 +385,7 @@
 <span class="w">  </span><span class="p">[</span><span class="x">tag</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;div&quot;</span><span class="p">,</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Hello, world&quot;</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
-<p>This is a <a href="https://witheve.github.io/docs/handbook/blocks"><code>block</code></a> of Eve code. Blocks compose Eve programs, and are delineated by code fences, which are three backticks (```) in a row on a newline before and after the code (click <a href="https://raw.githubusercontent.com/witheve/docs/draft/src/guides/quickstart.md">here</a> to see the code fences in the source of this document). Everything inside a fence is code, everything outside of a fence is treated as a comment.</p>
+<p>This is a <a href="https://witheve.github.io/docs/handbook/block"><code>block</code></a> of Eve code. Blocks compose Eve programs, and are delineated by code fences, which are three backticks (```) in a row on a newline before and after the code (click <a href="https://raw.githubusercontent.com/witheve/docs/draft/src/guides/quickstart.md">here</a> to see the code fences in the source of this document). Everything inside a fence is code, everything outside of a fence is treated as a comment.</p>
 
 <p>What&rsquo;s going on in this block of code? Based on the keywords alone, it looks like we&rsquo;re binding some text in a div to the browser. And that&rsquo;s exactly what this block does. The <code>bind</code> keyword tells Eve that we are binding data to a <code>record</code>. In Eve, records are sets of <code>attribute:value</code> pairs associated with a unique ID. Records live in a database, a place to store all the relevant data and state your program needs. In this block, we&rsquo;re creating a new record <code>[tag: &quot;div&quot;, text: &quot;Hello, world&quot;]</code> and binding it to the <code>@browser</code> database.</p>
 
@@ -398,7 +398,7 @@
 
 <p>You&rsquo;ll notice this block doesn&rsquo;t provide any new output. Why not? Blocks follow a two-phase pattern: in the <code>match phase</code>, Eve matches the specified records against a database. If all of the records are matched, then the block continues to the <code>action phase</code>, where records are created or updated. One example of an action is a <code>bind</code>.</p>
 
-<p>The first block omitted the match phase, so the bind is always satisfied, and thus the bound text is always displayed. The second block, however, includes a match phase, which is matching records with a <code>name</code> attribute. We need at least one record with a <code>name</code> attribute to satisfy this block, so let&rsquo;s add that:</p>
+<p>The first block omitted the match phase, so the bind is always satisfied, and thus the bound text is always displayed. The second block, however, includes a match phase, which is matching records with a <code>name</code> attribute. We need at least on record with a <code>name</code> attribute to satisfy this block, so let&rsquo;s add that:</p>
 <div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">commit</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Celia&quot;</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>

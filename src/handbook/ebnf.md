@@ -1,10 +1,19 @@
+---
+menu:
+  main:
+    parent: "Appendix"
+title: "Grammar"
+weight: 1
+---
+
+
 # Eve EBNF grammar
 
 The following specification is expressed in [Extended Backus–Naur Form](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_Form)
 
 ## Basics
 
-```
+```ebnf
 newline = "\n"
 whitespace =  " " | "\t" | "," | newline;
 unicode = ? all unicode chars - whitespace ?;
@@ -14,7 +23,7 @@ non-special = unicode - specials;
 
 ## Values
 
-```
+```ebnf
 none = "none";
 boolean = "true" | "false";
 numeric = "0" .. "9";
@@ -26,7 +35,7 @@ uuid ="⦑" (unicode - specials)  "⦒"
 
 ## Keywords and Identifiers
 
-```
+```ebnf
 match = "match";
 action = "bind" | "commit";
 if = "if";
@@ -34,14 +43,15 @@ then = "then";
 else = "else";
 is = "is";
 not = "not";
-keyword = match | action | if | then | else | boolean | is | not
+none = "none";
+keyword = match | action | if | then | else | boolean | is | not | none
 non-special-non-numeric = non-special - numeric
 identifier = (non-special-non-numeric {non-special}) - keyword - "```";
 ```
 
 ## Comparisons
 
-```
+```ebnf
 equality = ":" | "=";
 comparator = equality | ">" | "<" | ">=" | "<=" | "!=";
 comparison = expression whitespace+ comparator whitespace+ expression;
@@ -49,15 +59,15 @@ comparison = expression whitespace+ comparator whitespace+ expression;
 
 ## Functions
 
-```
+```ebnf
 infix-op = "*" | "+" | "-" | "/";
 infix = expression infix-op expression;
 function = identifier "[" [attribute] {whitespace+ attribute} "]";
 ```
 
-## Records and attributes
+## Records and Attributes
 
-```
+```ebnf
 record = "[" [attribute] {whitespace+ attribute} "]"
 attribute = name | tag | attribute-not | identifier {whitespace+ comparator whitespace+ expression};
 name = "@" (identifier | string);
@@ -66,29 +76,29 @@ attribute-not = not "(" whitespace* identifier [comparator whitespace+ expressio
 attribute-access = identifier whitespace* {"." whitespace* identifier}+
 ```
 
-## Special forms
+## Special Forms
 
-```
+```ebnf
 not-statement = not "(" statement {whitespace+ statement} ")";
 is-expression = is "(" comparison ")";
 ```
 
 ## Expression
 
-```
+```ebnf
 expression = number | identifier | function | infix | record | attribute-access;
 ```
 
 ## Statements
 
-```
+```ebnf
 comment = "//" {unicode | whitespace - newline} newline
 statement = record | function | not-statement | if-statement | comparison | comment
 ```
 
-## Action statements
+## Action Statements
 
-```
+```ebnf
 create-action = (identifier whitespace+ equality whitespace+ record) | record
 merge-action = (identifier | attribute-access) whitespace+ "<-" whitespace+ record
 name-tag-action = (identifier | attribute-access) whitespace+ ("+=" | "-=") whitespace+ (name | tag)
@@ -99,7 +109,7 @@ action-operation = create-action | merge-action | name-tag-action | remove-actio
 
 ## If-Then
 
-```
+```ebnf
 group = "(" expression {whitespace+ expression} ")"
 binding-group = "(" identifier {whitespace+ identifier} ")"
 if-result = (group | expression);
@@ -112,19 +122,18 @@ if-statement = (identifier | binding-group) whitespace+ equality whitespace+
                [else-expression]
 ```
 
-
 ## Sections
 
-```
-context-declaration = name | "(" {name whitespace+} ")"
-match-section = match whitespace+ [context-declaration whitespace+] {statement whitespace}
-action-section = action whitespace+ [context-declaration whitespace+] {action-statement whitespace}
+```ebnf
+database-declaration = name | "(" {name whitespace+} ")"
+match-section = match whitespace+ [database-declaration whitespace+] {statement whitespace}
+action-section = action whitespace+ [database-declaration whitespace+] {action-statement whitespace}
 section = match-sectiong | action-section
 ```
 
-## Program and blocks
+## Program and Blocks
 
-```
+```ebnf
 fence-symbol = "```"
 start-fence = newline fence-symbol [whitespace* (unicode - newline)] newline
 end-fence = newline fence-symbol newline
