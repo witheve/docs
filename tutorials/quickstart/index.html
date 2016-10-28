@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-us">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Quickstart - Eve Documentation</title>
+    <meta name="generator" content="Hugo 0.16" />
+
+    
+    <link rel="canonical" href="https://witheve.github.io/docs/tutorials/quickstart/">
+    
+    <meta name="author" content="Eve">
+    
+
+    <meta property="og:url" content="https://witheve.github.io/docs/tutorials/quickstart/">
+    <meta property="og:title" content="Eve Documentation">
+    
+    <meta name="apple-mobile-web-app-title" content="Eve Documentation">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://witheve.github.io/docs/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="https://witheve.github.io/docs/images/favicon.png">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('https://witheve.github.io/docs/fonts/icon.eot?52m981');
+        src: url('https://witheve.github.io/docs/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+             url('https://witheve.github.io/docs/fonts/icon.woff?52m981')
+               format('woff'),
+             url('https://witheve.github.io/docs/fonts/icon.ttf?52m981')
+               format('truetype'),
+             url('https://witheve.github.io/docs/fonts/icon.svg?52m981#icon')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="https://witheve.github.io/docs/stylesheets/application.css">
+    <link rel="stylesheet" href="https://witheve.github.io/docs/stylesheets/temporary.css">
+    <link rel="stylesheet" href="https://witheve.github.io/docs/stylesheets/palettes.css">
+    <link rel="stylesheet" href="https://witheve.github.io/docs/stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="https://witheve.github.io/docs/javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class=" ">
+
+
+
+	
+	
+
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  
+  <center>
+    <img class="logo" src="https://witheve.github.io/assets/images/logo_square.png">
+  </center>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+
+      
+      <div id="sidebar" class="nav-collapse">
+          <ul class="sidebar-menu">
+            
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://witheve.github.io/docs/handbook/intro" class="">
+                      
+                      <span class="colored">Introduction</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/installation/"> Getting Eve </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/linux/">Linux</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/mac/">Mac</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/windows/">Windows</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/running/"> Running Eve </a> </li>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/help/"> Getting Help </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://witheve.github.io/docs/handbook/programs" class="">
+                      
+                      <span class="colored">Eve Programs</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/model/"> Programming Model </a> </li>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/sets/"> Sets </a> </li>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/literate-programming/"> Literate Programming </a> </li>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/blocks/"> Blocks </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://witheve.github.io/docs/handbook/core" class="">
+                      
+                      <span class="colored">Core Language</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/records/"> Records </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/tags/">Tags</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/not/">not</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/equivalence/"> Equivalence </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/equality/">Equality</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/inequality/">Inequality</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/joins/">Joins</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/actions/"> Actions </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/search/">search</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/bind/">bind</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/commit/">commit</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/expressions/"> Expressions </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/functions/">Functions</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/if-then/">if-then</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/is/">is</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/string-interpolation/">String Interpolation</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/update-operators/"> Update Operators </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/add/">Add: &#43;=</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/set/">Set: :=</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/remove/">Remove: -=</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/merge/">Merge &lt;-</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/databases/"> Databases </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://witheve.github.io/docs/handbook/standard-library" class="">
+                      
+                      <span class="colored">Standard Library</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/datetime/"> Date &amp; Time </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/datetime/date/">date</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/datetime/time/">time</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/events/"> Events </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/events/click/">click</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/math/"> Math </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/math/abs/">abs</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/math/ceil/">ceil</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/math/cos/">cos</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/math/fix/">fix</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/math/floor/">floor</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/math/mod/">mod</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/math/range/">range</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/math/round/">round</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/math/sin/">sin</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/math/sum/">sum</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/math/tan/">tan</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/statistics/"> Statistics </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/statistics/count/">count</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/statistics/random/">random</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/strings/"> Strings </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/strings/join/">join</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/strings/split/">split</a></li>
+                          
+                        </ul>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://witheve.github.io/docs/handbook/appendix" class="">
+                      
+                      <span class="colored">Appendix</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/ebnf/"> Grammar </a> </li>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/commonmark/"> CommonMark </a> </li>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/glossary/"> Glossary </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://witheve.github.io/docs/guides" class="">
+                      
+                      <span class="colored">Guides</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://witheve.github.io/docs/guides/for-programmers/"> Eve for Programmers </a> </li>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/guides/style/"> Style Guide </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://witheve.github.io/docs/tutorials" class="">
+                      
+                      <span class="colored">Tutorials</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li class="active selected"><a href="https://witheve.github.io/docs/tutorials/quickstart/"> Quickstart </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+          </ul>
+      </div>
+
+    </div>
+  </div>
+</nav>
+	</div>
+	<article class="article">
+		<div class="wrapper">
+
+			
+
+<h1 id="eve-quick-start-tutorial">Eve Quick Start Tutorial</h1>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="x">```</span><span class="w"></span>
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="x">tag</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;div&quot;</span><span class="p">,</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Hello, world&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="x">```</span><span class="w"></span>
+</code></pre></div>
+
+<p>Hello world! At its core, Eve is a pattern matching language. You match patterns of data by searching a database, then update or create new data according to what you&rsquo;ve found. In this example, we created a <a href="https://witheve.github.io/docs/handbook/records/"><code>record</code></a> that has two attributes: a tag attribute with the value <code>&quot;div&quot;</code>, and a text attribute with the value <code>&quot;Hello, world&quot;</code>. We <a href="https://witheve.github.io/docs/handbook/bind/">bound</a> this record to the browser, which is how we displayed our venerable message.</p>
+
+<p>The three backticks <code>```</code> are called a code fence, and they allow us to denote blocks of code. This gives us the ability to embed Eve code in normal documents written in Markdown. This is how Eve programs are written: everything in a code fence is a <a href="https://witheve.github.io/docs/handbook/blocks/">block</a> of Eve code, while everything outside is prose describing the program. In fact, this quick start tutorial is an example of an executable Eve program! In the subsequent blocks, you won&rsquo;t see any code fences, but they still exist in the <a href="https://raw.githubusercontent.com/witheve/docs/src/guides/quickstart.md">document&rsquo;s source</a>.</p>
+
+<p>So far we&rsquo;ve created a record that displays “Hello, world!” but as I said, Eve is a pattern matching language. Let&rsquo;s explore that by searching for something:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="x">name</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="x">tag</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;div&quot;</span><span class="p">,</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Hello, world&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Our message disappeared! Before, we bound without searching, so the message displayed by default. Now we&rsquo;re binding in the presence of a <a href="https://witheve.github.io/docs/handbook/search/"><code>search</code></a> action, so the bound record only exists if all the searched records are matched. Here, we&rsquo;re searching for all records with a <code>name</code> attribute, but we haven&rsquo;t added any records like that to Eve so none are matched. With no matching records, the <code>bind</code> cannot execute, and the message disappears from the screen.</p>
+
+<p>This is the flow of an Eve block: you search for records in a database, and if all the records you searched for are matched, you can modify the matched records or create new ones. If any part of your search is not matched, then no records will be created or updated.</p>
+
+<p>To get our message back, all we need is a record with a name attribute. We can create one permanently with the <a href="https://witheve.github.io/docs/handbook/commit/"><code>commit</code></a> action:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">commit</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Celia&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Hello, world… again! Commit permanently updates or creates a record that will persist even if its matched records (the records matched in a search action) change. Since we aren&rsquo;t searching for anything in this block, the commit executes by default and adds a record with a name attribute of <code>&quot;Celia&quot;</code>. The addition of this new record satisfies the search in the previous block, so “Hello, world!” appears on the screen again.</p>
+
+<p>But what else can you do with matched records? For starters, we can use them to create new records:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="x">name</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="p">,</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Hello, {{name}}&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Since we matched on a record with a name attribute, we now have a reference to that name, and we can inject it into a string using <a href="https://witheve.github.io/docs/handbook/string-interpolation/"><code>{{ ... }}</code></a> embedding. We can also swap out <code>tag: &quot;div&quot;</code> for the sugared <code>#div</code>. <a href="https://witheve.github.io/docs/handbook/tags/">Tags</a> are used a lot in Eve to talk about collections of related records. For example, we could search for all records with a <code>#student</code> tag, with name, grade, and school attributes.</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">name</span><span class="w"> </span><span class="x">grade</span><span class="w"> </span><span class="x">school</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{name}} is a {{grade}}th grade student at {{school}}.&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Since we&rsquo;re matching on more attributes, this block is no longer satisfied by the record we added earlier; we&rsquo;re missing a <code>#student</code> tag, as well as grade and school attributes. Even though these are currently missing, we can still write the code that would display them.</p>
+
+<p>Let&rsquo;s display this new message by adding the missing attributes to Celia. We could add them to the block where we comitted Celia originally, but we can also do it programatically:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">celia</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="x">“Celia”</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">celia</span><span class="w"> </span><span class="nf">&lt;-</span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">grade</span><span class="nf">:</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="x">school</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;East&quot;</span><span class="p">,</span><span class="w"> </span><span class="x">age</span><span class="nf">:</span><span class="w"> </span><span class="m">16</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>You can define variables within blocks, which act as handles on records that allow you to change them. In this case, we&rsquo;re using the <a href="https://witheve.github.io/docs/handbook/merge/">merge operator</a> <code>&lt;-</code> to combine two records. With the addition of this block, the sentence &ldquo;Celia is a 10th grade student at East.&rdquo; appears in the browser.</p>
+
+<p>Celia is cool and all, but let&rsquo;s add some more students to our database:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">commit</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="x">“Diedra”</span><span class="p">,</span><span class="w"> </span><span class="x">grade</span><span class="nf">:</span><span class="w"> </span><span class="m">12</span><span class="p">,</span><span class="w"> </span><span class="x">school</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;West&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="x">“Michelle”</span><span class="p">,</span><span class="w"> </span><span class="x">grade</span><span class="nf">:</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="x">school</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;West&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="x">“Jermaine”</span><span class="p">,</span><span class="w"> </span><span class="x">grade</span><span class="nf">:</span><span class="w"> </span><span class="m">9</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Three sentences are now printed, one for each student that matches the search. Eve works on <a href="https://witheve.github.io/docs/handbook/sets/">sets</a>, so when we search for <code>[#student name grade school]</code>, we find <em>all</em> records that match the given pattern. This includes Celia, Diedra and Michelle (but not Jermaine, as he has no school in his record). Therefore, when we bind the record <code>[#div text: &quot;{{name}} is a ... &quot;]</code>, we are actually binding three records, one for each matching <code>#student</code>.</p>
+
+<p>If you re-compile the program a couple times, you&rsquo;ll see the order of sentences may change. This is because <strong>there is no ordering in Eve - blocks are not ordered, statements are not ordered, and results are not ordered</strong>. If you want to order elements, you must impose an ordering yourself. We can ask the browser to draw elements in an order with the &ldquo;sort&rdquo; attribute:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">name</span><span class="w"> </span><span class="x">grade</span><span class="w"> </span><span class="x">school</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">sort</span><span class="nf">:</span><span class="w"> </span><span class="x">name</span><span class="p">,</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{name}} is a {{grade}}th grade student at {{school}}.&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>This time when you recompile your program, the order will stay fixed, sorted alphabetically by name.</p>
+
+<p>Let&rsquo;s make things a little more interesting by adding some records about the schools the students attend:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">commit</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#school</span><span class="w"> </span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="x">“West”</span><span class="p">,</span><span class="w"> </span><span class="x">address</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;1234 Main Street&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#school</span><span class="w"> </span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="x">“East”</span><span class="p">,</span><span class="w"> </span><span class="x">address</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;5678 Broad Street&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>What if we want to display the address of the school each student attends? Although <code>#student</code>s and <code>#school</code>s are in different records, <strong>we can relate two records by associating attributes from one record with attributes from the other.</strong> This is an operation known as <a href="https://witheve.github.io/docs/handbook/joins/">joining</a>. In this case, we want to relate the <code>name</code> attribute on <code>#schools</code> with the <code>school</code> attribute on <code>#students</code>. This compares the values of the attributes between records, and matches up those with the same value. For instance, since Celia&rsquo;s school is &ldquo;East&rdquo;, she can join with the <code>#school</code> named &ldquo;East&rdquo;.</p>
+
+<p>Our first attempt may come out looking a little something like this:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">school</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#school</span><span class="w"> </span><span class="x">name</span><span class="w"> </span><span class="x">address</span><span class="p">]</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">student</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">name</span><span class="w"> </span><span class="x">school</span><span class="nf">:</span><span class="w"> </span><span class="x">name</span><span class="p">]</span><span class="w"> </span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{student.name}} attends {{school.name}} at {{address}}&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>But that didn&rsquo;t work. How come? In Eve, <strong>things with the same name are <a href="https://witheve.github.io/docs/handbook/equivalence/">equivalent</a></strong>. In this block, we&rsquo;ve used &ldquo;name&rdquo; three times, which says that the school&rsquo;s name, the student&rsquo;s name, and the student&rsquo;s school are all the same. Of course, there is no combination of students and schools that match this search, so nothing is displayed.</p>
+
+<p>Instead, we can use the dot operator to specifically ask for the name attribute in the <code>#school</code> records, and rename our variables to get a correct block:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">schools</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#school</span><span class="w"> </span><span class="x">address</span><span class="p">]</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">students</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">school</span><span class="nf">:</span><span class="w"> </span><span class="x">school.name</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{students.name}} attends {{schools.name}} at {{address}}&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>This creates an implicit join over the school name without mixing up the names of the students and the names of the schools, giving us our desired output. You can actually bind attributes to any name you want to avoid collisions in a block:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#school</span><span class="w"> </span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="x">school</span><span class="nf">-</span><span class="x">name</span><span class="w"> </span><span class="x">address</span><span class="p">]</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="x">student</span><span class="nf">-</span><span class="x">name</span><span class="w"> </span><span class="x">school</span><span class="nf">:</span><span class="w"> </span><span class="x">school</span><span class="nf">-</span><span class="x">name</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{student-name}} attends {{school-name}} at {{address}}&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="advanced-eve">Advanced Eve</h2>
+
+<p>Recall when we added our students, Celia was the only one we added an <code>age</code> to. Therefore, the following block only displays Celia&rsquo;s age, even though we ask for all the <code>#student</code>s:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">name</span><span class="w"> </span><span class="x">age</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{name}} is {{age}} years old&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Let&rsquo;s pretend that all students enter first grade at six years old. Therefore, if we know a student&rsquo;s grade, we can calculate their age and add it to the student&rsquo;s record:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">student</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="p">]</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">calculated</span><span class="nf">-</span><span class="x">age</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="x">student.age</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="x">student.age</span><span class="w"></span>
+<span class="x">                  </span><span class="w"> </span><span class="kr">else</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="x">student.grade</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="x">student.grade</span><span class="w"> </span><span class="nf">+</span><span class="w"> </span><span class="m">5</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">student.age</span><span class="w"> </span><span class="nf">:=</span><span class="w"> </span><span class="x">calculated</span><span class="nf">-</span><span class="x">age</span><span class="w"></span>
+</code></pre></div>
+
+<p>This block selects all students, and uses and <a href="https://witheve.github.io/docs/handbook/if-then/"><code>if-then</code></a> expression to set the student&rsquo;s calculated age. If the student already has an age, we set it to that. Otherwise, if the student has no age, we can calculate it with some arithmetic. The <a href="https://witheve.github.io/docs/handbook/set/">set operator</a> <code>:=</code> sets an attribute to a specified value regardless of what it was before the block executed. That value can be anything, from a number to a string to another record.</p>
+
+<h3 id="aggregates">Aggregates</h3>
+
+<p>So far everything we&rsquo;ve done has used one record at a time, but what happens when we want to work over a group of records, such as counting how many students there are? To solve such a problem, we&rsquo;ll need to use an <a href="https://witheve.github.io/docs/handbook/aggregates/">aggregate</a>. Aggregates take a set of values and turn them into a single value, akin to &ldquo;fold&rdquo; or &ldquo;reduce&rdquo; functions in other languages. In this case, we&rsquo;ll use the aggregate <a href="https://witheve.github.io/docs/handbook/statistics/count/"><code>count</code></a> to figure out how many <code>#students</code> are in the school district:  </p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">students</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="p">]</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">total</span><span class="nf">-</span><span class="x">students</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">count</span><span class="p">[</span><span class="x">given</span><span class="nf">:</span><span class="w"> </span><span class="x">students</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{total-students}} are in the school district&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>A quick note on the syntax for <code>count</code> - it feels a lot like a function in other languages, since it has a return value and can be used inline in expressions. Under the hood, <a href="https://witheve.github.io/docs/handbook/functions/">functions</a> and aggregates are actually records; <code>total = count[given: students]</code> is shorthand for <code>[#count #function given: students, value: total]</code>. This distinction won&rsquo;t materially change the way you use <code>count</code>, but it goes to show that everything in Eve reduces to working with records.</p>
+
+<p>While <code>given</code> is a required argument in <code>count</code>, aggregates (and functions in general) can also have optional arguments. Let&rsquo;s say we want to know how many students attend each school. We can use the optional argument <code>per</code> to count students grouped by the school they attend:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">students</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">school</span><span class="p">]</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">students</span><span class="nf">-</span><span class="x">per</span><span class="nf">-</span><span class="x">school</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">count</span><span class="p">[</span><span class="x">given</span><span class="nf">:</span><span class="w"> </span><span class="x">students</span><span class="p">,</span><span class="w"> </span><span class="x">per</span><span class="nf">:</span><span class="w"> </span><span class="x">school</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{students-per-school}} attend {{school}}&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>All function-like records in Eve specify their arguments as attributes. This means you specify the argument and its value, unlike in other languages, where the order of the values determines the attribute to which they belong. As with everything else in Eve, order doesn&rsquo;t matter.</p>
+
+<h2 id="extra-credit">Extra Credit</h2>
+
+<p>At this point, you know everything necessary about Eve to complete this extra credit portion (the only additional knowledge you need is domain knowledge of HTML and forms). Let&rsquo;s review some of the key concepts:</p>
+
+<ul>
+<li>Eve programs are composed of blocks of code that search for and update records.</li>
+<li>Records are sets of <code>attribute: value</code> pairs attached to a unique ID.</li>
+<li>Eve works with sets, which have no ordering and contain unique elements.</li>
+<li>Things with the same name are equivalent.</li>
+</ul>
+
+<p>Your extra credit task is to build a web-based form that allows you to add students to the database. Take a moment to think about how this might be done in Eve, given everything we&rsquo;ve learned so far.</p>
+
+<p>First, let&rsquo;s make the form. We&rsquo;ve already displayed a <code>#div</code>, and in the same way we can draw <code>#input</code>s and a <code>#button</code>:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">children</span><span class="nf">:</span><span class="w"> </span>
+<span class="x">   </span><span class="w"> </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">sort</span><span class="nf">:</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Name:&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="x">   </span><span class="w"> </span><span class="p">[</span><span class="nt">#input</span><span class="w"> </span><span class="nt">#name-input</span><span class="w"> </span><span class="x">sort</span><span class="nf">:</span><span class="w"> </span><span class="m">2</span><span class="p">]</span><span class="w"></span>
+<span class="x">   </span><span class="w"> </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">sort</span><span class="nf">:</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Grade:&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="x">   </span><span class="w"> </span><span class="p">[</span><span class="nt">#input</span><span class="w"> </span><span class="nt">#grade-input</span><span class="w"> </span><span class="x">sort</span><span class="nf">:</span><span class="w"> </span><span class="m">4</span><span class="p">]</span><span class="w"></span>
+<span class="x">   </span><span class="w"> </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">sort</span><span class="nf">:</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;School:&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="x">   </span><span class="w"> </span><span class="p">[</span><span class="nt">#input</span><span class="w"> </span><span class="nt">#school-input</span><span class="w"> </span><span class="x">sort</span><span class="nf">:</span><span class="w"> </span><span class="m">6</span><span class="p">]</span><span class="w"></span>
+<span class="x">   </span><span class="w"> </span><span class="p">[</span><span class="nt">#button</span><span class="w"> </span><span class="nt">#submit</span><span class="w"> </span><span class="x">sort</span><span class="nf">:</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;submit&quot;</span><span class="p">]]</span><span class="w"></span>
+</code></pre></div>
+
+<p>We&rsquo;ve added some tags to the inputs and the button to distinguish them, so we can easily search for them from other blocks. Now that we have a form, we need to define what happens when the submit button is clicked.</p>
+
+<p>Remember, everything in Eve is a record, so the <code>#click</code> event is no different. When a user clicks the mouse in the browser, Eve records that click in the database.</p>
+
+<p>This record exists only for an instant, but we can react to it by searching for <code>[#click element: [#submit]]</code>. This record represents a <code>#click</code> on our <code>#submit</code> button. Then, all we need to do is capture the values of the input boxes and save them as a <code>#student</code> record:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#click</span><span class="w"> </span><span class="x">element</span><span class="nf">:</span><span class="w"> </span><span class="p">[</span><span class="nt">#submit</span><span class="p">]]</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">name</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#name-input</span><span class="p">]</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">grade</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#grade-input</span><span class="p">]</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">school</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#school-input</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">commit</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="c1">// save the new student</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="x">name.value</span><span class="p">,</span><span class="w"> </span><span class="x">grade</span><span class="nf">:</span><span class="w"> </span><span class="x">grade.value</span><span class="p">,</span><span class="w"> </span><span class="x">school</span><span class="nf">:</span><span class="w"> </span><span class="x">school.value</span><span class="p">]</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="c1">// reset the form</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">name.value</span><span class="w"> </span><span class="nf">:=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">grade.value</span><span class="w"> </span><span class="nf">:=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"></span>
+<span class="x"> </span><span class="w"> </span><span class="x">school.value</span><span class="w"> </span><span class="nf">:=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="learning-more">Learning more</h2>
+
+<p>If you want to learn more about Eve, we have some resources to help with that:</p>
+
+<ul>
+<li>Example applications - See some working programs and explore how they work.</li>
+<li>Tutorials - Step by step instructions on building Eve applications.</li>
+<li><a href="https://witheve.github.io/docs">The Eve Handbook</a> - Everything you need to know about Eve.</li>
+<li><a href="https://witheve.github.io/assets/docs/SyntaxReference.pdf">Eve syntax reference</a> - Eve&rsquo;s syntax in one page.</li>
+<li>Guides - In-depth documents on topics relating to Eve.</li>
+</ul>
+
+<p>We also invite you to join the Eve community! There are several ways to get involved:</p>
+
+<ul>
+<li>Join our <a href="https://groups.google.com/forum/#!forum/eve-talk">mailing list</a> and get involved with the latest discussions on Eve.</li>
+<li>Impact the future of Eve by getting involved with our <a href="https://github.com/witheve/rfcs">Request for Comments</a> process.</li>
+<li>Read our <a href="http://incidentalcomplexity.com/">development diary</a> for the latest news and articles on Eve.</li>
+<li>Follow us on <a href="https://twitter.com/with_eve">twitter</a>.</li>
+</ul>
+
+
+		</div>
+	</article>
+
+</main>
+

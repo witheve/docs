@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title> - Eve Documentation</title>
+    <title>Glossary - Eve Documentation</title>
     <meta name="generator" content="Hugo 0.16" />
 
     
@@ -113,8 +113,6 @@
                           
                             <li><a href="https://witheve.github.io/docs/handbook/windows/">Windows</a></li>
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/docker/">Docker</a></li>
-                          
                         </ul>
                       
                     
@@ -166,8 +164,6 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/names/">Names</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/tags/">Tags</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/not/">not</a></li>
@@ -192,7 +188,7 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/match/">match</a></li>
+                            <li><a href="https://witheve.github.io/docs/handbook/search/">search</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/bind/">bind</a></li>
                           
@@ -205,9 +201,9 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/functions/">Functions</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/if-then/">if-then</a></li>
                           
@@ -256,6 +252,15 @@
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/date/">date</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/time/">time</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/events/"> Events </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/events/click/">click</a></li>
                           
                         </ul>
                       
@@ -330,6 +335,9 @@
                       <li><a href="https://witheve.github.io/docs/handbook/commonmark/"> CommonMark </a> </li>
                       
                     
+                      <li class="active selected"><a href="https://witheve.github.io/docs/handbook/glossary/"> Glossary </a> </li>
+                      
+                    
                   </ul>
                 </li>
               
@@ -346,7 +354,7 @@
                       <li><a href="https://witheve.github.io/docs/guides/for-programmers/"> Eve for Programmers </a> </li>
                       
                     
-                      <li><a href="https://witheve.github.io/docs/guides/quickstart/"> Quickstart </a> </li>
+                      <li><a href="https://witheve.github.io/docs/guides/style/"> Style Guide </a> </li>
                       
                     
                   </ul>
@@ -354,11 +362,18 @@
               
             
               
-                <li>
-                  <a class="" href="https://witheve.github.io/docs/tutorials">
-                    
-                    <span class="colored">Tutorials</span>
+                <li class="sub-menu active">
+                  <a href="https://witheve.github.io/docs/tutorials" class="">
+                      
+                      <span class="colored">Tutorials</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
                   </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://witheve.github.io/docs/tutorials/quickstart/"> Quickstart </a> </li>
+                      
+                    
+                  </ul>
                 </li>
               
             
@@ -376,9 +391,13 @@
 
 <h1 id="glosasry">Glosasry</h1>
 
-<h2 id="cardinality-https-en-wikipedia-org-wiki-cardinality"><a href="https://en.wikipedia.org/wiki/Cardinality">Cardinality</a></h2>
+<h2 id="cardinality">Cardinality</h2>
 
-<p>The number of elements in a set. For example, the set <code>{5, 4, 2}</code> contains three elements, so the cardinality of the set is 3.</p>
+<p><a href="https://en.wikipedia.org/wiki/Cardinality">Cardinality</a> is the number of elements in a set. For example, the set <code>{5, 4, 2}</code> contains three elements, so the cardinality of the set is 3.</p>
+
+<h2 id="cartesian-product">Cartesian Product</h2>
+
+<p>The <a href="https://en.wikipedia.org/wiki/Cartesian_product">Cartesian product</a> <code>A × B</code> of two sets <code>A</code> and <code>B</code> is the set of ordered pairs <code>(a,b)</code> where <code>a ∈ A</code> and <code>b ∈ B</code>. For example, if <code>A = {1, 2}</code> and <code>B = {&quot;A&quot;, &quot;B&quot;}</code>, then <code>A x B = {(1,&quot;A&quot;), (1, &quot;B&quot;), (2, &quot;A&quot;), (2, &quot;B&quot;)}</code>.</p>
 
 <h2 id="entity">Entity</h2>
 
@@ -396,13 +415,13 @@
 
 <p>Records are composed of facts. In Eve, you select records from the database by supplying a pattern of attributes, and any records matching that pattern are returned to you. For example, a record might be the ages, salaries, and departments of employees.</p>
 
-<h2 id="referntial-transparency-https-en-wikipedia-org-wiki-referential-transparency"><a href="https://en.wikipedia.org/wiki/Referential_transparency">Referntial Transparency</a></h2>
+<h2 id="referential-transparentcy">Referential Transparentcy</h2>
 
-<p>An expression is referentially transparent if it can be replaced with its result without changing the behavior of the program. Expression that are not referentially transparent tend to have side effects, or rely on state that is not supplied as part of the input arguments, but through a side channel.</p>
+<p>An expression is <a href="https://en.wikipedia.org/wiki/Referential_transparency">referentially transparency</a> if it can be replaced with its result without changing the behavior of the program. Expression that are not referentially transparent tend to have side effects, or rely on state that is not supplied as part of the input arguments, but through a side channel.</p>
 
-<h2 id="set-https-en-wikipedia-org-wiki-set-mathematics"><a href="https://en.wikipedia.org/wiki/Set_(mathematics)">Set</a></h2>
+<h2 id="set">Set</h2>
 
-<p>A set is a collection of elements where each element is unique. Sets have no order, so position in the set does not imply uniqueness. For example <code>{1, 2, 3}</code> is a set, whereas <code>{1, 2, 1, 3}</code> is not a set, because 1 appears twice. Furthermore, this means that <code>{1, 2, 3}</code> is equivalent to <code>{3, 1, 2}</code>, <code>{3, 2, 1}</code>, and <code>{1, 3, 2}</code> because they have the same elements regardless of order. Elements of a set can be anything, and therefore can be sets themselves. To make the previous collection a set we could do the following: <code>{{1,A}, {2,B}, {1,C}, {3,D}}</code>.</p>
+<p>In mathematics, a <a href="https://en.wikipedia.org/wiki/Set_(mathematics)">set</a> is a collection of elements where each element is unique. Sets have no order, so position in the set does not imply uniqueness. For example <code>{1, 2, 3}</code> is a set, whereas <code>{1, 2, 1, 3}</code> is not a set, because 1 appears twice. Furthermore, this means that <code>{1, 2, 3}</code> is equivalent to <code>{3, 1, 2}</code>, <code>{3, 2, 1}</code>, and <code>{1, 3, 2}</code> because they have the same elements regardless of order. Elements of a set can be anything, and therefore can be sets themselves. To make the previous collection a set we could do the following: <code>{{1,A}, {2,B}, {1,C}, {3,D}}</code>.</p>
 
 
 		</div>

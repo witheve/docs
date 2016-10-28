@@ -113,8 +113,6 @@
                           
                             <li><a href="https://witheve.github.io/docs/handbook/windows/">Windows</a></li>
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/docker/">Docker</a></li>
-                          
                         </ul>
                       
                     
@@ -166,8 +164,6 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/names/">Names</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/tags/">Tags</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/not/">not</a></li>
@@ -192,7 +188,7 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/match/">match</a></li>
+                            <li><a href="https://witheve.github.io/docs/handbook/search/">search</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/bind/">bind</a></li>
                           
@@ -205,9 +201,9 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/functions/">Functions</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/if-then/">if-then</a></li>
                           
@@ -256,6 +252,15 @@
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/date/">date</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/time/">time</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/events/"> Events </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/events/click/">click</a></li>
                           
                         </ul>
                       
@@ -330,6 +335,9 @@
                       <li><a href="https://witheve.github.io/docs/handbook/commonmark/"> CommonMark </a> </li>
                       
                     
+                      <li><a href="https://witheve.github.io/docs/handbook/glossary/"> Glossary </a> </li>
+                      
+                    
                   </ul>
                 </li>
               
@@ -346,7 +354,7 @@
                       <li class="active selected"><a href="https://witheve.github.io/docs/guides/for-programmers/"> Eve for Programmers </a> </li>
                       
                     
-                      <li><a href="https://witheve.github.io/docs/guides/quickstart/"> Quickstart </a> </li>
+                      <li><a href="https://witheve.github.io/docs/guides/style/"> Style Guide </a> </li>
                       
                     
                   </ul>
@@ -354,11 +362,18 @@
               
             
               
-                <li>
-                  <a class="" href="https://witheve.github.io/docs/tutorials">
-                    
-                    <span class="colored">Tutorials</span>
+                <li class="sub-menu active">
+                  <a href="https://witheve.github.io/docs/tutorials" class="">
+                      
+                      <span class="colored">Tutorials</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
                   </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://witheve.github.io/docs/tutorials/quickstart/"> Quickstart </a> </li>
+                      
+                    
+                  </ul>
                 </li>
               
             
@@ -376,7 +391,13 @@
 
 <h1 id="eve-for-programmers">Eve for Programmers</h1>
 
+<p>As a programmer, you probably find it easy to switch between different programming langauges. If you know Javascript, you probably wouldn&rsquo;t have a hard time learning similar langauges like C++, Java, or Python. That&rsquo;s because despite syntactic differences, these languages largely conform to the same programming model. When we program in languages like these, we use similar abstractions between them &ndash; loops, functions, and input/output patterns have become a staple of every programmer&rsquo;s toolbox. When we solve problems, we usually reach a solution in terms of these primitive operations.</p>
+
+<p>Eve is a different kind of programming langauge from Javascript or Python, so programmers new to Eve may feel a little lost at first. How do you get anything done in a language without loops? How do you compose code without functions? The purpose of this guide is to provide a mapping from the common tools you know, to the Eve way of solving problems. We&rsquo;ll look at some programs written in Javascript, and see how they Eve can solve them.</p>
+
 <h2 id="functions">Functions</h2>
+
+<p>Functions are the fundamental unit of code reuse in most conventional programming languages. These langauges typically start from a &ldquo;main&rdquo; function, and branch</p>
 
 <h2 id="looping">Looping</h2>
 

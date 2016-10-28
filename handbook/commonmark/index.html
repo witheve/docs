@@ -113,8 +113,6 @@
                           
                             <li><a href="https://witheve.github.io/docs/handbook/windows/">Windows</a></li>
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/docker/">Docker</a></li>
-                          
                         </ul>
                       
                     
@@ -166,8 +164,6 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/names/">Names</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/tags/">Tags</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/not/">not</a></li>
@@ -192,7 +188,7 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/match/">match</a></li>
+                            <li><a href="https://witheve.github.io/docs/handbook/search/">search</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/bind/">bind</a></li>
                           
@@ -205,9 +201,9 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/functions/">Functions</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/if-then/">if-then</a></li>
                           
@@ -256,6 +252,15 @@
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/date/">date</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/time/">time</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/events/"> Events </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/events/click/">click</a></li>
                           
                         </ul>
                       
@@ -330,6 +335,9 @@
                       <li class="active selected"><a href="https://witheve.github.io/docs/handbook/commonmark/"> CommonMark </a> </li>
                       
                     
+                      <li><a href="https://witheve.github.io/docs/handbook/glossary/"> Glossary </a> </li>
+                      
+                    
                   </ul>
                 </li>
               
@@ -346,7 +354,7 @@
                       <li><a href="https://witheve.github.io/docs/guides/for-programmers/"> Eve for Programmers </a> </li>
                       
                     
-                      <li><a href="https://witheve.github.io/docs/guides/quickstart/"> Quickstart </a> </li>
+                      <li><a href="https://witheve.github.io/docs/guides/style/"> Style Guide </a> </li>
                       
                     
                   </ul>
@@ -354,11 +362,18 @@
               
             
               
-                <li>
-                  <a class="" href="https://witheve.github.io/docs/tutorials">
-                    
-                    <span class="colored">Tutorials</span>
+                <li class="sub-menu active">
+                  <a href="https://witheve.github.io/docs/tutorials" class="">
+                      
+                      <span class="colored">Tutorials</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
                   </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://witheve.github.io/docs/tutorials/quickstart/"> Quickstart </a> </li>
+                      
+                    
+                  </ul>
                 </li>
               
             
@@ -376,9 +391,67 @@
 
 <h1 id="commonmark">CommonMark</h1>
 
+<p>Eve documents are compatible with CommonMark</p>
+
 <h2 id="syntax">Syntax</h2>
 
+<h3 id="headings">Headings</h3>
+
+<pre><code># heading1
+## heading2
+### heading3
+</code></pre>
+
+<h3 id="emphasis">Emphasis</h3>
+
+<pre><code>*italic*
+_italic_
+**bold**
+__bold__
+</code></pre>
+
+<h3 id="links">Links</h3>
+
+<pre><code>[link](address)
+
+[link][ref]
+[ref] : address
+</code></pre>
+
+<h3 id="lists">Lists</h3>
+
+<pre><code>- list item
+- list item2
+  - sublist item
+
+* list item
+* list item2
+  * sublist item
+
+1. ordered list1
+2. ordered list2
+
+1) ordered list1
+2) ordered list2
+</code></pre>
+
+<h3 id="quotes">Quotes</h3>
+
+<pre><code>&gt; blockquote
+</code></pre>
+
+<h3 id="code">Code</h3>
+
+<pre><code>```
+  a block of code
+```
+
+`Inline code` with backticks
+</code></pre>
+
 <h2 id="description">Description</h2>
+
+<p>CommonMark is an effort to standardize and remove ambiguity from the Markdown language. Eve uses CommonMark as the basis for formatting and rendering prose contained in Eve files. Eve code is written as code blocks within a document specified in CommonMark. Code blocks are delinated by code fences, three backtics before and after Eve code. Everything within a code block is treated as Eve code.</p>
 
 <h2 id="examples">Examples</h2>
 

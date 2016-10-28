@@ -113,8 +113,6 @@
                           
                             <li><a href="https://witheve.github.io/docs/handbook/windows/">Windows</a></li>
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/docker/">Docker</a></li>
-                          
                         </ul>
                       
                     
@@ -166,8 +164,6 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/names/">Names</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/tags/">Tags</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/not/">not</a></li>
@@ -192,7 +188,7 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/match/">match</a></li>
+                            <li><a href="https://witheve.github.io/docs/handbook/search/">search</a></li>
                           
                             <li class="selected"><a href="https://witheve.github.io/docs/handbook/bind/">bind</a></li>
                           
@@ -205,9 +201,9 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/functions/">Functions</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/if-then/">if-then</a></li>
                           
@@ -256,6 +252,15 @@
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/date/">date</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/time/">time</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/events/"> Events </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/events/click/">click</a></li>
                           
                         </ul>
                       
@@ -330,6 +335,9 @@
                       <li><a href="https://witheve.github.io/docs/handbook/commonmark/"> CommonMark </a> </li>
                       
                     
+                      <li><a href="https://witheve.github.io/docs/handbook/glossary/"> Glossary </a> </li>
+                      
+                    
                   </ul>
                 </li>
               
@@ -346,7 +354,7 @@
                       <li><a href="https://witheve.github.io/docs/guides/for-programmers/"> Eve for Programmers </a> </li>
                       
                     
-                      <li><a href="https://witheve.github.io/docs/guides/quickstart/"> Quickstart </a> </li>
+                      <li><a href="https://witheve.github.io/docs/guides/style/"> Style Guide </a> </li>
                       
                     
                   </ul>
@@ -354,11 +362,18 @@
               
             
               
-                <li>
-                  <a class="" href="https://witheve.github.io/docs/tutorials">
-                    
-                    <span class="colored">Tutorials</span>
+                <li class="sub-menu active">
+                  <a href="https://witheve.github.io/docs/tutorials" class="">
+                      
+                      <span class="colored">Tutorials</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
                   </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://witheve.github.io/docs/tutorials/quickstart/"> Quickstart </a> </li>
+                      
+                    
+                  </ul>
                 </li>
               
             
@@ -376,52 +391,236 @@
 
 <h1 id="bind">bind</h1>
 
-<p>adds or updates records while overwriting old versions</p>
+<p>updates or creates records, syncing them with matched records</p>
 
 <h2 id="syntax">Syntax</h2>
 <div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">bind</span><span class="w"></span>
 
-<span class="kr">bind</span><span class="w"> </span><span class="nt">@context</span><span class="w"></span>
-
-<span class="kr">bind</span><span class="w"> </span><span class="p">(</span><span class="nt">@context1</span><span class="p">,</span><span class="w"> </span><span class="x">...</span><span class="p">,</span><span class="w"> </span><span class="nt">@contextN</span><span class="p">)</span><span class="w"></span>
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@database1</span><span class="p">,</span><span class="w"> </span><span class="x">...</span><span class="p">,</span><span class="w"> </span><span class="nt">@databaseN</span><span class="w"></span>
 </code></pre></div>
 
 <h2 id="description">Description</h2>
 
-<p><code>bind</code> signifies the beginning of the action phase of a block. The semantics of bind are to update or create new objects, while removing previous versions. By default, bound records are directed to a default local context.</p>
+<p><code>bind</code> updates or creates new records with a lifetime equal to matched records within the block. Matched records are any records found in a search action. If matched records change during program execution, all bound records change accordingly. If any matched records are removed (i.e. they no longer match the search), bound records and updates are removed as well.</p>
 
-<p><code>bind @context</code> directs bound records to a particular context.</p>
+<p>By default, bound records are directed to a default local database.</p>
 
-<p><code>bind (@context1, ... @contextN)</code> directs bound records to multiple contexts.</p>
+<p><code>bind @database1, ..., @databaseN</code> directs bound records to one or more databases.</p>
 
 <h2 id="bind-vs-commit">Bind vs. Commit</h2>
 
-<p>Bind and commit are both action fences, so they have close but very different behavior. Let&rsquo;s look at how the two differ. Consider the following block that reads the current time, and prints it to the screen:</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">match</span><span class="w"></span>
+<p>While bind and commit both update records in a database, they do so with slightly different behavior; a bound record has the same lifetime as its supporting records, whereas a committed record exists in the database until it is removed intentionally. Let&rsquo;s take a closer look at this distinction and what the implications are.</p>
+
+<p>Consider the following block that reads the current time, and prints it to the screen:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#time</span><span class="w"> </span><span class="x">seconds</span><span class="p">]</span><span class="w"></span>
-<span class="kr">commit</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="x">seconds</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
-<p>When you run this, you&rsquo;ll see that every second a new second gets added to the screen, while all the previous seconds remain. That&rsquo;s the behavior of commit. When you commit something, you&rsquo;re adding it to a database permanently i.e. <strong>if the supporting records are removed, the committed records stay</strong>.</p>
+<p>In this block we search for the current time and bind it to a message that displays it. The message exists as long as the current time stays the same (1 second obviously). When the time changes, the current message disappears and is replaced with a new message, displaying the new time. This is the behavior of bind; <strong>bound records persist only as long as their matching records</strong>.</p>
 
-<p>Now let&rsquo;s look at what bind does:</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">match</span><span class="w"></span>
+<p>Now let&rsquo;s look at what commit does in contrast:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#time</span><span class="w"> </span><span class="x">seconds</span><span class="p">]</span><span class="w"></span>
-<span class="kr">bind</span><span class="w"></span>
+
+<span class="kr">commit</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="x">seconds</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
-<p>Instead of keeping the old record, bind replaces it with a new record. Therefore this block only ever displays the current second. With a bind, <strong>if the supporting records are removed, then the bound records are removed as well</strong>.</p>
+<p>Comapred to the previous block, we only changed <code>bind</code> to <code>commit</code>. When you run this block, at first you&rsquo;ll see a single message like before. However, you&rsquo;ll notice that messages begin to accumulate every second. Unlike with bind, <strong>committed records persist in the database until they are intentionally removed</strong>.</p>
+
+<p>To make things very concrete, we can actually mimic the behavior of a bind using two blocks that commit. We&rsquo;ve already got the first one (the one just above), that commits messages to <code>@browser</code>. Now all we need is a second block, one that removes old committed messages from <code>@browser</code>:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"> </span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#time</span><span class="w"> </span><span class="x">seconds</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">search</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
+<span class="w">  </span><span class="x">s</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">seconds</span><span class="w"> </span><span class="nf">-</span><span class="w"> </span><span class="m">1</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Do some math to handle the roll over at 60 seconds</span><span class="w"></span>
+<span class="w">  </span><span class="x">last</span><span class="nf">-</span><span class="x">time</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">s</span><span class="w"> </span><span class="nf">-</span><span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="nf">*</span><span class="w"> </span><span class="x">floor</span><span class="p">[</span><span class="x">value</span><span class="nf">:</span><span class="w"> </span><span class="x">s</span><span class="w"> </span><span class="nf">/</span><span class="w"> </span><span class="m">60</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="x">msg</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="x">last</span><span class="nf">-</span><span class="x">time</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span>
+<span class="kr">commit</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
+<span class="w">  </span><span class="x">msg</span><span class="w"> </span><span class="nf">:=</span><span class="w"> </span><span class="kr">none</span><span class="w"></span>
+</code></pre></div>
+
+<p>This block searches for the message that was displayed during the previous second, and sets it to <code>none</code>, thereby removing it from <code>@browser</code>. Therefore, only the message bound to the the current time is displayed on the screen. This behavior is identical to that of the block that binds these messages instead of committing them!</p>
+
+<h3 id="an-execution-perspective">An Execution Perspective</h3>
+
+<p>Another way to understand <code>bind</code> vs. <code>commit</code> is by looking at how the databases change over each tick of the Eve evaluator. We&rsquo;ll consider the same program as before, looking at how its state changes over time. First, consider the bind case. When the program starts, there&rsquo;s nothing in any databases; the program is a blank slate. At <code>t1</code> the first <code>#time</code> is added to <code>@session</code>. This addition is bound to a <code>#div</code>, which is added to <code>@browser</code>. These changes are summarized in the first column of the table below.</p>
+
+<p>At <code>t2</code>, a new <code>#time</code> is added to <code>@session</code>, and the one from <code>t1</code> is removed. Since we used a bind, this causes the existing <code>#div</code> to be removed from <code>@browser</code>, but it is replaced with a new <code>#div</code> reflecting the current time. At <code>t3</code>, the same operations takes place, and this process continues until the program is terminated.</p>
+
+<table class="dataTable">
+  <tr>
+    <th>
+       
+    </th>
+    <th>
+t0
+    </th>
+    <th>
+t1
+    </th>
+    <th>
+t2
+    </th>
+    <th>
+t3
+    </th>
+  </tr>
+  <tr>
+    <td>
+delta
+    </td>
+    <td>
+
+    </td>
+    <td>
++ [#time seconds: 39]
++ [#div text: "39"]
+    </td>
+    <td>
++ [#time seconds: 40]
+- [#time seconds: 39]
++ [#div text: "40"]
+- [#div text: "39"]
+    </td>
+    <td>
++ [#time seconds: 41]
+- [#time seconds: 40]
++ [#div text: "41"]
+- [#div text: "40"]
+    </td>  
+  </tr>
+  <tr>
+    <td>
+@session
+    </td>
+    <td>
+[ ]
+    </td>
+    <td>
+[[#time seconds: 39]]
+    </td>
+    <td>
+[[#time seconds: 40]]
+    </td>
+    <td>
+[[#time seconds: 41]]
+    </td>  
+  </tr>
+  <tr>
+    <td>
+@browser
+    </td>
+    <td>
+[ ]
+    </td>
+    <td>
+[[#div text: 39]]
+    </td>
+    <td>
+[[#div text: 40]]
+    </td>
+    <td>
+[[#div text: 41]]
+    </td>  
+  </tr>
+</table>
+
+<p>Let&rsquo;s perform the same analysis in the commit case. In this program, things start off the same; initially the database is empty, and at <code>t1</code> a <code>#time</code> and a <code>#div</code> are added to their respective databases. At <code>t2</code>, things get more interesting. While the old <code>#time</code> is still replaced, the <code>#div</code> displaying the old time is not replaced since we committed it to <code>@browser</code>. Indeed, in subsequent rounds of execution, the contents of <code>@browser</code> keeps growing.</p>
+
+<table class="dataTable">
+  <tr>
+    <th>
+       
+    </th>
+    <th>
+t0
+    </th>
+    <th>
+t1
+    </th>
+    <th>
+t2
+    </th>
+    <th>
+t3
+    </th>
+  </tr>
+  <tr>
+    <td>
+delta
+    </td>
+    <td>
+    </td>
+    <td>
++ [#time seconds: 39]
++ [#div text: "39"]
+    </td>
+    <td>
++ [#time seconds: 40]
+- [#time seconds: 39]
++ [#div text: "40"]
+    </td>
+    <td>
++ [#time seconds: 41]
+- [#time seconds: 40]
++ [#div text: "41"]
+    </td>  
+  </tr>
+  <tr>
+    <td>
+@session
+    </td>
+    <td>
+[ ]
+    </td>
+    <td>
+[[#time seconds: 39]]
+    </td>
+    <td>
+[[#time seconds: 40]]
+    </td>
+    <td>
+[[#time seconds: 41]]
+    </td>  
+  </tr>
+  <tr>
+    <td>
+@browser
+    </td>
+    <td>
+[ ]
+    </td>
+    <td>
+[[#div text: 39]]
+    </td>
+    <td>
+[[#div text: 39],
+ [#div text: 40]]
+    </td>
+    <td>
+[[#div text: 39], 
+ [#div text: 40], 
+ [#div text: 41]]
+    </td>  
+  </tr>
+</table>
 
 <h2 id="tips">Tips</h2>
 
-<p>When you want to display data in an interface element like a <code>#div</code>, a bind is usually the more appropriate choice comapred to a commit. A bind will keep the interface element always up-to-date, whereas a commit will leave lingering elements that no longer reflect the current state of the program.</p>
+<p>When you want to display data in an interface element like a <code>#div</code>, a bind is usually the more appropriate choice compared to a commit. A bind will keep the interface element always up-to-date, whereas a commit will leave lingering elements that no longer reflect the current state of the program.</p>
+
+<p>When searching for an event like a <code>#click</code>, a commit is usually more appropriate than bind. When an event occurs, a record representing the event is added to a database. That record exists for exactly one &ldquo;instant&rdquo;, and then it is removed from the database. During that &ldquo;instant&rdquo;, any block searching for that event will be satisfied and can execute a bind or commit action. If you <code>bind</code> on the event, then the result will disappear as soon as the event does. However, if you <code>commit</code> on the event, then that result will persist after the event has been removed.</p>
 
 <h2 id="examples">Examples</h2>
 
 <p>Display a formatted time:</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">match</span><span class="w"></span>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="x">match</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#time</span><span class="w"> </span><span class="x">hours</span><span class="w"> </span><span class="x">minutes</span><span class="w"> </span><span class="x">seconds</span><span class="p">]</span><span class="w"></span>
 <span class="w">  </span><span class="p">(</span><span class="x">am</span><span class="nf">/</span><span class="x">pm</span><span class="p">,</span><span class="w"> </span><span class="x">adjusted</span><span class="nf">-</span><span class="x">hours</span><span class="p">)</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="x">hours</span><span class="w"> </span><span class="nf">&gt;=</span><span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;PM&quot;</span><span class="p">,</span><span class="w"> </span><span class="x">hours</span><span class="w"> </span><span class="nf">-</span><span class="w"> </span><span class="m">12</span><span class="p">)</span><span class="w"></span>
 <span class="w">                            </span><span class="kr">else</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="x">hours</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;AM&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">12</span><span class="p">)</span><span class="w"></span>
@@ -432,7 +631,7 @@
 
 <h2 id="see-also">See Also</h2>
 
-<p><a href="../commit">commit</a> | <a href="../databases">databases</a> | <a href="../match">match</a></p>
+<p><a href="../commit">commit</a> | <a href="../databases">databases</a> | <a href="../search">search</a></p>
 
 
 		</div>

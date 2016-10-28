@@ -26,96 +26,6 @@
     
     <item>
       <title></title>
-      <link>https://witheve.github.io/docs/handbook/events/click/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://witheve.github.io/docs/handbook/events/click/</guid>
-      <description>
-
-&lt;h1 id=&#34;click&#34;&gt;click&lt;/h1&gt;
-
-&lt;p&gt;click event&lt;/p&gt;
-
-&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;[#click]
-[#click element]
-[#click #direct-target element]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;#direct-target -&lt;/li&gt;
-&lt;li&gt;element - the element that was clicked&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;When an element in the DOM is clicked, a &lt;code&gt;#click&lt;/code&gt; record is created.&lt;/p&gt;
-
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-
-&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://witheve.github.io/docs/handbook/events/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://witheve.github.io/docs/handbook/events/</guid>
-      <description>
-
-&lt;h1 id=&#34;events&#34;&gt;Events&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;click&#34;&gt;click&lt;/a&gt; - a left-button mouse click event&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://witheve.github.io/docs/handbook/glossary/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://witheve.github.io/docs/handbook/glossary/</guid>
-      <description>
-
-&lt;h1 id=&#34;glosasry&#34;&gt;Glosasry&lt;/h1&gt;
-
-&lt;h2 id=&#34;cardinality-https-en-wikipedia-org-wiki-cardinality&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Cardinality&#34;&gt;Cardinality&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;The number of elements in a set. For example, the set &lt;code&gt;{5, 4, 2}&lt;/code&gt; contains three elements, so the cardinality of the set is 3.&lt;/p&gt;
-
-&lt;h2 id=&#34;entity&#34;&gt;Entity&lt;/h2&gt;
-
-&lt;p&gt;Entities are unique IDs in the Eve DB. An entity can represent anything - a person, a business, a message, an application, a button, etc.&lt;/p&gt;
-
-&lt;h2 id=&#34;fact&#34;&gt;Fact&lt;/h2&gt;
-
-&lt;p&gt;Facts describe entities. Each fact is composed of an attribute and a value, and is associated with a specific entity. Facts might be a person&amp;rsquo;s age, an employee&amp;rsquo;s salary, a department&amp;rsquo;s budget, etc.&lt;/p&gt;
-
-&lt;h2 id=&#34;provenance&#34;&gt;Provenance&lt;/h2&gt;
-
-&lt;p&gt;Provenance is the record and history of data and its place of origin. In Eve, provenance tells you how a value is calculated by looking back at the history of its computation. Provenance can be used to precisely identify the cause of unexpected data in your application.&lt;/p&gt;
-
-&lt;h2 id=&#34;record&#34;&gt;Record&lt;/h2&gt;
-
-&lt;p&gt;Records are composed of facts. In Eve, you select records from the database by supplying a pattern of attributes, and any records matching that pattern are returned to you. For example, a record might be the ages, salaries, and departments of employees.&lt;/p&gt;
-
-&lt;h2 id=&#34;referntial-transparency-https-en-wikipedia-org-wiki-referential-transparency&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Referential_transparency&#34;&gt;Referntial Transparency&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;An expression is referentially transparent if it can be replaced with its result without changing the behavior of the program. Expression that are not referentially transparent tend to have side effects, or rely on state that is not supplied as part of the input arguments, but through a side channel.&lt;/p&gt;
-
-&lt;h2 id=&#34;set-https-en-wikipedia-org-wiki-set-mathematics&#34;&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Set_(mathematics)&#34;&gt;Set&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;A set is a collection of elements where each element is unique. Sets have no order, so position in the set does not imply uniqueness. For example &lt;code&gt;{1, 2, 3}&lt;/code&gt; is a set, whereas &lt;code&gt;{1, 2, 1, 3}&lt;/code&gt; is not a set, because 1 appears twice. Furthermore, this means that &lt;code&gt;{1, 2, 3}&lt;/code&gt; is equivalent to &lt;code&gt;{3, 1, 2}&lt;/code&gt;, &lt;code&gt;{3, 2, 1}&lt;/code&gt;, and &lt;code&gt;{1, 3, 2}&lt;/code&gt; because they have the same elements regardless of order. Elements of a set can be anything, and therefore can be sets themselves. To make the previous collection a set we could do the following: &lt;code&gt;{{1,A}, {2,B}, {1,C}, {3,D}}&lt;/code&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://witheve.github.io/docs/handbook/intro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -205,6 +115,20 @@
     </item>
     
     <item>
+      <title>Events</title>
+      <link>https://witheve.github.io/docs/handbook/events/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/events/</guid>
+      <description>
+
+&lt;h1 id=&#34;events&#34;&gt;Events&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;click&#34;&gt;click&lt;/a&gt; - a left-button mouse click event&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Linux</title>
       <link>https://witheve.github.io/docs/handbook/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -214,42 +138,17 @@
 
 &lt;h1 id=&#34;installing-eve-on-linux&#34;&gt;Installing Eve on Linux&lt;/h1&gt;
 
-&lt;h2 id=&#34;from-source&#34;&gt;From Source&lt;/h2&gt;
+&lt;p&gt;First, &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;download&lt;/a&gt; the Eve source. You&amp;rsquo;ll need a recent &lt;a href=&#34;https://nodejs.org&#34;&gt;node.js&lt;/a&gt; and then and then in the extracted Eve directory:&lt;/p&gt;
 
-&lt;p&gt;Before you can install Eve you&amp;rsquo;ll need need LuaJIT, gcc, make, and python. Currently, building from source is only supported on Linux and OSX. On Windows, we&amp;rsquo;ve managed to compile Eve in cygwin, but have not gotten it to run yet. Contributions are welcome on this front.&lt;/p&gt;
-
-&lt;p&gt;First install gcc, make, and python using your operating system&amp;rsquo;s standard channels. Chances are you already have these. Install luajit by downloading &lt;a href=&#34;http://luajit.org/download.html&#34;&gt;LuaJIT-2.1.0-beta2&lt;/a&gt; and then in the LuaJIT directory:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;make
-make install
+&lt;pre&gt;&lt;code&gt;npm install
+npm start
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;By default, LuaJIT is not added to your path, so you&amp;rsquo;ll need to do that as well:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ln -sf luajit-2.1.0-beta2 /usr/local/bin/luajit
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Next you&amp;rsquo;ll need to download the Eve source, either by cloning our repository&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/witheve/Eve.git
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;or downloading the source &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;directly&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;To build Eve, execute &lt;code&gt;make&lt;/code&gt; in the &lt;code&gt;eve/build&lt;/code&gt; directory.&lt;/p&gt;
-
-&lt;h2 id=&#34;docker&#34;&gt;Docker&lt;/h2&gt;
-
-&lt;p&gt;Eve is also on &lt;a href=&#34;https://hub.docker.com/r/witheve/eve/&#34;&gt;Docker Hub&lt;/a&gt;. You can get our container with the following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;docker pull witheve/eve
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Windows Users - Docker for Windows requires Microsoft Hyper-V, which requires Windows 10. For users of earlier Windows versions, binaries are forthcoming.&lt;/p&gt;
+&lt;p&gt;Then open &lt;code&gt;http://localhost:8080/&lt;/code&gt; in your browser.&lt;/p&gt;
 
 &lt;h2 id=&#34;see-also&#34;&gt;See also&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;../mac&#34;&gt;mac&lt;/a&gt; | &lt;a href=&#34;../windows&#34;&gt;windows&lt;/a&gt; | &lt;a href=&#34;../docker&#34;&gt;docker&lt;/a&gt; | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../mac&#34;&gt;mac&lt;/a&gt; | &lt;a href=&#34;../windows&#34;&gt;windows&lt;/a&gt; | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -263,31 +162,17 @@ make install
 
 &lt;h1 id=&#34;installing-eve-on-mac&#34;&gt;Installing Eve on Mac&lt;/h1&gt;
 
-&lt;p&gt;Before you can install Eve you&amp;rsquo;ll need need LuaJIT, gcc, make, and python. Currently, building from source is only supported on Linux and OSX. On Windows, we&amp;rsquo;ve managed to compile Eve in cygwin, but have not gotten it to run yet. Contributions are welcome on this front.&lt;/p&gt;
+&lt;p&gt;First, &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;download&lt;/a&gt; the Eve source. You&amp;rsquo;ll need a recent &lt;a href=&#34;https://nodejs.org&#34;&gt;node.js&lt;/a&gt; and then and then in the extracted Eve directory:&lt;/p&gt;
 
-&lt;p&gt;First install gcc, make, and python using your operating system&amp;rsquo;s standard channels. Chances are you already have these. Install luajit by downloading &lt;a href=&#34;http://luajit.org/download.html&#34;&gt;LuaJIT-2.1.0-beta2&lt;/a&gt; and then in the LuaJIT directory:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;make
-make install
+&lt;pre&gt;&lt;code&gt;npm install
+npm start
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;By default, LuaJIT is not added to your path, so you&amp;rsquo;ll need to do that as well:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ln -sf luajit-2.1.0-beta2 /usr/local/bin/luajit
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Next you&amp;rsquo;ll need to download the Eve source, either by cloning our repository&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/witheve/Eve.git
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;or downloading the source &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;directly&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;To build Eve, execute &lt;code&gt;make&lt;/code&gt; in the &lt;code&gt;eve/build&lt;/code&gt; directory.&lt;/p&gt;
+&lt;p&gt;Then open &lt;code&gt;http://localhost:8080/&lt;/code&gt; in your browser.&lt;/p&gt;
 
 &lt;h2 id=&#34;see-also&#34;&gt;See also&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;../linux&#34;&gt;linux&lt;/a&gt; | &lt;a href=&#34;../windows&#34;&gt;windows&lt;/a&gt; | &lt;a href=&#34;../docker&#34;&gt;docker&lt;/a&gt; | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../linux&#34;&gt;linux&lt;/a&gt; | &lt;a href=&#34;../windows&#34;&gt;windows&lt;/a&gt; | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -319,7 +204,7 @@ make install
 &lt;li&gt;&lt;a href=&#34;round&#34;&gt;round&lt;/a&gt; - Round a number&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;mod&#34;&gt;mod&lt;/a&gt; - Modulo division&lt;/li&gt;
 &lt;li&gt;exp - The number &lt;code&gt;e&lt;/code&gt; raised to a power&lt;/li&gt;
-&lt;li&gt;log - Calculat the logaraithm of a number&lt;/li&gt;
+&lt;li&gt;log - Calculate the logarithm of a number&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;trigonometric-functions&#34;&gt;Trigonometric Functions&lt;/h2&gt;
@@ -405,38 +290,17 @@ make install
 
 &lt;h1 id=&#34;installing-eve-on-windows&#34;&gt;Installing Eve on Windows&lt;/h1&gt;
 
-&lt;p&gt;Eve currently does not build natively on Windows. However, you can still use Eve on Windows 10 via &lt;a href=&#34;https://msdn.microsoft.com/en-us/commandline/wsl/about&#34;&gt;Unbuntu on Windows&lt;/a&gt;. Follow the linked instructions and then in a command line execute the following command to start a bash enviornment:&lt;/p&gt;
+&lt;p&gt;First, &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;download&lt;/a&gt; the Eve source. You&amp;rsquo;ll need a recent &lt;a href=&#34;https://nodejs.org&#34;&gt;node.js&lt;/a&gt; and then and then in the extracted Eve directory:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;bash
+&lt;pre&gt;&lt;code&gt;npm install
+npm start
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Unfortunately, users of earlier verision of Windows will not be able to run Eve natively at this time.&lt;/p&gt;
-
-&lt;h2 id=&#34;from-source&#34;&gt;From Source&lt;/h2&gt;
-
-&lt;p&gt;In the bash environment, first install gcc, make, and python:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install gcc make python
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Install luajit by downloading &lt;a href=&#34;http://luajit.org/download.html&#34;&gt;LuaJIT-2.1.0-beta2&lt;/a&gt; and then in the LuaJIT directory:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;make
-make install
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;By default, LuaJIT is not added to your path, so you&amp;rsquo;ll need to do that as well:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ln -sf luajit-2.1.0-beta2 /usr/local/bin/luajit
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Next you&amp;rsquo;ll need to download the Eve &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;source&lt;/a&gt;. Extract the contents to your desired installation location.&lt;/p&gt;
-
-&lt;p&gt;Finally, to build Eve, execute &lt;code&gt;make&lt;/code&gt; in the &lt;code&gt;eve/build&lt;/code&gt; directory.&lt;/p&gt;
+&lt;p&gt;Then open &lt;code&gt;http://localhost:8080/&lt;/code&gt; in your browser.&lt;/p&gt;
 
 &lt;h2 id=&#34;see-also&#34;&gt;See also&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;../linux&#34;&gt;linux&lt;/a&gt; | &lt;a href=&#34;../mac&#34;&gt;mac&lt;/a&gt; | &lt;a href=&#34;../docker&#34;&gt;docker&lt;/a&gt; | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../linux&#34;&gt;linux&lt;/a&gt; | &lt;a href=&#34;../mac&#34;&gt;mac&lt;/a&gt; | | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -469,8 +333,9 @@ make install
 &lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
 
 &lt;p&gt;Get the absolute value of a number&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;match&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
 &lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;
 &lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@browser&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
 &lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#div&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -479,7 +344,87 @@ make install
 
 &lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;../sign&#34;&gt;sign&lt;/a&gt; |&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../sign&#34;&gt;sign&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ceil</title>
+      <link>https://witheve.github.io/docs/handbook/math/ceil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/math/ceil/</guid>
+      <description>
+
+&lt;h1 id=&#34;ceil&#34;&gt;ceil&lt;/h1&gt;
+
+&lt;p&gt;Round a number up to the nearest integer.&lt;/p&gt;
+
+&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;ceil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;value&lt;/code&gt; - a set of numbers&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;y = ceil[value]&lt;/code&gt; rounds the elements of &lt;code&gt;value&lt;/code&gt; up to the nearest integers.&lt;/p&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;p&gt;Calculate the ceiling of &lt;code&gt;34.2&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;ceil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;34&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;
+&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@browser&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#div&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The result is &lt;code&gt;35&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;../floor&#34;&gt;floor&lt;/a&gt; | &lt;a href=&#34;../fix&#34;&gt;fix&lt;/a&gt; | &lt;a href=&#34;../round&#34;&gt;round&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>click</title>
+      <link>https://witheve.github.io/docs/handbook/events/click/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/events/click/</guid>
+      <description>
+
+&lt;h1 id=&#34;click&#34;&gt;click&lt;/h1&gt;
+
+&lt;p&gt;click event&lt;/p&gt;
+
+&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;[#click]
+[#click element]
+[#click #direct-target element]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;#direct-target&lt;/code&gt; - selects only directly clicked elements, as opposed to elements to which the event bubbles.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;element&lt;/code&gt; - the element that was clicked.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;When an element in the DOM is clicked, a &lt;code&gt;#click&lt;/code&gt; record is created in the &lt;code&gt;@event&lt;/code&gt; database.&lt;/p&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
 </description>
     </item>
     

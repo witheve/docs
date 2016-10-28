@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title> - Eve Documentation</title>
+    <title>click - Eve Documentation</title>
     <meta name="generator" content="Hugo 0.16" />
 
     
@@ -113,8 +113,6 @@
                           
                             <li><a href="https://witheve.github.io/docs/handbook/windows/">Windows</a></li>
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/docker/">Docker</a></li>
-                          
                         </ul>
                       
                     
@@ -166,8 +164,6 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/names/">Names</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/tags/">Tags</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/not/">not</a></li>
@@ -192,7 +188,7 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/match/">match</a></li>
+                            <li><a href="https://witheve.github.io/docs/handbook/search/">search</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/bind/">bind</a></li>
                           
@@ -205,9 +201,9 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/functions/">Functions</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/if-then/">if-then</a></li>
                           
@@ -256,6 +252,15 @@
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/date/">date</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/time/">time</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/events/"> Events </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li class="selected"><a href="https://witheve.github.io/docs/handbook/events/click/">click</a></li>
                           
                         </ul>
                       
@@ -330,6 +335,9 @@
                       <li><a href="https://witheve.github.io/docs/handbook/commonmark/"> CommonMark </a> </li>
                       
                     
+                      <li><a href="https://witheve.github.io/docs/handbook/glossary/"> Glossary </a> </li>
+                      
+                    
                   </ul>
                 </li>
               
@@ -346,7 +354,7 @@
                       <li><a href="https://witheve.github.io/docs/guides/for-programmers/"> Eve for Programmers </a> </li>
                       
                     
-                      <li><a href="https://witheve.github.io/docs/guides/quickstart/"> Quickstart </a> </li>
+                      <li><a href="https://witheve.github.io/docs/guides/style/"> Style Guide </a> </li>
                       
                     
                   </ul>
@@ -354,11 +362,18 @@
               
             
               
-                <li>
-                  <a class="" href="https://witheve.github.io/docs/tutorials">
-                    
-                    <span class="colored">Tutorials</span>
+                <li class="sub-menu active">
+                  <a href="https://witheve.github.io/docs/tutorials" class="">
+                      
+                      <span class="colored">Tutorials</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
                   </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://witheve.github.io/docs/tutorials/quickstart/"> Quickstart </a> </li>
+                      
+                    
+                  </ul>
                 </li>
               
             
@@ -388,13 +403,13 @@
 <h2 id="attributes">Attributes</h2>
 
 <ul>
-<li>#direct-target -</li>
-<li>element - the element that was clicked</li>
+<li><code>#direct-target</code> - selects only directly clicked elements, as opposed to elements to which the event bubbles.</li>
+<li><code>element</code> - the element that was clicked.</li>
 </ul>
 
 <h2 id="description">Description</h2>
 
-<p>When an element in the DOM is clicked, a <code>#click</code> record is created.</p>
+<p>When an element in the DOM is clicked, a <code>#click</code> record is created in the <code>@event</code> database.</p>
 
 <h2 id="examples">Examples</h2>
 

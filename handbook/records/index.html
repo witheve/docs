@@ -113,8 +113,6 @@
                           
                             <li><a href="https://witheve.github.io/docs/handbook/windows/">Windows</a></li>
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/docker/">Docker</a></li>
-                          
                         </ul>
                       
                     
@@ -166,8 +164,6 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/names/">Names</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/tags/">Tags</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/not/">not</a></li>
@@ -192,7 +188,7 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/match/">match</a></li>
+                            <li><a href="https://witheve.github.io/docs/handbook/search/">search</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/bind/">bind</a></li>
                           
@@ -205,9 +201,9 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/functions/">Functions</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/if-then/">if-then</a></li>
                           
@@ -256,6 +252,15 @@
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/date/">date</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/time/">time</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/events/"> Events </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/events/click/">click</a></li>
                           
                         </ul>
                       
@@ -330,6 +335,9 @@
                       <li><a href="https://witheve.github.io/docs/handbook/commonmark/"> CommonMark </a> </li>
                       
                     
+                      <li><a href="https://witheve.github.io/docs/handbook/glossary/"> Glossary </a> </li>
+                      
+                    
                   </ul>
                 </li>
               
@@ -346,7 +354,7 @@
                       <li><a href="https://witheve.github.io/docs/guides/for-programmers/"> Eve for Programmers </a> </li>
                       
                     
-                      <li><a href="https://witheve.github.io/docs/guides/quickstart/"> Quickstart </a> </li>
+                      <li><a href="https://witheve.github.io/docs/guides/style/"> Style Guide </a> </li>
                       
                     
                   </ul>
@@ -354,11 +362,18 @@
               
             
               
-                <li>
-                  <a class="" href="https://witheve.github.io/docs/tutorials">
-                    
-                    <span class="colored">Tutorials</span>
+                <li class="sub-menu active">
+                  <a href="https://witheve.github.io/docs/tutorials" class="">
+                      
+                      <span class="colored">Tutorials</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
                   </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://witheve.github.io/docs/tutorials/quickstart/"> Quickstart </a> </li>
+                      
+                    
+                  </ul>
                 </li>
               
             
@@ -379,12 +394,27 @@
 <p>Records are <code>attribute: value</code> pairs associated to a unique ID</p>
 
 <h2 id="syntax">Syntax</h2>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="p">[</span><span class="x">attribute</span><span class="p">]</span><span class="w"></span>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="c1">// A record with an attribute</span><span class="w"></span>
+<span class="p">[</span><span class="x">attribute</span><span class="p">]</span><span class="w"></span>
+
+<span class="c1">// A record with an attribute of given value</span><span class="w"></span>
 <span class="p">[</span><span class="x">attribute</span><span class="nf">:</span><span class="w"> </span><span class="x">value</span><span class="p">]</span><span class="w"></span>
+
+<span class="c1">// A record with N attributes of given values</span><span class="w"></span>
 <span class="p">[</span><span class="x">attribute</span><span class="m">1</span><span class="nf">:</span><span class="w"> </span><span class="x">value</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="x">...</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="x">attributeN</span><span class="nf">:</span><span class="w"> </span><span class="x">valueN</span><span class="p">]</span><span class="w"></span>
+
+<span class="c1">// A record nested within another record</span><span class="w"></span>
 <span class="p">[</span><span class="x">attribute</span><span class="m">1</span><span class="nf">:</span><span class="w"> </span><span class="p">[</span><span class="x">attribute</span><span class="m">2</span><span class="nf">:</span><span class="w"> </span><span class="x">value</span><span class="p">]]</span><span class="w"></span>
+
+<span class="c1">// Equates a record and a variable</span><span class="w"></span>
 <span class="x">r</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="x">attribute</span><span class="w"> </span><span class="x">...</span><span class="p">]</span><span class="w"></span>
+
+<span class="c1">// Accessing an attribute on a record</span><span class="w"></span>
 <span class="x">r.attribute</span><span class="w"></span>
+
+<span class="c1">// Join two records</span><span class="w"></span>
+<span class="p">[</span><span class="x">attribute</span><span class="m">1</span><span class="nf">:</span><span class="w"> </span><span class="x">attribute</span><span class="m">2</span><span class="p">]</span><span class="w"></span>
+<span class="p">[</span><span class="x">attribute</span><span class="m">2</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
 <h2 id="description">Description</h2>
@@ -392,61 +422,67 @@
 <p>Records are the predominate datatype in Eve. Records are used in two ways:</p>
 
 <ol>
-<li>In a <code>match</code> you supply a pattern of attributes to match records in the Eve DB.</li>
-<li>In a <code>bind</code> or <code>commit</code>, you supply a pattern of attributes to insert into the Eve DB.</li>
+<li>In a <code>search</code> you supply a pattern of attributes to match records in a supplied database.</li>
+<li>In a <code>bind</code> or <code>commit</code>, you supply a pattern of attributes to insert into a database.</li>
 </ol>
 
 <p><code>[attribute]</code> matches all records with the given attribute.</p>
 
-<p><code>[attribute: value]</code> matches all records with the given attribute filtered on specified value.</p>
+<p><code>[attribute: value]</code> matches all records with the given attribute bound to specified value.</p>
 
-<p><code>[attribute1: value1, ... , attributeN: valueN]</code> is the general case for records. This matches all records with all of the given attributes filtered on the given value.</p>
+<p><code>[attribute &gt; value]</code> matches all records with the given attribute bound filtered on a value. The inequality <code>&gt;</code> can be one of the inequality operators.</p>
+
+<p><code>[attribute1: value1, ... , attributeN: valueN]</code> is the general case for records. This matches all records with all of the given attributes filtered on the given values.</p>
 
 <p><code>[attribute1: [attribute2: value]]</code> nests a record within another record.</p>
 
 <p><code>r = [attribute ...]</code> equates a record to a variable <code>r</code>.</p>
 
-<p><code>r.attribute</code> attributes of records can be accessed using dot notation.</p>
+<p><code>r.attribute</code> accesses the value of <code>attribute</code> on variable <code>r</code>.</p>
 
 <h2 id="examples">Examples</h2>
 
 <p>Match all records with a name, and bind a <code>#div</code> for each one.</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">match</span><span class="w"></span>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="x">name</span><span class="p">]</span><span class="w"></span>
-<span class="kr">bind</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="x">name</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
 <p>Records can have multiple attributes</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">match</span><span class="w"></span>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">name</span><span class="w"> </span><span class="x">grade</span><span class="w"> </span><span class="x">school</span><span class="p">]</span><span class="w"></span>
-<span class="kr">bind</span><span class="w"></span>
+<span class="w">  </span>
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{name}} is in {{grade}}th grade at {{school}}&quot;</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
 <p>Join records by binding attributes from one record into another record. Equate records with variables. Access record attributes using dot notation.</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">match</span><span class="w"></span>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
 <span class="w">  </span><span class="x">school</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#school</span><span class="w"> </span><span class="x">name</span><span class="w"> </span><span class="x">address</span><span class="p">]</span><span class="w"></span>
 <span class="w">  </span><span class="x">student</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">school</span><span class="nf">:</span><span class="w"> </span><span class="x">name</span><span class="p">]</span><span class="w"></span>
-<span class="kr">bind</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{student.name}} attends {{school.name}} at {{address}}&quot;</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
 <p>Records can be nested.</p>
 <div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">commit</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="nt">@Jeremey</span><span class="w"> </span><span class="x">spouse</span><span class="nf">:</span><span class="w"> </span><span class="p">[</span><span class="nt">@Wendy</span><span class="p">]]</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Jeremey&quot;</span><span class="w"> </span><span class="x">spouse</span><span class="nf">:</span><span class="w"> </span><span class="p">[</span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Wendy&quot;</span><span class="p">]]</span><span class="w"></span>
 </code></pre></div>
 
 <p>Dot notation can be composed for deep access to records</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">match</span><span class="w"></span>
-<span class="w">  </span><span class="x">jeremy</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">@Jeremy</span><span class="p">]</span><span class="w"></span>
-<span class="kr">bind</span><span class="w"></span>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="w">  </span><span class="x">jeremy</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Jeremy&quot;</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{jeremy.name}} is married to {{jeremy.spouse.name}}&quot;</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
 <h2 id="see-also">See Also</h2>
 
-<p><a href="../match">match</a> | <a href="../bind">bind</a> | <a href="../commit">commit</a> | <a href="../names">name selector</a> | <a href="../tags">tag selector</a></p>
+<p><a href="../search">search</a> | <a href="../bind">bind</a> | <a href="../commit">commit</a> | <a href="../tags">tags</a> | <a href="../databases">databases</a> | <a href="../equality">equality</a> | <a href="../inequality">inequality</a> | <a href="../joins">joins</a></p>
 
 
 		</div>

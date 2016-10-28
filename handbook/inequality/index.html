@@ -113,8 +113,6 @@
                           
                             <li><a href="https://witheve.github.io/docs/handbook/windows/">Windows</a></li>
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/docker/">Docker</a></li>
-                          
                         </ul>
                       
                     
@@ -166,8 +164,6 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/names/">Names</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/tags/">Tags</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/not/">not</a></li>
@@ -192,7 +188,7 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/match/">match</a></li>
+                            <li><a href="https://witheve.github.io/docs/handbook/search/">search</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/bind/">bind</a></li>
                           
@@ -205,9 +201,9 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/functions/">Functions</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/if-then/">if-then</a></li>
                           
@@ -256,6 +252,15 @@
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/date/">date</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/time/">time</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/events/"> Events </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/events/click/">click</a></li>
                           
                         </ul>
                       
@@ -330,6 +335,9 @@
                       <li><a href="https://witheve.github.io/docs/handbook/commonmark/"> CommonMark </a> </li>
                       
                     
+                      <li><a href="https://witheve.github.io/docs/handbook/glossary/"> Glossary </a> </li>
+                      
+                    
                   </ul>
                 </li>
               
@@ -346,7 +354,7 @@
                       <li><a href="https://witheve.github.io/docs/guides/for-programmers/"> Eve for Programmers </a> </li>
                       
                     
-                      <li><a href="https://witheve.github.io/docs/guides/quickstart/"> Quickstart </a> </li>
+                      <li><a href="https://witheve.github.io/docs/guides/style/"> Style Guide </a> </li>
                       
                     
                   </ul>
@@ -354,11 +362,18 @@
               
             
               
-                <li>
-                  <a class="" href="https://witheve.github.io/docs/tutorials">
-                    
-                    <span class="colored">Tutorials</span>
+                <li class="sub-menu active">
+                  <a href="https://witheve.github.io/docs/tutorials" class="">
+                      
+                      <span class="colored">Tutorials</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
                   </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://witheve.github.io/docs/tutorials/quickstart/"> Quickstart </a> </li>
+                      
+                    
+                  </ul>
                 </li>
               
             
@@ -376,17 +391,60 @@
 
 <h1 id="inequality">Inequality</h1>
 
+<p>inequality operators filter records</p>
+
 <h2 id="syntax">Syntax</h2>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="p">[</span><span class="x">attribute</span><span class="w"> </span><span class="nf">&gt;</span><span class="w"> </span><span class="x">value</span><span class="p">]</span><span class="w"></span>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="c1">// Inequality Operators</span><span class="w"></span>
+<span class="nf">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nf">&gt;=</span><span class="p">,</span><span class="w"> </span><span class="nf">&lt;</span><span class="p">,</span><span class="w"> </span><span class="nf">&lt;=</span><span class="p">,</span><span class="w"> </span><span class="nf">!=</span><span class="w"></span>
+
+<span class="c1">// Inside of records</span><span class="w"></span>
 <span class="p">[</span><span class="x">attribute</span><span class="w"> </span><span class="nf">&gt;=</span><span class="w"> </span><span class="x">value</span><span class="p">]</span><span class="w"></span>
-<span class="p">[</span><span class="x">attribute</span><span class="w"> </span><span class="nf">&lt;</span><span class="w"> </span><span class="x">value</span><span class="p">]</span><span class="w"></span>
-<span class="p">[</span><span class="x">attribute</span><span class="w"> </span><span class="nf">&lt;=</span><span class="w"> </span><span class="x">value</span><span class="p">]</span><span class="w"></span>
-<span class="p">[</span><span class="x">attribute</span><span class="w"> </span><span class="nf">!=</span><span class="w"> </span><span class="x">value</span><span class="p">]</span><span class="w"></span>
+<span class="p">[</span><span class="x">attribute</span><span class="w"> </span><span class="nf">&gt;=</span><span class="w"> </span><span class="x">variable</span><span class="p">]</span><span class="w"></span>
+
+<span class="c1">// Outside of records</span><span class="w"></span>
+<span class="x">variable</span><span class="w"> </span><span class="nf">&gt;=</span><span class="w"> </span><span class="x">value</span><span class="w"></span>
+<span class="x">variable</span><span class="w"> </span><span class="nf">&gt;=</span><span class="w"> </span><span class="x">variable</span><span class="w"></span>
+<span class="x">value</span><span class="w"> </span><span class="nf">&lt;=</span><span class="w"> </span><span class="x">variable</span><span class="w"> </span><span class="nf">&gt;=</span><span class="w"> </span><span class="x">value</span><span class="w"></span>
+<span class="x">variable</span><span class="w"> </span><span class="nf">&lt;=</span><span class="w"> </span><span class="x">variable</span><span class="w"> </span><span class="nf">&gt;=</span><span class="w"> </span><span class="x">variable</span><span class="w"></span>
 </code></pre></div>
 
 <h2 id="description">Description</h2>
 
+<p>Attributes can be filtered using inqueality operators, including <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code> and <code>!=</code>.</p>
+
+<p><code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code> can only filter using values that can be sorted. For instance, you can use these operators to filter numbers, but you cannot filter records this way.</p>
+
+<p><code>!=</code> tests only for inequality, and doesn&rsquo;t compare whether an attribute is greater or less than a particular value. Therefore, <code>!=</code> can be used to filter any value.</p>
+
+<p>You can use inequality operators inside records or outside of them. Inside of records, you can filter an attribute on a single value. Outside of records, you have more freedom to filter on multiple values. For instance, if you want only records with an attribute between a maximum and minimum value, you can write something like <code>min-value &lt; variable &gt; max-value</code>.</p>
+
 <h2 id="examples">Examples</h2>
+
+<p>Select students with a low GPA</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"> </span><span class="nt">@test-data</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">name</span><span class="w"> </span><span class="x">GPA</span><span class="w"> </span><span class="nf">&lt;</span><span class="w"> </span><span class="m">2</span><span class="x">.</span><span class="m">0</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{name}} needs a tutor.&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Select students with a GPA over 2.0 but less than 3.0</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"> </span><span class="nt">@test-data</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">name</span><span class="w"> </span><span class="x">GPA</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="m">2</span><span class="x">.</span><span class="m">0</span><span class="w"> </span><span class="nf">&gt;=</span><span class="w"> </span><span class="x">GPA</span><span class="w"> </span><span class="nf">&lt;</span><span class="w"> </span><span class="m">3</span><span class="x">.</span><span class="m">0</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{name}} is doing fine&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>You can be very specific with filters. Select students named &ldquo;John&rdquo; in 11th or 12th grade with a GPA between 2.0 and 3.0, and who don&rsquo;t attend &ldquo;West&rdquo; high school.</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"> </span><span class="nt">@test-data</span><span class="w"></span>
+<span class="w">  </span><span class="x">students</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span><span class="x">grade</span><span class="w"> </span><span class="nf">&gt;=</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="x">school</span><span class="w"> </span><span class="nf">!=</span><span class="w"> </span><span class="s">&quot;West&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="m">2</span><span class="x">.</span><span class="m">0</span><span class="w"> </span><span class="nf">&gt;=</span><span class="w"> </span><span class="x">students.GPA</span><span class="w"> </span><span class="nf">&lt;</span><span class="w"> </span><span class="m">3</span><span class="x">.</span><span class="m">0</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{name}} is doing fine&quot;</span><span class="p">]</span><span class="w">  </span>
+</code></pre></div>
 
 <h2 id="see-also">See Also</h2>
 

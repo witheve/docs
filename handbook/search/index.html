@@ -9,16 +9,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>match - Eve Documentation</title>
+    <title>search - Eve Documentation</title>
     <meta name="generator" content="Hugo 0.16" />
 
     
-    <link rel="canonical" href="https://witheve.github.io/docs/handbook/match/">
+    <link rel="canonical" href="https://witheve.github.io/docs/handbook/search/">
     
     <meta name="author" content="Eve">
     
 
-    <meta property="og:url" content="https://witheve.github.io/docs/handbook/match/">
+    <meta property="og:url" content="https://witheve.github.io/docs/handbook/search/">
     <meta property="og:title" content="Eve Documentation">
     
     <meta name="apple-mobile-web-app-title" content="Eve Documentation">
@@ -113,8 +113,6 @@
                           
                             <li><a href="https://witheve.github.io/docs/handbook/windows/">Windows</a></li>
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/docker/">Docker</a></li>
-                          
                         </ul>
                       
                     
@@ -166,8 +164,6 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/names/">Names</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/tags/">Tags</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/not/">not</a></li>
@@ -192,7 +188,7 @@
                       
                         <ul class="sub">
                           
-                            <li class="selected"><a href="https://witheve.github.io/docs/handbook/match/">match</a></li>
+                            <li class="selected"><a href="https://witheve.github.io/docs/handbook/search/">search</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/bind/">bind</a></li>
                           
@@ -205,9 +201,9 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/functions/">Functions</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/if-then/">if-then</a></li>
                           
@@ -256,6 +252,15 @@
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/date/">date</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/time/">time</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/events/"> Events </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/events/click/">click</a></li>
                           
                         </ul>
                       
@@ -330,6 +335,9 @@
                       <li><a href="https://witheve.github.io/docs/handbook/commonmark/"> CommonMark </a> </li>
                       
                     
+                      <li><a href="https://witheve.github.io/docs/handbook/glossary/"> Glossary </a> </li>
+                      
+                    
                   </ul>
                 </li>
               
@@ -346,7 +354,7 @@
                       <li><a href="https://witheve.github.io/docs/guides/for-programmers/"> Eve for Programmers </a> </li>
                       
                     
-                      <li><a href="https://witheve.github.io/docs/guides/quickstart/"> Quickstart </a> </li>
+                      <li><a href="https://witheve.github.io/docs/guides/style/"> Style Guide </a> </li>
                       
                     
                   </ul>
@@ -354,11 +362,18 @@
               
             
               
-                <li>
-                  <a class="" href="https://witheve.github.io/docs/tutorials">
-                    
-                    <span class="colored">Tutorials</span>
+                <li class="sub-menu active">
+                  <a href="https://witheve.github.io/docs/tutorials" class="">
+                      
+                      <span class="colored">Tutorials</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
                   </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://witheve.github.io/docs/tutorials/quickstart/"> Quickstart </a> </li>
+                      
+                    
+                  </ul>
                 </li>
               
             
@@ -374,43 +389,40 @@
 
 			
 
-<h1 id="match">match</h1>
+<h1 id="search">search</h1>
 
-<p>signifies the beginning of the match phase</p>
+<p>signifies the beginning of the search phase</p>
 
 <h2 id="syntax">Syntax</h2>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">match</span><span class="w"></span>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
 
-<span class="kr">match</span><span class="w"> </span><span class="nt">@context</span><span class="w"></span>
-
-<span class="kr">match</span><span class="w"> </span><span class="p">(</span><span class="nt">@context1</span><span class="p">,</span><span class="w"> </span><span class="nt">@context2</span><span class="p">,</span><span class="w"> </span><span class="x">...</span><span class="w"> </span><span class="nt">@contextN</span><span class="p">)</span><span class="w"></span>
+<span class="kr">search</span><span class="w"> </span><span class="nt">@database1</span><span class="p">,</span><span class="w"> </span><span class="x">...</span><span class="p">,</span><span class="w"> </span><span class="nt">@databaseN</span><span class="w"></span>
 </code></pre></div>
 
 <h2 id="description">Description</h2>
 
-<p><code>match</code> signifies the beginning of the match phase of a block. By default, matched records are drawn from a default local context.</p>
+<p><code>search</code> signifies the beginning of the search phase of a block. By default, searched records are drawn from a default local database.</p>
 
-<p><code>match @context</code> draws matched records from a particular context.</p>
-
-<p><code>match (@context1, ... @contextN)</code> draws matched records from multiple contexts.</p>
+<p><code>search @database1, ... @databaseN</code> draws searched records from one or more databases.</p>
 
 <h2 id="examples">Examples</h2>
 
-<p>Match a record</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">match</span><span class="w"></span>
+<p>search a record</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="x">name</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span>
 <span class="kr">bind</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="x">name</span><span class="p">]</span><span class="w">  </span>
 </code></pre></div>
 
-<p>Omit the match phase</p>
+<p>Omit the search phase</p>
 <div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">bind</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Hello, world&quot;</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
 <h2 id="see-also">See Also</h2>
 
-<p><a href="../bind">bind</a> | <a href="../commit">commit</a> | <a href="../context">contexts</a> | <a href="../match-phase">match phase</a> | <a href="../action-phase">action phase</a></p>
+<p><a href="../bind">bind</a> | <a href="../commit">commit</a> | <a href="../databases">databases</a> | <a href="../records">records</a></p>
 
 
 		</div>

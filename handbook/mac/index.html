@@ -113,8 +113,6 @@
                           
                             <li><a href="https://witheve.github.io/docs/handbook/windows/">Windows</a></li>
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/docker/">Docker</a></li>
-                          
                         </ul>
                       
                     
@@ -166,8 +164,6 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/names/">Names</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/tags/">Tags</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/not/">not</a></li>
@@ -192,7 +188,7 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/match/">match</a></li>
+                            <li><a href="https://witheve.github.io/docs/handbook/search/">search</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/bind/">bind</a></li>
                           
@@ -205,9 +201,9 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/functions/">Functions</a></li>
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/aggregates/">Aggregates</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/if-then/">if-then</a></li>
                           
@@ -256,6 +252,15 @@
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/date/">date</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/time/">time</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://witheve.github.io/docs/handbook/events/"> Events </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://witheve.github.io/docs/handbook/events/click/">click</a></li>
                           
                         </ul>
                       
@@ -330,6 +335,9 @@
                       <li><a href="https://witheve.github.io/docs/handbook/commonmark/"> CommonMark </a> </li>
                       
                     
+                      <li><a href="https://witheve.github.io/docs/handbook/glossary/"> Glossary </a> </li>
+                      
+                    
                   </ul>
                 </li>
               
@@ -346,7 +354,7 @@
                       <li><a href="https://witheve.github.io/docs/guides/for-programmers/"> Eve for Programmers </a> </li>
                       
                     
-                      <li><a href="https://witheve.github.io/docs/guides/quickstart/"> Quickstart </a> </li>
+                      <li><a href="https://witheve.github.io/docs/guides/style/"> Style Guide </a> </li>
                       
                     
                   </ul>
@@ -354,11 +362,18 @@
               
             
               
-                <li>
-                  <a class="" href="https://witheve.github.io/docs/tutorials">
-                    
-                    <span class="colored">Tutorials</span>
+                <li class="sub-menu active">
+                  <a href="https://witheve.github.io/docs/tutorials" class="">
+                      
+                      <span class="colored">Tutorials</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
                   </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://witheve.github.io/docs/tutorials/quickstart/"> Quickstart </a> </li>
+                      
+                    
+                  </ul>
                 </li>
               
             
@@ -376,31 +391,17 @@
 
 <h1 id="installing-eve-on-mac">Installing Eve on Mac</h1>
 
-<p>Before you can install Eve you&rsquo;ll need need LuaJIT, gcc, make, and python. Currently, building from source is only supported on Linux and OSX. On Windows, we&rsquo;ve managed to compile Eve in cygwin, but have not gotten it to run yet. Contributions are welcome on this front.</p>
+<p>First, <a href="https://github.com/witheve/Eve/archive/master.zip">download</a> the Eve source. You&rsquo;ll need a recent <a href="https://nodejs.org">node.js</a> and then and then in the extracted Eve directory:</p>
 
-<p>First install gcc, make, and python using your operating system&rsquo;s standard channels. Chances are you already have these. Install luajit by downloading <a href="http://luajit.org/download.html">LuaJIT-2.1.0-beta2</a> and then in the LuaJIT directory:</p>
-
-<pre><code>make
-make install
+<pre><code>npm install
+npm start
 </code></pre>
 
-<p>By default, LuaJIT is not added to your path, so you&rsquo;ll need to do that as well:</p>
-
-<pre><code>ln -sf luajit-2.1.0-beta2 /usr/local/bin/luajit
-</code></pre>
-
-<p>Next you&rsquo;ll need to download the Eve source, either by cloning our repository</p>
-
-<pre><code>git clone https://github.com/witheve/Eve.git
-</code></pre>
-
-<p>or downloading the source <a href="https://github.com/witheve/Eve/archive/master.zip">directly</a>.</p>
-
-<p>To build Eve, execute <code>make</code> in the <code>eve/build</code> directory.</p>
+<p>Then open <code>http://localhost:8080/</code> in your browser.</p>
 
 <h2 id="see-also">See also</h2>
 
-<p><a href="../linux">linux</a> | <a href="../windows">windows</a> | <a href="../docker">docker</a> | <a href="../running">running</a></p>
+<p><a href="../linux">linux</a> | <a href="../windows">windows</a> | <a href="../running">running</a></p>
 
 
 		</div>

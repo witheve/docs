@@ -10,18 +10,6 @@
   </url>
   
   <url>
-    <loc>https://witheve.github.io/docs/handbook/events/click/</loc>
-  </url>
-  
-  <url>
-    <loc>https://witheve.github.io/docs/handbook/events/</loc>
-  </url>
-  
-  <url>
-    <loc>https://witheve.github.io/docs/handbook/glossary/</loc>
-  </url>
-  
-  <url>
     <loc>https://witheve.github.io/docs/handbook/intro/</loc>
   </url>
   
@@ -46,6 +34,10 @@
   </url>
   
   <url>
+    <loc>https://witheve.github.io/docs/handbook/events/</loc>
+  </url>
+  
+  <url>
     <loc>https://witheve.github.io/docs/handbook/linux/</loc>
   </url>
   
@@ -58,7 +50,7 @@
   </url>
   
   <url>
-    <loc>https://witheve.github.io/docs/guides/quickstart/</loc>
+    <loc>https://witheve.github.io/docs/tutorials/quickstart/</loc>
   </url>
   
   <url>
@@ -67,6 +59,10 @@
   
   <url>
     <loc>https://witheve.github.io/docs/handbook/strings/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/guides/style/</loc>
   </url>
   
   <url>
@@ -79,6 +75,10 @@
   
   <url>
     <loc>https://witheve.github.io/docs/handbook/math/ceil/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/events/click/</loc>
   </url>
   
   <url>
@@ -146,11 +146,11 @@
   </url>
   
   <url>
-    <loc>https://witheve.github.io/docs/handbook/aggregates/</loc>
+    <loc>https://witheve.github.io/docs/handbook/equality/</loc>
   </url>
   
   <url>
-    <loc>https://witheve.github.io/docs/handbook/equality/</loc>
+    <loc>https://witheve.github.io/docs/handbook/functions/</loc>
   </url>
   
   <url>
@@ -162,10 +162,6 @@
   </url>
   
   <url>
-    <loc>https://witheve.github.io/docs/handbook/names/</loc>
-  </url>
-  
-  <url>
     <loc>https://witheve.github.io/docs/handbook/model/</loc>
   </url>
   
@@ -174,7 +170,11 @@
   </url>
   
   <url>
-    <loc>https://witheve.github.io/docs/handbook/match/</loc>
+    <loc>https://witheve.github.io/docs/handbook/search/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/aggregates/</loc>
   </url>
   
   <url>
@@ -183,10 +183,6 @@
   
   <url>
     <loc>https://witheve.github.io/docs/handbook/equivalence/</loc>
-  </url>
-  
-  <url>
-    <loc>https://witheve.github.io/docs/handbook/functions/</loc>
   </url>
   
   <url>
@@ -246,10 +242,6 @@
   </url>
   
   <url>
-    <loc>https://witheve.github.io/docs/handbook/docker/</loc>
-  </url>
-  
-  <url>
     <loc>https://witheve.github.io/docs/handbook/expressions/</loc>
   </url>
   
@@ -275,6 +267,10 @@
   
   <url>
     <loc>https://witheve.github.io/docs/handbook/databases/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/glossary/</loc>
   </url>
   
 </urlset>
