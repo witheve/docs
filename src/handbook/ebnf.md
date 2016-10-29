@@ -36,7 +36,7 @@ uuid ="⦑" (unicode - specials)  "⦒"
 ## Keywords and Identifiers
 
 ```ebnf
-match = "match";
+search = "search";
 action = "bind" | "commit";
 if = "if";
 then = "then";
@@ -44,7 +44,7 @@ else = "else";
 is = "is";
 not = "not";
 none = "none";
-keyword = match | action | if | then | else | boolean | is | not | none
+keyword = search | action | if | then | else | boolean | is | not | none
 non-special-non-numeric = non-special - numeric
 identifier = (non-special-non-numeric {non-special}) - keyword - "```";
 ```
@@ -126,7 +126,7 @@ if-statement = (identifier | binding-group) whitespace+ equality whitespace+
 
 ```ebnf
 database-declaration = name | "(" {name whitespace+} ")"
-match-section = match whitespace+ [database-declaration whitespace+] {statement whitespace}
+match-section = search whitespace+ [database-declaration whitespace+] {statement whitespace}
 action-section = action whitespace+ [database-declaration whitespace+] {action-statement whitespace}
 section = match-sectiong | action-section
 ```

@@ -52,7 +52,7 @@ Blocks automatically keep bound and committed records up-to-date with matched re
 
 ## Tips
 
-Althgouth they are similar, it's important not to think of blocks like functions in other languages. Blocks don't have a name, and you don't "call" them like you do functions. Instead, you "use" a block by creating the records for which it searches.
+Although they are similar, it's important not to think of blocks like functions in other languages. Blocks don't have a name, and you don't "call" them like you do functions. Instead, you "use" a block by creating the records for which it searches.
 
 Likewise, there is no "main" block. Since Eve is declarative and there is no order, there is no particular starting point for a program. As a close analog, any block that does not search for records will execute when the program starts. For instance:
 
@@ -62,11 +62,11 @@ commit
   [#student name: "Ingrid"]
 ```
 
-This block has no `search` action, so it doesn't depend on any other recrods. Thus, it can be viewed as a "root" of the program. A program may contain many such roots.
+This block has no `search` action, so it doesn't depend on any other records. Thus, it can be viewed as a "root" of the program. A program may contain many such roots.
 
 ## Examples
 
-A block with match and bind actions. The bind action adds the `#div` to the `@browser` database.
+A block with search and bind actions. The bind action adds the `#div` to the `@browser` database.
 
 ```eve
 search
@@ -76,7 +76,7 @@ bind @browser
   [#div text: name]
 ```
 
-A block with only a commit action: 
+A block with only a commit action:
 
 ```eve
 commit
