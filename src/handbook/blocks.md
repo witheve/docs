@@ -52,7 +52,7 @@ Blocks automatically keep bound and committed records up-to-date with matched re
 
 ## Tips
 
-Althgouth they are similar, it's important not to think of blocks like functions in other languages. Blocks don't have a name, and you don't "call" them like you do functions. Instead, you "use" a block by creating the records for which it searches.
+Although they are similar, it's important not to think of blocks like functions in other languages. Blocks don't have a name, and you don't "call" them like you do functions. Instead, you "use" a block by creating the records for which it searches.
 
 Likewise, there is no "main" block. Since Eve is declarative and there is no order, there is no particular starting point for a program. As a close analog, any block that does not search for records will execute when the program starts. For instance:
 
