@@ -13,7 +13,7 @@ adds a value to an attribute on a record
 ## Syntax
 
 ```eve
-// Add a value to an attrbiute
+// Add a value to an attribute
 record.attribute += value
 
 // Add a tag to a record
