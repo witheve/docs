@@ -20,7 +20,7 @@ commit @database1, ..., @databaseN
 
 ## Description
 
-`commmit` updates or creates new records that persist in a database until they are intentionally removed. If supporting records change or are removed, the original committed records remain in tact, and can still be searched by other blocks. By default, committed records are directed to a local database.
+`commit` updates or creates new records that persist in a database until they are intentionally removed. If supporting records change or are removed, the original committed records remain in tact, and can still be searched by other blocks. By default, committed records are directed to a local database.
 
 `commit @database1, ..., @databaseN` directs committed records one or more databases.
 
@@ -50,7 +50,7 @@ commit @browser
   [#div text: seconds]
 ```
 
-Comapred to the previous block, we only changed `bind` to `commit`. When you run this block, at first you'll see a single message like before. However, you'll notice that messages begin to accumulate every second. Unlike with bind, **committed records persist in the database until they are intentionally removed**.
+Compared to the previous block, we only changed `bind` to `commit`. When you run this block, at first you'll see a single message like before. However, you'll notice that messages begin to accumulate every second. Unlike with bind, **committed records persist in the database until they are intentionally removed**.
  
 To make things very concrete, we can actually mimic the behavior of a bind using two blocks that commit. We've already got the first one (the one just above), that commits messages to `@browser`. Now all we need is a second block, one that removes old committed messages from `@browser`:
 
