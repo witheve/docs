@@ -62,7 +62,7 @@ commit
   [#student name: "Ingrid"]
 ```
 
-This block has no `search` action, so it doesn't depend on any other recrods. Thus, it can be viewed as a "root" of the program. A program may contain many such roots.
+This block has no `search` action, so it doesn't depend on any other records. Thus, it can be viewed as a "root" of the program. A program may contain many such roots.
 
 ## Examples
 
