@@ -25,7 +25,7 @@ record <- [attribute: value, ... ]
 Match a record and merge a record into it.
 
 ```eve
-match
+search
   celia = [@Celia]
 bind
   celia <- [#student grade: 10, school: "East"]
