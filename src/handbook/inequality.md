@@ -29,7 +29,7 @@ variable <= variable >= variable
 
 ## Description
 
-Attributes can be filtered using inqueality operators, including `>`, `>=`, `<`, `<=` and `!=`.
+Attributes can be filtered using inequality operators, including `>`, `>=`, `<`, `<=` and `!=`.
 
 `>`, `>=`, `<`, `<=` can only filter using values that can be sorted. For instance, you can use these operators to filter numbers, but you cannot filter records this way.
 
