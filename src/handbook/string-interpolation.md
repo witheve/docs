@@ -22,7 +22,7 @@ injects the value of an attribute or variable into a string
 
 String interpolation works element-wise on its input. This means the string will be repeated for every unique value in `variable`. 
 
-Multiple variables can be interpolatd into strings. If the variables have no relation to eacother (i.e. they are not joined or part of the same record), then string interpolation is applied to the cartesian product of the sets. 
+Multiple variables can be interpolated into strings. If the variables have no relation to eacother (i.e. they are not joined or part of the same record), then string interpolation is applied to the cartesian product of the sets. 
 
 ## Examples
 
