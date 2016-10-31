@@ -52,7 +52,7 @@ commit @browser
   [#div text: seconds]
 ```
 
-Comapred to the previous block, we only changed `bind` to `commit`. When you run this block, at first you'll see a single message like before. However, you'll notice that messages begin to accumulate every second. Unlike with bind, **committed records persist in the database until they are intentionally removed**.
+Compared to the previous block, we only changed `bind` to `commit`. When you run this block, at first you'll see a single message like before. However, you'll notice that messages begin to accumulate every second. Unlike with bind, **committed records persist in the database until they are intentionally removed**.
  
 To make things very concrete, we can actually mimic the behavior of a bind using two blocks that commit. We've already got the first one (the one just above), that commits messages to `@browser`. Now all we need is a second block, one that removes old committed messages from `@browser`:
 
