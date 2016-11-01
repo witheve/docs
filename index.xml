@@ -109,7 +109,6 @@
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;time.md&#34;&gt;time&lt;/a&gt; - The current system time&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;date.md&#34;&gt;date&lt;/a&gt; - The current system date&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -124,13 +123,10 @@
 
 &lt;h1 id=&#34;eve-programming-language-documentation&#34;&gt;Eve Programming Language Documentation&lt;/h1&gt;
 
-&lt;h2 id=&#34;handbook&#34;&gt;Handbook&lt;/h2&gt;
-
 &lt;h2 id=&#34;guides&#34;&gt;Guides&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;guides/quickstart&#34;&gt;Eve Quickstart Guide&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;guides/for-programmers&#34;&gt;Eve for Programmers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://play.witheve.com&#34;&gt;Eve Quickstart Guide&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

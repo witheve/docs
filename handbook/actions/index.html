@@ -249,8 +249,6 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/datetime/date/">date</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/time/">time</a></li>
                           
                         </ul>
@@ -393,14 +391,14 @@
 
 <h2 id="description">Description</h2>
 
-<p>There are three actions in Eve: <code>match</code>, <code>bind</code>, and <code>commit</code>.</p>
+<p>There are three actions in Eve: <code>search</code>, <code>bind</code>, and <code>commit</code>.</p>
 
-<p><code>match</code> is used when you want to gather records from one or more databases. These records are called &ldquo;supporting records&rdquo;, because they are used as a basis for bound or committed records.</p>
+<p><code>search</code> is used when you want to gather records from one or more databases. These records are called &ldquo;supporting records&rdquo;, because they are used as a basis for bound or committed records.</p>
 
 <p><code>bind</code> and <code>commit</code> actions are used when you want to update records in one or more databases, but they differ in the way the updates are performed.</p>
 
 <ul>
-<li><p>bound records last only as long as their supporting records. When supporting records changes, then bound records changes acordingly, replacing any previously bound records.</p></li>
+<li><p>bound records last only as long as their supporting records. When supporting records changes, then bound records changes accordingly, replacing any previously bound records.</p></li>
 
 <li><p>committed records persist past the lifetime of their supporting records. When supporting records change, then a new record is committed, leaving any previously committed records still intact.</p></li>
 </ul>
@@ -411,7 +409,7 @@
 
 <h2 id="see-also">See Also</h2>
 
-<p><a href="../match">match</a> | <a href="../bind">bind</a> | <a href="../commit">commit</a></p>
+<p><a href="../search">search</a> | <a href="../bind">bind</a> | <a href="../commit">commit</a></p>
 
 
 		</div>

@@ -249,8 +249,6 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/datetime/date/">date</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/time/">time</a></li>
                           
                         </ul>
@@ -401,7 +399,7 @@
 
 <h2 id="description">Description</h2>
 
-<p><code>commmit</code> updates or creates new records that persist in a database until they are intentionally removed. If supporting records change or are removed, the original committed records remain in tact, and can still be searched by other blocks. By default, committed records are directed to a local database.</p>
+<p><code>commit</code> updates or creates new records that persist in a database until they are intentionally removed. If supporting records change or are removed, the original committed records remain in tact, and can still be searched by other blocks. By default, committed records are directed to a local database.</p>
 
 <p><code>commit @database1, ..., @databaseN</code> directs committed records one or more databases.</p>
 
@@ -427,7 +425,7 @@
 <span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="x">seconds</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
-<p>Comapred to the previous block, we only changed <code>bind</code> to <code>commit</code>. When you run this block, at first you&rsquo;ll see a single message like before. However, you&rsquo;ll notice that messages begin to accumulate every second. Unlike with bind, <strong>committed records persist in the database until they are intentionally removed</strong>.</p>
+<p>Compared to the previous block, we only changed <code>bind</code> to <code>commit</code>. When you run this block, at first you&rsquo;ll see a single message like before. However, you&rsquo;ll notice that messages begin to accumulate every second. Unlike with bind, <strong>committed records persist in the database until they are intentionally removed</strong>.</p>
 
 <p>To make things very concrete, we can actually mimic the behavior of a bind using two blocks that commit. We&rsquo;ve already got the first one (the one just above), that commits messages to <code>@browser</code>. Now all we need is a second block, one that removes old committed messages from <code>@browser</code>:</p>
 <div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"> </span>

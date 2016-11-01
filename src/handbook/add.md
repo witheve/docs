@@ -40,9 +40,10 @@ record += @name
 Add the current second to a record. Since Eve works in sets, `time-history` can only ever hold then numbers 0 through 60. This means after one minute passes, no new elements will be added to `tracker.time-history`. 
 
 ```eve
-match
-  tracker = [@seconds-tracker]
+search
+  tracker = [#seconds-tracker]
   [#time seconds]
+
 commit
   tracker.time-history += seconds
 ```
@@ -50,9 +51,10 @@ commit
 We can get around this by adding a record:
 
 ```eve
-match
-  tracker = [@seconds-tracker]
+search
+  tracker = [#seconds-tracker]
   [#time seconds]
+
 commit
   tracker.time-history += [seconds]
 ```
@@ -64,8 +66,9 @@ Now, instead of adding numbers to `time-history` we are adding records, which ar
 Add the `#honor-student` tag to any `#student` with a GPA greater than 3.75:
 
 ```eve
-match
+search
   student = [#student gpa > 3.75]
+  
 bind
   student += #honor-student
 ```

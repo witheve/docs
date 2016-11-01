@@ -22,11 +22,12 @@ record <- [attribute: value, ... ]
 
 ## Examples
 
-Match a record and merge a record into it.
+Search for a record and merge another record into it.
 
 ```eve
 search
-  celia = [@Celia]
+  celia = [#Celia]
+
 bind
   celia <- [#student grade: 10, school: "East"]
 ```

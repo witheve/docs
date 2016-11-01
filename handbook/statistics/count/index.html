@@ -249,8 +249,6 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/datetime/date/">date</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/time/">time</a></li>
                           
                         </ul>
@@ -432,8 +430,8 @@
 <span class="w">  </span><span class="x">students</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="p">]</span><span class="w"></span>
 <span class="w">  </span><span class="x">enrollment</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">count</span><span class="p">[</span><span class="x">given</span><span class="nf">:</span><span class="w"> </span><span class="x">students</span><span class="p">]</span><span class="w"></span>
 
-<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">sort</span><span class="nf">:</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;There are {{enrollment}} students in the district&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@view</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#value</span><span class="w"> </span><span class="x">|</span><span class="w"> </span><span class="x">value</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;There are {{enrollment}} students in the district&quot;</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
 <p>Now let&rsquo;s count the number of students in each school.</p>
@@ -441,8 +439,8 @@
 <span class="w">  </span><span class="x">students</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">school</span><span class="p">]</span><span class="w"></span>
 <span class="w">  </span><span class="x">school</span><span class="nf">-</span><span class="x">enrollment</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">count</span><span class="p">[</span><span class="x">given</span><span class="nf">:</span><span class="w"> </span><span class="x">students</span><span class="p">,</span><span class="w"> </span><span class="x">per</span><span class="nf">:</span><span class="w"> </span><span class="x">school</span><span class="p">]</span><span class="w"></span>
 
-<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">sort</span><span class="nf">:</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{school-enrollment}} attend {{school}}&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@view</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#value</span><span class="w"> </span><span class="x">|</span><span class="w"> </span><span class="x">value</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{school-enrollment}} attend {{school}}&quot;</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
 <p>We could have similarly counted the number of students in each grade across the district.</p>
@@ -450,8 +448,8 @@
 <span class="w">  </span><span class="x">students</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">grade</span><span class="p">]</span><span class="w"></span>
 <span class="w">  </span><span class="x">grade</span><span class="nf">-</span><span class="x">enrollment</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">count</span><span class="p">[</span><span class="x">given</span><span class="nf">:</span><span class="w"> </span><span class="x">students</span><span class="p">,</span><span class="w"> </span><span class="x">per</span><span class="nf">:</span><span class="w"> </span><span class="x">grade</span><span class="p">]</span><span class="w"></span>
 
-<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">sort</span><span class="nf">:</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{grade-enrollment}} students are in {{grade}}th grade&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@view</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#value</span><span class="w"> </span><span class="x">|</span><span class="w"> </span><span class="x">value</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{grade-enrollment}} students are in {{grade}}th grade&quot;</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
 <p>Finally, we can count the number of students per grade, per school.</p>
@@ -459,15 +457,15 @@
 <span class="w">  </span><span class="x">students</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">grade</span><span class="w"> </span><span class="x">school</span><span class="p">]</span><span class="w"></span>
 <span class="w">  </span><span class="x">grade</span><span class="nf">-</span><span class="x">school</span><span class="nf">-</span><span class="x">enrollment</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">count</span><span class="p">[</span><span class="x">given</span><span class="nf">:</span><span class="w"> </span><span class="x">students</span><span class="p">,</span><span class="w"> </span><span class="x">per</span><span class="nf">:</span><span class="w"> </span><span class="p">(</span><span class="x">grade</span><span class="p">,</span><span class="w"> </span><span class="x">school</span><span class="p">)]</span><span class="w"></span>
 
-<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">sort</span><span class="nf">:</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{grade-school-enrollment}} students are in {{grade}}th grade at {{school}}&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@view</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#value</span><span class="w"> </span><span class="x">|</span><span class="w"> </span><span class="x">value</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{grade-school-enrollment}} students are in {{grade}}th grade at {{school}}&quot;</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
 <h3 id="example-usage">Example Usage</h3>
 
 <ul>
-<li><a href="https://github.com/witheve/Eve/blob/master/examples/todomvc.eve#L31">TodoMVC</a></li>
-<li><a href="https://github.com/witheve/Eve/blob/master/examples/tic-tac-toe.eve#L67">Tic-Tac-Toe</a></li>
+<li><a href="http://play.witheve.com/#/examples/todomvc.eve">TodoMVC</a></li>
+<li><a href="http://play.witheve.com/#/examples/tic-tac-toe.eve">Tic-Tac-Toe</a></li>
 </ul>
 
 <h2 id="see-also">See Also</h2>

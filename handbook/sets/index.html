@@ -249,8 +249,6 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/datetime/date/">date</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/time/">time</a></li>
                           
                         </ul>
@@ -395,15 +393,15 @@
 
 <h2 id="description">Description</h2>
 
-<p><a href="https://en.wikipedia.org/wiki/Set_(mathematics)">Sets</a> are unordered collections where every element of the collection is unique. For example, <code>{&quot;a&quot;, &quot;b&quot;, &quot;c&quot;}</code> is a set, while <code>{&quot;a&quot;, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;}</code> is not. Furthermoer, <code>{&quot;a&quot;, &quot;b&quot;, &quot;c&quot;}</code> and <code>{&quot;c&quot;, &quot;b&quot;, &quot;a&quot;}</code> are equivalent sets, even though the order of elements is different.</p>
+<p><a href="https://en.wikipedia.org/wiki/Set_(mathematics)">Sets</a> are unordered collections where every element of the collection is unique. For example, <code>(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)</code> is a set, while <code>(&quot;a&quot;, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;)</code> is not. Furthermoer, <code>(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)</code> and <code>(&quot;c&quot;, &quot;b&quot;, &quot;a&quot;)</code> are equivalent sets, even though the order of elements is different.</p>
 
 <h2 id="examples">Examples</h2>
 
-<pre><code>{1, 2, 3, 4} // Every element is unique           
-{1, 2, 3, 1} // One is repeated twice, so this is not a set
-{4, 3, 2, 1} // This set is the same as the first, despite the order of elements
-{&quot;Steve&quot;, 1, {1, 2}} // Elements can be nonhomogeneous, as long as each one is unique
-{{&quot;a&quot;, 1}, {&quot;a&quot;, 2}, {&quot;a&quot;, 3}} // Sets within sets can be used to repeat values
+<pre><code>(1, 2, 3, 4) // Every element is unique           
+(1, 2, 3, 1) // One is repeated twice, so this is not a set
+(4, 3, 2, 1) // This set is the same as the first, despite the order of elements
+(&quot;Steve&quot;, 1, (1, 2)) // Elements can be nonhomogeneous, as long as each one is unique
+((&quot;a&quot;, 1), (&quot;a&quot;, 2), (&quot;a&quot;, 3)) // Sets within sets can be used to repeat values
 </code></pre>
 
 <h2 id="see-also">See Also</h2>

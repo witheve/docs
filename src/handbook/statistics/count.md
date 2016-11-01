@@ -52,8 +52,8 @@ search
   students = [#student]
   enrollment = count[given: students]
 
-bind @browser
-  [#div sort: 1 text: "There are {{enrollment}} students in the district"]
+bind @view
+  [#value | value: "There are {{enrollment}} students in the district"]
 ```
 
 Now let's count the number of students in each school.
@@ -63,8 +63,8 @@ search
   students = [#student school]
   school-enrollment = count[given: students, per: school]
 
-bind @browser
-  [#div sort: 2 text: "{{school-enrollment}} attend {{school}}"]
+bind @view
+  [#value | value: "{{school-enrollment}} attend {{school}}"]
 ```
 
 We could have similarly counted the number of students in each grade across the district.
@@ -74,8 +74,8 @@ search
   students = [#student grade]
   grade-enrollment = count[given: students, per: grade]
 
-bind @browser
-  [#div sort: 3 text: "{{grade-enrollment}} students are in {{grade}}th grade"]
+bind @view
+  [#value | value: "{{grade-enrollment}} students are in {{grade}}th grade"]
 ```
 
 Finally, we can count the number of students per grade, per school. 
@@ -85,14 +85,14 @@ search
   students = [#student grade school]
   grade-school-enrollment = count[given: students, per: (grade, school)]
 
-bind @browser
-  [#div sort: 4 text: "{{grade-school-enrollment}} students are in {{grade}}th grade at {{school}}"]
+bind @view
+  [#value | value: "{{grade-school-enrollment}} students are in {{grade}}th grade at {{school}}"]
 ```
 
 ### Example Usage
 
-- [TodoMVC](https://github.com/witheve/Eve/blob/master/examples/todomvc.eve#L31)
-- [Tic-Tac-Toe](https://github.com/witheve/Eve/blob/master/examples/tic-tac-toe.eve#L67)
+- [TodoMVC](http://play.witheve.com/#/examples/todomvc.eve)
+- [Tic-Tac-Toe](http://play.witheve.com/#/examples/tic-tac-toe.eve)
 
 ## See Also
 

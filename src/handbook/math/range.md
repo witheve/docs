@@ -75,7 +75,7 @@ Will display:
 
 ### Example Usage
 
-- [Tic-Tac-Toe](https://github.com/witheve/Eve/blob/master/examples/tic-tac-toe.eve#L25)
+- [Tic-Tac-Toe](http://play.witheve.com/#/examples/tic-tac-toe.eve)
 
 ## See Also
 

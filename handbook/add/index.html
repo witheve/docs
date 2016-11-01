@@ -249,8 +249,6 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/datetime/date/">date</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/time/">time</a></li>
                           
                         </ul>
@@ -394,7 +392,7 @@
 <p>adds a value to an attribute on a record</p>
 
 <h2 id="syntax">Syntax</h2>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="c1">// Add a value to an attrbiute</span><span class="w"></span>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="c1">// Add a value to an attribute</span><span class="w"></span>
 <span class="x">record.attribute</span><span class="w"> </span><span class="nf">+=</span><span class="w"> </span><span class="x">value</span><span class="w"></span>
 
 <span class="c1">// Add a tag to a record</span><span class="w"></span>
@@ -419,17 +417,19 @@
 <h2 id="examples">Examples</h2>
 
 <p>Add the current second to a record. Since Eve works in sets, <code>time-history</code> can only ever hold then numbers 0 through 60. This means after one minute passes, no new elements will be added to <code>tracker.time-history</code>.</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="x">match</span><span class="w"></span>
-<span class="w">  </span><span class="x">tracker</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">@seconds-tracker</span><span class="p">]</span><span class="w"></span>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="w">  </span><span class="x">tracker</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#seconds-tracker</span><span class="p">]</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#time</span><span class="w"> </span><span class="x">seconds</span><span class="p">]</span><span class="w"></span>
+
 <span class="kr">commit</span><span class="w"></span>
 <span class="w">  </span><span class="x">tracker.time</span><span class="nf">-</span><span class="x">history</span><span class="w"> </span><span class="nf">+=</span><span class="w"> </span><span class="x">seconds</span><span class="w"></span>
 </code></pre></div>
 
 <p>We can get around this by adding a record:</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="x">match</span><span class="w"></span>
-<span class="w">  </span><span class="x">tracker</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">@seconds-tracker</span><span class="p">]</span><span class="w"></span>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="w">  </span><span class="x">tracker</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#seconds-tracker</span><span class="p">]</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#time</span><span class="w"> </span><span class="x">seconds</span><span class="p">]</span><span class="w"></span>
+
 <span class="kr">commit</span><span class="w"></span>
 <span class="w">  </span><span class="x">tracker.time</span><span class="nf">-</span><span class="x">history</span><span class="w"> </span><span class="nf">+=</span><span class="w"> </span><span class="p">[</span><span class="x">seconds</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
@@ -439,8 +439,9 @@
 <hr />
 
 <p>Add the <code>#honor-student</code> tag to any <code>#student</code> with a GPA greater than 3.75:</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="x">match</span><span class="w"></span>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
 <span class="w">  </span><span class="x">student</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">gpa</span><span class="w"> </span><span class="nf">&gt;</span><span class="w"> </span><span class="m">3</span><span class="x">.</span><span class="m">75</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span>
 <span class="kr">bind</span><span class="w"></span>
 <span class="w">  </span><span class="x">student</span><span class="w"> </span><span class="nf">+=</span><span class="w"> </span><span class="nt">#honor-student</span><span class="w"></span>
 </code></pre></div>

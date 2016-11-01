@@ -12,7 +12,7 @@ If you have any questions or get stuck while you are learning Eve, there are sev
 
 Before reaching out, make sure you've looked at the following resources:
 
-- Read the [quick start guide](../../guides/quickstart). It contains everything you'll need to build your first Eve program.
+- Read the [quick start guide](http://play.witheve.com). It contains everything you'll need to build your first Eve program.
 - Read the [syntax reference](https://witheve.github.io/assets/docs/SyntaxReference.pdf). It summarizes the syntax of Eve on a single sheet of paper.
 
 If you're still stuck, you can get in touch with Eve developers and the community through these channels:

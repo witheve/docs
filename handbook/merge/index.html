@@ -249,8 +249,6 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/datetime/date/">date</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/time/">time</a></li>
                           
                         </ul>
@@ -403,9 +401,10 @@
 
 <h2 id="examples">Examples</h2>
 
-<p>Match a record and merge a record into it.</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="x">match</span><span class="w"></span>
-<span class="w">  </span><span class="x">celia</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">@Celia</span><span class="p">]</span><span class="w"></span>
+<p>Search for a record and merge another record into it.</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="w">  </span><span class="x">celia</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#Celia</span><span class="p">]</span><span class="w"></span>
+
 <span class="kr">bind</span><span class="w"></span>
 <span class="w">  </span><span class="x">celia</span><span class="w"> </span><span class="nf">&lt;-</span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">grade</span><span class="nf">:</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="x">school</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;East&quot;</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>

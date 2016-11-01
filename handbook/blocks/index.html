@@ -249,8 +249,6 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/datetime/date/">date</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/time/">time</a></li>
                           
                         </ul>
@@ -435,7 +433,7 @@
 
 <h2 id="tips">Tips</h2>
 
-<p>Althgouth they are similar, it&rsquo;s important not to think of blocks like functions in other languages. Blocks don&rsquo;t have a name, and you don&rsquo;t &ldquo;call&rdquo; them like you do functions. Instead, you &ldquo;use&rdquo; a block by creating the records for which it searches.</p>
+<p>Although they are similar, it&rsquo;s important not to think of blocks like functions in other languages. Blocks don&rsquo;t have a name, and you don&rsquo;t &ldquo;call&rdquo; them like you do functions. Instead, you &ldquo;use&rdquo; a block by creating the records for which it searches.</p>
 
 <p>Likewise, there is no &ldquo;main&rdquo; block. Since Eve is declarative and there is no order, there is no particular starting point for a program. As a close analog, any block that does not search for records will execute when the program starts. For instance:</p>
 <div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">commit</span><span class="w"></span>
@@ -443,11 +441,11 @@
 <span class="w">  </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Ingrid&quot;</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
-<p>This block has no <code>search</code> action, so it doesn&rsquo;t depend on any other recrods. Thus, it can be viewed as a &ldquo;root&rdquo; of the program. A program may contain many such roots.</p>
+<p>This block has no <code>search</code> action, so it doesn&rsquo;t depend on any other records. Thus, it can be viewed as a &ldquo;root&rdquo; of the program. A program may contain many such roots.</p>
 
 <h2 id="examples">Examples</h2>
 
-<p>A block with match and bind actions. The bind action adds the <code>#div</code> to the <code>@browser</code> database.</p>
+<p>A block with search and bind actions. The bind action adds the <code>#div</code> to the <code>@browser</code> database.</p>
 <div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="x">name</span><span class="p">]</span><span class="w"></span>
 

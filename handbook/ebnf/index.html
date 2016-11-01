@@ -249,8 +249,6 @@
                       
                         <ul class="sub">
                           
-                            <li><a href="https://witheve.github.io/docs/handbook/datetime/date/">date</a></li>
-                          
                             <li><a href="https://witheve.github.io/docs/handbook/datetime/time/">time</a></li>
                           
                         </ul>
@@ -412,7 +410,7 @@
 </code></pre></div>
 
 <h2 id="keywords-and-identifiers">Keywords and Identifiers</h2>
-<div class="highlight"><pre><code class="language-ebnf" data-lang="ebnf"><span></span><span class="k">match </span><span class="o">=</span> <span class="s2">&quot;match&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-ebnf" data-lang="ebnf"><span></span><span class="k">search </span><span class="o">=</span> <span class="s2">&quot;search&quot;</span><span class="p">;</span>
 <span class="k">action </span><span class="o">=</span> <span class="s2">&quot;bind&quot;</span> <span class="p">|</span> <span class="s2">&quot;commit&quot;</span><span class="p">;</span>
 <span class="k">if </span><span class="o">=</span> <span class="s2">&quot;if&quot;</span><span class="p">;</span>
 <span class="k">then </span><span class="o">=</span> <span class="s2">&quot;then&quot;</span><span class="p">;</span>
@@ -420,7 +418,7 @@
 <span class="k">is </span><span class="o">=</span> <span class="s2">&quot;is&quot;</span><span class="p">;</span>
 <span class="k">not </span><span class="o">=</span> <span class="s2">&quot;not&quot;</span><span class="p">;</span>
 <span class="k">none </span><span class="o">=</span> <span class="s2">&quot;none&quot;</span><span class="p">;</span>
-<span class="k">keyword </span><span class="o">=</span> <span class="k">match </span><span class="p">|</span> <span class="k">action </span><span class="p">|</span> <span class="k">if </span><span class="p">|</span> <span class="k">then </span><span class="p">|</span> <span class="k">else </span><span class="p">|</span> <span class="k">boolean </span><span class="p">|</span> <span class="k">is </span><span class="p">|</span> <span class="k">not </span><span class="p">|</span> <span class="k">none</span>
+<span class="k">keyword </span><span class="o">=</span> <span class="k">search </span><span class="p">|</span> <span class="k">action </span><span class="p">|</span> <span class="k">if </span><span class="p">|</span> <span class="k">then </span><span class="p">|</span> <span class="k">else </span><span class="p">|</span> <span class="k">boolean </span><span class="p">|</span> <span class="k">is </span><span class="p">|</span> <span class="k">not </span><span class="p">|</span> <span class="k">none</span>
 <span class="k">non-special-non-numeric </span><span class="err">=</span> <span class="k">non-special - numeric</span>
 <span class="k">identifier </span><span class="err">=</span> <span class="p">(</span><span class="k">non-special-non-numeric </span><span class="p">{</span><span class="k">non-special</span><span class="p">})</span> <span class="o">-</span> <span class="k">keyword - </span><span class="s2">&quot;```&quot;</span><span class="p">;</span>
 </code></pre></div>
@@ -484,7 +482,7 @@
 
 <h2 id="sections">Sections</h2>
 <div class="highlight"><pre><code class="language-ebnf" data-lang="ebnf"><span></span><span class="k">database-declaration </span><span class="o">=</span> <span class="k">name </span><span class="p">|</span> <span class="s2">&quot;(&quot;</span> <span class="p">{</span><span class="k">name whitespace</span><span class="err">+</span><span class="p">}</span> <span class="s2">&quot;)&quot;</span>
-<span class="k">match-section </span><span class="err">=</span> <span class="k">match whitespace</span><span class="err">+</span> <span class="p">[</span><span class="k">database-declaration whitespace</span><span class="err">+</span><span class="p">]</span> <span class="p">{</span><span class="k">statement whitespace</span><span class="p">}</span>
+<span class="k">match-section </span><span class="err">=</span> <span class="k">search whitespace</span><span class="err">+</span> <span class="p">[</span><span class="k">database-declaration whitespace</span><span class="err">+</span><span class="p">]</span> <span class="p">{</span><span class="k">statement whitespace</span><span class="p">}</span>
 <span class="k">action-section </span><span class="err">=</span> <span class="k">action whitespace</span><span class="err">+</span> <span class="p">[</span><span class="k">database-declaration whitespace</span><span class="err">+</span><span class="p">]</span> <span class="p">{</span><span class="k">action-statement whitespace</span><span class="p">}</span>
 <span class="k">section </span><span class="err">=</span> <span class="k">match-sectiong </span><span class="p">|</span> <span class="k">action-section</span>
 </code></pre></div>
