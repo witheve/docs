@@ -31,19 +31,20 @@ splits a string at the given delimiter
 Splits a string at every character
 
 ```eve
-match
+search
   (token, index) = split[text: "hello, world", by: ""]
-bind
-  [#div text: token]
-  [#div text: index]
+  
+bind @browser
+  [#div text: "{{token}} {{index}}"]
 ```
 
 Split a sentence into words and display them in order
 
 ```eve
-match
+search
   (token, index) = split[text: "the quick brown fox", by: " "]
-bind
+  
+bind @browser
   [#div sort: index, text: token]
 ```
 
