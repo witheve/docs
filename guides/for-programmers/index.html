@@ -9,16 +9,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>split - Eve Documentation</title>
+    <title>Eve for Programmers - Eve Documentation</title>
     <meta name="generator" content="Hugo 0.16" />
 
     
-    <link rel="canonical" href="https://witheve.github.io/docs/handbook/strings/split/">
+    <link rel="canonical" href="https://witheve.github.io/docs/guides/for-programmers/">
     
     <meta name="author" content="Eve">
     
 
-    <meta property="og:url" content="https://witheve.github.io/docs/handbook/strings/split/">
+    <meta property="og:url" content="https://witheve.github.io/docs/guides/for-programmers/">
     <meta property="og:title" content="Eve Documentation">
     
     <meta name="apple-mobile-web-app-title" content="Eve Documentation">
@@ -309,7 +309,7 @@
                           
                             <li><a href="https://witheve.github.io/docs/handbook/strings/join/">join</a></li>
                           
-                            <li class="selected"><a href="https://witheve.github.io/docs/handbook/strings/split/">split</a></li>
+                            <li><a href="https://witheve.github.io/docs/handbook/strings/split/">split</a></li>
                           
                         </ul>
                       
@@ -349,7 +349,7 @@
                   </a>
                   <ul class="sub">
                     
-                      <li><a href="https://witheve.github.io/docs/guides/for-programmers/"> Eve for Programmers </a> </li>
+                      <li class="active selected"><a href="https://witheve.github.io/docs/guides/for-programmers/"> Eve for Programmers </a> </li>
                       
                     
                       <li><a href="https://witheve.github.io/docs/guides/style/"> Style Guide </a> </li>
@@ -387,48 +387,25 @@
 
 			
 
-<h1 id="split">split</h1>
+<h1 id="eve-for-programmers">Eve for Programmers</h1>
 
-<p>splits a string at the given delimiter</p>
+<p>As a programmer, you probably find it easy to switch between different programming langauges. If you know Javascript, you probably wouldn&rsquo;t have a hard time learning similar langauges like C++, Java, or Python. That&rsquo;s because despite syntactic differences, these languages largely conform to the same programming model. When we program in languages like these, we use similar abstractions between them &ndash; loops, functions, and input/output patterns have become a staple of every programmer&rsquo;s toolbox. When we solve problems, we usually reach a solution in terms of these primitive operations.</p>
 
-<h2 id="syntax">Syntax</h2>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="p">(</span><span class="x">token</span><span class="p">,</span><span class="w"> </span><span class="x">index</span><span class="p">)</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">split</span><span class="p">[</span><span class="x">text</span><span class="p">,</span><span class="w"> </span><span class="x">by</span><span class="p">]</span><span class="w"></span>
-</code></pre></div>
+<p>Eve is a different kind of programming langauge from Javascript or Python, so programmers new to Eve may feel a little lost at first. How do you get anything done in a language without loops? How do you compose code without functions? The purpose of this guide is to provide a mapping from the common tools you know, to the Eve way of solving problems. We&rsquo;ll look at some programs written in Javascript, and see how they Eve can solve them.</p>
 
-<h2 id="attributes">Attributes</h2>
+<h2 id="functions">Functions</h2>
 
-<ul>
-<li><code>text</code> - the text to be split</li>
-<li><code>by</code> - the delimiter at which to split the text. An empty string will split the text at every character.</li>
-<li><code>token</code> - the recovered tokens after the split</li>
-<li><code>index</code> - the indices of the tokens in the original text<br /></li>
-</ul>
+<p>Functions are the fundamental unit of code reuse in most conventional programming languages. These langauges typically start from a &ldquo;main&rdquo; function, and branch</p>
 
-<h2 id="description">Description</h2>
+<h2 id="looping">Looping</h2>
 
-<p><code>(token, index) = split[text, by]</code> splits a <code>text</code> into <code>tokens</code> according to the given delimiter, <code>by</code>. Returns <code>token</code> and <code>index</code> of those tokens in the original string.</p>
+<h3 id="map">Map</h3>
 
-<h2 id="examples">Examples</h2>
+<h3 id="reduce">Reduce</h3>
 
-<p>Splits a string at every character</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
-<span class="w">  </span><span class="p">(</span><span class="x">token</span><span class="p">,</span><span class="w"> </span><span class="x">index</span><span class="p">)</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">split</span><span class="p">[</span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;hello, world&quot;</span><span class="p">,</span><span class="w"> </span><span class="x">by</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">]</span><span class="w"></span>
-<span class="w">  </span>
-<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{token}} {{index}}&quot;</span><span class="p">]</span><span class="w"></span>
-</code></pre></div>
+<h3 id="recursion">Recursion</h3>
 
-<p>Split a sentence into words and display them in order</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
-<span class="w">  </span><span class="p">(</span><span class="x">token</span><span class="p">,</span><span class="w"> </span><span class="x">index</span><span class="p">)</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">split</span><span class="p">[</span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;the quick brown fox&quot;</span><span class="p">,</span><span class="w"> </span><span class="x">by</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">]</span><span class="w"></span>
-<span class="w">  </span>
-<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">sort</span><span class="nf">:</span><span class="w"> </span><span class="x">index</span><span class="p">,</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="x">token</span><span class="p">]</span><span class="w"></span>
-</code></pre></div>
-
-<h2 id="see-also">See Also</h2>
-
-<p><a href="../concat">concat</a> | <a href="../join">join</a> | <a href="../char-at">char-at</a> | <a href="../find">find</a> | <a href="../length">length</a> | <a href="../replace">replace</a></p>
+<h2 id="i-o">I/O</h2>
 
 
 		</div>
