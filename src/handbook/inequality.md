@@ -23,8 +23,10 @@ inequality operators filter records
 // Outside of records
 variable >= value
 variable >= variable
-value <= variable >= value
-variable <= variable >= variable
+
+// Satisfy multiple constraints in a single line
+value <= variable <= value   
+variable <= variable <= variable
 ```
 
 ## Description
