@@ -414,7 +414,7 @@
 
 <p><code>!=</code> tests only for inequality, and doesn&rsquo;t compare whether an attribute is greater or less than a particular value. Therefore, <code>!=</code> can be used to filter any value.</p>
 
-<p>You can use inequality operators inside records or outside of them. Inside of records, you can filter an attribute on a single value. Outside of records, you have more freedom to filter on multiple values. For instance, if you want only records with an attribute between a maximum and minimum value, you can write something like <code>min-value &lt; variable &gt; max-value</code>.</p>
+<p>You can use inequality operators inside records or outside of them. Inside of records, you can filter an attribute on a single value. Outside of records, you have more freedom to filter on multiple values. For instance, if you want only records with an attribute between a maximum and minimum value, you can write something like <code>min-value &lt; variable &lt; max-value</code>.</p>
 
 <h2 id="examples">Examples</h2>
 
@@ -429,7 +429,7 @@
 <p>Select students with a GPA over 2.0 but less than 3.0</p>
 <div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"> </span><span class="nt">@test-data</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">name</span><span class="w"> </span><span class="x">GPA</span><span class="p">]</span><span class="w"></span>
-<span class="w">  </span><span class="m">2</span><span class="x">.</span><span class="m">0</span><span class="w"> </span><span class="nf">&gt;=</span><span class="w"> </span><span class="x">GPA</span><span class="w"> </span><span class="nf">&lt;</span><span class="w"> </span><span class="m">3</span><span class="x">.</span><span class="m">0</span><span class="w"></span>
+<span class="w">  </span><span class="m">2</span><span class="x">.</span><span class="m">0</span><span class="w"> </span><span class="nf">&lt;=</span><span class="w"> </span><span class="x">GPA</span><span class="w"> </span><span class="nf">&lt;</span><span class="w"> </span><span class="m">3</span><span class="x">.</span><span class="m">0</span><span class="w"></span>
 
 <span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{name}} is doing fine&quot;</span><span class="p">]</span><span class="w"></span>
@@ -438,7 +438,7 @@
 <p>You can be very specific with filters. Select students named &ldquo;John&rdquo; in 11th or 12th grade with a GPA between 2.0 and 3.0, and who don&rsquo;t attend &ldquo;West&rdquo; high school.</p>
 <div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"> </span><span class="nt">@test-data</span><span class="w"></span>
 <span class="w">  </span><span class="x">students</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span><span class="x">grade</span><span class="w"> </span><span class="nf">&gt;=</span><span class="w"> </span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="x">school</span><span class="w"> </span><span class="nf">!=</span><span class="w"> </span><span class="s">&quot;West&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-<span class="w">  </span><span class="m">2</span><span class="x">.</span><span class="m">0</span><span class="w"> </span><span class="nf">&gt;=</span><span class="w"> </span><span class="x">students.GPA</span><span class="w"> </span><span class="nf">&lt;</span><span class="w"> </span><span class="m">3</span><span class="x">.</span><span class="m">0</span><span class="w"></span>
+<span class="w">  </span><span class="m">2</span><span class="x">.</span><span class="m">0</span><span class="w"> </span><span class="nf">&lt;=</span><span class="w"> </span><span class="x">students.GPA</span><span class="w"> </span><span class="nf">&lt;</span><span class="w"> </span><span class="m">3</span><span class="x">.</span><span class="m">0</span><span class="w"></span>
 
 <span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{name}} is doing fine&quot;</span><span class="p">]</span><span class="w">  </span>
