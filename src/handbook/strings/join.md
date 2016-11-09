@@ -30,8 +30,9 @@ text = join[token, index, with]
 Split a sentence into tokens
 
 ```eve
-match
+search
   (token, index) = split[text: "the quick brown fox", by: " "]
+
 bind
   [#token token index]
 ```
@@ -39,13 +40,14 @@ bind
 Join the tokens into a sentence again, but with hyphens instead of spaces
 
 ```eve
-match
+search
   [#token token index]
   text = join[token, index, with: " "]
+
 bind
   [#div text] // Expected "the-quick-brown-fox"
 ```
 
 ## See Also
 
-[concat](../concat) | [join](../join) | [split](../split) | [char-at](../char-at) | [find](../find) | [length](../length) | [replace](../replace)
+[join](../join) | [split](../split) | [char-at](../char-at) | [find](../find) | [length](../length) | [replace](../replace)

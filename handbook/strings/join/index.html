@@ -410,23 +410,25 @@
 <h2 id="examples">Examples</h2>
 
 <p>Split a sentence into tokens</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="x">match</span><span class="w"></span>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
 <span class="w">  </span><span class="p">(</span><span class="x">token</span><span class="p">,</span><span class="w"> </span><span class="x">index</span><span class="p">)</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">split</span><span class="p">[</span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;the quick brown fox&quot;</span><span class="p">,</span><span class="w"> </span><span class="x">by</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">]</span><span class="w"></span>
+
 <span class="kr">bind</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#token</span><span class="w"> </span><span class="x">token</span><span class="w"> </span><span class="x">index</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
 <p>Join the tokens into a sentence again, but with hyphens instead of spaces</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="x">match</span><span class="w"></span>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#token</span><span class="w"> </span><span class="x">token</span><span class="w"> </span><span class="x">index</span><span class="p">]</span><span class="w"></span>
 <span class="w">  </span><span class="x">text</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">join</span><span class="p">[</span><span class="x">token</span><span class="p">,</span><span class="w"> </span><span class="x">index</span><span class="p">,</span><span class="w"> </span><span class="x">with</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">]</span><span class="w"></span>
+
 <span class="kr">bind</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="p">]</span><span class="w"> </span><span class="c1">// Expected &quot;the-quick-brown-fox&quot;</span><span class="w"></span>
 </code></pre></div>
 
 <h2 id="see-also">See Also</h2>
 
-<p><a href="../concat">concat</a> | <a href="../join">join</a> | <a href="../split">split</a> | <a href="../char-at">char-at</a> | <a href="../find">find</a> | <a href="../length">length</a> | <a href="../replace">replace</a></p>
+<p><a href="../join">join</a> | <a href="../split">split</a> | <a href="../char-at">char-at</a> | <a href="../find">find</a> | <a href="../length">length</a> | <a href="../replace">replace</a></p>
 
 
 		</div>
