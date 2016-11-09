@@ -18,9 +18,6 @@ record.attribute += value
 
 // Add a tag to a record
 record += #tag
-
-// Add a name to a record
-record += @name
 ```
 
 ## Description
@@ -32,8 +29,6 @@ record += @name
 `value` can be a string or number literal, a variable bound to one of these, or a record.  
 
 `record += #tag` adds `#tag` to `record`. This is shorthand for `record.tag += "tag"`.
-
-`record += @name` adds `@name` to `record`. This is shorthand for `record.name += "name"`.
 
 ## Examples
 
