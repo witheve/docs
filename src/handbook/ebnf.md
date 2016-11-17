@@ -30,7 +30,6 @@ numeric = "0" .. "9";
 number = ["-"] {numeric} ["." {numeric}];
 string-interpolation = "{{" expression "}}";
 string = "\"" {string-interpolation | unicode - "\"" | "\\\"" | whitespace} "\"";
-uuid ="⦑" (unicode - specials)  "⦒";
 ```
 
 ## Keywords and Identifiers
@@ -71,7 +70,7 @@ function = identifier "[" [attribute] {whitespace+ attribute} "]";
 ```ebnf
 record = "[" [attribute] {whitespace+ attribute} "]"
 attribute = tag | attribute-not | identifier {whitespace+ comparator whitespace+ expression};
-name = "@" (identifier | string);
+db-name = "@" (identifier | string);
 tag = "#" (identifier | string);
 attribute-not = not "(" whitespace* identifier [comparator whitespace+ expression] ")";
 attribute-access = identifier whitespace* {"." whitespace* identifier}+;
@@ -126,7 +125,7 @@ if-statement = (identifier | binding-group) whitespace+ equality whitespace+
 ## Sections
 
 ```ebnf
-database-declaration = name | {name whitespace+};
+database-declaration = db-name | {db-name whitespace+};
 search-section = search whitespace+ [database-declaration whitespace+] {statement whitespace};
 update-section = update-action whitespace+ [database-declaration whitespace+] {action-statement whitespace};
 section = search-section | update-section;
