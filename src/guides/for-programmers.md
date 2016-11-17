@@ -25,3 +25,5 @@ Functions are the fundamental unit of code reuse in most conventional programmin
 
 ## I/O
 
+## Indexing Arrays
+
