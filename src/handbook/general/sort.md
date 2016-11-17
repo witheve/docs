@@ -48,7 +48,7 @@ Sort is flexible, and can generate an ordering over multiple dimensions, directi
 
 `index = sort[value: (value1, ... , valueN)]` generates an ordering of a list of values, ordering by `value1` first, then `value2`, and so on. For example, if you have `#person` records with name, age and height attributes, you could sort as follows:
 
-```
+```eve
 search
   [#person name age height]
   index = sort[value: (age, name, height)]
@@ -126,7 +126,7 @@ search
   
 bind @browser
   [#div grade children: 
-    [#h3 text: "Grade: {{grade}}"]
+    [#h3 sort: 0, text: "Grade: {{grade}}"]
   	[#div sort: index, text: "{{index}} {{name}}"]]
 ```
 
