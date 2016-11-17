@@ -14,7 +14,7 @@ The following specification is expressed in [Extended Backus–Naur Form](https:
 ## Basics
 
 ```ebnf
-newline = "\n"
+newline = "\n";
 whitespace =  " " | "\t" | "," | newline;
 unicode = ? all unicode chars - whitespace ?;
 specials = "@" | "#" | "." | "," | "(" | ")" | "[" | "]" | "{" | "}" | "⦑" | "⦒" | ":" | "\"";
@@ -30,22 +30,23 @@ numeric = "0" .. "9";
 number = ["-"] {numeric} ["." {numeric}];
 string-interpolation = "{{" expression "}}";
 string = "\"" {string-interpolation | unicode - "\"" | "\\\"" | whitespace} "\"";
-uuid ="⦑" (unicode - specials)  "⦒"
+uuid ="⦑" (unicode - specials)  "⦒";
 ```
 
 ## Keywords and Identifiers
 
 ```ebnf
-search = "search";
-action = "bind" | "commit";
+query-action = "search";
+update-action = "bind" | "commit";
+action = query-action | update-action;
 if = "if";
 then = "then";
 else = "else";
 is = "is";
 not = "not";
 none = "none";
-keyword = search | action | if | then | else | boolean | is | not | none
-non-special-non-numeric = non-special - numeric
+keyword = search | action | if | then | else | boolean | is | not | none;
+non-special-non-numeric = non-special - numeric;
 identifier = (non-special-non-numeric {non-special}) - keyword - "```";
 ```
 
@@ -69,11 +70,11 @@ function = identifier "[" [attribute] {whitespace+ attribute} "]";
 
 ```ebnf
 record = "[" [attribute] {whitespace+ attribute} "]"
-attribute = name | tag | attribute-not | identifier {whitespace+ comparator whitespace+ expression};
+attribute = tag | attribute-not | identifier {whitespace+ comparator whitespace+ expression};
 name = "@" (identifier | string);
 tag = "#" (identifier | string);
 attribute-not = not "(" whitespace* identifier [comparator whitespace+ expression] ")";
-attribute-access = identifier whitespace* {"." whitespace* identifier}+
+attribute-access = identifier whitespace* {"." whitespace* identifier}+;
 ```
 
 ## Special Forms
@@ -92,51 +93,51 @@ expression = number | identifier | function | infix | record | attribute-access;
 ## Statements
 
 ```ebnf
-comment = "//" {unicode | whitespace - newline} newline
-statement = record | function | not-statement | if-statement | comparison | comment
+comment = "//" {unicode | whitespace - newline} newline;
+statement = record | function | not-statement | if-statement | comparison | comment;
 ```
 
-## Action Statements
+## Update Statements
 
 ```ebnf
-create-action = (identifier whitespace+ equality whitespace+ record) | record
-merge-action = (identifier | attribute-access) whitespace+ "<-" whitespace+ record
-name-tag-action = (identifier | attribute-access) whitespace+ ("+=" | "-=") whitespace+ (name | tag)
-remove-action = (identifier | attribute-access) whitespace+ ":=" whitespace+ none
-attribute-action = attribute-access whitespace+ (":=" | "+=" | "-=") whitespace+ expression
-action-operation = create-action | merge-action | name-tag-action | remove-action | attribute-action
+create = (identifier whitespace+ equality whitespace+ record) | record;
+delete = (identifier | attribute-access) whitespace+ ":=" whitespace+ none;
+merge = (identifier | attribute-access) whitespace+ "<-" whitespace+ record;
+tag-update = (identifier | attribute-access) whitespace+ ("+=" | "-=") whitespace+ tag;
+attribute-update = attribute-access whitespace+ (":=" | "+=" | "-=") whitespace+ expression;
+update-operation = create | delete | merge | tag-update | attribute-update;
 ```
 
 ## If-Then
 
 ```ebnf
-group = "(" expression {whitespace+ expression} ")"
-binding-group = "(" identifier {whitespace+ identifier} ")"
+group = "(" expression {whitespace+ expression} ")";
+binding-group = "(" identifier {whitespace+ identifier} ")";
 if-result = (group | expression);
 if-expression = if whitespace+ {statement whitespace+} then whitespace+ if-result;
 else-if-expression = else whitespace+ if whitespace+ {statement whitespace+} then whitespace+ if-result;
-else-expression = else whitespace+ if-result
+else-expression = else whitespace+ if-result;
 if-statement = (identifier | binding-group) whitespace+ equality whitespace+
                if-expression
                {whitespace+ (if-expression | else-if-expression)}
-               [else-expression]
+               [else-expression];
 ```
 
 ## Sections
 
 ```ebnf
-database-declaration = name | "(" {name whitespace+} ")"
-match-section = search whitespace+ [database-declaration whitespace+] {statement whitespace}
-action-section = action whitespace+ [database-declaration whitespace+] {action-statement whitespace}
-section = match-sectiong | action-section
+database-declaration = name | {name whitespace+};
+search-section = search whitespace+ [database-declaration whitespace+] {statement whitespace};
+update-section = update-action whitespace+ [database-declaration whitespace+] {action-statement whitespace};
+section = search-section | update-section;
 ```
 
 ## Program and Blocks
 
 ```ebnf
-fence-symbol = "```"
-start-fence = newline fence-symbol [whitespace* (unicode - newline)] newline
-end-fence = newline fence-symbol newline
-block = start-fence {section} end-fence
-program = {unicode | whitespace | block}
+fence-symbol = "```" | "~~~";
+start-fence = newline fence-symbol [whitespace* (unicode - newline)] newline;
+end-fence = newline fence-symbol newline;
+block = start-fence {section} end-fence;
+program = {unicode | whitespace | block};
 ```
