@@ -128,22 +128,6 @@
     </item>
     
     <item>
-      <title>General</title>
-      <link>https://witheve.github.io/docs/handbook/general/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://witheve.github.io/docs/handbook/general/</guid>
-      <description>
-
-&lt;h1 id=&#34;general&#34;&gt;General&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;sort&#34;&gt;sort&lt;/a&gt; - Orders elements in a set&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Linux</title>
       <link>https://witheve.github.io/docs/handbook/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -404,6 +388,42 @@ npm start
 &lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;../floor&#34;&gt;floor&lt;/a&gt; | &lt;a href=&#34;../fix&#34;&gt;fix&lt;/a&gt; | &lt;a href=&#34;../round&#34;&gt;round&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>click</title>
+      <link>https://witheve.github.io/docs/handbook/events/click/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/events/click/</guid>
+      <description>
+
+&lt;h1 id=&#34;click&#34;&gt;click&lt;/h1&gt;
+
+&lt;p&gt;click event&lt;/p&gt;
+
+&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;[#click]
+[#click element]
+[#click #direct-target element]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;#direct-target&lt;/code&gt; - selects only directly clicked elements, as opposed to elements to which the event bubbles.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;element&lt;/code&gt; - the element that was clicked.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;When an element in the DOM is clicked, a &lt;code&gt;#click&lt;/code&gt; record is created in the &lt;code&gt;@event&lt;/code&gt; database.&lt;/p&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
 </description>
     </item>
     
