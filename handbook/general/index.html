@@ -9,16 +9,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>search - Eve Documentation</title>
+    <title>General - Eve Documentation</title>
     <meta name="generator" content="Hugo 0.16" />
 
     
-    <link rel="canonical" href="https://witheve.github.io/docs/handbook/search/">
+    <link rel="canonical" href="https://witheve.github.io/docs/handbook/general/">
     
     <meta name="author" content="Eve">
     
 
-    <meta property="og:url" content="https://witheve.github.io/docs/handbook/search/">
+    <meta property="og:url" content="https://witheve.github.io/docs/handbook/general/">
     <meta property="og:title" content="Eve Documentation">
     
     <meta name="apple-mobile-web-app-title" content="Eve Documentation">
@@ -188,7 +188,7 @@
                       
                         <ul class="sub">
                           
-                            <li class="selected"><a href="https://witheve.github.io/docs/handbook/search/">search</a></li>
+                            <li><a href="https://witheve.github.io/docs/handbook/search/">search</a></li>
                           
                             <li><a href="https://witheve.github.io/docs/handbook/bind/">bind</a></li>
                           
@@ -263,7 +263,7 @@
                         </ul>
                       
                     
-                      <li><a href="https://witheve.github.io/docs/handbook/general/"> General </a> </li>
+                      <li class="active selected"><a href="https://witheve.github.io/docs/handbook/general/"> General </a> </li>
                       
                         <ul class="sub">
                           
@@ -396,40 +396,11 @@
 
 			
 
-<h1 id="search">search</h1>
+<h1 id="general">General</h1>
 
-<p>signifies the beginning of the search phase</p>
-
-<h2 id="syntax">Syntax</h2>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
-
-<span class="kr">search</span><span class="w"> </span><span class="nt">@database1</span><span class="p">,</span><span class="w"> </span><span class="x">...</span><span class="p">,</span><span class="w"> </span><span class="nt">@databaseN</span><span class="w"></span>
-</code></pre></div>
-
-<h2 id="description">Description</h2>
-
-<p><code>search</code> signifies the beginning of the search phase of a block. By default, searched records are drawn from a default local database.</p>
-
-<p><code>search @database1, ... @databaseN</code> draws searched records from one or more databases.</p>
-
-<h2 id="examples">Examples</h2>
-
-<p>search a record</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="x">name</span><span class="p">]</span><span class="w"></span>
-<span class="w">  </span>
-<span class="kr">bind</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="x">name</span><span class="p">]</span><span class="w">  </span>
-</code></pre></div>
-
-<p>Omit the search phase</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">bind</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Hello, world&quot;</span><span class="p">]</span><span class="w"></span>
-</code></pre></div>
-
-<h2 id="see-also">See Also</h2>
-
-<p><a href="../bind">bind</a> | <a href="../commit">commit</a> | <a href="../databases">databases</a> | <a href="../records">records</a></p>
+<ul>
+<li><a href="sort">sort</a> - Orders elements in a set</li>
+</ul>
 
 
 		</div>
