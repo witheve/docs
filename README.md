@@ -8,4 +8,6 @@
 
 You can learn more about Eve here: http://witheve.com/
 
+You can play with Eve here: http://play.witheve.com
+
 Eve is under active development here: https://github.com/witheve/Eve
