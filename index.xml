@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Eve Documentation</title>
-    <link>https://witheve.github.io/docs/</link>
+    <link>https://docs.witheve.com/</link>
     <description>Recent content on Eve Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://witheve.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.witheve.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title></title>
-      <link>https://witheve.github.io/docs/README/</link>
+      <link>https://docs.witheve.com/README/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://witheve.github.io/docs/README/</guid>
+      <guid>https://docs.witheve.com/README/</guid>
       <description>
 
 &lt;p align=&#34;center&#34;&gt;
@@ -34,10 +34,10 @@
     
     <item>
       <title></title>
-      <link>https://witheve.github.io/docs/handbook/core/</link>
+      <link>https://docs.witheve.com/handbook/core/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://witheve.github.io/docs/handbook/core/</guid>
+      <guid>https://docs.witheve.com/handbook/core/</guid>
       <description>
 
 &lt;h1 id=&#34;core-language&#34;&gt;Core Language&lt;/h1&gt;
@@ -50,10 +50,10 @@
     
     <item>
       <title></title>
-      <link>https://witheve.github.io/docs/handbook/intro/</link>
+      <link>https://docs.witheve.com/handbook/intro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://witheve.github.io/docs/handbook/intro/</guid>
+      <guid>https://docs.witheve.com/handbook/intro/</guid>
       <description>
 
 &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
@@ -84,10 +84,10 @@
     
     <item>
       <title></title>
-      <link>https://witheve.github.io/docs/handbook/programs/</link>
+      <link>https://docs.witheve.com/handbook/programs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://witheve.github.io/docs/handbook/programs/</guid>
+      <guid>https://docs.witheve.com/handbook/programs/</guid>
       <description>
 
 &lt;h1 id=&#34;eve-programs&#34;&gt;Eve Programs&lt;/h1&gt;
@@ -102,10 +102,10 @@
     
     <item>
       <title></title>
-      <link>https://witheve.github.io/docs/handbook/standard-library/</link>
+      <link>https://docs.witheve.com/handbook/standard-library/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://witheve.github.io/docs/handbook/standard-library/</guid>
+      <guid>https://docs.witheve.com/handbook/standard-library/</guid>
       <description>
 
 &lt;h1 id=&#34;standard-library&#34;&gt;Standard Library&lt;/h1&gt;
@@ -123,10 +123,10 @@
     
     <item>
       <title>Date &amp; Time</title>
-      <link>https://witheve.github.io/docs/handbook/datetime/</link>
+      <link>https://docs.witheve.com/handbook/datetime/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://witheve.github.io/docs/handbook/datetime/</guid>
+      <guid>https://docs.witheve.com/handbook/datetime/</guid>
       <description>
 
 &lt;h1 id=&#34;date-time&#34;&gt;Date &amp;amp; Time&lt;/h1&gt;
@@ -139,10 +139,10 @@
     
     <item>
       <title>Eve Documentation</title>
-      <link>https://witheve.github.io/docs/</link>
+      <link>https://docs.witheve.com/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://witheve.github.io/docs/</guid>
+      <guid>https://docs.witheve.com/</guid>
       <description>
 
 &lt;h1 id=&#34;eve-programming-language-documentation&#34;&gt;Eve Programming Language Documentation&lt;/h1&gt;
@@ -157,10 +157,10 @@
     
     <item>
       <title>Eve for Programmers</title>
-      <link>https://witheve.github.io/docs/guides/for-programmers/</link>
+      <link>https://docs.witheve.com/guides/for-programmers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://witheve.github.io/docs/guides/for-programmers/</guid>
+      <guid>https://docs.witheve.com/guides/for-programmers/</guid>
       <description>
 
 &lt;h1 id=&#34;eve-for-programmers&#34;&gt;Eve for Programmers&lt;/h1&gt;
@@ -187,10 +187,10 @@
     
     <item>
       <title>Events</title>
-      <link>https://witheve.github.io/docs/handbook/events/</link>
+      <link>https://docs.witheve.com/handbook/events/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://witheve.github.io/docs/handbook/events/</guid>
+      <guid>https://docs.witheve.com/handbook/events/</guid>
       <description>
 
 &lt;h1 id=&#34;events&#34;&gt;Events&lt;/h1&gt;
@@ -201,10 +201,10 @@
     
     <item>
       <title>Linux</title>
-      <link>https://witheve.github.io/docs/handbook/linux/</link>
+      <link>https://docs.witheve.com/handbook/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://witheve.github.io/docs/handbook/linux/</guid>
+      <guid>https://docs.witheve.com/handbook/linux/</guid>
       <description>
 
 &lt;h1 id=&#34;installing-eve-on-linux&#34;&gt;Installing Eve on Linux&lt;/h1&gt;
@@ -234,10 +234,10 @@ npm start
     
     <item>
       <title>Mac</title>
-      <link>https://witheve.github.io/docs/handbook/mac/</link>
+      <link>https://docs.witheve.com/handbook/mac/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://witheve.github.io/docs/handbook/mac/</guid>
+      <guid>https://docs.witheve.com/handbook/mac/</guid>
       <description>
 
 &lt;h1 id=&#34;installing-eve-on-mac&#34;&gt;Installing Eve on Mac&lt;/h1&gt;
@@ -258,10 +258,10 @@ npm start
     
     <item>
       <title>Math</title>
-      <link>https://witheve.github.io/docs/handbook/math/</link>
+      <link>https://docs.witheve.com/handbook/math/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://witheve.github.io/docs/handbook/math/</guid>
+      <guid>https://docs.witheve.com/handbook/math/</guid>
       <description>
 
 &lt;h1 id=&#34;math&#34;&gt;Math&lt;/h1&gt;
@@ -320,10 +320,10 @@ npm start
     
     <item>
       <title>Quickstart</title>
-      <link>https://witheve.github.io/docs/tutorials/quickstart/</link>
+      <link>https://docs.witheve.com/tutorials/quickstart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://witheve.github.io/docs/tutorials/quickstart/</guid>
+      <guid>https://docs.witheve.com/tutorials/quickstart/</guid>
       <description>
 
 &lt;h1 id=&#34;eve-quick-start-tutorial&#34;&gt;Eve Quick Start Tutorial&lt;/h1&gt;
@@ -556,10 +556,10 @@ npm start
     
     <item>
       <title>Statistics</title>
-      <link>https://witheve.github.io/docs/handbook/statistics/</link>
+      <link>https://docs.witheve.com/handbook/statistics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://witheve.github.io/docs/handbook/statistics/</guid>
+      <guid>https://docs.witheve.com/handbook/statistics/</guid>
       <description>
 
 &lt;h1 id=&#34;statistics&#34;&gt;Statistics&lt;/h1&gt;
@@ -578,10 +578,10 @@ npm start
     
     <item>
       <title>Strings</title>
-      <link>https://witheve.github.io/docs/handbook/strings/</link>
+      <link>https://docs.witheve.com/handbook/strings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://witheve.github.io/docs/handbook/strings/</guid>
+      <guid>https://docs.witheve.com/handbook/strings/</guid>
       <description>
 
 &lt;h1 id=&#34;strings&#34;&gt;Strings&lt;/h1&gt;
