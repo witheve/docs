@@ -6,6 +6,10 @@
   </url>
   
   <url>
+    <loc>https://witheve.github.io/docs/README/</loc>
+  </url>
+  
+  <url>
     <loc>https://witheve.github.io/docs/handbook/core/</loc>
   </url>
   
@@ -35,10 +39,6 @@
   
   <url>
     <loc>https://witheve.github.io/docs/handbook/events/</loc>
-  </url>
-  
-  <url>
-    <loc>https://witheve.github.io/docs/handbook/general/</loc>
   </url>
   
   <url>
@@ -123,10 +123,6 @@
   
   <url>
     <loc>https://witheve.github.io/docs/handbook/math/sin/</loc>
-  </url>
-  
-  <url>
-    <loc>https://witheve.github.io/docs/handbook/general/sort/</loc>
   </url>
   
   <url>
@@ -243,6 +239,10 @@
   
   <url>
     <loc>https://witheve.github.io/docs/handbook/blocks/</loc>
+  </url>
+  
+  <url>
+    <loc>https://witheve.github.io/docs/handbook/docker/</loc>
   </url>
   
   <url>

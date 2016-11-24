@@ -128,22 +128,6 @@
     </item>
     
     <item>
-      <title>General</title>
-      <link>https://witheve.github.io/docs/handbook/general/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://witheve.github.io/docs/handbook/general/</guid>
-      <description>
-
-&lt;h1 id=&#34;general&#34;&gt;General&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;sort&#34;&gt;sort&lt;/a&gt; - Orders elements in a set&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Linux</title>
       <link>https://witheve.github.io/docs/handbook/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -153,7 +137,7 @@
 
 &lt;h1 id=&#34;installing-eve-on-linux&#34;&gt;Installing Eve on Linux&lt;/h1&gt;
 
-&lt;p&gt;First, &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;download&lt;/a&gt; the Eve source. You&amp;rsquo;ll need a recent &lt;a href=&#34;https://nodejs.org&#34;&gt;node.js&lt;/a&gt; and then and then in the extracted Eve directory:&lt;/p&gt;
+&lt;p&gt;First, &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;download&lt;/a&gt; the Eve source. You&amp;rsquo;ll need a recent &lt;a href=&#34;https://nodejs.org&#34;&gt;node.js&lt;/a&gt; and then in the extracted Eve directory:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;npm install
 npm start
@@ -161,9 +145,18 @@ npm start
 
 &lt;p&gt;Then open &lt;code&gt;http://localhost:8080/&lt;/code&gt; in your browser.&lt;/p&gt;
 
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+
+&lt;p&gt;Some distributions (most notably Ubuntu) have renamed &lt;code&gt;node&lt;/code&gt; to &lt;code&gt;nodejs&lt;/code&gt;. If this is the case, you&amp;rsquo;ll need to create a symlink that remaps nodejs back to node. e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ln -s /usr/bin/nodejs /usr/bin/node
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then proceed with the installation as usual&lt;/p&gt;
+
 &lt;h2 id=&#34;see-also&#34;&gt;See also&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;../mac&#34;&gt;mac&lt;/a&gt; | &lt;a href=&#34;../windows&#34;&gt;windows&lt;/a&gt; | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../mac&#34;&gt;mac&lt;/a&gt; | &lt;a href=&#34;../windows&#34;&gt;windows&lt;/a&gt; | &lt;a href=&#34;../docker&#34;&gt;docker&lt;/a&gt; | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -177,7 +170,7 @@ npm start
 
 &lt;h1 id=&#34;installing-eve-on-mac&#34;&gt;Installing Eve on Mac&lt;/h1&gt;
 
-&lt;p&gt;First, &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;download&lt;/a&gt; the Eve source. You&amp;rsquo;ll need a recent &lt;a href=&#34;https://nodejs.org&#34;&gt;node.js&lt;/a&gt; and then and then in the extracted Eve directory:&lt;/p&gt;
+&lt;p&gt;First, &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;download&lt;/a&gt; the Eve source. You&amp;rsquo;ll need a recent &lt;a href=&#34;https://nodejs.org&#34;&gt;node.js&lt;/a&gt; and then in the extracted Eve directory:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;npm install
 npm start
@@ -187,7 +180,7 @@ npm start
 
 &lt;h2 id=&#34;see-also&#34;&gt;See also&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;../linux&#34;&gt;linux&lt;/a&gt; | &lt;a href=&#34;../windows&#34;&gt;windows&lt;/a&gt; | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../linux&#34;&gt;linux&lt;/a&gt; | &lt;a href=&#34;../windows&#34;&gt;windows&lt;/a&gt; | &lt;a href=&#34;../docker&#34;&gt;docker&lt;/a&gt; | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -305,7 +298,7 @@ npm start
 
 &lt;h1 id=&#34;installing-eve-on-windows&#34;&gt;Installing Eve on Windows&lt;/h1&gt;
 
-&lt;p&gt;First, &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;download&lt;/a&gt; the Eve source. You&amp;rsquo;ll need a recent &lt;a href=&#34;https://nodejs.org&#34;&gt;node.js&lt;/a&gt; and then and then in the extracted Eve directory:&lt;/p&gt;
+&lt;p&gt;First, &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;download&lt;/a&gt; the Eve source. You&amp;rsquo;ll need a recent &lt;a href=&#34;https://nodejs.org&#34;&gt;node.js&lt;/a&gt; and then in the extracted Eve directory:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;npm install
 npm start
@@ -315,7 +308,7 @@ npm start
 
 &lt;h2 id=&#34;see-also&#34;&gt;See also&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;../linux&#34;&gt;linux&lt;/a&gt; | &lt;a href=&#34;../mac&#34;&gt;mac&lt;/a&gt; | | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../linux&#34;&gt;linux&lt;/a&gt; | &lt;a href=&#34;../mac&#34;&gt;mac&lt;/a&gt; | &lt;a href=&#34;../docker&#34;&gt;docker&lt;/a&gt; | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -404,6 +397,42 @@ npm start
 &lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;../floor&#34;&gt;floor&lt;/a&gt; | &lt;a href=&#34;../fix&#34;&gt;fix&lt;/a&gt; | &lt;a href=&#34;../round&#34;&gt;round&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>click</title>
+      <link>https://witheve.github.io/docs/handbook/events/click/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/handbook/events/click/</guid>
+      <description>
+
+&lt;h1 id=&#34;click&#34;&gt;click&lt;/h1&gt;
+
+&lt;p&gt;click event&lt;/p&gt;
+
+&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;[#click]
+[#click element]
+[#click #direct-target element]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;#direct-target&lt;/code&gt; - selects only directly clicked elements, as opposed to elements to which the event bubbles.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;element&lt;/code&gt; - the element that was clicked.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;When an element in the DOM is clicked, a &lt;code&gt;#click&lt;/code&gt; record is created in the &lt;code&gt;@event&lt;/code&gt; database.&lt;/p&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
 </description>
     </item>
     

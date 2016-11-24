@@ -10,6 +10,30 @@
     
     <item>
       <title></title>
+      <link>https://witheve.github.io/docs/README/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://witheve.github.io/docs/README/</guid>
+      <description>
+
+&lt;p align=&#34;center&#34;&gt;
+  &lt;img src=&#34;http://www.witheve.com/logo.png&#34; alt=&#34;Eve logo&#34; width=&#34;10%&#34; /&gt;
+&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;documentation-for-the-eve-programming-language&#34;&gt;Documentation for the Eve programming language.&lt;/h1&gt;
+
+&lt;p&gt;You can learn more about Eve here: &lt;a href=&#34;http://witheve.com/&#34;&gt;http://witheve.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can play with Eve here: &lt;a href=&#34;http://play.witheve.com&#34;&gt;http://play.witheve.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Eve is under active development here: &lt;a href=&#34;https://github.com/witheve/Eve&#34;&gt;https://github.com/witheve/Eve&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://witheve.github.io/docs/handbook/core/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -176,22 +200,6 @@
     </item>
     
     <item>
-      <title>General</title>
-      <link>https://witheve.github.io/docs/handbook/general/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://witheve.github.io/docs/handbook/general/</guid>
-      <description>
-
-&lt;h1 id=&#34;general&#34;&gt;General&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;sort&#34;&gt;sort&lt;/a&gt; - Orders elements in a set&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Linux</title>
       <link>https://witheve.github.io/docs/handbook/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -201,7 +209,7 @@
 
 &lt;h1 id=&#34;installing-eve-on-linux&#34;&gt;Installing Eve on Linux&lt;/h1&gt;
 
-&lt;p&gt;First, &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;download&lt;/a&gt; the Eve source. You&amp;rsquo;ll need a recent &lt;a href=&#34;https://nodejs.org&#34;&gt;node.js&lt;/a&gt; and then and then in the extracted Eve directory:&lt;/p&gt;
+&lt;p&gt;First, &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;download&lt;/a&gt; the Eve source. You&amp;rsquo;ll need a recent &lt;a href=&#34;https://nodejs.org&#34;&gt;node.js&lt;/a&gt; and then in the extracted Eve directory:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;npm install
 npm start
@@ -209,9 +217,18 @@ npm start
 
 &lt;p&gt;Then open &lt;code&gt;http://localhost:8080/&lt;/code&gt; in your browser.&lt;/p&gt;
 
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+
+&lt;p&gt;Some distributions (most notably Ubuntu) have renamed &lt;code&gt;node&lt;/code&gt; to &lt;code&gt;nodejs&lt;/code&gt;. If this is the case, you&amp;rsquo;ll need to create a symlink that remaps nodejs back to node. e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ln -s /usr/bin/nodejs /usr/bin/node
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then proceed with the installation as usual&lt;/p&gt;
+
 &lt;h2 id=&#34;see-also&#34;&gt;See also&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;../mac&#34;&gt;mac&lt;/a&gt; | &lt;a href=&#34;../windows&#34;&gt;windows&lt;/a&gt; | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../mac&#34;&gt;mac&lt;/a&gt; | &lt;a href=&#34;../windows&#34;&gt;windows&lt;/a&gt; | &lt;a href=&#34;../docker&#34;&gt;docker&lt;/a&gt; | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -225,7 +242,7 @@ npm start
 
 &lt;h1 id=&#34;installing-eve-on-mac&#34;&gt;Installing Eve on Mac&lt;/h1&gt;
 
-&lt;p&gt;First, &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;download&lt;/a&gt; the Eve source. You&amp;rsquo;ll need a recent &lt;a href=&#34;https://nodejs.org&#34;&gt;node.js&lt;/a&gt; and then and then in the extracted Eve directory:&lt;/p&gt;
+&lt;p&gt;First, &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;download&lt;/a&gt; the Eve source. You&amp;rsquo;ll need a recent &lt;a href=&#34;https://nodejs.org&#34;&gt;node.js&lt;/a&gt; and then in the extracted Eve directory:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;npm install
 npm start
@@ -235,7 +252,7 @@ npm start
 
 &lt;h2 id=&#34;see-also&#34;&gt;See also&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;../linux&#34;&gt;linux&lt;/a&gt; | &lt;a href=&#34;../windows&#34;&gt;windows&lt;/a&gt; | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../linux&#34;&gt;linux&lt;/a&gt; | &lt;a href=&#34;../windows&#34;&gt;windows&lt;/a&gt; | &lt;a href=&#34;../docker&#34;&gt;docker&lt;/a&gt; | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

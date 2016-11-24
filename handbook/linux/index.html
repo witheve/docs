@@ -113,6 +113,8 @@
                           
                             <li><a href="https://witheve.github.io/docs/handbook/windows/">Windows</a></li>
                           
+                            <li><a href="https://witheve.github.io/docs/handbook/docker/">Docker</a></li>
+                          
                         </ul>
                       
                     
@@ -263,15 +265,6 @@
                         </ul>
                       
                     
-                      <li><a href="https://witheve.github.io/docs/handbook/general/"> General </a> </li>
-                      
-                        <ul class="sub">
-                          
-                            <li><a href="https://witheve.github.io/docs/handbook/general/sort/">sort</a></li>
-                          
-                        </ul>
-                      
-                    
                       <li><a href="https://witheve.github.io/docs/handbook/math/"> Math </a> </li>
                       
                         <ul class="sub">
@@ -398,7 +391,7 @@
 
 <h1 id="installing-eve-on-linux">Installing Eve on Linux</h1>
 
-<p>First, <a href="https://github.com/witheve/Eve/archive/master.zip">download</a> the Eve source. You&rsquo;ll need a recent <a href="https://nodejs.org">node.js</a> and then and then in the extracted Eve directory:</p>
+<p>First, <a href="https://github.com/witheve/Eve/archive/master.zip">download</a> the Eve source. You&rsquo;ll need a recent <a href="https://nodejs.org">node.js</a> and then in the extracted Eve directory:</p>
 
 <pre><code>npm install
 npm start
@@ -406,9 +399,18 @@ npm start
 
 <p>Then open <code>http://localhost:8080/</code> in your browser.</p>
 
+<h2 id="tips">Tips</h2>
+
+<p>Some distributions (most notably Ubuntu) have renamed <code>node</code> to <code>nodejs</code>. If this is the case, you&rsquo;ll need to create a symlink that remaps nodejs back to node. e.g.</p>
+
+<pre><code>ln -s /usr/bin/nodejs /usr/bin/node
+</code></pre>
+
+<p>Then proceed with the installation as usual</p>
+
 <h2 id="see-also">See also</h2>
 
-<p><a href="../mac">mac</a> | <a href="../windows">windows</a> | <a href="../running">running</a></p>
+<p><a href="../mac">mac</a> | <a href="../windows">windows</a> | <a href="../docker">docker</a> | <a href="../running">running</a></p>
 
 
 		</div>
