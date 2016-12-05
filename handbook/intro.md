@@ -18,4 +18,4 @@
 
 ## See Also
 
-[getting eve](../installation) | [running eve](../running) | [eve programs](../programs) | [core language](../core-language)
+[getting eve](../installation) | [running eve](../running) | [eve programs](../programs) | [core language](../core)
