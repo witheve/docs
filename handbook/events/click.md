@@ -1,7 +1,7 @@
 ---
 menu:
   main:
-    parent: "Events"
+    parent: "@event"
 title: "click"
 ---
 

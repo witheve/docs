@@ -1,10 +1,10 @@
 ---
 menu:
   main:
-    parent: "Standard Library"
-title: "Events"
+    parent: "Databases"
+title: "@event"
 ---
 
-# Events
+# @event
 
 [click](click) - a left-button mouse click event
