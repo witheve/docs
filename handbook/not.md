@@ -30,4 +30,4 @@ friends not invited to the party
 
 ## See Also
 
-[is](../is) | [records](../records) | [match](,,/match)
+[is](../is) | [records](../records) | [match](../search)
