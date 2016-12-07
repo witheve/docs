@@ -34,4 +34,4 @@ bind @view
 
 ## See Also
 
-[is](../is) | [records](../records) | [match](,,/match)
+[is](../is) | [records](../records) | [match](../search)
