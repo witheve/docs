@@ -65,7 +65,7 @@ Blocks automatically keep bound and committed records up-to-date with matched re
 
 ## Specifying a Block
 
-Blocks are specified using two fences to deliniate the beginning and end of the block. Code fences are matching pairs of either three consecutive ticks (```) or tildes (~~~). This style of code block is the same as supported by [CommonMark](http://spec.commonmark.org/0.26/#fenced-code-blocks). However, we don't currently support specifying code blocks via indention.
+Blocks are specified using two fences to delineate the beginning and end of the block. Code fences are matching pairs of either three consecutive ticks (```) or tildes (~~~). This style of code block is the same as supported by [CommonMark](http://spec.commonmark.org/0.26/#fenced-code-blocks). However, we don't currently support specifying code blocks via indention.
 
 ## Info Strings
 
@@ -96,7 +96,7 @@ You can specify the type of code within a block with an info string, written dir
 
 ## Tips
 
-Although they are similar, it's important not to think of blocks like functions in other languages. Blocks don't have a name, and you don't "call" them like you do functions. Instead, you "use" a block by searching for the records it binds of commits.
+Although they are similar, it's important not to think of blocks like functions in other languages. Blocks don't have a name, and you don't "call" them like you do functions. Instead, you "use" a block by searching for the records it creates.
 
 Likewise, there is no "main" block. Since Eve is declarative and there is no order, there is no particular starting point for a program. As a close analog, any block that does not search for records will be the first to execute when the program starts. For instance:
 
