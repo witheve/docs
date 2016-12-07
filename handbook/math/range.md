@@ -30,7 +30,7 @@ y = range[from, to, increment]
 
 ## Examples
 
-Generate and display the integers between 1 and 10. In this example, `y = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}`:
+Generate and display the integers between 1 and 10. In this example, `y = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)`:
 
 ```eve
 search
@@ -40,7 +40,7 @@ bind @browser
   [#div sort: y, text: y]
 ```
 
-Generate and display the odd integers between 1 and 10. In this example, `y = {1, 3, 5, 6, 9}`. Notice the set does not include `10` in this case.
+Generate and display the odd integers between 1 and 10. In this example, `y = (1, 3, 5, 7, 9)`. Notice the set does not include `10` in this case.
 
 ```eve
 search

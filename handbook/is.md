@@ -30,7 +30,7 @@ search
 
 bind @browser
   [#div text: "y is {{y}}"]
-  [#div text: "z is {{x}}"]
+  [#div text: "z is {{z}}"]
 ```
 
 The output shows that y is `false` while z is `true`.

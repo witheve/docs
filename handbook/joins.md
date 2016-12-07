@@ -8,7 +8,7 @@ weight: 3
 
 # Joins
 
-joins allow you to relate to records
+joins allow you to relate two records
 
 ## Syntax
 

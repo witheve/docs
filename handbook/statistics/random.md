@@ -66,3 +66,5 @@ bind @browser
 - [Flappy Bird](https://github.com/witheve/Eve/blob/master/examples/flappy.eve)
 
 ## See Also
+
+[gaussian][../gaussian]

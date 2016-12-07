@@ -51,11 +51,11 @@ Let's look at what makes Eve functions different.
 
 ## Explicit Arguments
 
-A function's arguments are enclosed in square brackets to draw attention to the fact that functions in Eve are just regular records. Also like records, arguments are stateted explicitly. This has several advantages over typical calling patterns:
+A function's arguments are enclosed in square brackets to draw attention to the fact that functions in Eve are just regular records. Also like records, arguments are stated explicitly. This has several advantages over typical calling patterns:
 
 - Explicit arguments are self-documenting, so a reader unfamiliar with the function can understand more about the function without looking up exactly how it works. In the case of `sin`, you don't have to know whether the inputs have to be in radians or degrees; the call-site tells you.
 
-- Eve provides alternative calling patterns for functions. Some languages have two `sin` functions, one for angles in randians and another for angles in degrees. By contrast, Eve has a single `sin` function. If your angles are in randians, you call `sin[radians]`, whereas if your angles are in degrees, you call `sin[degrees]`.
+- Eve provides alternative calling patterns for functions. Some languages have two `sin` functions, one for angles in radians and another for angles in degrees. By contrast, Eve has a single `sin` function. If your angles are in radians, you call `sin[radians]`, whereas if your angles are in degrees, you call `sin[degrees]`.
 
 - Like all records, you can state arguments in any order. This opens up an easy path for optional arguments: include the arguments you want and leave out the ones you don't.
 
@@ -65,29 +65,7 @@ All expressions in Eve are referentially transparent, meaning you can replace th
 
 ## Set Semantics
 
-In Eve, functions work over sets, meaning that a function will be applied to all elements of the input sets, resulting in an output that is itself a set. For example, lets say we have some points with x and y coordinates:
-
-```eve
-commit
-  [#point x: 5, y: 4]
-  [#point x: 3, y: 7]
-  [#point x: 1, y: 2]
-```
-
-We can calculate the distance from each of these points to every other point:
-
-```eve
-search
-  p1 = [#point x: x1, y: y1]
-  p2 = [#point x: x2, y: y2]
-  dx = x1 - x2 
-  dy = y1 - y2
-  
-bind @browser
- [#div sort: x1, text: "({{x1}}, {{y1}}) - ({{x2}}, {{y2}}) = ({{dx}}, {{dy}})"]
- ```
-
-In imperative languages, you would need a nested loop to cover all of the combinations. In Eve, functions (and infix operators like `-`, which are just sugar for a function) operate over sets, so this loop is implicitly handled by Eve.
+In Eve, functions work over sets, meaning that a function will be applied to all elements of the input sets, resulting in an output that is itself a set. For more, see the document on [set semantics](../sets).
 
 ## See Also
 

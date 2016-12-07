@@ -25,7 +25,7 @@ Multi-word names should be joined by dashes `-`, not underscores `_`.
 
 ## Program layout
 
-Blocks should be preceeded by at least a one line comment, indicating the purpose of the block.
+Blocks should be preceded by at least a one line comment, indicating the purpose of the block.
 
 ## Commas
 
@@ -65,7 +65,7 @@ Eve does not enforce indention, but it is important for readability
 
 ```eve
 // Good
-match
+search
   [...]
 
 bind
@@ -75,8 +75,8 @@ bind
 But not this:
 
 ```eve
-// Bad
-match
+// Not good
+search
 [...]
 
 bind
@@ -100,12 +100,12 @@ value = if [#long-record attr1 attr2 attr3]
           then baz2
         else baz3
 
-// Bad if layout
+// Less readable "if" formatting
 value = if bar then baz
 if bar2 then baz2
 else baz3
 
-// Also a bad if layout
+// Less readable "if" formatting
 value = if bar then baz if bar2 then baz2 else baz3
 ```
 
@@ -116,7 +116,6 @@ When nested records are placed on a new line, they should be indented once past 
 Nested records should appear on their own line if you are nesting more than one.
 
 ```eve
-
 // Okay, but only do this for one level of nesting
 [#div text: "hello", children: [#div text: "world"]]
 
@@ -140,7 +139,7 @@ Nested records should appear on their own line if you are nesting more than one.
 
 ## Newlines
 
-Newlines should preceed and follow every code block. 
+Newlines should precede and follow every code block.
 
 Within code blocks, a newline should be added between every action. This enhances readability, especially in the case where multiple actions are needed. For instance, the following code block:
 

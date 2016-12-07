@@ -7,4 +7,4 @@ title: "Date & Time"
 
 # Date & Time
 
-- [time](time.md) - The current system time
+- [time](time) - The current system time
