@@ -94,17 +94,17 @@ Records can be nested.
 
 ```eve
 commit
-  [name: "Jeremey" spouse: [name: "Wendy"]]
+  [name: "Jeremy" spouse: [name: "Wendy"]]
 ```
 
 Dot notation can be composed for deep access to records
 
 ```eve
 search
-  Jeremey = [name: "Jeremey"]
+  Jeremy = [name: "Jeremy"]
 
 bind @browser
-  [#div text: "{{Jeremey.name}} is married to {{Jeremey.spouse.name}}"]
+  [#div text: "{{Jeremy.name}} is married to {{Jeremy.spouse.name}}"]
 ```
 
 ## See Also
