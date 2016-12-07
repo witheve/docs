@@ -17,10 +17,10 @@ text = join[token, given, index, with]
 
 ## Attributes
 
-- `token` - set of strings to be joined
-- `given` - establishes the set being joined. If tokens are not unique, you can add attributes here that will make them unique. Must at least provide `token` as part of the given set, or only the first one will be returned.
-- `index` - indicates where each `token` is ordered in `text`.
-- `with` - inserted between every element in `token`.
+- `token` - set of elements to be joined
+- `given` - establishes the set being joined, in case tokens are not unique, you can add attributes here that will make them unique. See examples for more. Must at least provide tokens as part of the given set, or only the first token will be returned.
+- `index` - indicates the order of the `tokens` in the joined string
+- `with` - inserted between every element in `tokens`
 
 ## Description
 
@@ -60,20 +60,32 @@ bind @view
   [#value | value: token]
 ```
 
-Let's join this phrase back together. Like last time, we'll join with a `-`. You'll notice that some tokens are duplicate ("l" and "o" appear multiple times in the phrase). To correctly join these tokens, we can add `index` as part of the `given` set:
+You'll notice here that when we display the tokens on their own, we're missing some letters. This is Eve's set semantics at work: the letter `l` is displayed once, and it's not displayed again because this would be a duplicate element in the set. The letters are also probably out of order, because sets are unordered. This is why we need the index when reconstructing the phrase.
+
+So let's join this phrase back together. Like last time, we'll join with a `-`.
+
+```eve
+search
+  [#phrase token index]
+  text = join[token given: token index with: "-"]
+
+bind @view
+  [#value | value: text]
+```
+
+The output here is "h-e-l-o- -w-r-d", which from the previous block we could have guessed. The problem is that we've joined the tokens, given only the tokens themselves. Since some tokens are duplicate, they are filtered out of the set before it's joined into a string. In order to keep the duplicate tokens, we have to provide more to make them unique. The `index` is a perfect candidate for this:
 
 ```eve
 search
   [#phrase token index]
   // given = (("h", 1), ("e", 2), ("l", 3), ("l", 4) ... ("l", 10), ("d", 11)) 
-  // without including index, the result is "h-e-l-o- -w-r-d". Try it and see!
   text = join[token given: (token, index) index with: "-"]
 
 bind @view
   [#value | value: text]
 ```
 
-The result expected result is "h-e-l-l-o- -w-o-r-l-d".
+Now we have the correct result of "h-e-l-l-o- -w-o-r-l-d"
 
 ## See Also
 
