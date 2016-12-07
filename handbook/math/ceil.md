@@ -39,4 +39,4 @@ The result is `35`.
 
 ## See Also
 
-[floor](../floor) | [to-fixed](../to-fixed) | [round](../round)
+[floor](../floor) | [fix](../fix) | [round](../round)
