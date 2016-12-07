@@ -34,7 +34,7 @@ search
   [#time minutes seconds]
   x = random[seed: seconds]
 
-commit
+commit @browser
   [#div time: "{{minutes}}{{seconds}}"  text: x]
 ```
 
@@ -46,7 +46,7 @@ search
   max = 10
   x = random[seed: 1] * (max - min) + min
 
-bind
+bind @browser
   [#div text: x]
 ```
 
@@ -57,7 +57,7 @@ search
   i = range[from: 1, to: 10]
   x = random[seed: i]
 
-bind
+bind @browser
   [#div text: x]
 ```
 
@@ -66,3 +66,5 @@ bind
 - [Flappy Bird](https://github.com/witheve/Eve/blob/master/examples/flappy.eve)
 
 ## See Also
+
+[gaussian][../gaussian]

@@ -22,7 +22,7 @@ record += #tag
 
 ## Description
 
-`record.attribute += value` adds `value` to `attribute`. If `record` already has an attribute with a value, then `value` will be added to the set. Otherwise, if `record` doesn't have an attribute with this name already, then `:=` will create the attribute and set it to `value`. As Eve variables are sets, if the value already exists on the attribute, the value cannot be added again.
+`record.attribute += value` adds `value` to `attribute`. If `record` already has an attribute with a value, then `value` will be added to the set. Otherwise, if `record` doesn't have an attribute with this name already, then `+=` will create the attribute and set it to `value`. As Eve variables are sets, if the value already exists on the attribute, the value cannot be added again.
 
 `attribute` can be an attribute already on the record, or it can be a new attribute.
 

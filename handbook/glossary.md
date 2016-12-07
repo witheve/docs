@@ -6,7 +6,7 @@ title: "Glossary"
 weight: 100
 ---
 
-# Glosasry
+# Glossary
 
 ## Cardinality
 
@@ -32,7 +32,7 @@ Provenance is the record and history of data and its place of origin. In Eve, pr
 
 Records are composed of facts. In Eve, you select records from the database by supplying a pattern of attributes, and any records matching that pattern are returned to you. For example, a record might be the ages, salaries, and departments of employees.
 
-## Referential Transparentcy
+## Referential Transparency
 
 An expression is [referentially transparency](https://en.wikipedia.org/wiki/Referential_transparency) if it can be replaced with its result without changing the behavior of the program. Expression that are not referentially transparent tend to have side effects, or rely on state that is not supplied as part of the input arguments, but through a side channel.  
 
