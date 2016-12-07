@@ -2,17 +2,17 @@
 menu:
   main:
     parent: "Math"
-title: "ceil"
+title: "ceiling"
 ---
 
-# ceil
+# ceiling
 
 Round a number up to the nearest integer.
 
 ## Syntax
 
 ```eve
-y = ceil[value]
+y = ceiling[value]
 ```
 
 ## Attributes
@@ -21,7 +21,7 @@ y = ceil[value]
 
 ## Description
 
-`y = ceil[value]` rounds the elements of `value` up to the nearest integers. 
+`y = ceiling[value]` rounds the elements of `value` up to the nearest integers. 
 
 ## Examples
 
@@ -29,7 +29,7 @@ Calculate the ceiling of `34.2`
 
 ```eve
 search
-  y = ceil[value: 34.2]
+  y = ceiling[value: 34.2]
   
 bind @browser
   [#div text: y]
@@ -39,4 +39,4 @@ The result is `35`.
 
 ## See Also
 
-[floor](../floor) | [fix](../fix) | [round](../round)
+[floor](../floor) | [to-fixed](../to-fixed) | [round](../round)
