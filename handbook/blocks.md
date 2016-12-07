@@ -65,7 +65,7 @@ Blocks automatically keep bound and committed records up-to-date with matched re
 
 ## Specifying a Block
 
-Blocks are specified using two fences to delineate the beginning and end of the block. Code fences are matching pairs of either three consecutive ticks (```) or tildes (~~~). This style of code block is the same as supported by [CommonMark](http://spec.commonmark.org/0.26/#fenced-code-blocks). However, we don't currently support specifying code blocks via indention.
+Blocks are specified using two fences to delineate the beginning and end of the block. Code fences are matching pairs of either three consecutive ticks (```) or tildes (~~~). This style of code block is the same as supported by [CommonMark](http://spec.commonmark.org/0.26/#fenced-code-blocks). However, we don't currently support specifying code blocks via indentation.
 
 ## Info Strings
 
