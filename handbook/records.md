@@ -38,7 +38,7 @@ r.attribute
 
 ## Description
 
-Records are the predominate datatype in Eve. Records are used in two ways:
+Records are the predominant datatype in Eve. Records are used in two ways:
 
 1. In a `search` you supply a pattern of attributes to match records in a supplied database.
 2. In a `bind` or `commit`, you supply a pattern of attributes to insert into a database.
@@ -94,17 +94,17 @@ Records can be nested.
 
 ```eve
 commit
-  [name: "Jeremey" spouse: [name: "Wendy"]]
+  [name: "Jeremy" spouse: [name: "Wendy"]]
 ```
 
 Dot notation can be composed for deep access to records
 
 ```eve
 search
-  jeremy = [name: "Jeremy"]
+  Jeremy = [name: "Jeremy"]
 
 bind @browser
-  [#div text: "{{jeremy.name}} is married to {{jeremy.spouse.name}}"]
+  [#div text: "{{Jeremy.name}} is married to {{Jeremy.spouse.name}}"]
 ```
 
 ## See Also

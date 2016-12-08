@@ -32,7 +32,7 @@ search
   y = floor[value: 34.2]
 
 bind @browser
-  [#div text: value]
+  [#div text: y]
 ```
 
 The result is `34`.

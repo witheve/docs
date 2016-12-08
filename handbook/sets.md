@@ -24,6 +24,30 @@ Expressions and actions in Eve work over sets.
 (("a", 1), ("a", 2), ("a", 3)) // Sets within sets can be used to repeat values
 ```
 
+### Set Example in Eve
+
+```eve
+commit
+  [#point x: 5, y: 4]
+  [#point x: 3, y: 7]
+  [#point x: 1, y: 2]
+```
+
+We can calculate the distance from each of these points to every other point:
+
+```eve
+search
+  p1 = [#point x: x1, y: y1]
+  p2 = [#point x: x2, y: y2]
+  dx = x1 - x2 
+  dy = y1 - y2
+  
+bind @browser
+ [#div sort: x1, text: "({{x1}}, {{y1}}) - ({{x2}}, {{y2}}) = ({{dx}}, {{dy}})"]
+ ```
+
+In imperative languages, you would need a nested loop to cover all of the combinations. In Eve, functions (and infix operators like `+`, which are just sugar for a function) operate over sets, so this loop is implicitly handled by Eve.
+
 ## See Also
 
 [programming model](../model) | [functions](../functions) | [aggregates](../aggregates) | [cartesian product](../glossary/#cartesian-product)

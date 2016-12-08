@@ -7,7 +7,7 @@ title: "Math"
 
 # Math
 
-## Arithemtic
+## Arithmetic
 
 - plus ( `+` ) - Add two numbers
 - minus ( `-` ) - Subtract two numbers

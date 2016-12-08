@@ -247,11 +247,11 @@ When searching for an event like a `#click`, a commit is usually more appropriat
 Display a formatted time:
 
 ```eve
-match
+search
   [#time hours minutes seconds]
   (am/pm, adjusted-hours) = if hours >= 12 then ("PM", hours - 12)
                             else if hours = 0 then ("AM", 12)
-          									else ("AM", hours)
+          					else ("AM", hours)
 bind @browser
   [#div text: "The current time is {{adjusted-hours}}:{{minutes}}:{{seconds}} {{am/pm}}"]
 ```
