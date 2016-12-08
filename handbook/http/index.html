@@ -9,16 +9,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Merge &lt;- - Eve Documentation</title>
+    <title>@http - Eve Documentation</title>
     <meta name="generator" content="Hugo 0.16" />
 
     
-    <link rel="canonical" href="http://docs.witheve.com/handbook/merge/">
+    <link rel="canonical" href="http://docs.witheve.com/handbook/http/">
     
     <meta name="author" content="Eve">
     
 
-    <meta property="og:url" content="http://docs.witheve.com/handbook/merge/">
+    <meta property="og:url" content="http://docs.witheve.com/handbook/http/">
     <meta property="og:title" content="Eve Documentation">
     
     <meta name="apple-mobile-web-app-title" content="Eve Documentation">
@@ -226,7 +226,7 @@
                           
                             <li><a href="http://docs.witheve.com/handbook/remove/">Remove: -=</a></li>
                           
-                            <li class="selected"><a href="http://docs.witheve.com/handbook/merge/">Merge &lt;-</a></li>
+                            <li><a href="http://docs.witheve.com/handbook/merge/">Merge &lt;-</a></li>
                           
                         </ul>
                       
@@ -276,7 +276,7 @@
                         </ul>
                       
                     
-                      <li><a href="http://docs.witheve.com/handbook/http/"> @http </a> </li>
+                      <li class="active selected"><a href="http://docs.witheve.com/handbook/http/"> @http </a> </li>
                       
                     
                       <li><a href="http://docs.witheve.com/handbook/view/"> @view </a> </li>
@@ -355,31 +355,7 @@
 
 			
 
-<h1 id="merge-operator">Merge Operator</h1>
-
-<p>Merges one record into another</p>
-
-<h2 id="syntax">Syntax</h2>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="x">record</span><span class="w"> </span><span class="nf">&lt;-</span><span class="w"> </span><span class="p">[</span><span class="x">attribute</span><span class="nf">:</span><span class="w"> </span><span class="x">value</span><span class="p">,</span><span class="w"> </span><span class="x">...</span><span class="w"> </span><span class="p">]</span><span class="w"></span>
-</code></pre></div>
-
-<h2 id="description">Description</h2>
-
-<p><code>record &lt;- [attribute: value, ... ]</code> merges the anonymous record <code>[attribute: value, ... ]</code> into the record bound to <code>record</code>. Merge is useful for setting multiple attributes on a record at once.</p>
-
-<h2 id="examples">Examples</h2>
-
-<p>Search for a record and merge another record into it.</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
-<span class="w">  </span><span class="x">celia</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#Celia</span><span class="p">]</span><span class="w"></span>
-
-<span class="kr">bind</span><span class="w"></span>
-<span class="w">  </span><span class="x">celia</span><span class="w"> </span><span class="nf">&lt;-</span><span class="w"> </span><span class="p">[</span><span class="nt">#student</span><span class="w"> </span><span class="x">grade</span><span class="nf">:</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="x">school</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;East&quot;</span><span class="p">]</span><span class="w"></span>
-</code></pre></div>
-
-<h2 id="see-also">See Also</h2>
-
-<p><a href="../set">set operator</a> | <a href="../add">add operator</a> | <a href="../remove">remove operator</a> | <a href="../action-phase">action phase</a></p>
+<h1 id="http">@http</h1>
 
 
 		</div>

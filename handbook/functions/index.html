@@ -231,98 +231,55 @@
                         </ul>
                       
                     
-                      <li><a href="http://docs.witheve.com/handbook/databases/"> Databases </a> </li>
-                      
-                    
                   </ul>
                 </li>
               
             
               
                 <li class="sub-menu active">
-                  <a href="http://docs.witheve.com/handbook/standard-library" class="">
+                  <a href="http://docs.witheve.com/handbook/databases" class="">
                       
-                      <span class="colored">Standard Library</span>
+                      <span class="colored">Databases</span>
                       <span class="menu-arrow arrow_carrot-right"></span>
                   </a>
                   <ul class="sub">
                     
-                      <li><a href="http://docs.witheve.com/handbook/datetime/"> Date &amp; Time </a> </li>
+                      <li><a href="http://docs.witheve.com/handbook/standard-library/"> Standard Library </a> </li>
                       
                         <ul class="sub">
                           
-                            <li><a href="http://docs.witheve.com/handbook/datetime/time/">time</a></li>
+                            <li><a href="http://docs.witheve.com/handbook/general/">General</a></li>
+                          
+                            <li><a href="http://docs.witheve.com/handbook/math/">Math</a></li>
+                          
+                            <li><a href="http://docs.witheve.com/handbook/strings/">Strings</a></li>
+                          
+                            <li><a href="http://docs.witheve.com/handbook/statistics/">Statistics</a></li>
+                          
+                            <li><a href="http://docs.witheve.com/handbook/datetime/">Date &amp; Time</a></li>
                           
                         </ul>
                       
                     
-                      <li><a href="http://docs.witheve.com/handbook/events/"> Events </a> </li>
+                      <li><a href="http://docs.witheve.com/handbook/session/"> @session </a> </li>
+                      
+                    
+                      <li><a href="http://docs.witheve.com/handbook/browser/"> @browser </a> </li>
+                      
+                    
+                      <li><a href="http://docs.witheve.com/handbook/event/"> @event </a> </li>
                       
                         <ul class="sub">
                           
-                            <li><a href="http://docs.witheve.com/handbook/events/click/">click</a></li>
+                            <li><a href="http://docs.witheve.com/handbook/event/click/">click</a></li>
                           
                         </ul>
                       
                     
-                      <li><a href="http://docs.witheve.com/handbook/general/"> General </a> </li>
-                      
-                        <ul class="sub">
-                          
-                            <li><a href="http://docs.witheve.com/handbook/general/sort/">sort</a></li>
-                          
-                        </ul>
+                      <li><a href="http://docs.witheve.com/handbook/http/"> @http </a> </li>
                       
                     
-                      <li><a href="http://docs.witheve.com/handbook/math/"> Math </a> </li>
-                      
-                        <ul class="sub">
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/abs/">abs</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/ceil/">ceil</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/cos/">cos</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/fix/">fix</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/floor/">floor</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/mod/">mod</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/range/">range</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/round/">round</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/sin/">sin</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/sum/">sum</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/tan/">tan</a></li>
-                          
-                        </ul>
-                      
-                    
-                      <li><a href="http://docs.witheve.com/handbook/statistics/"> Statistics </a> </li>
-                      
-                        <ul class="sub">
-                          
-                            <li><a href="http://docs.witheve.com/handbook/statistics/count/">count</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/statistics/random/">random</a></li>
-                          
-                        </ul>
-                      
-                    
-                      <li><a href="http://docs.witheve.com/handbook/strings/"> Strings </a> </li>
-                      
-                        <ul class="sub">
-                          
-                            <li><a href="http://docs.witheve.com/handbook/strings/join/">join</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/strings/split/">split</a></li>
-                          
-                        </ul>
+                      <li><a href="http://docs.witheve.com/handbook/view/"> @view </a> </li>
                       
                     
                   </ul>
@@ -435,12 +392,12 @@
 
 <h2 id="explicit-arguments">Explicit Arguments</h2>
 
-<p>A function&rsquo;s arguments are enclosed in square brackets to draw attention to the fact that functions in Eve are just regular records. Also like records, arguments are stateted explicitly. This has several advantages over typical calling patterns:</p>
+<p>A function&rsquo;s arguments are enclosed in square brackets to draw attention to the fact that functions in Eve are just regular records. Also like records, arguments are stated explicitly. This has several advantages over typical calling patterns:</p>
 
 <ul>
 <li><p>Explicit arguments are self-documenting, so a reader unfamiliar with the function can understand more about the function without looking up exactly how it works. In the case of <code>sin</code>, you don&rsquo;t have to know whether the inputs have to be in radians or degrees; the call-site tells you.</p></li>
 
-<li><p>Eve provides alternative calling patterns for functions. Some languages have two <code>sin</code> functions, one for angles in randians and another for angles in degrees. By contrast, Eve has a single <code>sin</code> function. If your angles are in randians, you call <code>sin[radians]</code>, whereas if your angles are in degrees, you call <code>sin[degrees]</code>.</p></li>
+<li><p>Eve provides alternative calling patterns for functions. Some languages have two <code>sin</code> functions, one for angles in radians and another for angles in degrees. By contrast, Eve has a single <code>sin</code> function. If your angles are in radians, you call <code>sin[radians]</code>, whereas if your angles are in degrees, you call <code>sin[degrees]</code>.</p></li>
 
 <li><p>Like all records, you can state arguments in any order. This opens up an easy path for optional arguments: include the arguments you want and leave out the ones you don&rsquo;t.</p></li>
 </ul>
@@ -451,25 +408,7 @@
 
 <h2 id="set-semantics">Set Semantics</h2>
 
-<p>In Eve, functions work over sets, meaning that a function will be applied to all elements of the input sets, resulting in an output that is itself a set. For example, lets say we have some points with x and y coordinates:</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">commit</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="nt">#point</span><span class="w"> </span><span class="x">x</span><span class="nf">:</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="x">y</span><span class="nf">:</span><span class="w"> </span><span class="m">4</span><span class="p">]</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="nt">#point</span><span class="w"> </span><span class="x">x</span><span class="nf">:</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="x">y</span><span class="nf">:</span><span class="w"> </span><span class="m">7</span><span class="p">]</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="nt">#point</span><span class="w"> </span><span class="x">x</span><span class="nf">:</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="x">y</span><span class="nf">:</span><span class="w"> </span><span class="m">2</span><span class="p">]</span><span class="w"></span>
-</code></pre></div>
-
-<p>We can calculate the distance from each of these points to every other point:</p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
-<span class="w">  </span><span class="x">p</span><span class="m">1</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#point</span><span class="w"> </span><span class="x">x</span><span class="nf">:</span><span class="w"> </span><span class="x">x</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="x">y</span><span class="nf">:</span><span class="w"> </span><span class="x">y</span><span class="m">1</span><span class="p">]</span><span class="w"></span>
-<span class="w">  </span><span class="x">p</span><span class="m">2</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="nt">#point</span><span class="w"> </span><span class="x">x</span><span class="nf">:</span><span class="w"> </span><span class="x">x</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="x">y</span><span class="nf">:</span><span class="w"> </span><span class="x">y</span><span class="m">2</span><span class="p">]</span><span class="w"></span>
-<span class="w">  </span><span class="x">dx</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">x</span><span class="m">1</span><span class="w"> </span><span class="nf">-</span><span class="w"> </span><span class="x">x</span><span class="m">2</span><span class="w"> </span>
-<span class="w">  </span><span class="x">dy</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">y</span><span class="m">1</span><span class="w"> </span><span class="nf">-</span><span class="w"> </span><span class="x">y</span><span class="m">2</span><span class="w"></span>
-<span class="w">  </span>
-<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
-<span class="w"> </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">sort</span><span class="nf">:</span><span class="w"> </span><span class="x">x</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;({{x1}}, {{y1}}) - ({{x2}}, {{y2}}) = ({{dx}}, {{dy}})&quot;</span><span class="p">]</span><span class="w"></span>
-</code></pre></div>
-
-<p>In imperative languages, you would need a nested loop to cover all of the combinations. In Eve, functions (and infix operators like <code>-</code>, which are just sugar for a function) operate over sets, so this loop is implicitly handled by Eve.</p>
+<p>In Eve, functions work over sets, meaning that a function will be applied to all elements of the input sets, resulting in an output that is itself a set. For more, see the document on <a href="../sets">set semantics</a>.</p>
 
 <h2 id="see-also">See Also</h2>
 

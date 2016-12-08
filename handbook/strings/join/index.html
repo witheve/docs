@@ -231,98 +231,55 @@
                         </ul>
                       
                     
-                      <li><a href="http://docs.witheve.com/handbook/databases/"> Databases </a> </li>
-                      
-                    
                   </ul>
                 </li>
               
             
               
                 <li class="sub-menu active">
-                  <a href="http://docs.witheve.com/handbook/standard-library" class="">
+                  <a href="http://docs.witheve.com/handbook/databases" class="">
                       
-                      <span class="colored">Standard Library</span>
+                      <span class="colored">Databases</span>
                       <span class="menu-arrow arrow_carrot-right"></span>
                   </a>
                   <ul class="sub">
                     
-                      <li><a href="http://docs.witheve.com/handbook/datetime/"> Date &amp; Time </a> </li>
+                      <li><a href="http://docs.witheve.com/handbook/standard-library/"> Standard Library </a> </li>
                       
                         <ul class="sub">
                           
-                            <li><a href="http://docs.witheve.com/handbook/datetime/time/">time</a></li>
+                            <li><a href="http://docs.witheve.com/handbook/general/">General</a></li>
+                          
+                            <li><a href="http://docs.witheve.com/handbook/math/">Math</a></li>
+                          
+                            <li><a href="http://docs.witheve.com/handbook/strings/">Strings</a></li>
+                          
+                            <li><a href="http://docs.witheve.com/handbook/statistics/">Statistics</a></li>
+                          
+                            <li><a href="http://docs.witheve.com/handbook/datetime/">Date &amp; Time</a></li>
                           
                         </ul>
                       
                     
-                      <li><a href="http://docs.witheve.com/handbook/events/"> Events </a> </li>
+                      <li><a href="http://docs.witheve.com/handbook/session/"> @session </a> </li>
+                      
+                    
+                      <li><a href="http://docs.witheve.com/handbook/browser/"> @browser </a> </li>
+                      
+                    
+                      <li><a href="http://docs.witheve.com/handbook/event/"> @event </a> </li>
                       
                         <ul class="sub">
                           
-                            <li><a href="http://docs.witheve.com/handbook/events/click/">click</a></li>
+                            <li><a href="http://docs.witheve.com/handbook/event/click/">click</a></li>
                           
                         </ul>
                       
                     
-                      <li><a href="http://docs.witheve.com/handbook/general/"> General </a> </li>
-                      
-                        <ul class="sub">
-                          
-                            <li><a href="http://docs.witheve.com/handbook/general/sort/">sort</a></li>
-                          
-                        </ul>
+                      <li><a href="http://docs.witheve.com/handbook/http/"> @http </a> </li>
                       
                     
-                      <li><a href="http://docs.witheve.com/handbook/math/"> Math </a> </li>
-                      
-                        <ul class="sub">
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/abs/">abs</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/ceil/">ceil</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/cos/">cos</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/fix/">fix</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/floor/">floor</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/mod/">mod</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/range/">range</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/round/">round</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/sin/">sin</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/sum/">sum</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/tan/">tan</a></li>
-                          
-                        </ul>
-                      
-                    
-                      <li><a href="http://docs.witheve.com/handbook/statistics/"> Statistics </a> </li>
-                      
-                        <ul class="sub">
-                          
-                            <li><a href="http://docs.witheve.com/handbook/statistics/count/">count</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/statistics/random/">random</a></li>
-                          
-                        </ul>
-                      
-                    
-                      <li><a href="http://docs.witheve.com/handbook/strings/"> Strings </a> </li>
-                      
-                        <ul class="sub">
-                          
-                            <li class="selected"><a href="http://docs.witheve.com/handbook/strings/join/">join</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/strings/split/">split</a></li>
-                          
-                        </ul>
+                      <li><a href="http://docs.witheve.com/handbook/view/"> @view </a> </li>
                       
                     
                   </ul>
@@ -403,43 +360,68 @@
 <p>Joins a set of strings into a single string</p>
 
 <h2 id="syntax">Syntax</h2>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="x">text</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">join</span><span class="p">[</span><span class="x">token</span><span class="p">,</span><span class="w"> </span><span class="x">index</span><span class="p">,</span><span class="w"> </span><span class="x">with</span><span class="p">]</span><span class="w"></span>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="x">text</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">join</span><span class="p">[</span><span class="x">token</span><span class="p">,</span><span class="w"> </span><span class="x">given</span><span class="p">,</span><span class="w"> </span><span class="x">index</span><span class="p">,</span><span class="w"> </span><span class="x">with</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
 <h2 id="attributes">Attributes</h2>
 
 <ul>
-<li><code>token</code> - set of elements to be joined</li>
-<li><code>index</code> - indicates the order of the <code>tokens</code> in the joined string</li>
-<li><code>with</code> - inserted between every element in <code>tokens</code></li>
+<li><code>token</code> - set of strings to be joined</li>
+<li><code>given</code> - establishes the set being joined. If tokens are not unique, you can add attributes here that will make them unique. Must at least provide <code>token</code> as part of the given set, or only the first one will be returned.</li>
+<li><code>index</code> - indicates where each <code>token</code> is ordered in <code>text</code>.</li>
+<li><code>with</code> - inserted between every element in <code>token</code>.</li>
 </ul>
 
 <h2 id="description">Description</h2>
 
-<p><code>text = join[token, index, with]</code> takes <code>tokens</code> tokens together using <code>with</code> in an order specified by <code>index</code>. Returns the joined string.</p>
+<p><code>text = join[token, index, given, with]</code> takes <code>tokens</code> together using <code>with</code> in an order specified by <code>index</code>. Returns the joined string.</p>
 
 <h2 id="examples">Examples</h2>
 
-<p>Split a sentence into tokens</p>
+<p>Split a sentence into tokens, and join the tokens into a sentence again</p>
 <div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Split the sentence into words</span><span class="w"></span>
 <span class="w">  </span><span class="p">(</span><span class="x">token</span><span class="p">,</span><span class="w"> </span><span class="x">index</span><span class="p">)</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">split</span><span class="p">[</span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;the quick brown fox&quot;</span><span class="p">,</span><span class="w"> </span><span class="x">by</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">]</span><span class="w"></span>
 
-<span class="kr">bind</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="nt">#token</span><span class="w"> </span><span class="x">token</span><span class="w"> </span><span class="x">index</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Join the words back into a sentence, but with hyphens instead of spaces</span><span class="w"></span>
+<span class="w">  </span><span class="x">text</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">join</span><span class="p">[</span><span class="x">token</span><span class="w"> </span><span class="x">given</span><span class="nf">:</span><span class="w"> </span><span class="x">token</span><span class="p">,</span><span class="w"> </span><span class="x">index</span><span class="w"> </span><span class="x">with</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;-&quot;</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@view</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#value</span><span class="w"> </span><span class="x">|</span><span class="w"> </span><span class="x">value</span><span class="nf">:</span><span class="w"> </span><span class="x">text</span><span class="p">]</span><span class="w"> </span><span class="c1">// Expected &quot;the-quick-brown-fox&quot;</span><span class="w"></span>
 </code></pre></div>
 
-<p>Join the tokens into a sentence again, but with hyphens instead of spaces</p>
+<hr />
+
+<p>Since join is an aggregate, set semantics play an important part here; if we don&rsquo;t specify what makes each token unique, then the results can be surprising. The following example will demonstrate this.</p>
+
+<p>Let&rsquo;s split the phrase &ldquo;hello world&rdquo; into letters:</p>
 <div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="nt">#token</span><span class="w"> </span><span class="x">token</span><span class="w"> </span><span class="x">index</span><span class="p">]</span><span class="w"></span>
-<span class="w">  </span><span class="x">text</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">join</span><span class="p">[</span><span class="x">token</span><span class="p">,</span><span class="w"> </span><span class="x">index</span><span class="p">,</span><span class="w"> </span><span class="x">with</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="c1">//token = (h, e, l, l, o, w, o, r, l, d)</span><span class="w"></span>
+<span class="w">  </span><span class="p">(</span><span class="x">token</span><span class="p">,</span><span class="w"> </span><span class="x">index</span><span class="p">)</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">split</span><span class="p">[</span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;hello world&quot;</span><span class="p">,</span><span class="w"> </span><span class="x">by</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">]</span><span class="w"></span>
 
 <span class="kr">bind</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="p">]</span><span class="w"> </span><span class="c1">// Expected &quot;the-quick-brown-fox&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#phrase</span><span class="w"> </span><span class="x">token</span><span class="w"> </span><span class="x">index</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@view</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#value</span><span class="w"> </span><span class="x">|</span><span class="w"> </span><span class="x">value</span><span class="nf">:</span><span class="w"> </span><span class="x">token</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
+
+<p>Let&rsquo;s join this phrase back together. Like last time, we&rsquo;ll join with a <code>-</code>. You&rsquo;ll notice that some tokens are duplicate (&ldquo;l&rdquo; and &ldquo;o&rdquo; appear multiple times in the phrase). To correctly join these tokens, we can add <code>index</code> as part of the <code>given</code> set:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#phrase</span><span class="w"> </span><span class="x">token</span><span class="w"> </span><span class="x">index</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// given = ((&quot;h&quot;, 1), (&quot;e&quot;, 2), (&quot;l&quot;, 3), (&quot;l&quot;, 4) ... (&quot;l&quot;, 10), (&quot;d&quot;, 11)) </span><span class="w"></span>
+<span class="w">  </span><span class="c1">// without including index, the result is &quot;h-e-l-o- -w-r-d&quot;. Try it and see!</span><span class="w"></span>
+<span class="w">  </span><span class="x">text</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">join</span><span class="p">[</span><span class="x">token</span><span class="w"> </span><span class="x">given</span><span class="nf">:</span><span class="w"> </span><span class="p">(</span><span class="x">token</span><span class="p">,</span><span class="w"> </span><span class="x">index</span><span class="p">)</span><span class="w"> </span><span class="x">index</span><span class="w"> </span><span class="x">with</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;-&quot;</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@view</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#value</span><span class="w"> </span><span class="x">|</span><span class="w"> </span><span class="x">value</span><span class="nf">:</span><span class="w"> </span><span class="x">text</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>The result expected result is &ldquo;h-e-l-l-o- -w-o-r-l-d&rdquo;.</p>
 
 <h2 id="see-also">See Also</h2>
 
-<p><a href="../join">join</a> | <a href="../split">split</a> | <a href="../char-at">char-at</a> | <a href="../find">find</a> | <a href="../length">length</a> | <a href="../replace">replace</a></p>
+<p><a href="../split">split</a></p>
 
 
 		</div>

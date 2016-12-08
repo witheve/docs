@@ -14,19 +14,15 @@
   </url>
   
   <url>
+    <loc>http://docs.witheve.com/handbook/databases/</loc>
+  </url>
+  
+  <url>
     <loc>http://docs.witheve.com/handbook/intro/</loc>
   </url>
   
   <url>
     <loc>http://docs.witheve.com/handbook/programs/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/standard-library/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/datetime/</loc>
   </url>
   
   <url>
@@ -38,14 +34,6 @@
   </url>
   
   <url>
-    <loc>http://docs.witheve.com/handbook/events/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/general/</loc>
-  </url>
-  
-  <url>
     <loc>http://docs.witheve.com/handbook/linux/</loc>
   </url>
   
@@ -54,19 +42,11 @@
   </url>
   
   <url>
-    <loc>http://docs.witheve.com/handbook/math/</loc>
-  </url>
-  
-  <url>
     <loc>http://docs.witheve.com/tutorials/quickstart/</loc>
   </url>
   
   <url>
-    <loc>http://docs.witheve.com/handbook/statistics/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/strings/</loc>
+    <loc>http://docs.witheve.com/handbook/standard-library/</loc>
   </url>
   
   <url>
@@ -86,7 +66,7 @@
   </url>
   
   <url>
-    <loc>http://docs.witheve.com/handbook/events/click/</loc>
+    <loc>http://docs.witheve.com/handbook/event/click/</loc>
   </url>
   
   <url>
@@ -150,6 +130,10 @@
   </url>
   
   <url>
+    <loc>http://docs.witheve.com/handbook/session/</loc>
+  </url>
+  
+  <url>
     <loc>http://docs.witheve.com/handbook/add/</loc>
   </url>
   
@@ -159,6 +143,10 @@
   
   <url>
     <loc>http://docs.witheve.com/handbook/functions/</loc>
+  </url>
+  
+  <url>
+    <loc>http://docs.witheve.com/handbook/general/</loc>
   </url>
   
   <url>
@@ -182,6 +170,10 @@
   </url>
   
   <url>
+    <loc>http://docs.witheve.com/handbook/browser/</loc>
+  </url>
+  
+  <url>
     <loc>http://docs.witheve.com/handbook/aggregates/</loc>
   </url>
   
@@ -195,6 +187,10 @@
   
   <url>
     <loc>http://docs.witheve.com/handbook/inequality/</loc>
+  </url>
+  
+  <url>
+    <loc>http://docs.witheve.com/handbook/math/</loc>
   </url>
   
   <url>
@@ -218,6 +214,10 @@
   </url>
   
   <url>
+    <loc>http://docs.witheve.com/handbook/event/</loc>
+  </url>
+  
+  <url>
     <loc>http://docs.witheve.com/handbook/actions/</loc>
   </url>
   
@@ -238,11 +238,19 @@
   </url>
   
   <url>
+    <loc>http://docs.witheve.com/handbook/strings/</loc>
+  </url>
+  
+  <url>
     <loc>http://docs.witheve.com/handbook/commit/</loc>
   </url>
   
   <url>
     <loc>http://docs.witheve.com/handbook/if-then/</loc>
+  </url>
+  
+  <url>
+    <loc>http://docs.witheve.com/handbook/http/</loc>
   </url>
   
   <url>
@@ -262,6 +270,10 @@
   </url>
   
   <url>
+    <loc>http://docs.witheve.com/handbook/statistics/</loc>
+  </url>
+  
+  <url>
     <loc>http://docs.witheve.com/handbook/is/</loc>
   </url>
   
@@ -270,15 +282,19 @@
   </url>
   
   <url>
+    <loc>http://docs.witheve.com/handbook/view/</loc>
+  </url>
+  
+  <url>
+    <loc>http://docs.witheve.com/handbook/datetime/</loc>
+  </url>
+  
+  <url>
     <loc>http://docs.witheve.com/handbook/string-interpolation/</loc>
   </url>
   
   <url>
     <loc>http://docs.witheve.com/handbook/update-operators/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/databases/</loc>
   </url>
   
   <url>

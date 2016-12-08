@@ -231,98 +231,55 @@
                         </ul>
                       
                     
-                      <li><a href="http://docs.witheve.com/handbook/databases/"> Databases </a> </li>
-                      
-                    
                   </ul>
                 </li>
               
             
               
                 <li class="sub-menu active">
-                  <a href="http://docs.witheve.com/handbook/standard-library" class="">
+                  <a href="http://docs.witheve.com/handbook/databases" class="">
                       
-                      <span class="colored">Standard Library</span>
+                      <span class="colored">Databases</span>
                       <span class="menu-arrow arrow_carrot-right"></span>
                   </a>
                   <ul class="sub">
                     
-                      <li><a href="http://docs.witheve.com/handbook/datetime/"> Date &amp; Time </a> </li>
+                      <li><a href="http://docs.witheve.com/handbook/standard-library/"> Standard Library </a> </li>
                       
                         <ul class="sub">
                           
-                            <li><a href="http://docs.witheve.com/handbook/datetime/time/">time</a></li>
+                            <li><a href="http://docs.witheve.com/handbook/general/">General</a></li>
+                          
+                            <li><a href="http://docs.witheve.com/handbook/math/">Math</a></li>
+                          
+                            <li><a href="http://docs.witheve.com/handbook/strings/">Strings</a></li>
+                          
+                            <li><a href="http://docs.witheve.com/handbook/statistics/">Statistics</a></li>
+                          
+                            <li><a href="http://docs.witheve.com/handbook/datetime/">Date &amp; Time</a></li>
                           
                         </ul>
                       
                     
-                      <li><a href="http://docs.witheve.com/handbook/events/"> Events </a> </li>
+                      <li><a href="http://docs.witheve.com/handbook/session/"> @session </a> </li>
+                      
+                    
+                      <li><a href="http://docs.witheve.com/handbook/browser/"> @browser </a> </li>
+                      
+                    
+                      <li><a href="http://docs.witheve.com/handbook/event/"> @event </a> </li>
                       
                         <ul class="sub">
                           
-                            <li><a href="http://docs.witheve.com/handbook/events/click/">click</a></li>
+                            <li><a href="http://docs.witheve.com/handbook/event/click/">click</a></li>
                           
                         </ul>
                       
                     
-                      <li><a href="http://docs.witheve.com/handbook/general/"> General </a> </li>
-                      
-                        <ul class="sub">
-                          
-                            <li><a href="http://docs.witheve.com/handbook/general/sort/">sort</a></li>
-                          
-                        </ul>
+                      <li><a href="http://docs.witheve.com/handbook/http/"> @http </a> </li>
                       
                     
-                      <li><a href="http://docs.witheve.com/handbook/math/"> Math </a> </li>
-                      
-                        <ul class="sub">
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/abs/">abs</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/ceil/">ceil</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/cos/">cos</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/fix/">fix</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/floor/">floor</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/mod/">mod</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/range/">range</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/round/">round</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/sin/">sin</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/sum/">sum</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/math/tan/">tan</a></li>
-                          
-                        </ul>
-                      
-                    
-                      <li><a href="http://docs.witheve.com/handbook/statistics/"> Statistics </a> </li>
-                      
-                        <ul class="sub">
-                          
-                            <li><a href="http://docs.witheve.com/handbook/statistics/count/">count</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/statistics/random/">random</a></li>
-                          
-                        </ul>
-                      
-                    
-                      <li><a href="http://docs.witheve.com/handbook/strings/"> Strings </a> </li>
-                      
-                        <ul class="sub">
-                          
-                            <li><a href="http://docs.witheve.com/handbook/strings/join/">join</a></li>
-                          
-                            <li><a href="http://docs.witheve.com/handbook/strings/split/">split</a></li>
-                          
-                        </ul>
+                      <li><a href="http://docs.witheve.com/handbook/view/"> @view </a> </li>
                       
                     
                   </ul>
@@ -428,7 +385,7 @@
 
 <h2 id="description">Description</h2>
 
-<p>Records are the predominate datatype in Eve. Records are used in two ways:</p>
+<p>Records are the predominant datatype in Eve. Records are used in two ways:</p>
 
 <ol>
 <li>In a <code>search</code> you supply a pattern of attributes to match records in a supplied database.</li>
@@ -478,15 +435,15 @@
 
 <p>Records can be nested.</p>
 <div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">commit</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Jeremey&quot;</span><span class="w"> </span><span class="x">spouse</span><span class="nf">:</span><span class="w"> </span><span class="p">[</span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Wendy&quot;</span><span class="p">]]</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Jeremy&quot;</span><span class="w"> </span><span class="x">spouse</span><span class="nf">:</span><span class="w"> </span><span class="p">[</span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Wendy&quot;</span><span class="p">]]</span><span class="w"></span>
 </code></pre></div>
 
 <p>Dot notation can be composed for deep access to records</p>
 <div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
-<span class="w">  </span><span class="x">jeremy</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Jeremy&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="x">Jeremy</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="p">[</span><span class="x">name</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;Jeremy&quot;</span><span class="p">]</span><span class="w"></span>
 
 <span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{jeremy.name}} is married to {{jeremy.spouse.name}}&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;{{Jeremy.name}} is married to {{Jeremy.spouse.name}}&quot;</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
 <h2 id="see-also">See Also</h2>
