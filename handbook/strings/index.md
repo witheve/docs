@@ -3,12 +3,10 @@ menu:
   main:
     parent: "Standard Library"
 title: "Strings"
+weight: 3
 ---
 
 # Strings
 
-- [length](length)
-- [concatenate](concat)
-- [replace](replace)
-- [split](split)
-- [join](join)
+- [split](split) - split a string into tokens
+- [join](join) - join tokens into a string

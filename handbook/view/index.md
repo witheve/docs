@@ -2,9 +2,9 @@
 menu:
   main:
     parent: "Databases"
-title: "@browser"
-weight: 2
+title: "@view"
+weight: 5
 ---
 
-# @browser
+# @view
 

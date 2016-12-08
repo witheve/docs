@@ -44,9 +44,11 @@ bind @browser
 
 Eve has some built-in databases that have meaning to the runtime.
 
-- @session - the default database when no database is specified with an action.
-- @event - contains events originating from the DOM
-- @browser - Eve clients in the browser renders records in this database as HTML elements.
+- [@session](../session) - the default database when no database is specified with an action.
+- [@view](../view) - records committed to `@view` are used to visualize data. 
+- [@event](../event) - contains events originating from the DOM
+- [@browser](../browser) - Eve clients running in the browser render applicable records in this `@browser` as HTML elements.
+- [@http](../http) - Stores records representing HTTP requests and responses
 
 ## Examples
 

@@ -3,6 +3,7 @@ menu:
   main:
     parent: "Standard Library"
 title: "Math"
+weight: 2
 ---
 
 # Math
@@ -17,9 +18,10 @@ title: "Math"
 ## General Math
 
 - [abs](abs) - Absolute value
-- [ceil](ceil) - Round a number up 
+- [ceiling](ceiling) - Round a number up 
 - [floor](floor) - Round a number down
 - [round](round) - Round a number
+- [fix](fix) - Calculate the fix of a number
 - [mod](mod) - Modulo division
 - exp - The number `e` raised to a power
 - log - Calculate the logarithm of a number

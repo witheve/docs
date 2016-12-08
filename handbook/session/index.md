@@ -2,9 +2,9 @@
 menu:
   main:
     parent: "Databases"
-title: "@browser"
-weight: 2
+title: "@session"
+weight: 1
 ---
 
-# @browser
+# @session
 

@@ -3,6 +3,7 @@ menu:
   main:
     parent: "Databases"
 title: "@event"
+weight: 3
 ---
 
 # @event
