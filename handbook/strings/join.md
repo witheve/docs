@@ -60,7 +60,7 @@ bind @view
   [#value | value: token]
 ```
 
-Let's join this phrase back together. Like last time, we'll join with a `-`. You'll notice that some tokens are duplicate ("l" and "o" appear multiple times in the phrase). To correctly join these tokens, we can add `index` as part of the `given` set:
+Let's join this phrase back together. Like last time, we'll join with a `-`. Notice that some tokens ("l" and "o") should appear multiple times in the phrase. To correctly join them, we add `index` as part of the `given` set:
 
 ```eve
 search
