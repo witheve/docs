@@ -3,6 +3,7 @@ menu:
   main:
     parent: "Standard Library"
 title: "Statistics"
+weight: 4
 ---
 
 # Statistics
