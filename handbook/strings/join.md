@@ -12,42 +12,69 @@ Joins a set of strings into a single string
 ## Syntax
 
 ```eve
-text = join[token, index, with]
+text = join[token, given, index, with]
 ```
 
 ## Attributes
 
-- `token` - set of elements to be joined
-- `index` - indicates the order of the `tokens` in the joined string
-- `with` - inserted between every element in `tokens`
+- `token` - set of strings to be joined
+- `given` - establishes the set being joined. If tokens are not unique, you can add attributes here that will make them unique. Must at least provide `token` as part of the given set, or only the first one will be returned.
+- `index` - indicates where each `token` is ordered in `text`.
+- `with` - inserted between every element in `token`.
 
 ## Description
 
-`text = join[token, index, with]` takes `tokens` tokens together using `with` in an order specified by `index`. Returns the joined string.
+`text = join[token, index, given, with]` takes `tokens` together using `with` in an order specified by `index`. Returns the joined string.
 
 ## Examples
 
-Split a sentence into tokens
+Split a sentence into tokens, and join the tokens into a sentence again
 
 ```eve
 search
+  // Split the sentence into words
   (token, index) = split[text: "the quick brown fox", by: " "]
 
-bind
-  [#token token index]
+  // Join the words back into a sentence, but with hyphens instead of spaces
+  text = join[token given: token, index with: "-"]
+
+bind @view
+  [#value | value: text] // Expected "the-quick-brown-fox"
 ```
 
-Join the tokens into a sentence again, but with hyphens instead of spaces
+---
+
+Since join is an aggregate, set semantics play an important part here; if we don't specify what makes each token unique, then the results can be surprising. The following example will demonstrate this.
+
+Let's split the phrase "hello world" into letters:
 
 ```eve
 search
-  [#token token index]
-  text = join[token, index, with: " "]
+  //token = (h, e, l, l, o, w, o, r, l, d)
+  (token, index) = split[text: "hello world", by: ""]
 
 bind
-  [#div text] // Expected "the-quick-brown-fox"
+  [#phrase token index]
+
+bind @view
+  [#value | value: token]
 ```
+
+Let's join this phrase back together. Like last time, we'll join with a `-`. You'll notice that some tokens are duplicate ("l" and "o" appear multiple times in the phrase). To correctly join these tokens, we can add `index` as part of the `given` set:
+
+```eve
+search
+  [#phrase token index]
+  // given = (("h", 1), ("e", 2), ("l", 3), ("l", 4) ... ("l", 10), ("d", 11)) 
+  // without including index, the result is "h-e-l-o- -w-r-d". Try it and see!
+  text = join[token given: (token, index) index with: "-"]
+
+bind @view
+  [#value | value: text]
+```
+
+The result expected result is "h-e-l-l-o- -w-o-r-l-d".
 
 ## See Also
 
-[join](../join) | [split](../split) | [char-at](../char-at) | [find](../find) | [length](../length) | [replace](../replace)
+[split](../split)
