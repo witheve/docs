@@ -12,24 +12,46 @@ Returns the number of elements in a set
 ## Syntax
 
 ```eve
+// Counts the elements in given
 y = count[given]
+
+// Counts the elements established by the set (var1, ... , varN)
+y = count[given: (var1, ... , varN)]
+
+// Group given by the values in per, and count each group
 y = count[given, per]
 ```
 
 ## Attributes
 
-- `given` - the set to count over
+- `given` - establishes the set to count over.
 - `per` - _optional_ - one or more attributes by which to group `given`.
 
 ## Description
 
 `y = count[given]` counts the number of elements in `given`.
 
+`y = count[given: ()]` counts the number of elements in `given`.
+
 `y = count[given, per]` counts the number of elements in `given`, grouped by the attribute(s) provided in `per`. For instance, `class-size = count[given: students, per: grade]` would count the number of students in each grade. You can group along multiple axes; the previous example could be extended to work across multiple schools by doing `class-size = count[given: students, per: (grade, school)]`. See the examples section to see these in action.
+
+## Counting Zero
+
+Eve's semantics prevent count from ever returning 0; For `count[]` to run, a search must match at least one record. If a search doesn't match any records, then the entire block will not execute. In order to actually get a 0 result, you have to condition the count with an if expression:
+
+```eve
+search
+	total-items = if c = count[given: [#item]] then c
+                else 0
+bind @view
+	[#value | value: "total items: {{total-items}}"]
+```
+
+This block searches for `[#item]` records. If any are found, then `count[]` is able to proceed. If none are found, then the if expression allows the block to execute nonetheless, so the total items is correctly reported as 0.
 
 ## Examples
 
-Before we get to the `count` examples, let's add some students. Each `#student` has a `grade` and a `school`. Grades are one of 10, 11, or 12. Schools are one of "West" and "East".
+Before we get to the `count[]` examples, let's add some students. Each `#student` has a `grade` and a `school`. Grades are one of 10, 11, or 12. Schools are one of "West" and "East".
 
 ```eve
 commit
