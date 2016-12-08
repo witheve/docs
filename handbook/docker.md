@@ -15,6 +15,7 @@ docker pull witheve/eve
 ```
 
 Windows Users - Docker for Windows requires Microsoft Hyper-V, which requires Windows 10.
+
 ## Examples
 
 To run the Docker container, execute:
@@ -35,4 +36,4 @@ To pass Eve files on your local machine into the container, you'll need to mount
 
 ## See also
 
-[linux](../linux) | [mac](../mac) | [windows](../windows) | [running](../running)
+[linux](../linux) | [mac](../mac) | [windows](../windows) | [npm](../npm) |[running](../running)

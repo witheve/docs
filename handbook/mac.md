@@ -18,4 +18,4 @@ Then open `http://localhost:8080/` in your browser.
 
 ## See also
 
-[linux](../linux) | [windows](../windows) | [docker](../docker) | [running](../running)
+[linux](../linux) | [windows](../windows) | [docker](../docker) | [npm](../npm) | [running](../running)
