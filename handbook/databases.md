@@ -1,6 +1,6 @@
 # Databases
 
-databases contain records
+Databases contain records
 
 ## Syntax
 
