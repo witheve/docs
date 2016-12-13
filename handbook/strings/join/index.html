@@ -115,6 +115,8 @@
                           
                             <li><a href="http://docs.witheve.com/handbook/docker/">Docker</a></li>
                           
+                            <li><a href="http://docs.witheve.com/handbook/npm/">npm</a></li>
+                          
                         </ul>
                       
                     
@@ -406,7 +408,7 @@
 <span class="w">  </span><span class="p">[</span><span class="nt">#value</span><span class="w"> </span><span class="x">|</span><span class="w"> </span><span class="x">value</span><span class="nf">:</span><span class="w"> </span><span class="x">token</span><span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
-<p>Let&rsquo;s join this phrase back together. Like last time, we&rsquo;ll join with a <code>-</code>. You&rsquo;ll notice that some tokens are duplicate (&ldquo;l&rdquo; and &ldquo;o&rdquo; appear multiple times in the phrase). To correctly join these tokens, we can add <code>index</code> as part of the <code>given</code> set:</p>
+<p>Let&rsquo;s join this phrase back together. Like last time, we&rsquo;ll join with a <code>-</code>. Notice that some tokens (&ldquo;l&rdquo; and &ldquo;o&rdquo;) should appear multiple times in the phrase. To correctly join them, we add <code>index</code> as part of the <code>given</code> set:</p>
 <div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
 <span class="w">  </span><span class="p">[</span><span class="nt">#phrase</span><span class="w"> </span><span class="x">token</span><span class="w"> </span><span class="x">index</span><span class="p">]</span><span class="w"></span>
 <span class="w">  </span><span class="c1">// given = ((&quot;h&quot;, 1), (&quot;e&quot;, 2), (&quot;l&quot;, 3), (&quot;l&quot;, 4) ... (&quot;l&quot;, 10), (&quot;d&quot;, 11)) </span><span class="w"></span>

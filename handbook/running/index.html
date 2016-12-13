@@ -115,6 +115,8 @@
                           
                             <li><a href="http://docs.witheve.com/handbook/docker/">Docker</a></li>
                           
+                            <li><a href="http://docs.witheve.com/handbook/npm/">npm</a></li>
+                          
                         </ul>
                       
                     
@@ -357,22 +359,63 @@
 
 <h1 id="running-eve">Running Eve</h1>
 
-<p>In the extract Eve directory, Running</p>
+<p>If you&rsquo;ve downloaded and installed Eve via <a href="../npm">npm</a>, you can launch Eve with the <code>eve</code> command.</p>
 
-<pre><code>npm start
+<pre><code>eve
 </code></pre>
 
-<p>Then direct your browser to <code>http://localhost:8080</code></p>
+<p>This launches an Eve server running in the Eve root directory at <code>http://localhost:8080</code>. From here, you&rsquo;ll be directed to <code>quickstart.eve</code>, and have access to the Eve examples directory from within the editor.</p>
+
+<h2 id="running-an-eve-file">Running an Eve File</h2>
+
+<p>If you want to run a specific Eve program, you can provide its path after the <code>eve</code> command:</p>
+
+<pre><code>eve ~/myDir/myEveFile.eve
+</code></pre>
+
+<p>Then you navigate to Eve in your browser to access the specified program. If you like, you can also recover the editor with a flag:</p>
+
+<pre><code>eve ~/myEveDir/myEveFile.eve --editor
+</code></pre>
+
+<p>This will run the supplied Eve program with the editor visible</p>
+
+<h2 id="running-eve-in-server-mode">Running Eve in Server mode</h2>
+
+<p>Eve can be started in server mode using the <code>--server</code> flag:</p>
+
+<pre><code>eve --server
+</code></pre>
+
+<p>Without this flag, execution of Eve programs happens within the browser, with the Eve server acting only as a file server between the browser and your local system. In server mode, Eve will instead execute your program on the server. Currently written programs will operate exactly as before, but this is a preliminary step in order to get networked Eve applications going (like a chat server or a multiplayer game). There is still work needed to be done there</p>
+
+<h2 id="eve-workspaces">Eve Workspaces</h2>
+
+<p>You can run Eve in a custom workspace. To create a new Eve workspace, create a folder with an empty file named <code>package.json</code>, then start Eve from within this folder. Eve recognizes that it is starting an Eve workspace, and will serve <code>*.eve</code> files from within this directory instead of the Eve examples folder. Furthermore, you can serve various assets, like images or CSS, by placing them in an &ldquo;assets&rdquo; sub-folder.</p>
 
 <h2 id="flags">Flags</h2>
 
 <ul>
-<li>server - run Eve in server execution mode</li>
+<li>server - run Eve in server execution mode.</li>
+<li>editor - run Eve with the editor visible. This defaults to false, except when Eve is started in an Eve project folder.</li>
+<li>port - specify the port on which to run the Eve server. Alternatively, the running port can be specified with the <code>PORT</code> environment variable, which takes precedence over the <code>port</code> flag.</li>
 </ul>
+
+<h2 id="running-eve-from-source">Running Eve from Source</h2>
+
+<p>To run Eve from source, you invoke the following command in the extracted Eve folder:</p>
+
+<pre><code>npm start
+</code></pre>
+
+<p>You can apply the above flags to this command, but you&rsquo;ll need an extra <code>--</code> to do so. e.g.</p>
+
+<pre><code>npm start -- --port 1234
+</code></pre>
 
 <h2 id="see-also">See Also</h2>
 
-<p><a href="../linux">linux</a> | <a href="../mac">mac</a> | <a href="../windows">windows</a> | <a href="../docker">docker</a></p>
+<p><a href="../linux">linux</a> | <a href="../mac">mac</a> | <a href="../windows">windows</a> | <a href="../docker">docker</a> | <a href="../npm">npm</a></p>
 
 
 		</div>

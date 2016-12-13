@@ -9,16 +9,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>floor - Eve Documentation</title>
+    <title>npm - Eve Documentation</title>
     <meta name="generator" content="Hugo 0.16" />
 
     
-    <link rel="canonical" href="http://docs.witheve.com/handbook/math/floor/">
+    <link rel="canonical" href="http://docs.witheve.com/handbook/npm/">
     
     <meta name="author" content="Eve">
     
 
-    <meta property="og:url" content="http://docs.witheve.com/handbook/math/floor/">
+    <meta property="og:url" content="http://docs.witheve.com/handbook/npm/">
     <meta property="og:title" content="Eve Documentation">
     
     <meta name="apple-mobile-web-app-title" content="Eve Documentation">
@@ -115,7 +115,7 @@
                           
                             <li><a href="http://docs.witheve.com/handbook/docker/">Docker</a></li>
                           
-                            <li><a href="http://docs.witheve.com/handbook/npm/">npm</a></li>
+                            <li class="selected"><a href="http://docs.witheve.com/handbook/npm/">npm</a></li>
                           
                         </ul>
                       
@@ -357,39 +357,18 @@
 
 			
 
-<h1 id="floor">floor</h1>
+<h1 id="eve-on-npm">Eve on npm</h1>
 
-<p>Round a number down to the nearest integer.</p>
+<p>A package for Eve is available on <a href="https://www.npmjs.com/package/witheve">npm</a>. After <a href="https://nodejs.org/en/download/">installing npm</a> for your platform, you can download our package with the following command:</p>
 
-<h2 id="syntax">Syntax</h2>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="x">y</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">floor</span><span class="p">[</span><span class="x">value</span><span class="p">]</span><span class="w"></span>
-</code></pre></div>
+<pre><code>npm install -g witheve
+</code></pre>
 
-<h2 id="attributes">Attributes</h2>
+<p>This will give you a global Eve installation that you can invoke with the command <code>eve</code> from any folder. Doing so will launch an Eve server at <code>http://localhost:8080</code>.</p>
 
-<ul>
-<li><code>value</code> - a set of numbers</li>
-</ul>
+<h2 id="see-also">See also</h2>
 
-<h2 id="description">Description</h2>
-
-<p><code>y = floor[value]</code> rounds the elements of <code>value</code> down to the nearest integers.</p>
-
-<h2 id="examples">Examples</h2>
-
-<p>Calculate the floor of <code>34.2</code></p>
-<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
-<span class="w">  </span><span class="x">y</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">floor</span><span class="p">[</span><span class="x">value</span><span class="nf">:</span><span class="w"> </span><span class="m">34</span><span class="x">.</span><span class="m">2</span><span class="p">]</span><span class="w"></span>
-
-<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
-<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="x">y</span><span class="p">]</span><span class="w"></span>
-</code></pre></div>
-
-<p>The result is <code>34</code>.</p>
-
-<h2 id="see-also">See Also</h2>
-
-<p><a href="ceil.md">ceil</a> | <a href="fix.md">fix</a> | <a href="round.md">round</a></p>
+<p><a href="../linux">linux</a> | <a href="../mac">mac</a> | <a href="../windows">windows</a> | <a href="../docker">docker</a> | <a href="../running">running</a></p>
 
 
 		</div>
