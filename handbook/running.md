@@ -32,7 +32,7 @@ eve ~/myEveDir/myEveFile.eve --editor
 
 This will run the supplied Eve program with the editor visible
 
-## Running Eve in Serve mode
+## Running Eve in Server mode
 
 Eve can be started in server mode using the `--server` flag:
 
@@ -40,7 +40,7 @@ Eve can be started in server mode using the `--server` flag:
 eve --server
 ```
 
-Without this flag, execution of Eve programs happens within the browser, with the Eve server acting as an intermediary between the browser and your local system. In server mode, Eve will instead execute your program on the server. Currently written programs will operate exactly as before, but this is a preliminary step in order to get networked Eve applications going (like a chat server or a multiplayer game). There is still work needed to be done there 
+Without this flag, execution of Eve programs happens within the browser, with the Eve server acting only as a file server between the browser and your local system. In server mode, Eve will instead execute your program on the server. Currently written programs will operate exactly as before, but this is a preliminary step in order to get networked Eve applications going (like a chat server or a multiplayer game). There is still work needed to be done there 
 
 
 ## Eve Workspaces
