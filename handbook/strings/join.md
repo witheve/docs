@@ -7,12 +7,16 @@ title: "join"
 
 # join
 
-Joins a set of strings into a single string 
+Joins a set of tokens into one or more contiguous strings 
 
 ## Syntax
 
 ```eve
+// join tokens into a string
 text = join[token, given, index, with]
+
+// group tokens before joining
+text = join[token, given, index, with, per]
 ```
 
 ## Attributes
@@ -21,10 +25,13 @@ text = join[token, given, index, with]
 - `given` - establishes the set being joined. If tokens are not unique, you can add attributes here that will make them unique. Must at least provide `token` as part of the given set, or only the first one will be returned.
 - `index` - indicates where each `token` is ordered in `text`.
 - `with` - inserted between every element in `token`.
+- `per` - _optional_ - one or more attributes by which to group `token`.
 
 ## Description
 
-`text = join[token, index, given, with]` takes `tokens` together using `with` in an order specified by `index`. Returns the joined string.
+`text = join[token, given, index, with]` joins elements of `token` in an order specified by `index`, inserting `with` between each token. Returns the joined string.
+
+`text = join[token, given, index, with, per]` groups `token` according to the values of `per` before joining.
 
 ## Examples
 
