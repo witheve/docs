@@ -35,7 +35,7 @@ len = length[text, as]
 Count the number of characters in a string. We expect a `len` of 5:
 
 ```eve
-seach
+search
   len = length[text: "Hello"]
 
 bind @view
@@ -45,17 +45,17 @@ bind @view
 This time, let's throw a Unicode snowman in the mix. In symbols, this is counted as a single character. We expect a `len` of 9 here:
 
 ```eve
-seach
+search
   len = length[text: "Poodle: 🐩", as "symbols"]
 
 bind @view
   [#value | value: len]
 ```
 
-But when we count code-points, the snowman is counted as 2. We expect a `len` of 10 here: 
+But when we count code-points, the poodle is counted as 2. We expect a `len` of 10 here: 
 
 ```eve
-seach
+search
   len = length[text: "Poodle: 🐩", as: "code-points"]
 
 bind @view
