@@ -50,4 +50,4 @@ bind @browser
 
 ## See Also
 
-[concat](../concat) | [join](../join) | [char-at](../char-at) | [find](../find) | [length](../length) | [replace](../replace)
+[join](../join) | [length](../length) | [substring](../substring)
