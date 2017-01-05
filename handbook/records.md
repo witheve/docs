@@ -45,6 +45,10 @@ Records are the predominant datatype in Eve. Records are used in two ways:
 
 `[attribute]` matches all records with the given attribute.
 
+`[attribute1 ... attributeN]` matches all records with the given attributes.
+
+`[attribute1: variable1, ... , attributeN: variableN]` the expanded form of the above pattern. If the variable assignment is omitted, then the attribute values are assigned to variables equaling their name. If the variable assignment is included, the variables can be used to access their respective attributes instead of the attributes' names.
+
 `[attribute: value]` matches all records with the given attribute bound to specified value.
 
 `[attribute > value]` matches all records with the given attribute bound filtered on a value. The inequality `>` can be one of the inequality operators.
@@ -74,12 +78,12 @@ Records can have multiple attributes
 ```eve
 search
   [#student name grade school]
-  
+
 bind @browser
   [#div text: "{{name}} is in {{grade}}th grade at {{school}}"]
 ```
 
-Join records by binding attributes from one record into another record. Equate records with variables. Access record attributes using dot notation. 
+Join records by binding attributes from one record into another record. Equate records with variables. Access record attributes using dot notation.
 
 ```eve
 search
