@@ -47,7 +47,7 @@ Records are the predominant datatype in Eve. Records are used in two ways:
 
 `[attribute1 ... attributeN]` matches all records with the given attributes.
 
-`[attribute1: variable1, ... , attributeN: variableN]` the expanded form of the above pattern. If the variable assignment is omitted, then the attribute values are assigned to variables equalling their name. If the variable assignment is included, the variables can be used to access their respective attributes instead of the attributes' names.
+`[attribute1: variable1, ... , attributeN: variableN]` the expanded form of the above pattern. If the variable assignment is omitted, then the attribute values are assigned to variables equaling their name. If the variable assignment is included, the variables can be used to access their respective attributes instead of the attributes' names.
 
 `[attribute: value]` matches all records with the given attribute bound to specified value.
 
