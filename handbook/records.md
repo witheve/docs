@@ -111,6 +111,29 @@ bind @browser
   [#div text: "{{Jeremy.name}} is married to {{Jeremy.spouse.name}}"]
 ```
 
+Using dot notation to access record attributes means conditioning the block to have those attributes available.
+These two following blocks point to the same results:
+
+**without dot notation**
+```eve
+search
+  [#student name grade school]
+
+bind @browser
+  [#div text: "{{name}} is in {{grade}}th grade at {{school}}"]
+```
+
+**with dot notation**
+```eve
+search
+  [#student]
+
+bind @browser
+  [#div text: "{{student.name}} is in {{student.grade}}th grade at {{student.school}}"]
+```
+
+They get executed only if there's at least one student with a name, a grade and a school attribute.
+
 ## See Also
 
 [search](../search) | [bind](../bind) | [commit](../commit) | [tags](../tags) | [databases](../databases) | [equality](../equality) | [inequality](../inequality) | [joins](../joins)
