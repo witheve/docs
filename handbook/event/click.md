@@ -39,10 +39,10 @@ Listen for `click` event emitted from `button` element it gets clicked:
 
 ```eve
 search @session @browser @event
-  btn = [#click element: [#button #btnHello]]
+  [#click element: [#button #btnHello]]
 
 commit @view
-  [#value | value: "{{btn.text}} has been clicked"] // it will print "Click Me has been clicked"
+  [#value | value: "The button has been clicked"]
 ```
 
 
