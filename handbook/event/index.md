@@ -11,3 +11,7 @@ weight: 3
 [click](click) - a left-button mouse click event
 
 [change](change) - an element change event
+
+[keydown](keydown) - a key down event
+
+[keyup](keyup) - a key up event
