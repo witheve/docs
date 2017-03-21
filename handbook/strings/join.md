@@ -84,4 +84,4 @@ The result expected result is "h-e-l-l-o- -w-o-r-l-d".
 
 ## See Also
 
-[split](../split)
+[split](../split) | [substring](../substring) | [length](../length)
