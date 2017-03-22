@@ -17,7 +17,7 @@ splits a string at the given delimiter
 
 ## Attributes
 
-- `text` - the text to be split 
+- `text` - the text to be split
 - `by` - the delimiter at which to split the text. An empty string will split the text at every character.
 - `token` - the recovered tokens after the split
 - `index` - the indices of the tokens in the original text  
