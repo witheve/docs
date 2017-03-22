@@ -94,9 +94,9 @@ value = if bar then baz
         else baz3
 
 // Okay, especially if the branch is long
-value = if [#long-record attr1 attr2 attr3] 
+value = if [#long-record attr1 attr2 attr3]
           then baz
-        if [#long-record2 attr1 attr2 attr3] 
+        if [#long-record2 attr1 attr2 attr3]
           then baz2
         else baz3
 
@@ -120,20 +120,20 @@ Nested records should appear on their own line if you are nesting more than one.
 [#div text: "hello", children: [#div text: "world"]]
 
 // More readable
-[#div text: "hello", children: 
+[#div text: "hello", children:
   [#div text: "world"]]
 
 // Also good
-[#div children: 
+[#div children:
   [#div text: "div1"]
   [#div text: "div2" children:
-    [#div text: "div3"]]]  
+    [#div text: "div3"]]]
 
 // Not good
 [#div children: [#div text: "div2"] [#div text: "div2"]]
 
 // Also not good
-[#div children: 
+[#div children:
   [#div text: "world"], text: "hello"]
 ```
 
@@ -152,7 +152,7 @@ search @schoolDB
   schools.name = student.school
 
 bind @browser
-  [#div text: students.name] 
+  [#div text: students.name]
 
 commit
   [#new-record]
@@ -167,7 +167,7 @@ search @schoolDB
   schools = [#school]
   schools.name = student.school
 bind @browser
-  [#div text: students.name] 
+  [#div text: students.name]
 commit
   [#new-record]
 ```
