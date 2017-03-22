@@ -69,4 +69,3 @@ bind @browser
 ## See Also
 
 [gaussian][../gaussian]
-gaussian][../gaussian]
