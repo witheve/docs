@@ -55,14 +55,14 @@ The DSL supports methods which mirror a couple of the Eve update operators. They
  dds attribute/value pairs to a record. These added values do not contribute to the identity of a record, allowing you to add multiple values toa single record. This is equivalent to the Eve `+=` operator. For example:
 
 ```javascript
-  program.block("every friend is on the guest list", ({find, record}) => {
-    // search for records tagged "friend"
-    let friend = find("friend");
-    return [
-      // bind a single record tagged "guest-list", with every friend as a guest
-      record("guest-list").add({guest: friend})
-    ];
-  });
+program.block("every student is on the guest list", ({find, record}) => {
+  // search for records tagged "friend"
+  let friend = find("friend");
+  return [
+    // bind a single record tagged "guest-list", with every friend as a guest
+    record("guest-list").add({guest: friend})
+  ];
+});
 ```
 
 ### remove()
@@ -70,14 +70,14 @@ The DSL supports methods which mirror a couple of the Eve update operators. They
 Removes attribute/value pairs from a record. This is equivalent to the Eve `-=` oeprator. For example:
 
 ```javascript
-  program.block("blacklisted friends cannot come to the party", ({find, record}) => {
-    let blacklisted = find("blacklisted");
-    let guests = find("guest-list")
-    return [
-      // remove anyone blacklisted from the guestlist
-      guests.remove({guest: blacklisted})
-    ];
-  });
+program.block("blacklisted friends cannot come to the party", ({find, record}) => {
+  let blacklisted = find("blacklisted");
+  let guests = find("guest-list")
+  return [
+    // remove anyone blacklisted from the guestlist
+    guests.remove({guest: blacklisted})
+  ];
+});
 ```
 
 You can also use `remove()` to completely delete records or attributes on a record. This is equivalent to `:= none` in Eve. For example:
@@ -92,12 +92,13 @@ You can also use `remove()` to completely delete records or attributes on a reco
 The DSL does not contain an equivalent for the Eve general set operator `:=`, but you can mimick its behavior by chaining the `add()` and `remove()` operators. For example:
 
 ```javascript
-  program.block("Set ARtemis' salary to 10", ({find, record}) => {
-    let artemis = find("employee", {name: "Artemis"});
-    return [
-      artemis.remove("salary").add("salary",10)
-    ];
-  });
+program.block("Set Artemis' teacher", ({find, record}) => {
+  let artemis = find("student", {name: "Artemis"});
+  let teacher = find("teacher", {name: "Smith"});
+  return [
+    artemis.remove("teacher").add("teacher", teacher)
+  ];
+});
 ```
 
 In summary:
@@ -108,59 +109,126 @@ In summary:
 - Remove an attribute `person.remove("salary")` <-> `person.salary := none`
 - Remove a record `person.remove()` <-> `person := none`
 
-
 ## Subblocks
 
-In the DSL `not()`, `union()`, and `choose()` are subblocks, which have their own body, but act as they do in the Eve syntax. Let's look at each of these.
+In the DSL `not()`, `union()`, and `choose()` are subblocks, which have their own body. Let's look at each of these.
 
 ### not()
 
-The `not()` sub block works similary to `not()` from the Eve syntax; it performs an anti-join on the records inside and outside of the `not()`
+The `not()` sub block works similary to `not()` from the Eve syntax; it performs an anti-join on the records inside and outside of the `not()`. To use not, include it in the function list at the beginning of the block.
 
 ```javascript
-program.block("Elements with no parents are roots.", ({find, record, lib, not}) => {
-    let elem = find("html/element/element");
+program.block("Tag students without any citations.", ({find, record, not}) => {
+    let students = find("student");
     not(() => {
-        find("html/element/element", {children: elem});
+        find("student", {citation});
     });
     return [
-        record("html/element/root", "html/element/instance", {element: elem, tagname: elem.tagname})
+        students.add("tag","good-standing")
     ];
 })
 ```
 
 ### choose()
 
+Choose() and union() expressions are behind the mechanics of the if expression in the Eve syntax. In the DSL, we expose these directly. First, `choose()` takes a body of branches, each one comprised of a condition and a return value. The value of the choose corresponds to the first matching branch. 
+
 ```javascript
-program.commit("Clicking a record toggles it open/closed", ({find, choose}) => {
-    let recordHeader = find("tag-browser/record-header");
-    let record = find("tag-browser/record", {children: recordHeader});
-    find("html/event/click", {element: recordHeader});
-    let [open] = choose(
-        () => { record.open == "true"; return "false"; },
-        () => "true"
+program.commit("Assign a letter grade.", ({find, choose}) => {
+    let student = find("student");
+    let [grade] = choose(
+        () => { student.grade >= 90; return "A"; },
+        () => { student.grade >= 80; return "B"; },
+        () => { student.grade >= 70; return "C"; },
+        () => { student.grade >= 60; return "D"; },
+        () => "F"
     )
     return [
-        record.remove("open").add("open", open)
+        student.add("letter-grade", {grade}),
     ];
 });
 ```
 
+### union()
 
+By contrast `union()` takes a body of branches and combines their output into a single variable. One use of union might be to normalize records from different data sources.
 
-## Watchers
+```javascript
+program.block("display the student's full names", ({find, record, union}) => {
+  let east = find("student", {school: "West HS"});
+  let west = find("student", {school: "East HS"});
+  let [fullName] = union(
+    () => { east.name; return east.name},
+    () => { west.firstName; return `${{west.firstName}} ${{west.lastName}}`},
+  );
+  return [
+    record("html/element", {tagname: "div", text: fullName}),
+  ];
+});
+```
+
+### Functions
+
+The standard library in Eve has been redone in the DSL. To use library functions, you must now bring in "lib" explicitly when defining your block. From lib you can access the various standard library functions supported by the runtime so far. 
+
+```javascript
+program.block("display the student's full names", ({find, record, lib}) => {
+  find("angle" degrees)
+  let result = math.sin(degrees)
+  return [
+    record("html/element", {tagname: "div", text: result})
+  ];
+});
+```
+
+for now you can find a list of functions in [src/runtime/stdlib.ts](https://github.com/witheve/Eve/blob/refactor-editor/src/runtime/stdlib.ts)
+
+The interface for wrapping functions for use within Eve is also revamped for the new runtime. When writing a function wrapper, you must ensure that the function meets the following qualifications
+
+1. The function must be referentially transparent, meaning given the same input, the function should return the same output.
+
+2. The function must be monotonic, meaning that additional inputs should never decrease the number of outputs.
+
+If the function meets these two qualifications, it can be wrapped using `makeFunction()` e.g.:
+
+```javascript
+makeFunction({
+  name: "math/sin",             
+  args: {a: "number"},
+  returns: {result: "number"},
+  apply: (a:number) => {
+    return [Math.sin(a/180 * Math.PI)];
+  }
+});
+```
+
+## Importing and Exporting Records 
+
+### Getting Data Into Eve - `inputEavs()`
+
+You can import raw EAVs into Eve with the `inputEavs()` function. Due to limitations of the host language, in order for it to work correctly, `inputEavs()` can only be used after you define all blocks.
+
+`inputEavs()` takes as input a list of entity, attribute, value triples. The entity value identifies the record to which the attribute and value belong, so it must be unique to that record. For example:
+
+```javascript
+prog.inputEavs([[0,"tag","person"],[0,"name","Archibald"])
+```
+
+This will create a record tagged "person" with the name attribute "Archibald".
+
+### Getting Records out of Eve - Watchers
 
 Watchers are a new feature native to the DSL that allow you to monitor changes in specific records and react to them with a callback function. Like blocks, watchers also attach to a `program`.
 
 ```javascript
-  program.watch("Export information about people", ({find, lookup, record}) => {
-    // search for records tagged person
-    let person = find("person");
-    // lookup attributes and values related to each person
-    let {attribute, value} = lookup(person);
+  program.watch("Export information about students", ({find, lookup, record}) => {
+    // search for records tagged student
+    let student = find("student");
+    // lookup attributes and values related to each student
+    let {attribute, value} = lookup(student);
     return [
-      // Add these attributes and values to the person, which creates a diff to which we can react
-      person.add(attribute, value)
+      // Add these attributes and values to the student, which creates a diff to which we can react
+      student.add(attribute, value)
     ];
   })
   // React to each addition or removal
@@ -170,3 +238,4 @@ Watchers are a new feature native to the DSL that allow you to monitor changes i
     }
   });
 ```
+
