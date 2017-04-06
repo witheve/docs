@@ -7,7 +7,7 @@ title: "random"
 
 # random
 
-Generates a random number between 0 and 1
+generates a random number between 0 and 1
 
 ## Syntax
 
@@ -21,7 +21,8 @@ y = random[seed]
 
 ## Description
 
-`y = random[seed]` generates a pseudorandom number drawn from the [standard uniform distribution][1], meaning the generated number is restricted to be between 0 and 1. To generate a number between a custom range, see the examples.  
+`y = random[seed]` generates a pseudorandom number drawn from the [standard uniform distribution][1], meaning the generated number is restricted to be between 0 and 1. To generate a number between a custom range, see the examples.
+`random` requires a seed as an argument because there is no such thing as a truely random number generator. Instead, "random number generators" are equations that produce results (based on original numbers) that are unpredicatble to humans, but repeatable. For instance, `7 * i % 11` is a simple pseudorandom number generator: the numbers it produces seem to have no relation at all with `i` itself. Therefore it is functionally random to humans, but with the same value for `i`, the same output is produced. In this example, `i` is the seed. A good value to use as a seed is the time in milliseconds, since it is always changing, insuring that you will almost never get the same seed twice (this does not mean you will always get a different number, however).
 
 [1]: https://en.wikipedia.org/wiki/Uniform_distribution_(continuous)#Standard_uniform
 
