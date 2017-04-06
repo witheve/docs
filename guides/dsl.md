@@ -3,8 +3,8 @@
 The forthcoming v0.3 release of Eve supports a domain specific langauge (DSL) that interacts with the Eve server, allowing you to intermix Javascript and Eve code. There are several benefits to using the DSL:
 
 1) The syntax is native Javascript, so if you know JS you can write in the DSL
-2) You can use the DSL with Javascript functions and libraries
-3) The DSL can be used "a la carte", so you can use as much of Eve as you need to for your project. Thus you can write an entire application in Eve, just use it as a datastore, or anywhere inbetween. This makes it easy to integrate Eve with an existing Javascript application.
+2) You can interact with Javascript functions and libraries
+3) The DSL can be used "a la carte", so you can use as much of Eve as you need to for your project. Thus you can write an entire application in Eve, just use it as a datastore, or anywhere between. This makes it easy to integrate Eve with an existing Javascript application.
 4) You can easily import data into Eve. If you can get your data in Javascript, you can use it in Eve.
 
 ## Using the DSL
@@ -21,10 +21,10 @@ Then you instantiate a new Eve program, naming it however you want.
 let program = new Program("program name");
 ```
 
-Writing DSL code is similar to writing native Eve code; you attach blocks to the `program`, which search for records and then return records. Blocks in the DSL operate as a `bind` would in native Eve. Let's look at the DSL block syntax:
+Writing DSL code is similar to writing native Eve code; you attach blocks to the `program`, which search for records and then return records. Blocks in the DSL operate as a either a `bind` or `commit`. Let's look at the DSL block syntax in the case of `bind`:
 
 ```javascript
-  program.block("block description", ({find, record}) => {
+  program.bind("block description", ({find, record}) => {
     // search for records tagged "person"
     let person = find("person");
     return [
@@ -46,35 +46,35 @@ bind
 
 The identity of a `record()` is established by everything within the parentheses. Therefore, the record `record("greeting", {message: `Hello ${person.name}`})` will create one record for every `person.name`.
 
-If would like to commit records instead of binding them, you can use the `commit()` method in place of `block()`. The implicatino here is that you can no longer create blocks which both commit and bind records at the same time, which we've found is not a common case.
+If would like to commit records instead of binding them, you can use the `commit()` method in place of `bind()`. The implication here is that you can no longer create blocks which both commit and bind records at the same time.
 
 The DSL supports methods which mirror a couple of the Eve update operators. They are:
 
 ### add()
 
- dds attribute/value pairs to a record. These added values do not contribute to the identity of a record, allowing you to add multiple values toa single record. This is equivalent to the Eve `+=` operator. For example:
+ Adds attribute/value pairs to a record. These added values do not contribute to the identity of a record, allowing you to add multiple values to a single record. This is equivalent to the Eve `+=` operator. For example:
 
 ```javascript
-program.block("every student is on the guest list", ({find, record}) => {
+program.block("Invite classmates to my party", ({find, record}) => {
   // search for records tagged "friend"
-  let friend = find("friend");
+  let student = find("student");
   return [
-    // bind a single record tagged "guest-list", with every friend as a guest
-    record("guest-list").add({guest: friend})
+    // bind a single record tagged "guest-list", with every student as a guest
+    record("guest-list").add({guest: student})
   ];
 });
 ```
 
 ### remove()
 
-Removes attribute/value pairs from a record. This is equivalent to the Eve `-=` oeprator. For example:
+Removes attribute/value pairs from a record. This is equivalent to the Eve `-=` operator. Remove should only be used in the context of a `commit` block. For example:
 
 ```javascript
-program.block("blacklisted friends cannot come to the party", ({find, record}) => {
+program.commit("blacklisted people cannot come to the party", ({find, record}) => {
   let blacklisted = find("blacklisted");
   let guests = find("guest-list")
   return [
-    // remove anyone blacklisted from the guestlist
+    // remove anyone blacklisted from the guest list
     guests.remove({guest: blacklisted})
   ];
 });
@@ -89,10 +89,10 @@ You can also use `remove()` to completely delete records or attributes on a reco
    record.remove("attribute")
 ```
 
-The DSL does not contain an equivalent for the Eve general set operator `:=`, but you can mimick its behavior by chaining the `add()` and `remove()` operators. For example:
+The DSL does not contain an equivalent for the Eve set operator `:=`, but you can mimic its behavior by chaining the `add()` and `remove()` operators. For example:
 
 ```javascript
-program.block("Set Artemis' teacher", ({find, record}) => {
+program.bind("Reassign Artemis' teacher", ({find, record}) => {
   let artemis = find("student", {name: "Artemis"});
   let teacher = find("teacher", {name: "Smith"});
   return [
@@ -103,19 +103,19 @@ program.block("Set Artemis' teacher", ({find, record}) => {
 
 In summary:
 
-- Add a value: `person.salary += 10` <-> `person.add("salary", 10)`
+- Add a value: `person.add("salary", 10)` <-> `person.salary += 10`
 - Remove a value: `person.remove("salary, 10)` <-> `person.salary -= 10`
 - Set a value: `person.remove("salary").add("salary", 10)` <-> `person.salary := 10`
 - Remove an attribute `person.remove("salary")` <-> `person.salary := none`
 - Remove a record `person.remove()` <-> `person := none`
 
-## Subblocks
+## Sub-Blocks
 
-In the DSL `not()`, `union()`, and `choose()` are subblocks, which have their own body. Let's look at each of these.
+In the DSL `not()`, `union()`, and `choose()` are sub-blocks, which have their own body. Let's look at each of these.
 
 ### not()
 
-The `not()` sub block works similary to `not()` from the Eve syntax; it performs an anti-join on the records inside and outside of the `not()`. To use not, include it in the function list at the beginning of the block.
+The `not()` sub block works similarly to `not()` from the Eve syntax; it performs an anti-join on the records inside and outside of the `not()`. To use not, include it in the function list at the beginning of the block.
 
 ```javascript
 program.block("Tag students without any citations.", ({find, record, not}) => {
@@ -174,7 +174,7 @@ The standard library in Eve has been redone in the DSL. To use library functions
 ```javascript
 program.block("display the student's full names", ({find, record, lib}) => {
   find("angle" degrees)
-  let result = math.sin(degrees)
+  let result = lib.math.sin(degrees)
   return [
     record("html/element", {tagname: "div", text: result})
   ];
@@ -185,7 +185,7 @@ for now you can find a list of functions in [src/runtime/stdlib.ts](https://gith
 
 The interface for wrapping functions for use within Eve is also revamped for the new runtime. When writing a function wrapper, you must ensure that the function meets the following qualifications
 
-1. The function must be referentially transparent, meaning given the same input, the function should return the same output.
+1. The function must be reverentially transparent, meaning given the same input, the function should return the same output.
 
 2. The function must be monotonic, meaning that additional inputs should never decrease the number of outputs.
 
@@ -204,11 +204,11 @@ makeFunction({
 
 ## Importing and Exporting Records 
 
-### Getting Data Into Eve - `inputEavs()`
+### Getting Data Into Eve - `inputEAVs()`
 
-You can import raw EAVs into Eve with the `inputEavs()` function. Due to limitations of the host language, in order for it to work correctly, `inputEavs()` can only be used after you define all blocks.
+You can import raw EAVs into Eve with the `inputEAVs()` function. Currently, `inputEAVs()` mut be called at least once to initialize your program, and it can only be used after you define all blocks. These limitations will be lifted in future versions.
 
-`inputEavs()` takes as input a list of entity, attribute, value triples. The entity value identifies the record to which the attribute and value belong, so it must be unique to that record. For example:
+`inputEAVs()` takes as input a list of entity, attribute, value triples. The entity value identifies the record to which the attribute and value belong, so it must be unique to that record. For example:
 
 ```javascript
 prog.inputEavs([[0,"tag","person"],[0,"name","Archibald"])
