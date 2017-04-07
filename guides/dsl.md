@@ -7,12 +7,35 @@ The forthcoming v0.3 release of Eve supports a domain specific langauge (DSL) th
 3) The DSL can be used "a la carte", so you can use as much of Eve as you need to for your project. Thus you can write an entire application in Eve, just use it as a datastore, or anywhere between. This makes it easy to integrate Eve with an existing Javascript application.
 4) You can easily import data into Eve. If you can get your data in Javascript, you can use it in Eve.
 
+This DSL guide is for users who are already familiar with Eve semantics. For those new to Eve, we'll have more fundamental guides released in the near future.
+
+## Summary of DSL 
+
+- find a record: `find("person", {salary})` <-> `[#person salary]`
+- bind/commit a record: `record("person", {salary})` <-> `[#person salary]`
+- not: `not()` <-> `not()`
+- choose: `choose()` <-> `if-then / else if-then`
+- union: `union()` <-> `if-then / if-then`
+- Add a value: `person.add("salary", 10)` <-> `person.salary += 10`
+- Remove a value: `person.remove("salary, 10)` <-> `person.salary -= 10`
+- Set a value: `person.remove("salary").add("salary", 10)` <-> `person.salary := 10`
+- Remove an attribute `person.remove("salary")` <-> `person.salary := none`
+- Remove a record `person.remove()` <-> `person := none`
+- functions `lib.math.sin()` <-> `sin[]`
+- aggregates `gather().pers().count()` <-> `count[given per]` 
+
 ## Using the DSL
+
+
+The Eve Javascript DSL is requires ES6. For added readability, we make frequent use of [destructuring][1] and [arrow functions][2] available in TypeScript 2.1.0 or later.
+
+[1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+[2]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#Arrow_functions
 
 To use the DSL, import it into your application.
 
 ```javascript
-import {Program} from "./runtime/dsl2";
+import {Program} from "witheve";
 ```
 
 Then you instantiate a new Eve program, naming it however you want.
@@ -24,14 +47,14 @@ let program = new Program("program name");
 Writing DSL code is similar to writing native Eve code; you attach blocks to the `program`, which search for records and then return records. Blocks in the DSL operate as a either a `bind` or `commit`. Let's look at the DSL block syntax in the case of `bind`:
 
 ```javascript
-  program.bind("block description", ({find, record}) => {
-    // search for records tagged "person"
-    let person = find("person");
-    return [
-      // bind a record tagged "greeting" with an attribute "message"
-      record("greeting", {message: `Hello ${person.name}`})
-    ];
-  });
+program.bind("block description", ({find, record}) => {
+  // search for records tagged "person"
+  let person = find("person");
+  return [
+    // bind a record tagged "greeting" with an attribute "message"
+    record("greeting", {message: `Hello ${person.name}`})
+  ];
+});
 ```
 
 The equivalent Eve block would be
@@ -101,21 +124,13 @@ program.bind("Reassign Artemis' teacher", ({find, record}) => {
 });
 ```
 
-In summary:
-
-- Add a value: `person.add("salary", 10)` <-> `person.salary += 10`
-- Remove a value: `person.remove("salary, 10)` <-> `person.salary -= 10`
-- Set a value: `person.remove("salary").add("salary", 10)` <-> `person.salary := 10`
-- Remove an attribute `person.remove("salary")` <-> `person.salary := none`
-- Remove a record `person.remove()` <-> `person := none`
-
 ## Sub-Blocks
 
 In the DSL `not()`, `union()`, and `choose()` are sub-blocks, which have their own body. Let's look at each of these.
 
 ### not()
 
-The `not()` sub block works similarly to `not()` from the Eve syntax; it performs an anti-join on the records inside and outside of the `not()`. To use not, include it in the function list at the beginning of the block.
+The `not()` sub block works similarly to `not()` from the Eve syntax; it performs an anti-join on the records inside and outside of the `not()`. To use not, include it in the parameter list at the beginning of the block.
 
 ```javascript
 program.bind("Tag students without any citations.", ({find, record, not}) => {
@@ -131,7 +146,7 @@ program.bind("Tag students without any citations.", ({find, record, not}) => {
 
 ### choose()
 
-Choose() and union() expressions are behind the mechanics of the if expression in the Eve syntax. In the DSL, we expose these directly. First, `choose()` takes a body of branches, each one comprised of a condition and a return value. The value of the choose corresponds to the first matching branch. 
+Choose() and union() expressions are behind the mechanics of the if expression in the Eve syntax. In the DSL, we expose these directly. First, `choose()` takes a list of sub-blocks, which contain any valid Eve code to join, filter, or compute their results. Each sub-block executed in order until one is found valid. This return value of the first valid sub-block is taken as the return value.
 
 ```javascript
 program.commit("Assign a letter grade.", ({find, choose}) => {
@@ -151,7 +166,7 @@ program.commit("Assign a letter grade.", ({find, choose}) => {
 
 ### union()
 
-By contrast `union()` takes a body of branches and combines their output into a single variable. One use of union might be to normalize records from different data sources.
+Similarly, `union()` takes a body of sub-blocks, but the return for each valid sub-block (instead of just the first as with `choose()`) is taken as the return for the union. One common use of union is to normalize records from different data sources.
 
 ```javascript
 program.bind("display the student's full names", ({find, record, union}) => {
@@ -235,35 +250,45 @@ You can import raw EAVs into Eve with the `inputEAVs()` function. Currently, `in
 `inputEAVs()` takes as input a list of entity, attribute, value triples. The entity value identifies the record to which the attribute and value belong, so it must be unique to that record. For example:
 
 ```javascript
-prog.inputEavs([[0,"tag","person"],[0,"name","Archibald"])
+program.inputEavs([[0,"tag","person"],[0,"name","Archibald"])
 ```
 
 This will create a record tagged "person" with the name attribute "Archibald".
 
-### Getting Records out of Eve - Watchers
-
-Watchers are a new feature native to the DSL that allow you to monitor changes in specific records and react to them with a callback function. Like blocks, watchers also attach to a `program`.
+The `appendAsEAVs()` function allows you to destructure an object into a uniquely identified set of EAVs, which can then be input into Eve:
 
 ```javascript
-  program.watch("Export information about students", ({find, lookup, record}) => {
-    // search for records tagged student
-    let student = find("student");
-    // lookup attributes and values related to each student
-    let {attribute, value} = lookup(student);
-    return [
-      // Add these attributes and values to the student, creating a diff to which we can react
-      student.add(attribute, value)
-    ];
-  })
-  // React to each addition or removal
-  .asDiffs((diff) => {
-    for(let [e, a, v] of diff.adds) {
-      // ... do something ...
-    }
-    for(let [e, a, v] of diff.removes) {
-      // ... do something ...
-    }
-  });
+import {appendAsEAVs} from "witheve";
+let inputs = [];
+let archibald = {tag: "person", name: "Archibald"}
+appendAsEAVS(inputs, archibald);
+program.inputEAVs(inputs);
+```
+
+### Getting Records out of Eve - Watchers
+
+Watchers are a third type of block available in the DSL. These allow you to monitor changes in specific records and react to them with a callback function:
+
+```javascript
+program.watch("Export information about students", ({find, lookup, record}) => {
+  // search for records tagged student
+  let student = find("student");
+  // lookup attributes and values related to each student
+  let {attribute, value} = lookup(student);
+  return [
+    // Add these attributes and values to the student, creating a diff to which we can react
+    student.add(attribute, value)
+  ];
+})
+// React to each addition or removal
+.asDiffs((diff) => {
+  for(let [e, a, v] of diff.adds) {
+    // ... do something ...
+  }
+  for(let [e, a, v] of diff.removes) {
+    // ... do something ...
+  }
+});
 ```
 
 If you care about specific attributes, if may be more convenient to write a watcher with `asObjects()` instead of `asDiffs()`:
@@ -278,7 +303,7 @@ If you care about specific attributes, if may be more convenient to write a watc
     ];
   })
   // Handle adds and removes as objects
-  .asObjects<{name:string, GPA:RawValue}>(({adds, removes}) => {
+  .asObjects(({adds, removes}) => {
     for(let key in adds) {
       // ... do something ...
     }
