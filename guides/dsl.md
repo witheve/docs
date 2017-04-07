@@ -55,7 +55,7 @@ The DSL supports methods which mirror a couple of the Eve update operators. They
  Adds attribute/value pairs to a record. These added values do not contribute to the identity of a record, allowing you to add multiple values to a single record. This is equivalent to the Eve `+=` operator. For example:
 
 ```javascript
-program.block("Invite classmates to my party", ({find, record}) => {
+program.bind("Invite classmates to my party", ({find, record}) => {
   // search for records tagged "friend"
   let student = find("student");
   return [
@@ -118,7 +118,7 @@ In the DSL `not()`, `union()`, and `choose()` are sub-blocks, which have their o
 The `not()` sub block works similarly to `not()` from the Eve syntax; it performs an anti-join on the records inside and outside of the `not()`. To use not, include it in the function list at the beginning of the block.
 
 ```javascript
-program.block("Tag students without any citations.", ({find, record, not}) => {
+program.bind("Tag students without any citations.", ({find, record, not}) => {
     let students = find("student");
     not(() => {
         find("student", {citation});
@@ -154,7 +154,7 @@ program.commit("Assign a letter grade.", ({find, choose}) => {
 By contrast `union()` takes a body of branches and combines their output into a single variable. One use of union might be to normalize records from different data sources.
 
 ```javascript
-program.block("display the student's full names", ({find, record, union}) => {
+program.bind("display the student's full names", ({find, record, union}) => {
   let east = find("student", {school: "West HS"});
   let west = find("student", {school: "East HS"});
   let [fullName] = union(
@@ -172,7 +172,7 @@ program.block("display the student's full names", ({find, record, union}) => {
 The standard library in Eve has been redone in the DSL. To use library functions, you must now bring in "lib" explicitly when defining your block. From lib you can access the various standard library functions supported by the runtime so far. 
 
 ```javascript
-program.block("display the student's full names", ({find, record, lib}) => {
+program.bind("display the student's full names", ({find, record, lib}) => {
   find("angle" degrees)
   let result = lib.math.sin(degrees)
   return [
@@ -183,13 +183,9 @@ program.block("display the student's full names", ({find, record, lib}) => {
 
 for now you can find a list of functions in [src/runtime/stdlib.ts](https://github.com/witheve/Eve/blob/refactor-editor/src/runtime/stdlib.ts)
 
-The interface for wrapping functions for use within Eve is also revamped for the new runtime. When writing a function wrapper, you must ensure that the function meets the following qualifications
+The interface for wrapping functions for use within Eve is also revamped for the new runtime. When writing a function wrapper, you must ensure that the function is reverentially transparent, meaning given the same input, the function returns the same output.
 
-1. The function must be reverentially transparent, meaning given the same input, the function should return the same output.
-
-2. The function must be monotonic, meaning that additional inputs should never decrease the number of outputs.
-
-If the function meets these two qualifications, it can be wrapped using `makeFunction()` e.g.:
+Functions are wrapped using `makeFunction()` e.g.:
 
 ```javascript
 makeFunction({
@@ -199,6 +195,34 @@ makeFunction({
   apply: (a:number) => {
     return [Math.sin(a/180 * Math.PI)];
   }
+});
+```
+
+### Aggregates
+
+Aggregates like `sum()`, `count()`, and `sort()` are accessed through the `gather()` function. This function defines the input set to the aggregate. You can optionally group the input set with the `per()` function. For example, here is `count()` at work:
+
+```javascript
+program.bind("count the number of students in each class", ({find, record, gather}) => {
+  let student = find("student")
+  let classSize = gather(student).per(student.teacher).count()
+  return [
+    record("html/element", {tagname: "div", text: `${student.teacher} ${classSize}`})
+  ];
+});
+```
+
+The input set to the `count()` aggregate is the student records, and they are groups according to their teacher attribute. Then, the size of each group is counted and returned in `classSize`, which has the same number of elements as there are teachers.
+
+Aggregates can take arguments as well. For instance, `sort()` takes as arguments the direction by which to sort the input set. Here is `sort()` in use:
+
+```javascript
+program.bind("sort the students by last name, then first name per teacher", ({find, record, gather}) => {
+  let student = find("student")
+  let ix = gather(student.firstName, student.lastName).per(student.teacher).sort("up", "down")
+  return [
+    record("html/element", {tagname: "div", sort: ix, text: `${student.firstName} ${student.lastName}`})
+  ];
 });
 ```
 
@@ -227,7 +251,7 @@ Watchers are a new feature native to the DSL that allow you to monitor changes i
     // lookup attributes and values related to each student
     let {attribute, value} = lookup(student);
     return [
-      // Add these attributes and values to the student, which creates a diff to which we can react
+      // Add these attributes and values to the student, creating a diff to which we can react
       student.add(attribute, value)
     ];
   })
@@ -236,6 +260,30 @@ Watchers are a new feature native to the DSL that allow you to monitor changes i
     for(let [e, a, v] of diff.adds) {
       // ... do something ...
     }
+    for(let [e, a, v] of diff.removes) {
+      // ... do something ...
+    }
   });
 ```
 
+If you care about specific attributes, if may be more convenient to write a watcher with `asObjects()` instead of `asDiffs()`:
+
+```javascript
+  program.watch("Export student GPA", ({find, lookup, record}) => {
+    // search for records tagged student
+    let student = find("student" {name, GPA});
+    return [
+      // Add these attributes and values to the student, which creates a diff to which we can react
+      record("grade", {name, GPA})
+    ];
+  })
+  // Handle adds and removes as objects
+  .asObjects<{name:string, GPA:RawValue}>(({adds, removes}) => {
+    for(let key in adds) {
+      // ... do something ...
+    }
+    for(let key in removes) {
+      // ... do something ...
+    }
+  })
+```
