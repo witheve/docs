@@ -27,7 +27,7 @@ This DSL guide is for users who are already familiar with Eve semantics. For tho
 ## Using the DSL
 
 
-The Eve Javascript DSL is requires ES6. For added readability, we make frequent use of [destructuring][1] and [arrow functions][2] available in TypeScript 2.1.0 or later.
+This guide is written for ES6. For added readability, we make frequent use of [destructuring][1] and [arrow functions][2] available in TypeScript 2.1.0 or later.
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 [2]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#Arrow_functions
