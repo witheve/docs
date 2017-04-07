@@ -22,7 +22,7 @@ This DSL guide is for users who are already familiar with Eve semantics. For tho
 - Remove an attribute `person.remove("salary")` <-> `person.salary := none`
 - Remove a record `person.remove()` <-> `person := none`
 - functions `lib.math.sin()` <-> `sin[]`
-- aggregates `gather().pers().count()` <-> `count[given per]` 
+- aggregates `gather().per().count()` <-> `count[given per]` 
 
 ## Using the DSL
 
