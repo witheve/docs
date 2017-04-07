@@ -1,6 +1,6 @@
 # Eve JavaScript/TypeScript DSL
 
-The forthcoming v0.3 release of Eve supports a domain specific langauge (DSL) that interacts with the Eve server, allowing you to intermix Javascript and Eve code. There are several benefits to using the DSL:
+The forthcoming v0.3 release of Eve supports a domain specific language (DSL) that interacts with the Eve runtime, allowing you to intermix Javascript and Eve code. There are several benefits to using the DSL:
 
 1) The syntax is native Javascript, so if you know JS you can write in the DSL
 2) You can interact with Javascript functions and libraries
