@@ -293,25 +293,25 @@ program.watch("Export information about students", ({find, lookup, record}) => {
 If you care about specific attributes, if may be more convenient to write a watcher with `asObjects()` instead of `asDiffs()`:
 
 ```javascript
-  program.watch("Export student GPA", ({find, lookup, record}) => {
-    // search for records tagged student
-    let student = find("student" {name, GPA});
-    return [
-      // Add these attributes and values to the student, which creates a diff to which we can react
-      record("grade", {name, GPA})
-    ];
-  })
-  // Handle adds and removes as objects
-  .asObjects<{name: string, GPA: RawValue}>(({adds, removes}) => {
-    for(let id in adds) {
-      let {name, GPA} = adds[id];
-      // ... do something ...
-    }
-    for(let id in removes) {
-      let {name, GPA} = removes[id];
-      // ... do something ...
-    }
-  })
+program.watch("Export student GPA", ({find, lookup, record}) => {
+  // search for records tagged student
+  let student = find("student" {name, GPA});
+  return [
+    // Add these attributes and values to the student, which creates a diff to which we can react
+    record("grade", {name, GPA})
+  ];
+})
+// Handle adds and removes as objects
+.asObjects<{name: string, GPA: RawValue}>(({adds, removes}) => {
+  for(let id in adds) {
+    let {name, GPA} = adds[id];
+    // ... do something ...
+  }
+  for(let id in removes) {
+    let {name, GPA} = removes[id];
+    // ... do something ...
+  }
+})
 ```
 
 Type annotations (between the angle braces `<>`) are necessary for TypeScript, but they can be omitted when using Javascript.
