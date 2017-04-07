@@ -106,10 +106,10 @@ program.commit("blacklisted people cannot come to the party", ({find, record}) =
 You can also use `remove()` to completely delete records or attributes on a record. This is equivalent to `:= none` in Eve. For example:
 
 ```javascript
-   // completely remove the target record
-   record.remove() 
-   // remove the attribute on the target record
-   record.remove("attribute")
+// completely remove the target record
+record.remove() 
+// remove the attribute on the target record
+record.remove("attribute")
 ```
 
 The DSL does not contain an equivalent for the Eve set operator `:=`, but you can mimic its behavior by chaining the `add()` and `remove()` operators. For example:
