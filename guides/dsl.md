@@ -13,7 +13,7 @@ This DSL guide is for users who are already familiar with Eve semantics. For tho
 
 - find a record: `find("person", {salary})` <-> `[#person salary]`
 - bind/commit a record: `record("person", {salary})` <-> `[#person salary]`
-- not: `not()` <-> `not()`
+- not: `not(() => person.salary)` <-> `not(person.salary)`
 - choose: `choose()` <-> `if-then / else if-then`
 - union: `union()` <-> `if-then / if-then`
 - Add a value: `person.add("salary", 10)` <-> `person.salary += 10`
@@ -21,8 +21,8 @@ This DSL guide is for users who are already familiar with Eve semantics. For tho
 - Set a value: `person.remove("salary").add("salary", 10)` <-> `person.salary := 10`
 - Remove an attribute `person.remove("salary")` <-> `person.salary := none`
 - Remove a record `person.remove()` <-> `person := none`
-- functions `lib.math.sin()` <-> `sin[]`
-- aggregates `gather().per().count()` <-> `count[given per]` 
+- functions `lib.math.sin(number)` <-> `sin[degrees: number]`
+- aggregates `gather(person).per(person.dept).count()` <-> `count[given: person, per: person.dept]` 
 
 ## Using the DSL
 
