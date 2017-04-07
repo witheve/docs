@@ -15,7 +15,7 @@ This DSL guide is for users who are already familiar with Eve semantics. For tho
 - bind/commit a record: `record("person", {salary})` <-> `[#person salary]`
 - not: `not(() => person.salary)` <-> `not(person.salary)`
 - choose: `choose(() => { person.salary; return 1; }, () => 0)` <-> `if person.salary then 1 else 0`
-- union: `union(() => { person.salary; return salary; }, () => person.wage; return wage)` <-> `if person.salary then salary if person.wage then wage`
+- union: `union(() => person.salary, () => person.wage)` <-> `if person.salary then person.salary if person.wage then person.wage`
 - Add a value: `person.add("salary", 10)` <-> `person.salary += 10`
 - Remove a value: `person.remove("salary, 10)` <-> `person.salary -= 10`
 - Set a value: `person.remove("salary").add("salary", 10)` <-> `person.salary := 10`
@@ -305,9 +305,11 @@ If you care about specific attributes, if may be more convenient to write a watc
   // Handle adds and removes as objects
   .asObjects<{name: string, GPA: RawValue}>(({adds, removes}) => {
     for(let key in adds) {
+      let {name, GPA} = adds[key];
       // ... do something ...
     }
     for(let key in removes) {
+      let {name, GPA} = removes[key];
       // ... do something ...
     }
   })
