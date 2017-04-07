@@ -303,12 +303,12 @@ If you care about specific attributes, if may be more convenient to write a watc
   })
   // Handle adds and removes as objects
   .asObjects<{name: string, GPA: RawValue}>(({adds, removes}) => {
-    for(let key in adds) {
-      let {name, GPA} = adds[key];
+    for(let id in adds) {
+      let {name, GPA} = adds[id];
       // ... do something ...
     }
-    for(let key in removes) {
-      let {name, GPA} = removes[key];
+    for(let id in removes) {
+      let {name, GPA} = removes[id];
       // ... do something ...
     }
   })
