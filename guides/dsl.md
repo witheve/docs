@@ -14,8 +14,8 @@ This DSL guide is for users who are already familiar with Eve semantics. For tho
 - find a record: `find("person", {salary})` <-> `[#person salary]`
 - bind/commit a record: `record("person", {salary})` <-> `[#person salary]`
 - not: `not(() => person.salary)` <-> `not(person.salary)`
-- choose: `choose()` <-> `if-then / else if-then`
-- union: `union()` <-> `if-then / if-then`
+- choose: `choose(() => { person.salary; return 1; }, () => 0)` <-> `if person.salary then 1 else 0`
+- union: `union(() => { person.salary; return salary; }, () => person.wage; return wage)` <-> `if person.salary then salary if person.wage then wage`
 - Add a value: `person.add("salary", 10)` <-> `person.salary += 10`
 - Remove a value: `person.remove("salary, 10)` <-> `person.salary -= 10`
 - Set a value: `person.remove("salary").add("salary", 10)` <-> `person.salary := 10`
@@ -146,7 +146,7 @@ program.bind("Tag students without any citations.", ({find, record, not}) => {
 
 ### choose()
 
-Choose() and union() expressions are behind the mechanics of the if expression in the Eve syntax. In the DSL, we expose these directly. First, `choose()` takes a list of sub-blocks, which contain any valid Eve code to join, filter, or compute their results. Each sub-block executed in order until one is found valid. This return value of the first valid sub-block is taken as the return value.
+Choose() and union() expressions are behind the mechanics of the if expression in the Eve syntax. In the DSL, we expose these directly. First, `choose()` takes a list of sub-blocks, which contain any valid Eve code to join, filter, or compute their results. Each sub-block is executed in order until one is found valid. This return value of the first valid sub-block is taken as the return value.
 
 ```javascript
 program.commit("Assign a letter grade.", ({find, choose}) => {
@@ -303,7 +303,7 @@ If you care about specific attributes, if may be more convenient to write a watc
     ];
   })
   // Handle adds and removes as objects
-  .asObjects(({adds, removes}) => {
+  .asObjects<{name: string, GPA: RawValue}>(({adds, removes}) => {
     for(let key in adds) {
       // ... do something ...
     }
@@ -312,3 +312,5 @@ If you care about specific attributes, if may be more convenient to write a watc
     }
   })
 ```
+
+Type annotations (between the angle braces `<>`) are necessary for TypeScript, but they can be omitted when using Javascript.
