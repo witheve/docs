@@ -11,18 +11,20 @@ This DSL guide is for users who are already familiar with Eve semantics. For tho
 
 ## Summary of DSL 
 
-- find a record: `find("person", {salary})` <-> `[#person salary]`
-- bind/commit a record: `record("person", {salary})` <-> `[#person salary]`
-- not: `not(() => person.salary)` <-> `not(person.salary)`
-- choose: `choose(() => { person.salary; return 1; }, () => 0)` <-> `if person.salary then 1 else 0`
-- union: `union(() => person.salary, () => person.wage)` <-> `if person.salary then person.salary if person.wage then person.wage`
-- Add a value: `person.add("salary", 10)` <-> `person.salary += 10`
-- Remove a value: `person.remove("salary, 10)` <-> `person.salary -= 10`
-- Set a value: `person.remove("salary").add("salary", 10)` <-> `person.salary := 10`
-- Remove an attribute `person.remove("salary")` <-> `person.salary := none`
-- Remove a record `person.remove()` <-> `person := none`
-- functions `lib.math.sin(number)` <-> `sin[degrees: number]`
-- aggregates `gather(person).per(person.dept).count()` <-> `count[given: person, per: person.dept]` 
+| | JavaScript/TypeScript DSL | Eve |
+|-----|---------------------------|-----|
+| find a record | `find("person", {salary})` | `[#person salary]` |
+| bind/commit a record | `record("person", {salary})` | `[#person salary]` |
+| not | `not(() => person.salary)` | `not(person.salary)` |
+| choose | `choose(() => { person.salary; return 1; }, () => 0)` | `if person.salary then 1 else 0` |
+| union | `union(() => person.salary, () => person.wage)` | `if person.salary then person.salary if person.wage then person.wage` |
+| Add a value | `person.add("salary", 10)` | `person.salary += 10` |
+| Remove a value | `person.remove("salary, 10)` | `person.salary -= 10` |
+| Set a value | `person.remove("salary").add("salary", 10)` | `person.salary := 10` |
+| Remove an attribute | `person.remove("salary")` | `person.salary := none` |
+| Remove a record | `person.remove()` | `person := none` |
+| functions | `lib.math.sin(number)` | `sin[degrees: number]` |
+| aggregates | `gather(person).per(person.dept).count()` | `count[given: person, per: person.dept]` |
 
 ## Using the DSL
 
