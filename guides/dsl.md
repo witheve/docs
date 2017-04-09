@@ -68,7 +68,7 @@ bind
   [#greeting message: "Hello {{person.name}}"]
 ```
 
-The identity of a `record()` is established by everything within the parentheses. Therefore, the record `record("greeting", {message: `Hello ${person.name}`})` will create one record for every `person.name`.
+The identity of a `record()` is established by everything within the parentheses. Therefore, the record ``record("greeting", {message: `Hello ${person.name}`})`` will create one record for every `person.name`.
 
 If would like to commit records instead of binding them, you can use the `commit()` method in place of `bind()`. The implication here is that you can no longer create blocks which both commit and bind records at the same time.
 
