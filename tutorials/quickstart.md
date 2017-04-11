@@ -48,7 +48,7 @@ search
   [name]
 
 bind @browser
-  [#div, text: "Hello, {{name}}"]
+  [#div text: "Hello, {{name}}"]
 ```
 
 Since we matched on a record with a name attribute, we now have a reference to that name, and we can inject it into a string using [`{{ ... }}`][string-interpolation] embedding. We can also swap out `tag: "div"` for the sugared `#div`. [Tags][tags] are used a lot in Eve to talk about collections of related records. For example, we could search for all records with a `#student` tag, with name, grade, and school attributes.
