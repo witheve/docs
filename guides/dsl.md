@@ -251,7 +251,7 @@ You can import raw EAVs into Eve with the `inputEAVs()` function. Currently, `in
 `inputEAVs()` takes as input a list of entity, attribute, value triples. The entity value identifies the record to which the attribute and value belong, so it must be unique to that record. For example:
 
 ```javascript
-program.inputEavs([[0,"tag","person"],[0,"name","Archibald"])
+program.inputEAVs([[0,"tag","person"], [0,"name","Archibald"]]);
 ```
 
 This will create a record tagged "person" with the name attribute "Archibald".
@@ -261,8 +261,8 @@ The `appendAsEAVs()` function allows you to destructure an object into a uniquel
 ```javascript
 import {appendAsEAVs} from "witheve";
 let inputs = [];
-let archibald = {tag: "person", name: "Archibald"}
-appendAsEAVS(inputs, archibald);
+let archibald = {tag: "person", name: "Archibald"};
+appendAsEAVs(inputs, archibald);
 program.inputEAVs(inputs);
 ```
 
