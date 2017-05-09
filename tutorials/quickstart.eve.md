@@ -52,7 +52,7 @@ commit
 
 Every time you click this button, a record is created representing the click. You can react to this event by searching for the `#event/click` record:
 
-```
+```eve
 search
   event = [#event/click element: [#increment]]
 
@@ -68,7 +68,7 @@ The identity of a record is determined by its attribute/value pairs. Two records
 
 Now let's count the number of times the button has been clicked. Make sure `event` is back in `#clicked`, and then we can count those records directly:
 
-```
+```eve
 search
   how-many = count[for: [#clicked]]
 
