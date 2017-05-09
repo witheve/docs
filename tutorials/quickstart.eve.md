@@ -36,7 +36,7 @@ search
   [#time seconds]
 
 bind 
-  [#ui/div text: seconds]
+  [#ui/text text: seconds]
 ```
 
 As the time changes, the output updates to reflect the current state of the `#time` record. Records can be committed instead of bound, but the behavior is a little different -- committed records persist until they are removed explicitly. Try changing `bind` to `commit` in the above block and see what happens.
