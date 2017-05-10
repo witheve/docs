@@ -89,4 +89,9 @@ That's it for the 5 minute introduction to Eve. To summarize:
 - Bound records are replaced when data changes, while committed records must be removed manually.
 - Records are unique, uniqueness is determined by a record's attributes and their values.
 
-This will get you started with Eve, but there's still more to learn. From here, you can advance to Level 2 of the introductory tutorial, or dive right in to the editor and try out the concepts you've just learned.
+This will get you started with Eve, but there's still more to learn. From here, you can:
+
+- Advance to Level 2 of the introductory tutorial.
+- View the syntax reference or the Eve handbook.
+- Explore already made examples.
+- Or dive right in to the editor and try out the concepts you've just learned.
