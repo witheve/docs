@@ -11,11 +11,11 @@ commit
   [#greeting text: "hello world"]
 ```
 
-This record is tagged `#greeting`, and has an attribute "text" with the value "hello world". Although tags have a special syntax, they are attributes like any other (i.e. #foo = tag: "foo"). We encourage you to classify groups of related records with tags.
+This record is tagged `#greeting`, and has an attribute "text" with the value "hello world". Although tags have a special syntax, they are attributes like any other. We encourage you to classify groups of related records with tags.
 
 ## Finding records in Eve
 
-We can search for records, then bind new records to those that are found. Eve finds every record matching the supplied patterns, and then binds records dependent on them. If no records match the search, then the block does not run at all. A block will only run if every pattern in a search matches at least one record. Let's search for the `#greeting` we just committed, and then display it in a text container:
+Eve finds every record matching the supplied patterns, then binds new records to them. If no records match the search, then the block does not run at all. A block will only run if every pattern in a search matches at least one record. Let's search for the `#greeting` we just committed, and then display it in a text container:
 
 ```eve
 search
@@ -50,7 +50,7 @@ commit
   [#ui/button #increment text: "+1"]
 ```
 
-Every time you click this button, a record is created representing the click. You can react to this event by searching for the `#event/click` record:
+When you click anywhere on the screen, Eve creates an `#event/click` record representing the click. You can react to clicks on the `#increment` button by searching for the `#event/click` record, where the element attribute is the button: 
 
 ```eve
 search
@@ -60,7 +60,7 @@ commit
   [#clicked event]
 ```
 
-Event records in Eve are removed immediately after they are created; however, because the `#clicked` record is committed, it will persist until explicitly removed. In Eve, `=` signifies equality (not assignment), so the variable `event` is a reference to the `#event/click` record. 
+Clicks only last for an instant, but we want to create a permanent record of each click so we can search for them later. This block commits a `#clicked` record that will persist until it's explicitly removed. Much like the `#greeting` text we bound to the `#ui`, variables with the same name are equivalent, so the variable `event` in the `#clicked` record is a reference to the `#event/click` on the `#increment` button.
 
 The identity of a record is determined by its attribute/value pairs. Two records with the same attributes and values are identical in Eve. We included the `event` attribute in the `#clicked` record to differentiate each record. Without this differentiation, we could only ever create a single `#clicked` record. Try removing `event` from the record and click the button to test this out.
 
