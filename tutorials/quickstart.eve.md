@@ -15,7 +15,7 @@ This record is tagged `#greeting`, and has an attribute "text" with the value "h
 
 ## Finding records in Eve
 
-Eve finds every record matching the supplied patterns, then binds new records to them. If no records match the search, then the block does not run at all. A block will only run if every pattern in a search matches at least one record. Let's search for the `#greeting` we just committed, and then display it in a text container:
+Eve finds every record that matches the supplied patterns, then binds new records to them. If no records match the search, then the block does not run at all. A block will only run if every pattern in a search matches at least one record. Let's search for the `#greeting` we just committed, and then display it in a text container:
 
 ```eve
 search
@@ -25,7 +25,7 @@ bind
   [#ui/text text]
 ```
 
-Variables with the same name are equivalent within a block; because they have the same name, the `text` in `[#greeting text]` and `[#ui/text text]` are equivalent. Go ahead and add another `#greeting` record to the first block to see what happens when more than one record matches the search (you can add it on a new line under the one that's there). 
+Variables with the same name are equivalent within a block; because they have the same name, the `text` in `[#greeting text]` and `[#ui/text text]` are equivalent. Go ahead and add another `#greeting` record to the first block to see what happens when more than one record matches the search. 
 
 ## Records update as data changes
 
@@ -50,17 +50,17 @@ commit
   [#ui/button #increment text: "+1"]
 ```
 
-When you click anywhere on the screen, Eve creates an `#event/click` record representing the click. You can react to clicks on the `#increment` button by searching for the `#event/click` record, where the element attribute is the button: 
+When you click anywhere on the screen, Eve creates an `#html/event/click` record representing the click. You can react to clicks on the `#increment` button by searching for the `#html/event/click` record, where the element attribute is the button: 
 
 ```eve
 search
-  event = [#event/click element: [#increment]]
+  event = [#html/event/click element: [#increment]]
 
 commit
   [#clicked event]
 ```
 
-Clicks only last for an instant, but we want to create a permanent record of each click so we can search for them later. This block commits a `#clicked` record that will persist until it's explicitly removed. Much like the `#greeting` text we bound to the `#ui`, variables with the same name are equivalent, so the variable `event` in the `#clicked` record is a reference to the `#event/click` on the `#increment` button.
+Clicks only last for an instant, but we want to create a permanent record of each click so we can search for them later. This block commits a `#clicked` record that will persist until it's explicitly removed. Much like the `#greeting` text we bound to the `#ui`, variables with the same name are equivalent, so the variable `event` in the `#clicked` record is a reference to the `#html/event/click` on the `#increment` button.
 
 The identity of a record is determined by its attribute/value pairs. Two records with the same attributes and values are identical in Eve. We included the `event` attribute in the `#clicked` record to differentiate each record. Without this differentiation, we could only ever create a single `#clicked` record. Try removing `event` from the record and click the button to test this out.
 
@@ -70,7 +70,7 @@ Now let's count the number of times the button has been clicked. Make sure `even
 
 ```eve
 search
-  how-many = count[for: [#clicked]]
+  how-many = gather/count[for: [#clicked]]
 
 bind
   [#ui/text text: "The button has been clicked {{how-many}} times"]
@@ -84,7 +84,7 @@ That's it for the 5 minute introduction to Eve. To summarize:
 
 - Eve programs are made up of blocks.
 - Data are represented by records, key value pairs associated to a unique ID.
-- There are three actions associated with records: search, bind, and commit.
+- There are two sections of a block: one where you search for records, and one where you bind or commit records.
 - Blocks update records automatically to reflect changes in data.
 - Bound records are replaced when data changes, while committed records must be removed manually.
 - Records are unique, uniqueness is determined by a record's attributes and their values.
