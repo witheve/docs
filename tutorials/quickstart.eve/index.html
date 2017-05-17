@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-us">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Quickstart - Eve Documentation</title>
+    <meta name="generator" content="Hugo 0.19" />
+
+    
+    <link rel="canonical" href="http://docs.witheve.com/tutorials/quickstart.eve/">
+    
+    <meta name="author" content="Eve">
+    
+
+    <meta property="og:url" content="http://docs.witheve.com/tutorials/quickstart.eve/">
+    <meta property="og:title" content="Eve Documentation">
+    
+    <meta name="apple-mobile-web-app-title" content="Eve Documentation">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="http://docs.witheve.com/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="http://docs.witheve.com/images/favicon.png">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('http://docs.witheve.com/fonts/icon.eot?52m981');
+        src: url('http://docs.witheve.com/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+             url('http://docs.witheve.com/fonts/icon.woff?52m981')
+               format('woff'),
+             url('http://docs.witheve.com/fonts/icon.ttf?52m981')
+               format('truetype'),
+             url('http://docs.witheve.com/fonts/icon.svg?52m981#icon')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="http://docs.witheve.com/stylesheets/application.css">
+    <link rel="stylesheet" href="http://docs.witheve.com/stylesheets/temporary.css">
+    <link rel="stylesheet" href="http://docs.witheve.com/stylesheets/palettes.css">
+    <link rel="stylesheet" href="http://docs.witheve.com/stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="http://docs.witheve.com/javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class=" ">
+
+
+	
+	
+
+
+
+<div class="layer-wrapper header-wrapper">
+	<header class="layer">
+		<div class="logo">
+			<img src="https://witheve.github.io/assets/images/logo_square.png" />
+			<h1><img alt="EVE" src="http://docs.witheve.com/images/eve.svg" /></h1>
+		</div>
+		<div class="flex-spacer"></div>
+		<nav>
+			<a class="btn rounded cta secondary play-cta" href="http://play.witheve.com">Play</a>
+			
+			<a href="http://incidentalcomplexity.com">Blog</a>
+			<a href="http://docs.witheve.com">Docs</a>
+			<a href="https://groups.google.com/forum/#!forum/eve-talk">Community</a>
+		</nav>
+	</header>
+</div>
+
+<main class="main layer-wrapper">
+	<div class="toplayer">
+		<div class="drawer">
+			<div aria-label="Navigation">
+  
+  <div class="scrollable">
+    <div class="wrapper">
+      
+
+      
+      <div id="sidebar" class="nav-collapse">
+          <ul class="sidebar-menu">
+            
+            
+              
+                <li>
+                  <a class="" href="http://docs.witheve.com/handbook/programs">
+                    
+                    <span class="colored">Eve Programs</span>
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a class="" href="http://docs.witheve.com/handbook/core">
+                    
+                    <span class="colored">Core Language</span>
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a class="" href="http://docs.witheve.com/guides">
+                    
+                    <span class="colored">Guides</span>
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a class="" href="http://docs.witheve.com/tutorials">
+                    
+                    <span class="colored">Tutorials</span>
+                  </a>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="http://docs.witheve.com/handbook/intro" class="">
+                      
+                      <span class="colored">Introduction</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="http://docs.witheve.com/handbook/"> Getting Eve </a> </li>
+                      
+                    
+                      <li class="active selected"><a href="http://docs.witheve.com/tutorials/quickstart.eve/"> Quickstart </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+          </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+		</div>
+		<article class="article">
+			<div class="wrapper">
+
+				
+
+<h1 id="quickstart">Quickstart</h1>
+
+<p>In this guide we&rsquo;re going to give you a 5 minute introduction to the essential concepts in Eve. If you&rsquo;ve never used Eve before, you&rsquo;re in the right place.</p>
+
+<h2 id="adding-records-to-eve">Adding records to Eve</h2>
+
+<p>Eve represents data as records, which are key value pairs attached to a unique ID. Eve programs are made up of small composable blocks that search for and create records. Let&rsquo;s start with a block that adds a record to Eve:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">commit</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">greeting</span> <span class="nv">text</span><span class="nf">:</span> <span class="s">&quot;hello world&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<p>This record is tagged <code>#greeting</code>, and has an attribute &ldquo;text&rdquo; with the value &ldquo;hello world&rdquo;. Although tags have a special syntax, they are attributes like any other. We encourage you to classify groups of related records with tags.</p>
+
+<h2 id="finding-records-in-eve">Finding records in Eve</h2>
+
+<p>Eve finds every record that matches the supplied patterns, then binds new records to them. If no records match the search, then the block does not run at all. A block will only run if every pattern in a search matches at least one record. Let&rsquo;s search for the <code>#greeting</code> we just committed, and then display it in a text container:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">greeting</span> <span class="nv">text</span><span class="p">]</span>
+
+<span class="kr">bind</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">ui</span><span class="nf">/</span><span class="nv">text</span> <span class="nv">text</span><span class="p">]</span>
+</code></pre></div>
+
+<p>Variables with the same name are equivalent within a block; because they have the same name, the <code>text</code> in <code>[#greeting text]</code> and <code>[#ui/text text]</code> are equivalent. Go ahead and add another <code>#greeting</code> record to the first block to see what happens when more than one record matches the search.</p>
+
+<h2 id="records-update-as-data-changes">Records update as data changes</h2>
+
+<p>Blocks in Eve react automatically to changes in data. When a record changes, any bound records are automatically updated. Let&rsquo;s search for the current time, and display it in a div:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">time</span> <span class="nv">seconds</span><span class="p">]</span>
+
+<span class="kr">bind</span> 
+  <span class="p">[</span><span class="err">#</span><span class="nv">ui</span><span class="nf">/</span><span class="nv">text</span> <span class="nv">text</span><span class="nf">:</span> <span class="nv">seconds</span><span class="p">]</span>
+</code></pre></div>
+
+<p>As the time changes, the output updates to reflect the current state of the <code>#time</code> record. Records can be committed instead of bound, but the behavior is a little different &ndash; committed records persist until they are removed explicitly. Try changing <code>bind</code> to <code>commit</code> in the above block and see what happens.</p>
+
+<h2 id="reacting-to-events">Reacting to events</h2>
+
+<p>Let&rsquo;s draw a button on the screen:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">commit</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">ui</span><span class="nf">/</span><span class="nv">button</span> <span class="err">#</span><span class="nv">increment</span> <span class="nv">text</span><span class="nf">:</span> <span class="s">&quot;+1&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<p>When you click anywhere on the screen, Eve creates an <code>#html/event/click</code> record representing the click. You can react to clicks on the <code>#increment</code> button by searching for the <code>#html/event/click</code> record, where the element attribute is the button:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span>
+  <span class="nv">event</span> <span class="nf">=</span> <span class="p">[</span><span class="err">#</span><span class="nv">html</span><span class="nf">/</span><span class="nv">event</span><span class="nf">/</span><span class="nv">click</span> <span class="nv">element</span><span class="nf">:</span> <span class="p">[</span><span class="err">#</span><span class="nv">increment</span><span class="p">]]</span>
+
+<span class="kr">commit</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">clicked</span> <span class="nv">event</span><span class="p">]</span>
+</code></pre></div>
+
+<p>Clicks only last for an instant, but we want to create a permanent record of each click so we can search for them later. This block commits a <code>#clicked</code> record that will persist until it&rsquo;s explicitly removed. Much like the <code>#greeting</code> text we bound to the <code>#ui</code>, variables with the same name are equivalent, so the variable <code>event</code> in the <code>#clicked</code> record is a reference to the <code>#html/event/click</code> on the <code>#increment</code> button.</p>
+
+<p>The identity of a record is determined by its attribute/value pairs. Two records with the same attributes and values are identical in Eve. We included the <code>event</code> attribute in the <code>#clicked</code> record to differentiate each record. Without this differentiation, we could only ever create a single <code>#clicked</code> record. Try removing <code>event</code> from the record and click the button to test this out.</p>
+
+<h2 id="count-the-number-of-clicks">Count the number of clicks</h2>
+
+<p>Now let&rsquo;s count the number of times the button has been clicked. Make sure <code>event</code> is back in <code>#clicked</code>, and then we can count those records directly:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span>
+  <span class="nv">how</span><span class="nf">-</span><span class="nv">many</span> <span class="nf">=</span> <span class="nv">gather</span><span class="nf">/</span><span class="nv">count</span><span class="p">[</span><span class="nv">for</span><span class="nf">:</span> <span class="p">[</span><span class="err">#</span><span class="nv">clicked</span><span class="p">]]</span>
+
+<span class="kr">bind</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">ui</span><span class="nf">/</span><span class="nv">text</span> <span class="nv">text</span><span class="nf">:</span> <span class="s">&quot;The button has been clicked {{how-many}} times&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<p>This block searches for every unique <code>#clicked</code>, counts them, and returns that value in <code>how-many</code>. Then we display this value in a text container using the operator <code>{{ ... }}</code>, which inserts the value of the contained variable into the string. An important thing to remember here is that this block will only run when the button has been clicked at least once. Before then, this block will not run because there are no <code>#clicked</code> records to count.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>That&rsquo;s it for the 5 minute introduction to Eve. To summarize:</p>
+
+<ul>
+<li>Eve programs are made up of blocks.</li>
+<li>Data are represented by records, key value pairs associated to a unique ID.</li>
+<li>There are two sections of a block: one where you search for records, and one where you bind or commit records.</li>
+<li>Blocks update records automatically to reflect changes in data.</li>
+<li>Bound records are replaced when data changes, while committed records must be removed manually.</li>
+<li>Records are unique, uniqueness is determined by a record&rsquo;s attributes and their values.</li>
+</ul>
+
+<p>This will get you started with Eve, but there&rsquo;s still more to learn. From here, you can:</p>
+
+<ul>
+<li>Advance to Level 2 of the introductory tutorial.</li>
+<li>View the syntax reference or the Eve handbook.</li>
+<li>Explore already made examples.</li>
+<li>Or dive right in to the editor and try out the concepts you&rsquo;ve just learned.</li>
+</ul>
+
+
+			</div>
+		</article>
+	</div>
+</main>
+
