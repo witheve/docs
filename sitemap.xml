@@ -10,6 +10,10 @@
   </url>
   
   <url>
+    <loc>http://docs.witheve.com/</loc>
+  </url>
+  
+  <url>
     <loc>http://docs.witheve.com/README/</loc>
   </url>
   
@@ -26,16 +30,16 @@
   </url>
   
   <url>
+    <loc>http://docs.witheve.com/handbook/libraries/stdlib/</loc>
+  </url>
+  
+  <url>
     <loc>http://docs.witheve.com/tutorials/</loc>
   </url>
   
   <url>
     <loc>http://docs.witheve.com/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/</loc>
   </url>
   
   <url>
