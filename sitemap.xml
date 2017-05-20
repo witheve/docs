@@ -2,6 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://docs.witheve.com/handbook/</loc>
+  </url>
+  
+  <url>
+    <loc>http://docs.witheve.com/tutorials/quickstart.eve/</loc>
+  </url>
+  
+  <url>
     <loc>http://docs.witheve.com/</loc>
   </url>
   
@@ -10,299 +18,43 @@
   </url>
   
   <url>
+    <loc>http://docs.witheve.com/guides/</loc>
+  </url>
+  
+  <url>
     <loc>http://docs.witheve.com/handbook/core/</loc>
   </url>
   
   <url>
-    <loc>http://docs.witheve.com/handbook/databases/</loc>
+    <loc>http://docs.witheve.com/handbook/libraries/</loc>
   </url>
   
   <url>
-    <loc>http://docs.witheve.com/handbook/intro/</loc>
+    <loc>http://docs.witheve.com/handbook/libraries/stdlib/</loc>
   </url>
   
   <url>
-    <loc>http://docs.witheve.com/handbook/programs/</loc>
+    <loc>http://docs.witheve.com/tutorials/</loc>
   </url>
   
   <url>
     <loc>http://docs.witheve.com/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://docs.witheve.com/guides/for-programmers/</loc>
+    <loc>http://docs.witheve.com/guides/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://docs.witheve.com/handbook/linux/</loc>
+    <loc>http://docs.witheve.com/handbook/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://docs.witheve.com/handbook/mac/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/tutorials/quickstart/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/standard-library/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/guides/style/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/windows/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/math/abs/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/math/ceil/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/event/click/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/math/cos/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/statistics/count/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/math/fix/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/math/floor/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/strings/join/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/math/mod/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/statistics/random/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/math/range/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/math/round/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/math/sin/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/general/sort/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/strings/split/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/math/sum/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/math/tan/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/datetime/time/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/session/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/add/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/equality/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/functions/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/general/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/installation/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/ebnf/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/model/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/records/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/search/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/browser/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/aggregates/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/commonmark/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/equivalence/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/inequality/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/math/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/running/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/set/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/sets/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/bind/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/event/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/actions/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/help/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/joins/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/literate-programming/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/remove/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/strings/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/commit/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/if-then/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/http/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/blocks/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/docker/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/expressions/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/merge/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/statistics/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/is/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/not/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/view/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/datetime/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/string-interpolation/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/update-operators/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/npm/</loc>
-  </url>
-  
-  <url>
-    <loc>http://docs.witheve.com/handbook/glossary/</loc>
+    <loc>http://docs.witheve.com/tutorials/</loc>
+    <priority>0</priority>
   </url>
   
 </urlset>
