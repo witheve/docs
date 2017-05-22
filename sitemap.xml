@@ -2,15 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://docs.witheve.com/handbook/</loc>
+    <loc>http://docs.witheve.com/install/</loc>
   </url>
   
   <url>
-    <loc>http://docs.witheve.com/tutorials/quickstart.eve/</loc>
+    <loc>http://docs.witheve.com/quickstart.eve/</loc>
   </url>
   
   <url>
     <loc>http://docs.witheve.com/</loc>
+  </url>
+  
+  <url>
+    <loc>http://docs.witheve.com/syntaxreference/</loc>
   </url>
   
   <url>
@@ -26,11 +30,11 @@
   </url>
   
   <url>
-    <loc>http://docs.witheve.com/handbook/libraries/</loc>
+    <loc>http://docs.witheve.com/handbook/</loc>
   </url>
   
   <url>
-    <loc>http://docs.witheve.com/handbook/libraries/stdlib/</loc>
+    <loc>http://docs.witheve.com/handbook/libraries/</loc>
   </url>
   
   <url>

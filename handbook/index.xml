@@ -19,495 +19,478 @@
     
     <item>
       <title></title>
-      <link>http://docs.witheve.com/handbook/libraries/</link>
+      <link>http://docs.witheve.com/handbook/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs.witheve.com/handbook/libraries/</guid>
+      <guid>http://docs.witheve.com/handbook/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://docs.witheve.com/handbook/libraries/stdlib/</link>
+      <link>http://docs.witheve.com/handbook/libraries/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs.witheve.com/handbook/libraries/stdlib/</guid>
-      <description>&lt;head&gt;
+      <guid>http://docs.witheve.com/handbook/libraries/</guid>
+      <description>
+
+&lt;p&gt;&lt;head&gt;
   &lt;link rel=&#34;stylesheet&#34; type=&#34;text/css&#34; href=&#34;style.css&#34;&gt;
-&lt;/head&gt;
+&lt;/head&gt;&lt;/p&gt;
 
-&lt;body&gt;
+&lt;h2 id=&#34;aggregates&#34;&gt;Aggregates&lt;/h2&gt;
 
-  &lt;h2&gt;
-    Aggregates
-  &lt;/h2&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;gather/sort&lt;/h3&gt;
+      Generates an ordering for a set
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;for&lt;/strong&gt; - the set to sort&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;per&lt;/strong&gt; - (optional) - one or more attributes by which to group `for`&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;direction&lt;/strong&gt; - (optional) - direction in which to sort `for`. Possible values are:
+          &lt;ul&gt;
+            &lt;li&gt;&#39;up&#39; - smallest to largest; default option&lt;/li&gt;
+            &lt;li&gt;&#39;down&#39; - largest to smallest&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// sorts the students by GPA
+[#student GPA]
+index = sort[value: GPA]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-  &lt;table&gt;
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;gather/sort&lt;/h3&gt;
-        Generates an ordering for a set
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;for&lt;/strong&gt; - the set to sort&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;per&lt;/strong&gt; - (optional) - one or more attributes by which to group `for`&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;direction&lt;/strong&gt; - (optional) - direction in which to sort `for`. Possible values are:
-            &lt;ul&gt;
-              &lt;li&gt;&#39;up&#39; - smallest to largest; default option&lt;/li&gt;
-              &lt;li&gt;&#39;down&#39; - largest to smallest&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// sorts the students by GPA
-  [#student GPA]
-  index = sort[value: GPA]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;gather/count&lt;/h3&gt;
+      Returns the number of elements in a set
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;for&lt;/strong&gt; - the set to count over&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;per&lt;/strong&gt; - (optional) - one or more attributes by which to group `for`&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// counts the number of citizens in each state
+residents = [#citizen state]
+population = count[given: residents, per: state]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;gather/count&lt;/h3&gt;
-        Returns the number of elements in a set
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;for&lt;/strong&gt; - the set to count over&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;per&lt;/strong&gt; - (optional) - one or more attributes by which to group `for`&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// counts the number of citizens in each state
-  residents = [#citizen state]
-  population = count[given: residents, per: state]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;gather/sum&lt;/h3&gt;
+      Returns the sum of values in a set of attributes
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;for&lt;/strong&gt; - the set to gather&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;value&lt;/strong&gt; - the specific variable to be summed&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;per&lt;/strong&gt; - (optional) - one or more attributes by which to group `for`&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// returns the sum of salaries for each department
+employees = [#employee salary department]
+expenses = gather/sum[for: employees, value: employees.salary, per: department]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;gather/sum&lt;/h3&gt;
-        Returns the sum of values in a set of attributes
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;for&lt;/strong&gt; - the set to gather&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;value&lt;/strong&gt; - the specific variable to be summed&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;per&lt;/strong&gt; - (optional) - one or more attributes by which to group `for`&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// returns the sum of salaries for each department
-  employees = [#employee salary department]
-  expenses = gather/sum[for: employees, value: employees.salary, per: department]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/table&gt;
+&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
 
-  &lt;h2&gt;
-    Math
-  &lt;/h2&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;+&lt;/h3&gt;
+      Adds two numbers
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Infix notation&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;total-debt = credit-card + debit-card&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-  &lt;table&gt;
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;+&lt;/h3&gt;
-        Adds two numbers
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;Infix notation&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;total-debt = credit-card + debit-card&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;-&lt;/h3&gt;
+      Subtracts two numbers
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Infix notation&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;remaining-debt = total-debt - amount_paid&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;-&lt;/h3&gt;
-        Subtracts two numbers
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;Infix notation&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;remaining-debt = total-debt - amount_paid&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;*&lt;/h3&gt;
+      Multiplies two numbers
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Infix notation&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;yearly-payments = monthly-payments * 12&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;*&lt;/h3&gt;
-        Multiplies two numbers
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;Infix notation&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;yearly-payments = monthly-payments * 12&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;/&lt;/h3&gt;
+      Divides two numbers
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Infix notation&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;monthly-payments = yearly-payments / 12&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;/&lt;/h3&gt;
-        Divides two numbers
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;Infix notation&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;monthly-payments = yearly-payments / 12&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;math/floor&lt;/h3&gt;
+      Rounds a number down
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the number to be rounded down&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// x rounded down to 34
+x = math/floor[a: 34.2]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;math/floor&lt;/h3&gt;
-        Rounds a number down
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the number to be rounded down&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// x rounded down to 34
-  x = math/floor[a: 34.2]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;math/ceil&lt;/h3&gt;
+      Rounds a number up
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the number to be rounded up&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// x rounded up to 35
+x = math/floor[a: 34.2]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;math/ceil&lt;/h3&gt;
-        Rounds a number up
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the number to be rounded up&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// x rounded up to 35
-  x = math/floor[a: 34.2]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;math/round&lt;/h3&gt;
+      Rounds a number to the nearest integer
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the number to be rounded to the nearest integer&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// x rounded to 34
+x = math/floor[a: 34.2]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;math/round&lt;/h3&gt;
-        Rounds a number to the nearest integer
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the number to be rounded to the nearest integer&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// x rounded to 34
-  x = math/floor[a: 34.2]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;math/sin&lt;/h3&gt;
+      Sine of an angle
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the angle in degrees&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// r calculated to 1
+r = math/sin[a: 90]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;math/sin&lt;/h3&gt;
-        Sine of an angle
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the angle in degrees&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// r calculated to 1
-  r = math/sin[a: 90]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;math/cos&lt;/h3&gt;
+      Cosine of an angle
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the angle in degrees&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// r calculated to 0
+r = math/cos[a: 90]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;math/cos&lt;/h3&gt;
-        Cosine of an angle
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the angle in degrees&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// r calculated to 0
-  r = math/cos[a: 90]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;math/tan&lt;/h3&gt;
+      Tangent of an angle
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the angle in degrees&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// r calculated to 1
+r = math/tan[a: 45]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;math/tan&lt;/h3&gt;
-        Tangent of an angle
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the angle in degrees&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// r calculated to 1
-  r = math/tan[a: 45]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;math/max&lt;/h3&gt;
+      The greater of two values
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - a value to compare&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;b&lt;/strong&gt; - another value to compare&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// takes the higher score
+[#scores pac-man donkey-kong]
+best-score = math/min[a: pac-man, b: donkey-kong]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;math/max&lt;/h3&gt;
-        The greater of two values
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - a value to compare&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;b&lt;/strong&gt; - another value to compare&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// takes the higher score
-  [#scores pac-man donkey-kong]
-  best-score = math/min[a: pac-man, b: donkey-kong]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;math/min&lt;/h3&gt;
+      The lesser of two values
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - a value to compare&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;b&lt;/strong&gt; - another value to compare&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// takes the lower score
+[#scores pac-man donkey-kong]
+worst-score = math/min[a: pac-man, b: donkey-kong]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;math/min&lt;/h3&gt;
-        The lesser of two values
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - a value to compare&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;b&lt;/strong&gt; - another value to compare&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// takes the lower score
-  [#scores pac-man donkey-kong]
-  worst-score = math/min[a: pac-man, b: donkey-kong]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;math/mod&lt;/h3&gt;
+      Modulo division
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the number to be divided (dividend)&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;b&lt;/strong&gt; - the number by which to divide (divisor)&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// m is the remainder, 1
+m = math/mod[a: 5, b: 2]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;math/mod&lt;/h3&gt;
-        Modulo division
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the number to be divided (dividend)&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;b&lt;/strong&gt; - the number by which to divide (divisor)&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// m is the remainder, 1
-  m = math/mod[a: 5, b: 2]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;math/abs&lt;/h3&gt;
+      Absolute value of a number
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the number whose absolute value is found&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// number of hours from the prime meridian
+[#city latitude longitude]
+hours-from-gmt = math/abs[a: latitude] / 15&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;math/abs&lt;/h3&gt;
-        Absolute value of a number
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the number whose absolute value is found&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// number of hours from the prime meridian
-  [#city latitude longitude]
-  hours-from-gmt = math/abs[a: latitude] / 15&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;math/to-fixed&lt;/h3&gt;
+      Formats a number as a string to a certain number of decimal places
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the number to be formatted&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;b&lt;/strong&gt; - the number of decimal places to which `a` will be formatted&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// pi represented as the string &#34;3.14&#34;
+[#circle circumference diameter]
+pi = math/to-fixed[a: (circumference / diameter), b: 2]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;math/to-fixed&lt;/h3&gt;
-        Formats a number as a string to a certain number of decimal places
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the number to be formatted&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;b&lt;/strong&gt; - the number of decimal places to which `a` will be formatted&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// pi represented as the string &#34;3.14&#34;
-  [#circle circumference diameter]
-  pi = math/to-fixed[a: (circumference / diameter), b: 2]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;math/range&lt;/h3&gt;
+      Generates a range of numbers
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;start&lt;/strong&gt; - the start of the range&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;stop&lt;/strong&gt; - the end of the range&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// generates integers 1 through 10
+y = math/range[start: 1, stop: 10]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;math/range&lt;/h3&gt;
-        Generates a range of numbers
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;start&lt;/strong&gt; - the start of the range&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;stop&lt;/strong&gt; - the end of the range&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// generates integers 1 through 10
-  y = math/range[start: 1, stop: 10]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;random/number&lt;/h3&gt;
+      Generates a random number between 1 and 0
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;seed&lt;/strong&gt; - a number used to initialize the random number generator&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// generates a random number every second
+[#time minutes seconds]
+x = random/number[seed: seconds]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;random/number&lt;/h3&gt;
-        Generates a random number between 1 and 0
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;seed&lt;/strong&gt; - a number used to initialize the random number generator&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// generates a random number every second
-  [#time minutes seconds]
-  x = random/number[seed: seconds]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/table&gt;
+&lt;h2 id=&#34;strings&#34;&gt;Strings&lt;/h2&gt;
 
-  &lt;h2&gt;
-    Strings
-  &lt;/h2&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;string/replace&lt;/h3&gt;
+      Replaces a string of text with another
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text in which to search for strings and replace them&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;replace&lt;/strong&gt; - the string to be replaced&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;with&lt;/strong&gt; - the string that will replace `replace`&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// Americanized version of British spelling
+[#website body]
+american-version = string/replace[text: body, replace: &#34;flavour&#34;, with: &#34;flavor&#34;]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-  &lt;table&gt;
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;string/replace&lt;/h3&gt;
-        Replaces a string of text with another
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text in which to search for strings and replace them&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;replace&lt;/strong&gt; - the string to be replaced&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;with&lt;/strong&gt; - the string that will replace `replace`&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// Americanized version of British spelling
-  [#website body]
-  american-version = string/replace[text: body, replace: &#34;flavour&#34;, with: &#34;flavor&#34;]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;string/get&lt;/h3&gt;
+      Gets a character from a specific location in a string
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text to be searched&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;at&lt;/strong&gt; - the location to be searched&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// finds the 17th letter of the alphabet
+alphabet = &#34;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#34;
+letter = string/get[text: alphabet, at: 17]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;string/get&lt;/h3&gt;
-        Gets a character from a specific location in a string
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text to be searched&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;at&lt;/strong&gt; - the location to be searched&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// finds the 17th letter of the alphabet
-  alphabet = &#34;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#34;
-  letter = string/get[text: alphabet, at: 17]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;string/uppercase&lt;/h3&gt;
-        Converts a string to uppercase
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text to be converted&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;funny = &#34;lol&#34;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;string/uppercase&lt;/h3&gt;
+      Converts a string to uppercase
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text to be converted&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;funny = &#34;lol&#34;
 really-funny = string/uppercase[text: funny]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;string/lowercase&lt;/h3&gt;
-        Converts a string to lowercase
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text to be converted&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;really-funny = &#34;LOL&#34;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;string/lowercase&lt;/h3&gt;
+      Converts a string to lowercase
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text to be converted&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;really-funny = &#34;LOL&#34;
 down-a-notch = string/uppercase[text: really-funny]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;string/index-of&lt;/h3&gt;
-        Returns the position of the first occurrence of a specified value in a string
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text to be searched&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;substring&lt;/strong&gt; - the string to be found in `text`&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// Eve is in developers, starting at an index of 2
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;string/index-of&lt;/h3&gt;
+      Returns the position of the first occurrence of a specified value in a string
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text to be searched&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;substring&lt;/strong&gt; - the string to be found in `text`&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// Eve is in developers, starting at an index of 2
 index = string/index_of[text: &#34;developers&#34;, substring: &#34;eve&#34;&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
 
-    &lt;tr&gt;
-      &lt;td&gt;
-        &lt;h3&gt;string/codepoint-length&lt;/h3&gt;
-        Returns the length of a string in Unicode code points.
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the string whose length is found&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-        &lt;code&gt;// the code point length of the word &#34;unicode&#34;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;h3&gt;string/codepoint-length&lt;/h3&gt;
+      Returns the length of a string in Unicode code points.
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the string whose length is found&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// the code point length of the word &#34;unicode&#34;
 string = &#34;unicode&#34;
 length-in-js = string/codepoint_length[text: string]&lt;/code&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/table&gt;
-
-&lt;/body&gt;</description>
-    </item>
-    
-    <item>
-      <title>Getting Eve</title>
-      <link>http://docs.witheve.com/handbook/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://docs.witheve.com/handbook/</guid>
-      <description>&lt;p&gt;Test&lt;/p&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
 </description>
     </item>
     
