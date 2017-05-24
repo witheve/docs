@@ -17,5 +17,105 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Quickstart</title>
+      <link>http://cmontella.github.io/docs/tutorials/quickstart.eve/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://cmontella.github.io/docs/tutorials/quickstart.eve/</guid>
+      <description>
+
+&lt;h1 id=&#34;quickstart&#34;&gt;Quickstart&lt;/h1&gt;
+
+&lt;p&gt;In this guide we&amp;rsquo;re going to give you a 5 minute introduction to the essential concepts in Eve. If you&amp;rsquo;ve never used Eve before, you&amp;rsquo;re in the right place.&lt;/p&gt;
+
+&lt;h2 id=&#34;adding-records-to-eve&#34;&gt;Adding records to Eve&lt;/h2&gt;
+
+&lt;p&gt;Eve represents data as records, which are key value pairs attached to a unique ID. Eve programs are made up of small composable blocks that search for and create records. Let&amp;rsquo;s start with a block that adds a record to Eve:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;commit&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;greeting&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;hello world&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This record is tagged &lt;code&gt;#greeting&lt;/code&gt;, and has an attribute &amp;ldquo;text&amp;rdquo; with the value &amp;ldquo;hello world&amp;rdquo;. Although tags have a special syntax, they are attributes like any other. We encourage you to classify groups of related records with tags.&lt;/p&gt;
+
+&lt;h2 id=&#34;finding-records-in-eve&#34;&gt;Finding records in Eve&lt;/h2&gt;
+
+&lt;p&gt;Eve finds every record that matches the supplied patterns, then binds new records to them. If no records match the search, then the block does not run at all. A block will only run if every pattern in a search matches at least one record. Let&amp;rsquo;s search for the &lt;code&gt;#greeting&lt;/code&gt; we just committed, and then display it in a text container:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;greeting&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ui&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Variables with the same name are equivalent within a block; because they have the same name, the &lt;code&gt;text&lt;/code&gt; in &lt;code&gt;[#greeting text]&lt;/code&gt; and &lt;code&gt;[#ui/text text]&lt;/code&gt; are equivalent. Go ahead and add another &lt;code&gt;#greeting&lt;/code&gt; record to the first block to see what happens when more than one record matches the search.&lt;/p&gt;
+
+&lt;h2 id=&#34;records-update-as-data-changes&#34;&gt;Records update as data changes&lt;/h2&gt;
+
+&lt;p&gt;Blocks in Eve react automatically to changes in data. When a record changes, any bound records are automatically updated. Let&amp;rsquo;s search for the current time, and display it in a div:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;time&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;seconds&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt; 
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ui&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;seconds&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As the time changes, the output updates to reflect the current state of the &lt;code&gt;#time&lt;/code&gt; record. Records can be committed instead of bound, but the behavior is a little different &amp;ndash; committed records persist until they are removed explicitly. Try changing &lt;code&gt;bind&lt;/code&gt; to &lt;code&gt;commit&lt;/code&gt; in the above block and see what happens.&lt;/p&gt;
+
+&lt;h2 id=&#34;reacting-to-events&#34;&gt;Reacting to events&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s draw a button on the screen:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;commit&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ui&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;button&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;increment&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;+1&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;When you click anywhere on the screen, Eve creates an &lt;code&gt;#html/event/click&lt;/code&gt; record representing the click. You can react to clicks on the &lt;code&gt;#increment&lt;/code&gt; button by searching for the &lt;code&gt;#html/event/click&lt;/code&gt; record, where the element attribute is the button:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;
+  &lt;span class=&#34;nv&#34;&gt;event&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;click&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;element&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;increment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+
+&lt;span class=&#34;kr&#34;&gt;commit&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;clicked&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Clicks only last for an instant, but we want to create a permanent record of each click so we can search for them later. This block commits a &lt;code&gt;#clicked&lt;/code&gt; record that will persist until it&amp;rsquo;s explicitly removed. Much like the &lt;code&gt;#greeting&lt;/code&gt; text we bound to the &lt;code&gt;#ui&lt;/code&gt;, variables with the same name are equivalent, so the variable &lt;code&gt;event&lt;/code&gt; in the &lt;code&gt;#clicked&lt;/code&gt; record is a reference to the &lt;code&gt;#html/event/click&lt;/code&gt; on the &lt;code&gt;#increment&lt;/code&gt; button.&lt;/p&gt;
+
+&lt;p&gt;The identity of a record is determined by its attribute/value pairs. Two records with the same attributes and values are identical in Eve. We included the &lt;code&gt;event&lt;/code&gt; attribute in the &lt;code&gt;#clicked&lt;/code&gt; record to differentiate each record. Without this differentiation, we could only ever create a single &lt;code&gt;#clicked&lt;/code&gt; record. Try removing &lt;code&gt;event&lt;/code&gt; from the record and click the button to test this out.&lt;/p&gt;
+
+&lt;h2 id=&#34;count-the-number-of-clicks&#34;&gt;Count the number of clicks&lt;/h2&gt;
+
+&lt;p&gt;Now let&amp;rsquo;s count the number of times the button has been clicked. Make sure &lt;code&gt;event&lt;/code&gt; is back in &lt;code&gt;#clicked&lt;/code&gt;, and then we can count those records directly:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;
+  &lt;span class=&#34;nv&#34;&gt;how&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;many&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;gather&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;clicked&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+
+&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ui&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;The button has been clicked {{how-many}} times&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This block searches for every unique &lt;code&gt;#clicked&lt;/code&gt;, counts them, and returns that value in &lt;code&gt;how-many&lt;/code&gt;. Then we display this value in a text container using the operator &lt;code&gt;{{ ... }}&lt;/code&gt;, which inserts the value of the contained variable into the string. An important thing to remember here is that this block will only run when the button has been clicked at least once. Before then, this block will not run because there are no &lt;code&gt;#clicked&lt;/code&gt; records to count.&lt;/p&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;That&amp;rsquo;s it for the 5 minute introduction to Eve. To summarize:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Eve programs are made up of blocks.&lt;/li&gt;
+&lt;li&gt;Data are represented by records, key value pairs associated to a unique ID.&lt;/li&gt;
+&lt;li&gt;There are two sections of a block: one where you search for records, and one where you bind or commit records.&lt;/li&gt;
+&lt;li&gt;Blocks update records automatically to reflect changes in data.&lt;/li&gt;
+&lt;li&gt;Bound records are replaced when data changes, while committed records must be removed manually.&lt;/li&gt;
+&lt;li&gt;Records are unique, uniqueness is determined by a record&amp;rsquo;s attributes and their values.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This will get you started with Eve, but there&amp;rsquo;s still more to learn. From here, you can:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Advance to Level 2 of the introductory tutorial.&lt;/li&gt;
+&lt;li&gt;View the syntax reference or the Eve handbook.&lt;/li&gt;
+&lt;li&gt;Explore already made examples.&lt;/li&gt;
+&lt;li&gt;Or dive right in to the editor and try out the concepts you&amp;rsquo;ve just learned.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

@@ -6,6 +6,10 @@
   </url>
   
   <url>
+    <loc>http://cmontella.github.io/docs/tutorials/quickstart.eve/</loc>
+  </url>
+  
+  <url>
     <loc>http://cmontella.github.io/docs/quickstart.eve/</loc>
   </url>
   
@@ -34,10 +38,6 @@
   </url>
   
   <url>
-    <loc>http://cmontella.github.io/docs/handbook/libraries/</loc>
-  </url>
-  
-  <url>
     <loc>http://cmontella.github.io/docs/tutorials/</loc>
   </url>
   
@@ -54,6 +54,10 @@
   <url>
     <loc>http://cmontella.github.io/docs/handbook/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://cmontella.github.io/docs/handbook/libraries/</loc>
   </url>
   
   <url>
