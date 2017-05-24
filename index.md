@@ -1,8 +1,6 @@
 ---
-menu:
-  main:
-    parent:
 title: "Index"
+type: index
 weight: 3
 ---
 

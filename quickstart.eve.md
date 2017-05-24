@@ -3,7 +3,7 @@ menu:
   main:
     parent: "Introduction"
 title: "Quickstart"
-weight: 1
+weight: 2
 ---
 
 # Quickstart
