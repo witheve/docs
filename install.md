@@ -1,11 +1,3 @@
----
-menu:
-  main:
-    parent: "Introduction"
-title: "Installation"
-weight: 1
----
-
 # Installation
 
 Install [Node](https://nodejs.org/en/download/) for your platform, then clone and build the Eve starter repository:
