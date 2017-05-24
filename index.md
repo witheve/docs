@@ -1,22 +1,20 @@
 ---
-menu:
-  main:
-    parent:
 title: "Index"
+type: index
 weight: 3
 ---
 
 ## Install guide
-Need to install Eve on your machine? [Head here](../install) for step-by-step directions.
+Need to install Eve on your machine? [Head here](install) for step-by-step directions.
 
 ## Quickstart
-If you’re new to Eve and want a hands-on demo to learn the language, you can jump right in with a 5 minute [quickstart guide](../quickstart) that shows you how to build a simple incrementing counter.
+If you’re new to Eve and want a hands-on demo to learn the language, you can jump right in with a 5 minute [quickstart guide](tutorials/quickstart.eve) that shows you how to build a simple incrementing counter.
 
 ## Syntax reference
-Want a reminder how the syntax works or to get an overview of Eve without going through the quickstart? The [syntax reference](../syntax) is a good place to start.
+Want a reminder how the syntax works or to get an overview of Eve without going through the quickstart? The [syntax reference](syntaxreference) is a good place to start.
 
 ## Libraries
-Want to know everything Eve can do? [Here’s a list](../library) of all the functions, operators, and watchers available in the language.
+Want to know everything Eve can do? [Here’s a list](handbook/libraries/) of all the functions, operators, and watchers available in the language.
 
 ## Stuck?
 If you didn’t find what you were looking for, you can get in touch with the Eve team and the community through these channels:
