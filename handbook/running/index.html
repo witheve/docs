@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-us">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Running Eve - Eve Documentation</title>
+    <meta name="generator" content="Hugo 0.19" />
+
+    
+    <link rel="canonical" href="https://cmontella.github.io/docs/handbook/running/">
+    
+    <meta name="author" content="Eve">
+    
+
+    <meta property="og:url" content="https://cmontella.github.io/docs/handbook/running/">
+    <meta property="og:title" content="Eve Documentation">
+    
+    <meta name="apple-mobile-web-app-title" content="Eve Documentation">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cmontella.github.io/docs/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="https://cmontella.github.io/docs/images/favicon.png">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('https://cmontella.github.io/docs/fonts/icon.eot?52m981');
+        src: url('https://cmontella.github.io/docs/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+             url('https://cmontella.github.io/docs/fonts/icon.woff?52m981')
+               format('woff'),
+             url('https://cmontella.github.io/docs/fonts/icon.ttf?52m981')
+               format('truetype'),
+             url('https://cmontella.github.io/docs/fonts/icon.svg?52m981#icon')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="https://cmontella.github.io/docs/stylesheets/application.css">
+    <link rel="stylesheet" href="https://cmontella.github.io/docs/stylesheets/temporary.css">
+    <link rel="stylesheet" href="https://cmontella.github.io/docs/stylesheets/palettes.css">
+    <link rel="stylesheet" href="https://cmontella.github.io/docs/stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="https://cmontella.github.io/docs/javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class=" ">
+
+<div class="layer-wrapper header-wrapper">
+  <header class="layer">
+    <a href="http://witheve.com">
+    <div class="logo">
+      <img src="https://witheve.github.io/assets/images/logo_square.png" />
+      <h1><img alt="EVE" src="https://cmontella.github.io/docs/images/eve.svg" /></h1>
+    </div>
+    </a>
+    <div class="flex-spacer"></div>
+    <nav>
+      <a class="btn rounded cta secondary play-cta" href="http://play.witheve.com">Play</a>
+      
+      <a href="http://incidentalcomplexity.com">Blog</a>
+      <a href="http://docs.witheve.com">Docs</a>
+      <a href="https://groups.google.com/forum/#!forum/eve-talk">Community</a>
+    </nav>
+  </header>
+</div>
+
+
+	
+	
+
+
+<main class="main layer-wrapper">
+	<div class="toplayer">
+		<div class="drawer">
+			<div aria-label="Navigation">
+  
+  <div class="scrollable">
+    <div class="wrapper">
+      
+
+      
+      <div id="sidebar" class="nav-collapse">
+          <ul class="sidebar-menu">
+            
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://cmontella.github.io/docs/" class="">
+                      
+                      <span class="colored">Appendix</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/ebnf/"> Grammar </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/commonmark/"> CommonMark </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/glossary/"> Glossary </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://cmontella.github.io/docs/" class="">
+                      
+                      <span class="colored">Core Language</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/records/"> Records </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/tags/">Tags</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/not/">not</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/equivalence/"> Equivalence </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/equality/">Equality</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/inequality/">Inequality</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/joins/">Joins</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/actions/"> Actions </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/search/">search</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/bind/">bind</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/commit/">commit</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/expressions/"> Expressions </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/functions/">Functions</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/aggregates/">Aggregates</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/if-then/">if-then</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/is/">is</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/string-interpolation/">String Interpolation</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/update-operators/"> Update Operators </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/add/">Add: &#43;=</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/set/">Set: :=</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/remove/">Remove: -=</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/merge/">Merge &lt;-</a></li>
+                          
+                        </ul>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://cmontella.github.io/docs/" class="">
+                      
+                      <span class="colored">Databases</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/session/"> @session </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/browser/"> @browser </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/event/"> @event </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/event/change/">change</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/event/click/">click</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/event/keydown/">keydown</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/event/keyup/">keyup</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/http/"> @http </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/view/"> @view </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/standard-library/"> Standard Library </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/general/">General</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/math/">Math</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/strings/">Strings</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/statistics/">Statistics</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/datetime/">Date &amp; Time</a></li>
+                          
+                        </ul>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://cmontella.github.io/docs/" class="">
+                      
+                      <span class="colored">Eve Programs</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/model/"> Programming Model </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/sets/"> Sets </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/literate-programming/"> Literate Programming </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/blocks/"> Blocks </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://cmontella.github.io/docs/" class="">
+                      
+                      <span class="colored">Guides</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://cmontella.github.io/docs/guides/for-programmers/"> Eve for Programmers </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/guides/style/"> Style Guide </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://cmontella.github.io/docs/" class="">
+                      
+                      <span class="colored">Introduction</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/installation/"> Getting Eve </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/docker/">Docker</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/npm/">npm</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/linux/">Linux</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/mac/">Mac</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/windows/">Windows</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li class="active selected"><a href="https://cmontella.github.io/docs/handbook/running/"> Running Eve </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/help/"> Getting Help </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li>
+                  <a class="" href="https://cmontella.github.io/docs/handbook/libraries">
+                    
+                    <span class="colored">Library</span>
+                  </a>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://cmontella.github.io/docs/" class="">
+                      
+                      <span class="colored">Tutorials</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://cmontella.github.io/docs/tutorials/quickstart/"> Quickstart </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+          </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+		</div>
+		<article class="article">
+			<div class="wrapper">
+
+				
+
+<h1 id="running-eve">Running Eve</h1>
+
+<p>If you&rsquo;ve downloaded and installed Eve via <a href="../npm">npm</a>, you can launch Eve with the <code>eve</code> command.</p>
+
+<pre><code>eve
+</code></pre>
+
+<p>This launches an Eve server running in the Eve root directory at <code>http://localhost:8080</code>. From here, you&rsquo;ll be directed to <code>quickstart.eve</code>, and have access to the Eve examples directory from within the editor.</p>
+
+<h2 id="running-an-eve-file">Running an Eve File</h2>
+
+<p>If you want to run a specific Eve program, you can provide its path after the <code>eve</code> command:</p>
+
+<pre><code>eve ~/myDir/myEveFile.eve
+</code></pre>
+
+<p>Then you navigate to Eve in your browser to access the specified program. If you like, you can also recover the editor with a flag:</p>
+
+<pre><code>eve ~/myEveDir/myEveFile.eve --editor
+</code></pre>
+
+<p>This will run the supplied Eve program with the editor visible</p>
+
+<h2 id="running-eve-in-server-mode">Running Eve in Server mode</h2>
+
+<p>Eve can be started in server mode using the <code>--server</code> flag:</p>
+
+<pre><code>eve --server
+</code></pre>
+
+<p>Without this flag, execution of Eve programs happens within the browser, with the Eve server acting only as a file server between the browser and your local system. In server mode, Eve will instead execute your program on the server. Currently written programs will operate exactly as before, but this is a preliminary step in order to get networked Eve applications going (like a chat server or a multiplayer game). There is still work needed to be done there</p>
+
+<h2 id="eve-workspaces">Eve Workspaces</h2>
+
+<p>You can run Eve in a custom workspace. To create a new Eve workspace, create a folder with an empty file named <code>package.json</code>, then start Eve from within this folder. Eve recognizes that it is starting an Eve workspace, and will serve <code>*.eve</code> files from within this directory instead of the Eve examples folder. Furthermore, you can serve various assets, like images or CSS, by placing them in an &ldquo;assets&rdquo; sub-folder.</p>
+
+<h2 id="flags">Flags</h2>
+
+<ul>
+<li>server - run Eve in server execution mode.</li>
+<li>editor - run Eve with the editor visible. This defaults to false, except when Eve is started in an Eve project folder.</li>
+<li>port - specify the port on which to run the Eve server. Alternatively, the running port can be specified with the <code>PORT</code> environment variable, which takes precedence over the <code>port</code> flag.</li>
+</ul>
+
+<h2 id="running-eve-from-source">Running Eve from Source</h2>
+
+<p>To run Eve from source, you invoke the following command in the extracted Eve folder:</p>
+
+<pre><code>npm start
+</code></pre>
+
+<p>You can apply the above flags to this command, but you&rsquo;ll need an extra <code>--</code> to do so. e.g.</p>
+
+<pre><code>npm start -- --port 1234
+</code></pre>
+
+<h2 id="see-also">See Also</h2>
+
+<p><a href="../linux">linux</a> | <a href="../mac">mac</a> | <a href="../windows">windows</a> | <a href="../docker">docker</a> | <a href="../npm">npm</a></p>
+
+
+			</div>
+		</article>
+	</div>
+</main>

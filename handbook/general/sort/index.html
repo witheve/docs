@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-us">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>sort - Eve Documentation</title>
+    <meta name="generator" content="Hugo 0.19" />
+
+    
+    <link rel="canonical" href="https://cmontella.github.io/docs/handbook/general/sort/">
+    
+    <meta name="author" content="Eve">
+    
+
+    <meta property="og:url" content="https://cmontella.github.io/docs/handbook/general/sort/">
+    <meta property="og:title" content="Eve Documentation">
+    
+    <meta name="apple-mobile-web-app-title" content="Eve Documentation">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cmontella.github.io/docs/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="https://cmontella.github.io/docs/images/favicon.png">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('https://cmontella.github.io/docs/fonts/icon.eot?52m981');
+        src: url('https://cmontella.github.io/docs/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+             url('https://cmontella.github.io/docs/fonts/icon.woff?52m981')
+               format('woff'),
+             url('https://cmontella.github.io/docs/fonts/icon.ttf?52m981')
+               format('truetype'),
+             url('https://cmontella.github.io/docs/fonts/icon.svg?52m981#icon')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="https://cmontella.github.io/docs/stylesheets/application.css">
+    <link rel="stylesheet" href="https://cmontella.github.io/docs/stylesheets/temporary.css">
+    <link rel="stylesheet" href="https://cmontella.github.io/docs/stylesheets/palettes.css">
+    <link rel="stylesheet" href="https://cmontella.github.io/docs/stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="https://cmontella.github.io/docs/javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class=" ">
+
+<div class="layer-wrapper header-wrapper">
+  <header class="layer">
+    <a href="http://witheve.com">
+    <div class="logo">
+      <img src="https://witheve.github.io/assets/images/logo_square.png" />
+      <h1><img alt="EVE" src="https://cmontella.github.io/docs/images/eve.svg" /></h1>
+    </div>
+    </a>
+    <div class="flex-spacer"></div>
+    <nav>
+      <a class="btn rounded cta secondary play-cta" href="http://play.witheve.com">Play</a>
+      
+      <a href="http://incidentalcomplexity.com">Blog</a>
+      <a href="http://docs.witheve.com">Docs</a>
+      <a href="https://groups.google.com/forum/#!forum/eve-talk">Community</a>
+    </nav>
+  </header>
+</div>
+
+
+	
+	
+
+
+<main class="main layer-wrapper">
+	<div class="toplayer">
+		<div class="drawer">
+			<div aria-label="Navigation">
+  
+  <div class="scrollable">
+    <div class="wrapper">
+      
+
+      
+      <div id="sidebar" class="nav-collapse">
+          <ul class="sidebar-menu">
+            
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://cmontella.github.io/docs/" class="">
+                      
+                      <span class="colored">Appendix</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/ebnf/"> Grammar </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/commonmark/"> CommonMark </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/glossary/"> Glossary </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://cmontella.github.io/docs/" class="">
+                      
+                      <span class="colored">Core Language</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/records/"> Records </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/tags/">Tags</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/not/">not</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/equivalence/"> Equivalence </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/equality/">Equality</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/inequality/">Inequality</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/joins/">Joins</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/actions/"> Actions </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/search/">search</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/bind/">bind</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/commit/">commit</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/expressions/"> Expressions </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/functions/">Functions</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/aggregates/">Aggregates</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/if-then/">if-then</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/is/">is</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/string-interpolation/">String Interpolation</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/update-operators/"> Update Operators </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/add/">Add: &#43;=</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/set/">Set: :=</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/remove/">Remove: -=</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/merge/">Merge &lt;-</a></li>
+                          
+                        </ul>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://cmontella.github.io/docs/" class="">
+                      
+                      <span class="colored">Databases</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/session/"> @session </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/browser/"> @browser </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/event/"> @event </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/event/change/">change</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/event/click/">click</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/event/keydown/">keydown</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/event/keyup/">keyup</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/http/"> @http </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/view/"> @view </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/standard-library/"> Standard Library </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/general/">General</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/math/">Math</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/strings/">Strings</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/statistics/">Statistics</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/datetime/">Date &amp; Time</a></li>
+                          
+                        </ul>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://cmontella.github.io/docs/" class="">
+                      
+                      <span class="colored">Eve Programs</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/model/"> Programming Model </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/sets/"> Sets </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/literate-programming/"> Literate Programming </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/blocks/"> Blocks </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://cmontella.github.io/docs/" class="">
+                      
+                      <span class="colored">Guides</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://cmontella.github.io/docs/guides/for-programmers/"> Eve for Programmers </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/guides/style/"> Style Guide </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://cmontella.github.io/docs/" class="">
+                      
+                      <span class="colored">Introduction</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/installation/"> Getting Eve </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/docker/">Docker</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/npm/">npm</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/linux/">Linux</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/mac/">Mac</a></li>
+                          
+                            <li><a href="https://cmontella.github.io/docs/handbook/windows/">Windows</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/running/"> Running Eve </a> </li>
+                      
+                    
+                      <li><a href="https://cmontella.github.io/docs/handbook/help/"> Getting Help </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li>
+                  <a class="" href="https://cmontella.github.io/docs/handbook/libraries">
+                    
+                    <span class="colored">Library</span>
+                  </a>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="https://cmontella.github.io/docs/" class="">
+                      
+                      <span class="colored">Tutorials</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="https://cmontella.github.io/docs/tutorials/quickstart/"> Quickstart </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+          </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+		</div>
+		<article class="article">
+			<div class="wrapper">
+
+				
+
+<h1 id="sort">sort</h1>
+
+<p>generates an ordering for a set</p>
+
+<h2 id="syntax">Syntax</h2>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="nf">//</span> <span class="kt">Sort</span> <span class="nv">one</span> <span class="nv">or</span> <span class="nv">more</span> <span class="nv">values</span>
+<span class="nv">index</span> <span class="nf">=</span> <span class="nv">sort</span><span class="p">[</span><span class="nv">value</span><span class="p">]</span>
+<span class="nv">index</span> <span class="nf">=</span> <span class="nv">sort</span><span class="p">[</span><span class="nv">value</span><span class="nf">:</span> <span class="p">(</span><span class="nv">value</span><span class="mi">1</span><span class="p">,</span> <span class="nv">value</span><span class="mi">2</span><span class="p">,</span> <span class="nf">...</span><span class="p">)]</span>
+
+<span class="nf">//</span> <span class="kt">Sort</span> <span class="nv">one</span> <span class="nv">or</span> <span class="nv">more</span> <span class="nv">values</span><span class="p">,</span> <span class="nv">and</span> <span class="nv">specify</span> <span class="nv">the</span> <span class="nv">direction</span> <span class="nv">for</span> <span class="nv">each</span>
+<span class="nv">index</span> <span class="nf">=</span> <span class="nv">sort</span><span class="p">[</span><span class="nv">value</span> <span class="nv">direction</span><span class="p">]</span>
+<span class="nv">index</span> <span class="nf">=</span> <span class="nv">sort</span><span class="p">[</span><span class="nv">value</span><span class="nf">:</span> <span class="p">(</span><span class="nv">value</span><span class="mi">1</span><span class="p">,</span> <span class="nv">value</span><span class="mi">2</span><span class="p">,</span> <span class="nf">...</span><span class="p">),</span> <span class="nv">direction</span><span class="nf">:</span> <span class="p">(</span><span class="s">&quot;up&quot;</span><span class="p">,</span> <span class="s">&quot;down&quot;</span><span class="p">,</span> <span class="nf">...</span><span class="p">)]</span>
+
+<span class="nf">//</span> <span class="kt">Sort</span> <span class="nv">according</span> <span class="nv">to</span> <span class="nv">some</span> <span class="nv">grouping</span>
+<span class="nv">index</span> <span class="nf">=</span> <span class="nv">sort</span><span class="p">[</span><span class="nv">value</span> <span class="nv">per</span><span class="p">]</span>
+<span class="nv">index</span> <span class="nf">=</span> <span class="nv">sort</span><span class="p">[</span><span class="nv">value</span> <span class="nv">direction</span> <span class="nv">per</span><span class="p">]</span>
+</code></pre></div>
+
+<h2 id="arguments">Arguments</h2>
+
+<ul>
+<li><code>value</code> - one or more variables to sort. More than one variable can be provided using a list e.g. <code>sort[value: (value1, ..., valueN)]</code>, and they will be sorted in turn.</li>
+<li><code>direction - _optional_</code> - one or more directions by which to sort <code>value</code>. If no direction is provided, all variables are sorted from smallest to largest. Possible values are:
+
+<ul>
+<li>&ldquo;up&rdquo; for sorting from smallest to largest.</li>
+<li>&ldquo;down&rdquo; for sorting from largest to smallest.</li>
+</ul></li>
+<li><code>per - _optional_</code> - Instead of sorting the whole set, <code>per</code> allows you to divide the set into groups and sort each one.</li>
+</ul>
+
+<p>The output is a set of indices, each of which maps to an element of the sorted variable. For example, if the value is <code>(&quot;A&quot;, &quot;C&quot;, &quot;D&quot;, &quot;B&quot;)</code>, then index is <code>(1, 3, 4, 2)</code>.</p>
+
+<h2 id="description">Description</h2>
+
+<p>Sort generates an index that describes the ordering of an input value. It&rsquo;s important to remember that variables in Eve are sets, and therefore have no ordering. Because of this, <code>sort</code> does not reorder value, but it generates a set of indices, each of which maps to an element in value.</p>
+
+<p>Sort is flexible, and can generate an ordering over multiple dimensions, directions, and groupings.</p>
+
+<p><code>index = sort[value]</code> generates an ordering of <code>value</code> from smallest to largest.</p>
+
+<p><code>index = sort[value direction]</code> generates an ordering of <code>value</code> in a given <code>direction</code>. Acceptable values are &ldquo;up&rdquo; and &ldquo;down&rdquo;.</p>
+
+<p><code>index = sort[value: (value1, ... , valueN)]</code> generates an ordering of a list of values, ordering by <code>value1</code> first, then <code>value2</code>, and so on. For example, if you have <code>#person</code> records with name, age and height attributes, you could sort as follows:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="nv">search</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">person</span> <span class="nv">name</span> <span class="nv">age</span> <span class="nv">height</span><span class="p">]</span>
+  <span class="nv">index</span> <span class="nf">=</span> <span class="nv">sort</span><span class="p">[</span><span class="nv">value</span><span class="nf">:</span> <span class="p">(</span><span class="nv">age</span><span class="p">,</span> <span class="nv">name</span><span class="p">,</span> <span class="nv">height</span><span class="p">)]</span>
+</code></pre></div>
+
+<p>This will sort the people first by age, then by name, then by height.</p>
+
+<p><code>index = sort[value: (value1, ... , valueN), direction: (direction1, ... , directionN)]</code> does the same as above, but you can specify the direction you sort each variable. Acceptable value for direction are &ldquo;up&rdquo; and &ldquo;down&rdquo;. By default, values are sorted in the &ldquo;up&rdquo; direction.</p>
+
+<p><code>index = sort[value per]</code> sorts <code>value</code>, grouped by <code>per</code>. This divides <code>value</code> into groups according to the elements of <code>per</code>, and each one is sorted.</p>
+
+<h2 id="examples">Examples</h2>
+
+<p>We have #student records with grade (1 - 12), teacher, GPA (0.0 - 4.0) attributes. We can sort the students by grade:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="nv">search</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span> <span class="nv">grade</span><span class="p">]</span>
+  <span class="nv">index</span> <span class="nf">=</span> <span class="nv">sort</span><span class="p">[</span><span class="nv">value</span><span class="nf">:</span> <span class="nv">grade</span><span class="p">]</span>
+
+<span class="nv">bind</span> <span class="err">@</span><span class="nv">browser</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">div</span> <span class="nv">sort</span><span class="nf">:</span> <span class="nv">index</span><span class="p">,</span> <span class="nv">text</span><span class="nf">:</span> <span class="s">&quot;{{index}} - {{name}} {{grade}}&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<p>The browser handles the task of rendering the divs in the order specified by the <code>sort</code>attribute. Taking this further, we can choose the direction of the sortted set, whether &ldquo;up&rdquo; or &ldquo;down&rdquo;. The default direction is &ldquo;up&rdquo; when none is specified.</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="nv">search</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span> <span class="nv">grade</span><span class="p">]</span>
+  <span class="nv">index</span> <span class="nf">=</span> <span class="nv">sort</span><span class="p">[</span><span class="nv">value</span><span class="nf">:</span> <span class="nv">grade</span><span class="p">,</span> <span class="nv">direction</span><span class="nf">:</span> <span class="s">&quot;down&quot;</span><span class="p">]</span>
+  
+<span class="nv">bind</span> <span class="err">@</span><span class="nv">browser</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">div</span> <span class="nv">sort</span><span class="nf">:</span> <span class="nv">index</span><span class="p">,</span> <span class="nv">text</span><span class="nf">:</span> <span class="s">&quot;{{index}} - {{name}} {{grade}}&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<p>You can also sort across multiple axes of a record. For instance, we can sort grade from 9 to 12, then sort by name from Z - A.</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="nv">search</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span> <span class="nv">grade</span><span class="p">]</span>
+  <span class="nv">index</span> <span class="nf">=</span> <span class="nv">sort</span><span class="p">[</span><span class="nv">value</span><span class="nf">:</span> <span class="p">(</span><span class="nv">grade</span><span class="p">,</span> <span class="nv">name</span><span class="p">)</span> <span class="p">,</span> <span class="nv">direction</span><span class="nf">:</span> <span class="p">(</span><span class="s">&quot;up&quot;</span><span class="p">,</span><span class="s">&quot;down&quot;</span><span class="p">)]</span>
+
+<span class="nv">bind</span> <span class="err">@</span><span class="nv">browser</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">div</span> <span class="nv">sort</span><span class="nf">:</span> <span class="nv">index</span><span class="p">,</span> <span class="nv">text</span><span class="nf">:</span> <span class="s">&quot;{{index}} - {{name}} {{grade}}&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<p>This can be extended to sort any number of attributes</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="nv">search</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span> <span class="nv">grade</span> <span class="nv">teacher</span> <span class="kt">GPA</span><span class="p">]</span>
+  <span class="nv">index</span> <span class="nf">=</span> <span class="nv">sort</span><span class="p">[</span><span class="nv">value</span><span class="nf">:</span> <span class="p">(</span><span class="nv">grade</span><span class="p">,</span> <span class="nv">teacher</span><span class="p">,</span> <span class="nv">name</span><span class="p">,</span> <span class="kt">GPA</span><span class="p">)</span> <span class="p">,</span> <span class="nv">direction</span><span class="nf">:</span> <span class="p">(</span><span class="s">&quot;up&quot;</span><span class="p">,</span> <span class="s">&quot;down&quot;</span><span class="p">,</span> <span class="s">&quot;up&quot;</span><span class="p">,</span> <span class="s">&quot;down&quot;</span><span class="p">)]</span>
+
+<span class="nv">bind</span> <span class="err">@</span><span class="nv">browser</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">div</span> <span class="nv">sort</span><span class="nf">:</span> <span class="nv">index</span><span class="p">,</span> <span class="nv">text</span><span class="nf">:</span> <span class="s">&quot;{{index}} - {{name}} {{grade}} {{teacher}} {{GPA}}&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<p>Finally, we can group sorted attributes with the per argument. Here you can see the difference between sorting by name <em>then</em> grade, and sorting by name <em>per</em> grade.</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="nv">search</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span> <span class="nv">grade</span> <span class="kt">GPA</span><span class="p">]</span>
+  <span class="nv">index</span> <span class="nf">=</span> <span class="nv">sort</span><span class="p">[</span><span class="nv">value</span><span class="nf">:</span> <span class="p">(</span><span class="kt">GPA</span><span class="p">,</span> <span class="nv">name</span><span class="p">),</span> <span class="nv">per</span><span class="nf">:</span> <span class="nv">grade</span><span class="p">]</span>
+  
+<span class="nv">bind</span> <span class="err">@</span><span class="nv">browser</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">div</span> <span class="nv">sort</span><span class="nf">:</span> <span class="nv">index</span><span class="p">,</span> <span class="nv">text</span><span class="nf">:</span> <span class="s">&quot;{{index}} - {{name}} {{grade}}&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<p>When you sort per grade, then name is first grouped by grade, and each of those groups is then sorted. This is why index goes from 1-6 instead of 1-20 as in the other examples; Although there are still 20 elements in index, the maximum is 6 because no grade has more than 6 students. You might want to sort data this way in order to display it in a nested structure, such as this:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="nv">search</span>
+    <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span> <span class="nv">grade</span> <span class="nv">teacher</span><span class="p">]</span>
+  <span class="nv">index</span> <span class="nf">=</span> <span class="nv">sort</span><span class="p">[</span><span class="nv">value</span><span class="nf">:</span> <span class="nv">name</span><span class="p">,</span> <span class="nv">per</span><span class="nf">:</span> <span class="nv">grade</span><span class="p">]</span>
+  
+<span class="nv">bind</span> <span class="err">@</span><span class="nv">browser</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">div</span> <span class="nv">grade</span> <span class="nv">children</span><span class="nf">:</span> 
+    <span class="p">[</span><span class="err">#</span><span class="nv">h</span><span class="mi">3</span> <span class="nv">sort</span><span class="nf">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">text</span><span class="nf">:</span> <span class="s">&quot;Grade: {{grade}}&quot;</span><span class="p">]</span>
+    <span class="p">[</span><span class="err">#</span><span class="nv">div</span> <span class="nv">sort</span><span class="nf">:</span> <span class="nv">index</span><span class="p">,</span> <span class="nv">text</span><span class="nf">:</span> <span class="s">&quot;{{index}} {{name}}&quot;</span><span class="p">]]</span>
+</code></pre></div>
+
+<hr />
+
+<p>Commit some test data</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="nv">commit</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Mach&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">9</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Mr. Black&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;1.0&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Pok&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">9</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Mrs. Brown&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;3.4&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Karima&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">9</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Mr. Black&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;2.4&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Garth&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">9</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Mrs. Brown&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;2.8&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Berta&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">9</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Mr. Black&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;2.7&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Maxine&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Mr. Red&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;4.0&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Gwyn&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Mrs. Blue&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;2.5&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Ilse&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Mr. Red&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;3.0&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Hobert&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">11</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Ms. Green&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;3.2&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Arlean&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Mr. Red&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;2.4&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Ty&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Mrs. Blue&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;1.7&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Kermit&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">11</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Ms. Green&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;2.9&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Cortez&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">11</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Mrs. Orange&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;2.3&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Polly&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">11</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Ms. Green&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;2.1&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Damion&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">12</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Mrs. Purple&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;3.8&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Gretchen&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">12</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Mrs. Yellow&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;2.8&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Octavio&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">12</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Mrs. Purple&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;3.4&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Pa&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">12</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Mrs. Yellow&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;3.5&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Elwanda&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Mrs. Blue&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;1.3&quot;</span><span class="p">]</span>
+  <span class="p">[</span><span class="err">#</span><span class="nv">student</span> <span class="nv">name</span><span class="nf">:</span> <span class="s">&quot;Guadalupe&quot;</span><span class="p">,</span> <span class="nv">grade</span><span class="nf">:</span> <span class="mi">11</span><span class="p">,</span> <span class="nv">teacher</span><span class="nf">:</span> <span class="s">&quot;Mrs. Orange&quot;</span><span class="p">,</span> <span class="kt">GPA</span><span class="nf">:</span> <span class="s">&quot;3.7&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+
+			</div>
+		</article>
+	</div>
+</main>
