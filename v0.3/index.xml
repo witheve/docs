@@ -1,0 +1,1124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eve Documentation</title>
+    <link>http://docs-next.witheve.com/v0.3/index.xml</link>
+    <description>Recent content on Eve Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://docs-next.witheve.com/v0.3/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Installation</title>
+      <link>http://docs-next.witheve.com/v0.3/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://docs-next.witheve.com/v0.3/install/</guid>
+      <description>
+
+&lt;h1 id=&#34;installation&#34;&gt;Installation&lt;/h1&gt;
+
+&lt;p&gt;Install &lt;a href=&#34;https://nodejs.org/en/download/&#34;&gt;Node&lt;/a&gt; for your platform, then clone and build the Eve starter repository:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone git@github.com:witheve/eve-starter.git
+cd eve-starter
+npm install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;You can start the program switcher, which allows you to browse included example programs:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npm start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Or you can run a specific program by providing its path as an argument:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npm start -- path/to/program.eve
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To view other functionality of the starter, run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npm start -- --help
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Quickstart</title>
+      <link>http://docs-next.witheve.com/v0.3/tutorials/quickstart.eve/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://docs-next.witheve.com/v0.3/tutorials/quickstart.eve/</guid>
+      <description>
+
+&lt;h1 id=&#34;quickstart&#34;&gt;Quickstart&lt;/h1&gt;
+
+&lt;p&gt;In this guide we&amp;rsquo;re going to give you a 5 minute introduction to the essential concepts in Eve. If you&amp;rsquo;ve never used Eve before, you&amp;rsquo;re in the right place.&lt;/p&gt;
+
+&lt;h2 id=&#34;adding-records-to-eve&#34;&gt;Adding records to Eve&lt;/h2&gt;
+
+&lt;p&gt;Eve represents data as records, which are key value pairs attached to a unique ID. Eve programs are made up of small composable blocks that search for and create records. Let&amp;rsquo;s start with a block that adds a record to Eve:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;commit&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;greeting&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;hello world&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This record is tagged &lt;code&gt;#greeting&lt;/code&gt;, and has an attribute &amp;ldquo;text&amp;rdquo; with the value &amp;ldquo;hello world&amp;rdquo;. Although tags have a special syntax, they are attributes like any other. We encourage you to classify groups of related records with tags.&lt;/p&gt;
+
+&lt;h2 id=&#34;finding-records-in-eve&#34;&gt;Finding records in Eve&lt;/h2&gt;
+
+&lt;p&gt;Eve finds every record that matches the supplied patterns, then binds new records to them. If no records match the search, then the block does not run at all. A block will only run if every pattern in a search matches at least one record. Let&amp;rsquo;s search for the &lt;code&gt;#greeting&lt;/code&gt; we just committed, and then display it in a text container:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;greeting&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ui&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Variables with the same name are equivalent within a block; because they have the same name, the &lt;code&gt;text&lt;/code&gt; in &lt;code&gt;[#greeting text]&lt;/code&gt; and &lt;code&gt;[#ui/text text]&lt;/code&gt; are equivalent. Go ahead and add another &lt;code&gt;#greeting&lt;/code&gt; record to the first block to see what happens when more than one record matches the search.&lt;/p&gt;
+
+&lt;h2 id=&#34;records-update-as-data-changes&#34;&gt;Records update as data changes&lt;/h2&gt;
+
+&lt;p&gt;Blocks in Eve react automatically to changes in data. When a record changes, any bound records are automatically updated. Let&amp;rsquo;s search for the current time, and display it in a div:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;time&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;seconds&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt; 
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ui&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;seconds&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As the time changes, the output updates to reflect the current state of the &lt;code&gt;#time&lt;/code&gt; record. Records can be committed instead of bound, but the behavior is a little different &amp;ndash; committed records persist until they are removed explicitly. Try changing &lt;code&gt;bind&lt;/code&gt; to &lt;code&gt;commit&lt;/code&gt; in the above block and see what happens.&lt;/p&gt;
+
+&lt;h2 id=&#34;reacting-to-events&#34;&gt;Reacting to events&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s draw a button on the screen:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;commit&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ui&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;button&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;increment&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;+1&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;When you click anywhere on the screen, Eve creates an &lt;code&gt;#html/event/click&lt;/code&gt; record representing the click. You can react to clicks on the &lt;code&gt;#increment&lt;/code&gt; button by searching for the &lt;code&gt;#html/event/click&lt;/code&gt; record, where the element attribute is the button:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;
+  &lt;span class=&#34;nv&#34;&gt;event&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;click&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;element&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;increment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+
+&lt;span class=&#34;kr&#34;&gt;commit&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;clicked&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Clicks only last for an instant, but we want to create a permanent record of each click so we can search for them later. This block commits a &lt;code&gt;#clicked&lt;/code&gt; record that will persist until it&amp;rsquo;s explicitly removed. Much like the &lt;code&gt;#greeting&lt;/code&gt; text we bound to the &lt;code&gt;#ui&lt;/code&gt;, variables with the same name are equivalent, so the variable &lt;code&gt;event&lt;/code&gt; in the &lt;code&gt;#clicked&lt;/code&gt; record is a reference to the &lt;code&gt;#html/event/click&lt;/code&gt; on the &lt;code&gt;#increment&lt;/code&gt; button.&lt;/p&gt;
+
+&lt;p&gt;The identity of a record is determined by its attribute/value pairs. Two records with the same attributes and values are identical in Eve. We included the &lt;code&gt;event&lt;/code&gt; attribute in the &lt;code&gt;#clicked&lt;/code&gt; record to differentiate each record. Without this differentiation, we could only ever create a single &lt;code&gt;#clicked&lt;/code&gt; record. Try removing &lt;code&gt;event&lt;/code&gt; from the record and click the button to test this out.&lt;/p&gt;
+
+&lt;h2 id=&#34;count-the-number-of-clicks&#34;&gt;Count the number of clicks&lt;/h2&gt;
+
+&lt;p&gt;Now let&amp;rsquo;s count the number of times the button has been clicked. Make sure &lt;code&gt;event&lt;/code&gt; is back in &lt;code&gt;#clicked&lt;/code&gt;, and then we can count those records directly:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;
+  &lt;span class=&#34;nv&#34;&gt;how&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;many&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;gather&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;clicked&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+
+&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ui&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;The button has been clicked {{how-many}} times&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This block searches for every unique &lt;code&gt;#clicked&lt;/code&gt;, counts them, and returns that value in &lt;code&gt;how-many&lt;/code&gt;. Then we display this value in a text container using the operator &lt;code&gt;{{ ... }}&lt;/code&gt;, which inserts the value of the contained variable into the string. An important thing to remember here is that this block will only run when the button has been clicked at least once. Before then, this block will not run because there are no &lt;code&gt;#clicked&lt;/code&gt; records to count.&lt;/p&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;That&amp;rsquo;s it for the 5 minute introduction to Eve. To summarize:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Eve programs are made up of blocks.&lt;/li&gt;
+&lt;li&gt;Data are represented by records, key value pairs associated to a unique ID.&lt;/li&gt;
+&lt;li&gt;There are two sections of a block: one where you search for records, and one where you bind or commit records.&lt;/li&gt;
+&lt;li&gt;Blocks update records automatically to reflect changes in data.&lt;/li&gt;
+&lt;li&gt;Bound records are replaced when data changes, while committed records must be removed manually.&lt;/li&gt;
+&lt;li&gt;Records are unique, uniqueness is determined by a record&amp;rsquo;s attributes and their values.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This will get you started with Eve, but there&amp;rsquo;s still more to learn. From here, you can:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Advance to Level 2 of the introductory tutorial.&lt;/li&gt;
+&lt;li&gt;View the syntax reference or the Eve handbook.&lt;/li&gt;
+&lt;li&gt;Explore already made examples.&lt;/li&gt;
+&lt;li&gt;Or dive right in to the editor and try out the concepts you&amp;rsquo;ve just learned.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Quickstart</title>
+      <link>http://docs-next.witheve.com/v0.3/quickstart.eve/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://docs-next.witheve.com/v0.3/quickstart.eve/</guid>
+      <description>
+
+&lt;h1 id=&#34;quickstart&#34;&gt;Quickstart&lt;/h1&gt;
+
+&lt;p&gt;In this guide we&amp;rsquo;re going to give you a 5 minute introduction to the essential concepts in Eve. If you&amp;rsquo;ve never used Eve before, you&amp;rsquo;re in the right place.&lt;/p&gt;
+
+&lt;h2 id=&#34;adding-records-to-eve&#34;&gt;Adding records to Eve&lt;/h2&gt;
+
+&lt;p&gt;Eve represents data as records, which are key value pairs attached to a unique ID. Eve programs are made up of small composable blocks that search for and create records. Let&amp;rsquo;s start with a block that adds a record to Eve:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;commit&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;greeting&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;hello world&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This record is tagged &lt;code&gt;#greeting&lt;/code&gt;, and has an attribute &amp;ldquo;text&amp;rdquo; with the value &amp;ldquo;hello world&amp;rdquo;. Although tags have a special syntax, they are attributes like any other. We encourage you to classify groups of related records with tags.&lt;/p&gt;
+
+&lt;h2 id=&#34;finding-records-in-eve&#34;&gt;Finding records in Eve&lt;/h2&gt;
+
+&lt;p&gt;Eve finds every record that matches the supplied patterns, then binds new records to them. If no records match the search, then the block does not run at all. A block will only run if every pattern in a search matches at least one record. Let&amp;rsquo;s search for the &lt;code&gt;#greeting&lt;/code&gt; we just committed, and then display it in a text container:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;greeting&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ui&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Variables with the same name are equivalent within a block; because they have the same name, the &lt;code&gt;text&lt;/code&gt; in &lt;code&gt;[#greeting text]&lt;/code&gt; and &lt;code&gt;[#ui/text text]&lt;/code&gt; are equivalent. Go ahead and add another &lt;code&gt;#greeting&lt;/code&gt; record to the first block to see what happens when more than one record matches the search.&lt;/p&gt;
+
+&lt;h2 id=&#34;records-update-as-data-changes&#34;&gt;Records update as data changes&lt;/h2&gt;
+
+&lt;p&gt;Blocks in Eve react automatically to changes in data. When a record changes, any bound records are automatically updated. Let&amp;rsquo;s search for the current time, and display it in a div:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;time&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;seconds&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+
+&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt; 
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ui&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;seconds&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;As the time changes, the output updates to reflect the current state of the &lt;code&gt;#time&lt;/code&gt; record. Records can be committed instead of bound, but the behavior is a little different &amp;ndash; committed records persist until they are removed explicitly. Try changing &lt;code&gt;bind&lt;/code&gt; to &lt;code&gt;commit&lt;/code&gt; in the above block and see what happens.&lt;/p&gt;
+
+&lt;h2 id=&#34;reacting-to-events&#34;&gt;Reacting to events&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;rsquo;s draw a button on the screen:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;commit&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ui&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;button&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;increment&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;+1&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;When you click anywhere on the screen, Eve creates an &lt;code&gt;#html/event/click&lt;/code&gt; record representing the click. You can react to clicks on the &lt;code&gt;#increment&lt;/code&gt; button by searching for the &lt;code&gt;#html/event/click&lt;/code&gt; record, where the element attribute is the button:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;
+  &lt;span class=&#34;nv&#34;&gt;event&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;html&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;click&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;element&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;increment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+
+&lt;span class=&#34;kr&#34;&gt;commit&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;clicked&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Clicks only last for an instant, but we want to create a permanent record of each click so we can search for them later. This block commits a &lt;code&gt;#clicked&lt;/code&gt; record that will persist until it&amp;rsquo;s explicitly removed. Much like the &lt;code&gt;#greeting&lt;/code&gt; text we bound to the &lt;code&gt;#ui&lt;/code&gt;, variables with the same name are equivalent, so the variable &lt;code&gt;event&lt;/code&gt; in the &lt;code&gt;#clicked&lt;/code&gt; record is a reference to the &lt;code&gt;#html/event/click&lt;/code&gt; on the &lt;code&gt;#increment&lt;/code&gt; button.&lt;/p&gt;
+
+&lt;p&gt;The identity of a record is determined by its attribute/value pairs. Two records with the same attributes and values are identical in Eve. We included the &lt;code&gt;event&lt;/code&gt; attribute in the &lt;code&gt;#clicked&lt;/code&gt; record to differentiate each record. Without this differentiation, we could only ever create a single &lt;code&gt;#clicked&lt;/code&gt; record. Try removing &lt;code&gt;event&lt;/code&gt; from the record and click the button to test this out.&lt;/p&gt;
+
+&lt;h2 id=&#34;count-the-number-of-clicks&#34;&gt;Count the number of clicks&lt;/h2&gt;
+
+&lt;p&gt;Now let&amp;rsquo;s count the number of times the button has been clicked. Make sure &lt;code&gt;event&lt;/code&gt; is back in &lt;code&gt;#clicked&lt;/code&gt;, and then we can count those records directly:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;
+  &lt;span class=&#34;nv&#34;&gt;how&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;many&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;gather&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;for&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;clicked&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]]&lt;/span&gt;
+
+&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ui&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;quot;The button has been clicked {{how-many}} times&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This block searches for every unique &lt;code&gt;#clicked&lt;/code&gt;, counts them, and returns that value in &lt;code&gt;how-many&lt;/code&gt;. Then we display this value in a text container using the operator &lt;code&gt;{{ ... }}&lt;/code&gt;, which inserts the value of the contained variable into the string. An important thing to remember here is that this block will only run when the button has been clicked at least once. Before then, this block will not run because there are no &lt;code&gt;#clicked&lt;/code&gt; records to count.&lt;/p&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;That&amp;rsquo;s it for the 5 minute introduction to Eve. To summarize:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Eve programs are made up of blocks.&lt;/li&gt;
+&lt;li&gt;Data are represented by records, key value pairs associated to a unique ID.&lt;/li&gt;
+&lt;li&gt;There are two sections of a block: one where you search for records, and one where you bind or commit records.&lt;/li&gt;
+&lt;li&gt;Blocks update records automatically to reflect changes in data.&lt;/li&gt;
+&lt;li&gt;Bound records are replaced when data changes, while committed records must be removed manually.&lt;/li&gt;
+&lt;li&gt;Records are unique, uniqueness is determined by a record&amp;rsquo;s attributes and their values.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This will get you started with Eve, but there&amp;rsquo;s still more to learn. From here, you can:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Advance to Level 2 of the introductory tutorial.&lt;/li&gt;
+&lt;li&gt;View the syntax reference or the Eve handbook.&lt;/li&gt;
+&lt;li&gt;Explore already made examples.&lt;/li&gt;
+&lt;li&gt;Or dive right in to the editor and try out the concepts you&amp;rsquo;ve just learned.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Index</title>
+      <link>http://docs-next.witheve.com/v0.3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://docs-next.witheve.com/v0.3/</guid>
+      <description>
+
+&lt;h2 id=&#34;install-guide&#34;&gt;Install guide&lt;/h2&gt;
+
+&lt;p&gt;Need to install Eve on your machine? &lt;a href=&#34;install&#34;&gt;Head here&lt;/a&gt; for step-by-step directions.&lt;/p&gt;
+
+&lt;h2 id=&#34;quickstart&#34;&gt;Quickstart&lt;/h2&gt;
+
+&lt;p&gt;If you’re new to Eve and want a hands-on demo to learn the language, you can jump right in with a 5 minute &lt;a href=&#34;tutorials/quickstart.eve&#34;&gt;quickstart guide&lt;/a&gt; that shows you how to build a simple incrementing counter.&lt;/p&gt;
+
+&lt;h2 id=&#34;syntax-reference&#34;&gt;Syntax reference&lt;/h2&gt;
+
+&lt;p&gt;Want a reminder how the syntax works or to get an overview of Eve without going through the quickstart? The &lt;a href=&#34;syntaxreference&#34;&gt;syntax reference&lt;/a&gt; is a good place to start.&lt;/p&gt;
+
+&lt;h2 id=&#34;libraries&#34;&gt;Libraries&lt;/h2&gt;
+
+&lt;p&gt;Want to know everything Eve can do? &lt;a href=&#34;handbook/libraries/&#34;&gt;Here’s a list&lt;/a&gt; of all the functions, operators, and watchers available in the language.&lt;/p&gt;
+
+&lt;h2 id=&#34;stuck&#34;&gt;Stuck?&lt;/h2&gt;
+
+&lt;p&gt;If you didn’t find what you were looking for, you can get in touch with the Eve team and the community through these channels:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Send a message to the &lt;a href=&#34;https://groups.google.com/forum/#!forum/eve-talk&#34;&gt;mailing list&lt;/a&gt;. We generally respond to messages within a day.&lt;/li&gt;
+&lt;li&gt;Send a tweet to &lt;a href=&#34;https://twitter.com/with_eve/&#34;&gt;@with_eve&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Submit an issue to our &lt;a href=&#34;https://github.com/witheve&#34;&gt;GitHub repository&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Join the Eve Slack channel to talk with Eve developers and the community in real time &lt;em&gt;(coming soon)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;want-to-learn-more&#34;&gt;Want to learn more?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Read our &lt;a href=&#34;http://incidentalcomplexity.com&#34;&gt;blog&lt;/a&gt; to see what we’re up to, from our developer diary to essays, announcements, and more.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Syntax Ref</title>
+      <link>http://docs-next.witheve.com/v0.3/syntaxreference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://docs-next.witheve.com/v0.3/syntaxreference/</guid>
+      <description>
+
+&lt;h1 id=&#34;syntax-reference&#34;&gt;Syntax Reference&lt;/h1&gt;
+
+&lt;h2 id=&#34;records-and-patterns&#34;&gt;Records and Patterns&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Eve represents data as attribute-value pairs called records. They can have many attributes and attributes can have many values.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;[tag: “person” age: 30, name: “Jeff”]
+
+[tag: “boat” tag: “expensive” type: “yacht”]&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;The tag attribute is used to indicate the type of a record. &lt;code&gt;#foo&lt;/code&gt; is short for &lt;code&gt;tag: “foo”&lt;/code&gt;.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;[#person] = [tag: “person”]&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;You can alias an attribute to a different name like &lt;code&gt;age: person-age&lt;/code&gt;. Without an alias, the name of the attribute is bound to its value.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;// These do the same thing.
+person-age = 20
+[#person age: person-age]
+
+age = 20
+[#person age]&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;Records can be nested to find or create relationships.
+
+      &lt;strong&gt;Note&lt;/strong&gt;: All records in Eve are global. The Ryan record can still be matched on its own.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;[#person name: “Chris” brother:
+[#person name: “Ryan”]
+[#person name: “Jeff” age: 20]]&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;Attributes can also be accessed using dot notation.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;person = [#person]
+person.brother = [name: “Ryan”]&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;You can search for records by pattern. Eve will match records based on the pattern of attributes you provide. Any attributes you don’t provide a value for will be filled in from the matches.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;search
+me = [#person brother]
+
+bind
+[#my-family me relative: brother]&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;h2&gt;
+  Program Structure: Search, Bind, and Commit
+&lt;/h2&gt;
+
+&lt;table&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;Eve programs are &lt;a href=&#34;https://guides.github.com/features/mastering-markdown/&#34;&gt;markdown documents&lt;/a&gt;, with code blocks fenced between three grave (&lt;code&gt;`&lt;/code&gt;) or tilde (&lt;code&gt;~&lt;/code&gt;) characters. In each block you (optionally) &lt;code&gt;search&lt;/code&gt; for patterns, then either &lt;code&gt;bind&lt;/code&gt; or &lt;code&gt;commit&lt;/code&gt; new or updated records for each match found.
+
+      &lt;strong&gt;Note&lt;/strong&gt;: With no search, the records are automatically added once.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;# An example Eve program
+```
+search // Find something interesting
+[#person name]
+
+
+bind // Do something with it
+      [#html/div text: name]
+```&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;The  search  section finds records matching its patterns, staying up to date as data changes.&lt;code&gt;If&lt;/code&gt;there aren’t any matches, the &lt;code&gt;bind&lt;/code&gt; or &lt;code&gt;commit&lt;/code&gt; will do nothing.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;search
+person = [#person name: “Jeff”]
+person.age = 20&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;The &lt;code&gt;bind&lt;/code&gt; section creates or updated records from your pattern. Since this is a &lt;code&gt;bind&lt;/code&gt;, when the search stops matching, those records or updates disappear.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;search
+person = [#person name: “Jeff” age]
+
+bind
+[#my-age age]&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;Like &lt;code&gt;bind&lt;/code&gt;, the &lt;code&gt;commit&lt;/code&gt; section creates or updates records. Unlike &lt;code&gt;bind&lt;/code&gt;, it does so permanently.&lt;code&gt;If&lt;/code&gt;the search stops matching, the records will remain.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;search
+[#html/event/click element]
+
+commit
+[#html/div text: “You clicked on {{element}}!”]&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;h2&gt;
+  Equivalence and Filtering
+&lt;/h2&gt;
+
+&lt;table&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;Eve has equivalence instead of assignment. Instead of setting Jeff’s age to 20, equivalence causes us to only find the people whose age is 20.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;// Filter for people named “Jeff” who are 20 years old.
+person = [#person name: “Jeff” age]
+age = 20&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;Nothing can be equivalent to two different values at once.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;// Something that always fails.
+x = 10
+x = 100&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;Using the same variable in two patterns will find pairs where the value is the same.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;// pairs of boats and people with the same age.
+person = [#person age]
+boat = [#boat age]&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;You can also filter using inequalities.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;// Filter within an attribute.
+cube = [#rectangle width &gt; 30 height]
+height &gt; 30 // Filter a variable.
+cube.depth &gt; 30 // Filter with dot notation.&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;h2 id=&#34;not&#34;&gt;Not&lt;/h2&gt;
+
+&lt;table&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;You can check for the absence of &lt;strong&gt;any&lt;/strong&gt; matching record for a search by wrapping it in &lt;code&gt;not()&lt;/code&gt;.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;// People who are not employees.
+person = [#person]
+not(person = [#employee])&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;h2 id=&#34;if-then-and-if-else&#34;&gt;If&amp;hellip;Then and If&amp;hellip;Else&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;If&lt;/code&gt; lets your block try multiple branches for a variable. If every branch has no matches, the block fails.&lt;/p&gt;
+
+&lt;table&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;&lt;code&gt;If … else&lt;/code&gt; lets you express ordered choice. &lt;strong&gt;Only the first branch&lt;/strong&gt; with matches will contribute values to the variable.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;Multiple &lt;code&gt;If&lt;/code&gt; statements without &lt;code&gt;else&lt;/code&gt; let each branch contribute to a variable (equivalent to union).&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;// All my friends and their spouses are party guests.
+guest = if f = [#friend] then f
+      if [#friend spouse] then spouse&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;&lt;code&gt;If&lt;/code&gt; can return multiple values each.
+
+&lt;strong&gt;Note&lt;/strong&gt;: Each branch must return the same number!&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;(points, passing) = if score &gt; 90 then (3, “true”)
+                if score &gt; 70 then (1, “true”)
+                else (0, “false”)&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;h2 id=&#34;functions-and-aggregates&#34;&gt;Functions and Aggregates&lt;/h2&gt;
+
+&lt;table&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;Functions are record-like constructs that return values.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;// The sin function with input in degrees.
+x = sin[degrees: 30]
+// …or radians
+x = sin[radians: 3 *  π / 180]&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;Aggregates return a value (or value per group) for &lt;strong&gt;all&lt;/strong&gt; matches of your search (akin to  reduce()  in other languages). Eve will set collapse inputs to an aggregate. That is, if you have 5 unique salary levels for 100 employees, Eve would add each unique salary once. To adjust this, specify the actual identity (employee) you care about with &lt;code&gt;for&lt;/code&gt;. To get a value per group, specify the grouping variables with &lt;code&gt;per&lt;/code&gt;.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;// *for* specifies the matches to count.
+total-employees = gather/count[for: employee]
+
+// *value* is the number to add to the sum
+// *per* specifies the groups to sum the matches in.
+budgets = gather/sum[value: employee.salary,
+                    for: employee,
+                    per: employee.department]&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+&lt;/table&gt;
+
+&lt;h2 id=&#34;update-operators&#34;&gt;Update Operators&lt;/h2&gt;
+
+&lt;p&gt;Besides creating new records, Eve has four operators to modify existing records in &lt;code&gt;bind&lt;/code&gt; or &lt;code&gt;commit&lt;/code&gt;.&lt;/p&gt;
+
+&lt;table&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;(&lt;code&gt;+=&lt;/code&gt;) Add value to attribute.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;chris.likes += “pizza”&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;(&lt;code&gt;-=&lt;/code&gt;) Remove value of attribute.
+
+&lt;strong&gt;Note&lt;/strong&gt;: An attribute with no values ceases to exist.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;chris.likes -= “eggplant”
+&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;(&lt;code&gt;:=&lt;/code&gt;) Set value of attribute.
+Set is the same as removing the current value(s) and adding the new value(s).&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;chris.age := 30&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;(&lt;code&gt;&lt;-&lt;/code&gt;) Merge pattern into record.
+Attributes from the pattern on the right overwrite those of the record on the left.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;chris &lt;- [eye-color: “green”, hair-color: “brown”]&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;The &lt;strong&gt;set&lt;/strong&gt; operator with the special value &lt;code&gt;none&lt;/code&gt; deletes entire attributes and records.
+
+&lt;strong&gt;Note&lt;/strong&gt;: This should usually be done in commits.&lt;/td&gt;
+    &lt;td&gt;&lt;code&gt;search
+chris = [#chris]
+
+commit
+chris.likes := none
+chris := none&lt;/code&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://docs-next.witheve.com/v0.3/README/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://docs-next.witheve.com/v0.3/README/</guid>
+      <description>
+
+&lt;p align=&#34;center&#34;&gt;
+  &lt;img src=&#34;http://www.witheve.com/logo.png&#34; alt=&#34;Eve logo&#34; width=&#34;10%&#34; /&gt;
+&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;documentation-for-the-eve-programming-language&#34;&gt;Documentation for the Eve programming language.&lt;/h1&gt;
+
+&lt;p&gt;You can learn more about Eve here: &lt;a href=&#34;http://witheve.com/&#34;&gt;http://witheve.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can play with Eve here: &lt;a href=&#34;http://play.witheve.com&#34;&gt;http://play.witheve.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Eve is under active development here: &lt;a href=&#34;https://github.com/witheve/Eve&#34;&gt;https://github.com/witheve/Eve&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;contributing&#34;&gt;Contributing&lt;/h2&gt;
+
+&lt;p&gt;There&amp;rsquo;s a lot of work to be done on the documentation, so this is a great place for beginners to get started with Eve. From fixing typos to adding examples, work needs to be done across the board here. Check out the &lt;a href=&#34;https://github.com/witheve/docs/issues&#34;&gt;issues&lt;/a&gt; for a place to start, as they have been raised already as points of improvement by the community. If someone is already assigned and the issue has been aroud a while, check to see if it&amp;rsquo;s being worked on before starting it yourself. Or, if you find an issue yourself, please report it so others know it exists. Thank you!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://docs-next.witheve.com/v0.3/guides/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://docs-next.witheve.com/v0.3/guides/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://docs-next.witheve.com/v0.3/handbook/core/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://docs-next.witheve.com/v0.3/handbook/core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://docs-next.witheve.com/v0.3/handbook/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://docs-next.witheve.com/v0.3/handbook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://docs-next.witheve.com/v0.3/tutorials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://docs-next.witheve.com/v0.3/tutorials/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Standard Library</title>
+      <link>http://docs-next.witheve.com/v0.3/handbook/libraries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://docs-next.witheve.com/v0.3/handbook/libraries/</guid>
+      <description>
+
+&lt;h1 id=&#34;standard-library&#34;&gt;Standard Library&lt;/h1&gt;
+
+&lt;h2 id=&#34;aggregates&#34;&gt;Aggregates&lt;/h2&gt;
+
+&lt;table&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;gather/sort&lt;/b&gt; - Generates an ordering for a set
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;for&lt;/strong&gt; - the set to sort&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;per&lt;/strong&gt; - (optional) - one or more attributes by which to group `for`&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;direction&lt;/strong&gt; - (optional) - direction in which to sort `for`. Possible values are:
+          &lt;ul class=&#34;arglist&#34;&gt;
+            &lt;li&gt;&#39;up&#39; - smallest to largest; default option&lt;/li&gt;
+            &lt;li&gt;&#39;down&#39; - largest to smallest&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// sorts the students by GPA
+[#student GPA]
+index = sort[for: GPA]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;gather/count&lt;/b&gt; - Returns the number of elements in a set
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;for&lt;/strong&gt; - the set to count over&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;per&lt;/strong&gt; - (optional) - one or more attributes by which to group `for`&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// counts the number of citizens in each state
+residents = [#citizen state]
+population = count[given: residents, per: state]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;gather/sum&lt;/b&gt; - Returns the sum of values in a set of attributes
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;for&lt;/strong&gt; - the set to gather&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;value&lt;/strong&gt; - the specific variable to be summed&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;per&lt;/strong&gt; - (optional) - one or more attributes by which to group `for`&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// returns the sum of salaries for each department
+employees = [#employee salary department]
+expenses = gather/sum[for: employees, value: employees.salary, per: department]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;+&lt;/b&gt; - Adds two numbers
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Infix notation
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;total-debt = credit-card + debit-card&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;-&lt;/b&gt; - Subtracts two numbers
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Infix notation
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;remaining-debt = total-debt - amount_paid&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;*&lt;/b&gt; - Multiplies two numbers
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Infix notation
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;yearly-payments = monthly-payments * 12&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;/&lt;/b&gt; - Divides two numbers
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Infix notation
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;monthly-payments = yearly-payments / 12&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/floor&lt;/b&gt; - Rounds a number down
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;value&lt;/strong&gt; - the number to be rounded down&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// x rounded down to 34
+x = math/floor[value: 34.2]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/ceiling&lt;/b&gt; - Rounds a number up
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;value&lt;/strong&gt; - the number to be rounded up&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// x rounded up to 35
+x = math/ceiling[value: 34.2]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/round&lt;/b&gt; - Rounds a number to the nearest integer
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;value&lt;/strong&gt; - the number to be rounded to the nearest integer&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// x rounded to 34
+x = math/floor[value: 34.2]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/sin&lt;/b&gt; - Sine of an angle
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;degrees&lt;/strong&gt; - the angle in degrees&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// r calculated to 1
+r = math/sin[degrees: 90]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/cos&lt;/b&gt; - Cosine of an angle
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;degrees&lt;/strong&gt; - the angle in degrees&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// r calculated to 0
+r = math/cos[degrees: 90]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/tan&lt;/b&gt; - Tangent of an angle
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;degrees&lt;/strong&gt; - the angle in degrees&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// r calculated to 1
+r = math/tan[degrees: 45]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/max&lt;/b&gt; - The greater of two values
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - a value to compare&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;b&lt;/strong&gt; - another value to compare&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// takes the higher score
+[#scores pac-man donkey-kong]
+best-score = math/min[a: pac-man, b: donkey-kong]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/min&lt;/b&gt; - The lesser of two values
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - a value to compare&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;b&lt;/strong&gt; - another value to compare&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// takes the lower score
+[#scores pac-man donkey-kong]
+worst-score = math/min[a: pac-man, b: donkey-kong]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/mod&lt;/b&gt; - Modulo division
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;value&lt;/strong&gt; - the number to be divided (dividend)&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;by&lt;/strong&gt; - the number by which to divide (divisor)&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// m is the remainder, 1
+m = math/mod[value: 5, by: 2]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/absolute&lt;/b&gt; - Absolute value of a number
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;value&lt;/strong&gt; - the number whose absolute value is found&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// number of hours from the prime meridian
+[#city latitude longitude]
+hours-from-gmt = math/absolute[value: latitude] / 15&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/to-fixed&lt;/b&gt; - Formats a number as a string to a certain number of decimal places
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the number to be formatted&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;b&lt;/strong&gt; - the number of decimal places to which `a` will be formatted&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// pi represented as the string &#34;3.14&#34;
+[#circle circumference diameter]
+pi = math/to-fixed[a: (circumference / diameter), b: 2]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/range&lt;/b&gt; - Generates a range of numbers
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;start&lt;/strong&gt; - the start of the range&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;stop&lt;/strong&gt; - the end of the range&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// generates integers 1 through 10
+y = math/range[start: 1, stop: 10]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;random/number&lt;/b&gt; - Generates a random number between 1 and 0
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;seed&lt;/strong&gt; - a number used to initialize the random number generator&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// generates a random number every second
+[#time minutes seconds]
+x = random/number[seed: seconds]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;strings&#34;&gt;Strings&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;string/replace&lt;/b&gt; - Replaces a string of text with another
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text in which to search for strings and replace them&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;replace&lt;/strong&gt; - the string to be replaced&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;with&lt;/strong&gt; - the string that will replace `replace`&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// Americanized version of British spelling
+[#website body]
+american-version = string/replace[text: body, replace: &#34;flavour&#34;, with: &#34;flavor&#34;]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;string/get&lt;/b&gt; - Gets a character from a specific location in a string
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text to be searched&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;at&lt;/strong&gt; - the location to be searched&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// finds the 17th letter of the alphabet
+alphabet = &#34;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#34;
+letter = string/get[text: alphabet, at: 17]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;string/uppercase&lt;/b&gt; -Converts a string to uppercase
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text to be converted&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;funny = &#34;lol&#34;
+really-funny = string/uppercase[text: funny]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;string/lowercase&lt;/b&gt; - Converts a string to lowercase
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text to be converted&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;really-funny = &#34;LOL&#34;
+down-a-notch = string/uppercase[text: really-funny]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;string/index-of&lt;/b&gt; - Returns the position of the first occurrence of a specified value in a string
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text to be searched&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;substring&lt;/strong&gt; - the string to be found in `text`&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// Eve is in developers, starting at an index of 2
+index = string/index-of[text: &#34;developers&#34;, substring: &#34;eve&#34;&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;string/codepoint-length&lt;/b&gt; - Returns the length of a string in Unicode code points.
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the string whose length is found&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// the code point length of the word &#34;unicode&#34;
+string = &#34;unicode&#34;
+length-in-js = string/codepoint-length[text: string]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

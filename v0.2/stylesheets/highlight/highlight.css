@@ -1,0 +1,46 @@
+.article pre {
+	color: black;
+	background-color: #f5f5f5;
+	border-left: 5px solid rgb(234, 234, 234);
+	padding-left: 15px;
+}
+
+.kr {
+  color: black;
+}
+
+.c1 {
+	color: #747474;
+}
+
+.nt {
+	color: rgb(0, 118, 206);
+}
+
+.s {
+  color: rgb(1, 165, 136);  	
+}
+
+.m {
+	color: rgb(1, 165, 136);  	
+}
+
+.l {
+	color: rgb(1, 165, 136);  	
+}
+
+.p {
+	color: gray;
+}
+
+.nf {
+	color: rgb(128, 128, 128);
+}
+
+.s2 {
+	color: rgb(1, 165, 136);  	
+}
+
+.x {
+	color: rgb(0, 0, 0);
+}

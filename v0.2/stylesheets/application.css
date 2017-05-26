@@ -1,0 +1,211 @@
+#eve-pallette {
+  /* Default */
+  color: rgb(74,64,136);
+  color: rgb(91,89,164);
+  color: rgb(107,103,173);
+  color: rgb(0,121,177);
+  color: rgb(0,158,224);
+  color: rgb(0,184,241);
+
+  /* Style 1 */
+  color: rgb(0, 115, 139);
+  color: rgb(0, 152, 167);
+  color: rgb(0, 171, 188);
+  color: rgb(140, 49, 55);
+  color: rgb(177, 67, 73);
+  color: rgb(226, 79, 94);
+
+  /* Style 2 */
+  color: rgb(85, 138, 126);
+  color: rgb(113, 177, 162);
+  color: rgb(128, 198, 182);
+  color: rgb(153, 114, 45);
+  color: rgb(198, 154, 63);
+  color: rgb(246, 192, 78);
+
+  /* Style 3 */
+  color: rgb(82, 129, 62);
+  color: rgb(111, 165, 81);
+  color: rgb(129, 191, 95);
+  color: rgb(0, 113, 140);
+  color: rgb(0, 151, 167);
+  color: rgb(0, 170, 190);
+
+  /* Style 4 */
+  color: rgb(60, 48, 130);
+  color: rgb(80, 79, 161);
+  color: rgb(98, 94, 169);
+  color: rgb(158, 34, 101);
+  color: rgb(216, 65, 140);
+  color: rgb(238, 81, 158);
+
+  /* Style 5 */
+  color: rgb(185, 73, 21);
+  color: rgb(216, 99, 27);
+  color: rgb(244, 119, 33);
+  color: rgb(197, 114, 21);
+  color: rgb(248, 158, 36);
+  color: rgb(251, 176, 49);
+
+  /* Style 6 */
+  color: rgb(124, 38, 118);
+  color: rgb(169, 59, 150);
+  color: rgb(200, 56, 150);
+  color: rgb(91, 34, 127);
+  color: rgb(126, 60, 151);
+  color: rgb(164, 95, 167);
+
+  /* Style 7 */
+  color: rgb(151, 150, 137);
+  color: rgb(183, 182, 167);
+  color: rgb(204, 202, 185);
+  color: rgb(88, 132, 150);
+  color: rgb(123, 164, 182);
+  color: rgb(145, 192, 214);
+}
+
+html, body {
+  font-family: Avenir, "Nelvetica Neue", sans-serif;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  color: rgb(85,85,85);
+  font-size: 15px;
+  background-color: #f5f5f5;
+}
+
+pre {
+  background-color: rgb(38,38,38);
+  padding: 20px;
+  padding-left: 10px;
+  overflow: auto;
+}
+
+code {
+  color: rgb(0, 121, 211);
+}
+
+blockquote {
+  color: rgb(125,125,125);
+  border-left: 3px solid rgb(200,200,200);
+  padding-left: 10px;
+}
+
+p {
+  line-height: 25px;
+}
+
+ul, ol {
+  line-height: 25px;
+}
+
+h1 {
+  font-size: 30px;
+  color: rgb(85, 85, 85);
+}
+
+h2 {
+  font-size: 25px;
+  color: rgb(85, 85, 85);
+  font-weight: bold;
+  line-height: 25px;
+}
+
+.logo {
+  width: 30%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.main {
+  display: flex;
+  align-items: stretch;
+  min-height: 100%;
+}
+
+.drawer {
+  background-color: #555;
+  color: rgb(187,187,187);
+  width: 280px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+}
+
+.drawer a {
+  color: rgb(187,187,187);
+}
+
+.article {
+  max-width: 750px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 30px;
+  background-color: white;
+}
+
+.article a {
+  color: rgb(0,158,224);
+}
+
+.article a::hover {
+  color: rgb(91,89,164);
+}
+
+.sidebar-menu {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.sidebar-menu a {
+  text-decoration: none;
+}
+
+.sidebar-menu li {
+
+}
+
+.sub {
+  margin: 0px;
+  padding: 0px;
+  padding-left: 20px;
+}
+
+.sub-menu {
+  margin-top: 20px;
+}
+
+.colored {
+  color: #eee;
+}
+
+.selected a {
+  color: rgb(145, 192, 214);
+}
+
+.active {
+
+}
+
+.active li {
+  display: inherit;
+}
+
+.dataTable {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.dataTable th {
+  font-weight: bold;
+  border: 1px solid #000;
+}
+
+.dataTable td {
+  border: 1px solid #000;
+  white-space: pre;
+  font-family: monospace;
+  padding: 5px;
+}
