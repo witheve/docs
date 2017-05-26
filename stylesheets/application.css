@@ -131,7 +131,7 @@ h2 {
 }
 
 li {
-  margin-left: 20px;  
+  margin-left: 20px;
 }
 
 .main {
@@ -172,6 +172,8 @@ li {
   color: rgb(91,89,164);
 }
 
+.landing { flex-direction: column; align-items: center;}
+
 .sidebar-menu {
   list-style: none;
   margin: 0px;
@@ -193,7 +195,7 @@ li {
 }
 
 b {
-  font-weight: bold;  
+  font-weight: bold;
 }
 
 .sub li {
@@ -292,22 +294,27 @@ nav > .play-cta { margin: 0; padding: 10px 20px; color: white; }
 .contact > *:last-child:hover { background: rgb(117, 115, 190); }
 .contact > *:last-child:active { background: rgb(142, 140, 215); }
 
+.version { display: flex; flex-direction: row; }
+
+.version-btn { margin: 0px 20px; }
+.version-btn h2 { margin-bottom: 0px; }
+
 ul { display: block; margin-left: 2em; }
 
 code { padding: 0.2em; white-space: pre-wrap; font-family: "Inconsolata", "Monaco", "Consolas", "Ubuntu Mono", monospace; font-size: 0.9rem; }
 
 strong { font-weight: 600; }
 
-table { 
-  border: 1px #888a8f solid; 
-  margin-bottom: 1em; 
-  min-width: 820px;   
+table {
+  border: 1px #888a8f solid;
+  margin-bottom: 1em;
+  min-width: 820px;
   border-collapse: collapse;
   border-spacing: 0;
 }
-td { 
-  border: 1px #AAA solid; 
-  width: 20em; 
+td {
+  border: 1px #AAA solid;
+  width: 20em;
   padding: 10px;
 }
 
