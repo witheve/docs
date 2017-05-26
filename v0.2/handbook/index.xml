@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Handbooks on Eve Documentation</title>
-    <link>http://docs-next.witheve.com/v0.2//handbook/</link>
+    <link>http://docs.witheve.com/v0.2/handbook/</link>
     <description>Recent content in Handbooks on Eve Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://docs-next.witheve.com/v0.2//handbook/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://docs.witheve.com/v0.2/handbook/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title></title>
-      <link>http://docs-next.witheve.com/v0.2//handbook/core/</link>
+      <link>http://docs.witheve.com/v0.2/handbook/core/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs-next.witheve.com/v0.2//handbook/core/</guid>
+      <guid>http://docs.witheve.com/v0.2/handbook/core/</guid>
       <description>
 
 &lt;h1 id=&#34;core-language&#34;&gt;Core Language&lt;/h1&gt;
@@ -26,10 +26,10 @@
     
     <item>
       <title></title>
-      <link>http://docs-next.witheve.com/v0.2//handbook/databases/</link>
+      <link>http://docs.witheve.com/v0.2/handbook/databases/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs-next.witheve.com/v0.2//handbook/databases/</guid>
+      <guid>http://docs.witheve.com/v0.2/handbook/databases/</guid>
       <description>
 
 &lt;h1 id=&#34;databases&#34;&gt;Databases&lt;/h1&gt;
@@ -134,10 +134,10 @@ commit @browser
     
     <item>
       <title></title>
-      <link>http://docs-next.witheve.com/v0.2//handbook/intro/</link>
+      <link>http://docs.witheve.com/v0.2/handbook/intro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs-next.witheve.com/v0.2//handbook/intro/</guid>
+      <guid>http://docs.witheve.com/v0.2/handbook/intro/</guid>
       <description>
 
 &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
@@ -168,10 +168,10 @@ commit @browser
     
     <item>
       <title></title>
-      <link>http://docs-next.witheve.com/v0.2//handbook/programs/</link>
+      <link>http://docs.witheve.com/v0.2/handbook/programs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs-next.witheve.com/v0.2//handbook/programs/</guid>
+      <guid>http://docs.witheve.com/v0.2/handbook/programs/</guid>
       <description>
 
 &lt;h1 id=&#34;eve-programs&#34;&gt;Eve Programs&lt;/h1&gt;
@@ -186,10 +186,10 @@ commit @browser
     
     <item>
       <title>Linux</title>
-      <link>http://docs-next.witheve.com/v0.2//handbook/linux/</link>
+      <link>http://docs.witheve.com/v0.2/handbook/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs-next.witheve.com/v0.2//handbook/linux/</guid>
+      <guid>http://docs.witheve.com/v0.2/handbook/linux/</guid>
       <description>
 
 &lt;h1 id=&#34;installing-eve-on-linux&#34;&gt;Installing Eve on Linux&lt;/h1&gt;
@@ -219,10 +219,10 @@ npm start
     
     <item>
       <title>Mac</title>
-      <link>http://docs-next.witheve.com/v0.2//handbook/mac/</link>
+      <link>http://docs.witheve.com/v0.2/handbook/mac/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs-next.witheve.com/v0.2//handbook/mac/</guid>
+      <guid>http://docs.witheve.com/v0.2/handbook/mac/</guid>
       <description>
 
 &lt;h1 id=&#34;installing-eve-on-mac&#34;&gt;Installing Eve on Mac&lt;/h1&gt;
@@ -243,10 +243,10 @@ npm start
     
     <item>
       <title>Standard Library</title>
-      <link>http://docs-next.witheve.com/v0.2//handbook/standard-library/</link>
+      <link>http://docs.witheve.com/v0.2/handbook/standard-library/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs-next.witheve.com/v0.2//handbook/standard-library/</guid>
+      <guid>http://docs.witheve.com/v0.2/handbook/standard-library/</guid>
       <description>
 
 &lt;h1 id=&#34;standard-library&#34;&gt;Standard Library&lt;/h1&gt;
@@ -267,10 +267,10 @@ npm start
     
     <item>
       <title>Windows</title>
-      <link>http://docs-next.witheve.com/v0.2//handbook/windows/</link>
+      <link>http://docs.witheve.com/v0.2/handbook/windows/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs-next.witheve.com/v0.2//handbook/windows/</guid>
+      <guid>http://docs.witheve.com/v0.2/handbook/windows/</guid>
       <description>
 
 &lt;h1 id=&#34;installing-eve-on-windows&#34;&gt;Installing Eve on Windows&lt;/h1&gt;
@@ -291,10 +291,10 @@ npm start
     
     <item>
       <title>abs</title>
-      <link>http://docs-next.witheve.com/v0.2//handbook/math/abs/</link>
+      <link>http://docs.witheve.com/v0.2/handbook/math/abs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs-next.witheve.com/v0.2//handbook/math/abs/</guid>
+      <guid>http://docs.witheve.com/v0.2/handbook/math/abs/</guid>
       <description>
 
 &lt;h1 id=&#34;abs&#34;&gt;abs&lt;/h1&gt;
@@ -335,10 +335,10 @@ npm start
     
     <item>
       <title>ceiling</title>
-      <link>http://docs-next.witheve.com/v0.2//handbook/math/ceil/</link>
+      <link>http://docs.witheve.com/v0.2/handbook/math/ceil/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs-next.witheve.com/v0.2//handbook/math/ceil/</guid>
+      <guid>http://docs.witheve.com/v0.2/handbook/math/ceil/</guid>
       <description>
 
 &lt;h1 id=&#34;ceiling&#34;&gt;ceiling&lt;/h1&gt;
@@ -379,10 +379,10 @@ npm start
     
     <item>
       <title>click</title>
-      <link>http://docs-next.witheve.com/v0.2//handbook/event/click/</link>
+      <link>http://docs.witheve.com/v0.2/handbook/event/click/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs-next.witheve.com/v0.2//handbook/event/click/</guid>
+      <guid>http://docs.witheve.com/v0.2/handbook/event/click/</guid>
       <description>
 
 &lt;h1 id=&#34;click&#34;&gt;click&lt;/h1&gt;
@@ -415,10 +415,10 @@ npm start
     
     <item>
       <title>cos</title>
-      <link>http://docs-next.witheve.com/v0.2//handbook/math/cos/</link>
+      <link>http://docs.witheve.com/v0.2/handbook/math/cos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs-next.witheve.com/v0.2//handbook/math/cos/</guid>
+      <guid>http://docs.witheve.com/v0.2/handbook/math/cos/</guid>
       <description>
 
 &lt;h1 id=&#34;cos&#34;&gt;cos&lt;/h1&gt;
@@ -463,10 +463,10 @@ npm start
     
     <item>
       <title>count</title>
-      <link>http://docs-next.witheve.com/v0.2//handbook/statistics/count/</link>
+      <link>http://docs.witheve.com/v0.2/handbook/statistics/count/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs-next.witheve.com/v0.2//handbook/statistics/count/</guid>
+      <guid>http://docs.witheve.com/v0.2/handbook/statistics/count/</guid>
       <description>
 
 &lt;h1 id=&#34;count&#34;&gt;count&lt;/h1&gt;
@@ -558,10 +558,10 @@ npm start
     
     <item>
       <title>fix</title>
-      <link>http://docs-next.witheve.com/v0.2//handbook/math/fix/</link>
+      <link>http://docs.witheve.com/v0.2/handbook/math/fix/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs-next.witheve.com/v0.2//handbook/math/fix/</guid>
+      <guid>http://docs.witheve.com/v0.2/handbook/math/fix/</guid>
       <description>
 
 &lt;h1 id=&#34;fix&#34;&gt;fix&lt;/h1&gt;
@@ -614,10 +614,10 @@ npm start
     
     <item>
       <title>floor</title>
-      <link>http://docs-next.witheve.com/v0.2//handbook/math/floor/</link>
+      <link>http://docs.witheve.com/v0.2/handbook/math/floor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs-next.witheve.com/v0.2//handbook/math/floor/</guid>
+      <guid>http://docs.witheve.com/v0.2/handbook/math/floor/</guid>
       <description>
 
 &lt;h1 id=&#34;floor&#34;&gt;floor&lt;/h1&gt;

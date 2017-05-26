@@ -2,36 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Handbooks on Eve Documentation</title>
-    <link>http://docs-next.witheve.com/v0.3/handbook/index.xml</link>
+    <link>http://docs.witheve.com/v0.3/handbook/index.xml</link>
     <description>Recent content in Handbooks on Eve Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://docs-next.witheve.com/v0.3/handbook/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://docs.witheve.com/v0.3/handbook/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title></title>
-      <link>http://docs-next.witheve.com/v0.3/handbook/core/</link>
+      <link>http://docs.witheve.com/v0.3/handbook/core/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs-next.witheve.com/v0.3/handbook/core/</guid>
+      <guid>http://docs.witheve.com/v0.3/handbook/core/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://docs-next.witheve.com/v0.3/handbook/</link>
+      <link>http://docs.witheve.com/v0.3/handbook/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs-next.witheve.com/v0.3/handbook/</guid>
+      <guid>http://docs.witheve.com/v0.3/handbook/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Standard Library</title>
-      <link>http://docs-next.witheve.com/v0.3/handbook/libraries/</link>
+      <link>http://docs.witheve.com/v0.3/handbook/libraries/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs-next.witheve.com/v0.3/handbook/libraries/</guid>
+      <guid>http://docs.witheve.com/v0.3/handbook/libraries/</guid>
       <description>
 
 &lt;h1 id=&#34;standard-library&#34;&gt;Standard Library&lt;/h1&gt;
