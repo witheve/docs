@@ -2,66 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://cmontella.github.io/docs/install/</loc>
+    <loc>https://docs-next.witheve.com/install/</loc>
   </url>
   
   <url>
-    <loc>https://cmontella.github.io/docs/tutorials/quickstart.eve/</loc>
+    <loc>https://docs-next.witheve.com/tutorials/quickstart.eve/</loc>
   </url>
   
   <url>
-    <loc>https://cmontella.github.io/docs/quickstart.eve/</loc>
+    <loc>https://docs-next.witheve.com/quickstart.eve/</loc>
   </url>
   
   <url>
-    <loc>https://cmontella.github.io/docs/</loc>
+    <loc>https://docs-next.witheve.com/</loc>
   </url>
   
   <url>
-    <loc>https://cmontella.github.io/docs/syntaxreference/</loc>
+    <loc>https://docs-next.witheve.com/syntaxreference/</loc>
   </url>
   
   <url>
-    <loc>https://cmontella.github.io/docs/README/</loc>
+    <loc>https://docs-next.witheve.com/README/</loc>
   </url>
   
   <url>
-    <loc>https://cmontella.github.io/docs/guides/</loc>
+    <loc>https://docs-next.witheve.com/guides/</loc>
   </url>
   
   <url>
-    <loc>https://cmontella.github.io/docs/handbook/core/</loc>
+    <loc>https://docs-next.witheve.com/handbook/core/</loc>
   </url>
   
   <url>
-    <loc>https://cmontella.github.io/docs/handbook/</loc>
+    <loc>https://docs-next.witheve.com/handbook/</loc>
   </url>
   
   <url>
-    <loc>https://cmontella.github.io/docs/tutorials/</loc>
+    <loc>https://docs-next.witheve.com/handbook/libraries/stdlib/</loc>
   </url>
   
   <url>
-    <loc>https://cmontella.github.io/docs/</loc>
+    <loc>https://docs-next.witheve.com/tutorials/</loc>
+  </url>
+  
+  <url>
+    <loc>https://docs-next.witheve.com/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cmontella.github.io/docs/guides/</loc>
+    <loc>https://docs-next.witheve.com/guides/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cmontella.github.io/docs/handbook/</loc>
+    <loc>https://docs-next.witheve.com/handbook/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://cmontella.github.io/docs/handbook/libraries/</loc>
+    <loc>https://docs-next.witheve.com/handbook/libraries/</loc>
   </url>
   
   <url>
-    <loc>https://cmontella.github.io/docs/tutorials/</loc>
+    <loc>https://docs-next.witheve.com/tutorials/</loc>
     <priority>0</priority>
   </url>
   
