@@ -9,16 +9,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Tutorials - Eve Documentation</title>
+    <title>Installation - Eve Documentation</title>
     <meta name="generator" content="Hugo 0.19" />
 
     
-    <link rel="canonical" href="http://docs.witheve.com/v0.3/tutorials/">
+    <link rel="canonical" href="http://docs.witheve.com/v0.3/install/">
     
     <meta name="author" content="Eve">
     
 
-    <meta property="og:url" content="http://docs.witheve.com/v0.3/tutorials/">
+    <meta property="og:url" content="http://docs.witheve.com/v0.3/install/">
     <meta property="og:title" content="Eve Documentation">
     
     <meta name="apple-mobile-web-app-title" content="Eve Documentation">
@@ -67,9 +67,6 @@
     <script src="http://docs.witheve.com/v0.3/javascripts/modernizr.js"></script>
 
     
-    <link href="http://docs.witheve.com/v0.3/tutorials/index.xml" rel="alternate" type="application/rss+xml" title="Eve Documentation" />
-    <link href="http://docs.witheve.com/v0.3/tutorials/index.xml" rel="feed" type="application/rss+xml" title="Eve Documentation" />
-    
 
   </head>
   <body class=" ">
@@ -93,9 +90,15 @@
   </header>
 </div>
 
-<main class="main">
-	<div class="drawer">
-		<div aria-label="Navigation">
+
+	
+	
+
+
+<main class="main layer-wrapper">
+	<div class="toplayer">
+		<div class="drawer">
+			<div aria-label="Navigation">
   
   <div class="scrollable">
     <div class="wrapper">
@@ -115,7 +118,7 @@
                   </a>
                   <ul class="sub">
                     
-                      <li><a href="http://docs.witheve.com/v0.3/install/"> Installation </a> </li>
+                      <li class="active selected"><a href="http://docs.witheve.com/v0.3/install/"> Installation </a> </li>
                       
                     
                       <li><a href="http://docs.witheve.com/v0.3/tutorials/quickstart.eve/"> Quickstart </a> </li>
@@ -143,25 +146,40 @@
     </div>
   </div>
 </div>
-	</div>
-
-	<article class="article">
-		<div class="wrapper">
-			<h1>Pages in Tutorial</h1>
-
-			
-			<a href="http://docs.witheve.com/v0.3/tutorials/" title="">
-				<h2></h2>
-			</a>
-
-			<br>
-			
-			<a href="http://docs.witheve.com/v0.3/tutorials/quickstart.eve/" title="Quickstart">
-				<h2>Quickstart</h2>
-			</a>
-
-			<br>
-			
 		</div>
-	</article>
+		<article class="article">
+			<div class="wrapper">
+
+				
+
+<h1 id="installation">Installation</h1>
+
+<p>Install <a href="https://nodejs.org/en/download/">Node</a> for your platform, then clone and build the Eve starter repository:</p>
+
+<pre><code>git clone git@github.com:witheve/eve-starter.git
+cd eve-starter
+npm install
+</code></pre>
+
+<h2 id="usage">Usage</h2>
+
+<p>You can start the program switcher, which allows you to browse included example programs:</p>
+
+<pre><code>npm start
+</code></pre>
+
+<p>Or you can run a specific program by providing its path as an argument:</p>
+
+<pre><code>npm start -- path/to/program.eve
+</code></pre>
+
+<p>To view other functionality of the starter, run</p>
+
+<pre><code>npm start -- --help
+</code></pre>
+
+
+			</div>
+		</article>
+	</div>
 </main>

@@ -2,657 +2,536 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Handbooks on Eve Documentation</title>
-    <link>http://docs.witheve.com/handbook/</link>
+    <link>http://docs.witheve.com/v0.3/handbook/index.xml</link>
     <description>Recent content in Handbooks on Eve Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://docs.witheve.com/handbook/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://docs.witheve.com/v0.3/handbook/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title></title>
-      <link>http://docs.witheve.com/handbook/core/</link>
+      <link>http://docs.witheve.com/v0.3/handbook/core/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs.witheve.com/handbook/core/</guid>
-      <description>
-
-&lt;h1 id=&#34;core-language&#34;&gt;Core Language&lt;/h1&gt;
-
-&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;../records&#34;&gt;records&lt;/a&gt; | &lt;a href=&#34;../equivalence&#34;&gt;equivalence&lt;/a&gt; | &lt;a href=&#34;../actions&#34;&gt;actions&lt;/a&gt; | &lt;a href=&#34;../expressions&#34;&gt;expressions&lt;/a&gt; | &lt;a href=&#34;../update-operators&#34;&gt;update operators&lt;/a&gt; | &lt;a href=&#34;../databases&#34;&gt;databases&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://docs.witheve.com/v0.3/handbook/core/</guid>
+      <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://docs.witheve.com/handbook/databases/</link>
+      <link>http://docs.witheve.com/v0.3/handbook/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs.witheve.com/handbook/databases/</guid>
-      <description>
-
-&lt;h1 id=&#34;databases&#34;&gt;Databases&lt;/h1&gt;
-
-&lt;p&gt;Databases contain records&lt;/p&gt;
-
-&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// search action&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@database1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;...&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@databaseN&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-
-&lt;span class=&#34;c1&#34;&gt;// Commit action&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;kr&#34;&gt;commit&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@database1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;...&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@databaseN&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-
-&lt;span class=&#34;c1&#34;&gt;// Bind action&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@database1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;...&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@databaseN&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;&amp;lt;action&amp;gt; @database&lt;/code&gt; performs the given action, one of &lt;code&gt;search&lt;/code&gt;, &lt;code&gt;bind&lt;/code&gt;, or &lt;code&gt;commit&lt;/code&gt;, on the union of the provided databases.&lt;/p&gt;
-
-&lt;p&gt;If no database is provided with an action, then that action is performed on the default &lt;code&gt;@session&lt;/code&gt; database.&lt;/p&gt;
-
-&lt;h2 id=&#34;creating-and-searching-databases&#34;&gt;Creating and Searching Databases&lt;/h2&gt;
-
-&lt;p&gt;You can create databases on-demand by simply committing a record to one. e.g.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;commit @my-database
-  [#my-record]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This block will create a new database called &amp;ldquo;my-database&amp;rdquo;, which will contain the newly committed record. You can now search for this record in your new database:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;search @my-database
-  [#my-record]
-
-bind @browser
-  [#div text: &amp;quot;Found a record!&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;special-databases&#34;&gt;Special Databases&lt;/h2&gt;
-
-&lt;p&gt;Eve has some built-in databases that have meaning to the runtime.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../session&#34;&gt;@session&lt;/a&gt; - the default database when no database is specified with an action.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../view&#34;&gt;@view&lt;/a&gt; - records committed to &lt;code&gt;@view&lt;/code&gt; are used to visualize data.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../event&#34;&gt;@event&lt;/a&gt; - contains events originating from the DOM&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../browser&#34;&gt;@browser&lt;/a&gt; - Eve clients running in the browser render applicable records in this &lt;code&gt;@browser&lt;/code&gt; as HTML elements.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../http&#34;&gt;@http&lt;/a&gt; - Stores records representing HTTP requests and responses&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-
-&lt;p&gt;Display the element that was clicked in the DOM&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@event&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#click&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#direct-target&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;element&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-
-&lt;span class=&#34;kr&#34;&gt;commit&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@browser&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#div&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;{{element}} was clicked.&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Commit some data in &lt;code&gt;@session&lt;/code&gt;, and then display it on a button click.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;commit
-  [#for-display text: &amp;quot;Hello&amp;quot;]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We are searching over three databases to complete this block.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;the &lt;code&gt;#click&lt;/code&gt; is in &lt;code&gt;@event&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;the &lt;code&gt;#button&lt;/code&gt; is in &lt;code&gt;@browser&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;the text for display is in &lt;code&gt;@session&lt;/code&gt;. This needs to be made explicit; since we are searching in other databases, &lt;code&gt;@session&lt;/code&gt; is not searched implicitly.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;search @event @browser @session
-  [#click element: [#button]]
-  [#for-display text]
-
-commit @browser
-  [#div text]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This block could have been written with two searches for the same effect:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;search @event @browser
-  [#click element: [#button]]
-
-search
-  [#for-display text]
-
-commit @browser
-  [#div text]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;../search&#34;&gt;search&lt;/a&gt; | &lt;a href=&#34;../bind&#34;&gt;bind&lt;/a&gt; | &lt;a href=&#34;../commit&#34;&gt;commit&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://docs.witheve.com/handbook/intro/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://docs.witheve.com/handbook/intro/</guid>
-      <description>
-
-&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
-
-&lt;h2 id=&#34;notable-features&#34;&gt;Notable Features&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Eve programs aren&amp;rsquo;t talking to a database, they &lt;em&gt;are&lt;/em&gt; the database. That means no plumbing, no impedance mismatch, and no extra infrastructure is needed.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Everything is data. The file system, http requests, the DOM&amp;hellip; That means everything can be queried and everything can be reacted to.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Eve&amp;rsquo;s semantics were built for concurrency, asynchrony, and distribution. There are no promises, or thread synchronizations, or borrows.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Eve programs practice literate programming, since there&amp;rsquo;s no incidental ordering imposed by the language.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Another result of a lack of ordering is that programs grow very organically through composition.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Eve programs are naturally tiny.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Correctness can be defined globally through integrity constraints, allowing people to safely contribute to an application without worrying about checking every possible invariant locally.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;../installation&#34;&gt;getting eve&lt;/a&gt; | &lt;a href=&#34;../running&#34;&gt;running eve&lt;/a&gt; | &lt;a href=&#34;../programs&#34;&gt;eve programs&lt;/a&gt; | &lt;a href=&#34;../core&#34;&gt;core language&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://docs.witheve.com/handbook/programs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://docs.witheve.com/handbook/programs/</guid>
-      <description>
-
-&lt;h1 id=&#34;eve-programs&#34;&gt;Eve Programs&lt;/h1&gt;
-
-&lt;p&gt;Coming soon&amp;hellip;&lt;/p&gt;
-
-&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;../model&#34;&gt;programming model&lt;/a&gt; | &lt;a href=&#34;../literate-programming&#34;&gt;literate programming&lt;/a&gt; | &lt;a href=&#34;../blocks&#34;&gt;blocks&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>http://docs.witheve.com/handbook/linux/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://docs.witheve.com/handbook/linux/</guid>
-      <description>
-
-&lt;h1 id=&#34;installing-eve-on-linux&#34;&gt;Installing Eve on Linux&lt;/h1&gt;
-
-&lt;p&gt;First, &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;download&lt;/a&gt; the Eve source. You&amp;rsquo;ll need a recent &lt;a href=&#34;https://nodejs.org&#34;&gt;node.js&lt;/a&gt; and then in the extracted Eve directory:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;npm install
-npm start
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then open &lt;code&gt;http://localhost:8080/&lt;/code&gt; in your browser.&lt;/p&gt;
-
-&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
-
-&lt;p&gt;Some distributions (most notably Ubuntu) have renamed &lt;code&gt;node&lt;/code&gt; to &lt;code&gt;nodejs&lt;/code&gt;. If this is the case, you&amp;rsquo;ll need to create a symlink that remaps nodejs back to node. e.g.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ln -s /usr/bin/nodejs /usr/bin/node
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then proceed with the installation as usual&lt;/p&gt;
-
-&lt;h2 id=&#34;see-also&#34;&gt;See also&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;../mac&#34;&gt;mac&lt;/a&gt; | &lt;a href=&#34;../windows&#34;&gt;windows&lt;/a&gt; | &lt;a href=&#34;../docker&#34;&gt;docker&lt;/a&gt; | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Mac</title>
-      <link>http://docs.witheve.com/handbook/mac/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://docs.witheve.com/handbook/mac/</guid>
-      <description>
-
-&lt;h1 id=&#34;installing-eve-on-mac&#34;&gt;Installing Eve on Mac&lt;/h1&gt;
-
-&lt;p&gt;First, &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;download&lt;/a&gt; the Eve source. You&amp;rsquo;ll need a recent &lt;a href=&#34;https://nodejs.org&#34;&gt;node.js&lt;/a&gt; and then in the extracted Eve directory:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;npm install
-npm start
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then open &lt;code&gt;http://localhost:8080/&lt;/code&gt; in your browser.&lt;/p&gt;
-
-&lt;h2 id=&#34;see-also&#34;&gt;See also&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;../linux&#34;&gt;linux&lt;/a&gt; | &lt;a href=&#34;../windows&#34;&gt;windows&lt;/a&gt; | &lt;a href=&#34;../docker&#34;&gt;docker&lt;/a&gt; | &lt;a href=&#34;../npm&#34;&gt;npm&lt;/a&gt; | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://docs.witheve.com/v0.3/handbook/</guid>
+      <description></description>
     </item>
     
     <item>
       <title>Standard Library</title>
-      <link>http://docs.witheve.com/handbook/standard-library/</link>
+      <link>http://docs.witheve.com/v0.3/handbook/libraries/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs.witheve.com/handbook/standard-library/</guid>
+      <guid>http://docs.witheve.com/v0.3/handbook/libraries/</guid>
       <description>
 
 &lt;h1 id=&#34;standard-library&#34;&gt;Standard Library&lt;/h1&gt;
 
-&lt;p&gt;The Eve standard library of functions is globally available, meaning you don&amp;rsquo;t have to reference a specific database to use these functions.&lt;/p&gt;
-
-&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../general&#34;&gt;general&lt;/a&gt; - General functions&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../math&#34;&gt;math&lt;/a&gt; - General mathematical and trigonometric functions&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../strings&#34;&gt;strings&lt;/a&gt; - Functions that manipulate strings&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../statistics&#34;&gt;statistics&lt;/a&gt; - Functions that calculate statistical measures on values&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../datetime&#34;&gt;date &amp;amp; time&lt;/a&gt; - Functions that get and manipulate date and time&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Windows</title>
-      <link>http://docs.witheve.com/handbook/windows/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://docs.witheve.com/handbook/windows/</guid>
-      <description>
-
-&lt;h1 id=&#34;installing-eve-on-windows&#34;&gt;Installing Eve on Windows&lt;/h1&gt;
-
-&lt;p&gt;First, &lt;a href=&#34;https://github.com/witheve/Eve/archive/master.zip&#34;&gt;download&lt;/a&gt; the Eve source. You&amp;rsquo;ll need a recent &lt;a href=&#34;https://nodejs.org&#34;&gt;node.js&lt;/a&gt; and then in the extracted Eve directory:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;npm install
-npm start
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then open &lt;code&gt;http://localhost:8080/&lt;/code&gt; in your browser.&lt;/p&gt;
-
-&lt;h2 id=&#34;see-also&#34;&gt;See also&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;../linux&#34;&gt;linux&lt;/a&gt; | &lt;a href=&#34;../mac&#34;&gt;mac&lt;/a&gt; | &lt;a href=&#34;../docker&#34;&gt;docker&lt;/a&gt; | &lt;a href=&#34;../npm&#34;&gt;npm&lt;/a&gt; | &lt;a href=&#34;../running&#34;&gt;running&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>abs</title>
-      <link>http://docs.witheve.com/handbook/math/abs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://docs.witheve.com/handbook/math/abs/</guid>
-      <description>
-
-&lt;h1 id=&#34;abs&#34;&gt;abs&lt;/h1&gt;
-
-&lt;p&gt;The absolute value of a number&lt;/p&gt;
-
-&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;value&lt;/code&gt; - a set of numbers&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;y = abs[value]&lt;/code&gt; returns the absolute value of the elements in &lt;code&gt;value&lt;/code&gt;. Every positive number is kept positive, but every negative number is made positive.&lt;/p&gt;
-
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-
-&lt;p&gt;Get the absolute value of a number&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;
-&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@browser&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#div&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Displays the number &lt;code&gt;3&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;../sign&#34;&gt;sign&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>ceiling</title>
-      <link>http://docs.witheve.com/handbook/math/ceil/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://docs.witheve.com/handbook/math/ceil/</guid>
-      <description>
-
-&lt;h1 id=&#34;ceiling&#34;&gt;ceiling&lt;/h1&gt;
-
-&lt;p&gt;Round a number up to the nearest integer.&lt;/p&gt;
-
-&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;ceiling&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;value&lt;/code&gt; - a set of numbers&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;y = ceiling[value]&lt;/code&gt; rounds the elements of &lt;code&gt;value&lt;/code&gt; up to the nearest integers.&lt;/p&gt;
-
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-
-&lt;p&gt;Calculate the ceiling of &lt;code&gt;34.2&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;ceiling&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;34&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;
-&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@browser&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#div&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The result is &lt;code&gt;35&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;../floor&#34;&gt;floor&lt;/a&gt; | &lt;a href=&#34;../fix&#34;&gt;fix&lt;/a&gt; | &lt;a href=&#34;../round&#34;&gt;round&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>click</title>
-      <link>http://docs.witheve.com/handbook/event/click/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://docs.witheve.com/handbook/event/click/</guid>
-      <description>
-
-&lt;h1 id=&#34;click&#34;&gt;click&lt;/h1&gt;
-
-&lt;p&gt;click event&lt;/p&gt;
-
-&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;[#click]
-[#click element]
-[#click #direct-target element]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;#direct-target&lt;/code&gt; - selects only directly clicked elements, as opposed to elements to which the event bubbles.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;element&lt;/code&gt; - the element that was clicked.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;When an element in the DOM is clicked, a &lt;code&gt;#click&lt;/code&gt; record is created in the &lt;code&gt;@event&lt;/code&gt; database.&lt;/p&gt;
-
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-
-&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>cos</title>
-      <link>http://docs.witheve.com/handbook/math/cos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://docs.witheve.com/handbook/math/cos/</guid>
-      <description>
-
-&lt;h1 id=&#34;cos&#34;&gt;cos&lt;/h1&gt;
-
-&lt;p&gt;Calculate the cosine of an angle&lt;/p&gt;
-
-&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;cos&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;radians&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;cos&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;degrees&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;radians&lt;/code&gt; - the angle in radians&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;degrees&lt;/code&gt; - the angle in degrees&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;y = cos[degrees]&lt;/code&gt; calculates the cosine of an input in degrees.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;y = cos[radians]&lt;/code&gt; calculates the cosine of an input in radians.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;cos&lt;/code&gt; operates element-wise on its inputs.&lt;/p&gt;
-
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-
-&lt;p&gt;Calculate the cosine of 90 degrees&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;cos&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;degrees&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;90&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;
-&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@browser&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#div&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;../sin&#34;&gt;sin&lt;/a&gt; | &lt;a href=&#34;../tan&#34;&gt;tan&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>count</title>
-      <link>http://docs.witheve.com/handbook/statistics/count/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://docs.witheve.com/handbook/statistics/count/</guid>
-      <description>
-
-&lt;h1 id=&#34;count&#34;&gt;count&lt;/h1&gt;
-
-&lt;p&gt;Returns the number of elements in a set&lt;/p&gt;
-
-&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;given&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;given&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;per&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;given&lt;/code&gt; - the set to count over&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;per&lt;/code&gt; - &lt;em&gt;optional&lt;/em&gt; - one or more attributes by which to group &lt;code&gt;given&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;y = count[given]&lt;/code&gt; counts the number of elements in &lt;code&gt;given&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;y = count[given, per]&lt;/code&gt; counts the number of elements in &lt;code&gt;given&lt;/code&gt;, grouped by the attribute(s) provided in &lt;code&gt;per&lt;/code&gt;. For instance, &lt;code&gt;class-size = count[given: students, per: grade]&lt;/code&gt; would count the number of students in each grade. You can group along multiple axes; the previous example could be extended to work across multiple schools by doing &lt;code&gt;class-size = count[given: students, per: (grade, school)]&lt;/code&gt;. See the examples section to see these in action.&lt;/p&gt;
-
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-
-&lt;p&gt;Before we get to the &lt;code&gt;count&lt;/code&gt; examples, let&amp;rsquo;s add some students. Each &lt;code&gt;#student&lt;/code&gt; has a &lt;code&gt;grade&lt;/code&gt; and a &lt;code&gt;school&lt;/code&gt;. Grades are one of 10, 11, or 12. Schools are one of &amp;ldquo;West&amp;rdquo; and &amp;ldquo;East&amp;rdquo;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;commit&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#student&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;Diedra&amp;quot;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;grade&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;school&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;West&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#student&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;Celia&amp;quot;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;grade&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;school&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;West&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#student&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;Michaela&amp;quot;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;grade&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;school&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;West&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#student&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;Jermaine&amp;quot;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;grade&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;school&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;West&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#student&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;Issac&amp;quot;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;grade&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;school&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;West&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#student&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;Jamar&amp;quot;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;grade&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;school&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;West&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#student&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;Yee&amp;quot;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;grade&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;school&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;East&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#student&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;Johanne&amp;quot;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;grade&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;school&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;East&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#student&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;Mertie&amp;quot;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;grade&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;school&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;East&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#student&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;Elmira&amp;quot;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;grade&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;school&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;East&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;First let&amp;rsquo;s count the total number of students in the school district.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;students&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#student&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;enrollment&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;given&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;students&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-
-&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@view&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#value&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;There are {{enrollment}} students in the district&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Now let&amp;rsquo;s count the number of students in each school.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;students&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#student&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;school&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;school&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;enrollment&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;given&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;students&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;per&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;school&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-
-&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@view&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#value&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;{{school-enrollment}} attend {{school}}&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;We could have similarly counted the number of students in each grade across the district.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;students&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#student&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;grade&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;grade&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;enrollment&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;given&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;students&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;per&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;grade&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-
-&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@view&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#value&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;{{grade-enrollment}} students are in {{grade}}th grade&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Finally, we can count the number of students per grade, per school.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;students&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#student&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;grade&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;school&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;grade&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;school&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;enrollment&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;given&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;students&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;per&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;grade&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;school&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-
-&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@view&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#value&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;{{grade-school-enrollment}} students are in {{grade}}th grade at {{school}}&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h3 id=&#34;example-usage&#34;&gt;Example Usage&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://play.witheve.com/#/examples/todomvc.eve&#34;&gt;TodoMVC&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://play.witheve.com/#/examples/tic-tac-toe.eve&#34;&gt;Tic-Tac-Toe&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;../../math/sum&#34;&gt;sum&lt;/a&gt; | &lt;a href=&#34;../../aggregates&#34;&gt;aggregates&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>fix</title>
-      <link>http://docs.witheve.com/handbook/math/fix/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://docs.witheve.com/handbook/math/fix/</guid>
-      <description>
-
-&lt;h1 id=&#34;fix&#34;&gt;fix&lt;/h1&gt;
-
-&lt;p&gt;Round a number toward zero.&lt;/p&gt;
-
-&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;fix&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;value&lt;/code&gt; - a set of numbers&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;y = fix[value]&lt;/code&gt; rounds the elements of &lt;code&gt;value&lt;/code&gt; toward zero. This means that negative numbers will be rounded up to the nearest integer, while positive numbers will be rounded down.&lt;/p&gt;
-
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-
-&lt;p&gt;Calculate the fix of &lt;code&gt;34.7&lt;/code&gt; and &lt;code&gt;-34.7&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;fix&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;34&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;z&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;fix&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;34&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-
-&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@browser&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#div&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;The fix of 34.7 is {{y}}&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#div&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;The fix of -34.7 is {{z}}&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;We see that the fix of &lt;code&gt;34.7&lt;/code&gt; is &lt;code&gt;34&lt;/code&gt;, while the fix of &lt;code&gt;-34.7&lt;/code&gt; is &lt;code&gt;-34&lt;/code&gt;. Compare this to rounding the numbers:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;round&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;34&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;z&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;round&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;34&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-
-&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@browser&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#div&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;The round of 34.7 is {{y}}&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#div&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;The round of -34.7 is {{z}}&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;We see that the round of &lt;code&gt;34.7&lt;/code&gt; is &lt;code&gt;35&lt;/code&gt;, while the round of &lt;code&gt;-34.7&lt;/code&gt; is &lt;code&gt;-35&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;../floor&#34;&gt;floor&lt;/a&gt; | &lt;a href=&#34;../ceil&#34;&gt;ceil&lt;/a&gt; | &lt;a href=&#34;../round&#34;&gt;round&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>floor</title>
-      <link>http://docs.witheve.com/handbook/math/floor/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://docs.witheve.com/handbook/math/floor/</guid>
-      <description>
-
-&lt;h1 id=&#34;floor&#34;&gt;floor&lt;/h1&gt;
-
-&lt;p&gt;Round a number down to the nearest integer.&lt;/p&gt;
-
-&lt;h2 id=&#34;syntax&#34;&gt;Syntax&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;floor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;attributes&#34;&gt;Attributes&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;value&lt;/code&gt; - a set of numbers&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;y = floor[value]&lt;/code&gt; rounds the elements of &lt;code&gt;value&lt;/code&gt; down to the nearest integers.&lt;/p&gt;
-
-&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
-
-&lt;p&gt;Calculate the floor of &lt;code&gt;34.2&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-eve&#34; data-lang=&#34;eve&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;search&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;floor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;34&lt;/span&gt;&lt;span class=&#34;x&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-
-&lt;span class=&#34;kr&#34;&gt;bind&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;@browser&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;#div&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;x&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The result is &lt;code&gt;34&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;ceil.md&#34;&gt;ceil&lt;/a&gt; | &lt;a href=&#34;fix.md&#34;&gt;fix&lt;/a&gt; | &lt;a href=&#34;round.md&#34;&gt;round&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;aggregates&#34;&gt;Aggregates&lt;/h2&gt;
+
+&lt;table&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;gather/sort&lt;/b&gt; - Generates an ordering for a set
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;for&lt;/strong&gt; - the set to sort&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;per&lt;/strong&gt; - (optional) - one or more attributes by which to group `for`&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;direction&lt;/strong&gt; - (optional) - direction in which to sort `for`. Possible values are:
+          &lt;ul class=&#34;arglist&#34;&gt;
+            &lt;li&gt;&#39;up&#39; - smallest to largest; default option&lt;/li&gt;
+            &lt;li&gt;&#39;down&#39; - largest to smallest&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// sorts the students by GPA
+[#student GPA]
+index = sort[for: GPA]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;gather/count&lt;/b&gt; - Returns the number of elements in a set
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;for&lt;/strong&gt; - the set to count over&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;per&lt;/strong&gt; - (optional) - one or more attributes by which to group `for`&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// counts the number of citizens in each state
+residents = [#citizen state]
+population = count[given: residents, per: state]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;gather/sum&lt;/b&gt; - Returns the sum of values in a set of attributes
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;for&lt;/strong&gt; - the set to gather&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;value&lt;/strong&gt; - the specific variable to be summed&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;per&lt;/strong&gt; - (optional) - one or more attributes by which to group `for`&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// returns the sum of salaries for each department
+employees = [#employee salary department]
+expenses = gather/sum[for: employees, value: employees.salary, per: department]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;+&lt;/b&gt; - Adds two numbers
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Infix notation
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;total-debt = credit-card + debit-card&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;-&lt;/b&gt; - Subtracts two numbers
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Infix notation
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;remaining-debt = total-debt - amount_paid&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;*&lt;/b&gt; - Multiplies two numbers
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Infix notation
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;yearly-payments = monthly-payments * 12&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;/&lt;/b&gt; - Divides two numbers
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      Infix notation
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;monthly-payments = yearly-payments / 12&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/floor&lt;/b&gt; - Rounds a number down
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;value&lt;/strong&gt; - the number to be rounded down&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// x rounded down to 34
+x = math/floor[value: 34.2]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/ceiling&lt;/b&gt; - Rounds a number up
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;value&lt;/strong&gt; - the number to be rounded up&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// x rounded up to 35
+x = math/ceiling[value: 34.2]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/round&lt;/b&gt; - Rounds a number to the nearest integer
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;value&lt;/strong&gt; - the number to be rounded to the nearest integer&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// x rounded to 34
+x = math/floor[value: 34.2]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/sin&lt;/b&gt; - Sine of an angle
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;degrees&lt;/strong&gt; - the angle in degrees&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// r calculated to 1
+r = math/sin[degrees: 90]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/cos&lt;/b&gt; - Cosine of an angle
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;degrees&lt;/strong&gt; - the angle in degrees&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// r calculated to 0
+r = math/cos[degrees: 90]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/tan&lt;/b&gt; - Tangent of an angle
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;degrees&lt;/strong&gt; - the angle in degrees&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// r calculated to 1
+r = math/tan[degrees: 45]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/max&lt;/b&gt; - The greater of two values
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - a value to compare&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;b&lt;/strong&gt; - another value to compare&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// takes the higher score
+[#scores pac-man donkey-kong]
+best-score = math/min[a: pac-man, b: donkey-kong]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/min&lt;/b&gt; - The lesser of two values
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - a value to compare&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;b&lt;/strong&gt; - another value to compare&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// takes the lower score
+[#scores pac-man donkey-kong]
+worst-score = math/min[a: pac-man, b: donkey-kong]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/mod&lt;/b&gt; - Modulo division
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;value&lt;/strong&gt; - the number to be divided (dividend)&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;by&lt;/strong&gt; - the number by which to divide (divisor)&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// m is the remainder, 1
+m = math/mod[value: 5, by: 2]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/absolute&lt;/b&gt; - Absolute value of a number
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;value&lt;/strong&gt; - the number whose absolute value is found&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// number of hours from the prime meridian
+[#city latitude longitude]
+hours-from-gmt = math/absolute[value: latitude] / 15&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/to-fixed&lt;/b&gt; - Formats a number as a string to a certain number of decimal places
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;a&lt;/strong&gt; - the number to be formatted&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;b&lt;/strong&gt; - the number of decimal places to which `a` will be formatted&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// pi represented as the string &#34;3.14&#34;
+[#circle circumference diameter]
+pi = math/to-fixed[a: (circumference / diameter), b: 2]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;math/range&lt;/b&gt; - Generates a range of numbers
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;start&lt;/strong&gt; - the start of the range&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;stop&lt;/strong&gt; - the end of the range&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// generates integers 1 through 10
+y = math/range[start: 1, stop: 10]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;random/number&lt;/b&gt; - Generates a random number between 1 and 0
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;seed&lt;/strong&gt; - a number used to initialize the random number generator&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// generates a random number every second
+[#time minutes seconds]
+x = random/number[seed: seconds]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;strings&#34;&gt;Strings&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;string/replace&lt;/b&gt; - Replaces a string of text with another
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text in which to search for strings and replace them&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;replace&lt;/strong&gt; - the string to be replaced&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;with&lt;/strong&gt; - the string that will replace `replace`&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// Americanized version of British spelling
+[#website body]
+american-version = string/replace[text: body, replace: &#34;flavour&#34;, with: &#34;flavor&#34;]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;string/get&lt;/b&gt; - Gets a character from a specific location in a string
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text to be searched&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;at&lt;/strong&gt; - the location to be searched&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// finds the 17th letter of the alphabet
+alphabet = &#34;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#34;
+letter = string/get[text: alphabet, at: 17]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;string/uppercase&lt;/b&gt; -Converts a string to uppercase
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text to be converted&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;funny = &#34;lol&#34;
+really-funny = string/uppercase[text: funny]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;string/lowercase&lt;/b&gt; - Converts a string to lowercase
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text to be converted&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;really-funny = &#34;LOL&#34;
+down-a-notch = string/uppercase[text: really-funny]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;string/index-of&lt;/b&gt; - Returns the position of the first occurrence of a specified value in a string
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the text to be searched&lt;/li&gt;
+        &lt;li&gt;&lt;strong&gt;substring&lt;/strong&gt; - the string to be found in `text`&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// Eve is in developers, starting at an index of 2
+index = string/index-of[text: &#34;developers&#34;, substring: &#34;eve&#34;&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td colspan=&#34;2&#34;&gt;
+      &lt;b&gt;string/codepoint-length&lt;/b&gt; - Returns the length of a string in Unicode code points.
+    &lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;ul class=&#34;arglist&#34;&gt;
+        &lt;li&gt;&lt;strong&gt;text&lt;/strong&gt; - the string whose length is found&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;code&gt;// the code point length of the word &#34;unicode&#34;
+string = &#34;unicode&#34;
+length-in-js = string/codepoint-length[text: string]&lt;/code&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
 </description>
     </item>
     

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-us">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Standard Library - Eve Documentation</title>
+    <meta name="generator" content="Hugo 0.19" />
+
+    
+    <link rel="canonical" href="http://docs.witheve.com/v0.3/handbook/libraries/">
+    
+    <meta name="author" content="Eve">
+    
+
+    <meta property="og:url" content="http://docs.witheve.com/v0.3/handbook/libraries/">
+    <meta property="og:title" content="Eve Documentation">
+    
+    <meta name="apple-mobile-web-app-title" content="Eve Documentation">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="http://docs.witheve.com/v0.3/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="http://docs.witheve.com/v0.3/images/favicon.png">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('http://docs.witheve.com/v0.3/fonts/icon.eot?52m981');
+        src: url('http://docs.witheve.com/v0.3/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+             url('http://docs.witheve.com/v0.3/fonts/icon.woff?52m981')
+               format('woff'),
+             url('http://docs.witheve.com/v0.3/fonts/icon.ttf?52m981')
+               format('truetype'),
+             url('http://docs.witheve.com/v0.3/fonts/icon.svg?52m981#icon')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="http://docs.witheve.com/v0.3/stylesheets/application.css">
+    <link rel="stylesheet" href="http://docs.witheve.com/v0.3/stylesheets/temporary.css">
+    <link rel="stylesheet" href="http://docs.witheve.com/v0.3/stylesheets/palettes.css">
+    <link rel="stylesheet" href="http://docs.witheve.com/v0.3/stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="http://docs.witheve.com/v0.3/javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class=" ">
+
+<div class="layer-wrapper header-wrapper">
+  <header class="layer">
+    <a href="http://witheve.com">
+    <div class="logo">
+      <img src="https://witheve.github.io/assets/images/logo_square.png" />
+      <h1><img alt="EVE" src="http://docs.witheve.com/v0.3/images/eve.svg" /></h1>
+    </div>
+    </a>
+    <div class="flex-spacer"></div>
+    <nav>
+      <a class="btn rounded cta secondary play-cta" href="http://play.witheve.com">Play</a>
+      
+      <a href="http://incidentalcomplexity.com">Blog</a>
+      <a href="http://docs.witheve.com">Docs</a>
+      <a href="https://groups.google.com/forum/#!forum/eve-talk">Community</a>
+    </nav>
+  </header>
+</div>
+
+
+	
+	
+
+
+<main class="main layer-wrapper">
+	<div class="toplayer">
+		<div class="drawer">
+			<div aria-label="Navigation">
+  
+  <div class="scrollable">
+    <div class="wrapper">
+      
+
+      
+      <div id="sidebar" class="nav-collapse">
+          <ul class="sidebar-menu">
+            
+            
+              
+                <li class="sub-menu active">
+                  <a href="http://docs.witheve.com/v0.3/" class="">
+                      
+                      <span class="colored">Introduction</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="http://docs.witheve.com/v0.3/install/"> Installation </a> </li>
+                      
+                    
+                      <li><a href="http://docs.witheve.com/v0.3/tutorials/quickstart.eve/"> Quickstart </a> </li>
+                      
+                    
+                      <li><a href="http://docs.witheve.com/v0.3/syntaxreference/"> Syntax Ref </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li>
+                  <a class="" href="http://docs.witheve.com/v0.3/handbook/libraries">
+                    
+                    <span class="colored">Library</span>
+                  </a>
+                </li>
+              
+            
+          </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+		</div>
+		<article class="article">
+			<div class="wrapper">
+
+				
+
+<h1 id="standard-library">Standard Library</h1>
+
+<h2 id="aggregates">Aggregates</h2>
+
+<table>
+
+  <tr>
+    <td colspan="2">
+      <b>gather/sort</b> - Generates an ordering for a set
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>for</strong> - the set to sort</li>
+        <li><strong>per</strong> - (optional) - one or more attributes by which to group `for`</li>
+        <li><strong>direction</strong> - (optional) - direction in which to sort `for`. Possible values are:
+          <ul class="arglist">
+            <li>'up' - smallest to largest; default option</li>
+            <li>'down' - largest to smallest</li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+    <td>
+      <code>// sorts the students by GPA
+[#student GPA]
+index = sort[for: GPA]</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>gather/count</b> - Returns the number of elements in a set
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>for</strong> - the set to count over</li>
+        <li><strong>per</strong> - (optional) - one or more attributes by which to group `for`</li>
+      </ul>
+    </td>
+    <td>
+      <code>// counts the number of citizens in each state
+residents = [#citizen state]
+population = count[given: residents, per: state]</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>gather/sum</b> - Returns the sum of values in a set of attributes
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>for</strong> - the set to gather</li>
+        <li><strong>value</strong> - the specific variable to be summed</li>
+        <li><strong>per</strong> - (optional) - one or more attributes by which to group `for`</li>
+      </ul>
+    </td>
+    <td>
+      <code>// returns the sum of salaries for each department
+employees = [#employee salary department]
+expenses = gather/sum[for: employees, value: employees.salary, per: department]</code>
+    </td>
+  </tr>
+</table>
+
+<h2 id="math">Math</h2>
+
+<table>
+  <tr>
+    <td colspan="2">
+      <b>+</b> - Adds two numbers
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Infix notation
+    </td>
+    <td>
+      <code>total-debt = credit-card + debit-card</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>-</b> - Subtracts two numbers
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Infix notation
+    </td>
+    <td>
+      <code>remaining-debt = total-debt - amount_paid</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>*</b> - Multiplies two numbers
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Infix notation
+    </td>
+    <td>
+      <code>yearly-payments = monthly-payments * 12</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>/</b> - Divides two numbers
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Infix notation
+    </td>
+    <td>
+      <code>monthly-payments = yearly-payments / 12</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>math/floor</b> - Rounds a number down
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>value</strong> - the number to be rounded down</li>
+      </ul>
+    </td>
+    <td>
+      <code>// x rounded down to 34
+x = math/floor[value: 34.2]</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>math/ceiling</b> - Rounds a number up
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>value</strong> - the number to be rounded up</li>
+      </ul>
+    </td>
+    <td>
+      <code>// x rounded up to 35
+x = math/ceiling[value: 34.2]</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>math/round</b> - Rounds a number to the nearest integer
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>value</strong> - the number to be rounded to the nearest integer</li>
+      </ul>
+    </td>
+    <td>
+      <code>// x rounded to 34
+x = math/floor[value: 34.2]</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>math/sin</b> - Sine of an angle
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>degrees</strong> - the angle in degrees</li>
+      </ul>
+    </td>
+    <td>
+      <code>// r calculated to 1
+r = math/sin[degrees: 90]</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>math/cos</b> - Cosine of an angle
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>degrees</strong> - the angle in degrees</li>
+      </ul>
+    </td>
+    <td>
+      <code>// r calculated to 0
+r = math/cos[degrees: 90]</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>math/tan</b> - Tangent of an angle
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>degrees</strong> - the angle in degrees</li>
+      </ul>
+    </td>
+    <td>
+      <code>// r calculated to 1
+r = math/tan[degrees: 45]</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>math/max</b> - The greater of two values
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>a</strong> - a value to compare</li>
+        <li><strong>b</strong> - another value to compare</li>
+      </ul>
+    </td>
+    <td>
+      <code>// takes the higher score
+[#scores pac-man donkey-kong]
+best-score = math/min[a: pac-man, b: donkey-kong]</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>math/min</b> - The lesser of two values
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>a</strong> - a value to compare</li>
+        <li><strong>b</strong> - another value to compare</li>
+      </ul>
+    </td>
+    <td>
+      <code>// takes the lower score
+[#scores pac-man donkey-kong]
+worst-score = math/min[a: pac-man, b: donkey-kong]</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>math/mod</b> - Modulo division
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>value</strong> - the number to be divided (dividend)</li>
+        <li><strong>by</strong> - the number by which to divide (divisor)</li>
+      </ul>
+    </td>
+    <td>
+      <code>// m is the remainder, 1
+m = math/mod[value: 5, by: 2]</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>math/absolute</b> - Absolute value of a number
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>value</strong> - the number whose absolute value is found</li>
+      </ul>
+    </td>
+    <td>
+      <code>// number of hours from the prime meridian
+[#city latitude longitude]
+hours-from-gmt = math/absolute[value: latitude] / 15</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>math/to-fixed</b> - Formats a number as a string to a certain number of decimal places
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>a</strong> - the number to be formatted</li>
+        <li><strong>b</strong> - the number of decimal places to which `a` will be formatted</li>
+      </ul>
+    </td>
+    <td>
+      <code>// pi represented as the string "3.14"
+[#circle circumference diameter]
+pi = math/to-fixed[a: (circumference / diameter), b: 2]</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>math/range</b> - Generates a range of numbers
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>start</strong> - the start of the range</li>
+        <li><strong>stop</strong> - the end of the range</li>
+      </ul>
+    </td>
+    <td>
+      <code>// generates integers 1 through 10
+y = math/range[start: 1, stop: 10]</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>random/number</b> - Generates a random number between 1 and 0
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>seed</strong> - a number used to initialize the random number generator</li>
+      </ul>
+    </td>
+    <td>
+      <code>// generates a random number every second
+[#time minutes seconds]
+x = random/number[seed: seconds]</code>
+    </td>
+  </tr>
+</table>
+
+<h2 id="strings">Strings</h2>
+
+<table>
+  <tr>
+    <td colspan="2">
+      <b>string/replace</b> - Replaces a string of text with another
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>text</strong> - the text in which to search for strings and replace them</li>
+        <li><strong>replace</strong> - the string to be replaced</li>
+        <li><strong>with</strong> - the string that will replace `replace`</li>
+      </ul>
+    </td>
+    <td>
+      <code>// Americanized version of British spelling
+[#website body]
+american-version = string/replace[text: body, replace: "flavour", with: "flavor"]</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>string/get</b> - Gets a character from a specific location in a string
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>text</strong> - the text to be searched</li>
+        <li><strong>at</strong> - the location to be searched</li>
+      </ul>
+    </td>
+    <td>
+      <code>// finds the 17th letter of the alphabet
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+letter = string/get[text: alphabet, at: 17]</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>string/uppercase</b> -Converts a string to uppercase
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>text</strong> - the text to be converted</li>
+      </ul>
+    </td>
+    <td>
+      <code>funny = "lol"
+really-funny = string/uppercase[text: funny]</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>string/lowercase</b> - Converts a string to lowercase
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>text</strong> - the text to be converted</li>
+      </ul>
+    </td>
+    <td>
+      <code>really-funny = "LOL"
+down-a-notch = string/uppercase[text: really-funny]</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>string/index-of</b> - Returns the position of the first occurrence of a specified value in a string
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>text</strong> - the text to be searched</li>
+        <li><strong>substring</strong> - the string to be found in `text`</li>
+      </ul>
+    </td>
+    <td>
+      <code>// Eve is in developers, starting at an index of 2
+index = string/index-of[text: "developers", substring: "eve"</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+      <b>string/codepoint-length</b> - Returns the length of a string in Unicode code points.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul class="arglist">
+        <li><strong>text</strong> - the string whose length is found</li>
+      </ul>
+    </td>
+    <td>
+      <code>// the code point length of the word "unicode"
+string = "unicode"
+length-in-js = string/codepoint-length[text: string]</code>
+    </td>
+  </tr>
+</table>
+
+
+			</div>
+		</article>
+	</div>
+</main>
