@@ -6,7 +6,7 @@ title: "Syntax Ref"
 weight: 3
 ---
 
-<link rel="stylesheet" type="text/css" href="style.css">
+# Syntax Reference
 
 ## Records and Patterns
 
@@ -159,9 +159,9 @@ not(person = [#employee])</code></td>
 
 ## If...Then and If...Else
 
-<table>
+<code>If</code> lets your block try multiple branches for a variable. If every branch has no matches, the block fails.
 
-  <tr><td><em><code>If</code> lets your block try multiple branches for a variable. If every branch has no matches, the block fails.</em></td></tr>
+<table>
 
   <tr>
     <td><code>If … else</code> lets you express ordered choice. <strong>Only the first branch</strong> with matches will contribute values to the variable.</td>
@@ -214,9 +214,9 @@ budgets = gather/sum[value: employee.salary,
 
 ## Update Operators
 
-<table>
+Besides creating new records, Eve has four operators to modify existing records in <code>bind</code> or <code>commit</code>.
 
-  <tr><td><em>Besides creating new records, Eve has four operators to modify existing records in <code>bind</code> or <code>commit</code>.</em></td></tr>
+<table>
 
   <tr>
     <td>(<code>+=</code>) Add value to attribute.</td>
@@ -256,3 +256,5 @@ chris := none</code></td>
   </tr>
 
 </table>
+
+<link rel="stylesheet" type="text/css" href="http://localhost:1313/docs/handbook/libraries/style.css">
