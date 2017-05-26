@@ -296,8 +296,8 @@ nav > .play-cta { margin: 0; padding: 10px 20px; color: white; }
 
 .version { display: flex; flex-direction: row; }
 
-.version-btn { margin: 0px 20px; }
-.version-btn h2 { margin-bottom: 0px; }
+.version-btn { margin: 0px 20px; font-size: 1.2rem; min-width: 11em; }
+.wrapper h2 { text-align: center; }
 
 ul { display: block; margin-left: 2em; }
 
