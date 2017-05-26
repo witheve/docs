@@ -127,7 +127,6 @@ h1 {
 h2 {
   font-size: 25px;
   padding-top: 0px;
-  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -143,8 +142,6 @@ li {
 
 .drawer {
   color: rgb(85, 85, 85);
-  padding-left: 10px;
-  padding-right: 60px;
   padding-bottom: 20px;
 
 }
@@ -164,6 +161,7 @@ li {
 
 .article {
   padding-left: 50px;
+  padding-bottom: 200px;
 }
 
 .article a {
@@ -185,7 +183,7 @@ li {
 }
 
 .sidebar-menu li {
-
+  margin-left: 0px;
 }
 
 .sub {
@@ -199,7 +197,7 @@ li {
 }
 
 .sub-menu {
-  margin-top: 20px;
+
 }
 
 .selected a {
@@ -289,3 +287,18 @@ nav > .play-cta { margin: 0; padding: 10px 20px; color: white; }
 .contact > *:last-child { background: rgb(74, 64, 136); }
 .contact > *:last-child:hover { background: rgb(117, 115, 190); }
 .contact > *:last-child:active { background: rgb(142, 140, 215); }
+
+ul { display: block; margin-left: 2em; }
+
+code { padding: 0.2em; background: #f0f2f7; white-space: pre-wrap; font-family: "Inconsolata", "Monaco", "Consolas", "Ubuntu Mono", monospace; font-size: 0.9rem; }
+
+strong { font-weight: 600; }
+
+table { 
+  border: 1px black solid; 
+  margin-bottom: 1em; 
+  min-width: 820px;   
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td { border: 1px black solid; width: 20em; }
