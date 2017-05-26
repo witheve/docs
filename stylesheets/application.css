@@ -97,7 +97,7 @@ pre {
 }
 
 code {
-  color: rgb(0, 121, 211);
+  color: rgb(226, 79, 94);
 }
 
 blockquote {
@@ -143,7 +143,7 @@ li {
 .drawer {
   color: rgb(85, 85, 85);
   padding-bottom: 20px;
-
+  padding-top: 10px;
 }
 
 .highlight {
@@ -192,6 +192,10 @@ li {
   margin-bottom: 20px;
 }
 
+b {
+  font-weight: bold;  
+}
+
 .sub li {
   margin: 0px;
 }
@@ -201,7 +205,7 @@ li {
 }
 
 .selected a {
-  color: rgb(145, 192, 214);
+  color: rgb(226, 79, 94);
 }
 
 .active {
@@ -290,15 +294,24 @@ nav > .play-cta { margin: 0; padding: 10px 20px; color: white; }
 
 ul { display: block; margin-left: 2em; }
 
-code { padding: 0.2em; background: #f0f2f7; white-space: pre-wrap; font-family: "Inconsolata", "Monaco", "Consolas", "Ubuntu Mono", monospace; font-size: 0.9rem; }
+code { padding: 0.2em; white-space: pre-wrap; font-family: "Inconsolata", "Monaco", "Consolas", "Ubuntu Mono", monospace; font-size: 0.9rem; }
 
 strong { font-weight: 600; }
 
 table { 
-  border: 1px black solid; 
+  border: 1px #888a8f solid; 
   margin-bottom: 1em; 
   min-width: 820px;   
   border-collapse: collapse;
   border-spacing: 0;
 }
-td { border: 1px black solid; width: 20em; }
+td { 
+  border: 1px #AAA solid; 
+  width: 20em; 
+  padding: 10px;
+}
+
+.arglist {
+  list-style: none;
+  margin-left: 0px;
+}
