@@ -8,7 +8,7 @@ weight: 1
 
 # Quickstart
 
-In this guide we're going to give you a 5 minute introduction to the essential concepts in Eve. If you've never used Eve before, you're in the right place.
+In this guide we're going to give you a 5 minute introduction to the essential concepts in Eve. If you've never used Eve before, you're in the right place!
 
 ## Adding records to Eve
 
