@@ -8,18 +8,20 @@ weight: 1
 
 # Quickstart
 
-In this guide we're going to give you a 5 minute introduction to the essential concepts in Eve. If you've never used Eve before, you're in the right place!
+In this guide we're going to give you a 5 minute introduction to the essential concepts in Eve. If you've never used Eve before, you're in the right place. Before you start with this tutorial, please follow the [installation and usage](../install) instructions, which will get you running Eve on your machine.
 
 ## Adding records to Eve
 
-Eve represents data as records, which are key value pairs attached to a unique ID. Eve programs are made up of small composable blocks that search for and create records. Let's start with a block that adds a record to Eve:
+Eve programs are made up of small, composasble blocks of code that are embedded in a Markdown document. Eve blocks (delineated by a Markdown code fence) search for and create records, which are key value pairs attached to a unique ID. Let's start with a block that adds a record to Eve (we'll show the code fence in this block, but elide them in later blocks):
 
-~~~eve
+``````
+~~~
 commit
   [#greeting text: "hello world"]
 ~~~
+``````
 
-This record is tagged `#greeting`, and has an attribute "text" with the value "hello world". Although tags have a special syntax, they are attributes like any other. We encourage you to classify groups of related records with tags.
+This record committed by this block is tagged `#greeting`, and has an attribute "text" with the value "hello world". Although tags have a special syntax, they are attributes like any other. We encourage you to classify groups of related records with tags.
 
 ## Finding records in Eve
 
@@ -99,10 +101,10 @@ That's it for the 5 minute introduction to Eve. To summarize:
 
 This will get you started with Eve, but there's still more to learn. From here, you can:
 
-- Advance to Level 2 of the introductory tutorial.
-- View the syntax reference or the Eve handbook.
-- Explore already made examples.
-- Or dive right in to the editor and try out the concepts you've just learned.
+- Advance to Level 2 of the introductory tutorial (coming soon).
+- View the [syntax reference](../syntaxreference) or the [library reference](../handbook/libraries).
+- Explore already made [examples](https://github.com/witheve/eve-examples).
+- Or dive right in to the editor and try out the concepts you've just learned (coming soon).
 
 ## Appendix
 
