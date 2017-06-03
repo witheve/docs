@@ -35,7 +35,7 @@ bind
   [#ui/text text: message]
 ~~~
 
-Variables with the same name are equivalent within a block; because they have the same name, the `message` in `[#greeting message]` and `[#ui/text message]` are equivalent. Go ahead and add another `#greeting` record to the first block to see what happens when more than one record matches the search. 
+Variables with the same name are equivalent within a block; because they have the same name, the `message` in `[#greeting message]` and `[#ui/text text: message]` are equivalent. Go ahead and add another `#greeting` record to the first block to see what happens when more than one record matches the search. 
 
 ## Records update as data changes
 
