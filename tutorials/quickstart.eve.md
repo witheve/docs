@@ -17,11 +17,11 @@ Eve programs are made up of small, composasble blocks of code that are embedded 
 ``````
 ~~~
 commit
-  [#greeting text: "hello world"]
+  [#greeting message: "hello world"]
 ~~~
 ``````
 
-This record committed by this block is tagged `#greeting`, and has an attribute "text" with the value "hello world". Although tags have a special syntax, they are attributes like any other. We encourage you to classify groups of related records with tags.
+This record committed by this block is tagged `#greeting`, and has an attribute "message" with the value "hello world". Although tags have a special syntax, they are attributes like any other. We encourage you to classify groups of related records with tags.
 
 ## Finding records in Eve
 
@@ -29,13 +29,13 @@ Eve finds every record that matches the supplied patterns, then binds new record
 
 ~~~eve
 search
-  [#greeting text]
+  [#greeting message]
 
 bind
-  [#ui/text text]
+  [#ui/text text: message]
 ~~~
 
-Variables with the same name are equivalent within a block; because they have the same name, the `text` in `[#greeting text]` and `[#ui/text text]` are equivalent. Go ahead and add another `#greeting` record to the first block to see what happens when more than one record matches the search. 
+Variables with the same name are equivalent within a block; because they have the same name, the `message` in `[#greeting message]` and `[#ui/text text: message]` are equivalent. Go ahead and add another `#greeting` record to the first block to see what happens when more than one record matches the search. 
 
 ## Records update as data changes
 
