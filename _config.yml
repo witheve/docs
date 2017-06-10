@@ -1,0 +1,5 @@
+permalink: pretty
+markdown: kramdown
+timezone: America/Los_Angeles
+future: true
+url: https://docs-next.witheve.com
