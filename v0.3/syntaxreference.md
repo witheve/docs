@@ -3,7 +3,7 @@ layout: default
 title: Syntax Reference
 ---
 
-<link rel="stylesheet" type="text/css" href="{{ site.url}}/css/style.css">
+# Syntax Reference
 
 ## Records and Patterns
 
@@ -55,9 +55,7 @@ bind
   </tr>
 </table>
 
-<h2>
-  Program Structure: Search, Bind, and Commit
-</h2>
+## Program Structure: Search, Bind, and Commit
 
 <table>
 
@@ -103,9 +101,7 @@ commit
 
 </table>
 
-<h2>
-  Equivalence and Filtering
-</h2>
+## Equivalence and Filtering
 
 <table>
 
@@ -140,7 +136,6 @@ cube.depth > 30 // Filter with dot notation.</code></td>
 
 </table>
 
-
 ## Not
 
 <table>
@@ -156,9 +151,9 @@ not(person = [#employee])</code></td>
 
 ## If...Then and If...Else
 
-<table>
+<p><code>If</code> lets your block try multiple branches for a variable. If every branch has no matches, the block fails.</p>
 
-  <tr><td><em><code>If</code> lets your block try multiple branches for a variable. If every branch has no matches, the block fails.</em></td></tr>
+<table>
 
   <tr>
     <td><code>If … else</code> lets you express ordered choice. <strong>Only the first branch</strong> with matches will contribute values to the variable.</td>
@@ -211,9 +206,9 @@ budgets = gather/sum[value: employee.salary,
 
 ## Update Operators
 
-<table>
+<p>Besides creating new records, Eve has four operators to modify existing records in <code>bind</code> or <code>commit</code>.</p>
 
-  <tr><td><em>Besides creating new records, Eve has four operators to modify existing records in <code>bind</code> or <code>commit</code>.</em></td></tr>
+<table>
 
   <tr>
     <td>(<code>+=</code>) Add value to attribute.</td>
@@ -253,3 +248,4 @@ chris := none</code></td>
   </tr>
 
 </table>
+
