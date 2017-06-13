@@ -12,7 +12,7 @@ Expressions and actions in Eve work over sets.
 
 ## Description
 
-[Sets](https://en.wikipedia.org/wiki/Set_(mathematics)) are unordered collections where every element of the collection is unique. For example, `("a", "b", "c")` is a set, while `("a", "a", "b", "c")` is not. Furthermoer, `("a", "b", "c")` and `("c", "b", "a")` are equivalent sets, even though the order of elements is different.
+[Sets](https://en.wikipedia.org/wiki/Set_(mathematics)) are unordered collections where every element of the collection is unique. For example, `("a", "b", "c")` is a set, while `("a", "a", "b", "c")` is not. Furthermore, `("a", "b", "c")` and `("c", "b", "a")` are equivalent sets, even though the order of elements is different.
 
 ## Examples
 
