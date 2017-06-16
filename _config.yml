@@ -4,3 +4,4 @@ timezone: America/Los_Angeles
 future: true
 url: http://docs-next.witheve.com
 markdown_ext: "markdown,mkdown,mkdn,mkd,md,eve"
+github: [metadata]
