@@ -7,7 +7,7 @@ title: "Standard Library"
 
 ## Aggregates
 
-<table>
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>gather/sort</b> - Generates an ordering for a set
@@ -33,7 +33,9 @@ title: "Standard Library"
         index = sort[for: GPA]</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>gather/count</b> - Returns the number of elements in a set
@@ -52,7 +54,9 @@ title: "Standard Library"
         population = count[given: residents, per: state]</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>gather/sum</b> - Returns the sum of values in a set of attributes
@@ -77,7 +81,7 @@ title: "Standard Library"
 
 ## Math
 
-<table>
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>+</b> - Adds two numbers
@@ -92,7 +96,9 @@ title: "Standard Library"
       <code>total-debt = credit-card + debit-card</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>-</b> - Subtracts two numbers
@@ -107,7 +113,9 @@ title: "Standard Library"
       <code>remaining-debt = total-debt - amount_paid</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>*</b> - Multiplies two numbers
@@ -122,7 +130,9 @@ title: "Standard Library"
       <code>yearly-payments = monthly-payments * 12</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>/</b> - Divides two numbers
@@ -137,7 +147,9 @@ title: "Standard Library"
       <code>monthly-payments = yearly-payments / 12</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>math/floor</b> - Rounds a number down
@@ -155,7 +167,9 @@ title: "Standard Library"
         x = math/floor[value: 34.2]</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>math/ceiling</b> - Rounds a number up
@@ -173,7 +187,9 @@ title: "Standard Library"
         x = math/ceiling[value: 34.2]</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>math/round</b> - Rounds a number to the nearest integer
@@ -191,7 +207,9 @@ title: "Standard Library"
         x = math/floor[value: 34.2]</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>math/sin</b> - Sine of an angle
@@ -209,7 +227,9 @@ title: "Standard Library"
         r = math/sin[degrees: 90]</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>math/cos</b> - Cosine of an angle
@@ -227,7 +247,9 @@ title: "Standard Library"
         r = math/cos[degrees: 90]</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>math/tan</b> - Tangent of an angle
@@ -245,7 +267,9 @@ title: "Standard Library"
         r = math/tan[degrees: 45]</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>math/max</b> - The greater of two values
@@ -265,7 +289,9 @@ title: "Standard Library"
         best-score = math/min[a: pac-man, b: donkey-kong]</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>math/min</b> - The lesser of two values
@@ -285,7 +311,9 @@ title: "Standard Library"
         worst-score = math/min[a: pac-man, b: donkey-kong]</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>math/mod</b> - Modulo division
@@ -304,7 +332,9 @@ title: "Standard Library"
         m = math/mod[value: 5, by: 2]</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>math/absolute</b> - Absolute value of a number
@@ -323,7 +353,9 @@ title: "Standard Library"
         hours-from-gmt = math/absolute[value: latitude] / 15</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>math/to-fixed</b> - Formats a number as a string to a certain number of decimal places
@@ -343,7 +375,9 @@ title: "Standard Library"
         pi = math/to-fixed[a: (circumference / diameter), b: 2]</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>math/range</b> - Generates a range of numbers
@@ -362,7 +396,9 @@ title: "Standard Library"
         y = math/range[start: 1, stop: 10]</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>random/number</b> - Generates a random number between 1 and 0
@@ -385,7 +421,7 @@ title: "Standard Library"
 
 ## Strings
 
-<table>
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>string/replace</b> - Replaces a string of text with another
@@ -406,7 +442,9 @@ title: "Standard Library"
         american-version = string/replace[text: body, replace: "flavour", with: "flavor"]</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>string/get</b> - Gets a character from a specific location in a string
@@ -426,7 +464,9 @@ title: "Standard Library"
         letter = string/get[text: alphabet, at: 17]</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>string/uppercase</b> -Converts a string to uppercase
@@ -444,7 +484,9 @@ title: "Standard Library"
         really-funny = string/uppercase[text: funny]</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>string/lowercase</b> - Converts a string to lowercase
@@ -462,7 +504,9 @@ title: "Standard Library"
         down-a-notch = string/uppercase[text: really-funny]</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>string/index-of</b> - Returns the position of the first occurrence of a specified value in a string
@@ -481,7 +525,9 @@ title: "Standard Library"
         index = string/index-of[text: "developers", substring: "eve"</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>string/codepoint-length</b> - Returns the length of a string in Unicode code points.
@@ -506,7 +552,7 @@ title: "Standard Library"
 
 The HTML library is a low level interface for creating HTML elements and responding to events in the browser.
 
-<table>
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#html/element</b> - renders a record in the browser as an html element of your choosing
@@ -532,7 +578,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>Dynamic class record</b> - uses boolean logic to determine whether an element has a certain class
@@ -557,7 +605,9 @@ bind
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#html/listener/hover</b> - adds a listener to an html element to make it responsive when it is being hovered over in browser; required to use the <code>#html/hovered</code>, <code>#html/event/hover-in</code>, and <code>#html/event/hover-out</code> tags
@@ -578,7 +628,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#html/hovered</b> - a tag given by Eve to an html element being currently hovered over; requires <code>#html/listener/hover</code>
@@ -602,7 +654,9 @@ bind
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#html/event/(hover-in, hover-out)</b> - monitors when the mouse enters or leaves a particular element in the browser; requires <code>#html/listener/hover</code>
@@ -627,7 +681,9 @@ bind
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#html/event/change</b> - monitors specific changes in text input or form elements in the browser
@@ -653,7 +709,9 @@ bind
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#html/event/(click, double-click, mouse-down, mouse-up)</b> - monitors mouse events in the browser; <code>#html/event/click</code> and <code>#html/event/double-click</code> currently work for the left mouse button only
@@ -686,7 +744,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#html/listener/context-menu</b> - prevents the context menu from opening when an element is right clicked in the browser; useful in cases where you want to use right clicks on the element for your own purposes
@@ -707,7 +767,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#html/event/(key-up, key-down)</b> - monitors when a key has been pressed or released
@@ -747,7 +809,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#html/event/(focus, blur)</b> - monitors when a form element in the browser either gains or loses focus
@@ -772,7 +836,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#html/trigger/(focus, blur)</b> - focuses or blurs a specific form element in the browser; must be used only with commit, not bind
@@ -805,7 +871,7 @@ commit
 
 The canvas library is an interface for drawing graphics in the browser using the [HTML canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API).
 
-<table>
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#canvas/root</b> - creates an HTML canvas for drawing rich graphics
@@ -827,7 +893,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#canvas/path</b> - defines the paths that are drawn as well as their style and appearance
@@ -867,12 +935,13 @@ commit
 ```</code>
     </td>
   </tr>
-
   <tr>
     <td colspan="2">
       <strong>Note about operations:</strong> Each individual path is written as a child record of #canvas/path with a type attribute whose value defines the path. No tags are necessary. Paths are drawn by default in the order they are given as children, such that the last child will appear on top of all the others, and the first child will be at the bottom. Adding a sort attribute to a child path allows you to manually define the order in which they are drawn. Paths originate in the upper left corner, so x coordinates originate at the left edge of the canvas and move to the right, and y coordinates originate at the top edge of the canvas and move to the bottom. Eve canvas operations follow the same rules as those outlined by <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D">Mozilla Developer Network for canvas rendering</a>, making it an excellent source of further documentation.</td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>moveTo</b> - moves the path to a specified location without drawing a line; the default starting coordinates are (0,0)
@@ -895,7 +964,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>lineTo</b> - moves the path to a specified location and draws a line; the default starting coordinates are (0,0)
@@ -918,7 +989,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>bezierQuadraticCurveTo</b> - draws a Bézier curve
@@ -946,7 +1019,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>quadraticCurveTo</b> - draws a quadratic curve
@@ -965,7 +1040,9 @@ commit
     <td><code></code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>arc</b> - draws an arc curve
@@ -992,7 +1069,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>arcTo</b> - draws an arc curve; particularly useful for creating an arc between two tangents
@@ -1020,7 +1099,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>ellipse</b> - draws an elliptical curve
@@ -1049,7 +1130,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>rect</b> - draws a rectangle
@@ -1074,7 +1157,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>closePath</b> - draws a line from the position of the path back to the beginning of the path
@@ -1103,11 +1188,11 @@ commit
 
 ## UI
 
-The UI library provides a shorthand for adding standard HTML elements, as well as some ready-made components for interactive apps, to the browser. The ready-made UI components - ```#ui/button```, ```#ui/column```, ```#ui/row```, and ```#ui/autocomplete``` - come with a set of default styles to make them quicker and easier to get started with.
+The UI library provides a shorthand for adding standard HTML elements, as well as some ready-made components for interactive apps, to the browser. The ready-made UI components - `#ui/button`, `#ui/column`, `#ui/row`, and `#ui/autocomplete` - come with a set of default styles to make them quicker and easier to get started with.
 
-**Note**: In the future we are considering moving all of the HTML shortcuts from ```#ui``` to ```#html```, so that ```#ui``` will have only the pre-styled components for building apps. If and when this change happens, it will be announced and the documentation will change to reflect it.
+**Note**: In the future we are considering moving all of the HTML shortcuts from `#ui` to `#html`, so that `#ui` will have only the pre-styled components for building apps. If and when this change happens, it will be announced and the documentation will change to reflect it.
 
-<table>
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#ui/...</b> - renders a record in the browser as an html element of your choosing
@@ -1152,7 +1237,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#ui/(column, row)</b> - renders a column or row in the browser whose children are drawn vertically for #ui/column and horizontally for #ui/row
@@ -1180,7 +1267,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#ui/button</b> - renders a button in the browser
@@ -1207,7 +1296,9 @@ commit
     <td><code></code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#ui/autocomplete</b> - renders as its child a #ui/autocomplete/input form in the browser that offers autocomplete options based on a list of possible responses
@@ -1236,13 +1327,14 @@ commit
 ```</code>
     </td>
   </tr>
-
   <tr>
     <td colspan="2">
       <strong>Note about autocomplete:</strong> <code>#ui/autocomplete</code> has a set of events that it emits and responds to. Other components may end up implementing these same events in the future, but they are currently exclusive to <code>#ui/autocomplete</code>.
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#ui/event/clear</b> - clears the specified autocomplete input field
@@ -1266,7 +1358,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#ui/event/open</b> - monitors for the autocomplete dropdown list opening; must be used only with commit if searching with this tag
@@ -1291,7 +1385,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#ui/event/close</b> - monitors for the autocomplete dropdown list closing; must be used only with commit if searching with this tag
@@ -1316,7 +1412,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#ui/event/select</b> - monitors for an autocomplete option being selected; must be used only with commit if searching with this tag
@@ -1341,7 +1439,9 @@ commit
 ```</code>
     </td>
   </tr>
+</table>
 
+<table class="libitem">
   <tr>
     <td colspan="2">
       <b>#ui/event/change</b> - monitors for a change in the value of the autocomplete input field

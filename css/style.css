@@ -350,3 +350,7 @@ td {
   list-style: none;
   margin-left: 0px;
 }
+
+.libitem {
+  margin-bottom: 30px;
+}
