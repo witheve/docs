@@ -1,7 +1,7 @@
+---
+---
+
 <!DOCTYPE html>
-
-
-
 
    <html class="no-js">
 
@@ -13,45 +13,39 @@
     <meta name="generator" content="Hugo 0.19" />
 
 
-    <link rel="canonical" href="http://docs-next.witheve.com/">
+    <link rel="canonical" href="{{ site-url }}/">
 
     <meta name="author" content="Eve">
 
 
-    <meta property="og:url" content="http://docs-next.witheve.com/">
+    <meta property="og:url" content="{{ site-url }}/">
     <meta property="og:title" content="Eve Documentation">
 
     <meta name="apple-mobile-web-app-title" content="Eve Documentation">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <link rel="shortcut icon" type="image/x-icon" href="http://docs-next.witheve.com/images/favicon.png">
-    <link rel="icon" type="image/x-icon" href="http://docs-next.witheve.com/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ site-url }}/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="{{ site-url }}/images/favicon.png">
 
     <style>
       @font-face {
         font-family: 'Icon';
-        src: url('http://docs-next.witheve.com/fonts/icon.eot?52m981');
-        src: url('http://docs-next.witheve.com/fonts/icon.eot?#iefix52m981')
+        src: url('{{ site-url }}/fonts/icon.eot?52m981');
+        src: url('{{ site-url }}/fonts/icon.eot?#iefix52m981')
                format('embedded-opentype'),
-             url('http://docs-next.witheve.com/fonts/icon.woff?52m981')
+             url('{{ site-url }}/fonts/icon.woff?52m981')
                format('woff'),
-             url('http://docs-next.witheve.com/fonts/icon.ttf?52m981')
+             url('{{ site-url }}/fonts/icon.ttf?52m981')
                format('truetype'),
-             url('http://docs-next.witheve.com/fonts/icon.svg?52m981#icon')
+             url('{{ site-url }}/fonts/icon.svg?52m981#icon')
                format('svg');
         font-weight: normal;
         font-style: normal;
       }
     </style>
 
-    <link rel="stylesheet" href="http://docs-next.witheve.com/stylesheets/application.css">
-    <link rel="stylesheet" href="http://docs-next.witheve.com/stylesheets/temporary.css">
-    <link rel="stylesheet" href="http://docs-next.witheve.com/stylesheets/palettes.css">
-    <link rel="stylesheet" href="http://docs-next.witheve.com/stylesheets/highlight/highlight.css">
-
-
-
+    <link rel="stylesheet" href="{{ site-url }}/css/style.css">
 
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
     <style>
@@ -63,12 +57,8 @@
       }
     </style>
 
-
-    <script src="http://docs-next.witheve.com/javascripts/modernizr.js"></script>
-
-
-    <link href="http://docs-next.witheve.com/index.xml" rel="alternate" type="application/rss+xml" title="Eve Documentation" />
-    <link href="http://docs-next.witheve.com/index.xml" rel="feed" type="application/rss+xml" title="Eve Documentation" />
+    <link href="{{ site-url }}/index.xml" rel="alternate" type="application/rss+xml" title="Eve Documentation" />
+    <link href="{{ site-url }}/index.xml" rel="feed" type="application/rss+xml" title="Eve Documentation" />
 
 
   </head>
@@ -79,7 +69,7 @@
     <a href="http://witheve.com">
     <div class="logo">
       <img src="https://witheve.github.io/assets/images/logo_square.png" />
-      <h1><img alt="EVE" src="http://docs-next.witheve.com/images/eve.svg" /></h1>
+      <h1><img alt="EVE" src="{{ site-url }}/images/eve.svg" /></h1>
     </div>
     </a>
     <div class="flex-spacer"></div>
@@ -87,7 +77,7 @@
       <a class="btn rounded cta secondary play-cta" href="http://play.witheve.com">Play</a>
 
       <a href="http://incidentalcomplexity.com">Blog</a>
-      <a href="http://docs-next.witheve.com">Docs</a>
+      <a href="{{ site-url }}">Docs</a>
       <a href="https://groups.google.com/forum/#!forum/eve-talk">Community</a>
     </nav>
   </header>
@@ -95,14 +85,11 @@
 
 <main class="main layer-wrapper">
 	<div class="toplayer landing">
-			<div class="wrapper">
-        <h2>
-          Which version of Eve are you running?
-        </h2>
-
+			<div class="version-wrapper">
+        <h2>Which version of Eve are you running?</h2>
         <div class="version">
-          <a class="btn big rounded cta tertiary version-btn" href="http://docs-next.witheve.com/v0.2/index.html">v0.2 Documentation</a>
-          <a class="btn big rounded cta tertiary version-btn" href="http://docs-next.witheve.com/v0.3/index.html">v0.3 Documentation</a>
+          <a class="btn big rounded cta tertiary version-btn" href="{{ site-url }}/v0.2/index.html">v0.2 Documentation</a>
+          <a class="btn big rounded cta tertiary version-btn" href="{{ site-url }}/v0.3/index.html">v0.3 Documentation</a>
         </div>
 			</div>
 	</div>
