@@ -5,7 +5,7 @@ title: "Standard Library"
 
 # Standard Library
 
-##  Aggregates
+## Aggregates
 
 <table>
   <tr>
