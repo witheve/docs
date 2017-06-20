@@ -9,8 +9,8 @@ title: "Standard Library"
 
 <table>
   <tr>
-    <td>
-      <h3>gather/sort</h3> - Generates an ordering for a set
+    <td colspan="2">
+      <b>gather/sort</b> - Generates an ordering for a set
     </td>
   </tr>
 
@@ -35,8 +35,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>gather/count</h3> - Returns the number of elements in a set
+    <td colspan="2">
+      <b>gather/count</b> - Returns the number of elements in a set
     </td>
   </tr>
   <tr>
@@ -54,8 +54,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>gather/sum</h3> - Returns the sum of values in a set of attributes
+    <td colspan="2">
+      <b>gather/sum</b> - Returns the sum of values in a set of attributes
     </td>
   </tr>
 
@@ -79,8 +79,8 @@ title: "Standard Library"
 
 <table>
   <tr>
-    <td>
-      <h3>+</h3> - Adds two numbers
+    <td colspan="2">
+      <b>+</b> - Adds two numbers
     </td>
   </tr>
 
@@ -94,8 +94,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>-</h3> - Subtracts two numbers
+    <td colspan="2">
+      <b>-</b> - Subtracts two numbers
     </td>
   </tr>
 
@@ -109,8 +109,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>*</h3> - Multiplies two numbers
+    <td colspan="2">
+      <b>*</b> - Multiplies two numbers
     </td>
   </tr>
 
@@ -124,8 +124,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>/</h3> - Divides two numbers
+    <td colspan="2">
+      <b>/</b> - Divides two numbers
     </td>
   </tr>
 
@@ -139,8 +139,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>math/floor</h3> - Rounds a number down
+    <td colspan="2">
+      <b>math/floor</b> - Rounds a number down
     </td>
   </tr>
 
@@ -157,8 +157,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>math/ceiling</h3> - Rounds a number up
+    <td colspan="2">
+      <b>math/ceiling</b> - Rounds a number up
     </td>
   </tr>
 
@@ -175,8 +175,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>math/round</h3> - Rounds a number to the nearest integer
+    <td colspan="2">
+      <b>math/round</b> - Rounds a number to the nearest integer
     </td>
   </tr>
 
@@ -193,8 +193,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>math/sin</h3> - Sine of an angle
+    <td colspan="2">
+      <b>math/sin</b> - Sine of an angle
     </td>
   </tr>
 
@@ -211,8 +211,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>math/cos</h3> - Cosine of an angle
+    <td colspan="2">
+      <b>math/cos</b> - Cosine of an angle
     </td>
   </tr>
 
@@ -229,8 +229,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>math/tan</h3> - Tangent of an angle
+    <td colspan="2">
+      <b>math/tan</b> - Tangent of an angle
     </td>
   </tr>
 
@@ -247,8 +247,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>math/max</h3> - The greater of two values
+    <td colspan="2">
+      <b>math/max</b> - The greater of two values
     </td>
   </tr>
 
@@ -267,8 +267,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>math/min</h3> - The lesser of two values
+    <td colspan="2">
+      <b>math/min</b> - The lesser of two values
     </td>
   </tr>
 
@@ -287,8 +287,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>math/mod</h3> - Modulo division
+    <td colspan="2">
+      <b>math/mod</b> - Modulo division
     </td>
   </tr>
 
@@ -306,8 +306,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>math/absolute</h3> - Absolute value of a number
+    <td colspan="2">
+      <b>math/absolute</b> - Absolute value of a number
     </td>
   </tr>
 
@@ -325,8 +325,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>math/to-fixed</h3> - Formats a number as a string to a certain number of decimal places
+    <td colspan="2">
+      <b>math/to-fixed</b> - Formats a number as a string to a certain number of decimal places
     </td>
   </tr>
 
@@ -345,8 +345,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>math/range</h3> - Generates a range of numbers
+    <td colspan="2">
+      <b>math/range</b> - Generates a range of numbers
     </td>
   </tr>
 
@@ -364,8 +364,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>random/number</h3> - Generates a random number between 1 and 0
+    <td colspan="2">
+      <b>random/number</b> - Generates a random number between 1 and 0
     </td>
   </tr>
 
@@ -387,8 +387,8 @@ title: "Standard Library"
 
 <table>
   <tr>
-    <td>
-      <h3>string/replace</h3> - Replaces a string of text with another
+    <td colspan="2">
+      <b>string/replace</b> - Replaces a string of text with another
     </td>
   </tr>
 
@@ -408,8 +408,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>string/get</h3> - Gets a character from a specific location in a string
+    <td colspan="2">
+      <b>string/get</b> - Gets a character from a specific location in a string
     </td>
   </tr>
 
@@ -428,8 +428,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>string/uppercase</h3> -Converts a string to uppercase
+    <td colspan="2">
+      <b>string/uppercase</b> -Converts a string to uppercase
     </td>
   </tr>
 
@@ -446,8 +446,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>string/lowercase</h3> - Converts a string to lowercase
+    <td colspan="2">
+      <b>string/lowercase</b> - Converts a string to lowercase
     </td>
   </tr>
 
@@ -464,8 +464,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>string/index-of</h3> - Returns the position of the first occurrence of a specified value in a string
+    <td colspan="2">
+      <b>string/index-of</b> - Returns the position of the first occurrence of a specified value in a string
     </td>
   </tr>
 
@@ -483,8 +483,8 @@ title: "Standard Library"
   </tr>
 
   <tr>
-    <td>
-      <h3>string/codepoint-length</h3> - Returns the length of a string in Unicode code points.
+    <td colspan="2">
+      <b>string/codepoint-length</b> - Returns the length of a string in Unicode code points.
     </td>
   </tr>
 
@@ -508,8 +508,8 @@ The HTML library is a low level interface for creating HTML elements and respond
 
 <table>
   <tr>
-    <td>
-      <h3>#html/element</h3> - renders a record in the browser as an html element of your choosing
+    <td colspan="2">
+      <b>#html/element</b> - renders a record in the browser as an html element of your choosing
     </td>
   </tr>
 
@@ -534,8 +534,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>Dynamic class record</h3> - uses boolean logic to determine whether an element has a certain class
+    <td colspan="2">
+      <b>Dynamic class record</b> - uses boolean logic to determine whether an element has a certain class
     </td>
   </tr>
 
@@ -559,8 +559,8 @@ bind
   </tr>
 
   <tr>
-    <td>
-      <h3>#html/listener/hover</h3> - adds a listener to an html element to make it responsive when it is being hovered over in browser; required to use the <code>#html/hovered</code>, <code>#html/event/hover-in</code>, and <code>#html/event/hover-out</code> tags
+    <td colspan="2">
+      <b>#html/listener/hover</b> - adds a listener to an html element to make it responsive when it is being hovered over in browser; required to use the <code>#html/hovered</code>, <code>#html/event/hover-in</code>, and <code>#html/event/hover-out</code> tags
     </td>
   </tr>
 
@@ -580,8 +580,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>#html/hovered</h3> - a tag given by Eve to an html element being currently hovered over; requires <code>#html/listener/hover</code>
+    <td colspan="2">
+      <b>#html/hovered</b> - a tag given by Eve to an html element being currently hovered over; requires <code>#html/listener/hover</code>
     </td>
   </tr>
 
@@ -604,8 +604,8 @@ bind
   </tr>
 
   <tr>
-    <td>
-      <h3>#html/event/(hover-in, hover-out)</h3> - monitors when the mouse enters or leaves a particular element in the browser; requires <code>#html/listener/hover</code>
+    <td colspan="2">
+      <b>#html/event/(hover-in, hover-out)</b> - monitors when the mouse enters or leaves a particular element in the browser; requires <code>#html/listener/hover</code>
     </td>
   </tr>
 
@@ -629,8 +629,8 @@ bind
   </tr>
 
   <tr>
-    <td>
-      <h3>#html/event/change</h3> - monitors specific changes in text input or form elements in the browser
+    <td colspan="2">
+      <b>#html/event/change</b> - monitors specific changes in text input or form elements in the browser
     </td>
   </tr>
 
@@ -655,8 +655,8 @@ bind
   </tr>
 
   <tr>
-    <td>
-      <h3>#html/event/(click, double-click, mouse-down, mouse-up)</h3> - monitors mouse events in the browser; <code>#html/event/click</code> and <code>#html/event/double-click</code> currently work for the left mouse button only
+    <td colspan="2">
+      <b>#html/event/(click, double-click, mouse-down, mouse-up)</b> - monitors mouse events in the browser; <code>#html/event/click</code> and <code>#html/event/double-click</code> currently work for the left mouse button only
     </td>
   </tr>
 
@@ -688,8 +688,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>#html/listener/context-menu</h3> - prevents the context menu from opening when an element is right clicked in the browser; useful in cases where you want to use right clicks on the element for your own purposes
+    <td colspan="2">
+      <b>#html/listener/context-menu</b> - prevents the context menu from opening when an element is right clicked in the browser; useful in cases where you want to use right clicks on the element for your own purposes
     </td>
   </tr>
 
@@ -709,8 +709,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>#html/event/(key-up, key-down)</h3> - monitors when a key has been pressed or released
+    <td colspan="2">
+      <b>#html/event/(key-up, key-down)</b> - monitors when a key has been pressed or released
     </td>
   </tr>
 
@@ -749,8 +749,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>#html/event/(focus, blur)</h3> - monitors when a form element in the browser either gains or loses focus
+    <td colspan="2">
+      <b>#html/event/(focus, blur)</b> - monitors when a form element in the browser either gains or loses focus
     </td>
   </tr>
 
@@ -774,8 +774,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>#html/trigger/(focus, blur)</h3> - focuses or blurs a specific form element in the browser; must be used only with commit, not bind
+    <td colspan="2">
+      <b>#html/trigger/(focus, blur)</b> - focuses or blurs a specific form element in the browser; must be used only with commit, not bind
       <p>
         <strong>Note:</strong> Despite being a one-time trigger, Eve does not currently remove the tag once focus or blur has occurred, resulting in a state desynced from the real world. This bug is currently being fixed.
       </p>
@@ -807,8 +807,8 @@ The canvas library is an interface for drawing graphics in the browser using the
 
 <table>
   <tr>
-    <td>
-      <h3>#canvas/root</h3> - creates an HTML canvas for drawing rich graphics
+    <td colspan="2">
+      <b>#canvas/root</b> - creates an HTML canvas for drawing rich graphics
     </td>
   </tr>
 
@@ -829,8 +829,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>#canvas/path</h3> - defines the paths that are drawn as well as their style and appearance
+    <td colspan="2">
+      <b>#canvas/path</b> - defines the paths that are drawn as well as their style and appearance
     </td>
   </tr>
 
@@ -869,12 +869,13 @@ commit
   </tr>
 
   <tr>
-    <td><strong>Note about operations:</strong> Each individual path is written as a child record of #canvas/path with a type attribute whose value defines the path. No tags are necessary. Paths are drawn by default in the order they are given as children, such that the last child will appear on top of all the others, and the first child will be at the bottom. Adding a sort attribute to a child path allows you to manually define the order in which they are drawn. Paths originate in the upper left corner, so x coordinates originate at the left edge of the canvas and move to the right, and y coordinates originate at the top edge of the canvas and move to the bottom. Eve canvas operations follow the same rules as those outlined by <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D">Mozilla Developer Network for canvas rendering</a>, making it an excellent source of further documentation.</td>
+    <td colspan="2">
+      <strong>Note about operations:</strong> Each individual path is written as a child record of #canvas/path with a type attribute whose value defines the path. No tags are necessary. Paths are drawn by default in the order they are given as children, such that the last child will appear on top of all the others, and the first child will be at the bottom. Adding a sort attribute to a child path allows you to manually define the order in which they are drawn. Paths originate in the upper left corner, so x coordinates originate at the left edge of the canvas and move to the right, and y coordinates originate at the top edge of the canvas and move to the bottom. Eve canvas operations follow the same rules as those outlined by <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D">Mozilla Developer Network for canvas rendering</a>, making it an excellent source of further documentation.</td>
   </tr>
 
   <tr>
-    <td>
-      <h3>moveTo</h3> - moves the path to a specified location without drawing a line; the default starting coordinates are (0,0)
+    <td colspan="2">
+      <b>moveTo</b> - moves the path to a specified location without drawing a line; the default starting coordinates are (0,0)
     </td>
   </tr>
 
@@ -896,8 +897,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>lineTo</h3> - moves the path to a specified location and draws a line; the default starting coordinates are (0,0)
+    <td colspan="2">
+      <b>lineTo</b> - moves the path to a specified location and draws a line; the default starting coordinates are (0,0)
     </td>
   </tr>
 
@@ -919,8 +920,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>bezierQuadraticCurveTo</h3> - draws a Bézier curve
+    <td colspan="2">
+      <b>bezierQuadraticCurveTo</b> - draws a Bézier curve
     </td>
   </tr>
 
@@ -947,8 +948,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>quadraticCurveTo</h3> - draws a quadratic curve
+    <td colspan="2">
+      <b>quadraticCurveTo</b> - draws a quadratic curve
     </td>
   </tr>
 
@@ -966,8 +967,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>arc</h3> - draws an arc curve
+    <td colspan="2">
+      <b>arc</b> - draws an arc curve
     </td>
   </tr>
 
@@ -993,8 +994,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>arcTo</h3> - draws an arc curve; particularly useful for creating an arc between two tangents
+    <td colspan="2">
+      <b>arcTo</b> - draws an arc curve; particularly useful for creating an arc between two tangents
     </td>
   </tr>
 
@@ -1021,8 +1022,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>ellipse</h3> - draws an elliptical curve
+    <td colspan="2">
+      <b>ellipse</b> - draws an elliptical curve
     </td>
   </tr>
 
@@ -1050,8 +1051,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>rect</h3> - draws a rectangle
+    <td colspan="2">
+      <b>rect</b> - draws a rectangle
     </td>
   </tr>
 
@@ -1075,8 +1076,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>closePath</h3> - draws a line from the position of the path back to the beginning of the path
+    <td colspan="2">
+      <b>closePath</b> - draws a line from the position of the path back to the beginning of the path
     </td>
   </tr>
 
@@ -1108,8 +1109,8 @@ The UI library provides a shorthand for adding standard HTML elements, as well a
 
 <table>
   <tr>
-    <td>
-      <h3>#ui/...</h3> - renders a record in the browser as an html element of your choosing
+    <td colspan="2">
+      <b>#ui/...</b> - renders a record in the browser as an html element of your choosing
     </td>
   </tr>
 
@@ -1153,8 +1154,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>#ui/(column, row)</h3> - renders a column or row in the browser whose children are drawn vertically for #ui/column and horizontally for #ui/row
+    <td colspan="2">
+      <b>#ui/(column, row)</b> - renders a column or row in the browser whose children are drawn vertically for #ui/column and horizontally for #ui/row
     </td>
   </tr>
 
@@ -1181,8 +1182,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>#ui/button</h3> - renders a button in the browser
+    <td colspan="2">
+      <b>#ui/button</b> - renders a button in the browser
     </td>
   </tr>
 
@@ -1208,8 +1209,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>#ui/autocomplete</h3> - renders as its child a #ui/autocomplete/input form in the browser that offers autocomplete options based on a list of possible responses
+    <td colspan="2">
+      <b>#ui/autocomplete</b> - renders as its child a #ui/autocomplete/input form in the browser that offers autocomplete options based on a list of possible responses
     </td>
   </tr>
 
@@ -1237,12 +1238,14 @@ commit
   </tr>
 
   <tr>
-    <td><strong>Note about autocomplete:</strong> <code>#ui/autocomplete</code> has a set of events that it emits and responds to. Other components may end up implementing these same events in the future, but they are currently exclusive to <code>#ui/autocomplete</code>.</td>
+    <td colspan="2">
+      <strong>Note about autocomplete:</strong> <code>#ui/autocomplete</code> has a set of events that it emits and responds to. Other components may end up implementing these same events in the future, but they are currently exclusive to <code>#ui/autocomplete</code>.
+    </td>
   </tr>
 
   <tr>
-    <td>
-      <h3>#ui/event/clear</h3> - clears the specified autocomplete input field
+    <td colspan="2">
+      <b>#ui/event/clear</b> - clears the specified autocomplete input field
     </td>
   </tr>
 
@@ -1265,8 +1268,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>#ui/event/open</h3> - monitors for the autocomplete dropdown list opening; must be used only with commit if searching with this tag
+    <td colspan="2">
+      <b>#ui/event/open</b> - monitors for the autocomplete dropdown list opening; must be used only with commit if searching with this tag
     </td>
   </tr>
 
@@ -1290,8 +1293,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>#ui/event/close</h3> - monitors for the autocomplete dropdown list closing; must be used only with commit if searching with this tag
+    <td colspan="2">
+      <b>#ui/event/close</b> - monitors for the autocomplete dropdown list closing; must be used only with commit if searching with this tag
     </td>
   </tr>
 
@@ -1315,8 +1318,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>#ui/event/select</h3> - monitors for an autocomplete option being selected; must be used only with commit if searching with this tag
+    <td colspan="2">
+      <b>#ui/event/select</b> - monitors for an autocomplete option being selected; must be used only with commit if searching with this tag
     </td>
   </tr>
 
@@ -1340,8 +1343,8 @@ commit
   </tr>
 
   <tr>
-    <td>
-      <h3>#ui/event/change</h3> - monitors for a change in the value of the autocomplete input field
+    <td colspan="2">
+      <b>#ui/event/change</b> - monitors for a change in the value of the autocomplete input field
     </td>
   </tr>
 
