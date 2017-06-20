@@ -301,7 +301,7 @@ nav > .play-cta { margin: 0; padding: 10px 20px; color: white; }
 
 ul { display: block; margin-left: 2em; }
 
-code { padding: 0.2em; white-space: pre-wrap; font-family: "Inconsolata", "Monaco", "Consolas", "Ubuntu Mono", monospace; font-size: 0.9rem; }
+code { white-space: pre-wrap; font-family: "Inconsolata", "Monaco", "Consolas", "Ubuntu Mono", monospace; font-size: 0.9rem; }
 
 strong { font-weight: 600; }
 
