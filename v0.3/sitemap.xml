@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://docs-next.witheve.com/v0.3/install/</loc>
+  </url>
+  
+  <url>
+    <loc>http://docs-next.witheve.com/v0.3/tutorials/quickstart.eve/</loc>
+  </url>
+  
+  <url>
+    <loc>http://docs-next.witheve.com/v0.3/quickstart.eve/</loc>
+  </url>
+  
+  <url>
+    <loc>http://docs-next.witheve.com/v0.3/</loc>
+  </url>
+  
+  <url>
+    <loc>http://docs-next.witheve.com/v0.3/syntaxreference/</loc>
+  </url>
+  
+  <url>
+    <loc>http://docs-next.witheve.com/v0.3/README/</loc>
+  </url>
+  
+  <url>
+    <loc>http://docs-next.witheve.com/v0.3/guides/</loc>
+  </url>
+  
+  <url>
+    <loc>http://docs-next.witheve.com/v0.3/handbook/core/</loc>
+  </url>
+  
+  <url>
+    <loc>http://docs-next.witheve.com/v0.3/handbook/</loc>
+  </url>
+  
+  <url>
+    <loc>http://docs-next.witheve.com/v0.3/tutorials/</loc>
+  </url>
+  
+  <url>
+    <loc>http://docs-next.witheve.com/v0.3/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://docs-next.witheve.com/v0.3/guides/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://docs-next.witheve.com/v0.3/handbook/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://docs-next.witheve.com/v0.3/handbook/libraries/</loc>
+  </url>
+  
+  <url>
+    <loc>http://docs-next.witheve.com/v0.3/tutorials/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

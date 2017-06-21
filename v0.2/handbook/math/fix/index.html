@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-us">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>fix - Eve Documentation</title>
+    <meta name="generator" content="Hugo 0.16" />
+
+    
+    <link rel="canonical" href="http://docs-next.witheve.com/v0.2/handbook/math/fix/">
+    
+    <meta name="author" content="Eve">
+    
+
+    <meta property="og:url" content="http://docs-next.witheve.com/v0.2/handbook/math/fix/">
+    <meta property="og:title" content="Eve Documentation">
+    
+    <meta name="apple-mobile-web-app-title" content="Eve Documentation">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="http://docs-next.witheve.com/v0.2/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="http://docs-next.witheve.com/v0.2/images/favicon.png">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('http://docs-next.witheve.com/v0.2/fonts/icon.eot?52m981');
+        src: url('http://docs-next.witheve.com/v0.2/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+             url('http://docs-next.witheve.com/v0.2/fonts/icon.woff?52m981')
+               format('woff'),
+             url('http://docs-next.witheve.com/v0.2/fonts/icon.ttf?52m981')
+               format('truetype'),
+             url('http://docs-next.witheve.com/v0.2/fonts/icon.svg?52m981#icon')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="http://docs-next.witheve.com/v0.2/stylesheets/application.css">
+    <link rel="stylesheet" href="http://docs-next.witheve.com/v0.2/stylesheets/temporary.css">
+    <link rel="stylesheet" href="http://docs-next.witheve.com/v0.2/stylesheets/palettes.css">
+    <link rel="stylesheet" href="http://docs-next.witheve.com/v0.2/stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <script src="http://docs-next.witheve.com/v0.2/javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class=" ">
+
+
+
+	
+	
+
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  
+  <center>
+    <img class="logo" src="https://witheve.github.io/assets/images/logo_square.png">
+  </center>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+
+      
+      <div id="sidebar" class="nav-collapse">
+          <ul class="sidebar-menu">
+            
+            
+              
+                <li class="sub-menu active">
+                  <a href="http://docs-next.witheve.com/v0.2/handbook/intro" class="">
+                      
+                      <span class="colored">Introduction</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/installation/"> Getting Eve </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/linux/">Linux</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/mac/">Mac</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/windows/">Windows</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/docker/">Docker</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/npm/">npm</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/running/"> Running Eve </a> </li>
+                      
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/help/"> Getting Help </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="http://docs-next.witheve.com/v0.2/handbook/programs" class="">
+                      
+                      <span class="colored">Eve Programs</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/model/"> Programming Model </a> </li>
+                      
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/sets/"> Sets </a> </li>
+                      
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/literate-programming/"> Literate Programming </a> </li>
+                      
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/blocks/"> Blocks </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="http://docs-next.witheve.com/v0.2/handbook/core" class="">
+                      
+                      <span class="colored">Core Language</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/records/"> Records </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/tags/">Tags</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/not/">not</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/equivalence/"> Equivalence </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/equality/">Equality</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/inequality/">Inequality</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/joins/">Joins</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/actions/"> Actions </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/search/">search</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/bind/">bind</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/commit/">commit</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/expressions/"> Expressions </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/functions/">Functions</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/aggregates/">Aggregates</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/if-then/">if-then</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/is/">is</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/string-interpolation/">String Interpolation</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/update-operators/"> Update Operators </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/add/">Add: &#43;=</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/set/">Set: :=</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/remove/">Remove: -=</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/merge/">Merge &lt;-</a></li>
+                          
+                        </ul>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="http://docs-next.witheve.com/v0.2/handbook/databases" class="">
+                      
+                      <span class="colored">Databases</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/standard-library/"> Standard Library </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/general/">General</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/math/">Math</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/strings/">Strings</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/statistics/">Statistics</a></li>
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/datetime/">Date &amp; Time</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/session/"> @session </a> </li>
+                      
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/browser/"> @browser </a> </li>
+                      
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/event/"> @event </a> </li>
+                      
+                        <ul class="sub">
+                          
+                            <li><a href="http://docs-next.witheve.com/v0.2/handbook/event/click/">click</a></li>
+                          
+                        </ul>
+                      
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/http/"> @http </a> </li>
+                      
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/view/"> @view </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="http://docs-next.witheve.com/v0.2/handbook/appendix" class="">
+                      
+                      <span class="colored">Appendix</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/ebnf/"> Grammar </a> </li>
+                      
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/commonmark/"> CommonMark </a> </li>
+                      
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/handbook/glossary/"> Glossary </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="http://docs-next.witheve.com/v0.2/guides" class="">
+                      
+                      <span class="colored">Guides</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/guides/for-programmers/"> Eve for Programmers </a> </li>
+                      
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/guides/style/"> Style Guide </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+              
+                <li class="sub-menu active">
+                  <a href="http://docs-next.witheve.com/v0.2/tutorials" class="">
+                      
+                      <span class="colored">Tutorials</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                    
+                      <li><a href="http://docs-next.witheve.com/v0.2/tutorials/quickstart/"> Quickstart </a> </li>
+                      
+                    
+                  </ul>
+                </li>
+              
+            
+          </ul>
+      </div>
+
+    </div>
+  </div>
+</nav>
+	</div>
+	<article class="article">
+		<div class="wrapper">
+
+			
+
+<h1 id="fix">fix</h1>
+
+<p>Round a number toward zero.</p>
+
+<h2 id="syntax">Syntax</h2>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="x">y</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">fix</span><span class="p">[</span><span class="x">value</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="attributes">Attributes</h2>
+
+<ul>
+<li><code>value</code> - a set of numbers</li>
+</ul>
+
+<h2 id="description">Description</h2>
+
+<p><code>y = fix[value]</code> rounds the elements of <code>value</code> toward zero. This means that negative numbers will be rounded up to the nearest integer, while positive numbers will be rounded down.</p>
+
+<h2 id="examples">Examples</h2>
+
+<p>Calculate the fix of <code>34.7</code> and <code>-34.7</code></p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="w">  </span><span class="x">y</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">fix</span><span class="p">[</span><span class="x">value</span><span class="nf">:</span><span class="w"> </span><span class="m">34</span><span class="x">.</span><span class="m">7</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="x">z</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">fix</span><span class="p">[</span><span class="x">value</span><span class="nf">:</span><span class="w"> </span><span class="nf">-</span><span class="m">34</span><span class="x">.</span><span class="m">7</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;The fix of 34.7 is {{y}}&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;The fix of -34.7 is {{z}}&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>We see that the fix of <code>34.7</code> is <code>34</code>, while the fix of <code>-34.7</code> is <code>-34</code>. Compare this to rounding the numbers:</p>
+<div class="highlight"><pre><code class="language-eve" data-lang="eve"><span></span><span class="kr">search</span><span class="w"></span>
+<span class="w">  </span><span class="x">y</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">round</span><span class="p">[</span><span class="x">value</span><span class="nf">:</span><span class="w"> </span><span class="m">34</span><span class="x">.</span><span class="m">7</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="x">z</span><span class="w"> </span><span class="nf">=</span><span class="w"> </span><span class="x">round</span><span class="p">[</span><span class="x">value</span><span class="nf">:</span><span class="w"> </span><span class="nf">-</span><span class="m">34</span><span class="x">.</span><span class="m">7</span><span class="p">]</span><span class="w"></span>
+
+<span class="kr">bind</span><span class="w"> </span><span class="nt">@browser</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;The round of 34.7 is {{y}}&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="p">[</span><span class="nt">#div</span><span class="w"> </span><span class="x">text</span><span class="nf">:</span><span class="w"> </span><span class="s">&quot;The round of -34.7 is {{z}}&quot;</span><span class="p">]</span><span class="w"></span>
+</code></pre></div>
+
+<p>We see that the round of <code>34.7</code> is <code>35</code>, while the round of <code>-34.7</code> is <code>-35</code>.</p>
+
+<h2 id="see-also">See Also</h2>
+
+<p><a href="../floor">floor</a> | <a href="../ceil">ceil</a> | <a href="../round">round</a></p>
+
+
+		</div>
+	</article>
+
+</main>
+
