@@ -1,160 +1,11 @@
-<!DOCTYPE html>
-  
-  
-  
-  
-   <html class="no-js"> 
+---
+layout: default
+title: Syntax Reference
+---
 
-  <head lang="en-us">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Syntax Ref - Eve Documentation</title>
-    <meta name="generator" content="Hugo 0.19" />
+# Syntax Reference
 
-    
-    <link rel="canonical" href="http://docs.witheve.com/v0.3/syntaxreference/">
-    
-    <meta name="author" content="Eve">
-    
-
-    <meta property="og:url" content="http://docs.witheve.com/v0.3/syntaxreference/">
-    <meta property="og:title" content="Eve Documentation">
-    
-    <meta name="apple-mobile-web-app-title" content="Eve Documentation">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-    <link rel="shortcut icon" type="image/x-icon" href="http://docs.witheve.com/v0.3/images/favicon.png">
-    <link rel="icon" type="image/x-icon" href="http://docs.witheve.com/v0.3/images/favicon.png">
-
-    <style>
-      @font-face {
-        font-family: 'Icon';
-        src: url('http://docs.witheve.com/v0.3/fonts/icon.eot?52m981');
-        src: url('http://docs.witheve.com/v0.3/fonts/icon.eot?#iefix52m981')
-               format('embedded-opentype'),
-             url('http://docs.witheve.com/v0.3/fonts/icon.woff?52m981')
-               format('woff'),
-             url('http://docs.witheve.com/v0.3/fonts/icon.ttf?52m981')
-               format('truetype'),
-             url('http://docs.witheve.com/v0.3/fonts/icon.svg?52m981#icon')
-               format('svg');
-        font-weight: normal;
-        font-style: normal;
-      }
-    </style>
-
-    <link rel="stylesheet" href="http://docs.witheve.com/v0.3/stylesheets/application.css">
-    <link rel="stylesheet" href="http://docs.witheve.com/v0.3/stylesheets/temporary.css">
-    <link rel="stylesheet" href="http://docs.witheve.com/v0.3/stylesheets/palettes.css">
-    <link rel="stylesheet" href="http://docs.witheve.com/v0.3/stylesheets/highlight/highlight.css">
-
-    
-    
-    
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
-    <style>
-      body, input {
-        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
-      }
-      pre, code {
-        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
-      }
-    </style>
-
-    
-    <script src="http://docs.witheve.com/v0.3/javascripts/modernizr.js"></script>
-
-    
-
-  </head>
-  <body class=" ">
-
-<div class="layer-wrapper header-wrapper">
-  <header class="layer">
-    <a href="http://witheve.com">
-    <div class="logo">
-      <img src="https://witheve.github.io/assets/images/logo_square.png" />
-      <h1><img alt="EVE" src="http://docs.witheve.com/v0.3/images/eve.svg" /></h1>
-    </div>
-    </a>
-    <div class="flex-spacer"></div>
-    <nav>
-      <a class="btn rounded cta secondary play-cta" href="http://play.witheve.com">Play</a>
-      
-      <a href="http://incidentalcomplexity.com">Blog</a>
-      <a href="http://docs.witheve.com">Docs</a>
-      <a href="https://groups.google.com/forum/#!forum/eve-talk">Community</a>
-    </nav>
-  </header>
-</div>
-
-
-	
-	
-
-
-<main class="main layer-wrapper">
-	<div class="toplayer">
-		<div class="drawer">
-			<div aria-label="Navigation">
-  
-  <div class="scrollable">
-    <div class="wrapper">
-      
-
-      
-      <div id="sidebar" class="nav-collapse">
-          <ul class="sidebar-menu">
-            
-            
-              
-                <li class="sub-menu active">
-                  <a href="http://docs.witheve.com/v0.3/" class="">
-                      
-                      <span class="colored">Introduction</span>
-                      <span class="menu-arrow arrow_carrot-right"></span>
-                  </a>
-                  <ul class="sub">
-                    
-                      <li><a href="http://docs.witheve.com/v0.3/install/"> Installation </a> </li>
-                      
-                    
-                      <li><a href="http://docs.witheve.com/v0.3/tutorials/quickstart.eve/"> Quickstart </a> </li>
-                      
-                    
-                      <li class="active selected"><a href="http://docs.witheve.com/v0.3/syntaxreference/"> Syntax Ref </a> </li>
-                      
-                    
-                  </ul>
-                </li>
-              
-            
-              
-                <li>
-                  <a class="" href="http://docs.witheve.com/v0.3/handbook/libraries">
-                    
-                    <span class="colored">Library</span>
-                  </a>
-                </li>
-              
-            
-          </ul>
-      </div>
-
-    </div>
-  </div>
-</div>
-		</div>
-		<article class="article">
-			<div class="wrapper">
-
-				
-
-<h1 id="syntax-reference">Syntax Reference</h1>
-
-<h2 id="records-and-patterns">Records and Patterns</h2>
+## Records and Patterns
 
 <table>
   <tr>
@@ -204,9 +55,7 @@ bind
   </tr>
 </table>
 
-<h2>
-  Program Structure: Search, Bind, and Commit
-</h2>
+## Program Structure: Search, Bind, and Commit
 
 <table>
 
@@ -252,9 +101,7 @@ commit
 
 </table>
 
-<h2>
-  Equivalence and Filtering
-</h2>
+## Equivalence and Filtering
 
 <table>
 
@@ -289,7 +136,7 @@ cube.depth > 30 // Filter with dot notation.</code></td>
 
 </table>
 
-<h2 id="not">Not</h2>
+## Not
 
 <table>
 
@@ -302,7 +149,7 @@ not(person = [#employee])</code></td>
 
 </table>
 
-<h2 id="if-then-and-if-else">If&hellip;Then and If&hellip;Else</h2>
+## If...Then and If...Else
 
 <p><code>If</code> lets your block try multiple branches for a variable. If every branch has no matches, the block fails.</p>
 
@@ -331,7 +178,7 @@ guest = if f = [#friend] then f
 
 </table>
 
-<h2 id="functions-and-aggregates">Functions and Aggregates</h2>
+## Functions and Aggregates
 
 <table>
 
@@ -357,7 +204,7 @@ budgets = gather/sum[value: employee.salary,
 
 </table>
 
-<h2 id="update-operators">Update Operators</h2>
+## Update Operators
 
 <p>Besides creating new records, Eve has four operators to modify existing records in <code>bind</code> or <code>commit</code>.</p>
 
@@ -402,8 +249,3 @@ chris := none</code></td>
 
 </table>
 
-
-			</div>
-		</article>
-	</div>
-</main>

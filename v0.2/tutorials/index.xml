@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tutorials on Eve Documentation</title>
-    <link>http://docs.witheve.com/v0.2/tutorials/</link>
+    <link>http://docs-next.witheve.com/v0.2/tutorials/</link>
     <description>Recent content in Tutorials on Eve Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://docs.witheve.com/v0.2/tutorials/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://docs-next.witheve.com/v0.2/tutorials/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Quickstart</title>
-      <link>http://docs.witheve.com/v0.2/tutorials/quickstart/</link>
+      <link>http://docs-next.witheve.com/v0.2/tutorials/quickstart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://docs.witheve.com/v0.2/tutorials/quickstart/</guid>
+      <guid>http://docs-next.witheve.com/v0.2/tutorials/quickstart/</guid>
       <description>
 
 &lt;h1 id=&#34;eve-quick-start-tutorial&#34;&gt;Eve Quick Start Tutorial&lt;/h1&gt;

@@ -1,160 +1,11 @@
-<!DOCTYPE html>
-  
-  
-  
-  
-   <html class="no-js"> 
+---
+layout: default
+title: Standard Library
+---
 
-  <head lang="en-us">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Standard Library - Eve Documentation</title>
-    <meta name="generator" content="Hugo 0.19" />
+# Standard Library
 
-    
-    <link rel="canonical" href="http://docs.witheve.com/v0.3/handbook/libraries/">
-    
-    <meta name="author" content="Eve">
-    
-
-    <meta property="og:url" content="http://docs.witheve.com/v0.3/handbook/libraries/">
-    <meta property="og:title" content="Eve Documentation">
-    
-    <meta name="apple-mobile-web-app-title" content="Eve Documentation">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-    <link rel="shortcut icon" type="image/x-icon" href="http://docs.witheve.com/v0.3/images/favicon.png">
-    <link rel="icon" type="image/x-icon" href="http://docs.witheve.com/v0.3/images/favicon.png">
-
-    <style>
-      @font-face {
-        font-family: 'Icon';
-        src: url('http://docs.witheve.com/v0.3/fonts/icon.eot?52m981');
-        src: url('http://docs.witheve.com/v0.3/fonts/icon.eot?#iefix52m981')
-               format('embedded-opentype'),
-             url('http://docs.witheve.com/v0.3/fonts/icon.woff?52m981')
-               format('woff'),
-             url('http://docs.witheve.com/v0.3/fonts/icon.ttf?52m981')
-               format('truetype'),
-             url('http://docs.witheve.com/v0.3/fonts/icon.svg?52m981#icon')
-               format('svg');
-        font-weight: normal;
-        font-style: normal;
-      }
-    </style>
-
-    <link rel="stylesheet" href="http://docs.witheve.com/v0.3/stylesheets/application.css">
-    <link rel="stylesheet" href="http://docs.witheve.com/v0.3/stylesheets/temporary.css">
-    <link rel="stylesheet" href="http://docs.witheve.com/v0.3/stylesheets/palettes.css">
-    <link rel="stylesheet" href="http://docs.witheve.com/v0.3/stylesheets/highlight/highlight.css">
-
-    
-    
-    
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
-    <style>
-      body, input {
-        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
-      }
-      pre, code {
-        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
-      }
-    </style>
-
-    
-    <script src="http://docs.witheve.com/v0.3/javascripts/modernizr.js"></script>
-
-    
-
-  </head>
-  <body class=" ">
-
-<div class="layer-wrapper header-wrapper">
-  <header class="layer">
-    <a href="http://witheve.com">
-    <div class="logo">
-      <img src="https://witheve.github.io/assets/images/logo_square.png" />
-      <h1><img alt="EVE" src="http://docs.witheve.com/v0.3/images/eve.svg" /></h1>
-    </div>
-    </a>
-    <div class="flex-spacer"></div>
-    <nav>
-      <a class="btn rounded cta secondary play-cta" href="http://play.witheve.com">Play</a>
-      
-      <a href="http://incidentalcomplexity.com">Blog</a>
-      <a href="http://docs.witheve.com">Docs</a>
-      <a href="https://groups.google.com/forum/#!forum/eve-talk">Community</a>
-    </nav>
-  </header>
-</div>
-
-
-	
-	
-
-
-<main class="main layer-wrapper">
-	<div class="toplayer">
-		<div class="drawer">
-			<div aria-label="Navigation">
-  
-  <div class="scrollable">
-    <div class="wrapper">
-      
-
-      
-      <div id="sidebar" class="nav-collapse">
-          <ul class="sidebar-menu">
-            
-            
-              
-                <li class="sub-menu active">
-                  <a href="http://docs.witheve.com/v0.3/" class="">
-                      
-                      <span class="colored">Introduction</span>
-                      <span class="menu-arrow arrow_carrot-right"></span>
-                  </a>
-                  <ul class="sub">
-                    
-                      <li><a href="http://docs.witheve.com/v0.3/install/"> Installation </a> </li>
-                      
-                    
-                      <li><a href="http://docs.witheve.com/v0.3/tutorials/quickstart.eve/"> Quickstart </a> </li>
-                      
-                    
-                      <li><a href="http://docs.witheve.com/v0.3/syntaxreference/"> Syntax Ref </a> </li>
-                      
-                    
-                  </ul>
-                </li>
-              
-            
-              
-                <li>
-                  <a class="" href="http://docs.witheve.com/v0.3/handbook/libraries">
-                    
-                    <span class="colored">Library</span>
-                  </a>
-                </li>
-              
-            
-          </ul>
-      </div>
-
-    </div>
-  </div>
-</div>
-		</div>
-		<article class="article">
-			<div class="wrapper">
-
-				
-
-<h1 id="standard-library">Standard Library</h1>
-
-<h2 id="aggregates">Aggregates</h2>
+## Aggregates
 
 <table>
 
@@ -224,7 +75,7 @@ expenses = gather/sum[for: employees, value: employees.salary, per: department]<
   </tr>
 </table>
 
-<h2 id="math">Math</h2>
+## Math
 
 <table>
   <tr>
@@ -532,7 +383,7 @@ x = random/number[seed: seconds]</code>
   </tr>
 </table>
 
-<h2 id="strings">Strings</h2>
+## Strings
 
 <table>
   <tr>
@@ -651,8 +502,3 @@ length-in-js = string/codepoint-length[text: string]</code>
   </tr>
 </table>
 
-
-			</div>
-		</article>
-	</div>
-</main>

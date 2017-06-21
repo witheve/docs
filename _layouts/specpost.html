@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div id="post">
+    {{ content }}
+</div>
+
+{% if site.related_posts.first %}
+<div id="related">
+  <h3>Related Posts</h3>
+  <ul class="posts">
+    {% for post in site.related_posts limit:3 %}
+      <li><a href="{{ post.url }}"><span>{{ post.date | date_to_string }}</span> - {{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+

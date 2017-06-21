@@ -97,7 +97,7 @@ pre {
 }
 
 code {
-  color: rgb(226, 79, 94);
+  color: rgb(38,38,38);
 }
 
 blockquote {
@@ -130,8 +130,22 @@ h2 {
   margin-bottom: 20px;
 }
 
+h3 {
+  font-size: 20px;
+  padding-top: 0px;
+  margin-bottom: 20px;
+}
+
+em {
+  font-style: italic;
+}
+
 li {
-  margin-left: 20px;
+  margin-left: 20px;  
+}
+
+img {
+  max-width: 800px;
 }
 
 .main {
@@ -259,6 +273,18 @@ nav > *:hover { background: #f2f2f2; }
 nav > *:active { background: #e9e9e9; }
 nav > .play-cta { margin: 0; padding: 10px 20px; color: white; }
 
+@media (max-width: 760px) {
+    header { flex-direction: column; }
+    header .logo { margin-bottom: 30px; }
+}
+
+@media (max-width: 540px) {
+    nav { flex-wrap: wrap; }
+    nav > * { flex: 1 0 auto; padding: 10px 15px; text-align: center; }
+    nav > .play-cta { display: none; }
+    .header-wrapper { margin-bottom: -30px; }
+}
+
 .btn { cursor: pointer; text-align: center; user-select: none; -moz-user-select: none; -ms-user-select: none; }
 .btn.big { flex: 1 0 auto; padding: 18px 30px; }
 .btn.rounded { border-radius: 3px; }
@@ -268,6 +294,12 @@ nav > .play-cta { margin: 0; padding: 10px 20px; color: white; }
 .cta.primary { background: rgb(0, 184, 241); color: white; }
 .cta.primary:hover { background: rgb(0, 158, 224); }
 .cta.primary:active { background: rgb(0, 121, 177); }
+
+.version { display: flex; flex-direction: row; }
+
+.version-btn { margin: 0px 20px; font-size: 1.2rem; min-width: 11em; }
+
+.version-wrapper h2 { text-align: center; }
 
 .cta.secondary { background: rgb(107, 103, 173); color: white; }
 .cta.secondary:hover { background: rgb(91, 89, 164); }
@@ -294,27 +326,23 @@ nav > .play-cta { margin: 0; padding: 10px 20px; color: white; }
 .contact > *:last-child:hover { background: rgb(117, 115, 190); }
 .contact > *:last-child:active { background: rgb(142, 140, 215); }
 
-.version { display: flex; flex-direction: row; }
-
-.version-btn { margin: 0px 20px; font-size: 1.2rem; min-width: 11em; }
-.wrapper h2 { text-align: center; }
-
 ul { display: block; margin-left: 2em; }
 
-code { padding: 0.2em; white-space: pre-wrap; font-family: "Inconsolata", "Monaco", "Consolas", "Ubuntu Mono", monospace; font-size: 0.9rem; }
+code { white-space: pre-wrap; font-family: "Inconsolata", "Monaco", "Consolas", "Ubuntu Mono", monospace; font-size: 0.9rem; }
 
 strong { font-weight: 600; }
 
-table {
-  border: 1px #888a8f solid;
-  margin-bottom: 1em;
-  min-width: 820px;
+table { 
+  border: 1px #888a8f solid; 
+  margin-bottom: 1em; 
+  min-width: 820px;   
   border-collapse: collapse;
   border-spacing: 0;
 }
-td {
-  border: 1px #AAA solid;
-  width: 20em;
+
+td { 
+  border: 1px #AAA solid; 
+  width: 20em; 
   padding: 10px;
 }
 
