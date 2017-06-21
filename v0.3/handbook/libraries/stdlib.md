@@ -28,9 +28,20 @@ title: "Standard Library"
       </ul>
     </td>
     <td>
-      <code>// sorts the students by GPA
-        [#student GPA]
-        index = sort[for: GPA]</code>
+      <code>
+      {% raw %}
+Sorts the students by GPA
+
+```
+search
+    student = [#student GPA]
+    index = sort[for: GPA]
+
+bind 
+   [#ui/text sort: index, text: "{{student.name}} {{GPA}}"]
+```
+      {% endraw %}
+      </code>
     </td>
   </tr>
 </table>
