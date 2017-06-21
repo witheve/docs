@@ -1182,14 +1182,14 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li><strong>children</strong> - (optional) - the children contained within the column or row</li>
         <li><strong>style</strong> - (optional) - specific CSS styles can be defined, but must be entered as a subrecord</li>
         <li><strong>text</strong> - (optional) - defines text within the column or row</li>
         <li><strong>#</strong> - (optional) - any other tags on the record will be applied to the column or row as classes</li>
         <li><strong>class</strong> - (optional) defines one or more classes for the element</li>
         <li>Other attributes - (optional) - other attribute-value pairs will be applied directly to the column or row for integration with existing JS libraries or debugging</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// creates 3 very wise divs in the browser stacked on top of one another
 ```
@@ -1397,6 +1397,56 @@ search
 bind
   autocomplete <- [#magic-word]
 ```</code>
+    </td>
+  </tr>
+</table>
+
+## System
+
+The system library provides various system-level utilities for Eve.
+
+<table class="libitem">
+  <tr>
+    <td colspan="2">
+      <b>#system/timer</b> - starts a timer at the specified resolution
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul>
+        <li><strong>resultion</strong> - the frequency in milliseconds of the timer.</li>
+        <li><strong>year</strong> - (optional) - the current year</li>
+        <li><strong>month</strong> - (optional) - the current month (1 - 12)</li>
+        <li><strong>day</strong> - (optional) - the current day of the month (1 - 31)</li>
+        <li><strong>weeday</strong> - (optional) - the current day of the week (1 - 7, where 1 is Sunday)</li>
+        <li><strong>hours</strong> - (optional) - the current hour (0 - 23)</li>
+        <li><strong>minutes</strong> - (optional) - the current minute (0 - 59)</li>
+        <li><strong>seconds</strong> - (optional) - the current second (0 - 59)</li>
+        <li><strong>milliseconds</strong> - (optional) - the current millisecond (0 - 999)</li>
+        <li><strong>timestamp</strong> - (optional) - the current time represented as the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC</li>
+        <li><strong>frame</strong> - (optional) - the number of frames elapsed since the start of the timer</li>
+      </ul>
+    </td>
+    <td>
+      <code>
+Commits a timer that ticks every 1000 milliseconds
+
+```
+commit
+  [#system/timer resolution: 1000]
+```
+
+Displays the current time
+
+```
+search
+  [#system/timer hours minutes seconds]
+
+bind
+  [#ui/text text: "{{hours}}:{{minutes}}:{{seconds}}"]
+```
+      </code>
     </td>
   </tr>
 </table>
