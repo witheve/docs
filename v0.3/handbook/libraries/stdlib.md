@@ -774,9 +774,6 @@ commit
   <tr>
     <td colspan="2">
       <b>#html/trigger/(focus, blur)</b> - focuses or blurs a specific form element in the browser; must be used only with commit, not bind
-      <p>
-        <strong>Note:</strong> Despite being a one-time trigger, Eve does not currently remove the tag once focus or blur has occurred, resulting in a state desynced from the real world. This bug is currently being fixed.
-      </p>
     </td>
   </tr>
 
@@ -795,6 +792,11 @@ search
 commit
   first <- [#html/trigger/focus]
 ```</code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <strong>Note:</strong> Despite being a one-time trigger, Eve does not currently remove the tag once focus or blur has occurred, resulting in a state desynced from the real world. This bug is currently being fixed.
     </td>
   </tr>
 </table>
