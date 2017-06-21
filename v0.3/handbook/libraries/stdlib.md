@@ -1430,6 +1430,7 @@ The system library provides various system-level utilities for Eve.
     </td>
     <td>
       <code>
+      {% raw %}
 Commits a timer that ticks every 1000 milliseconds
 
 ```
@@ -1446,6 +1447,7 @@ search
 bind
   [#ui/text text: "{{hours}}:{{minutes}}:{{seconds}}"]
 ```
+      {% endraw %}
       </code>
     </td>
   </tr>
