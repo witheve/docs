@@ -32,14 +32,14 @@ title: "Standard Library"
       {% raw %}
 Sorts the students by GPA
 
-```
+~~~
 search
-    student = [#student GPA]
-    index = sort[for: GPA]
+    [#student GPA]
+    index = gather/sort[for: GPA]
 
 bind 
-   [#ui/text sort: index, text: "{{student.name}} {{GPA}}"]
-```
+   [#ui/text sort: index, text: "{{name}} {{GPA}}"]
+~~~
       {% endraw %}
       </code>
     </td>
@@ -60,9 +60,20 @@ bind
       </ul>
     </td>
     <td>
-      <code>// counts the number of citizens in each state
-        residents = [#citizen state]
-        population = count[given: residents, per: state]</code>
+      <code>
+      {{ %raw% }}
+Counts the number of citizens in each state
+
+~~~
+search
+  residents = [#citizen state]
+  population = gather/count[given: residents, per: state]
+
+bind
+  [#ui/text text: "{{population}} people live in {{state}}"]
+~~~
+      {{ %endraw% }}
+      </code>
     </td>
   </tr>
 </table>
@@ -83,9 +94,20 @@ bind
       </ul>
     </td>
     <td>
-      <code>// returns the sum of salaries for each department
-        employees = [#employee salary department]
-        expenses = gather/sum[for: employees, value: employees.salary, per: department]</code>
+          <code>
+      {{ %raw% }}
+Sum of salaries for each department
+
+~~~
+search 
+  employees = [#employee salary department]
+  payroll = gather/sum[for: employees, value: salary, per: department]
+
+bind
+  [#ui/text text: "{{department}} - ${{payroll}}.00"]
+~~~
+      {{ %endraw% }}
+      </code>
     </td>
   </tr>
 </table>
@@ -515,10 +537,10 @@ The HTML library is a low level interface for creating HTML elements and respond
     </td>
     <td>
       <code>// commits a div in the browser with the text “Hello world!” and the class “hello”
-```
+~~~
 commit
   [#html/element #hello tagname: “div” text: “Hello world!”]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -538,14 +560,14 @@ commit
     </td>
     <td>
       <code>// if the text “Hello world!” is in a record tagged #html/element with the tagname “div”, apply the class “header” to that element
-```
+~~~
 search
   hello = [#html/element tagname text: “Hello world!”]
   header = if tagname = “div” then “true” else “false”
 
 bind
   hello <- [class: [header]]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -565,10 +587,10 @@ bind
     </td>
     <td>
       <code>// commit a div to the browser with the text “Hover over me!” that will change its record if it is hovered over
-```
+~~~
 commit
   [#ui/div #html/listener/hover text: “Hover over me!”]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -588,13 +610,13 @@ commit
     </td>
     <td>
       <code>// if a #ui/a element with the hover listener is being hovered over, add a style to make the font bold
-```
+~~~
 search
   element = [#ui/a #html/hovered]
 
 bind
   element.style <- [font-weight: bold]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -614,14 +636,14 @@ bind
     </td>
     <td>
       <code>// when the mouse enters an anchor tag, make the color red; the color will not revert when the mouse leaves
-```
+~~~
 search
   [#html/event/hover-in element: anchor]
   anchor = [#ui/a]
 
 bind
   anchor.style <- [color: red]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -642,14 +664,14 @@ bind
     </td>
     <td>
       <code>// looks for any element tagged #question that has the magic word and adds the tag #magic-word to it
-```
+~~~
 search
   [#html/event/change value: “please” element: question]
   question = [#question]
 
 bind
   question <- [#magic-word]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -678,13 +700,13 @@ bind
     </td>
     <td>
       <code>// looks for a right click in any h1 element and posts the message “Right clicked!”
-```
+~~~
 search
   [#html/event/mouse-up element: [#ui/h1] button: “right”]
 
 commit
   [#ui/div text: “Right clicked!”]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -704,10 +726,10 @@ commit
     </td>
     <td>
       <code>// commits an h1 element whose context menu won’t open if right clicked
-```
+~~~
 commit
   [#ui/h1 #html/listener/context-menu text: “Don’t inspect me”]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -743,13 +765,13 @@ commit
     </td>
     <td>
       <code>// when the escape key is released, commits a gentle reminder for the user
-```
+~~~
 search
   [#html/event/key-up key: “escape”]
 
 commit
   [#ui/div text: “THERE IS NO ESCAPE”]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -770,13 +792,13 @@ commit
     </td>
     <td>
       <code>// when the important element loses focus, commits a message to help the user
-```
+~~~
 search
   [#html/event/blur element: [#important]]
 
 commit
   [#ui.div text: “Stay focused!”]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -796,13 +818,13 @@ commit
     </td>
     <td>
       <code>// when a form element is found in the browser with the name “first-name”, focuses on that element
-```
+~~~
 search
   first = [#ui/input name: “first-name”]
 
 commit
   first <- [#html/trigger/focus]
-```</code>
+~~~</code>
     </td>
   </tr>
   <tr>
@@ -832,10 +854,10 @@ The canvas library is an interface for drawing graphics in the browser using the
       </ul>
     </td>
     <td><code>// creates a canvas tagged #my-canvas that is 160 pixels wide by 90 pixel tall
-```
+~~~
 commit
   [#canvas/root #my-canvas width: 160 height: 90]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -871,13 +893,13 @@ commit
       </ul>
     </td>
     <td><code>// adds a #canvas/path to #my-canvas with a black stroke, a line width of 2 pixels and beveled corners
-```
+~~~
 search
   canvas = [#canvas/root #my-canvas]
 
 commit
   canvas.children := [#canvas/path strokeStyle: “#000000” lineWidth: 2 lineJoin: bevel]
-```</code>
+~~~</code>
     </td>
   </tr>
   <tr>
@@ -901,12 +923,12 @@ commit
       </ul>
     </td>
     <td><code>// creates a 100x100 canvas and moves the path 20 pixels right and 15 pixels down from the top left corner of the canvas without drawing a line
-```
+~~~
 commit
   [#canvas/root width: 100 height: 100 children:
     [#canvas/path children:
       [type: “moveTo” x: 20 y: 15]]]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -926,12 +948,12 @@ commit
       </ul>
     </td>
     <td><code>// draws a black line from the top left corner of a 100x100 canvas to the center
-```
+~~~
 commit
   [#canvas/root width: 100 height: 100 children:
     [#canvas/path strokeStyle: “#000000” children:
       [type: “lineTo” x: 50 y: 50]]]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -955,13 +977,13 @@ commit
       </ul>
     </td>
     <td><code>// draws a red Bézier curve starting at (20, 25) and ending at (40, 50)
-```
+~~~
 commit
   [#canvas/root width: 100 height: 100 children:
     [#canvas/path strokeStyle: “rgb(255, 0, 0)” children:
       [type: “moveTo” x: 20 y: 25]
       [type: “bezierQuadraticCurveTo” <strong>cp1x</strong>: 20 <strong>cp1y</strong>: 0 <strong>cp2x</strong>: 30 <strong>cp2y</strong>: 30  x: 40 y: 50]]]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1006,12 +1028,12 @@ commit
       </ul>
     </td>
     <td><code>// draws an arc that circumscribes ¾ of a 40 pixel-wide circle in the middle of the canvas
-```
+~~~
 commit
   [#canvas/root width: 100 height: 100 children:
     [#canvas/path children:
       [type: “arc” x: 50 y: 50 radius: 20 startAngle: 0 endAngle: 1.5 * 3.14]]]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1034,14 +1056,14 @@ commit
       </ul>
     </td>
     <td><code>// draws an arc that connects two perpendicular lines with a circular curve
-```
+~~~
 commit
   [#canvas/root width: 100 height: 100 children:
     [#canvas/path children:
       [type: “lineTo” x: 50 y: 0]
       [type: “arcTo: x1: 50 y1: 0 x2: 55 y2: 5 radius: 5]
       [type: “lineTo” x: 55 y: 55]]]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1067,12 +1089,12 @@ commit
       </ul>
     </td>
     <td><code>// draws a green oval in the center of the canvas that is 20 pixels wide and 30 pixels high
-```
+~~~
 commit
   [#canvas/root width: 100 height: 100 children:
     [#canvas/path fillStyle: “#00ff00” children:
       [type: “ellipse” x: 50 y: 50 radiusX: 10 radiusY: 15 rotation: 0 startAngle: 0 endAngle: 2 * 3.14]]]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1094,12 +1116,12 @@ commit
       </ul>
     </td>
     <td><code>// draws a blue square with black borders in the middle of the canvas
-```
+~~~
 commit
   [#canvas/root width: 100 height: 100 children:
     [#canvas/path fillStyle: “#0000ff” strokeStyle: “#000000” children:
       [type: “rect” x: 40 y: 40 width: 20 height: 20]]]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1118,7 +1140,7 @@ commit
       </ul>
     </td>
     <td><code>// returns the path to (10, 10) from (20, 40) to create a triangle
-```
+~~~
 commit
   [#canvas/root width: 100 height: 100 children:
     [#canvas/path children:
@@ -1126,7 +1148,7 @@ commit
       [type: “lineTo” x: 20 y: 10]
       [type: “lineTo” x: 20 y: 40]
       [type: “closePath”]]]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1176,10 +1198,10 @@ The UI library provides a shorthand for adding standard HTML elements, as well a
       </ul>
     </td>
     <td><code>// commits a div in the browser with the text “Hello world!”
-```
+~~~
 commit
   [#ui/div text: “Hello world!”]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1203,13 +1225,13 @@ commit
       </ul>
     </td>
     <td><code>// creates 3 very wise divs in the browser stacked on top of one another
-```
+~~~
 commit
   [#ui/column children:
     [#ui/div text: “See no evil.”]
     [#ui/div text: “Hear no evil.”]
     [#ui/div text: “Speak no evil.”]]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1263,13 +1285,13 @@ commit
       </ul>
     </td>
     <td><code>// creates an autocomplete form with the class “birth-state” and the placeholder “Which state were you born in?”, where the autocomplete options are the names of any #state records found
-```
+~~~
 search
   [#state name]
 
 commit
   [#ui/autocomplete #birth-state placeholder: “Where state were you born in?” | completion: [text: name]]
-```</code>
+~~~</code>
     </td>
   </tr>
   <tr>
@@ -1293,14 +1315,14 @@ commit
       </ul>
     </td>
     <td><code>// clears an autocomplete field if it loses focus
-```
+~~~
 search
   autocomplete = [#ui/autocomplete]
   [#html/event/blur element: [#ui/autocomplete/input autocomplete]]
 
 commit
   [#ui/event/clear autocomplete]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1319,7 +1341,7 @@ commit
       </ul>
     </td>
     <td><code>// changes the font color of the autocomplete input to red when the list is opened; the color will not revert once the menu is closed unless another block is specifically written to do so
-```
+~~~
 search
   autocomplete = [#ui/autocomplete]
   input = [#ui/autocomplete/input autocomplete]
@@ -1327,7 +1349,7 @@ search
 
 commit
   input.style <- [color: #ff0000]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1346,7 +1368,7 @@ commit
       </ul>
     </td>
     <td><code>// changes the font color of the autocomplete input to black when the list is closed; reverts the change in the example for #ui/event/open
-```
+~~~
 search
   autocomplete = [#ui/autocomplete]
   input = [#ui/autocomplete/input autocomplete]
@@ -1354,7 +1376,7 @@ search
 
 commit
   input.style <- [color: #000000]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1373,7 +1395,7 @@ commit
       </ul>
     </td>
     <td><code>// as a follow-up to the #ui/autocomplete example, this waits for the user to pick a birth state, then creates a new autocomplete tagged #birth-county to ask which county within that particular state the user was born in
-```
+~~~
 search
   birth-state = [#ui/autocomplete #birth-state selected]
   selected = [#state name counties]
@@ -1381,7 +1403,7 @@ search
 
 commit
   [#ui/autocomplete #birth-county placeholder: “Which county?” | completion: [text: counties]]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1400,14 +1422,14 @@ commit
       </ul>
     </td>
     <td><code>// when an autocomplete asking what the magic word is changes to the correct answer, adds the tag #magic-word to the autocomplete
-```
+~~~
 search
   [#ui/event/change autocomplete]
   autocomplete = [#ui/autocomplete placeholder: “What’s the magic word?” value: “please”]
 
 bind
   autocomplete <- [#magic-word]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1443,20 +1465,20 @@ The system library provides various system-level utilities for Eve.
       <code>
 Commits a timer that ticks every 1000 milliseconds
 
-```
+~~~
 commit
   [#system/timer resolution: 1000]
-```
+~~~
 
 Displays the current time
 
-```
+~~~
 search
   [#system/timer hours minutes seconds]
 
 bind
   [#ui/text text: "{{hours}}:{{minutes}}:{{seconds}}"]
-```
+~~~
       </code>
     </td>
   </tr>
