@@ -16,11 +16,11 @@ title: "Standard Library"
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>for</strong> - the set to sort</li>
         <li><strong>per</strong> - (optional) - one or more attributes by which to group `for`</li>
         <li><strong>direction</strong> - (optional) - direction in which to sort `for`. Possible values are:
-          <ul>
+          <ul class="arglist">
             <li>'up' - smallest to largest; default option</li>
             <li>'down' - largest to smallest</li>
           </ul>
@@ -54,7 +54,7 @@ bind
   </tr>
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>for</strong> - the set to count over</li>
         <li><strong>per</strong> - (optional) - one or more attributes by which to group `for`</li>
       </ul>
@@ -87,7 +87,7 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>for</strong> - the set to gather</li>
         <li><strong>value</strong> - the specific variable to be summed</li>
         <li><strong>per</strong> - (optional) - one or more attributes by which to group `for`</li>
@@ -123,13 +123,22 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>value</strong> - the number to be rounded down</li>
       </ul>
     </td>
     <td>
-      <code>// x rounded down to 34
-        x = math/floor[value: 34.2]</code>
+      <code>
+x rounded down to 34
+
+~~~
+search
+  x = math/floor[value: 34.2]
+
+bind
+  [#ui/text text: x]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -143,13 +152,22 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>value</strong> - the number to be rounded up</li>
       </ul>
     </td>
     <td>
-      <code>// x rounded up to 35
-        x = math/ceiling[value: 34.2]</code>
+      <code>      
+x rounded up to 35
+
+~~~
+search
+  x = math/ceiling[value: 34.2]
+
+bind
+  [#ui/text text: x]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -163,13 +181,22 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>value</strong> - the number to be rounded to the nearest integer</li>
       </ul>
     </td>
     <td>
-      <code>// x rounded to 34
-        x = math/floor[value: 34.2]</code>
+      <code>
+x rounded to 34
+
+~~~
+search
+  x = math/round[value: 34.2]
+
+bind
+  [#ui/text text: x]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -183,13 +210,22 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>degrees</strong> - the angle in degrees</li>
       </ul>
     </td>
     <td>
-      <code>// r calculated to 1
-        r = math/sin[degrees: 90]</code>
+      <code>
+r calculated to 1
+
+~~~
+search
+  r = math/sin[degrees: 90]
+
+bind
+  [#ui/text text: x]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -203,13 +239,22 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>degrees</strong> - the angle in degrees</li>
       </ul>
     </td>
     <td>
-      <code>// r calculated to 0
-        r = math/cos[degrees: 90]</code>
+      <code>
+r calculated to 0
+
+~~~
+search
+  r = math/cos[degrees: 90]
+
+bind
+  [#ui/text text: x]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -223,13 +268,22 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>degrees</strong> - the angle in degrees</li>
       </ul>
     </td>
     <td>
-      <code>// r calculated to 1
-        r = math/tan[degrees: 45]</code>
+      <code>
+r calculated to 1
+
+~~~
+search
+  r = math/tan[degrees: 45]
+
+bind
+  [#ui/text text: x]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -243,7 +297,7 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>a</strong> - a value to compare</li>
         <li><strong>b</strong> - another value to compare</li>
       </ul>
@@ -265,7 +319,7 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>a</strong> - a value to compare</li>
         <li><strong>b</strong> - another value to compare</li>
       </ul>
@@ -287,7 +341,7 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>value</strong> - the number to be divided (dividend)</li>
         <li><strong>by</strong> - the number by which to divide (divisor)</li>
       </ul>
@@ -308,7 +362,7 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>value</strong> - the number whose absolute value is found</li>
       </ul>
     </td>
@@ -329,7 +383,7 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>a</strong> - the number to be formatted</li>
         <li><strong>b</strong> - the number of decimal places to which `a` will be formatted</li>
       </ul>
@@ -351,7 +405,7 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>start</strong> - the start of the range</li>
         <li><strong>stop</strong> - the end of the range</li>
       </ul>
@@ -372,7 +426,7 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>seed</strong> - a number used to initialize the random number generator</li>
       </ul>
     </td>
@@ -395,7 +449,7 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>text</strong> - the text in which to search for strings and replace them</li>
         <li><strong>replace</strong> - the string to be replaced</li>
         <li><strong>with</strong> - the string that will replace `replace`</li>
@@ -418,7 +472,7 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>text</strong> - the text to be searched</li>
         <li><strong>at</strong> - the location to be searched</li>
       </ul>
@@ -440,7 +494,7 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>text</strong> - the text to be converted</li>
       </ul>
     </td>
@@ -460,7 +514,7 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>text</strong> - the text to be converted</li>
       </ul>
     </td>
@@ -480,7 +534,7 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>text</strong> - the text to be searched</li>
         <li><strong>substring</strong> - the string to be found in `text`</li>
       </ul>
@@ -501,7 +555,7 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>text</strong> - the string whose length is found</li>
       </ul>
     </td>
@@ -526,7 +580,7 @@ The HTML library is a low level interface for creating HTML elements and respond
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>tagname</strong> - determines the type of html element rendered in the browser; can be any html element given as a string</li>
         <li><strong>style</strong> - (optional) - specific CSS styles can be defined, but must be entered as a subrecord</li>
         <li><strong>text</strong> - (optional) - defines text within the html element</li>
@@ -554,7 +608,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li>Requires an `if` statement in the search block that returns true or false</li>
       </ul>
     </td>
@@ -581,7 +635,7 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li>Apply the tag to an element to make it responsive to hovering</li>
       </ul>
     </td>
@@ -604,7 +658,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li>Tag applied by Eve</li>
       </ul>
     </td>
@@ -630,7 +684,7 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>element</strong> - (optional) - the element that the mouse is entering or leaving</li>
       </ul>
     </td>
@@ -657,7 +711,7 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>element</strong> - (optional) - the changed element</li>
         <li><strong>value</strong> - (optional) - the current value of a form element in the browser</li>
       </ul>
@@ -685,11 +739,11 @@ bind
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>element</strong> - (optional) - the element to be monitored; includes clicks on any children within the element</li>
         <li><strong>target</strong> - (optional) - the exact element to be monitored; does not include any children</li>
         <li><strong>button</strong> - (optional) - the mouse button whose click is monitored; options are:
-          <ul>
+          <ul class="arglist">
             <li>“left” - left mouse button; if no button argument is provided, this is the default</li>
             <li>“right” - right mouse button</li>
             <li>“middle” - middle mouse button</li>
@@ -720,7 +774,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li>Apply the tag to the element whose context menu you want to prevent</li>
       </ul>
     </td>
@@ -743,11 +797,11 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>element</strong> - (optional) - the element which has focus during key-up or key-down</li>
         <li><strong>key-code</strong> - the key code of the key to be monitored</li>
         <li><strong>key</strong> - (optional) - the key to be monitored; an alternative to key-code for a premade list of keys:
-          <ul>
+          <ul class="arglist">
             <li>"tab</li>
             <li>"enter"</li>
             <li>"shift"</li>
@@ -785,7 +839,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>element</strong> - (optional) - the element to be monitored</li>
         <li><strong>value</strong> - (optional) - the value of the form element when it gains or loses focus</li>
       </ul>
@@ -812,7 +866,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li>Apply the tag to the element to gain or lose focus</li>
       </ul>
     </td>
@@ -847,7 +901,7 @@ The canvas library is an interface for drawing graphics in the browser using the
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>width</strong> - the width of the canvas in pixels</li>
         <li><strong>height</strong> - the height of the canvas in pixels</li>
         <li><strong>children</strong> - (optional) - paths are written as child records; while optional, without any children, the canvas will be blank</li>
@@ -871,19 +925,19 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>fillStyle</strong> - (optional) - sets the color, gradient, or pattern used to fill the drawing; if undefined, the default is black</li>
         <li><strong>strokeStyle</strong> - (optional) - sets the color, gradient, or pattern used for the strokes; if undefined, the path will default to a black fill style</li>
         <li><strong>lineWidth</strong> - (optional) - sets the width of strokes in pixels; if undefined, the default is 1px</li>
         <li><strong>lineCap</strong> - (optional) - sets the style of end caps on lines; options are:
-          <ul>
+          <ul class="arglist">
             <li>“butt” - a flat edge; if undefined, butt is default</li>
             <li>“round” - a rounded end cap</li>
             <li>“square” - ends are squared off by a box with an equal width and half the height of the line's thickness</li>
           </ul>
         </li>
         <li><strong>lineJoin</strong> - (optional) - sets the style of corners where two lines meet; options are:
-          <ul>
+          <ul class="arglist">
             <li>“miter” - a sharp corner; if undefined, miter is default</li>
             <li>“round” - a rounded corner</li>
             <li>“bevel” - a beveled corner</li>
@@ -917,7 +971,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>x</strong> - the horizontal coordinate to move to, in pixels</li>
         <li><strong>y</strong> - the vertical coordinate to move to, in pixels</li>
       </ul>
@@ -942,7 +996,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>x</strong> - the horizontal coordinate to move to, in pixels</li>
         <li><strong>y</strong> - the vertical coordinate to move to, in pixels</li>
       </ul>
@@ -967,7 +1021,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>cp1x</strong> - the x coordinate of the first control point</li>
         <li><strong>cp1y</strong> - the y coordinate of the first control point</li>
         <li><strong>cp2x</strong> - the x coordinate of the second control point</li>
@@ -997,7 +1051,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>cpx</strong> - the x coordinate of the control point</li>
         <li><strong>cpy</strong> - the y coordinate of the control point</li>
         <li><strong>y</strong> - the x coordinate of the end point</li>
@@ -1018,7 +1072,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>y</strong> - the x coordinate of the center of the curve</li>
         <li><strong>y</strong> - the y coordinate of the center of the curve</li>
         <li><strong>radius</strong> - the radius of the curve in pixels</li>
@@ -1047,7 +1101,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>x1</strong> - the x coordinate of the starting point of the curve</li>
         <li><strong>y1</strong> - the y coordinate of the starting point of the curve</li>
         <li><strong>x2</strong> - the x coordinate of the ending point of the curve</li>
@@ -1077,7 +1131,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>y</strong> - the x coordinate of the center of the curve</li>
         <li><strong>y</strong> - the y coordinate of the center of the curve</li>
         <li><strong>radiusX</strong> - the horizontal radius of the curve</li>
@@ -1108,7 +1162,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>y</strong> - the x coordinate of the upper left corner of the rectangle</li>
         <li><strong>y</strong> - the y coordinate of the upper left corner of the rectangle</li>
         <li><strong>width</strong> - the width of the rectangle in pixels</li>
@@ -1135,7 +1189,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li>No arguments</li>
       </ul>
     </td>
@@ -1168,9 +1222,9 @@ The UI library provides a shorthand for adding standard HTML elements, as well a
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li>the <code>#ui</code> tag supports the following html elements:
-          <ul>
+          <ul class="arglist">
             <li><code>#ui/row</code></li>
             <li><code>#ui/column</code></li>
             <li><code>#ui/spacer</code></li>
@@ -1215,7 +1269,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>children</strong> - (optional) - the children contained within the column or row</li>
         <li><strong>style</strong> - (optional) - specific CSS styles can be defined, but must be entered as a subrecord</li>
         <li><strong>text</strong> - (optional) - defines text within the column or row</li>
@@ -1245,9 +1299,9 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li> - (optional) - preset options for class are:
-          <ul>
+          <ul class="arglist">
             <li>“inset” - an inset button style</li>
             <li>“flat” - a flat button style</li>
             <li>If class is not specified, there is a plain default style that will be used</li>
@@ -1274,7 +1328,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>completion</strong> - the list of possible responses, given as a subrecord with the attribute “text” whose value is the list; requires the use of a pipe in the #ui record if matching against multiple search records for one autocomplete field</li>
         <li><strong>Note</strong>: Once an autocomplete option has been selected, #ui/autocomplete automatically gains a <strong>selected</strong> attribute whose value is the completion record; in the case of the example shown here, the <strong>selected</strong> attribute would be whichever <code>#state</code> record was chosen</li>
         <li><strong>placeholder</strong> - (optional) - the placeholder text for the input field</li>
@@ -1310,7 +1364,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>autocomplete</strong> - the autocomplete element to clear</li>
       </ul>
     </td>
@@ -1336,7 +1390,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>autocomplete</strong> - the autocomplete being opened</li>
       </ul>
     </td>
@@ -1363,7 +1417,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>autocomplete</strong> - the autocomplete being closed</li>
       </ul>
     </td>
@@ -1390,7 +1444,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>autocomplete</strong> - the autocomplete being closed</li>
       </ul>
     </td>
@@ -1417,7 +1471,7 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>autocomplete</strong> - the autocomplete whose input field changed</li>
       </ul>
     </td>
@@ -1447,7 +1501,7 @@ The system library provides various system-level utilities for Eve.
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li><strong>resultion</strong> - the frequency in milliseconds of the timer.</li>
         <li><strong>year</strong> - (optional) - the current year</li>
         <li><strong>month</strong> - (optional) - the current month (1 - 12)</li>
