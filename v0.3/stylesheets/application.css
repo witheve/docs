@@ -1,0 +1,317 @@
+#eve-pallette {
+  /* Default */
+  color: rgb(74,64,136);
+  color: rgb(91,89,164);
+  color: rgb(107,103,173);
+  color: rgb(0,121,177);
+  color: rgb(0,158,224);
+  color: rgb(0,184,241);
+
+  /* Style 1 */
+  color: rgb(0, 115, 139);
+  color: rgb(0, 152, 167);
+  color: rgb(0, 171, 188);
+  color: rgb(140, 49, 55);
+  color: rgb(177, 67, 73);
+  color: rgb(226, 79, 94);
+
+  /* Style 2 */
+  color: rgb(85, 138, 126);
+  color: rgb(113, 177, 162);
+  color: rgb(128, 198, 182);
+  color: rgb(153, 114, 45);
+  color: rgb(198, 154, 63);
+  color: rgb(246, 192, 78);
+
+  /* Style 3 */
+  color: rgb(82, 129, 62);
+  color: rgb(111, 165, 81);
+  color: rgb(129, 191, 95);
+  color: rgb(0, 113, 140);
+  color: rgb(0, 151, 167);
+  color: rgb(0, 170, 190);
+
+  /* Style 4 */
+  color: rgb(60, 48, 130);
+  color: rgb(80, 79, 161);
+  color: rgb(98, 94, 169);
+  color: rgb(158, 34, 101);
+  color: rgb(216, 65, 140);
+  color: rgb(238, 81, 158);
+
+  /* Style 5 */
+  color: rgb(185, 73, 21);
+  color: rgb(216, 99, 27);
+  color: rgb(244, 119, 33);
+  color: rgb(197, 114, 21);
+  color: rgb(248, 158, 36);
+  color: rgb(251, 176, 49);
+
+  /* Style 6 */
+  color: rgb(124, 38, 118);
+  color: rgb(169, 59, 150);
+  color: rgb(200, 56, 150);
+  color: rgb(91, 34, 127);
+  color: rgb(126, 60, 151);
+  color: rgb(164, 95, 167);
+
+  /* Style 7 */
+  color: rgb(151, 150, 137);
+  color: rgb(183, 182, 167);
+  color: rgb(204, 202, 185);
+  color: rgb(88, 132, 150);
+  color: rgb(123, 164, 182);
+  color: rgb(145, 192, 214);
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+}
+
+body { display: flex; flex-direction: column; margin: 0; background: white; color: #555; line-height: 1.7; font-family: "Open Sans", Avenir, "Helvetica neue", sans-serif;}
+
+
+pre {
+  background-color: rgb(38,38,38);
+  padding: 20px;
+  padding-left: 10px;
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+code {
+  color: rgb(226, 79, 94);
+}
+
+blockquote {
+  color: rgb(125,125,125);
+  border-left: 3px solid rgb(200,200,200);
+  padding-left: 10px;
+}
+
+p {
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+
+ul, ol {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 25px;
+}
+
+h1 {
+  font-size: 35px;
+  padding-top: 0px;
+  margin-top:0px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 25px;
+  padding-top: 0px;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-left: 20px;  
+}
+
+.main {
+  display: flex;
+  align-items: stretch;
+  min-height: 100%;
+}
+
+.drawer {
+  color: rgb(85, 85, 85);
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.highlight {
+  margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.colored {
+  font-weight: bold;
+}
+
+.drawer a {
+  color: rgb(85, 85, 85);
+}
+
+.article {
+  padding-left: 50px;
+  padding-bottom: 200px;
+}
+
+.article a {
+  color: rgb(0,158,224);
+}
+
+.article a::hover {
+  color: rgb(91,89,164);
+}
+
+.sidebar-menu {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.sidebar-menu a {
+  text-decoration: none;
+}
+
+.sidebar-menu li {
+  margin-left: 0px;
+}
+
+.sub {
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 20px;
+}
+
+b {
+  font-weight: bold;  
+}
+
+.sub li {
+  margin: 0px;
+}
+
+.sub-menu {
+
+}
+
+.selected a {
+  color: rgb(226, 79, 94);
+}
+
+.active {
+
+}
+
+.active li {
+  display: inherit;
+}
+
+.dataTable {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.dataTable th {
+  font-weight: bold;
+  border: 1px solid #000;
+}
+
+.dataTable td {
+  border: 1px solid #000;
+  white-space: pre;
+  font-family: monospace;
+  padding: 5px;
+}
+
+.flex-spacer { flex: 1; }
+.flex-row { display: flex; }
+.flex-row.spaced > * + * { margin-left: 30px; }
+.flex-row.double-spaced > * + * { margin-left: 60px; }
+.flex-row.stretched { align-self: stretch; }
+
+.layer-wrapper { display: flex; flex-direction: column; align-items: center; margin-top: 60px; padding: 0 40px; }
+.layer { max-width: 100%; width: 960px; display: flex; align-items: center; }
+.toplayer { max-width: 100%; width: 960px; display: flex; align-items: top; }
+.sub-layer { margin-top: 30px; }
+
+.header-wrapper { }
+.logo { display: flex; flex: 0 0 auto; align-items: center; padding: 0; }
+.logo > img { max-width: 60px; }
+.logo > h1 { margin: 0; margin-left: 18px; padding: 0; height: 26px; margin-top: -32px; }
+.logo > h1 > img { height: 100%; }
+
+nav { flex: none; display: flex; flex-direction: row-reverse; }
+nav > * { flex: 0 0 auto; padding: 10px 20px; margin: 0; text-decoration: none; color: rgb(74, 64, 136); transition: background 0.1s ease-out; }
+nav > *:hover { background: #f2f2f2; }
+nav > *:active { background: #e9e9e9; }
+nav > .play-cta { margin: 0; padding: 10px 20px; color: white; }
+
+.btn { cursor: pointer; text-align: center; user-select: none; -moz-user-select: none; -ms-user-select: none; }
+.btn.big { flex: 1 0 auto; padding: 18px 30px; }
+.btn.rounded { border-radius: 3px; }
+
+.cta { cursor: pointer; text-decoration: none; -ms-user-select: none; -moz-user-select: none; -webkit-user-select: none; user-select: none; transition: background 0.1s ease-out; }
+
+.cta.primary { background: rgb(0, 184, 241); color: white; }
+.cta.primary:hover { background: rgb(0, 158, 224); }
+.cta.primary:active { background: rgb(0, 121, 177); }
+
+.cta.secondary { background: rgb(107, 103, 173); color: white; }
+.cta.secondary:hover { background: rgb(91, 89, 164); }
+.cta.secondary:active { background: rgb(74, 64, 136); }
+
+.cta.tertiary { background: #888a8f; color: white; }
+.cta.tertiary:hover { background: #808284; }
+.cta.tertiary:active { background: #787a7f; }
+
+.contact-wrapper { display: flex; flex-direction: column; padding: 0; position: relative; margin-bottom: 60px; color: white; }
+.contact { display: flex; flex-direction: row; max-width: 960px; align-self: center; margin: auto; overflow: hidden; border-radius: 3px; cursor: pointer; -ms-user-select: none; -moz-user-select: none; -webkit-user-select: none; user-select: none; }
+.contact > * { flex: 1 1 auto; align-self: stretch; max-width: 320px; padding: 30px; color: white !important; text-decoration: none; transition: background 0.1s ease-out; }
+.contact h3 { margin-bottom: 20px; font-size: 1.25rem; }
+
+.contact > *:first-child { background: rgb(107, 103, 173); }
+.contact > *:first-child:hover { background: rgb(117, 115, 190); }
+.contact > *:first-child:active { background: rgb(142, 140, 215); }
+
+.contact > *:nth-child(2) { background: rgb(91, 89, 164); }
+.contact > *:nth-child(2):hover { background: rgb(117, 115, 190); }
+.contact > *:nth-child(2):active { background: rgb(142, 140, 215); }
+
+.contact > *:last-child { background: rgb(74, 64, 136); }
+.contact > *:last-child:hover { background: rgb(117, 115, 190); }
+.contact > *:last-child:active { background: rgb(142, 140, 215); }
+
+ul { display: block; margin-left: 2em; }
+
+code { padding: 0.2em; white-space: pre-wrap; font-family: "Inconsolata", "Monaco", "Consolas", "Ubuntu Mono", monospace; font-size: 0.9rem; }
+
+strong { font-weight: 600; }
+
+table { 
+  border: 1px #888a8f solid; 
+  margin-bottom: 1em; 
+  min-width: 820px;   
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td { 
+  border: 1px #AAA solid; 
+  width: 20em; 
+  padding: 10px;
+}
+
+.arglist {
+  list-style: none;
+  margin-left: 0px;
+}

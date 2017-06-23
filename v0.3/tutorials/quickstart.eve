@@ -1,0 +1,119 @@
+---
+layout: default
+title: Quickstart
+---
+
+# Quickstart
+
+This guide is a 5 - 10 minute introduction to the essential concepts in Eve. If you've never used Eve before, you're in the right place! Before you start with this tutorial, please follow the [installation and usage]({{ site-url }}/v0.3/install/) instructions, which will get you running Eve programs on your machine. In the eve-starter/programs directory, create an empty document called "quickstart.eve". Use your favorite editor to edit the program, and run it with the command:
+
+```
+npm start -- eve-starter/programs/quickstart.eve
+``` 
+
+Eve documents are written in Markdown. Eve code is written in blocks, delineated by Markdown code fences (matching pairs of ``` or ~~~ surrounding a section of code). These blocks of code search for and create records, which are key value pairs attached to a unique ID.
+
+## Adding records to Eve
+
+Let's start with a block that adds a record to Eve (we'll show the code fence in this block, but elide them in later blocks):
+
+``````
+~~~
+commit
+  [#greeting message: "hello world"]
+~~~
+``````
+
+The record committed by this block is tagged `#greeting`, and has an attribute "message" with the value "hello world". Tags are attributes like any other, their special syntax notwithstanding. We encourage you to use tags to classify groups of related records.
+
+## Finding records in Eve
+
+Blocks search for records, and then bind or commit new records. Let's search for the `#greeting` we just committed, and then display it on the screen:
+
+~~~eve
+search
+  [#greeting message]
+
+bind
+  [#ui/text text: message]
+~~~
+
+Searches find records that matches the supplied pattern, in this case records tagged greeting with a message attribute. You use these results to create new records. In this block, we create a `#ui/text` record for every message that is found (the UI library looks for records tagged `#ui/text` and draws them as DOM elements in the browser). If no records match the search, the block has no effect. Try adding another `#greeting` record in the first block to see what happens when more than one record matches the search. 
+
+Variables with the same name are equivalent within a block; because they have the same name, the `message` in `[#greeting message]` and `[#ui/text text: message]` are equivalent.
+
+## Records update as data changes
+
+Blocks in Eve react automatically to changes in data. When a record changes, any bound records are automatically updated. We can see this in action by outputting the current time. First we create a timer that ticks once every second:
+
+~~~eve
+commit
+  [#time #system/timer resolution: 1000]
+~~~
+
+Now we can search for the current time, and display it on the screen:
+
+~~~eve
+search
+  [#time seconds]
+
+bind 
+  [#ui/text text: seconds]
+~~~
+
+As the time changes, the output updates to reflect the current state of the `#time` record. Records can be committed instead of bound, but the behavior is a little different -- committed records persist until they are removed explicitly.
+
+## Reacting to events
+
+Let's draw a button on the screen:
+
+~~~eve
+commit
+  [#ui/button #increment text: "+1"]
+~~~
+
+When you click anywhere on the screen, Eve creates an `#html/event/click` record representing the click. You can react to clicks on the `#increment` button by searching for the `#html/event/click` record, where the element attribute is the button: 
+
+~~~eve
+search
+  event = [#html/event/click element: [#increment]]
+
+commit
+  [#clicked event]
+~~~
+
+Clicks only last for an instant, but we want to create a permanent record of each click so we can search for them later. This block commits a `#clicked` record that will persist until it's explicitly removed. Much like the `#greeting` text we bound to the `#ui`, variables with the same name are equivalent, so the variable `event` in the `#clicked` record is a reference to the `#html/event/click` on the `#increment` button.
+
+The identity of a record is determined by its attribute/value pairs. Two records with the same attributes and values are the same record in Eve. We included the `event` attribute in the `#clicked` record to differentiate each record. Without this differentiation, we could only ever create a single `#clicked` record.
+
+## Count the number of clicks
+
+Now let's count the number of times the button has been clicked. Make sure `event` is back in `#clicked`, and then we can count those records directly:
+
+~~~eve
+search
+  how-many = gather/count[for: [#clicked]]
+
+bind
+  [#ui/text text: "The button has been clicked {{how-many}} times"]
+~~~
+
+This block searches for every unique `#clicked`, counts them, and returns that value in `how-many`. Then we display this value in a text container using the operator `{{ ... }}`, which inserts the value of the contained variable into the string. An important thing to remember here is that this block will only run when the button has been clicked at least once. Before then, this block will not run because there are no `#clicked` records to count.
+
+## Summary
+
+That's it for the 5 minute introduction to Eve. To summarize:
+
+- Eve programs are made up of blocks.
+- Data are represented by records, key value pairs associated to a unique ID.
+- There are two sections of a block: one where you search for records, and one where you bind or commit records.
+- Blocks update records automatically to reflect changes in data.
+- Bound records are replaced when data changes, while committed records must be removed manually.
+- Records are unique, uniqueness is determined by a record's attributes and their values.
+
+This will get you started with Eve, but there's still more to learn. From here, you can:
+
+- Advance to Level 2 of the introductory tutorial (coming soon).
+- View the [syntax reference]({{ site-url }}/v0.3/syntaxreference/) or the [library reference]({{ site-url }}/v0.3/handbook/libraries/stdlib/).
+- Explore already made [examples](https://github.com/witheve/eve-examples).
+- Or dive right in to the editor and try out the concepts you've just learned (coming soon).
