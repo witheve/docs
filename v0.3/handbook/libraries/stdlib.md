@@ -1420,11 +1420,11 @@ The system library provides various system-level utilities for Eve.
   <tr>
     <td>
       <ul>
-        <li><strong>resultion</strong> - the frequency in milliseconds of the timer.</li>
+        <li><strong>resolution</strong> - the frequency in milliseconds of the timer.</li>
         <li><strong>year</strong> - (optional) - the current year</li>
         <li><strong>month</strong> - (optional) - the current month (1 - 12)</li>
         <li><strong>day</strong> - (optional) - the current day of the month (1 - 31)</li>
-        <li><strong>weeday</strong> - (optional) - the current day of the week (1 - 7, where 1 is Sunday)</li>
+        <li><strong>weekday</strong> - (optional) - the current day of the week (1 - 7, where 1 is Sunday)</li>
         <li><strong>hours</strong> - (optional) - the current hour (0 - 23)</li>
         <li><strong>minutes</strong> - (optional) - the current minute (0 - 59)</li>
         <li><strong>seconds</strong> - (optional) - the current second (0 - 59)</li>
