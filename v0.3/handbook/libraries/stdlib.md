@@ -2,6 +2,7 @@
 layout: default
 title: "Standard Library"
 ---
+{% raw %}
 
 # Standard Library
 
@@ -655,6 +656,10 @@ bind
       <ul>
         <li><strong>element</strong> - (optional) - the element to be monitored; includes clicks on any children within the element</li>
         <li><strong>target</strong> - (optional) - the exact element to be monitored; does not include any children</li>
+        <li><strong>page-x</strong> - (optional) - the x-coordinate of the mouse pointer relative to the page</li>
+        <li><strong>page-y</strong> - (optional) - the y-coordinate of the mouse pointer relative to the page</li>
+        <li><strong>window-x</strong> - (optional) - the x-coordinate of the mouse pointer relative to the window</li>
+        <li><strong>window-y</strong> - (optional) - the y-coordinate of the mouse pointer relative to the page</li>
         <li><strong>button</strong> - (optional) - the mouse button whose click is monitored; options are:
           <ul>
             <li>“left” - left mouse button; if no button argument is provided, this is the default</li>
@@ -814,11 +819,11 @@ The canvas library is an interface for drawing graphics in the browser using the
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li><strong>width</strong> - the width of the canvas in pixels</li>
         <li><strong>height</strong> - the height of the canvas in pixels</li>
         <li><strong>children</strong> - (optional) - paths are written as child records; while optional, without any children, the canvas will be blank</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// creates a canvas tagged #my-canvas that is 160 pixels wide by 90 pixel tall
 ```
@@ -838,7 +843,7 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li><strong>fillStyle</strong> - (optional) - sets the color, gradient, or pattern used to fill the drawing; if undefined, the default is black</li>
         <li><strong>strokeStyle</strong> - (optional) - sets the color, gradient, or pattern used for the strokes; if undefined, the path will default to a black fill style</li>
         <li><strong>lineWidth</strong> - (optional) - sets the width of strokes in pixels; if undefined, the default is 1px</li>
@@ -857,7 +862,7 @@ commit
           </ul>
         </li>
         <li><strong>children</strong> - (optional) - each individual operation in the path is written as a child record; while optional, without any children, the canvas will be blank</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// adds a #canvas/path to #my-canvas with a black stroke, a line width of 2 pixels and beveled corners
 ```
@@ -884,10 +889,10 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li><strong>x</strong> - the horizontal coordinate to move to, in pixels</li>
         <li><strong>y</strong> - the vertical coordinate to move to, in pixels</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// creates a 100x100 canvas and moves the path 20 pixels right and 15 pixels down from the top left corner of the canvas without drawing a line
 ```
@@ -909,10 +914,10 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li><strong>x</strong> - the horizontal coordinate to move to, in pixels</li>
         <li><strong>y</strong> - the vertical coordinate to move to, in pixels</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// draws a black line from the top left corner of a 100x100 canvas to the center
 ```
@@ -934,14 +939,14 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li><strong>cp1x</strong> - the x coordinate of the first control point</li>
         <li><strong>cp1y</strong> - the y coordinate of the first control point</li>
         <li><strong>cp2x</strong> - the x coordinate of the second control point</li>
         <li><strong>cp2y</strong> - the y coordinate of the second control point</li>
         <li><strong>x</strong> - the x coordinate of the end point</li>
         <li><strong>y</strong> - the y coordinate of the end point</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// draws a red Bézier curve starting at (20, 25) and ending at (40, 50)
 ```
@@ -964,12 +969,12 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li><strong>cpx</strong> - the x coordinate of the control point</li>
         <li><strong>cpy</strong> - the y coordinate of the control point</li>
         <li><strong>y</strong> - the x coordinate of the end point</li>
         <li><strong>y</strong> - the y coordinate of the end point</li>
-      </ui>
+      </ul>
     </td>
     <td><code></code>
     </td>
@@ -985,14 +990,14 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li><strong>y</strong> - the x coordinate of the center of the curve</li>
         <li><strong>y</strong> - the y coordinate of the center of the curve</li>
         <li><strong>radius</strong> - the radius of the curve in pixels</li>
         <li><strong>startAngle</strong> - the starting angle of the curve in radians</li>
         <li><strong>endAngle</strong> - the ending angle of the curve in radians</li>
         <li><strong>anticlockwise</strong> - (optional) - values can be true or false; true draws the arc counterclockwise, false draws the arc clockwise</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// draws an arc that circumscribes ¾ of a 40 pixel-wide circle in the middle of the canvas
 ```
@@ -1014,13 +1019,13 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li><strong>x1</strong> - the x coordinate of the starting point of the curve</li>
         <li><strong>y1</strong> - the y coordinate of the starting point of the curve</li>
         <li><strong>x2</strong> - the x coordinate of the ending point of the curve</li>
         <li><strong>y2</strong> - the y coordinate of the ending point of the curve</li>
         <li>radius - the radius of the curve in pixels</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// draws an arc that connects two perpendicular lines with a circular curve
 ```
@@ -1044,7 +1049,7 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li><strong>y</strong> - the x coordinate of the center of the curve</li>
         <li><strong>y</strong> - the y coordinate of the center of the curve</li>
         <li><strong>radiusX</strong> - the horizontal radius of the curve</li>
@@ -1053,7 +1058,7 @@ commit
         <li><strong>startAngle</strong> - the starting angle of the curve in radians</li>
         <li><strong>endAngle</strong> - the ending angle of the curve in radians</li>
         <li><strong>anticlockwise</strong> - (optional) - values can be true or false; true draws the arc counterclockwise, false draws the arc clockwise</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// draws a green oval in the center of the canvas that is 20 pixels wide and 30 pixels high
 ```
@@ -1075,12 +1080,12 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li><strong>y</strong> - the x coordinate of the upper left corner of the rectangle</li>
         <li><strong>y</strong> - the y coordinate of the upper left corner of the rectangle</li>
         <li><strong>width</strong> - the width of the rectangle in pixels</li>
         <li><strong>height</strong> - the height of the rectangle in pixels</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// draws a blue square with black borders in the middle of the canvas
 ```
@@ -1102,9 +1107,9 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li>No arguments</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// returns the path to (10, 10) from (20, 40) to create a triangle
 ```
@@ -1135,7 +1140,7 @@ The UI library provides a shorthand for adding standard HTML elements, as well a
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li>the <code>#ui</code> tag supports the following html elements:
           <ul>
             <li><code>#ui/row</code></li>
@@ -1162,7 +1167,7 @@ The UI library provides a shorthand for adding standard HTML elements, as well a
         <li><strong>#</strong> - (optional) - any other tags on the record will be applied to the element as classes</li>
         <li><strong>class</strong> - (optional) defines one or more classes for the element</li>
         <li>Other attributes - (optional) - other attribute-value pairs will be applied directly to the element for integration with existing JS libraries or debugging</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// commits a div in the browser with the text “Hello world!”
 ```
@@ -1182,14 +1187,14 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li><strong>children</strong> - (optional) - the children contained within the column or row</li>
         <li><strong>style</strong> - (optional) - specific CSS styles can be defined, but must be entered as a subrecord</li>
         <li><strong>text</strong> - (optional) - defines text within the column or row</li>
         <li><strong>#</strong> - (optional) - any other tags on the record will be applied to the column or row as classes</li>
         <li><strong>class</strong> - (optional) defines one or more classes for the element</li>
         <li>Other attributes - (optional) - other attribute-value pairs will be applied directly to the column or row for integration with existing JS libraries or debugging</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// creates 3 very wise divs in the browser stacked on top of one another
 ```
@@ -1212,7 +1217,7 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li> - (optional) - preset options for class are:
           <ul>
             <li>“inset” - an inset button style</li>
@@ -1225,7 +1230,7 @@ commit
         <li><strong>text</strong> - (optional) - defines text in the button</li>
         <li><strong>#</strong> - (optional) - any other tags on the record will be applied to the button as classes</li>
         <li>Other attributes - (optional) - other attribute-value pairs will be applied directly to the button for integration with existing JS libraries or debugging</li>
-      </ui>
+      </ul>
     </td>
     <td><code></code>
     </td>
@@ -1241,7 +1246,7 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li><strong>completion</strong> - the list of possible responses, given as a subrecord with the attribute “text” whose value is the list; requires the use of a pipe in the #ui record if matching against multiple search records for one autocomplete field</li>
         <li><strong>Note</strong>: Once an autocomplete option has been selected, #ui/autocomplete automatically gains a <strong>selected</strong> attribute whose value is the completion record; in the case of the example shown here, the <strong>selected</strong> attribute would be whichever <code>#state</code> record was chosen</li>
         <li><strong>placeholder</strong> - (optional) - the placeholder text for the input field</li>
@@ -1249,7 +1254,7 @@ commit
         <li><strong>#</strong> - (optional) - any other tags on the record will be applied to the autocomplete as classes</li>
         <li><strong>class</strong> - (optional) defines one or more classes for the autocomplete</li>
         <li>Other attributes - (optional) - other attribute-value pairs will be applied directly to the autocomplete for integration with existing JS libraries or debugging</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// creates an autocomplete form with the class “birth-state” and the placeholder “Which state were you born in?”, where the autocomplete options are the names of any #state records found
 ```
@@ -1277,9 +1282,9 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li><strong>autocomplete</strong> - the autocomplete element to clear</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// clears an autocomplete field if it loses focus
 ```
@@ -1303,9 +1308,9 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li><strong>autocomplete</strong> - the autocomplete being opened</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// changes the font color of the autocomplete input to red when the list is opened; the color will not revert once the menu is closed unless another block is specifically written to do so
 ```
@@ -1330,9 +1335,9 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li><strong>autocomplete</strong> - the autocomplete being closed</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// changes the font color of the autocomplete input to black when the list is closed; reverts the change in the example for #ui/event/open
 ```
@@ -1357,9 +1362,9 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li><strong>autocomplete</strong> - the autocomplete being closed</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// as a follow-up to the #ui/autocomplete example, this waits for the user to pick a birth state, then creates a new autocomplete tagged #birth-county to ask which county within that particular state the user was born in
 ```
@@ -1384,9 +1389,9 @@ commit
 
   <tr>
     <td>
-      <ui>
+      <ul>
         <li><strong>autocomplete</strong> - the autocomplete whose input field changed</li>
-      </ui>
+      </ul>
     </td>
     <td><code>// when an autocomplete asking what the magic word is changes to the correct answer, adds the tag #magic-word to the autocomplete
 ```
@@ -1400,3 +1405,55 @@ bind
     </td>
   </tr>
 </table>
+
+## System
+
+The system library provides various system-level utilities for Eve.
+
+<table class="libitem">
+  <tr>
+    <td colspan="2">
+      <b>#system/timer</b> - starts a timer at the specified resolution
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul>
+        <li><strong>resolution</strong> - the frequency in milliseconds of the timer.</li>
+        <li><strong>year</strong> - (optional) - the current year</li>
+        <li><strong>month</strong> - (optional) - the current month (1 - 12)</li>
+        <li><strong>day</strong> - (optional) - the current day of the month (1 - 31)</li>
+        <li><strong>weekday</strong> - (optional) - the current day of the week (1 - 7, where 1 is Sunday)</li>
+        <li><strong>hour</strong> - (optional) - the current hour (0 - 23)</li>
+        <li><strong>minute</strong> - (optional) - the current minute (0 - 59)</li>
+        <li><strong>second</strong> - (optional) - the current second (0 - 59)</li>
+        <li><strong>millisecond</strong> - (optional) - the current millisecond (0 - 999)</li>
+        <li><strong>timestamp</strong> - (optional) - the current time represented as the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC</li>
+        <li><strong>tick</strong> - (optional) - the number of ticks of the timer since it was created</li>
+      </ul>
+    </td>
+    <td>
+      <code>
+Commits a timer that ticks every 1000 milliseconds
+
+```
+commit
+  [#system/timer resolution: 1000]
+```
+
+Displays the current time
+
+```
+search
+  [#system/timer hour minute second]
+
+bind
+  [#ui/text text: "{{hour}}:{{minute}}:{{second}}"]
+```
+      </code>
+    </td>
+  </tr>
+</table>
+
+{% endraw %}
