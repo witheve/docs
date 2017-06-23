@@ -4,7 +4,7 @@ title: Index
 ---
 
 ## Install guide
-Need to install Eve on your machine? [Head here](/v0.3/index.html) for step-by-step directions.
+Need to install Eve on your machine? [Head here](/v0.3/install/) for step-by-step directions.
 
 ## Quickstart
 If you’re new to Eve and want a hands-on demo to learn the language, you can jump right in with a 5 minute [quickstart guide](/v0.3/tutorials/quickstart/) that shows you how to build a simple incrementing counter.
