@@ -1446,10 +1446,10 @@ Displays the current time
 
 ```
 search
-  [#system/timer hours minutes seconds]
+  [#system/timer hour minute second]
 
 bind
-  [#ui/text text: "{{hours}}:{{minutes}}:{{seconds}}"]
+  [#ui/text text: "{{hour}}:{{minute}}:{{second}}"]
 ```
       </code>
     </td>
