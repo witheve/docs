@@ -2,6 +2,7 @@
 layout: default
 title: "Standard Library"
 ---
+{% raw %}
 
 # Standard Library
 
@@ -655,6 +656,10 @@ bind
       <ul>
         <li><strong>element</strong> - (optional) - the element to be monitored; includes clicks on any children within the element</li>
         <li><strong>target</strong> - (optional) - the exact element to be monitored; does not include any children</li>
+        <li><strong>page-x</strong> - (optional) - the x-coordinate of the mouse pointer relative to the page</li>
+        <li><strong>page-y</strong> - (optional) - the y-coordinate of the mouse pointer relative to the page</li>
+        <li><strong>window-x</strong> - (optional) - the x-coordinate of the mouse pointer relative to the window</li>
+        <li><strong>window-y</strong> - (optional) - the y-coordinate of the mouse pointer relative to the page</li>
         <li><strong>button</strong> - (optional) - the mouse button whose click is monitored; options are:
           <ul>
             <li>“left” - left mouse button; if no button argument is provided, this is the default</li>
@@ -1430,7 +1435,6 @@ The system library provides various system-level utilities for Eve.
     </td>
     <td>
       <code>
-      {% raw %}
 Commits a timer that ticks every 1000 milliseconds
 
 ```
@@ -1447,8 +1451,9 @@ search
 bind
   [#ui/text text: "{{hours}}:{{minutes}}:{{seconds}}"]
 ```
-      {% endraw %}
       </code>
     </td>
   </tr>
 </table>
+
+{% endraw %}
