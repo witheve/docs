@@ -1430,7 +1430,7 @@ The system library provides various system-level utilities for Eve.
         <li><strong>seconds</strong> - (optional) - the current second (0 - 59)</li>
         <li><strong>milliseconds</strong> - (optional) - the current millisecond (0 - 999)</li>
         <li><strong>timestamp</strong> - (optional) - the current time represented as the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC</li>
-        <li><strong>frame</strong> - (optional) - the number of frames elapsed since the start of the timer</li>
+        <li><strong>ticks</strong> - (optional) - the number of ticks of the timer since it was created</li>
       </ul>
     </td>
     <td>
