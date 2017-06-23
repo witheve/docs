@@ -2,6 +2,7 @@
 layout: default
 title: Quickstart
 ---
+{% raw %}
 
 # Quickstart
 
@@ -117,3 +118,5 @@ This will get you started with Eve, but there's still more to learn. From here, 
 - View the [syntax reference]({{ site-url }}/v0.3/syntaxreference/) or the [library reference]({{ site-url }}/v0.3/handbook/libraries/stdlib/).
 - Explore already made [examples](https://github.com/witheve/eve-examples).
 - Or dive right in to the editor and try out the concepts you've just learned (coming soon).
+
+{% endraw %}
