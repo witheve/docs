@@ -5,7 +5,7 @@ title: Quickstart
 
 # Quickstart
 
-This guide is a 5 - 10 minute introduction to the essential concepts in Eve. If you've never used Eve before, you're in the right place! Before you start with this tutorial, please follow the [installation and usage](../install) instructions, which will get you running Eve programs on your machine. In the eve-starter/programs directory, create an empty document called "quickstart.eve". Use your favorite editor to edit the program, and run it with the command:
+This guide is a 5 - 10 minute introduction to the essential concepts in Eve. If you've never used Eve before, you're in the right place! Before you start with this tutorial, please follow the [installation and usage]({{ site-url }}/v0.3/install/) instructions, which will get you running Eve programs on your machine. In the eve-starter/programs directory, create an empty document called "quickstart.eve". Use your favorite editor to edit the program, and run it with the command:
 
 ```
 npm start -- eve-starter/programs/quickstart.eve
@@ -114,6 +114,6 @@ That's it for the 5 minute introduction to Eve. To summarize:
 This will get you started with Eve, but there's still more to learn. From here, you can:
 
 - Advance to Level 2 of the introductory tutorial (coming soon).
-- View the [syntax reference](../syntaxreference) or the [library reference](../handbook/libraries).
+- View the [syntax reference]({{ site-url }}/v0.3/syntaxreference/) or the [library reference]({{ site-url }}/v0.3/handbook/libraries/stdlib/).
 - Explore already made [examples](https://github.com/witheve/eve-examples).
 - Or dive right in to the editor and try out the concepts you've just learned (coming soon).
