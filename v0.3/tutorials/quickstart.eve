@@ -2,16 +2,17 @@
 layout: default
 title: Quickstart
 ---
+{% raw %}
 
 # Quickstart
 
-This guide is a 5 - 10 minute introduction to the essential concepts in Eve. If you've never used Eve before, you're in the right place! Before you start with this tutorial, please follow the [installation and usage](../install) instructions, which will get you running Eve programs on your machine. In the eve-starter/programs directory, create an empty document called "quickstart.eve". Use your favorite editor to edit the program, and run it with the command:
+This guide is a 5 - 10 minute introduction to the essential concepts in Eve. If you've never used Eve before, you're in the right place! Before you start with this tutorial, please follow the [installation and usage]({{ site-url }}/v0.3/install/) instructions, which will get you running Eve programs on your machine. In the eve-starter/programs directory, create an empty document called "quickstart.eve". Use your favorite editor to edit the program, and run it with the command:
 
 ```
 npm start -- eve-starter/programs/quickstart.eve
 ``` 
 
-Eve documents are written in Markdown. Eve code is written in blocks, delinated by Markdown code fences (matching pairs of ``` or ~~~ surrounding a section of code). These blocks of code search for and create records, which are key value pairs attached to a unique ID.
+Eve documents are written in Markdown. Eve code is written in blocks, delineated by Markdown code fences (matching pairs of ``` or ~~~ surrounding a section of code). These blocks of code search for and create records, which are key value pairs attached to a unique ID.
 
 ## Adding records to Eve
 
@@ -38,13 +39,20 @@ bind
   [#ui/text text: message]
 ~~~
 
-Searches find records that matches the supplied pattern, in this case records tagged greeting with a message attribute. You use these results to create new records. In this block, we create a `#ui/text` record for every message that is found. If no records match the search, the block has no effect. Try adding another `#greeting` record in the first block to see what happens when more than one record matches the search. 
+Searches find records that matches the supplied pattern, in this case records tagged greeting with a message attribute. You use these results to create new records. In this block, we create a `#ui/text` record for every message that is found (the UI library looks for records tagged `#ui/text` and draws them as DOM elements in the browser). If no records match the search, the block has no effect. Try adding another `#greeting` record in the first block to see what happens when more than one record matches the search. 
 
 Variables with the same name are equivalent within a block; because they have the same name, the `message` in `[#greeting message]` and `[#ui/text text: message]` are equivalent.
 
 ## Records update as data changes
 
-Blocks in Eve react automatically to changes in data. When a record changes, any bound records are automatically updated. Let's search for the current time, and display it on the screen:
+Blocks in Eve react automatically to changes in data. When a record changes, any bound records are automatically updated. We can see this in action by outputting the current time. First we create a timer that ticks once every second:
+
+~~~eve
+commit
+  [#time #system/timer resolution: 1000]
+~~~
+
+Now we can search for the current time, and display it on the screen:
 
 ~~~eve
 search
@@ -77,7 +85,7 @@ commit
 
 Clicks only last for an instant, but we want to create a permanent record of each click so we can search for them later. This block commits a `#clicked` record that will persist until it's explicitly removed. Much like the `#greeting` text we bound to the `#ui`, variables with the same name are equivalent, so the variable `event` in the `#clicked` record is a reference to the `#html/event/click` on the `#increment` button.
 
-The identity of a record is determined by its attribute/value pairs. Two records with the same attributes and values are identical in Eve. We included the `event` attribute in the `#clicked` record to differentiate each record. Without this differentiation, we could only ever create a single `#clicked` record.
+The identity of a record is determined by its attribute/value pairs. Two records with the same attributes and values are the same record in Eve. We included the `event` attribute in the `#clicked` record to differentiate each record. Without this differentiation, we could only ever create a single `#clicked` record.
 
 ## Count the number of clicks
 
@@ -107,13 +115,8 @@ That's it for the 5 minute introduction to Eve. To summarize:
 This will get you started with Eve, but there's still more to learn. From here, you can:
 
 - Advance to Level 2 of the introductory tutorial (coming soon).
-- View the [syntax reference](../syntaxreference) or the [library reference](../handbook/libraries).
+- View the [syntax reference]({{ site-url }}/v0.3/syntaxreference/) or the [library reference]({{ site-url }}/v0.3/handbook/libraries/stdlib/).
 - Explore already made [examples](https://github.com/witheve/eve-examples).
 - Or dive right in to the editor and try out the concepts you've just learned (coming soon).
 
-## Appendix
-
-~~~eve
-commit
-  [#time #system/timer resolution: 1000]
-~~~
+{% endraw %}
