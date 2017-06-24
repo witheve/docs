@@ -30,18 +30,14 @@ title: "Standard Library"
     </td>
     <td>
       <code>
-      {% raw %}
 Sorts the students by GPA
-
 ~~~
 search
     [#student GPA]
     index = gather/sort[for: GPA]
-
 bind 
    [#ui/text sort: index, text: "{{name}} {{GPA}}"]
 ~~~
-      {% endraw %}
       </code>
     </td>
   </tr>
@@ -62,18 +58,14 @@ bind
     </td>
     <td>
       <code>
-      {{ %raw% }}
-Counts the number of citizens in each state
-
+Count the number of citizens in each state
 ~~~
 search
   residents = [#citizen state]
   population = gather/count[given: residents, per: state]
-
 bind
   [#ui/text text: "{{population}} people live in {{state}}"]
 ~~~
-      {{ %endraw% }}
       </code>
     </td>
   </tr>
@@ -96,18 +88,14 @@ bind
     </td>
     <td>
           <code>
-      {{ %raw% }}
 Sum of salaries for each department
-
 ~~~
 search 
   employees = [#employee salary department]
   payroll = gather/sum[for: employees, value: salary, per: department]
-
 bind
   [#ui/text text: "{{department}} - ${{payroll}}.00"]
 ~~~
-      {{ %endraw% }}
       </code>
     </td>
   </tr>
@@ -131,11 +119,9 @@ bind
     <td>
       <code>
 x rounded down to 34
-
 ~~~
 search
   x = math/floor[value: 34.2]
-
 bind
   [#ui/text text: x]
 ~~~
@@ -160,11 +146,9 @@ bind
     <td>
       <code>      
 x rounded up to 35
-
 ~~~
 search
   x = math/ceiling[value: 34.2]
-
 bind
   [#ui/text text: x]
 ~~~
@@ -189,11 +173,9 @@ bind
     <td>
       <code>
 x rounded to 34
-
 ~~~
 search
   x = math/round[value: 34.2]
-
 bind
   [#ui/text text: x]
 ~~~
@@ -218,11 +200,9 @@ bind
     <td>
       <code>
 r calculated to 1
-
 ~~~
 search
   r = math/sin[degrees: 90]
-
 bind
   [#ui/text text: x]
 ~~~
@@ -247,11 +227,9 @@ bind
     <td>
       <code>
 r calculated to 0
-
 ~~~
 search
   r = math/cos[degrees: 90]
-
 bind
   [#ui/text text: x]
 ~~~
@@ -276,7 +254,6 @@ bind
     <td>
       <code>
 r calculated to 1
-
 ~~~
 search
   r = math/tan[degrees: 45]
@@ -304,9 +281,16 @@ bind
       </ul>
     </td>
     <td>
-      <code>// takes the higher score
-        [#scores pac-man donkey-kong]
-        best-score = math/min[a: pac-man, b: donkey-kong]</code>
+      <code>
+takes the higher score
+~~~
+search
+  [#scores pac-man donkey-kong]
+  best-score = math/min[a: pac-man, b: donkey-kong]
+bind
+  [#ui/text text: "The winning score is {{best-score}}"]
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -326,9 +310,16 @@ bind
       </ul>
     </td>
     <td>
-      <code>// takes the lower score
-        [#scores pac-man donkey-kong]
-        worst-score = math/min[a: pac-man, b: donkey-kong]</code>
+      <code>
+takes the lower score
+~~~
+search
+  [#scores pac-man donkey-kong]
+  worst-score = math/min[a: pac-man, b: donkey-kong]
+bind
+  [#ui/text text: "The losing score is {{worst-score}}"]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -348,8 +339,15 @@ bind
       </ul>
     </td>
     <td>
-      <code>// m is the remainder, 1
-        m = math/mod[value: 5, by: 2]</code>
+      <code>
+m is the remainder, 1
+~~~
+search
+  m = math/mod[value: 5, by: 2]
+bind
+  [#ui/text text: "5 mod 2 is {{m}}"]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -368,9 +366,19 @@ bind
       </ul>
     </td>
     <td>
-      <code>// number of hours from the prime meridian
+      <code>// 
         [#city latitude longitude]
         hours-from-gmt = math/absolute[value: latitude] / 15</code>
+      <code>
+number of hours from the Prime Meridian
+~~~
+search
+  [#city latitude longitude]
+  hours-from-gmt = math/absolute[value: latitude] / 15
+bind
+  [#ui/text text: "{{city}} is {{hours-from-gmt}} hours from the Prime Meridian"]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -390,7 +398,8 @@ bind
       </ul>
     </td>
     <td>
-      <code>// pi represented as the string "3.14"
+      <code>
+      // pi represented as the string "3.14"
         [#circle circumference diameter]
         pi = math/to-fixed[a: (circumference / diameter), b: 2]</code>
     </td>
@@ -1399,7 +1408,9 @@ commit
         <li><strong>autocomplete</strong> - the autocomplete being opened</li>
       </ul>
     </td>
-    <td><code>// changes the font color of the autocomplete input to red when the list is opened; the color will not revert once the menu is closed unless another block is specifically written to do so
+    <td>
+      <code>
+changes the font color of the autocomplete input to red when the list is opened; the color will not revert once the menu is closed unless another block is specifically written to do so
 ~~~
 search
   autocomplete = [#ui/autocomplete]
@@ -1408,7 +1419,8 @@ search
 
 commit
   input.style <- [color: #ff0000]
-~~~</code>
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -1426,7 +1438,9 @@ commit
         <li><strong>autocomplete</strong> - the autocomplete being closed</li>
       </ul>
     </td>
-    <td><code>// changes the font color of the autocomplete input to black when the list is closed; reverts the change in the example for #ui/event/open
+    <td>
+      <code>
+changes the font color of the autocomplete input to black when the list is closed; reverts the change in the example for #ui/event/open
 ~~~
 search
   autocomplete = [#ui/autocomplete]
@@ -1435,7 +1449,8 @@ search
 
 commit
   input.style <- [color: #000000]
-~~~</code>
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -1453,7 +1468,9 @@ commit
         <li><strong>autocomplete</strong> - the autocomplete being closed</li>
       </ul>
     </td>
-    <td><code>// as a follow-up to the #ui/autocomplete example, this waits for the user to pick a birth state, then creates a new autocomplete tagged #birth-county to ask which county within that particular state the user was born in
+    <td>
+      <code>
+as a follow-up to the #ui/autocomplete example, this waits for the user to pick a birth state, then creates a new autocomplete tagged #birth-county to ask which county within that particular state the user was born in
 ~~~
 search
   birth-state = [#ui/autocomplete #birth-state selected]
@@ -1462,7 +1479,8 @@ search
 
 commit
   [#ui/autocomplete #birth-county placeholder: “Which county?” | completion: [text: counties]]
-~~~</code>
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -1480,7 +1498,9 @@ commit
         <li><strong>autocomplete</strong> - the autocomplete whose input field changed</li>
       </ul>
     </td>
-    <td><code>// when an autocomplete asking what the magic word is changes to the correct answer, adds the tag #magic-word to the autocomplete
+    <td>
+      <code>
+when an autocomplete asking what the magic word is changes to the correct answer, adds the tag `#magic-word` to the autocomplete
 ~~~
 search
   [#ui/event/change autocomplete]
@@ -1488,7 +1508,8 @@ search
 
 bind
   autocomplete <- [#magic-word]
-~~~</code>
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -1523,21 +1544,18 @@ The system library provides various system-level utilities for Eve.
     <td>
       <code>
 Commits a timer that ticks every 1000 milliseconds
-
 ~~~
 commit
   [#system/timer resolution: 1000]
 ~~~
 
 Displays the current time
-
 ~~~
 search
   [#system/timer hour minute second]
-
 bind
   [#ui/text text: "{{hour}}:{{minute}}:{{second}}"]
-```
+~~~
       </code>
     </td>
   </tr>
