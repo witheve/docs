@@ -2,6 +2,7 @@
 layout: default
 title: "Standard Library"
 ---
+{% raw %}
 
 # Standard Library
 
@@ -742,6 +743,10 @@ bind
       <ul class="arglist">
         <li><strong>element</strong> - (optional) - the element to be monitored; includes clicks on any children within the element</li>
         <li><strong>target</strong> - (optional) - the exact element to be monitored; does not include any children</li>
+        <li><strong>page-x</strong> - (optional) - the x-coordinate of the mouse pointer relative to the page</li>
+        <li><strong>page-y</strong> - (optional) - the y-coordinate of the mouse pointer relative to the page</li>
+        <li><strong>window-x</strong> - (optional) - the x-coordinate of the mouse pointer relative to the window</li>
+        <li><strong>window-y</strong> - (optional) - the y-coordinate of the mouse pointer relative to the page</li>
         <li><strong>button</strong> - (optional) - the mouse button whose click is monitored; options are:
           <ul class="arglist">
             <li>“left” - left mouse button; if no button argument is provided, this is the default</li>
@@ -1506,13 +1511,13 @@ The system library provides various system-level utilities for Eve.
         <li><strong>year</strong> - (optional) - the current year</li>
         <li><strong>month</strong> - (optional) - the current month (1 - 12)</li>
         <li><strong>day</strong> - (optional) - the current day of the month (1 - 31)</li>
-        <li><strong>weeday</strong> - (optional) - the current day of the week (1 - 7, where 1 is Sunday)</li>
-        <li><strong>hours</strong> - (optional) - the current hour (0 - 23)</li>
-        <li><strong>minutes</strong> - (optional) - the current minute (0 - 59)</li>
-        <li><strong>seconds</strong> - (optional) - the current second (0 - 59)</li>
-        <li><strong>milliseconds</strong> - (optional) - the current millisecond (0 - 999)</li>
+        <li><strong>weekday</strong> - (optional) - the current day of the week (1 - 7, where 1 is Sunday)</li>
+        <li><strong>hour</strong> - (optional) - the current hour (0 - 23)</li>
+        <li><strong>minute</strong> - (optional) - the current minute (0 - 59)</li>
+        <li><strong>second</strong> - (optional) - the current second (0 - 59)</li>
+        <li><strong>millisecond</strong> - (optional) - the current millisecond (0 - 999)</li>
         <li><strong>timestamp</strong> - (optional) - the current time represented as the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC</li>
-        <li><strong>frame</strong> - (optional) - the number of frames elapsed since the start of the timer</li>
+        <li><strong>tick</strong> - (optional) - the number of ticks of the timer since it was created</li>
       </ul>
     </td>
     <td>
@@ -1528,12 +1533,14 @@ Displays the current time
 
 ~~~
 search
-  [#system/timer hours minutes seconds]
+  [#system/timer hour minute second]
 
 bind
-  [#ui/text text: "{{hours}}:{{minutes}}:{{seconds}}"]
-~~~
+  [#ui/text text: "{{hour}}:{{minute}}:{{second}}"]
+```
       </code>
     </td>
   </tr>
 </table>
+
+{% endraw %}
