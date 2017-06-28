@@ -1455,7 +1455,7 @@ bind
 
 ## File
 
-Watchers that access the filesystem. These watchers only work in headless mode.
+A library for accessing the filesystem. This library only works when Eve is run in headless mode.
 
 <table class="libitem">
   <tr>
