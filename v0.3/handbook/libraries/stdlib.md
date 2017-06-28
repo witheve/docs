@@ -718,7 +718,7 @@ commit
       <ul>
         <li><strong>element</strong> - (optional) - the element which has focus during key-up or key-down</li>
         <li><strong>key-code</strong> - the key code of the key to be monitored</li>
-        <li><strong>key</strong> - (optional) - the key to be monitored; an alternative to key-code for a premade list of keys:
+        <li><strong>key</strong> - (optional) - the key to be monitored; an alternative to key-code for a pre-made list of keys:
           <ul>
             <li>"tab</li>
             <li>"enter"</li>
@@ -1436,20 +1436,193 @@ The system library provides various system-level utilities for Eve.
     <td>
       <code>
 Commits a timer that ticks every 1000 milliseconds
-
 ```
 commit
   [#system/timer resolution: 1000]
 ```
 
 Displays the current time
-
 ```
 search
   [#system/timer hour minute second]
-
 bind
   [#ui/text text: "{{hour}}:{{minute}}:{{second}}"]
+```
+      </code>
+    </td>
+  </tr>
+</table>
+
+## File
+
+Watchers that access the filesystem. These watchers only work in headless mode.
+
+<table class="libitem">
+  <tr>
+    <td colspan="2">
+      <b>#file/read</b> - read the specified file
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul>
+        <li><strong>path</strong> - The path of the file to be read.</li>
+        <li><strong>encoding</strong> - (optional) - The encoding of the file. The default is utf-8.</li>
+        <li><strong>error</strong> - (optional) - If an error is encountered when attempting to read the file, it will be stored here as a #file/error.</li>
+        <li><strong>contents</strong> - The contents of the file. This attribute will have a value once the entire contents of the file are read.</li>
+      </ul>
+    </td>
+    <td>
+      <code>
+Read a file
+```
+commit
+  [#file/read #my-file path: "test-file.txt"]
+```
+
+Display the contents of the file
+```
+search
+  [#my-file contents]
+commit
+  [#console/log text: contents]
+```
+      </code>
+    </td>
+  </tr>
+</table>
+
+<table class="libitem">
+  <tr>
+    <td colspan="2">
+      <b>#file/read</b> - read the specified file
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul>
+        <li><strong>path</strong> - The path of the file to be written.</li>
+        <li><strong>encoding</strong> - (optional) - The encoding of the file. The default is utf-8.</li>
+        <li><strong>contents</strong> - The string that will be written to the file</li>
+        <li><strong>error</strong> - (optional) - If an error is encountered when attempting to read the file, it will be stored here as a #file/error.</li>
+        <li><strong>#file/complete</strong> - When the contents are written successfully, the record will be tagged #file/complete.</li>
+      </ul>
+    </td>
+    <td>
+      <code>
+Write a string to a file
+```
+commit
+  [#file/write path: "test-file.txt" contents: "This will be in the file"]
+```
+      </code>
+    </td>
+  </tr>
+</table>
+
+<table class="libitem">
+  <tr>
+    <td colspan="2">
+      <b>#file/error</b> - stores information relating to file access errors
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul>
+        <li><strong>code</strong> - The error code</li>
+        <li><strong>message</strong> - The error message</li>
+      </ul>
+    </td>
+    <td>
+      <code>
+Display a message when a file does not exist
+```
+search
+  [#file/read path error: [code: "ENOENT"]]
+commit
+  [#console/error text: "Could not file file {{path}}"]
+```
+      </code>
+    </td>
+  </tr>
+</table>
+
+## Console
+
+Write text to the console
+
+<table class="libitem">
+  <tr>
+    <td colspan="2">
+      <b>#console/log</b> - write info to the console
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul>
+        <li><strong>text</strong> - The text to write to the console. Text will also be written to stdout.</li>
+      </ul>
+    </td>
+    <td>
+      <code>
+Write a message to the console.
+```
+commit
+  [#console/log text: "Hello world!"]
+```
+      </code>
+    </td>
+  </tr>
+</table>
+
+<table class="libitem">
+  <tr>
+    <td colspan="2">
+      <b>#console/warn</b> - write a warning to the console
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul>
+        <li><strong>text</strong> - The text to write to the console.</li>
+      </ul>
+    </td>
+    <td>
+      <code>
+Write a warning to the console.
+```
+commit
+  [#console/warn text: "Memory is running low."]
+```
+      </code>
+    </td>
+  </tr>
+</table>
+
+<table class="libitem">
+  <tr>
+    <td colspan="2">
+      <b>#console/error</b> - write an error to the console.
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul>
+        <li><strong>text</strong> - The text to write to the console. Text will also be written to stderr.</li>
+      </ul>
+    </td>
+    <td>
+      <code>
+Write an error in the console.
+```
+commit
+  [#console/error text: "Access is Denied"]
 ```
       </code>
     </td>
