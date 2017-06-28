@@ -718,7 +718,7 @@ commit
       <ul>
         <li><strong>element</strong> - (optional) - the element which has focus during key-up or key-down</li>
         <li><strong>key-code</strong> - the key code of the key to be monitored</li>
-        <li><strong>key</strong> - (optional) - the key to be monitored; an alternative to key-code for a pre-made list of keys:
+        <li><strong>key</strong> - (optional) - the key to be monitored; an alternative to key-code for a premade list of keys:
           <ul>
             <li>"tab</li>
             <li>"enter"</li>
