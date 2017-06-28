@@ -1512,7 +1512,6 @@ commit
     </td>
     <td>
       <code>
-Write a string to a file
 ```
 commit
   [#file/write path: "test-file.txt" contents: "This will be in the file"]
@@ -1538,7 +1537,6 @@ commit
     </td>
     <td>
       <code>
-Display a message when a file does not exist
 ```
 search
   [#file/read path error: [code: "ENOENT"]]
@@ -1569,7 +1567,6 @@ Write text to the console
     </td>
     <td>
       <code>
-Write a message to the console.
 ```
 commit
   [#console/log text: "Hello world!"]
@@ -1594,7 +1591,6 @@ commit
     </td>
     <td>
       <code>
-Write a warning to the console.
 ```
 commit
   [#console/warn text: "Memory is running low."]
@@ -1619,7 +1615,6 @@ commit
     </td>
     <td>
       <code>
-Write an error in the console.
 ```
 commit
   [#console/error text: "Access is Denied"]
