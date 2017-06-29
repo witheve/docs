@@ -33,10 +33,18 @@ title: "Standard Library"
 Sorts the students by GPA
 ~~~
 search
-    [#student GPA]
+    [#student name GPA]
     index = gather/sort[for: GPA]
 bind 
    [#ui/text sort: index, text: "{{name}} {{GPA}}"]
+~~~
+
+Add some students
+~~~
+commit
+  [#student name: "Ashley" GPA: 3.10]
+  [#student name: "Jerome" GPA: 2.37]
+  [#student name: "Iggy" GPA: 3.97]
 ~~~
       </code>
     </td>
@@ -65,6 +73,14 @@ search
   population = gather/count[given: residents, per: state]
 bind
   [#ui/text text: "{{population}} people live in {{state}}"]
+~~~
+
+Add some citizens
+~~~
+commit
+  [#citizen name: "Regina" state: "CA"]
+  [#citizen name: "Travis" state: "WA"]
+  [#citizen name: "Sally" state: "CA"]
 ~~~
       </code>
     </td>
@@ -95,6 +111,14 @@ search
   payroll = gather/sum[for: employees, value: salary, per: department]
 bind
   [#ui/text text: "{{department}} - ${{payroll}}.00"]
+~~~
+
+Add some employees
+~~~
+commit
+  [#employee name:"Cooper" salary:2 department:"engineering"]
+  [#employee name:"Adrienne" salary:5 department:"engineering"]
+  [#employee name:"Najib" salary:10 department:"marketing"]
 ~~~
       </code>
     </td>
@@ -395,9 +419,17 @@ bind
     </td>
     <td>
       <code>
-       pi represented as the string "3.14"
-        [#circle circumference diameter]
-        pi = math/to-fixed[a: (circumference / diameter), b: 2]</code>
+pi represented as the string "3.14"
+~~~
+search
+  circumference = 6
+  diameter = 1.910
+  pi = math/to-fixed[a: (circumference / diameter), b: 2]
+
+bind
+  [#ui/text text: pi]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -417,8 +449,15 @@ bind
       </ul>
     </td>
     <td>
-      <code> generates integers 1 through 10
-        y = math/range[start: 1, stop: 10]</code>
+      <code> 
+generates integers 1 through 10
+~~~
+search
+  y = math/range[start: 1, stop: 10]
+bind
+  [#ui/text text: y]  
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -437,9 +476,22 @@ bind
       </ul>
     </td>
     <td>
-      <code> generates a random number every second
-        [#time minutes seconds]
-        x = random/number[seed: seconds]</code>
+      <code> 
+generates a random number every second  
+~~~
+search
+  [#time second]
+  x = random/number[seed: second]
+bind
+  [#ui/text text: x]  
+~~~
+
+Start a timer
+~~~
+commit
+  [#system/timer #time resolution: 1000]
+~~~
+        </code>
     </td>
   </tr>
 </table>
@@ -462,9 +514,17 @@ bind
       </ul>
     </td>
     <td>
-      <code> Americanized version of British spelling
+      <code> 
         [#website body]
-        american-version = string/replace[text: body, replace: "flavour", with: "flavor"]</code>
+        </code>
+Americanized version of British spelling
+~~~      
+search
+  string = "I love the flavour."
+  american-version = string/replace[text: string, replace: "flavour", with: "flavor"]
+bind
+  [#ui/text text: american-version]
+~~~
     </td>
   </tr>
 </table>
@@ -484,9 +544,16 @@ bind
       </ul>
     </td>
     <td>
-      <code> finds the 17th letter of the alphabet
-        alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        letter = string/get[text: alphabet, at: 17]</code>
+      <code>
+finds the 17th letter of the alphabet
+~~~      
+search
+  alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  letter = string/get[text: alphabet, at: 17]
+bind
+  [#ui/text text: "The 17th letter of the alphabet is {{letter}}"]
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -494,7 +561,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/uppercase</b> -Converts a string to uppercase
+      <b>string/uppercase</b> - Converts a string to uppercase
     </td>
   </tr>
 
@@ -505,8 +572,15 @@ bind
       </ul>
     </td>
     <td>
-      <code>funny = "lol"
-        really-funny = string/uppercase[text: funny]</code>
+      <code>
+~~~
+search
+  funny = "lol"
+  really-funny = string/uppercase[text: funny]
+bind
+  [#ui/text text: really-funny]
+~~~  
+</code>
     </td>
   </tr>
 </table>
@@ -525,8 +599,15 @@ bind
       </ul>
     </td>
     <td>
-      <code>really-funny = "LOL"
-        down-a-notch = string/uppercase[text: really-funny]</code>
+      <code>
+~~~
+search
+  really-funny = "LOL"
+  down-a-notch = string/lowercase[text: really-funny]
+bind
+  [#ui/text text: down-a-notch]
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -546,8 +627,15 @@ bind
       </ul>
     </td>
     <td>
-      <code> Eve is in developers, starting at an index of 2
-        index = string/index-of[text: "developers", substring: "eve"</code>
+      <code>
+"eve" is in "developers" at index 2.
+~~~
+search
+  index = string/index-of[text: "developers", substring: "eve"]
+bind
+  [#ui/text: "String found at index {{index}}"]
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -566,9 +654,16 @@ bind
       </ul>
     </td>
     <td>
-      <code> the code point length of the word "unicode"
-        string = "unicode"
-        length-in-js = string/codepoint-length[text: string]</code>
+      <code> 
+the code point length of the word "unicode"
+~~~
+search
+  string = "unicode"
+  length-in-js = string/codepoint-length[text: string]
+bind
+  [#ui/text text: length-in-js]      
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -1341,7 +1436,12 @@ commit
         <li>Other attributes - (optional) - other attribute-value pairs will be applied directly to the button for integration with existing JS libraries or debugging</li>
       </ul>
     </td>
-    <td><code></code>
+    <td><code>
+~~~
+commit
+  [#ui/button class: "flat" icon: "search" text: "Search"]
+~~~ 
+    </code>
     </td>
   </tr>
 </table>
