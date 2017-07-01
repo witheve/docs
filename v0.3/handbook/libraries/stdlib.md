@@ -1480,8 +1480,18 @@ creates an autocomplete form with the class "birth-state" and the placeholder "W
 search
   [#state name]
 commit
-  [#ui/autocomplete #birth-state placeholder: "Where state were you born in?" | completion: [text: name]]
-~~~</code>
+  [#ui/autocomplete #birth-state placeholder: "What state were you born in?" | completion: [text: name]]
+~~~
+
+Add some states
+~~~
+commit
+  [#state name: "PA"]
+  [#state name: "CA"]
+  [#state name: "OH"]
+  [#state name: "SC"]
+~~~
+</code>
     </td>
   </tr>
   <tr>
