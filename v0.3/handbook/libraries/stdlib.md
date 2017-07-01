@@ -228,7 +228,7 @@ r calculated to 1
 search
   r = math/sin[degrees: 90]
 bind
-  [#ui/text text: x]
+  [#ui/text text: r]
 ~~~
       </code>
     </td>
@@ -255,7 +255,7 @@ r calculated to 0
 search
   r = math/cos[degrees: 90]
 bind
-  [#ui/text text: x]
+  [#ui/text text: r]
 ~~~
       </code>
     </td>
@@ -282,7 +282,7 @@ r calculated to 1
 search
   r = math/tan[degrees: 45]
 bind
-  [#ui/text text: x]
+  [#ui/text text: r]
 ~~~
       </code>
     </td>
