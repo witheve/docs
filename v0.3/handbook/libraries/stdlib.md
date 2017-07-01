@@ -1706,18 +1706,18 @@ A library for accessing the filesystem. This library only works when Eve is run 
     <td>
       <code>
 Read a file
-```
+~~~
 commit
   [#file/read #my-file path: "test-file.txt"]
-```
+~~~
 
 Display the contents of the file
-```
+~~~
 search
   [#my-file contents]
 commit
   [#console/log text: contents]
-```
+~~~
       </code>
     </td>
   </tr>
@@ -1742,10 +1742,10 @@ commit
     </td>
     <td>
       <code>
-```
+~~~
 commit
   [#file/write path: "test-file.txt" contents: "This will be in the file"]
-```
+~~~
       </code>
     </td>
   </tr>
@@ -1767,12 +1767,12 @@ commit
     </td>
     <td>
       <code>
-```
+~~~
 search
   [#file/read path error: [code: "ENOENT"]]
 commit
   [#console/error text: "Could not file file {{path}}"]
-```
+~~~
       </code>
     </td>
   </tr>
@@ -1797,10 +1797,10 @@ Write text to the console
     </td>
     <td>
       <code>
-```
+~~~
 commit
   [#console/log text: "Hello world!"]
-```
+~~~
       </code>
     </td>
   </tr>
@@ -1821,10 +1821,10 @@ commit
     </td>
     <td>
       <code>
-```
+~~~
 commit
   [#console/warn text: "Memory is running low."]
-```
+~~~
       </code>
     </td>
   </tr>
@@ -1845,10 +1845,10 @@ commit
     </td>
     <td>
       <code>
-```
+~~~
 commit
   [#console/error text: "Access is Denied"]
-```
+~~~
       </code>
     </td>
   </tr>
