@@ -308,8 +308,9 @@ bind
 takes the higher score
 ~~~
 search
-  [#scores pac-man donkey-kong]
-  best-score = math/min[a: pac-man, b: donkey-kong]
+  pac-man = 10
+  donkey-kong = 13
+  best-score = math/max[a: pac-man, b: donkey-kong]
 bind
   [#ui/text text: "The winning score is {{best-score}}"]
 ~~~
@@ -337,7 +338,8 @@ bind
 takes the lower score
 ~~~
 search
-  [#scores pac-man donkey-kong]
+  pac-man = 10
+  donkey-kong = 13
   worst-score = math/min[a: pac-man, b: donkey-kong]
 bind
   [#ui/text text: "The losing score is {{worst-score}}"]
