@@ -395,10 +395,18 @@ bind
 number of hours from the Prime Meridian
 ~~~
 search
-  [#city latitude longitude]
-  hours-from-gmt = math/absolute[value: latitude] / 15
+  [#city name longitude]
+  hours-from-gmt = math/absolute[value: longitude] * 24 / 360 
 bind
-  [#ui/text text: "{{city}} is {{hours-from-gmt}} hours from the Prime Meridian"]
+  [#ui/text text: "{{name}} is {{hours-from-gmt}} hours from the Prime Meridian"]
+~~~
+
+Add some cities
+~~~
+commit
+  [#city name: "Paris" longitude: 2.33]
+  [#city name: "New York" longitude: -75.61]
+  [#city name: "Los Angeles" longitude: -118.24]
 ~~~
       </code>
     </td>
@@ -517,8 +525,6 @@ commit
     </td>
     <td>
       <code> 
-        [#website body]
-        </code>
 Americanized version of British spelling
 ~~~      
 search
@@ -527,6 +533,7 @@ search
 bind
   [#ui/text text: american-version]
 ~~~
+</code>
     </td>
   </tr>
 </table>
@@ -635,7 +642,7 @@ bind
 search
   index = string/index-of[text: "developers", substring: "eve"]
 bind
-  [#ui/text: "String found at index {{index}}"]
+  [#ui/text text: "String found at index {{index}}"]
 ~~~
 </code>
     </td>
