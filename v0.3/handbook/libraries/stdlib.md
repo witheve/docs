@@ -1726,7 +1726,7 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>#file/read</b> - read the specified file
+      <b>#file/write</b> - write the specified file
     </td>
   </tr>
 
