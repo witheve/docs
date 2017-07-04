@@ -731,6 +731,12 @@ search
   header = if tagname = "div" then "true" else "false"
 bind
   hello <- [class: [header]]
+~~~
+
+Commit an element with a greeting
+~~~
+commit
+  [#html/element tagname: "div" text: "Hello world!"]
 ~~~</code>
     </td>
   </tr>
@@ -755,7 +761,8 @@ commit a div to the browser with the text "Hover over me!" that will change its 
 ~~~
 commit
   [#ui/div #html/listener/hover text: "Hover over me!"]
-~~~</code>
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -775,13 +782,20 @@ commit
     </td>
     <td>
       <code>
-if a #ui/a element with the hover listener is being hovered over, add a style to make the font bold
+commit a div to the browser with the text "Hover over me!" that will change its record if it is hovered over
+~~~
+commit
+  [#ui/div #html/listener/hover text: "Hover over me!"]
+~~~
+
+Display a message when an element with the #html/listener/hover`
 ~~~
 search
-  element = [#ui/a #html/hovered]
+  [#html/hovered]
 bind
-  element.style <- [font-weight: bold]
-~~~</code>
+  [#ui/text text: "an element is being hovered"]
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -801,14 +815,21 @@ bind
     </td>
     <td>
       <code>
-when the mouse enters an anchor tag, make the color red; the color will not revert when the mouse leaves
+Do something on hover-in
 ~~~
 search
-  [#html/event/hover-in element: anchor]
-  anchor = [#ui/a]
-bind
-  anchor.style <- [color: red]
-~~~</code>
+  direction = if [#html/event/hover-in] then "in"
+              else if [#html/event/hover-out] then "out"
+commit
+  [#ui/text text: "Hovered {{direction}}"]
+~~~
+
+Monitor hover on an element
+~~~
+commit
+  [#ui/text #html/listener/hover text: "Hover over me" style: [width: "100px" height: "100px" background-color: "rgb(226, 79, 94)" display: "block" color: "white" padding: "10px"]]
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -872,9 +893,18 @@ bind
 looks for a right click in any h1 element and posts the message "Right clicked!"
 ~~~
 search
-  [#html/event/mouse-up element: [#ui/h1] button: "right"]
+  event = if [#html/event/mouse-up button] then "up"
+          else if [#html/event/mouse-down button] then "down"
+          else if [#html/event/click button] then "click"
+          else if [#html/event/double-click button] then "double-click"
 commit
-  [#ui/div text: "Right clicked!"]
+  [#ui/text text: "{{event}}"]
+~~~
+
+Monitor clicks on an element
+~~~
+commit
+  [#ui/text text: "Click me" style: [width: "100px" height: "100px" background-color: "rgb(226, 79, 94)" display: "block" color: "white" padding: "10px"]]
 ~~~</code>
     </td>
   </tr>
@@ -894,11 +924,14 @@ commit
       </ul>
     </td>
     <td>
-      <code>commits an h1 element whose context menu won’t open if right clicked
+      <code>
+commits an h1 element whose context menu won’t open if right clicked
 ~~~
 commit
   [#ui/h1 #html/listener/context-menu text: "Don’t inspect me"]
-~~~</code>
+  [#ui/h1 text: "Inspect me"]
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -934,13 +967,21 @@ commit
     </td>
     <td>
       <code>
-when the escape key is released, commits a gentle reminder for the user
+Prints a message with the code of the key pressed
+~~~
+search  
+  [#html/event/key-down key-code]
+commit
+  [#ui/div #key-msg key-code text: "Pressed {{key-code}}"]
+~~~
+
+Remove messages for keys that are released
 ~~~
 search
-  [#html/event/key-up key: "escape"]
-
+  [#html/event/key-up key-code]
+  message = [#key-msg key-code]
 commit
-  [#ui/div text: "THERE IS NO ESCAPE"]
+  message := none
 ~~~</code>
     </td>
   </tr>
@@ -962,13 +1003,22 @@ commit
     </td>
     <td>
       <code>
-when the important element loses focus, commits a message to help the user
+Display a message on focus
 ~~~
 search
-  [#html/event/blur element: [#important]]
+  [#html/event/focus element]
+
+commit 
+  [#ui/text text: "{{element.placeholder}} was focused"]
+~~~
+
+Monitor clicks on an element
+~~~
 commit
-  [#ui/text text: "Stay focused!"]
-~~~</code>
+  [#ui/input placeholder: "First Name"]
+  [#ui/input placeholder: "Last Name"]
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -988,13 +1038,23 @@ commit
     </td>
     <td>
       <code>
+Commit some buttons and form elements
+~~~
+commit
+  [#ui/input field: "first-name" placeholder: "First Name"]
+  [#ui/input field: "last-name" placeholder: "Last Name"]
+  [#ui/button text: "Focus first name" target: "first-name"]
+  [#ui/button text: "Focus last name" target: "last-name"]
+~~~
+
 when a form element is found in the browser with the name "first-name", focuses on that element
 ~~~
 search
-  first = [#ui/input name: "first-name"]
+  [#html/event/click element: [#ui/button target]]
+  input = [#ui/input field: target]
 
 commit
-  first <- [#html/trigger/focus]
+  input.tag <- [#html/trigger/focus]
 ~~~</code>
     </td>
   </tr>
