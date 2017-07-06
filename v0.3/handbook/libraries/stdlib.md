@@ -1268,7 +1268,7 @@ commit
   <tr>
     <td>
       <ul class="arglist">
-        <li><strong>y</strong> - the x coordinate of the center of the curve</li>
+        <li><strong>x</strong> - the x coordinate of the center of the curve</li>
         <li><strong>y</strong> - the y coordinate of the center of the curve</li>
         <li><strong>radius</strong> - the radius of the curve in pixels</li>
         <li><strong>startAngle</strong> - the starting angle of the curve in radians</li>
@@ -1329,7 +1329,7 @@ commit
   <tr>
     <td>
       <ul class="arglist">
-        <li><strong>y</strong> - the x coordinate of the center of the curve</li>
+        <li><strong>x</strong> - the x coordinate of the center of the curve</li>
         <li><strong>y</strong> - the y coordinate of the center of the curve</li>
         <li><strong>radiusX</strong> - the horizontal radius of the curve</li>
         <li><strong>radiusY</strong> - the vertical radius of the curve</li>
@@ -1361,7 +1361,7 @@ commit
   <tr>
     <td>
       <ul class="arglist">
-        <li><strong>y</strong> - the x coordinate of the upper left corner of the rectangle</li>
+        <li><strong>x</strong> - the x coordinate of the upper left corner of the rectangle</li>
         <li><strong>y</strong> - the y coordinate of the upper left corner of the rectangle</li>
         <li><strong>width</strong> - the width of the rectangle in pixels</li>
         <li><strong>height</strong> - the height of the rectangle in pixels</li>
