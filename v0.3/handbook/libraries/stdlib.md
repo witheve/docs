@@ -1301,7 +1301,7 @@ commit
   [#canvas/root width: 100 height: 100 children:
     [#canvas/path children:
       [type: "lineTo" x: 50 y: 0]
-      [type: "arcTo: x1: 50 y1: 0 x2: 55 y2: 5 radius: 5]
+      [type: "arcTo" x1: 50 y1: 0 x2: 55 y2: 5 radius: 5]
       [type: "lineTo" x: 55 y: 55]]]
 ~~~</code>
     </td>
