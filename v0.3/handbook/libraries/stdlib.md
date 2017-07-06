@@ -1238,11 +1238,22 @@ commit
       <ul class="arglist">
         <li><strong>cpx</strong> - the x coordinate of the control point</li>
         <li><strong>cpy</strong> - the y coordinate of the control point</li>
-        <li><strong>y</strong> - the x coordinate of the end point</li>
+        <li><strong>x</strong> - the x coordinate of the end point</li>
         <li><strong>y</strong> - the y coordinate of the end point</li>
       </ul>
     </td>
-    <td><code></code>
+    <td><code>
+draws a red quadratic curve starting at (20, 0) and ending at (40, 50)
+~~~
+commit
+  [#canvas/root width: 100 height: 100 children:
+    [#canvas/path strokeStyle: "rgb(255, 0, 0)" children:
+      [type: "moveTo" x: 20 y: 25]
+      [type: "quadraticCurveTo" 
+        cpx: 20 cpy: 0 
+        x: 40 y: 50]]]
+~~~    
+</code>
     </td>
   </tr>
 </table>
