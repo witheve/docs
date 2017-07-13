@@ -319,25 +319,25 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/log</b> - Calculate the natural log of a value
+      <b>math/ln</b> - Calculate the natural log of a value
     </td>
   </tr>
 
   <tr>
     <td>
       <ul>
-        <li><strong>value</strong> - the value to take the log of</li>
+        <li><strong>value</strong> - the value to take the natural log of</li>
       </ul>
     </td>
     <td>
       <code>
-calculate the log of 17
+calculate the natural laog of 17
 ```
 search
-  x = math/log[value: 17]
+  x = math/ln[value: 17]
 
 bind
-  [#ui/text text: "log(17) = {{x}}"]
+  [#ui/text text: "ln(17) = {{x}}"]
 ```
 </code>
     </td>
