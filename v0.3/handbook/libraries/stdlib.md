@@ -423,8 +423,8 @@ commit
   <tr>
     <td>
       <ul class="arglist">
-        <li><strong>a</strong> - the number to be formatted</li>
-        <li><strong>b</strong> - the number of decimal places to which `a` will be formatted</li>
+        <li><strong>value</strong> - the number to be formatted</li>
+        <li><strong>to</strong> - the number of decimal places to which `a` will be formatted</li>
       </ul>
     </td>
     <td>
@@ -434,7 +434,7 @@ pi represented as the string "3.14"
 search
   circumference = 6
   diameter = 1.910
-  pi = math/to-fixed[a: (circumference / diameter), b: 2]
+  pi = math/to-fixed[value: (circumference / diameter), to: 2]
 
 bind
   [#ui/text text: pi]
