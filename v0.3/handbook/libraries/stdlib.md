@@ -291,6 +291,34 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
+      <b>math/pow</b> - Raise a value to an exponent
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul>
+        <li><strong>value</strong> - the mantissa</li>
+        <li><strong>exponent</strong> - the exponent</li>
+      </ul>
+    </td>
+    <td>
+      <code>
+Calculate 2 ^ 3
+```
+search
+  x = math/pow[value: 2 exponent: 3]
+bind
+  [#ui/text text: "2 ^ 3 = {{x}}"]
+```
+</code>
+    </td>
+  </tr>
+</table>
+
+<table class="libitem">
+  <tr>
+    <td colspan="2">
       <b>math/to-fixed</b> - Formats a number as a string to a certain number of decimal places
     </td>
   </tr>
