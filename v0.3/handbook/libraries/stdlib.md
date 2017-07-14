@@ -29,7 +29,7 @@ title: "Standard Library"
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 Sorts the students by GPA
 ~~~
 search
@@ -65,7 +65,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 Count the number of citizens in each state
 ~~~
 search
@@ -103,7 +103,7 @@ commit
       </ul>
     </td>
     <td>
-          <code>
+          <code class="language-eve-document">
 Sum of salaries for each department
 ~~~
 search 
@@ -141,7 +141,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 x rounded down to 34
 ~~~
 search
@@ -168,7 +168,7 @@ bind
       </ul>
     </td>
     <td>
-      <code>      
+      <code class="language-eve-document">      
 x rounded up to 35
 ~~~
 search
@@ -195,7 +195,7 @@ bind
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 x rounded to 34
 ~~~
 search
@@ -222,7 +222,7 @@ bind
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 r calculated to 1
 ~~~
 search
@@ -249,7 +249,7 @@ bind
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 r calculated to 0
 ~~~
 search
@@ -276,7 +276,7 @@ bind
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 r calculated to 1
 ~~~
 search
@@ -304,7 +304,7 @@ bind
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 takes the higher score
 ~~~
 search
@@ -334,7 +334,7 @@ bind
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 takes the lower score
 ~~~
 search
@@ -364,7 +364,7 @@ bind
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 m is the remainder, 1
 ~~~
 search
@@ -391,7 +391,7 @@ bind
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 number of hours from the Prime Meridian
 ~~~
 search
@@ -428,7 +428,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 pi represented as the string "3.14"
 ~~~
 search
@@ -459,7 +459,7 @@ bind
       </ul>
     </td>
     <td>
-      <code> 
+      <code class="language-eve-document"> 
 generates integers 1 through 10
 ~~~
 search
@@ -486,7 +486,7 @@ bind
       </ul>
     </td>
     <td>
-      <code> 
+      <code class="language-eve-document"> 
 generates a random number every second  
 ~~~
 search
@@ -524,7 +524,7 @@ commit
       </ul>
     </td>
     <td>
-      <code> 
+      <code class="language-eve-document"> 
 Americanized version of British spelling
 ~~~      
 search
@@ -553,7 +553,7 @@ bind
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 finds the 17th letter of the alphabet
 ~~~      
 search
@@ -581,7 +581,7 @@ bind
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 ~~~
 search
   funny = "lol"
@@ -608,7 +608,7 @@ bind
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 ~~~
 search
   really-funny = "LOL"
@@ -636,7 +636,7 @@ bind
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 "eve" is in "developers" at index 2.
 ~~~
 search
@@ -663,7 +663,7 @@ bind
       </ul>
     </td>
     <td>
-      <code> 
+      <code class="language-eve-document"> 
 the code point length of the word "unicode"
 ~~~
 search
@@ -700,7 +700,7 @@ The HTML library is a low level interface for creating HTML elements and respond
       </ul>
     </td>
     <td>
-      <code> commits a div in the browser with the text "Hello world!" and the class "hello"
+      <code class="language-eve-document"> commits a div in the browser with the text "Hello world!" and the class "hello"
 ~~~
 commit
   [#html/element #hello tagname: "div" text: "Hello world!"]
@@ -723,7 +723,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 if the text "Hello world!" is in a record tagged #html/element with the tagname "div", apply the class "header" to that element
 ~~~
 search
@@ -745,7 +745,7 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>#html/listener/hover</b> - adds a listener to an html element to make it responsive when it is being hovered over in browser; required to use the <code>#html/hovered</code>, <code>#html/event/hover-in</code>, and <code>#html/event/hover-out</code> tags
+      <b>#html/listener/hover</b> - adds a listener to an html element to make it responsive when it is being hovered over in browser; required to use the <code class="language-eve-document">#html/hovered</code>, <code class="language-eve-document">#html/event/hover-in</code>, and <code class="language-eve-document">#html/event/hover-out</code> tags
     </td>
   </tr>
 
@@ -756,7 +756,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 commit a div to the browser with the text "Hover over me!" that will change its record if it is hovered over
 ~~~
 commit
@@ -770,7 +770,7 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>#html/hovered</b> - a tag given by Eve to an html element being currently hovered over; requires <code>#html/listener/hover</code>
+      <b>#html/hovered</b> - a tag given by Eve to an html element being currently hovered over; requires <code class="language-eve-document">#html/listener/hover</code>
     </td>
   </tr>
 
@@ -781,7 +781,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 commit a div to the browser with the text "Hover over me!" that will change its record if it is hovered over
 ~~~
 commit
@@ -803,7 +803,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>#html/event/(hover-in, hover-out)</b> - monitors when the mouse enters or leaves a particular element in the browser; requires <code>#html/listener/hover</code>
+      <b>#html/event/(hover-in, hover-out)</b> - monitors when the mouse enters or leaves a particular element in the browser; requires <code class="language-eve-document">#html/listener/hover</code>
     </td>
   </tr>
 
@@ -814,7 +814,7 @@ bind
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 Do something on hover-in
 ~~~
 search
@@ -849,7 +849,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 looks for any element tagged #question that has the magic word and adds the tag #magic-word to it
 ~~~
 search
@@ -865,7 +865,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>#html/event/(click, double-click, mouse-down, mouse-up)</b> - monitors mouse events in the browser; <code>#html/event/click</code> and <code>#html/event/double-click</code> currently work for the left mouse button only
+      <b>#html/event/(click, double-click, mouse-down, mouse-up)</b> - monitors mouse events in the browser; <code class="language-eve-document">#html/event/click</code> and <code class="language-eve-document">#html/event/double-click</code> currently work for the left mouse button only
     </td>
   </tr>
 
@@ -889,7 +889,7 @@ bind
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 looks for a right click in any h1 element and posts the message "Right clicked!"
 ~~~
 search
@@ -924,7 +924,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 commits an h1 element whose context menu won’t open if right clicked
 ~~~
 commit
@@ -966,7 +966,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 Prints a message with the code of the key pressed
 ~~~
 search  
@@ -1002,7 +1002,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 Display a message on focus
 ~~~
 search
@@ -1037,7 +1037,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 Commit some buttons and form elements
 ~~~
 commit
@@ -1084,7 +1084,7 @@ The canvas library is an interface for drawing graphics in the browser using the
         <li><strong>children</strong> - (optional) - paths are written as child records; while optional, without any children, the canvas will be blank</li>
       </ul>
     </td>
-    <td><code>
+    <td><code class="language-eve-document">
 creates a canvas tagged #my-canvas that is 160 pixels wide by 90 pixel tall
 ~~~
 commit
@@ -1124,7 +1124,7 @@ commit
         <li><strong>children</strong> - (optional) - each individual operation in the path is written as a child record; while optional, without any children, the canvas will be blank</li>
       </ul>
     </td>
-    <td><code>
+    <td><code class="language-eve-document">
 adds a #canvas/path to #my-canvas with a black stroke, a line width of 2 pixels and beveled corners
 ~~~
 search
@@ -1154,7 +1154,7 @@ commit
         <li><strong>y</strong> - the vertical coordinate to move to, in pixels</li>
       </ul>
     </td>
-    <td><code>
+    <td><code class="language-eve-document">
 creates a 100x100 canvas and moves the path 20 pixels right and 15 pixels down from the top left corner of the canvas without drawing a line
 ~~~
 commit
@@ -1180,7 +1180,7 @@ commit
         <li><strong>y</strong> - the vertical coordinate to move to, in pixels</li>
       </ul>
     </td>
-    <td><code>
+    <td><code class="language-eve-document">
 draws a black line from the top left corner of a 100x100 canvas to the center
 ~~~
 commit
@@ -1210,7 +1210,7 @@ commit
         <li><strong>y</strong> - the y coordinate of the end point</li>
       </ul>
     </td>
-    <td><code>
+    <td><code class="language-eve-document">
 draws a red Bézier curve starting at (20, 25) and ending at (40, 50)
 ~~~
 commit
@@ -1242,7 +1242,7 @@ commit
         <li><strong>y</strong> - the y coordinate of the end point</li>
       </ul>
     </td>
-    <td><code>
+    <td><code class="language-eve-document">
 draws a red quadratic curve starting at (20, 0) and ending at (40, 50)
 ~~~
 commit
@@ -1276,7 +1276,7 @@ commit
         <li><strong>anticlockwise</strong> - (optional) - values can be true or false; true draws the arc counterclockwise, false draws the arc clockwise</li>
       </ul>
     </td>
-    <td><code>
+    <td><code class="language-eve-document">
 draws an arc that circumscribes ¾ of a 40 pixel-wide circle in the middle of the canvas
 ~~~
 commit
@@ -1305,7 +1305,7 @@ commit
         <li>radius - the radius of the curve in pixels</li>
       </ul>
     </td>
-    <td><code>
+    <td><code class="language-eve-document">
 draws an arc that connects two perpendicular lines with a circular curve
 ~~~
 commit
@@ -1339,7 +1339,7 @@ commit
         <li><strong>anticlockwise</strong> - (optional) - values can be true or false; true draws the arc counterclockwise, false draws the arc clockwise</li>
       </ul>
     </td>
-    <td><code>
+    <td><code class="language-eve-document">
 draws a green oval in the center of the canvas that is 20 pixels wide and 30 pixels high
 ~~~
 commit
@@ -1367,7 +1367,7 @@ commit
         <li><strong>height</strong> - the height of the rectangle in pixels</li>
       </ul>
     </td>
-    <td><code>
+    <td><code class="language-eve-document">
 draws a blue square with black borders in the middle of the canvas
 ~~~
 commit
@@ -1392,7 +1392,7 @@ commit
         <li>No arguments</li>
       </ul>
     </td>
-    <td><code>
+    <td><code class="language-eve-document">
 returns the path to (10, 10) from (20, 40) to create a triangle
 ~~~
 commit
@@ -1423,25 +1423,25 @@ The UI library provides a shorthand for adding standard HTML elements, as well a
   <tr>
     <td>
       <ul class="arglist">
-        <li>the <code>#ui</code> tag supports the following html elements:
+        <li>the <code class="language-eve-document">#ui</code> tag supports the following html elements:
           <ul class="arglist">
-            <li><code>#ui/row</code></li>
-            <li><code>#ui/column</code></li>
-            <li><code>#ui/spacer</code></li>
-            <li><code>#ui/input</code></li>
-            <li><code>#ui/text</code></li>
-            <li><code>#ui/a</code></li>
-            <li><code>#ui/style</code></li>
-            <li><code>#ui/link</code></li>
-            <li><code>#ui/div</code></li>
-            <li><code>#ui/span</code></li>
-            <li><code>#ui/img</code></li>
-            <li><code>#ui/h1</code></li>
-            <li><code>#ui/h2</code></li>
-            <li><code>#ui/h3</code></li>
-            <li><code>#ui/ul</code></li>
-            <li><code>#ui/ol</code></li>
-            <li><code>#ui/li</code></li>
+            <li><code class="language-eve-document">#ui/row</code></li>
+            <li><code class="language-eve-document">#ui/column</code></li>
+            <li><code class="language-eve-document">#ui/spacer</code></li>
+            <li><code class="language-eve-document">#ui/input</code></li>
+            <li><code class="language-eve-document">#ui/text</code></li>
+            <li><code class="language-eve-document">#ui/a</code></li>
+            <li><code class="language-eve-document">#ui/style</code></li>
+            <li><code class="language-eve-document">#ui/link</code></li>
+            <li><code class="language-eve-document">#ui/div</code></li>
+            <li><code class="language-eve-document">#ui/span</code></li>
+            <li><code class="language-eve-document">#ui/img</code></li>
+            <li><code class="language-eve-document">#ui/h1</code></li>
+            <li><code class="language-eve-document">#ui/h2</code></li>
+            <li><code class="language-eve-document">#ui/h3</code></li>
+            <li><code class="language-eve-document">#ui/ul</code></li>
+            <li><code class="language-eve-document">#ui/ol</code></li>
+            <li><code class="language-eve-document">#ui/li</code></li>
           </ul>
         </li>
         <li><strong>style</strong> - (optional) - specific CSS styles can be defined, but must be entered as a subrecord</li>
@@ -1451,7 +1451,7 @@ The UI library provides a shorthand for adding standard HTML elements, as well a
         <li>Other attributes - (optional) - other attribute-value pairs will be applied directly to the element for integration with existing JS libraries or debugging</li>
       </ul>
     </td>
-    <td><code>
+    <td><code class="language-eve-document">
 commits a div in the browser with the text "Hello world!"
 ~~~
 commit
@@ -1479,7 +1479,7 @@ commit
         <li>Other attributes - (optional) - other attribute-value pairs will be applied directly to the column or row for integration with existing JS libraries or debugging</li>
       </ul>
     </td>
-    <td><code>
+    <td><code class="language-eve-document">
 creates 3 very wise divs in the browser stacked on top of one another
 ~~~
 commit
@@ -1516,7 +1516,7 @@ commit
         <li>Other attributes - (optional) - other attribute-value pairs will be applied directly to the button for integration with existing JS libraries or debugging</li>
       </ul>
     </td>
-    <td><code>
+    <td><code class="language-eve-document">
 ~~~
 commit
   [#ui/button class: "flat" icon: "search" text: "Search"]
@@ -1537,7 +1537,7 @@ commit
     <td>
       <ul class="arglist">
         <li><strong>completion</strong> - the list of possible responses, given as a subrecord with the attribute "text" whose value is the list; requires the use of a pipe in the #ui record if matching against multiple search records for one autocomplete field</li>
-        <li><strong>Note</strong>: Once an autocomplete option has been selected, #ui/autocomplete automatically gains a <strong>selected</strong> attribute whose value is the completion record; in the case of the example shown here, the <strong>selected</strong> attribute would be whichever <code>#state</code> record was chosen</li>
+        <li><strong>Note</strong>: Once an autocomplete option has been selected, #ui/autocomplete automatically gains a <strong>selected</strong> attribute whose value is the completion record; in the case of the example shown here, the <strong>selected</strong> attribute would be whichever <code class="language-eve-document">#state</code> record was chosen</li>
         <li><strong>placeholder</strong> - (optional) - the placeholder text for the input field</li>
         <li><strong>style</strong> - (optional) - specific CSS styles can be defined, but must be entered as a subrecord</li>
         <li><strong>#</strong> - (optional) - any other tags on the record will be applied to the autocomplete as classes</li>
@@ -1545,7 +1545,7 @@ commit
         <li>Other attributes - (optional) - other attribute-value pairs will be applied directly to the autocomplete for integration with existing JS libraries or debugging</li>
       </ul>
     </td>
-    <td><code>
+    <td><code class="language-eve-document">
 creates an autocomplete form with the class "birth-state" and the placeholder "Which state were you born in?", where the autocomplete options are the names of any #state records found
 ~~~
 search
@@ -1567,7 +1567,7 @@ commit
   </tr>
   <tr>
     <td colspan="2">
-      <strong>Note about autocomplete:</strong> <code>#ui/autocomplete</code> has a set of events that it emits and responds to. Other components may end up implementing these same events in the future, but they are currently exclusive to <code>#ui/autocomplete</code>.
+      <strong>Note about autocomplete:</strong> <code class="language-eve-document">#ui/autocomplete</code> has a set of events that it emits and responds to. Other components may end up implementing these same events in the future, but they are currently exclusive to <code class="language-eve-document">#ui/autocomplete</code>.
     </td>
   </tr>
 </table>
@@ -1585,7 +1585,7 @@ commit
         <li><strong>autocomplete</strong> - the autocomplete element to clear</li>
       </ul>
     </td>
-    <td><code>
+    <td><code class="language-eve-document">
 clears an autocomplete field if it loses focus
 ~~~
 search
@@ -1612,7 +1612,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 changes the font color of the autocomplete input to red when the list is opened; the color will not revert once the menu is closed unless another block is specifically written to do so
 ~~~
 search
@@ -1642,7 +1642,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 changes the font color of the autocomplete input to black when the list is closed; reverts the change in the example for #ui/event/open
 ~~~
 search
@@ -1672,7 +1672,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 as a follow-up to the #ui/autocomplete example, this waits for the user to pick a birth state, then creates a new autocomplete tagged #birth-county to ask which county within that particular state the user was born in
 ~~~
 search
@@ -1702,7 +1702,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 when an autocomplete asking what the magic word is changes to the correct answer, adds the tag `#magic-word` to the autocomplete
 ~~~
 search
@@ -1745,7 +1745,7 @@ The system library provides various system-level utilities for Eve.
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 Commits a timer that ticks every 1000 milliseconds
 ~~~
 commit
@@ -1785,7 +1785,7 @@ A library for accessing the filesystem. This library only works when Eve is run 
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 Read a file
 ~~~
 commit
@@ -1822,7 +1822,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 ~~~
 commit
   [#file/write path: "test-file.txt" contents: "This will be in the file"]
@@ -1847,7 +1847,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 ~~~
 search
   [#file/read path error: [code: "ENOENT"]]
@@ -1877,7 +1877,7 @@ Write text to the console
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 ~~~
 commit
   [#console/log text: "Hello world!"]
@@ -1901,7 +1901,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 ~~~
 commit
   [#console/warn text: "Memory is running low."]
@@ -1925,7 +1925,7 @@ commit
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 ~~~
 commit
   [#console/error text: "Access is Denied"]
