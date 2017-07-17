@@ -834,7 +834,7 @@ bind
     <td>
       <b>Output</b>
       <ul class="arglist">
-        <li><strong>element</strong> - (optional) - the element that the mouse is entering or leaving</li>
+        <li><strong>element</strong> - the element that the mouse is entering or leaving</li>
       </ul>
     </td>
     <td>
@@ -869,8 +869,8 @@ commit
     <td>
       <b>Output</b>
       <ul class="arglist">
-        <li><strong>element</strong> - (optional) - the changed element</li>
-        <li><strong>value</strong> - (optional) - the current value of a form element in the browser</li>
+        <li><strong>element</strong> - the changed element</li>
+        <li><strong>value</strong> - the current value of a form element in the browser</li>
       </ul>
     </td>
     <td>
@@ -898,13 +898,13 @@ bind
     <td>
       <b>Output</b>
       <ul class="arglist">
-        <li><strong>element</strong> - (optional) - the element that was clicked; includes clicks on any children within the element</li>
-        <li><strong>target</strong> - (optional) - the direct element that was clicked (the topmost target in the DOM tree)</li>
-        <li><strong>page-x</strong> - (optional) - the x-coordinate of the mouse pointer relative to the page</li>
-        <li><strong>page-y</strong> - (optional) - the y-coordinate of the mouse pointer relative to the page</li>
-        <li><strong>window-x</strong> - (optional) - the x-coordinate of the mouse pointer relative to the window</li>
-        <li><strong>window-y</strong> - (optional) - the y-coordinate of the mouse pointer relative to the page</li>
-        <li><strong>button</strong> - (optional) - the mouse button that performed the click; options are:
+        <li><strong>element</strong> - the element that was clicked; includes clicks on any children within the element</li>
+        <li><strong>target</strong> - the direct element that was clicked (the topmost target in the DOM tree)</li>
+        <li><strong>page-x</strong> - the x-coordinate of the mouse pointer relative to the page</li>
+        <li><strong>page-y</strong> - the y-coordinate of the mouse pointer relative to the page</li>
+        <li><strong>window-x</strong> - the x-coordinate of the mouse pointer relative to the window</li>
+        <li><strong>window-y</strong> - the y-coordinate of the mouse pointer relative to the page</li>
+        <li><strong>button</strong> - the mouse button that performed the click; options are:
           <ul class="arglist">
             <li>"left" - left mouse button; if no button argument is provided, this is the default</li>
             <li>"right" - right mouse button</li>
@@ -973,9 +973,9 @@ commit
     <td>
       <b>Output</b>
       <ul class="arglist">
-        <li><strong>element</strong> - (optional) - the element which has focus during key-up or key-down</li>
-        <li><strong>key-code</strong> - (optional) - the key code of the key that was pressed</li>
-        <li><strong>key</strong> - (optional) - the key that was pressed; an alternative to key-code for a premade list of keys:
+        <li><strong>element</strong> - the element which has focus during key-up or key-down</li>
+        <li><strong>key-code</strong> - the key code of the key that was pressed</li>
+        <li><strong>key</strong> - the key that was pressed; an alternative to key-code for a premade list of keys:
           <ul class="arglist">
             <li>"tab</li>
             <li>"enter"</li>
@@ -1025,8 +1025,8 @@ commit
     <td>
       <b>Output</b>
       <ul class="arglist">
-        <li><strong>element</strong> - (optional) - the element that was focused or blurred</li>
-        <li><strong>value</strong> - (optional) - the value of the form element when it was focused or blurred</li>
+        <li><strong>element</strong> - the element that was focused or blurred</li>
+        <li><strong>value</strong> - the value of the form element when it was focused or blurred</li>
       </ul>
     </td>
     <td>
@@ -1783,16 +1783,16 @@ The system library provides various system-level utilities for Eve.
       </ul>
       <b>Output</b>
       <ul class="arglist">
-        <li><strong>year</strong> - (optional) - the current year</li>
-        <li><strong>month</strong> - (optional) - the current month (1 - 12)</li>
-        <li><strong>day</strong> - (optional) - the current day of the month (1 - 31)</li>
-        <li><strong>weekday</strong> - (optional) - the current day of the week (1 - 7, where 1 is Sunday)</li>
-        <li><strong>hour</strong> - (optional) - the current hour (0 - 23)</li>
-        <li><strong>minute</strong> - (optional) - the current minute (0 - 59)</li>
-        <li><strong>second</strong> - (optional) - the current second (0 - 59)</li>
-        <li><strong>millisecond</strong> - (optional) - the current millisecond (0 - 999)</li>
-        <li><strong>timestamp</strong> - (optional) - the current time represented as the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC</li>
-        <li><strong>tick</strong> - (optional) - the number of ticks of the timer since it was created</li>
+        <li><strong>year</strong> - the current year</li>
+        <li><strong>month</strong> - the current month (1 - 12)</li>
+        <li><strong>day</strong> - the current day of the month (1 - 31)</li>
+        <li><strong>weekday</strong> - the current day of the week (1 - 7, where 1 is Sunday)</li>
+        <li><strong>hour</strong> - the current hour (0 - 23)</li>
+        <li><strong>minute</strong> - the current minute (0 - 59)</li>
+        <li><strong>second</strong> - the current second (0 - 59)</li>
+        <li><strong>millisecond</strong> - the current millisecond (0 - 999)</li>
+        <li><strong>timestamp</strong> - the current time represented as the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC</li>
+        <li><strong>tick</strong> - the number of ticks of the timer since it was created</li>
       </ul>
     </td>
     <td>
@@ -1836,7 +1836,7 @@ A library for accessing the filesystem. This library only works when Eve is run 
       <b>Output</b>
       <ul class="arglist">
         <li><strong>contents</strong> - The contents of the file. This attribute will have a value once the entire contents of the file are read.</li>
-        <li><strong>error</strong> - (optional) - If an error is encountered when attempting to read the file, it will be stored here as a #file/error.</li>
+        <li><strong>error</strong> - If an error is encountered when attempting to read the file, it will be stored here as a #file/error.</li>
       </ul>
     </td>
     <td>
@@ -1876,7 +1876,7 @@ commit
       <b>Output</b>
       <ul class="arglist">
         <li><strong>contents</strong> - The string that will be written to the file</li>
-        <li><strong>error</strong> - (optional) - If an error is encountered when attempting to read the file, it will be stored here as a #file/error.</li>
+        <li><strong>error</strong> - If an error is encountered when attempting to read the file, it will be stored here as a #file/error.</li>
         <li><strong>#file/complete</strong> - When the contents are written successfully, the record will be tagged #file/complete.</li>
       </ul>
     </td>
