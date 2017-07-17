@@ -328,7 +328,7 @@ nav > .play-cta { margin: 0; padding: 10px 20px; color: white; }
 
 ul { display: block; margin-left: 2em; }
 
-code { white-space: pre-wrap; font-family: "Inconsolata", "Monaco", "Consolas", "Ubuntu Mono", monospace; font-size: 0.9rem; }
+code { white-space: pre-wrap; font-family: "Inconsolata", "Monaco", "Consolas", "Ubuntu Mono", monospace; font-size: 0.9rem;}
 
 strong { font-weight: 600; }
 
@@ -349,6 +349,10 @@ td {
 .arglist {
   list-style: none;
   margin-left: 0px;
+}
+
+.arglist li {
+  margin-top: 10px;
 }
 
 .libitem {

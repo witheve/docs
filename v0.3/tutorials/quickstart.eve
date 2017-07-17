@@ -18,7 +18,6 @@ Eve documents are written in Markdown. Eve code is written in blocks, delineated
 ## Adding records to Eve
 
 Let's start with a block that adds a record to Eve (we'll show the code fence in this block, but elide them in later blocks):
-
 ``````
 ~~~
 commit
@@ -57,10 +56,10 @@ Now we can search for the current time, and display it on the screen:
 
 ~~~eve
 search
-  [#time seconds]
+  [#time second]
 
 bind 
-  [#ui/text text: seconds]
+  [#ui/text text: second]
 ~~~
 
 As the time changes, the output updates to reflect the current state of the `#time` record. Records can be committed instead of bound, but the behavior is a little different -- committed records persist until they are removed explicitly.
