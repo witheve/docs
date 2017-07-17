@@ -380,7 +380,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/absolute</b> - Absolute value of a number
+      <b>math/absolute</b> - absolute value of a number
     </td>
   </tr>
 
@@ -416,14 +416,14 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/pow</b> - Raise a value to an exponent
+      <b>math/pow</b> - raise a value to an exponent
     </td>
   </tr>
 
   <tr>
     <td>
       <ul>
-        <li><strong>value</strong> - the mantissa</li>
+        <li><strong>value</strong> - the vale to exponentiate</li>
         <li><strong>exponent</strong> - the exponent</li>
       </ul>
     </td>
@@ -444,7 +444,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/ln</b> - Calculate the natural log of a value
+      <b>math/ln</b> - calculate the natural log of a value
     </td>
   </tr>
 
@@ -456,7 +456,7 @@ bind
     </td>
     <td>
       <code>
-calculate the natural laog of 17
+calculate the natural log of 17
 ```
 search
   x = math/ln[value: 17]
@@ -472,7 +472,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/to-fixed</b> - Formats a number as a string to a certain number of decimal places
+      <b>math/to-fixed</b> - formats a number as a string to a certain number of decimal places
     </td>
   </tr>
 
@@ -503,7 +503,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/range</b> - Generates a range of numbers
+      <b>math/range</b> - generates a range of numbers
     </td>
   </tr>
 
