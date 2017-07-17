@@ -11,7 +11,7 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>gather/sort</b> - Generates an ordering for a set
+      <b>gather/sort</b> - generates an ordering for a set
     </td>
   </tr>
 
@@ -54,7 +54,7 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>gather/count</b> - Returns the number of elements in a set
+      <b>gather/count</b> - returns the number of elements in a set
     </td>
   </tr>
   <tr>
@@ -90,7 +90,7 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>gather/sum</b> - Returns the sum of values in a set of attributes
+      <b>gather/sum</b> - returns the sum of values in a set of attributes
     </td>
   </tr>
 
@@ -130,7 +130,7 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/floor</b> - Rounds a number down
+      <b>math/floor</b> - rounds a number down
     </td>
   </tr>
 
@@ -157,7 +157,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/ceiling</b> - Rounds a number up
+      <b>math/ceiling</b> - rounds a number up
     </td>
   </tr>
 
@@ -184,7 +184,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/round</b> - Rounds a number to the nearest integer
+      <b>math/round</b> - rounds a number to the nearest integer
     </td>
   </tr>
 
@@ -211,7 +211,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/sin</b> - Sine of an angle
+      <b>math/sin</b> - sine of an angle
     </td>
   </tr>
 
@@ -238,7 +238,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/cos</b> - Cosine of an angle
+      <b>math/cos</b> - cosine of an angle
     </td>
   </tr>
 
@@ -265,7 +265,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/tan</b> - Tangent of an angle
+      <b>math/tan</b> - tangent of an angle
     </td>
   </tr>
 
@@ -292,7 +292,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/max</b> - The greater of two values
+      <b>math/max</b> - the greater of two values
     </td>
   </tr>
 
@@ -322,7 +322,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/min</b> - The lesser of two values
+      <b>math/min</b> - the lesser of two values
     </td>
   </tr>
 
@@ -352,7 +352,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/mod</b> - Modulo division
+      <b>math/mod</b> - modulo division
     </td>
   </tr>
 
@@ -531,7 +531,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>random/number</b> - Generates a random number between 1 and 0
+      <b>random/number</b> - generates a random number between 1 and 0
     </td>
   </tr>
 
@@ -567,7 +567,7 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/replace</b> - Replaces a string of text with another
+      <b>string/replace</b> - replaces a string of text with another
     </td>
   </tr>
 
@@ -597,7 +597,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/get</b> - Gets a character from a specific location in a string
+      <b>string/get</b> - gets a character from a specific location in a string
     </td>
   </tr>
 
@@ -626,7 +626,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/uppercase</b> - Converts a string to uppercase
+      <b>string/uppercase</b> - converts a string to uppercase
     </td>
   </tr>
 
@@ -653,7 +653,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/lowercase</b> - Converts a string to lowercase
+      <b>string/lowercase</b> - converts a string to lowercase
     </td>
   </tr>
 
@@ -680,7 +680,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/index-of</b> - Returns the position of the first occurrence of a specified value in a string
+      <b>string/index-of</b> - returns the position of the first occurrence of a specified value in a string
     </td>
   </tr>
 
@@ -708,7 +708,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/codepoint-length</b> - Returns the length of a string in Unicode code points.
+      <b>string/codepoint-length</b> - returns the length of a string in Unicode code points.
     </td>
   </tr>
 
@@ -1870,11 +1870,11 @@ commit
   <tr>
     <td>
       <ul>
-        <li><strong>path</strong> - The path of the file to be written.</li>
-        <li><strong>encoding</strong> - (optional) - The encoding of the file. The default is utf-8.</li>
-        <li><strong>contents</strong> - The string that will be written to the file</li>
-        <li><strong>error</strong> - (optional) - If an error is encountered when attempting to read the file, it will be stored here as a #file/error.</li>
-        <li><strong>#file/complete</strong> - When the contents are written successfully, the record will be tagged #file/complete.</li>
+        <li><strong>path</strong> - the path of the file to be written.</li>
+        <li><strong>encoding</strong> - (optional) - the encoding of the file. The default is utf-8.</li>
+        <li><strong>contents</strong> - the string that will be written to the file</li>
+        <li><strong>error</strong> - (optional) - if an error is encountered when attempting to read the file, it will be stored here as a #file/error.</li>
+        <li><strong>#file/complete</strong> - when the contents are written successfully, the record will be tagged #file/complete.</li>
       </ul>
     </td>
     <td>
@@ -1898,8 +1898,8 @@ commit
   <tr>
     <td>
       <ul>
-        <li><strong>code</strong> - The error code</li>
-        <li><strong>message</strong> - The error message</li>
+        <li><strong>code</strong> - the error code</li>
+        <li><strong>message</strong> - the error message</li>
       </ul>
     </td>
     <td>
@@ -1929,7 +1929,7 @@ Write text to the console
   <tr>
     <td>
       <ul>
-        <li><strong>text</strong> - The text to write to the console. Text will also be written to stdout.</li>
+        <li><strong>text</strong> - the text to write to the console. Text will also be written to stdout.</li>
       </ul>
     </td>
     <td>
@@ -1953,7 +1953,7 @@ commit
   <tr>
     <td>
       <ul>
-        <li><strong>text</strong> - The text to write to the console.</li>
+        <li><strong>text</strong> - the text to write to the console.</li>
       </ul>
     </td>
     <td>
@@ -1977,7 +1977,7 @@ commit
   <tr>
     <td>
       <ul>
-        <li><strong>text</strong> - The text to write to the console. Text will also be written to stderr.</li>
+        <li><strong>text</strong> - the text to write to the console. Text will also be written to stderr.</li>
       </ul>
     </td>
     <td>
