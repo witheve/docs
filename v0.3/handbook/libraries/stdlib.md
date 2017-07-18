@@ -11,7 +11,7 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>gather/sort</b> - Generates an ordering for a set
+      <b>gather/sort</b> - generates an ordering for a set
     </td>
   </tr>
 
@@ -55,7 +55,7 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>gather/count</b> - Returns the number of elements in a set
+      <b>gather/count</b> - returns the number of elements in a set
     </td>
   </tr>
   <tr>
@@ -92,7 +92,7 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>gather/sum</b> - Returns the sum of values in a set of attributes
+      <b>gather/sum</b> - returns the sum of values in a set of attributes
     </td>
   </tr>
 
@@ -133,7 +133,7 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/floor</b> - Rounds a number down
+      <b>math/floor</b> - rounds a number down
     </td>
   </tr>
 
@@ -161,7 +161,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/ceiling</b> - Rounds a number up
+      <b>math/ceiling</b> - rounds a number up
     </td>
   </tr>
 
@@ -189,7 +189,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/round</b> - Rounds a number to the nearest integer
+      <b>math/round</b> - rounds a number to the nearest integer
     </td>
   </tr>
 
@@ -217,7 +217,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/sin</b> - Sine of an angle
+      <b>math/sin</b> - sine of an angle
     </td>
   </tr>
 
@@ -245,7 +245,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/cos</b> - Cosine of an angle
+      <b>math/cos</b> - cosine of an angle
     </td>
   </tr>
 
@@ -273,7 +273,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/tan</b> - Tangent of an angle
+      <b>math/tan</b> - tangent of an angle
     </td>
   </tr>
 
@@ -301,7 +301,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/max</b> - The greater of two values
+      <b>math/max</b> - the greater of two values
     </td>
   </tr>
 
@@ -332,7 +332,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/min</b> - The lesser of two values
+      <b>math/min</b> - the lesser of two values
     </td>
   </tr>
 
@@ -363,7 +363,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/mod</b> - Modulo division
+      <b>math/mod</b> - modulo division
     </td>
   </tr>
 
@@ -392,7 +392,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/absolute</b> - Absolute value of a number
+      <b>math/absolute</b> - absolute value of a number
     </td>
   </tr>
 
@@ -429,7 +429,63 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/to-fixed</b> - Formats a number as a string to a certain number of decimal places
+      <b>math/pow</b> - raise a value to an exponent
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul>
+        <li><strong>value</strong> - the vale to exponentiate</li>
+        <li><strong>exponent</strong> - the exponent</li>
+      </ul>
+    </td>
+    <td>
+      <code>
+Calculate 2 ^ 3
+```
+search
+  x = math/pow[value: 2 exponent: 3]
+bind
+  [#ui/text text: "2 ^ 3 = {{x}}"]
+```
+</code>
+    </td>
+  </tr>
+</table>
+
+<table class="libitem">
+  <tr>
+    <td colspan="2">
+      <b>math/ln</b> - calculate the natural log of a value
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul>
+        <li><strong>value</strong> - the value to take the natural log of</li>
+      </ul>
+    </td>
+    <td>
+      <code>
+calculate the natural log of 17
+```
+search
+  x = math/ln[value: 17]
+
+bind
+  [#ui/text text: "ln(17) = {{x}}"]
+```
+</code>
+    </td>
+  </tr>
+</table>
+
+<table class="libitem">
+  <tr>
+    <td colspan="2">
+      <b>math/to-fixed</b> - formats a number as a string to a certain number of decimal places
     </td>
   </tr>
 
@@ -461,7 +517,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/range</b> - Generates a range of numbers
+      <b>math/range</b> - generates a range of numbers
     </td>
   </tr>
 
@@ -490,7 +546,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>random/number</b> - Generates a random number between 1 and 0
+      <b>random/number</b> - generates a random number between 1 and 0
     </td>
   </tr>
 
@@ -527,7 +583,7 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/replace</b> - Replaces a string of text with another
+      <b>string/replace</b> - replaces a string of text with another
     </td>
   </tr>
 
@@ -558,7 +614,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/get</b> - Gets a character from a specific location in a string
+      <b>string/get</b> - gets a character from a specific location in a string
     </td>
   </tr>
 
@@ -588,7 +644,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/uppercase</b> - Converts a string to uppercase
+      <b>string/uppercase</b> - converts a string to uppercase
     </td>
   </tr>
 
@@ -616,7 +672,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/lowercase</b> - Converts a string to lowercase
+      <b>string/lowercase</b> - converts a string to lowercase
     </td>
   </tr>
 
@@ -644,7 +700,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/index-of</b> - Returns the position of the first occurrence of a specified value in a string
+      <b>string/index-of</b> - returns the position of the first occurrence of a specified value in a string
     </td>
   </tr>
 
@@ -673,7 +729,7 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/codepoint-length</b> - Returns the length of a string in Unicode code points.
+      <b>string/codepoint-length</b> - returns the length of a string in Unicode code points.
     </td>
   </tr>
 
