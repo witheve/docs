@@ -9,7 +9,7 @@ title: Quickstart
 
 This guide is a 5 - 10 minute introduction to the essential concepts in Eve. If you've never used Eve before, you're in the right place! Before you start with this tutorial, please follow the [installation and usage](/v0.3/install/) instructions, which will get you running Eve programs on your machine. In the eve-starter/programs directory, create an empty document called "quickstart.eve". Use your favorite editor to edit the program, and run it with the command:
 
-```
+```sh
 npm start -- eve-starter/programs/quickstart.eve
 ``` 
 
@@ -18,7 +18,7 @@ Eve documents are written in Markdown. Eve code is written in blocks, delineated
 ## Adding records to Eve
 
 Let's start with a block that adds a record to Eve (we'll show the code fence in this block, but elide them in later blocks):
-``````
+``````eve-document
 ~~~
 commit
   [#greeting message: "hello world"]
