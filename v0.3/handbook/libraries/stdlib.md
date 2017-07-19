@@ -1835,7 +1835,7 @@ The system library provides various system-level utilities for Eve.
     <td>
       <b>Input</b>
       <ul class="arglist">
-        <li><strong>resultion</strong> - the frequency in milliseconds of the timer.</li>
+        <li><strong>resolution</strong> - the frequency in milliseconds of the timer.</li>
       </ul>
       <b>Output</b>
       <ul class="arglist">
