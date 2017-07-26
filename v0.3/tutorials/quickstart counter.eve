@@ -1,0 +1,148 @@
+---
+layout: default
+title: Quickstart
+---
+
+{% raw %}
+
+# Quickstart + Counter
+
+This guide expands on the quickstart by adding a simple incrementing counter to the `Counter` page.
+
+## Quickstart code
+
+This is made to add onto the web app you made in the quickstart. You'll want to add the new code from here into the quickstart.eve document if you've already got the web app written there. Otherwise, you can quickly copy and paste the code in this section to recreate it. Whichever path you take, jump down to the `Building the counter` section to begin working on the counter!
+
+Header
+
+````
+```
+commit
+  [#ui/div text: "My Quickstart App"]
+```
+````
+
+Layout
+
+````
+```
+commit
+  [#ui/div #qs-wrapper children:
+    [#ui/div #qs-logo]
+    [#ui/div #qs-nav-bar]
+    [#ui/div #qs-contents]]
+```
+````
+
+Pages for the web app
+
+````
+```
+commit
+  [#page name: "Home" sort: 1]
+  [#page name: "Counter" sort: 2]
+  [#page name: "Clock" sort: 3]
+```
+````
+
+Adding buttons to the Nav Bar
+
+````
+```
+search
+  page = [#page name sort]
+  nav-bar = [#ui/div #qs-nav-bar]
+
+commit
+  nav-bar.children += [#ui/div #qs-nav-btn page text: name sort]
+```
+````
+
+Starting Page
+
+````
+```
+commit
+  [#app page: "Home"]
+```
+````
+
+Home Page
+
+````
+```
+search
+  [#app page: "Home"]
+  view = [#qs-contents]
+
+bind
+  view.children += ([#ui/div text: "This is the Eve Quickstart app! Choose a link above to see some of the things Eve can do."], [#ui/img #qs-flappy src:"http://i.imgur.com/sp68LtM.gif"])
+```
+````
+
+Navigation
+
+````
+```
+search
+  click = [#html/event/click element:[#ui/div #qs-nav-btn page]]
+  view = [#app]
+
+commit
+  view.page := page.name
+```
+````
+
+## Building the counter
+
+The first thing to do is to create some basic content on our `Counter` page.
+
+````
+```
+search
+  [#app page: "Counter"]
+  view = [#qs-contents]
+
+bind
+  view.children += [#ui/button #qs-increment text: "+1" sort: 1]
+```
+````
+
+## Remembering clicks
+
+To be able to count the clicks, we have to first remember them.
+
+````
+```
+search
+  event = [#html/event/click element: [#qs-increment]]
+
+commit
+  [#clicked event]
+```
+````
+
+Click events only last for an instant in Eve before the `#html/event/click` record goes away, but we want to create a permanent record of each click so we can search for them later.
+
+## Counting clicks
+
+Now that there's a permanent `#clicked` record for each click, we can count them and display that on the `Counter` page.
+
+````
+```
+search
+  how-many = gather/count[for: [#clicked]]
+  [#app page: "Counter"]
+  view = [#qs-contents]
+
+bind
+  view.children += [#ui/text text: "The button has been clicked {{how-many}} times." sort: 2]
+```
+````
+
+You may notice that nothing appears until you click the button at least once. When there are zero clicks, `how-many` has nothing to count, the search will fail, and so no message will be created. Once there's a click, the search passes, and the count message will show up.
+
+
+## Next steps
+
+The way this is written, the button has the "+1" text on it and a message appears underneath saying how many times the button has been clicked. What if you wanted to combine that so the button reads "This button has been clicked X times"? You can try it out yourself or just jump to (the solution)[] to follow along with it!

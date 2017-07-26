@@ -1,0 +1,198 @@
+---
+layout: default
+title: Quickstart + One Button Stopwatch
+---
+
+{% raw %}
+
+# Quickstart + One Button Stopwatch
+
+This guide expands on the quickstart `Clock` page and shows you how to turn the clock into a one button stopwatch. The following code is meant to replace all the code from the original clock.
+
+## Implement system time and a race timer
+
+```
+commit
+  [#time #system/timer resolution: 10]
+  [#race-timer #stopped #reset]
+```
+
+Stopwatches tend to measure seconds to two decimal points, so our resolution changes to 10ms (or one centisecond) to account for that. The other thing added here is a `#race-timer` record that lets us keep track of when the stopwatch is stopped or running or has been reset back to zero.
+
+
+## Draw clock face
+
+```
+search
+  [#app page: "Clock"]
+  view = [#qs-contents]
+  [#race-timer minute second millisecond]
+
+bind
+  view.children += [#svg/root sort: 1 viewBox: "0 0 100 100", width: "300px", children:
+    [#svg/circle #second-face sort: 1, cx: 50, cy: 50, r: 48, fill: "#fff", stroke: "#000", stroke-width: 0.5]
+    [#svg/circle #minute-face sort: 2, cx: 50, cy: 26, r: 12, fill: "#fff", stroke: "#000", stroke-width: 0.25]
+    [#minute-hand sort: 3, degrees: 6 * minute, length: 11, stroke: "#000", stroke-width: 0.5]
+    [#second-hand sort: 4, degrees: 6 * second + 0.006 * millisecond, length: 46, stroke: "#ff0000", stroke-width: 0.5]]
+```
+
+This block closely resembles its predecessor, but the search looks for `#race-timer` now instead of the system time since it's the race time that will determine the position of the hands.
+
+## One Button
+
+### Draw the button
+
+All we need to do is add one button to cycle between start, stop, and reset.
+
+```
+search
+  [#app page: "Clock"]
+  view = [#qs-contents]
+
+bind
+  view.children += [#ui/div sort: 2 children:
+    [#ui/div #qs-stopwatch-btn text: "Start/Stop/Reset"]]
+```
+
+### Pressing Start
+
+```
+search
+  [#time timestamp]
+  race-timer = [#race-timer #stopped #reset]
+  [#html/event/click element: [#qs-stopwatch-btn]]
+
+commit
+  [#start-time timestamp]
+  race-timer -= #stopped
+  race-timer -= #reset
+  race-timer += #running
+```
+
+If the button is pressed while the stopwatch is stopped and reset (thus at zero), this records the `#start-time` and changes the `#race-timer` from `#stopped` to `#running` and removes the `#reset` tag.
+
+### Pressing Stop
+
+```
+search
+  [#time timestamp]
+  race-timer = [#race-timer #running]
+  [#html/event/click element: [#qs-stopwatch-btn]]
+
+commit
+  [#stop-time timestamp]
+  race-timer += #stopped
+  race-timer -= #running
+```
+
+If the button is pressed with the stopwatch is running, this records the `#stop-time` and changes the `#race-timer` from `#running` to `#stopped`.
+
+### Pressing Reset
+
+```
+search
+  race = [#race-timer #stopped not(#reset)]
+  start = [#start-time]
+  stop = [#stop-time]
+  [#html/event/click element: [#qs-quickstart-btn]]
+
+commit
+  race := none
+  start := none
+  stop := none
+  [#race-timer #stopped #reset]
+```
+
+When the timer is stopped but hasn't been reset yet, and the button gets hit, this erases the `#race-timer`, `#start-time`, and `#stop-time` records to clear the stopwatch of the previous time's data, and recommits a new `#race-timer` without any time values on it.
+
+## Adding time values to the race timer
+
+There's three conditions where the `#race-timer` needs values assigned to it.
+
+### Time values while reset
+
+```
+search
+  race-timer = [#race-timer #stopped #reset]
+
+bind
+  race-timer.minute += 0
+  race-timer.second += 0
+  race-timer.millisecond += 0
+```
+
+Before the stopwatch button is pressed, there are no time values anywhere, so we just manually set three attributes to the `#race-timer` for minutes, seconds, and milliseconds, and make those all 0. This way, when the page is loaded or the stopwatch is reset, the hands are zeroed out.
+
+### Time values while running
+
+```
+search
+  race-timer = [#race-timer #running]
+  start-time = [#start-time timestamp: start]
+  system-time = [#time timestamp: now]
+  milliseconds = math/mod[value: (now - start), by: 1000]
+  seconds = math/floor[value: (now - start) / 1000]
+  minutes = math/floor[value: seconds / 60]
+
+bind
+  race-timer.minute += minutes
+  race-timer.second += seconds
+  race-timer.millisecond += milliseconds
+```
+
+Hooray for math functions! While the stopwatch is running, we simply take the difference between the current timestamp and the starting timestamp. From there, `math/mod` will let you extract just milliseconds, and `math/floor` yields whole seconds and minutes, which once again get added as attributes to the `#race-timer`.
+
+### Time values while stopped
+
+```
+search
+  race-timer = [#race-timer #stopped not(#reset)]
+  start-time = [#start-time timestamp: start]
+  stop-time = [#stop-time timestamp: stop]
+  milliseconds = math/mod[value: (stop - start), by: 1000]
+  seconds = math/floor[value: (stop - start) / 1000]
+  minutes = math/floor[value: seconds / 60]
+
+bind
+  race-timer.minute += minutes
+  race-timer.second += seconds
+  race-timer.millisecond += milliseconds
+```
+
+This block is almost completely identical to the last block, except `#time` was swapped out for `#stop-time`. The system timestamp is always changing, whereas the stopped timestamp is static, leaving the stopwatch hands paused in place.
+
+## Drawing the hands
+
+Last time, all 3 hands could be easily handled by the same block. Technically the two following blocks could be combined with a small amount of effort, but since the second hand and the minute hand no longer share the same y values on the canvas, things stay clearer by having them separated.
+
+### Drawing the second hand
+
+Good like last time.
+
+```
+search
+  second-hand = [#second-hand degrees length]
+  x2 = 50 + (length * math/sin[degrees])
+  y2 = 50 - (length * math/cos[degrees])
+
+bind
+  second-hand <- [#svg/line, x1: 50, y1: 50, x2, y2]
+```
+
+### Drawing the minute hand
+
+The only change here is that the minute hand is on a smaller dial on the watch face, shifting the `y1` and `y2` values a little higher.
+
+```
+search
+  minute-hand = [#minute-hand degrees length]
+  x2 = 50 + (length * math/sin[degrees])
+  y2 = 26 - (length * math/cos[degrees])
+
+bind
+  minute-hand <- [#svg/line, x1: 50, y1: 26, x2, y2]
+```
+
+## Next steps
+
+A one button stopwatch is the classic, but isn't quite as useful as a two button stopwatch that has a start/stop button and a reset button. In the case of two button stopwatch, one is a stop/start button and the other is a reset button. The stop/start button will pause the stopwatch and resume counting if you hit it again without hitting reset, which adds a few more states and calculations that you need to account for. Try building it yourself or follow along with our solution!

@@ -7,95 +7,119 @@ title: Quickstart
 
 # Quickstart
 
-This guide will give you a quick introduction to Eve by making a simple webapp in just a few minutes.
+This guide will give you a quick introduction to Eve by making a simple web app in just a few minutes.
+
 
 ## Getting Eve Running
 
 Before you start with this tutorial, please follow the [installation and usage instructions](/v0.3/install/), which will get you running Eve programs on your machine. In the eve-starter directory, you can launch the Program Switcher:
 
+````
 ```
 npm start
 ```
+````
 
 You'll see a list of Eve programs in your browser; select quickstart.eve in the program switcher, and use your favorite editor to open quickstart.eve so we can edit the program.
 
+
 ## The Basics
-Let's start with the most basic example of Eve. Put this whole block, with the set of backticks (```) included, into the quickstart.eve file, then refresh your browser page where it's running.
+Let's start with the most basic example of Eve. Put this whole block, with the set of backticks (\`\`\`) included, into the quickstart.eve file, then refresh your browser page where it's running.
 
-
+````
 ```
 commit
   [#ui/div text: "My Quickstart App"]
 ```
+````
 
-We want our webapp to be laid out nicely with a logo, a navigation bar, and a content area. To do that, add this whole block into the quickstart file right after the other block you already wrote, and refresh the browser page again.
+We want our web app to be laid out nicely with a logo, a navigation bar, and a content area. To do that, add this whole block into the quickstart file right after the other block you already wrote, and refresh the browser page again.
 
-
+````
 ```
 commit
-  [#ui/div #logo class:"qs-logo" sort: 1]
-  [#ui/div #nav-bar class:"qs-nav" sort: 2]
-  [#ui/div #contents class:"qs-contents" sort: 3]
+  [#ui/div #qs-wrapper children:
+    [#ui/div #qs-logo]
+    [#ui/div #qs-nav-bar]
+    [#ui/div #qs-contents]]
 ```
+````
 
-The attribute `class` gets added to each div, which already has a little premade CSS to help see what we're doing. The logo is present, but next we need to add some pages to our nav bar and give each page some content.
+Eve will take tags like the `#qs-` tags and add them as classes to the divs, which already have a little premade CSS to help see what we're doing. The Eve logo is already set in the CSS for the class `qs-logo`, but next we need to add some pages to our nav bar and give each page some content.
 
 
 ## Pages for the Web App
-We can easily add a list of the pages we want for our app:
+We can easily add a list of the pages we want for our app. These records alone don't add anything to the browser, they just create a list that's easy to change later.
 
+````
 ```
 commit
   [#page name: "Home" sort: 1]
-  [#page name: "Clock" sort: 2]
-  [#page name: "Canvas" sort: 3]
+  [#page name: "Counter" sort: 2]
+  [#page name: "Clock" sort: 3]
 ```
+````
 
-These records alone don't add anything to the browser though. To actually make them appear, we need to write a block that first looks for our pages, then adds them into the browser.
 
 ## Adding buttons to the Nav Bar
+To actually make the list of pages appear somewhere, we need to write a block that first looks for our pages, then adds them into the browser.
 
+````
 ```
 search
   page = [#page name sort]
-  nav-bar = [#ui/div #nav-bar]
+  nav-bar = [#ui/div #qs-nav-bar]
 
 commit
-  nav-bar.children += [#ui/div #nav-btn page text: name sort]
+  nav-bar.children += [#ui/div #qs-nav-btn page text: name sort]
 ```
+````
 
 By making a button for each page from the list, it's easy to add more pages later. For now though, we're going to focus on the Home page. The first step is to make a special record to keep track of which page we're looking at.
 
+
 ## Starting Page
 
+````
 ```
 commit
   [#app page: "Home"]
 ```
+````
 
 This makes Home the default starting location. Now that we're looking at Home, we can add some content to it.
 
+
 ## Home Page
 
+````
 ```
 search
   [#app page: "Home"]
-  view = [#contents]
+  view = [#qs-contents]
 
 bind
-  view.children += ([#ui/div text: "This is the Eve Quickstart app! Choose a link to see some of the things Eve can do."], [#ui/img src:"http://i.imgur.com/qup3Y7l.jpg"])
+  view.children += ([#ui/div text: "This is the Eve Quickstart app! Choose a link above to see some of the things Eve can do."],
+                    [#ui/img #qs-flappy src:"http://i.imgur.com/sp68LtM.gif"])
 ```
+````
+
 
 ## Navigation
 The last thing to do is make the nav bar links switch which page the app is showing.
 
+````
 ```
 search
-  click = [#html/event/click element:[#ui/div #nav-btn page]]
+  click = [#html/event/click element:[#ui/div #qs-nav-btn page]]
   view = [#app]
 
 commit
   view.page := page.name
 ```
+````
 
-That's everything! There's no content on the other pages yet, but it works the same way as the content we made for Home. The framework is there for you to add or modify any pages you like, and if you want to see how things like the clock or canvas work in Eve, you can move on to those specific tutorials.
+
+## Next steps
+
+There's no content on the other pages yet, but it works the same way as the content we made for Home. The framework is there for you to add or modify any pages you like, and if you want to see how things like the clock or canvas work in Eve, you can move on to those specific tutorials. Have fun!

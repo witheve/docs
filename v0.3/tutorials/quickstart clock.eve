@@ -1,0 +1,145 @@
+---
+layout: default
+title: Quickstart + Counter
+---
+
+{% raw %}
+
+# Quickstart + Counter
+
+This guide expands on the quickstart by adding a live clock to the `Clock` page.
+
+## Quickstart code
+
+This is made to add onto the web app you made in the quickstart. You'll want to add the new code from here into the quickstart.eve document if you've already got the web app written there. Otherwise, you can quickly copy and paste the code in this section to recreate it. Whichever path you take, jump down to the `Building the clock` section to begin working on the counter!
+
+Header
+
+````
+```
+commit
+  [#ui/div text: "My Quickstart App"]
+```
+````
+
+Layout
+
+````
+```
+commit
+  [#ui/div #qs-wrapper children:
+    [#ui/div #qs-logo]
+    [#ui/div #qs-nav-bar]
+    [#ui/div #qs-contents]]
+```
+````
+
+Pages for the web app
+
+````
+```
+commit
+  [#page name: "Home" sort: 1]
+  [#page name: "Counter" sort: 2]
+  [#page name: "Clock" sort: 3]
+```
+````
+
+Adding buttons to the Nav Bar
+
+````
+```
+search
+  page = [#page name sort]
+  nav-bar = [#ui/div #qs-nav-bar]
+
+commit
+  nav-bar.children += [#ui/div #qs-nav-btn page text: name sort]
+```
+````
+
+Starting Page
+
+````
+```
+commit
+  [#app page: "Home"]
+```
+````
+
+Home Page
+
+````
+```
+search
+  [#app page: "Home"]
+  view = [#qs-contents]
+
+bind
+  view.children += ([#ui/div text: "This is the Eve Quickstart app! Choose a link above to see some of the things Eve can do."], [#ui/img #qs-flappy src:"http://i.imgur.com/sp68LtM.gif"])
+```
+````
+
+Navigation
+
+````
+```
+search
+  click = [#html/event/click element:[#ui/div #qs-nav-btn page]]
+  view = [#app]
+
+commit
+  view.page := page.name
+```
+````
+
+## Building the clock
+
+The first thing to do is to create a system timer that will tick once per second.
+
+````
+```
+commit
+  [#time #system/timer resolution: 1000]
+```
+````
+
+## Drawing the clock face
+
+Next, we can draw the clock face on the `Clock` page.
+
+````
+```
+search
+  [#app page: "Clock"]
+  view = [#qs-contents]
+  [#time hour minute second]
+
+bind
+  view.children += [#svg/root viewBox: "0 0 100 100", width: "300px", children:
+    [#svg/circle sort: 1, cx: 50, cy: 50, r: 45, fill: "#0B79CE"]
+    [#clock-hand #hour-hand sort: 2, degrees: 30 * hour + 0.5 * minute, length: 25, stroke: "#023963"]
+    [#clock-hand #minute-hand sort: 3, degrees: 6 * minute, length: 38, stroke: "#023963"]
+    [#clock-hand #second-hand sort: 4, degrees: 6 * second, length: 40, stroke: "#ce0b46"]]
+```
+````
+
+## Drawing the hands
+
+By adding an svg path to the `#hour-hand`, `#minute-hand`, and `#second-hand`, we can draw the hands of the clock.
+
+````
+```
+search
+  hand = [#clock-hand degrees length]
+  x2 = 50 + (length * math/sin[degrees])
+  y2 = 50 - (length * math/cos[degrees])
+
+bind
+  hand <- [#svg/line, x1: 50, y1: 50, x2, y2]
+```
+````
+
+## Next steps
+
+What would it take to move from a watch to a stopwatch? The geometry for drawing the hands is very similar, so most of what you'd need to add is a way to track starting and stopping. Try starting with a one button stopwatch, where the button cycles between start, stop, and reset. Give it a try on your own or follow along with our solution!

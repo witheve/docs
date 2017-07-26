@@ -1,0 +1,252 @@
+---
+layout: default
+title: Quickstart + Two Button Stopwatch
+---
+
+{% raw %}
+
+# Quickstart + Two Button Stopwatch
+
+This guide expands on the quickstart `Clock` page and shows you how to turn the clock into a two button stopwatch. The following code is meant to replace all the code from the original clock.
+
+## Implement system time
+
+````
+```
+commit
+  [#time #system/timer resolution: 10]
+  [#race-timer #stopped #reset]
+```
+````
+
+Nothing's changed here from the one button stopwatch.
+
+## Draw clock face
+
+````
+```
+search
+  [#app page: "Clock"]
+  view = [#qs-contents]
+  [#race-timer minute second millisecond]
+
+bind
+  view.children += [#svg/root sort: 1 viewBox: "0 0 100 100", width: "300px", children:
+    [#svg/circle #second-face sort: 1, cx: 50, cy: 50, r: 48, fill: "#fff", stroke: "#000", stroke-width: 0.5]
+    [#svg/circle #minute-face sort: 2, cx: 50, cy: 26, r: 12, fill: "#fff", stroke: "#000", stroke-width: 0.25]
+    [#minute-hand sort: 3, degrees: 6 * minute, length: 11, stroke: "#000", stroke-width: 0.5]
+    [#second-hand sort: 4, degrees: 6 * second + 0.006 * millisecond, length: 46, stroke: "#ff0000", stroke-width: 0.5]]
+```
+````
+
+Once more identical to the one button stopwatch.
+
+## Drawing the buttons
+
+This time there are two buttons instead of one.
+
+````
+```
+search
+  [#app page: "Clock"]
+  view = [#qs-contents]
+
+bind
+  view.children += [#ui/div sort: 2 children:
+    [#ui/div #qs-stopwatch-btn #start-stop-btn text: "Start/Stop"]
+    [#ui/div #qs-stopwatch-btn #reset-btn text: "Reset"]]
+```
+````
+
+Now we have two buttons - one for start/stop and another for reset.
+
+## Pressing the buttons
+
+This is where things get a little bit tricky. We're going to keep the same three pieces of button logic from last time, although additional blocks will be required to give us two button functionality.
+
+### Starting from a reset
+
+````
+```
+search
+  [#time timestamp]
+  race-timer = [#race-timer #stopped #reset]
+  [#html/event/click element: [#start-stop-btn]]
+
+commit
+  [#start-time timestamp]
+  race-timer -= #stopped
+  race-timer -= #reset
+  race-timer += #running
+```
+````
+
+This is exactly what the start button did in the last example.
+
+### Stopping the first time
+
+````
+```
+search
+  [#time timestamp]
+  not([#stop-time])
+  race-timer = [#race-timer #running]
+  [#html/event/click element: [#start-stop-btn]]
+
+commit
+  [#stop-time timestamp]
+  race-timer += #stopped
+  race-timer -= #running
+```
+````
+
+This is close to what the stop button did in the last example, except it checks to make sure there's no existing `#stop-time`. This means it's the first time the stop button has been pressed since a reset, and `#stop-time` needs to be created.
+
+### Pressing Reset
+
+````
+```
+search
+  race = [#race-timer #stopped]
+  start = [#start-time]
+  stop = [#stop-time]
+  [#html/event/click element: [#reset-btn]]
+
+commit
+  race := none
+  start := none
+  stop := none
+  [#race-timer #stopped #reset]
+```
+````
+
+The reset button's only difference from last time is that it's discrete from the start/stop button, and as such this blocks looks specifically for the `#reset-btn` to be pushed.
+
+### Resuming from a stop
+
+````
+```
+search
+  [#time timestamp]
+  start = [#start-time]
+  stop = [#stop-time]
+  race-timer = [#race-timer #stopped not(#reset)]
+  [#html/event/click element: [#start-stop-btn]]
+
+commit
+  start.timestamp := start.timestamp + (timestamp - stop.timestamp)
+  race-timer -= #stopped
+  race-timer += #running
+```
+````
+
+This is where things get a little tricky. This new block checks for the start button to be pressed while the stopwatch is stopped and checks for existing `#start-time` and `#stop-time` records, which indicate that we're resuming from a stop and not a reset. It then changes the `#race-timer` from `#stopped` back to `#running` and gives `#start-time` a new timestamp, which is the sum of its original value and the amount of time the stopwatch was stopped (the difference between the timestamp upon resuming and the timestamp when it was stopped). This lets the hands pick up exactly where they left off.
+
+### Subsequent stops
+
+````
+```
+search
+  [#time timestamp]
+  stop = [#stop-time]
+  race-timer = [#race-timer #running]
+  [#html/event/click element: [#start-stop-btn]]
+
+commit
+  stop.timestamp := timestamp
+  race-timer += #stopped
+  race-timer -= #running
+```
+````
+
+Whereas the first time you hit stop, `#stop-time` is created, subsequent stops don't need to create the record. Instead, they just need to update the timestamp on that stop.
+
+## Adding time values to the race timer
+
+### Time values while reset
+
+The three blocks that handle time values on the `#race-timer` are identical to the one button stopwatch.
+
+### Time values while reset
+
+````
+```
+search
+  race-timer = [#race-timer #stopped #reset]
+
+bind
+  race-timer.minute += 0
+  race-timer.second += 0
+  race-timer.millisecond += 0
+```
+````
+
+### Time values while running
+
+````
+```
+search
+  race-timer = [#race-timer #running]
+  start-time = [#start-time timestamp: start]
+  system-time = [#time timestamp: now]
+  milliseconds = math/mod[value: (now - start), by: 1000]
+  seconds = math/floor[value: (now - start) / 1000]
+  minutes = math/floor[value: seconds / 60]
+
+bind
+  race-timer.minute += minutes
+  race-timer.second += seconds
+  race-timer.millisecond += milliseconds
+```
+````
+
+### Time values while stopped
+
+````
+```
+search
+  race-timer = [#race-timer #stopped not(#reset)]
+  start-time = [#start-time timestamp: start]
+  stop-time = [#stop-time timestamp: stop]
+  milliseconds = math/mod[value: (stop - start), by: 1000]
+  seconds = math/floor[value: (stop - start) / 1000]
+  minutes = math/floor[value: seconds / 60]
+
+bind
+  race-timer.minute += minutes
+  race-timer.second += seconds
+  race-timer.millisecond += milliseconds
+```
+````
+
+## Drawing the hands
+
+These blocks are also identical to the two button example.
+
+### Drawing the second hand
+
+````
+```
+search
+  second-hand = [#second-hand degrees length]
+  x2 = 50 + (length * math/sin[degrees])
+  y2 = 50 - (length * math/cos[degrees])
+
+bind
+  second-hand <- [#svg/line, x1: 50, y1: 50, x2, y2]
+```
+````
+
+### Drawing the minute hand
+
+````
+```
+search
+  minute-hand = [#minute-hand degrees length]
+  x2 = 50 + (length * math/sin[degrees])
+  y2 = 26 - (length * math/cos[degrees])
+
+bind
+  minute-hand <- [#svg/line, x1: 50, y1: 26, x2, y2]
+```
+````
