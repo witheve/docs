@@ -7,7 +7,7 @@ title: Quickstart + One Button Stopwatch
 
 # Quickstart + One Button Stopwatch
 
-This guide expands on the quickstart `Clock` page and shows you how to turn the clock into a one button stopwatch. The following code is meant to replace all the code from the [original clock](./qs-clock.eve).
+This guide expands on the quickstart `Clock` page and shows you how to turn the clock into a one button stopwatch. The following code is meant to replace all the code from the [original clock](./qs-clock/).
 
 ## Implement system time and a race timer
 
@@ -195,4 +195,4 @@ bind
 
 ## Next steps
 
-A one button stopwatch is the classic, but isn't quite as useful as a two button stopwatch that has a start/stop button and a reset button. In the case of two button stopwatch, one is a stop/start button and the other is a reset button. The stop/start button will pause the stopwatch and resume counting if you hit it again without hitting reset, which adds a few more states and calculations that you need to account for. Try building it yourself or [follow along with our solution](./advanced-stopwatch.eve)!
+A one button stopwatch is the classic, but isn't quite as useful as a two button stopwatch that has a start/stop button and a reset button. In the case of two button stopwatch, one is a stop/start button and the other is a reset button. The stop/start button will pause the stopwatch and resume counting if you hit it again without hitting reset, which adds a few more states and calculations that you need to account for. Try building it yourself or [follow along with our solution](./advanced-stopwatch/)!

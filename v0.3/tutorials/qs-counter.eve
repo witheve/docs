@@ -11,7 +11,7 @@ This guide expands on the quickstart by adding a simple incrementing counter to 
 
 ## Quickstart code
 
-This is made to add onto the web app you made in the quickstart. Make sure you have [all the code from that](./quickstart.eve) in your Eve program before you start adding the code found here to begin working on the counter!
+This is made to add onto the web app you made in the quickstart. Make sure you have [all the code from that](./quickstart/) in your Eve program before you start adding the code found here to begin working on the counter!
 
 ## Building the counter
 
@@ -65,4 +65,4 @@ You may notice that nothing appears until you click the button at least once. Wh
 
 ## Next steps
 
-The way this is written, the button has the "+1" text on it and a message appears underneath saying how many times the button has been clicked. What if you wanted to combine that so the button reads "This button has been clicked X times"? You can try it out yourself or just jump to (the solution)[./advanced-counter.eve) to follow along with it!
+The way this is written, the button has the "+1" text on it and a message appears underneath saying how many times the button has been clicked. What if you wanted to combine that so the button reads "This button has been clicked X times"? You can try it out yourself or just jump to (the solution)[./advanced-counter/) to follow along with it!

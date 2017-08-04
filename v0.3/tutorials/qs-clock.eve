@@ -11,7 +11,7 @@ This guide expands on the quickstart by adding a live clock to the `Clock` page.
 
 ## Quickstart code
 
-This is made to add onto the web app you made in the quickstart. Make sure you have [all the code from that](./quickstart.eve) in your Eve program before you start adding the code found here to begin working on the clock!
+This is made to add onto the web app you made in the quickstart. Make sure you have [all the code from that](./quickstart/) in your Eve program before you start adding the code found here to begin working on the clock!
 
 ## Building the clock
 
@@ -62,4 +62,4 @@ bind
 
 ## Next steps
 
-What would it take to move from a watch to a stopwatch? The geometry for drawing the hands is very similar, so most of what you'd need to add is a way to track starting and stopping. Try starting with a one button stopwatch, where the button cycles between start, stop, and reset. Give it a try on your own or [follow along with our solution](./basic-stopwatch.eve)!
+What would it take to move from a watch to a stopwatch? The geometry for drawing the hands is very similar, so most of what you'd need to add is a way to track starting and stopping. Try starting with a one button stopwatch, where the button cycles between start, stop, and reset. Give it a try on your own or [follow along with our solution](./basic-stopwatch/)!
