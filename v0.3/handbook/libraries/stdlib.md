@@ -11,17 +11,18 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>gather/sort</b> - Generates an ordering for a set
+      <b>gather/sort</b> - generates an ordering for a set
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">  
         <li><strong>for</strong> - the set to sort</li>
         <li><strong>per</strong> - (optional) - one or more attributes by which to group `for`</li>
         <li><strong>direction</strong> - (optional) - direction in which to sort `for`. Possible values are:
-          <ul>
+          <ul class="arglist">
             <li>'up' - smallest to largest; default option</li>
             <li>'down' - largest to smallest</li>
           </ul>
@@ -29,9 +30,24 @@ title: "Standard Library"
       </ul>
     </td>
     <td>
-      <code>// sorts the students by GPA
-        [#student GPA]
-        index = sort[for: GPA]</code>
+      <code class="language-eve-document">
+Sorts the students by GPA
+~~~
+search
+    [#student name GPA]
+    index = gather/sort[for: GPA]
+bind 
+   [#ui/text sort: index, text: "{{name}} {{GPA}}"]
+~~~
+
+Add some students
+~~~
+commit
+  [#student name: "Ashley" GPA: 3.10]
+  [#student name: "Jerome" GPA: 2.37]
+  [#student name: "Iggy" GPA: 3.97]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -39,20 +55,36 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>gather/count</b> - Returns the number of elements in a set
+      <b>gather/count</b> - returns the number of elements in a set
     </td>
   </tr>
   <tr>
     <td>
-      <ul>
+      <b>Input</b>   
+      <ul class="arglist">     
         <li><strong>for</strong> - the set to count over</li>
         <li><strong>per</strong> - (optional) - one or more attributes by which to group `for`</li>
       </ul>
     </td>
     <td>
-      <code>// counts the number of citizens in each state
-        residents = [#citizen state]
-        population = count[given: residents, per: state]</code>
+      <code class="language-eve-document">
+Count the number of citizens in each state
+~~~
+search
+  residents = [#citizen state]
+  population = gather/count[given: residents, per: state]
+bind
+  [#ui/text text: "{{population}} people live in {{state}}"]
+~~~
+
+Add some citizens
+~~~
+commit
+  [#citizen name: "Regina" state: "CA"]
+  [#citizen name: "Travis" state: "WA"]
+  [#citizen name: "Sally" state: "CA"]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -60,22 +92,38 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>gather/sum</b> - Returns the sum of values in a set of attributes
+      <b>gather/sum</b> - returns the sum of values in a set of attributes
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>for</strong> - the set to gather</li>
         <li><strong>value</strong> - the specific variable to be summed</li>
         <li><strong>per</strong> - (optional) - one or more attributes by which to group `for`</li>
       </ul>
     </td>
     <td>
-      <code>// returns the sum of salaries for each department
-        employees = [#employee salary department]
-        expenses = gather/sum[for: employees, value: employees.salary, per: department]</code>
+          <code class="language-eve-document">
+Sum of salaries for each department
+~~~
+search 
+  employees = [#employee salary department]
+  payroll = gather/sum[for: employees, value: salary, per: department]
+bind
+  [#ui/text text: "{{department}} - ${{payroll}}.00"]
+~~~
+
+Add some employees
+~~~
+commit
+  [#employee name:"Cooper" salary:2 department:"engineering"]
+  [#employee name:"Adrienne" salary:5 department:"engineering"]
+  [#employee name:"Najib" salary:10 department:"marketing"]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -85,19 +133,27 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/floor</b> - Rounds a number down
+      <b>math/floor</b> - rounds a number down
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>value</strong> - the number to be rounded down</li>
       </ul>
     </td>
     <td>
-      <code>// x rounded down to 34
-        x = math/floor[value: 34.2]</code>
+      <code class="language-eve-document">
+x rounded down to 34
+~~~
+search
+  x = math/floor[value: 34.2]
+bind
+  [#ui/text text: x]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -105,19 +161,27 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/ceiling</b> - Rounds a number up
+      <b>math/ceiling</b> - rounds a number up
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>value</strong> - the number to be rounded up</li>
       </ul>
     </td>
     <td>
-      <code>// x rounded up to 35
-        x = math/ceiling[value: 34.2]</code>
+      <code class="language-eve-document">      
+x rounded up to 35
+~~~
+search
+  x = math/ceiling[value: 34.2]
+bind
+  [#ui/text text: x]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -125,19 +189,27 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/round</b> - Rounds a number to the nearest integer
+      <b>math/round</b> - rounds a number to the nearest integer
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>value</strong> - the number to be rounded to the nearest integer</li>
       </ul>
     </td>
     <td>
-      <code>// x rounded to 34
-        x = math/floor[value: 34.2]</code>
+      <code class="language-eve-document">
+x rounded to 34
+~~~
+search
+  x = math/round[value: 34.2]
+bind
+  [#ui/text text: x]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -145,19 +217,27 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/sin</b> - Sine of an angle
+      <b>math/sin</b> - sine of an angle
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>degrees</strong> - the angle in degrees</li>
       </ul>
     </td>
     <td>
-      <code>// r calculated to 1
-        r = math/sin[degrees: 90]</code>
+      <code class="language-eve-document">
+r calculated to 1
+~~~
+search
+  r = math/sin[degrees: 90]
+bind
+  [#ui/text text: r]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -165,19 +245,27 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/cos</b> - Cosine of an angle
+      <b>math/cos</b> - cosine of an angle
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>degrees</strong> - the angle in degrees</li>
       </ul>
     </td>
     <td>
-      <code>// r calculated to 0
-        r = math/cos[degrees: 90]</code>
+      <code class="language-eve-document">
+r calculated to 0
+~~~
+search
+  r = math/cos[degrees: 90]
+bind
+  [#ui/text text: r]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -185,19 +273,27 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/tan</b> - Tangent of an angle
+      <b>math/tan</b> - tangent of an angle
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>degrees</strong> - the angle in degrees</li>
       </ul>
     </td>
     <td>
-      <code>// r calculated to 1
-        r = math/tan[degrees: 45]</code>
+      <code class="language-eve-document">
+r calculated to 1
+~~~
+search
+  r = math/tan[degrees: 45]
+bind
+  [#ui/text text: r]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -205,21 +301,30 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/max</b> - The greater of two values
+      <b>math/max</b> - the greater of two values
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>a</strong> - a value to compare</li>
         <li><strong>b</strong> - another value to compare</li>
       </ul>
     </td>
     <td>
-      <code>// takes the higher score
-        [#scores pac-man donkey-kong]
-        best-score = math/min[a: pac-man, b: donkey-kong]</code>
+      <code class="language-eve-document">
+takes the higher score
+~~~
+search
+  pac-man = 10
+  donkey-kong = 13
+  best-score = math/max[a: pac-man, b: donkey-kong]
+bind
+  [#ui/text text: "The winning score is {{best-score}}"]
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -227,21 +332,30 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/min</b> - The lesser of two values
+      <b>math/min</b> - the lesser of two values
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>a</strong> - a value to compare</li>
         <li><strong>b</strong> - another value to compare</li>
       </ul>
     </td>
     <td>
-      <code>// takes the lower score
-        [#scores pac-man donkey-kong]
-        worst-score = math/min[a: pac-man, b: donkey-kong]</code>
+      <code class="language-eve-document">
+takes the lower score
+~~~
+search
+  pac-man = 10
+  donkey-kong = 13
+  worst-score = math/min[a: pac-man, b: donkey-kong]
+bind
+  [#ui/text text: "The losing score is {{worst-score}}"]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -249,20 +363,28 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/mod</b> - Modulo division
+      <b>math/mod</b> - modulo division
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>value</strong> - the number to be divided (dividend)</li>
         <li><strong>by</strong> - the number by which to divide (divisor)</li>
       </ul>
     </td>
     <td>
-      <code>// m is the remainder, 1
-        m = math/mod[value: 5, by: 2]</code>
+      <code class="language-eve-document">
+m is the remainder, 1
+~~~
+search
+  m = math/mod[value: 5, by: 2]
+bind
+  [#ui/text text: "5 mod 2 is {{m}}"]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -270,20 +392,36 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/absolute</b> - Absolute value of a number
+      <b>math/absolute</b> - absolute value of a number
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>value</strong> - the number whose absolute value is found</li>
       </ul>
     </td>
     <td>
-      <code>// number of hours from the prime meridian
-        [#city latitude longitude]
-        hours-from-gmt = math/absolute[value: latitude] / 15</code>
+      <code class="language-eve-document">
+number of hours from the Prime Meridian
+~~~
+search
+  [#city name longitude]
+  hours-from-gmt = math/absolute[value: longitude] * 24 / 360 
+bind
+  [#ui/text text: "{{name}} is {{hours-from-gmt}} hours from the Prime Meridian"]
+~~~
+
+Add some cities
+~~~
+commit
+  [#city name: "Paris" longitude: 2.33]
+  [#city name: "New York" longitude: -75.61]
+  [#city name: "Los Angeles" longitude: -118.24]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -291,21 +429,27 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/to-fixed</b> - Formats a number as a string to a certain number of decimal places
+      <b>math/pow</b> - raise a value to an exponent
     </td>
   </tr>
 
   <tr>
     <td>
       <ul>
-        <li><strong>a</strong> - the number to be formatted</li>
-        <li><strong>b</strong> - the number of decimal places to which `a` will be formatted</li>
+        <li><strong>value</strong> - the vale to exponentiate</li>
+        <li><strong>exponent</strong> - the exponent</li>
       </ul>
     </td>
     <td>
-      <code>// pi represented as the string "3.14"
-        [#circle circumference diameter]
-        pi = math/to-fixed[a: (circumference / diameter), b: 2]</code>
+      <code>
+Calculate 2 ^ 3
+```
+search
+  x = math/pow[value: 2 exponent: 3]
+bind
+  [#ui/text text: "2 ^ 3 = {{x}}"]
+```
+</code>
     </td>
   </tr>
 </table>
@@ -313,20 +457,88 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/range</b> - Generates a range of numbers
+      <b>math/ln</b> - calculate the natural log of a value
     </td>
   </tr>
 
   <tr>
     <td>
       <ul>
+        <li><strong>value</strong> - the value to take the natural log of</li>
+      </ul>
+    </td>
+    <td>
+      <code>
+calculate the natural log of 17
+```
+search
+  x = math/ln[value: 17]
+
+bind
+  [#ui/text text: "ln(17) = {{x}}"]
+```
+</code>
+    </td>
+  </tr>
+</table>
+
+<table class="libitem">
+  <tr>
+    <td colspan="2">
+      <b>math/to-fixed</b> - formats a number as a string to a certain number of decimal places
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Input</b>
+      <ul class="arglist">
+        <li><strong>value</strong> - the number to be formatted</li>
+        <li><strong>to</strong> - the number of decimal places to which `a` will be formatted</li>
+      </ul>
+    </td>
+    <td>
+      <code class="language-eve-document">
+pi represented as the string "3.14"
+~~~
+search
+  circumference = 6
+  diameter = 1.910
+  pi = math/to-fixed[value: (circumference / diameter), to: 2]
+
+bind
+  [#ui/text text: pi]
+~~~
+      </code>
+    </td>
+  </tr>
+</table>
+
+<table class="libitem">
+  <tr>
+    <td colspan="2">
+      <b>math/range</b> - generates a range of numbers
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>start</strong> - the start of the range</li>
         <li><strong>stop</strong> - the end of the range</li>
       </ul>
     </td>
     <td>
-      <code>// generates integers 1 through 10
-        y = math/range[start: 1, stop: 10]</code>
+      <code class="language-eve-document"> 
+generates integers 1 through 10
+~~~
+search
+  y = math/range[start: 1, stop: 10]
+bind
+  [#ui/text text: y]  
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -334,20 +546,34 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>random/number</b> - Generates a random number between 1 and 0
+      <b>random/number</b> - generates a random number between 1 and 0
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>seed</strong> - a number used to initialize the random number generator</li>
       </ul>
     </td>
     <td>
-      <code>// generates a random number every second
-        [#time minutes seconds]
-        x = random/number[seed: seconds]</code>
+      <code class="language-eve-document"> 
+generates a random number every second  
+~~~
+search
+  [#time second]
+  x = random/number[seed: second]
+bind
+  [#ui/text text: x]  
+~~~
+
+Start a timer
+~~~
+commit
+  [#system/timer #time resolution: 1000]
+~~~
+        </code>
     </td>
   </tr>
 </table>
@@ -357,22 +583,30 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/replace</b> - Replaces a string of text with another
+      <b>string/replace</b> - replaces a string of text with another
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>text</strong> - the text in which to search for strings and replace them</li>
         <li><strong>replace</strong> - the string to be replaced</li>
         <li><strong>with</strong> - the string that will replace `replace`</li>
       </ul>
     </td>
     <td>
-      <code>// Americanized version of British spelling
-        [#website body]
-        american-version = string/replace[text: body, replace: "flavour", with: "flavor"]</code>
+      <code class="language-eve-document"> 
+Americanized version of British spelling
+~~~      
+search
+  string = "I love the flavour."
+  american-version = string/replace[text: string, replace: "flavour", with: "flavor"]
+bind
+  [#ui/text text: american-version]
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -380,21 +614,29 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/get</b> - Gets a character from a specific location in a string
+      <b>string/get</b> - gets a character from a specific location in a string
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>text</strong> - the text to be searched</li>
         <li><strong>at</strong> - the location to be searched</li>
       </ul>
     </td>
     <td>
-      <code>// finds the 17th letter of the alphabet
-        alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        letter = string/get[text: alphabet, at: 17]</code>
+      <code class="language-eve-document">
+finds the 17th letter of the alphabet
+~~~      
+search
+  alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  letter = string/get[text: alphabet, at: 17]
+bind
+  [#ui/text text: "The 17th letter of the alphabet is {{letter}}"]
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -402,19 +644,27 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/uppercase</b> -Converts a string to uppercase
+      <b>string/uppercase</b> - converts a string to uppercase
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>text</strong> - the text to be converted</li>
       </ul>
     </td>
     <td>
-      <code>funny = "lol"
-        really-funny = string/uppercase[text: funny]</code>
+      <code class="language-eve-document">
+~~~
+search
+  funny = "lol"
+  really-funny = string/uppercase[text: funny]
+bind
+  [#ui/text text: really-funny]
+~~~  
+</code>
     </td>
   </tr>
 </table>
@@ -422,19 +672,27 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/lowercase</b> - Converts a string to lowercase
+      <b>string/lowercase</b> - converts a string to lowercase
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>text</strong> - the text to be converted</li>
       </ul>
     </td>
     <td>
-      <code>really-funny = "LOL"
-        down-a-notch = string/uppercase[text: really-funny]</code>
+      <code class="language-eve-document">
+~~~
+search
+  really-funny = "LOL"
+  down-a-notch = string/lowercase[text: really-funny]
+bind
+  [#ui/text text: down-a-notch]
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -442,20 +700,28 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/index-of</b> - Returns the position of the first occurrence of a specified value in a string
+      <b>string/index-of</b> - returns the position of the first occurrence of a specified value in a string
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>text</strong> - the text to be searched</li>
         <li><strong>substring</strong> - the string to be found in `text`</li>
       </ul>
     </td>
     <td>
-      <code>// Eve is in developers, starting at an index of 2
-        index = string/index-of[text: "developers", substring: "eve"</code>
+      <code class="language-eve-document">
+"eve" is in "developers" at index 2.
+~~~
+search
+  index = string/index-of[text: "developers", substring: "eve"]
+bind
+  [#ui/text text: "String found at index {{index}}"]
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -463,20 +729,28 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/codepoint-length</b> - Returns the length of a string in Unicode code points.
+      <b>string/codepoint-length</b> - returns the length of a string in Unicode code points.
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>text</strong> - the string whose length is found</li>
       </ul>
     </td>
     <td>
-      <code>// the code point length of the word "unicode"
-        string = "unicode"
-        length-in-js = string/codepoint-length[text: string]</code>
+      <code class="language-eve-document"> 
+the code point length of the word "unicode"
+~~~
+search
+  string = "unicode"
+  length-in-js = string/codepoint-length[text: string]
+bind
+  [#ui/text text: length-in-js]      
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -494,7 +768,8 @@ The HTML library is a low level interface for creating HTML elements and respond
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>tagname</strong> - determines the type of html element rendered in the browser; can be any html element given as a string</li>
         <li><strong>style</strong> - (optional) - specific CSS styles can be defined, but must be entered as a subrecord</li>
         <li><strong>text</strong> - (optional) - defines text within the html element</li>
@@ -504,11 +779,11 @@ The HTML library is a low level interface for creating HTML elements and respond
       </ul>
     </td>
     <td>
-      <code>// commits a div in the browser with the text “Hello world!” and the class “hello”
-```
+      <code class="language-eve-document"> commits a div in the browser with the text "Hello world!" and the class "hello"
+~~~
 commit
-  [#html/element #hello tagname: “div” text: “Hello world!”]
-```</code>
+  [#html/element #hello tagname: "div" text: "Hello world!"]
+~~~</code>
     </td>
   </tr>
 </table>
@@ -522,20 +797,26 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li>Requires an `if` statement in the search block that returns true or false</li>
       </ul>
     </td>
     <td>
-      <code>// if the text “Hello world!” is in a record tagged #html/element with the tagname “div”, apply the class “header” to that element
-```
+      <code class="language-eve-document">
+if the text "Hello world!" is in a record tagged #html/element with the tagname "div", apply the class "header" to that element
+~~~
 search
-  hello = [#html/element tagname text: “Hello world!”]
-  header = if tagname = “div” then “true” else “false”
-
+  hello = [#html/element tagname text: "Hello world!"]
+  header = if tagname = "div" then "true" else "false"
 bind
   hello <- [class: [header]]
-```</code>
+~~~
+
+Commit an element with a greeting
+~~~
+commit
+  [#html/element tagname: "div" text: "Hello world!"]
+~~~</code>
     </td>
   </tr>
 </table>
@@ -543,22 +824,24 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>#html/listener/hover</b> - adds a listener to an html element to make it responsive when it is being hovered over in browser; required to use the <code>#html/hovered</code>, <code>#html/event/hover-in</code>, and <code>#html/event/hover-out</code> tags
+      <b>#html/listener/hover</b> - adds a listener to an html element to make it responsive when it is being hovered over in browser; required to use the <code class="language-eve-document">#html/hovered</code>, <code class="language-eve-document">#html/event/hover-in</code>, and <code class="language-eve-document">#html/event/hover-out</code> tags
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li>Apply the tag to an element to make it responsive to hovering</li>
       </ul>
     </td>
     <td>
-      <code>// commit a div to the browser with the text “Hover over me!” that will change its record if it is hovered over
-```
+      <code class="language-eve-document">
+commit a div to the browser with the text "Hover over me!" that will change its record if it is hovered over
+~~~
 commit
-  [#ui/div #html/listener/hover text: “Hover over me!”]
-```</code>
+  [#ui/div #html/listener/hover text: "Hover over me!"]
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -566,25 +849,32 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>#html/hovered</b> - a tag given by Eve to an html element being currently hovered over; requires <code>#html/listener/hover</code>
+      <b>#html/hovered</b> - a tag given by Eve to an html element being currently hovered over; requires <code class="language-eve-document">#html/listener/hover</code>
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li>Tag applied by Eve</li>
       </ul>
     </td>
     <td>
-      <code>// if a #ui/a element with the hover listener is being hovered over, add a style to make the font bold
-```
-search
-  element = [#ui/a #html/hovered]
+      <code class="language-eve-document">
+commit a div to the browser with the text "Hover over me!" that will change its record if it is hovered over
+~~~
+commit
+  [#ui/div #html/listener/hover text: "Hover over me!"]
+~~~
 
+Display a message when an element with the #html/listener/hover`
+~~~
+search
+  [#html/hovered]
 bind
-  element.style <- [font-weight: bold]
-```</code>
+  [#ui/text text: "an element is being hovered"]
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -592,26 +882,34 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>#html/event/(hover-in, hover-out)</b> - monitors when the mouse enters or leaves a particular element in the browser; requires <code>#html/listener/hover</code>
+      <b>#html/event/(hover-in, hover-out)</b> - monitors when the mouse enters or leaves a particular element in the browser; requires <code class="language-eve-document">#html/listener/hover</code>
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
-        <li><strong>element</strong> - (optional) - the element that the mouse is entering or leaving</li>
+      <b>Output</b>
+      <ul class="arglist">
+        <li><strong>element</strong> - the element that the mouse is entering or leaving</li>
       </ul>
     </td>
     <td>
-      <code>// when the mouse enters an anchor tag, make the color red; the color will not revert when the mouse leaves
-```
+      <code class="language-eve-document">
+Do something on hover-in
+~~~
 search
-  [#html/event/hover-in element: anchor]
-  anchor = [#ui/a]
+  direction = if [#html/event/hover-in] then "in"
+              else if [#html/event/hover-out] then "out"
+commit
+  [#ui/text text: "Hovered {{direction}}"]
+~~~
 
-bind
-  anchor.style <- [color: red]
-```</code>
+Monitor hover on an element
+~~~
+commit
+  [#ui/text #html/listener/hover text: "Hover over me" style: [width: "100px" height: "100px" background-color: "rgb(226, 79, 94)" display: "block" color: "white" padding: "10px"]]
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -625,21 +923,22 @@ bind
 
   <tr>
     <td>
-      <ul>
-        <li><strong>element</strong> - (optional) - the changed element</li>
-        <li><strong>value</strong> - (optional) - the current value of a form element in the browser</li>
+      <b>Output</b>
+      <ul class="arglist">
+        <li><strong>element</strong> - the changed element</li>
+        <li><strong>value</strong> - the current value of a form element in the browser</li>
       </ul>
     </td>
     <td>
-      <code>// looks for any element tagged #question that has the magic word and adds the tag #magic-word to it
-```
+      <code class="language-eve-document">
+looks for any element tagged #question that has the magic word and adds the tag #magic-word to it
+~~~
 search
-  [#html/event/change value: “please” element: question]
+  [#html/event/change value: "please" element: question]
   question = [#question]
-
 bind
   question <- [#magic-word]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -647,38 +946,48 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>#html/event/(click, double-click, mouse-down, mouse-up)</b> - monitors mouse events in the browser; <code>#html/event/click</code> and <code>#html/event/double-click</code> currently work for the left mouse button only
+      <b>#html/event/(click, double-click, mouse-down, mouse-up)</b> - monitors mouse events in the browser; <code class="language-eve-document">#html/event/click</code> and <code class="language-eve-document">#html/event/double-click</code> currently work for the left mouse button only
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
-        <li><strong>element</strong> - (optional) - the element to be monitored; includes clicks on any children within the element</li>
-        <li><strong>target</strong> - (optional) - the exact element to be monitored; does not include any children</li>
-        <li><strong>page-x</strong> - (optional) - the x-coordinate of the mouse pointer relative to the page</li>
-        <li><strong>page-y</strong> - (optional) - the y-coordinate of the mouse pointer relative to the page</li>
-        <li><strong>window-x</strong> - (optional) - the x-coordinate of the mouse pointer relative to the window</li>
-        <li><strong>window-y</strong> - (optional) - the y-coordinate of the mouse pointer relative to the page</li>
-        <li><strong>button</strong> - (optional) - the mouse button whose click is monitored; options are:
-          <ul>
-            <li>“left” - left mouse button; if no button argument is provided, this is the default</li>
-            <li>“right” - right mouse button</li>
-            <li>“middle” - middle mouse button</li>
+      <b>Output</b>
+      <ul class="arglist">
+        <li><strong>element</strong> - the element that was clicked; includes clicks on any children within the element</li>
+        <li><strong>target</strong> - the direct element that was clicked (the topmost target in the DOM tree)</li>
+        <li><strong>page-x</strong> - the x-coordinate of the mouse pointer relative to the page</li>
+        <li><strong>page-y</strong> - the y-coordinate of the mouse pointer relative to the page</li>
+        <li><strong>window-x</strong> - the x-coordinate of the mouse pointer relative to the window</li>
+        <li><strong>window-y</strong> - the y-coordinate of the mouse pointer relative to the page</li>
+        <li><strong>button</strong> - the mouse button that performed the click; options are:
+          <ul class="arglist">
+            <li>"left" - left mouse button; if no button argument is provided, this is the default</li>
+            <li>"right" - right mouse button</li>
+            <li>"middle" - middle mouse button</li>
             <li>3, 4, 5, ... - additional numbered mouse buttons</li>
           </ul>
         </li>
       </ul>
     </td>
     <td>
-      <code>// looks for a right click in any h1 element and posts the message “Right clicked!”
-```
+      <code class="language-eve-document">
+looks for a right click in any h1 element and posts the message "Right clicked!"
+~~~
 search
-  [#html/event/mouse-up element: [#ui/h1] button: “right”]
-
+  event = if [#html/event/mouse-up] then "up"
+          else if [#html/event/mouse-down] then "down"
+          else if [#html/event/click] then "click"
+          else if [#html/event/double-click] then "double-click"
 commit
-  [#ui/div text: “Right clicked!”]
-```</code>
+  [#ui/text text: "{{event}}"]
+~~~
+
+Monitor clicks on an element
+~~~
+commit
+  [#ui/text text: "Click me" style: [width: "100px" height: "100px" background-color: "rgb(226, 79, 94)" display: "block" color: "white" padding: "10px"]]
+~~~</code>
     </td>
   </tr>
 </table>
@@ -692,16 +1001,19 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li>Apply the tag to the element whose context menu you want to prevent</li>
       </ul>
     </td>
     <td>
-      <code>// commits an h1 element whose context menu won’t open if right clicked
-```
+      <code class="language-eve-document">
+commits an h1 element whose context menu won’t open if right clicked
+~~~
 commit
-  [#ui/h1 #html/listener/context-menu text: “Don’t inspect me”]
-```</code>
+  [#ui/h1 #html/listener/context-menu text: "Don’t inspect me"]
+  [#ui/h1 text: "Inspect me"]
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -715,11 +1027,12 @@ commit
 
   <tr>
     <td>
-      <ul>
-        <li><strong>element</strong> - (optional) - the element which has focus during key-up or key-down</li>
-        <li><strong>key-code</strong> - the key code of the key to be monitored</li>
-        <li><strong>key</strong> - (optional) - the key to be monitored; an alternative to key-code for a premade list of keys:
-          <ul>
+      <b>Output</b>
+      <ul class="arglist">
+        <li><strong>element</strong> - the element which has focus during key-up or key-down</li>
+        <li><strong>key-code</strong> - the key code of the key that was pressed</li>
+        <li><strong>key</strong> - the key that was pressed; an alternative to key-code for a premade list of keys:
+          <ul class="arglist">
             <li>"tab</li>
             <li>"enter"</li>
             <li>"shift"</li>
@@ -736,14 +1049,23 @@ commit
       </ul>
     </td>
     <td>
-      <code>// when the escape key is released, commits a gentle reminder for the user
-```
-search
-  [#html/event/key-up key: “escape”]
-
+      <code class="language-eve-document">
+Prints a message with the code of the key pressed
+~~~
+search  
+  [#html/event/key-down key-code]
 commit
-  [#ui/div text: “THERE IS NO ESCAPE”]
-```</code>
+  [#ui/div #key-msg key-code text: "Pressed {{key-code}}"]
+~~~
+
+Remove messages for keys that are released
+~~~
+search
+  [#html/event/key-up key-code]
+  message = [#key-msg key-code]
+commit
+  message := none
+~~~</code>
     </td>
   </tr>
 </table>
@@ -757,20 +1079,30 @@ commit
 
   <tr>
     <td>
-      <ul>
-        <li><strong>element</strong> - (optional) - the element to be monitored</li>
-        <li><strong>value</strong> - (optional) - the value of the form element when it gains or loses focus</li>
+      <b>Output</b>
+      <ul class="arglist">
+        <li><strong>element</strong> - the element that was focused or blurred</li>
+        <li><strong>value</strong> - the value of the form element when it was focused or blurred</li>
       </ul>
     </td>
     <td>
-      <code>// when the important element loses focus, commits a message to help the user
-```
+      <code class="language-eve-document">
+Display a message on focus
+~~~
 search
-  [#html/event/blur element: [#important]]
+  [#html/event/focus element]
 
+commit 
+  [#ui/text text: "{{element.placeholder}} was focused"]
+~~~
+
+Monitor clicks on an element
+~~~
 commit
-  [#ui.div text: “Stay focused!”]
-```</code>
+  [#ui/input placeholder: "First Name"]
+  [#ui/input placeholder: "Last Name"]
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -784,19 +1116,30 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li>Apply the tag to the element to gain or lose focus</li>
       </ul>
     </td>
     <td>
-      <code>// when a form element is found in the browser with the name “first-name”, focuses on that element
-```
+      <code class="language-eve-document">
+Commit some buttons and form elements
+~~~
+commit
+  [#ui/input field: "first-name" placeholder: "First Name"]
+  [#ui/input field: "last-name" placeholder: "Last Name"]
+  [#ui/button text: "Focus first name" target: "first-name"]
+  [#ui/button text: "Focus last name" target: "last-name"]
+~~~
+
+when a form element is found in the browser with the name "first-name", focuses on that element
+~~~
 search
-  first = [#ui/input name: “first-name”]
+  [#html/event/click element: [#ui/button target]]
+  input = [#ui/input field: target]
 
 commit
-  first <- [#html/trigger/focus]
-```</code>
+  input.tag <- [#html/trigger/focus]
+~~~</code>
     </td>
   </tr>
   <tr>
@@ -808,7 +1151,7 @@ commit
 
 ## Canvas
 
-The canvas library is an interface for drawing graphics in the browser using the [HTML canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API).
+The canvas library is an interface for drawing graphics in the browser using the [HTML canvas](https:developer.mozilla.org/en-US/docs/Web/API/Canvas_API).
 
 <table class="libitem">
   <tr>
@@ -819,17 +1162,19 @@ The canvas library is an interface for drawing graphics in the browser using the
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>width</strong> - the width of the canvas in pixels</li>
         <li><strong>height</strong> - the height of the canvas in pixels</li>
         <li><strong>children</strong> - (optional) - paths are written as child records; while optional, without any children, the canvas will be blank</li>
       </ul>
     </td>
-    <td><code>// creates a canvas tagged #my-canvas that is 160 pixels wide by 90 pixel tall
-```
+    <td><code class="language-eve-document">
+creates a canvas tagged #my-canvas that is 160 pixels wide by 90 pixel tall
+~~~
 commit
   [#canvas/root #my-canvas width: 160 height: 90]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -843,40 +1188,41 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>fillStyle</strong> - (optional) - sets the color, gradient, or pattern used to fill the drawing; if undefined, the default is black</li>
         <li><strong>strokeStyle</strong> - (optional) - sets the color, gradient, or pattern used for the strokes; if undefined, the path will default to a black fill style</li>
         <li><strong>lineWidth</strong> - (optional) - sets the width of strokes in pixels; if undefined, the default is 1px</li>
         <li><strong>lineCap</strong> - (optional) - sets the style of end caps on lines; options are:
-          <ul>
-            <li>“butt” - a flat edge; if undefined, butt is default</li>
-            <li>“round” - a rounded end cap</li>
-            <li>“square” - ends are squared off by a box with an equal width and half the height of the line's thickness</li>
+          <ul class="arglist">
+            <li>"butt" - a flat edge; if undefined, butt is default</li>
+            <li>"round" - a rounded end cap</li>
+            <li>"square" - ends are squared off by a box with an equal width and half the height of the line's thickness</li>
           </ul>
         </li>
         <li><strong>lineJoin</strong> - (optional) - sets the style of corners where two lines meet; options are:
-          <ul>
-            <li>“miter” - a sharp corner; if undefined, miter is default</li>
-            <li>“round” - a rounded corner</li>
-            <li>“bevel” - a beveled corner</li>
+          <ul class="arglist">
+            <li>"miter" - a sharp corner; if undefined, miter is default</li>
+            <li>"round" - a rounded corner</li>
+            <li>"bevel" - a beveled corner</li>
           </ul>
         </li>
         <li><strong>children</strong> - (optional) - each individual operation in the path is written as a child record; while optional, without any children, the canvas will be blank</li>
       </ul>
     </td>
-    <td><code>// adds a #canvas/path to #my-canvas with a black stroke, a line width of 2 pixels and beveled corners
-```
+    <td><code class="language-eve-document">
+adds a #canvas/path to #my-canvas with a black stroke, a line width of 2 pixels and beveled corners
+~~~
 search
   canvas = [#canvas/root #my-canvas]
-
 commit
-  canvas.children := [#canvas/path strokeStyle: “#000000” lineWidth: 2 lineJoin: bevel]
-```</code>
+  canvas.children := [#canvas/path strokeStyle: "#000000" lineWidth: 2 lineJoin: bevel]
+~~~</code>
     </td>
   </tr>
   <tr>
     <td colspan="2">
-      <strong>Note about operations:</strong> Each individual path is written as a child record of #canvas/path with a type attribute whose value defines the path. No tags are necessary. Paths are drawn by default in the order they are given as children, such that the last child will appear on top of all the others, and the first child will be at the bottom. Adding a sort attribute to a child path allows you to manually define the order in which they are drawn. Paths originate in the upper left corner, so x coordinates originate at the left edge of the canvas and move to the right, and y coordinates originate at the top edge of the canvas and move to the bottom. Eve canvas operations follow the same rules as those outlined by <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D">Mozilla Developer Network for canvas rendering</a>, making it an excellent source of further documentation.</td>
+      <strong>Note about operations:</strong> Each individual path is written as a child record of #canvas/path with a type attribute whose value defines the path. No tags are necessary. Paths are drawn by default in the order they are given as children, such that the last child will appear on top of all the others, and the first child will be at the bottom. Adding a sort attribute to a child path allows you to manually define the order in which they are drawn. Paths originate in the upper left corner, so x coordinates originate at the left edge of the canvas and move to the right, and y coordinates originate at the top edge of the canvas and move to the bottom. Eve canvas operations follow the same rules as those outlined by <a href="https:developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D">Mozilla Developer Network for canvas rendering</a>, making it an excellent source of further documentation.</td>
   </tr>
 </table>
 
@@ -889,18 +1235,20 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>x</strong> - the horizontal coordinate to move to, in pixels</li>
         <li><strong>y</strong> - the vertical coordinate to move to, in pixels</li>
       </ul>
     </td>
-    <td><code>// creates a 100x100 canvas and moves the path 20 pixels right and 15 pixels down from the top left corner of the canvas without drawing a line
-```
+    <td><code class="language-eve-document">
+creates a 100x100 canvas and moves the path 20 pixels right and 15 pixels down from the top left corner of the canvas without drawing a line
+~~~
 commit
   [#canvas/root width: 100 height: 100 children:
     [#canvas/path children:
-      [type: “moveTo” x: 20 y: 15]]]
-```</code>
+      [type: "moveTo" x: 20 y: 15]]]
+~~~</code>
     </td>
   </tr>
 </table>
@@ -914,18 +1262,20 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>x</strong> - the horizontal coordinate to move to, in pixels</li>
         <li><strong>y</strong> - the vertical coordinate to move to, in pixels</li>
       </ul>
     </td>
-    <td><code>// draws a black line from the top left corner of a 100x100 canvas to the center
-```
+    <td><code class="language-eve-document">
+draws a black line from the top left corner of a 100x100 canvas to the center
+~~~
 commit
   [#canvas/root width: 100 height: 100 children:
-    [#canvas/path strokeStyle: “#000000” children:
-      [type: “lineTo” x: 50 y: 50]]]
-```</code>
+    [#canvas/path strokeStyle: "#000000" children:
+      [type: "lineTo" x: 50 y: 50]]]
+~~~</code>
     </td>
   </tr>
 </table>
@@ -939,7 +1289,8 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>cp1x</strong> - the x coordinate of the first control point</li>
         <li><strong>cp1y</strong> - the y coordinate of the first control point</li>
         <li><strong>cp2x</strong> - the x coordinate of the second control point</li>
@@ -948,14 +1299,18 @@ commit
         <li><strong>y</strong> - the y coordinate of the end point</li>
       </ul>
     </td>
-    <td><code>// draws a red Bézier curve starting at (20, 25) and ending at (40, 50)
-```
+    <td><code class="language-eve-document">
+draws a red Bézier curve starting at (20, 25) and ending at (40, 50)
+~~~
 commit
   [#canvas/root width: 100 height: 100 children:
-    [#canvas/path strokeStyle: “rgb(255, 0, 0)” children:
-      [type: “moveTo” x: 20 y: 25]
-      [type: “bezierQuadraticCurveTo” <strong>cp1x</strong>: 20 <strong>cp1y</strong>: 0 <strong>cp2x</strong>: 30 <strong>cp2y</strong>: 30  x: 40 y: 50]]]
-```</code>
+    [#canvas/path strokeStyle: "rgb(255, 0, 0)" children:
+      [type: "moveTo" x: 20 y: 25]
+      [type: "bezierQuadraticCurveTo" 
+        cp1x: 20 cp1y: 0 
+        cp2x: 30 cp2y: 30  
+        x: 40 y: 50]]]
+~~~</code>
     </td>
   </tr>
 </table>
@@ -969,14 +1324,26 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>cpx</strong> - the x coordinate of the control point</li>
         <li><strong>cpy</strong> - the y coordinate of the control point</li>
-        <li><strong>y</strong> - the x coordinate of the end point</li>
+        <li><strong>x</strong> - the x coordinate of the end point</li>
         <li><strong>y</strong> - the y coordinate of the end point</li>
       </ul>
     </td>
-    <td><code></code>
+    <td><code class="language-eve-document">
+draws a red quadratic curve starting at (20, 0) and ending at (40, 50)
+~~~
+commit
+  [#canvas/root width: 100 height: 100 children:
+    [#canvas/path strokeStyle: "rgb(255, 0, 0)" children:
+      [type: "moveTo" x: 20 y: 25]
+      [type: "quadraticCurveTo" 
+        cpx: 20 cpy: 0 
+        x: 40 y: 50]]]
+~~~    
+</code>
     </td>
   </tr>
 </table>
@@ -990,8 +1357,9 @@ commit
 
   <tr>
     <td>
-      <ul>
-        <li><strong>y</strong> - the x coordinate of the center of the curve</li>
+      <b>Input</b>
+      <ul class="arglist">
+        <li><strong>x</strong> - the x coordinate of the center of the curve</li>
         <li><strong>y</strong> - the y coordinate of the center of the curve</li>
         <li><strong>radius</strong> - the radius of the curve in pixels</li>
         <li><strong>startAngle</strong> - the starting angle of the curve in radians</li>
@@ -999,13 +1367,14 @@ commit
         <li><strong>anticlockwise</strong> - (optional) - values can be true or false; true draws the arc counterclockwise, false draws the arc clockwise</li>
       </ul>
     </td>
-    <td><code>// draws an arc that circumscribes ¾ of a 40 pixel-wide circle in the middle of the canvas
-```
+    <td><code class="language-eve-document">
+draws an arc that circumscribes ¾ of a 40 pixel-wide circle in the middle of the canvas
+~~~
 commit
   [#canvas/root width: 100 height: 100 children:
     [#canvas/path children:
-      [type: “arc” x: 50 y: 50 radius: 20 startAngle: 0 endAngle: 1.5 * 3.14]]]
-```</code>
+      [type: "arc" x: 50 y: 50 radius: 20 startAngle: 0 endAngle: 1.5 * 3.14]]]
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1019,7 +1388,8 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>x1</strong> - the x coordinate of the starting point of the curve</li>
         <li><strong>y1</strong> - the y coordinate of the starting point of the curve</li>
         <li><strong>x2</strong> - the x coordinate of the ending point of the curve</li>
@@ -1027,15 +1397,16 @@ commit
         <li>radius - the radius of the curve in pixels</li>
       </ul>
     </td>
-    <td><code>// draws an arc that connects two perpendicular lines with a circular curve
-```
+    <td><code class="language-eve-document">
+draws an arc that connects two perpendicular lines with a circular curve
+~~~
 commit
   [#canvas/root width: 100 height: 100 children:
     [#canvas/path children:
-      [type: “lineTo” x: 50 y: 0]
-      [type: “arcTo: x1: 50 y1: 0 x2: 55 y2: 5 radius: 5]
-      [type: “lineTo” x: 55 y: 55]]]
-```</code>
+      [type: "lineTo" x: 50 y: 0]
+      [type: "arcTo" x1: 50 y1: 0 x2: 55 y2: 5 radius: 5]
+      [type: "lineTo" x: 55 y: 55]]]
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1049,8 +1420,9 @@ commit
 
   <tr>
     <td>
-      <ul>
-        <li><strong>y</strong> - the x coordinate of the center of the curve</li>
+      <b>Input</b>
+      <ul class="arglist">
+        <li><strong>x</strong> - the x coordinate of the center of the curve</li>
         <li><strong>y</strong> - the y coordinate of the center of the curve</li>
         <li><strong>radiusX</strong> - the horizontal radius of the curve</li>
         <li><strong>radiusY</strong> - the vertical radius of the curve</li>
@@ -1060,13 +1432,14 @@ commit
         <li><strong>anticlockwise</strong> - (optional) - values can be true or false; true draws the arc counterclockwise, false draws the arc clockwise</li>
       </ul>
     </td>
-    <td><code>// draws a green oval in the center of the canvas that is 20 pixels wide and 30 pixels high
-```
+    <td><code class="language-eve-document">
+draws a green oval in the center of the canvas that is 20 pixels wide and 30 pixels high
+~~~
 commit
   [#canvas/root width: 100 height: 100 children:
-    [#canvas/path fillStyle: “#00ff00” children:
-      [type: “ellipse” x: 50 y: 50 radiusX: 10 radiusY: 15 rotation: 0 startAngle: 0 endAngle: 2 * 3.14]]]
-```</code>
+    [#canvas/path fillStyle: "#00ff00" children:
+      [type: "ellipse" x: 50 y: 50 radiusX: 10 radiusY: 15 rotation: 0 startAngle: 0 endAngle: 2 * 3.14]]]
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1080,20 +1453,22 @@ commit
 
   <tr>
     <td>
-      <ul>
-        <li><strong>y</strong> - the x coordinate of the upper left corner of the rectangle</li>
+      <b>Input</b>
+      <ul class="arglist">
+        <li><strong>x</strong> - the x coordinate of the upper left corner of the rectangle</li>
         <li><strong>y</strong> - the y coordinate of the upper left corner of the rectangle</li>
         <li><strong>width</strong> - the width of the rectangle in pixels</li>
         <li><strong>height</strong> - the height of the rectangle in pixels</li>
       </ul>
     </td>
-    <td><code>// draws a blue square with black borders in the middle of the canvas
-```
+    <td><code class="language-eve-document">
+draws a blue square with black borders in the middle of the canvas
+~~~
 commit
   [#canvas/root width: 100 height: 100 children:
-    [#canvas/path fillStyle: “#0000ff” strokeStyle: “#000000” children:
-      [type: “rect” x: 40 y: 40 width: 20 height: 20]]]
-```</code>
+    [#canvas/path fillStyle: "#0000ff" strokeStyle: "#000000" children:
+      [type: "rect" x: 40 y: 40 width: 20 height: 20]]]
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1107,20 +1482,21 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <ul class="arglist">
         <li>No arguments</li>
       </ul>
     </td>
-    <td><code>// returns the path to (10, 10) from (20, 40) to create a triangle
-```
+    <td><code class="language-eve-document">
+returns the path to (10, 10) from (20, 40) to create a triangle
+~~~
 commit
   [#canvas/root width: 100 height: 100 children:
     [#canvas/path children:
-      [type: “moveTo” x: 10 y: 10]
-      [type: “lineTo” x: 20 y: 10]
-      [type: “lineTo” x: 20 y: 40]
-      [type: “closePath”]]]
-```</code>
+      [type: "moveTo" x: 10 y: 10]
+      [type: "lineTo" x: 20 y: 10]
+      [type: "lineTo" x: 20 y: 40]
+      [type: "closePath"]]]
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1140,26 +1516,27 @@ The UI library provides a shorthand for adding standard HTML elements, as well a
 
   <tr>
     <td>
-      <ul>
-        <li>the <code>#ui</code> tag supports the following html elements:
-          <ul>
-            <li><code>#ui/row</code></li>
-            <li><code>#ui/column</code></li>
-            <li><code>#ui/spacer</code></li>
-            <li><code>#ui/input</code></li>
-            <li><code>#ui/text</code></li>
-            <li><code>#ui/a</code></li>
-            <li><code>#ui/style</code></li>
-            <li><code>#ui/link</code></li>
-            <li><code>#ui/div</code></li>
-            <li><code>#ui/span</code></li>
-            <li><code>#ui/img</code></li>
-            <li><code>#ui/h1</code></li>
-            <li><code>#ui/h2</code></li>
-            <li><code>#ui/h3</code></li>
-            <li><code>#ui/ul</code></li>
-            <li><code>#ui/ol</code></li>
-            <li><code>#ui/li</code></li>
+      <b>Input</b>
+      <ul class="arglist">
+        <li>the <code class="language-eve-document">#ui</code> tag supports the following html elements:
+          <ul class="arglist">
+            <li><code class="language-eve-document">#ui/row</code></li>
+            <li><code class="language-eve-document">#ui/column</code></li>
+            <li><code class="language-eve-document">#ui/spacer</code></li>
+            <li><code class="language-eve-document">#ui/input</code></li>
+            <li><code class="language-eve-document">#ui/text</code></li>
+            <li><code class="language-eve-document">#ui/a</code></li>
+            <li><code class="language-eve-document">#ui/style</code></li>
+            <li><code class="language-eve-document">#ui/link</code></li>
+            <li><code class="language-eve-document">#ui/div</code></li>
+            <li><code class="language-eve-document">#ui/span</code></li>
+            <li><code class="language-eve-document">#ui/img</code></li>
+            <li><code class="language-eve-document">#ui/h1</code></li>
+            <li><code class="language-eve-document">#ui/h2</code></li>
+            <li><code class="language-eve-document">#ui/h3</code></li>
+            <li><code class="language-eve-document">#ui/ul</code></li>
+            <li><code class="language-eve-document">#ui/ol</code></li>
+            <li><code class="language-eve-document">#ui/li</code></li>
           </ul>
         </li>
         <li><strong>style</strong> - (optional) - specific CSS styles can be defined, but must be entered as a subrecord</li>
@@ -1169,11 +1546,12 @@ The UI library provides a shorthand for adding standard HTML elements, as well a
         <li>Other attributes - (optional) - other attribute-value pairs will be applied directly to the element for integration with existing JS libraries or debugging</li>
       </ul>
     </td>
-    <td><code>// commits a div in the browser with the text “Hello world!”
-```
+    <td><code class="language-eve-document">
+commits a div in the browser with the text "Hello world!"
+~~~
 commit
-  [#ui/div text: “Hello world!”]
-```</code>
+  [#ui/div text: "Hello world!"]
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1187,7 +1565,8 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>children</strong> - (optional) - the children contained within the column or row</li>
         <li><strong>style</strong> - (optional) - specific CSS styles can be defined, but must be entered as a subrecord</li>
         <li><strong>text</strong> - (optional) - defines text within the column or row</li>
@@ -1196,14 +1575,15 @@ commit
         <li>Other attributes - (optional) - other attribute-value pairs will be applied directly to the column or row for integration with existing JS libraries or debugging</li>
       </ul>
     </td>
-    <td><code>// creates 3 very wise divs in the browser stacked on top of one another
-```
+    <td><code class="language-eve-document">
+creates 3 very wise divs in the browser stacked on top of one another
+~~~
 commit
   [#ui/column children:
-    [#ui/div text: “See no evil.”]
-    [#ui/div text: “Hear no evil.”]
-    [#ui/div text: “Speak no evil.”]]
-```</code>
+    [#ui/div text: "See no evil."]
+    [#ui/div text: "Hear no evil."]
+    [#ui/div text: "Speak no evil."]]
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1217,22 +1597,28 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li> - (optional) - preset options for class are:
-          <ul>
-            <li>“inset” - an inset button style</li>
-            <li>“flat” - a flat button style</li>
+          <ul class="arglist">
+            <li>"inset" - an inset button style</li>
+            <li>"flat" - a flat button style</li>
             <li>If class is not specified, there is a plain default style that will be used</li>
           </ul>
         </li>
-        <li><strong>icon</strong> - (optional) - adds an icon to the button; utilizes <a href="http://ionicons.com/">Ionicons</a>, omitting the “ion-” before icon names</li>
+        <li><strong>icon</strong> - (optional) - adds an icon to the button; utilizes <a href="http:ionicons.com/">Ionicons</a>, omitting the "ion-" before icon names</li>
         <li><strong>style</strong> - (optional) - specific CSS styles can be defined, but must be entered as a subrecord</li>
         <li><strong>text</strong> - (optional) - defines text in the button</li>
         <li><strong>#</strong> - (optional) - any other tags on the record will be applied to the button as classes</li>
         <li>Other attributes - (optional) - other attribute-value pairs will be applied directly to the button for integration with existing JS libraries or debugging</li>
       </ul>
     </td>
-    <td><code></code>
+    <td><code class="language-eve-document">
+~~~
+commit
+  [#ui/button class: "flat" icon: "search" text: "Search"]
+~~~ 
+    </code>
     </td>
   </tr>
 </table>
@@ -1246,9 +1632,10 @@ commit
 
   <tr>
     <td>
-      <ul>
-        <li><strong>completion</strong> - the list of possible responses, given as a subrecord with the attribute “text” whose value is the list; requires the use of a pipe in the #ui record if matching against multiple search records for one autocomplete field</li>
-        <li><strong>Note</strong>: Once an autocomplete option has been selected, #ui/autocomplete automatically gains a <strong>selected</strong> attribute whose value is the completion record; in the case of the example shown here, the <strong>selected</strong> attribute would be whichever <code>#state</code> record was chosen</li>
+      <b>Input</b>
+      <ul class="arglist">
+        <li><strong>completion</strong> - the list of possible responses, given as a subrecord with the attribute "text" whose value is the list; requires the use of a pipe in the #ui record if matching against multiple search records for one autocomplete field</li>
+        <li><strong>Note</strong>: Once an autocomplete option has been selected, #ui/autocomplete automatically gains a <strong>selected</strong> attribute whose value is the completion record; in the case of the example shown here, the <strong>selected</strong> attribute would be whichever <code class="language-eve-document">#state</code> record was chosen</li>
         <li><strong>placeholder</strong> - (optional) - the placeholder text for the input field</li>
         <li><strong>style</strong> - (optional) - specific CSS styles can be defined, but must be entered as a subrecord</li>
         <li><strong>#</strong> - (optional) - any other tags on the record will be applied to the autocomplete as classes</li>
@@ -1256,19 +1643,29 @@ commit
         <li>Other attributes - (optional) - other attribute-value pairs will be applied directly to the autocomplete for integration with existing JS libraries or debugging</li>
       </ul>
     </td>
-    <td><code>// creates an autocomplete form with the class “birth-state” and the placeholder “Which state were you born in?”, where the autocomplete options are the names of any #state records found
-```
+    <td><code class="language-eve-document">
+creates an autocomplete form with the class "birth-state" and the placeholder "Which state were you born in?", where the autocomplete options are the names of any #state records found
+~~~
 search
   [#state name]
-
 commit
-  [#ui/autocomplete #birth-state placeholder: “Where state were you born in?” | completion: [text: name]]
-```</code>
+  [#ui/autocomplete #birth-state placeholder: "What state were you born in?" | completion: [text: name]]
+~~~
+
+Add some states
+~~~
+commit
+  [#state name: "PA"]
+  [#state name: "CA"]
+  [#state name: "OH"]
+  [#state name: "SC"]
+~~~
+</code>
     </td>
   </tr>
   <tr>
     <td colspan="2">
-      <strong>Note about autocomplete:</strong> <code>#ui/autocomplete</code> has a set of events that it emits and responds to. Other components may end up implementing these same events in the future, but they are currently exclusive to <code>#ui/autocomplete</code>.
+      <strong>Note about autocomplete:</strong> <code class="language-eve-document">#ui/autocomplete</code> has a set of events that it emits and responds to. Other components may end up implementing these same events in the future, but they are currently exclusive to <code class="language-eve-document">#ui/autocomplete</code>.
     </td>
   </tr>
 </table>
@@ -1282,19 +1679,20 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>autocomplete</strong> - the autocomplete element to clear</li>
       </ul>
     </td>
-    <td><code>// clears an autocomplete field if it loses focus
-```
+    <td><code class="language-eve-document">
+clears an autocomplete field if it loses focus
+~~~
 search
   autocomplete = [#ui/autocomplete]
   [#html/event/blur element: [#ui/autocomplete/input autocomplete]]
-
 commit
   [#ui/event/clear autocomplete]
-```</code>
+~~~</code>
     </td>
   </tr>
 </table>
@@ -1308,12 +1706,15 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>autocomplete</strong> - the autocomplete being opened</li>
       </ul>
     </td>
-    <td><code>// changes the font color of the autocomplete input to red when the list is opened; the color will not revert once the menu is closed unless another block is specifically written to do so
-```
+    <td>
+      <code class="language-eve-document">
+changes the font color of the autocomplete input to red when the list is opened; the color will not revert once the menu is closed unless another block is specifically written to do so
+~~~
 search
   autocomplete = [#ui/autocomplete]
   input = [#ui/autocomplete/input autocomplete]
@@ -1321,7 +1722,8 @@ search
 
 commit
   input.style <- [color: #ff0000]
-```</code>
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -1335,12 +1737,15 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>autocomplete</strong> - the autocomplete being closed</li>
       </ul>
     </td>
-    <td><code>// changes the font color of the autocomplete input to black when the list is closed; reverts the change in the example for #ui/event/open
-```
+    <td>
+      <code class="language-eve-document">
+changes the font color of the autocomplete input to black when the list is closed; reverts the change in the example for #ui/event/open
+~~~
 search
   autocomplete = [#ui/autocomplete]
   input = [#ui/autocomplete/input autocomplete]
@@ -1348,7 +1753,8 @@ search
 
 commit
   input.style <- [color: #000000]
-```</code>
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -1362,20 +1768,24 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>autocomplete</strong> - the autocomplete being closed</li>
       </ul>
     </td>
-    <td><code>// as a follow-up to the #ui/autocomplete example, this waits for the user to pick a birth state, then creates a new autocomplete tagged #birth-county to ask which county within that particular state the user was born in
-```
+    <td>
+      <code class="language-eve-document">
+as a follow-up to the #ui/autocomplete example, this waits for the user to pick a birth state, then creates a new autocomplete tagged #birth-county to ask which county within that particular state the user was born in
+~~~
 search
   birth-state = [#ui/autocomplete #birth-state selected]
   selected = [#state name counties]
   [#ui/event/select autocomplete: birth-state]
 
 commit
-  [#ui/autocomplete #birth-county placeholder: “Which county?” | completion: [text: counties]]
-```</code>
+  [#ui/autocomplete #birth-county placeholder: "Which county?" | completion: [text: counties]]
+~~~
+      </code>
     </td>
   </tr>
 </table>
@@ -1389,19 +1799,23 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>autocomplete</strong> - the autocomplete whose input field changed</li>
       </ul>
     </td>
-    <td><code>// when an autocomplete asking what the magic word is changes to the correct answer, adds the tag #magic-word to the autocomplete
-```
+    <td>
+      <code class="language-eve-document">
+when an autocomplete asking what the magic word is changes to the correct answer, adds the tag `#magic-word` to the autocomplete
+~~~
 search
   [#ui/event/change autocomplete]
-  autocomplete = [#ui/autocomplete placeholder: “What’s the magic word?” value: “please”]
+  autocomplete = [#ui/autocomplete placeholder: "What’s the magic word?" value: "please"]
 
 bind
   autocomplete <- [#magic-word]
-```</code>
+~~~
+</code>
     </td>
   </tr>
 </table>
@@ -1419,35 +1833,39 @@ The system library provides various system-level utilities for Eve.
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>resolution</strong> - the frequency in milliseconds of the timer.</li>
-        <li><strong>year</strong> - (optional) - the current year</li>
-        <li><strong>month</strong> - (optional) - the current month (1 - 12)</li>
-        <li><strong>day</strong> - (optional) - the current day of the month (1 - 31)</li>
-        <li><strong>weekday</strong> - (optional) - the current day of the week (1 - 7, where 1 is Sunday)</li>
-        <li><strong>hour</strong> - (optional) - the current hour (0 - 23)</li>
-        <li><strong>minute</strong> - (optional) - the current minute (0 - 59)</li>
-        <li><strong>second</strong> - (optional) - the current second (0 - 59)</li>
-        <li><strong>millisecond</strong> - (optional) - the current millisecond (0 - 999)</li>
-        <li><strong>timestamp</strong> - (optional) - the current time represented as the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC</li>
-        <li><strong>tick</strong> - (optional) - the number of ticks of the timer since it was created</li>
+      </ul>
+      <b>Output</b>
+      <ul class="arglist">
+        <li><strong>year</strong> - the current year</li>
+        <li><strong>month</strong> - the current month (1 - 12)</li>
+        <li><strong>day</strong> - the current day of the month (1 - 31)</li>
+        <li><strong>weekday</strong> - the current day of the week (1 - 7, where 1 is Sunday)</li>
+        <li><strong>hour</strong> - the current hour (0 - 23)</li>
+        <li><strong>minute</strong> - the current minute (0 - 59)</li>
+        <li><strong>second</strong> - the current second (0 - 59)</li>
+        <li><strong>millisecond</strong> - the current millisecond (0 - 999)</li>
+        <li><strong>timestamp</strong> - the current time represented as the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC</li>
+        <li><strong>tick</strong> - the number of ticks of the timer since it was created</li>
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 Commits a timer that ticks every 1000 milliseconds
-```
+~~~
 commit
   [#system/timer resolution: 1000]
-```
+~~~
 
 Displays the current time
-```
+~~~
 search
   [#system/timer hour minute second]
 bind
   [#ui/text text: "{{hour}}:{{minute}}:{{second}}"]
-```
+~~~
       </code>
     </td>
   </tr>
@@ -1466,28 +1884,32 @@ A library for accessing the filesystem. This library only works when Eve is run 
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>path</strong> - The path of the file to be read.</li>
         <li><strong>encoding</strong> - (optional) - The encoding of the file. The default is utf-8.</li>
-        <li><strong>error</strong> - (optional) - If an error is encountered when attempting to read the file, it will be stored here as a #file/error.</li>
+      </ul>
+      <b>Output</b>
+      <ul class="arglist">
         <li><strong>contents</strong> - The contents of the file. This attribute will have a value once the entire contents of the file are read.</li>
+        <li><strong>error</strong> - If an error is encountered when attempting to read the file, it will be stored here as a #file/error.</li>
       </ul>
     </td>
     <td>
-      <code>
+      <code class="language-eve-document">
 Read a file
-```
+~~~
 commit
   [#file/read #my-file path: "test-file.txt"]
-```
+~~~
 
 Display the contents of the file
-```
+~~~
 search
   [#my-file contents]
 commit
   [#console/log text: contents]
-```
+~~~
       </code>
     </td>
   </tr>
@@ -1496,26 +1918,30 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>#file/read</b> - read the specified file
+      <b>#file/write</b> - write the specified file
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>path</strong> - The path of the file to be written.</li>
         <li><strong>encoding</strong> - (optional) - The encoding of the file. The default is utf-8.</li>
+      </ul>
+      <b>Output</b>
+      <ul class="arglist">
         <li><strong>contents</strong> - The string that will be written to the file</li>
-        <li><strong>error</strong> - (optional) - If an error is encountered when attempting to read the file, it will be stored here as a #file/error.</li>
+        <li><strong>error</strong> - If an error is encountered when attempting to read the file, it will be stored here as a #file/error.</li>
         <li><strong>#file/complete</strong> - When the contents are written successfully, the record will be tagged #file/complete.</li>
       </ul>
     </td>
     <td>
-      <code>
-```
+      <code class="language-eve-document">
+~~~
 commit
   [#file/write path: "test-file.txt" contents: "This will be in the file"]
-```
+~~~
       </code>
     </td>
   </tr>
@@ -1530,19 +1956,20 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Output</b>
+      <ul class="arglist">
         <li><strong>code</strong> - The error code</li>
         <li><strong>message</strong> - The error message</li>
       </ul>
     </td>
     <td>
-      <code>
-```
+      <code class="language-eve-document">
+~~~
 search
   [#file/read path error: [code: "ENOENT"]]
 commit
   [#console/error text: "Could not file file {{path}}"]
-```
+~~~
       </code>
     </td>
   </tr>
@@ -1561,16 +1988,17 @@ Write text to the console
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>text</strong> - The text to write to the console. Text will also be written to stdout.</li>
       </ul>
     </td>
     <td>
-      <code>
-```
+      <code class="language-eve-document">
+~~~
 commit
   [#console/log text: "Hello world!"]
-```
+~~~
       </code>
     </td>
   </tr>
@@ -1585,16 +2013,17 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>text</strong> - The text to write to the console.</li>
       </ul>
     </td>
     <td>
-      <code>
-```
+      <code class="language-eve-document">
+~~~
 commit
   [#console/warn text: "Memory is running low."]
-```
+~~~
       </code>
     </td>
   </tr>
@@ -1609,16 +2038,17 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>text</strong> - The text to write to the console. Text will also be written to stderr.</li>
       </ul>
     </td>
     <td>
-      <code>
-```
+      <code class="language-eve-document">
+~~~
 commit
   [#console/error text: "Access is Denied"]
-```
+~~~
       </code>
     </td>
   </tr>
