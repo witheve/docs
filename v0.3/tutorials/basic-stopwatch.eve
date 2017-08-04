@@ -14,10 +14,10 @@ This guide expands on the quickstart `Clock` page and shows you how to turn the 
 ```
 commit
   [#time #system/timer resolution: 10]
-  [#race-timer #stopped #reset]
+  [#stopwatch #stopped #reset]
 ```
 
-Stopwatches tend to measure seconds to two decimal points, so our resolution changes to 10ms (or one centisecond) to account for that. The other thing added here is a `#race-timer` record that lets us keep track of when the stopwatch is stopped, running, or reset.
+Stopwatches tend to measure seconds to two decimal points, so our resolution changes to 10ms (or one centisecond) to account for that. The other thing added here is a `#stopwatch` record that lets us keep track of when the stopwatch is stopped, running, or reset.
 
 
 ## Draw clock face
@@ -26,7 +26,7 @@ Stopwatches tend to measure seconds to two decimal points, so our resolution cha
 search
   [#app page: "Clock"]
   view = [#qs-contents]
-  [#race-timer minute second millisecond]
+  [#stopwatch minute second millisecond]
 
 bind
   view.children += [#svg/root sort: 1 viewBox: "0 0 100 100", width: "300px", children:
@@ -36,7 +36,7 @@ bind
     [#second-hand sort: 4, degrees: 6 * second + 0.006 * millisecond, length: 46, stroke: "#ff0000", stroke-width: 0.5]]
 ```
 
-This block closely resembles its predecessor, but the search looks for `#race-timer` now instead of the system time since it's the race time that will determine the position of the hands.
+This block closely resembles its predecessor, but uses the record `#stopwatch` to determine the position of the hands instead of the time of day.
 
 ## One Button
 
@@ -59,39 +59,39 @@ bind
 ```
 search
   [#time timestamp]
-  race-timer = [#race-timer #stopped #reset]
+  stopwatch = [#stopwatch #stopped #reset]
   [#html/event/click element: [#qs-stopwatch-btn]]
 
 commit
   [#start-time timestamp]
-  race-timer -= #stopped
-  race-timer -= #reset
-  race-timer += #running
+  stopwatch -= #stopped
+  stopwatch -= #reset
+  stopwatch += #running
 ```
 
-If the button is pressed while the stopwatch is stopped and reset (thus at zero), this records the `#start-time` and changes the `#race-timer` from `#stopped` to `#running` and removes the `#reset` tag.
+If the button is pressed while the stopwatch is stopped and reset (thus at zero), this records the `#start-time` and changes the `#stopwatch` from `#stopped` to `#running` and removes the `#reset` tag.
 
 ### Pressing Stop
 
 ```
 search
   [#time timestamp]
-  race-timer = [#race-timer #running]
+  stopwatch = [#stopwatch #running]
   [#html/event/click element: [#qs-stopwatch-btn]]
 
 commit
   [#stop-time timestamp]
-  race-timer += #stopped
-  race-timer -= #running
+  stopwatch += #stopped
+  stopwatch -= #running
 ```
 
-If the button is pressed with the stopwatch is running, this records the `#stop-time` and changes the `#race-timer` from `#running` to `#stopped`.
+If the button is pressed with the stopwatch is running, this records the `#stop-time` and changes the `#stopwatch` from `#running` to `#stopped`.
 
 ### Pressing Reset
 
 ```
 search
-  race = [#race-timer #stopped not(#reset)]
+  race = [#stopwatch #stopped not(#reset)]
   start = [#start-time]
   stop = [#stop-time]
   [#html/event/click element: [#qs-quickstart-btn]]
@@ -100,25 +100,25 @@ commit
   race := none
   start := none
   stop := none
-  [#race-timer #stopped #reset]
+  [#stopwatch #stopped #reset]
 ```
 
-When the timer is stopped but hasn't been reset yet, and the button gets hit, this erases the `#race-timer`, `#start-time`, and `#stop-time` records to clear the stopwatch of the previous time's data, and recommits a new `#race-timer` without any time values on it.
+When the timer is stopped but hasn't been reset yet, and the button gets hit, this erases the `#stopwatch`, `#start-time`, and `#stop-time` records to clear the stopwatch of the previous time's data, and recommits a new `#stopwatch` without any time values on it.
 
 ## Adding time values to the race timer
 
-There's three conditions where the `#race-timer` needs values assigned to it.
+There's three conditions where the `#stopwatch` needs values assigned to it.
 
 ### Time values while reset
 
 ```
 search
-  race-timer = [#race-timer #stopped #reset]
+  stopwatch = [#stopwatch #stopped #reset]
 
 bind
-  race-timer.minute += 0
-  race-timer.second += 0
-  race-timer.millisecond += 0
+  stopwatch.minute += 0
+  stopwatch.second += 0
+  stopwatch.millisecond += 0
 ```
 
 The stopwatch has no values before the start button is pressed, so we add default values for the minute, second, and millisecond attributes. This way, when the page is loaded or the stopwatch is reset, the hands are zeroed out.
@@ -127,7 +127,7 @@ The stopwatch has no values before the start button is pressed, so we add defaul
 
 ```
 search
-  race-timer = [#race-timer #running]
+  stopwatch = [#stopwatch #running]
   start-time = [#start-time timestamp: start]
   system-time = [#time timestamp: now]
   milliseconds = math/mod[value: (now - start), by: 1000]
@@ -135,18 +135,18 @@ search
   minutes = math/floor[value: seconds / 60]
 
 bind
-  race-timer.minute += minutes
-  race-timer.second += seconds
-  race-timer.millisecond += milliseconds
+  stopwatch.minute += minutes
+  stopwatch.second += seconds
+  stopwatch.millisecond += milliseconds
 ```
 
-Hooray for math functions! While the stopwatch is running, we simply take the difference between the current timestamp and the starting timestamp. From there, `math/mod` will let you extract just milliseconds, and `math/floor` yields whole seconds and minutes, which once again get added as attributes to the `#race-timer`.
+Hooray for math functions! While the stopwatch is running, we simply take the difference between the current timestamp and the starting timestamp. From there, `math/mod` will let you extract just milliseconds, and `math/floor` yields whole seconds and minutes, which once again get added as attributes to the `#stopwatch`.
 
 ### Time values while stopped
 
 ```
 search
-  race-timer = [#race-timer #stopped not(#reset)]
+  stopwatch = [#stopwatch #stopped not(#reset)]
   start-time = [#start-time timestamp: start]
   stop-time = [#stop-time timestamp: stop]
   milliseconds = math/mod[value: (stop - start), by: 1000]
@@ -154,9 +154,9 @@ search
   minutes = math/floor[value: seconds / 60]
 
 bind
-  race-timer.minute += minutes
-  race-timer.second += seconds
-  race-timer.millisecond += milliseconds
+  stopwatch.minute += minutes
+  stopwatch.second += seconds
+  stopwatch.millisecond += milliseconds
 ```
 
 This block is almost completely identical to the last block, except `#time` was swapped out for `#stop-time`. The system timestamp is always changing, whereas the stopped timestamp is static, leaving the stopwatch hands paused in place.
