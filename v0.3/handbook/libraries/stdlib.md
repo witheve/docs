@@ -11,13 +11,14 @@ title: "Standard Library"
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>gather/sort</b> - Generates an ordering for a set
+      <b>gather/sort</b> - generates an ordering for a set
     </td>
   </tr>
 
   <tr>
     <td>
-      <ul class="arglist">
+      <b>Input</b>
+      <ul class="arglist">  
         <li><strong>for</strong> - the set to sort</li>
         <li><strong>per</strong> - (optional) - one or more attributes by which to group `for`</li>
         <li><strong>direction</strong> - (optional) - direction in which to sort `for`. Possible values are:
@@ -54,12 +55,13 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>gather/count</b> - Returns the number of elements in a set
+      <b>gather/count</b> - returns the number of elements in a set
     </td>
   </tr>
   <tr>
     <td>
-      <ul class="arglist">
+      <b>Input</b>   
+      <ul class="arglist">     
         <li><strong>for</strong> - the set to count over</li>
         <li><strong>per</strong> - (optional) - one or more attributes by which to group `for`</li>
       </ul>
@@ -90,12 +92,13 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>gather/sum</b> - Returns the sum of values in a set of attributes
+      <b>gather/sum</b> - returns the sum of values in a set of attributes
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>for</strong> - the set to gather</li>
         <li><strong>value</strong> - the specific variable to be summed</li>
@@ -130,12 +133,13 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/floor</b> - Rounds a number down
+      <b>math/floor</b> - rounds a number down
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>value</strong> - the number to be rounded down</li>
       </ul>
@@ -157,12 +161,13 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/ceiling</b> - Rounds a number up
+      <b>math/ceiling</b> - rounds a number up
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>value</strong> - the number to be rounded up</li>
       </ul>
@@ -184,12 +189,13 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/round</b> - Rounds a number to the nearest integer
+      <b>math/round</b> - rounds a number to the nearest integer
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>value</strong> - the number to be rounded to the nearest integer</li>
       </ul>
@@ -211,12 +217,13 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/sin</b> - Sine of an angle
+      <b>math/sin</b> - sine of an angle
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>degrees</strong> - the angle in degrees</li>
       </ul>
@@ -238,12 +245,13 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/cos</b> - Cosine of an angle
+      <b>math/cos</b> - cosine of an angle
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>degrees</strong> - the angle in degrees</li>
       </ul>
@@ -265,12 +273,13 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/tan</b> - Tangent of an angle
+      <b>math/tan</b> - tangent of an angle
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>degrees</strong> - the angle in degrees</li>
       </ul>
@@ -292,12 +301,13 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/max</b> - The greater of two values
+      <b>math/max</b> - the greater of two values
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>a</strong> - a value to compare</li>
         <li><strong>b</strong> - another value to compare</li>
@@ -322,12 +332,13 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/min</b> - The lesser of two values
+      <b>math/min</b> - the lesser of two values
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>a</strong> - a value to compare</li>
         <li><strong>b</strong> - another value to compare</li>
@@ -352,12 +363,13 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/mod</b> - Modulo division
+      <b>math/mod</b> - modulo division
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>value</strong> - the number to be divided (dividend)</li>
         <li><strong>by</strong> - the number by which to divide (divisor)</li>
@@ -380,12 +392,13 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/absolute</b> - Absolute value of a number
+      <b>math/absolute</b> - absolute value of a number
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>value</strong> - the number whose absolute value is found</li>
       </ul>
@@ -416,12 +429,69 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/to-fixed</b> - Formats a number as a string to a certain number of decimal places
+      <b>math/pow</b> - raise a value to an exponent
     </td>
   </tr>
 
   <tr>
     <td>
+      <ul>
+        <li><strong>value</strong> - the vale to exponentiate</li>
+        <li><strong>exponent</strong> - the exponent</li>
+      </ul>
+    </td>
+    <td>
+      <code>
+Calculate 2 ^ 3
+```
+search
+  x = math/pow[value: 2 exponent: 3]
+bind
+  [#ui/text text: "2 ^ 3 = {{x}}"]
+```
+</code>
+    </td>
+  </tr>
+</table>
+
+<table class="libitem">
+  <tr>
+    <td colspan="2">
+      <b>math/ln</b> - calculate the natural log of a value
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul>
+        <li><strong>value</strong> - the value to take the natural log of</li>
+      </ul>
+    </td>
+    <td>
+      <code>
+calculate the natural log of 17
+```
+search
+  x = math/ln[value: 17]
+
+bind
+  [#ui/text text: "ln(17) = {{x}}"]
+```
+</code>
+    </td>
+  </tr>
+</table>
+
+<table class="libitem">
+  <tr>
+    <td colspan="2">
+      <b>math/to-fixed</b> - formats a number as a string to a certain number of decimal places
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>value</strong> - the number to be formatted</li>
         <li><strong>to</strong> - the number of decimal places to which `a` will be formatted</li>
@@ -447,12 +517,13 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>math/range</b> - Generates a range of numbers
+      <b>math/range</b> - generates a range of numbers
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>start</strong> - the start of the range</li>
         <li><strong>stop</strong> - the end of the range</li>
@@ -475,12 +546,13 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>random/number</b> - Generates a random number between 1 and 0
+      <b>random/number</b> - generates a random number between 1 and 0
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>seed</strong> - a number used to initialize the random number generator</li>
       </ul>
@@ -511,12 +583,13 @@ commit
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/replace</b> - Replaces a string of text with another
+      <b>string/replace</b> - replaces a string of text with another
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>text</strong> - the text in which to search for strings and replace them</li>
         <li><strong>replace</strong> - the string to be replaced</li>
@@ -541,12 +614,13 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/get</b> - Gets a character from a specific location in a string
+      <b>string/get</b> - gets a character from a specific location in a string
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>text</strong> - the text to be searched</li>
         <li><strong>at</strong> - the location to be searched</li>
@@ -570,12 +644,13 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/uppercase</b> - Converts a string to uppercase
+      <b>string/uppercase</b> - converts a string to uppercase
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>text</strong> - the text to be converted</li>
       </ul>
@@ -597,12 +672,13 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/lowercase</b> - Converts a string to lowercase
+      <b>string/lowercase</b> - converts a string to lowercase
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>text</strong> - the text to be converted</li>
       </ul>
@@ -624,12 +700,13 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/index-of</b> - Returns the position of the first occurrence of a specified value in a string
+      <b>string/index-of</b> - returns the position of the first occurrence of a specified value in a string
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>text</strong> - the text to be searched</li>
         <li><strong>substring</strong> - the string to be found in `text`</li>
@@ -652,12 +729,13 @@ bind
 <table class="libitem">
   <tr>
     <td colspan="2">
-      <b>string/codepoint-length</b> - Returns the length of a string in Unicode code points.
+      <b>string/codepoint-length</b> - returns the length of a string in Unicode code points.
     </td>
   </tr>
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>text</strong> - the string whose length is found</li>
       </ul>
@@ -690,6 +768,7 @@ The HTML library is a low level interface for creating HTML elements and respond
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>tagname</strong> - determines the type of html element rendered in the browser; can be any html element given as a string</li>
         <li><strong>style</strong> - (optional) - specific CSS styles can be defined, but must be entered as a subrecord</li>
@@ -809,8 +888,9 @@ bind
 
   <tr>
     <td>
+      <b>Output</b>
       <ul class="arglist">
-        <li><strong>element</strong> - (optional) - the element that the mouse is entering or leaving</li>
+        <li><strong>element</strong> - the element that the mouse is entering or leaving</li>
       </ul>
     </td>
     <td>
@@ -843,9 +923,10 @@ commit
 
   <tr>
     <td>
+      <b>Output</b>
       <ul class="arglist">
-        <li><strong>element</strong> - (optional) - the changed element</li>
-        <li><strong>value</strong> - (optional) - the current value of a form element in the browser</li>
+        <li><strong>element</strong> - the changed element</li>
+        <li><strong>value</strong> - the current value of a form element in the browser</li>
       </ul>
     </td>
     <td>
@@ -871,14 +952,15 @@ bind
 
   <tr>
     <td>
+      <b>Output</b>
       <ul class="arglist">
-        <li><strong>element</strong> - (optional) - the element to be monitored; includes clicks on any children within the element</li>
-        <li><strong>target</strong> - (optional) - the exact element to be monitored; does not include any children</li>
-        <li><strong>page-x</strong> - (optional) - the x-coordinate of the mouse pointer relative to the page</li>
-        <li><strong>page-y</strong> - (optional) - the y-coordinate of the mouse pointer relative to the page</li>
-        <li><strong>window-x</strong> - (optional) - the x-coordinate of the mouse pointer relative to the window</li>
-        <li><strong>window-y</strong> - (optional) - the y-coordinate of the mouse pointer relative to the page</li>
-        <li><strong>button</strong> - (optional) - the mouse button whose click is monitored; options are:
+        <li><strong>element</strong> - the element that was clicked; includes clicks on any children within the element</li>
+        <li><strong>target</strong> - the direct element that was clicked (the topmost target in the DOM tree)</li>
+        <li><strong>page-x</strong> - the x-coordinate of the mouse pointer relative to the page</li>
+        <li><strong>page-y</strong> - the y-coordinate of the mouse pointer relative to the page</li>
+        <li><strong>window-x</strong> - the x-coordinate of the mouse pointer relative to the window</li>
+        <li><strong>window-y</strong> - the y-coordinate of the mouse pointer relative to the page</li>
+        <li><strong>button</strong> - the mouse button that performed the click; options are:
           <ul class="arglist">
             <li>"left" - left mouse button; if no button argument is provided, this is the default</li>
             <li>"right" - right mouse button</li>
@@ -893,10 +975,10 @@ bind
 looks for a right click in any h1 element and posts the message "Right clicked!"
 ~~~
 search
-  event = if [#html/event/mouse-up button] then "up"
-          else if [#html/event/mouse-down button] then "down"
-          else if [#html/event/click button] then "click"
-          else if [#html/event/double-click button] then "double-click"
+  event = if [#html/event/mouse-up] then "up"
+          else if [#html/event/mouse-down] then "down"
+          else if [#html/event/click] then "click"
+          else if [#html/event/double-click] then "double-click"
 commit
   [#ui/text text: "{{event}}"]
 ~~~
@@ -945,10 +1027,11 @@ commit
 
   <tr>
     <td>
+      <b>Output</b>
       <ul class="arglist">
-        <li><strong>element</strong> - (optional) - the element which has focus during key-up or key-down</li>
-        <li><strong>key-code</strong> - the key code of the key to be monitored</li>
-        <li><strong>key</strong> - (optional) - the key to be monitored; an alternative to key-code for a premade list of keys:
+        <li><strong>element</strong> - the element which has focus during key-up or key-down</li>
+        <li><strong>key-code</strong> - the key code of the key that was pressed</li>
+        <li><strong>key</strong> - the key that was pressed; an alternative to key-code for a premade list of keys:
           <ul class="arglist">
             <li>"tab</li>
             <li>"enter"</li>
@@ -996,9 +1079,10 @@ commit
 
   <tr>
     <td>
+      <b>Output</b>
       <ul class="arglist">
-        <li><strong>element</strong> - (optional) - the element to be monitored</li>
-        <li><strong>value</strong> - (optional) - the value of the form element when it gains or loses focus</li>
+        <li><strong>element</strong> - the element that was focused or blurred</li>
+        <li><strong>value</strong> - the value of the form element when it was focused or blurred</li>
       </ul>
     </td>
     <td>
@@ -1078,6 +1162,7 @@ The canvas library is an interface for drawing graphics in the browser using the
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>width</strong> - the width of the canvas in pixels</li>
         <li><strong>height</strong> - the height of the canvas in pixels</li>
@@ -1103,6 +1188,7 @@ commit
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>fillStyle</strong> - (optional) - sets the color, gradient, or pattern used to fill the drawing; if undefined, the default is black</li>
         <li><strong>strokeStyle</strong> - (optional) - sets the color, gradient, or pattern used for the strokes; if undefined, the path will default to a black fill style</li>
@@ -1149,6 +1235,7 @@ commit
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>x</strong> - the horizontal coordinate to move to, in pixels</li>
         <li><strong>y</strong> - the vertical coordinate to move to, in pixels</li>
@@ -1175,6 +1262,7 @@ commit
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>x</strong> - the horizontal coordinate to move to, in pixels</li>
         <li><strong>y</strong> - the vertical coordinate to move to, in pixels</li>
@@ -1201,6 +1289,7 @@ commit
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>cp1x</strong> - the x coordinate of the first control point</li>
         <li><strong>cp1y</strong> - the y coordinate of the first control point</li>
@@ -1235,6 +1324,7 @@ commit
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>cpx</strong> - the x coordinate of the control point</li>
         <li><strong>cpy</strong> - the y coordinate of the control point</li>
@@ -1267,6 +1357,7 @@ commit
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>x</strong> - the x coordinate of the center of the curve</li>
         <li><strong>y</strong> - the y coordinate of the center of the curve</li>
@@ -1297,6 +1388,7 @@ commit
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>x1</strong> - the x coordinate of the starting point of the curve</li>
         <li><strong>y1</strong> - the y coordinate of the starting point of the curve</li>
@@ -1328,6 +1420,7 @@ commit
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>x</strong> - the x coordinate of the center of the curve</li>
         <li><strong>y</strong> - the y coordinate of the center of the curve</li>
@@ -1360,6 +1453,7 @@ commit
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>x</strong> - the x coordinate of the upper left corner of the rectangle</li>
         <li><strong>y</strong> - the y coordinate of the upper left corner of the rectangle</li>
@@ -1422,6 +1516,7 @@ The UI library provides a shorthand for adding standard HTML elements, as well a
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li>the <code class="language-eve-document">#ui</code> tag supports the following html elements:
           <ul class="arglist">
@@ -1470,6 +1565,7 @@ commit
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>children</strong> - (optional) - the children contained within the column or row</li>
         <li><strong>style</strong> - (optional) - specific CSS styles can be defined, but must be entered as a subrecord</li>
@@ -1501,6 +1597,7 @@ commit
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li> - (optional) - preset options for class are:
           <ul class="arglist">
@@ -1535,6 +1632,7 @@ commit
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>completion</strong> - the list of possible responses, given as a subrecord with the attribute "text" whose value is the list; requires the use of a pipe in the #ui record if matching against multiple search records for one autocomplete field</li>
         <li><strong>Note</strong>: Once an autocomplete option has been selected, #ui/autocomplete automatically gains a <strong>selected</strong> attribute whose value is the completion record; in the case of the example shown here, the <strong>selected</strong> attribute would be whichever <code class="language-eve-document">#state</code> record was chosen</li>
@@ -1581,6 +1679,7 @@ commit
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>autocomplete</strong> - the autocomplete element to clear</li>
       </ul>
@@ -1607,6 +1706,7 @@ commit
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>autocomplete</strong> - the autocomplete being opened</li>
       </ul>
@@ -1637,6 +1737,7 @@ commit
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>autocomplete</strong> - the autocomplete being closed</li>
       </ul>
@@ -1667,6 +1768,7 @@ commit
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>autocomplete</strong> - the autocomplete being closed</li>
       </ul>
@@ -1697,6 +1799,7 @@ commit
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
         <li><strong>autocomplete</strong> - the autocomplete whose input field changed</li>
       </ul>
@@ -1730,18 +1833,22 @@ The system library provides various system-level utilities for Eve.
 
   <tr>
     <td>
+      <b>Input</b>
       <ul class="arglist">
-        <li><strong>resultion</strong> - the frequency in milliseconds of the timer.</li>
-        <li><strong>year</strong> - (optional) - the current year</li>
-        <li><strong>month</strong> - (optional) - the current month (1 - 12)</li>
-        <li><strong>day</strong> - (optional) - the current day of the month (1 - 31)</li>
-        <li><strong>weekday</strong> - (optional) - the current day of the week (1 - 7, where 1 is Sunday)</li>
-        <li><strong>hour</strong> - (optional) - the current hour (0 - 23)</li>
-        <li><strong>minute</strong> - (optional) - the current minute (0 - 59)</li>
-        <li><strong>second</strong> - (optional) - the current second (0 - 59)</li>
-        <li><strong>millisecond</strong> - (optional) - the current millisecond (0 - 999)</li>
-        <li><strong>timestamp</strong> - (optional) - the current time represented as the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC</li>
-        <li><strong>tick</strong> - (optional) - the number of ticks of the timer since it was created</li>
+        <li><strong>resolution</strong> - the frequency in milliseconds of the timer.</li>
+      </ul>
+      <b>Output</b>
+      <ul class="arglist">
+        <li><strong>year</strong> - the current year</li>
+        <li><strong>month</strong> - the current month (1 - 12)</li>
+        <li><strong>day</strong> - the current day of the month (1 - 31)</li>
+        <li><strong>weekday</strong> - the current day of the week (1 - 7, where 1 is Sunday)</li>
+        <li><strong>hour</strong> - the current hour (0 - 23)</li>
+        <li><strong>minute</strong> - the current minute (0 - 59)</li>
+        <li><strong>second</strong> - the current second (0 - 59)</li>
+        <li><strong>millisecond</strong> - the current millisecond (0 - 999)</li>
+        <li><strong>timestamp</strong> - the current time represented as the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC</li>
+        <li><strong>tick</strong> - the number of ticks of the timer since it was created</li>
       </ul>
     </td>
     <td>
@@ -1777,11 +1884,15 @@ A library for accessing the filesystem. This library only works when Eve is run 
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>path</strong> - The path of the file to be read.</li>
         <li><strong>encoding</strong> - (optional) - The encoding of the file. The default is utf-8.</li>
-        <li><strong>error</strong> - (optional) - If an error is encountered when attempting to read the file, it will be stored here as a #file/error.</li>
+      </ul>
+      <b>Output</b>
+      <ul class="arglist">
         <li><strong>contents</strong> - The contents of the file. This attribute will have a value once the entire contents of the file are read.</li>
+        <li><strong>error</strong> - If an error is encountered when attempting to read the file, it will be stored here as a #file/error.</li>
       </ul>
     </td>
     <td>
@@ -1813,11 +1924,15 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>path</strong> - The path of the file to be written.</li>
         <li><strong>encoding</strong> - (optional) - The encoding of the file. The default is utf-8.</li>
+      </ul>
+      <b>Output</b>
+      <ul class="arglist">
         <li><strong>contents</strong> - The string that will be written to the file</li>
-        <li><strong>error</strong> - (optional) - If an error is encountered when attempting to read the file, it will be stored here as a #file/error.</li>
+        <li><strong>error</strong> - If an error is encountered when attempting to read the file, it will be stored here as a #file/error.</li>
         <li><strong>#file/complete</strong> - When the contents are written successfully, the record will be tagged #file/complete.</li>
       </ul>
     </td>
@@ -1841,7 +1956,8 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Output</b>
+      <ul class="arglist">
         <li><strong>code</strong> - The error code</li>
         <li><strong>message</strong> - The error message</li>
       </ul>
@@ -1872,7 +1988,8 @@ Write text to the console
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>text</strong> - The text to write to the console. Text will also be written to stdout.</li>
       </ul>
     </td>
@@ -1896,7 +2013,8 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>text</strong> - The text to write to the console.</li>
       </ul>
     </td>
@@ -1920,7 +2038,8 @@ commit
 
   <tr>
     <td>
-      <ul>
+      <b>Input</b>
+      <ul class="arglist">
         <li><strong>text</strong> - The text to write to the console. Text will also be written to stderr.</li>
       </ul>
     </td>
