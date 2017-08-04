@@ -1,0 +1,65 @@
+---
+layout: default
+title: Quickstart + Counter
+---
+
+{% raw %}
+
+# Quickstart + Counter
+
+This guide expands on the quickstart by adding a live clock to the `Clock` page.
+
+## Quickstart code
+
+This is made to add onto the web app you made in the quickstart. Make sure you have [all the code from that](./quickstart.eve) in your Eve program before you start adding the code found here to begin working on the clock!
+
+## Building the clock
+
+The first thing to do is to create a system timer that will tick once per second (or 1000 milliseconds, which is the unit of measurement that resolution uses).
+
+````
+```
+commit
+  [#time #system/timer resolution: 1000]
+```
+````
+
+### Drawing the clock face
+
+Next, we can draw the clock face on the `Clock` page.
+
+````
+```
+search
+  [#app page: "Clock"]
+  view = [#qs-contents]
+  [#time hour minute second]
+
+bind
+  view.children += [#svg/root viewBox: "0 0 100 100", width: "300px", children:
+    [#svg/circle sort: 1, cx: 50, cy: 50, r: 45, fill: "#0B79CE"]
+    [#clock-hand #hour-hand sort: 2, degrees: 30 * hour + 0.5 * minute, length: 25, stroke: "#023963"]
+    [#clock-hand #minute-hand sort: 3, degrees: 6 * minute, length: 38, stroke: "#023963"]
+    [#clock-hand #second-hand sort: 4, degrees: 6 * second, length: 40, stroke: "#ce0b46"]]
+```
+````
+
+### Drawing the hands
+
+By adding an svg path to the `#hour-hand`, `#minute-hand`, and `#second-hand`, we can draw the hands of the clock.
+
+````
+```
+search
+  hand = [#clock-hand degrees length]
+  x2 = 50 + (length * math/sin[degrees])
+  y2 = 50 - (length * math/cos[degrees])
+
+bind
+  hand <- [#svg/line, x1: 50, y1: 50, x2, y2]
+```
+````
+
+## Next steps
+
+What would it take to move from a watch to a stopwatch? The geometry for drawing the hands is very similar, so most of what you'd need to add is a way to track starting and stopping. Try starting with a one button stopwatch, where the button cycles between start, stop, and reset. Give it a try on your own or [follow along with our solution](./basic-stopwatch.eve)!

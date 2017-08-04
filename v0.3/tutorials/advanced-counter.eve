@@ -23,7 +23,7 @@ bind
 ```
 ````
 
-A common trope is that good programmers delete code, and this follows suit - we actually get a more elegant solution here by condensing two blocks before down into one. We can't just smash together the two blocks entirely though because we want the original message to read "The button has been clicked 0 times" before any clicks happen. Recall that in the original counter example, before any clicks occurred, the counter message wouldn't show up because the search was trying to `gather/count` a non-existent record and causing the whole block to fail. If we tried that here, the counter button wouldn't show up. To account for this, an `if` statement sets `how-many` to the number of clicks once they happen, and `else` handles the edge case of starting at 0.
+Sometimes the way forward is to delete code, and this follows suit - we actually get a more elegant solution here by condensing two blocks before down into one. We can't just smash together the two blocks entirely though because we want the original message to read "The button has been clicked 0 times" before any clicks happen. Recall that in the original counter example, before any clicks occurred, the counter message wouldn't show up because the search was trying to `gather/count` a non-existent record and causing the whole block to fail. If we tried that here, the counter button wouldn't show up. To account for this, an `if` statement sets `how-many` to the number of clicks once they happen, and `else` handles the edge case of starting at 0.
 
 ## Remembering clicks
 

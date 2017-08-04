@@ -119,7 +119,6 @@ commit
 ```
 ````
 
-
 ## Next steps
 
-There's no content on the other pages yet, but it works the same way as the content we made for Home. The framework is there for you to add or modify any pages you like, and if you want to see how things like the clock or canvas work in Eve, you can move on to those specific tutorials. Have fun!
+There's no content on the other pages yet, but it works the same way as the content we made for Home - the framework is there for you to add or modify any pages you like. To keep following the tutorials, check out how to [build a counter](./qs-counter.eve) or [draw a clock](./qs-clock.eve). Have fun!

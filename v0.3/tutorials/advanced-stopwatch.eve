@@ -7,7 +7,7 @@ title: Quickstart + Two Button Stopwatch
 
 # Quickstart + Two Button Stopwatch
 
-This guide expands on the quickstart `Clock` page and shows you how to turn the clock into a two button stopwatch. The following code is meant to replace all the code from the original clock.
+This guide expands on the quickstart `Clock` page and shows you how to turn the clock into a two button stopwatch. The following code is meant to replace all the code from the [original clock](./qs-clock.eve) or the [one button stopwatch](./basic-stopwatch.eve).
 
 ## Implement system time
 

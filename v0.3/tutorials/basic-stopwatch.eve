@@ -7,7 +7,7 @@ title: Quickstart + One Button Stopwatch
 
 # Quickstart + One Button Stopwatch
 
-This guide expands on the quickstart `Clock` page and shows you how to turn the clock into a one button stopwatch. The following code is meant to replace all the code from the original clock.
+This guide expands on the quickstart `Clock` page and shows you how to turn the clock into a one button stopwatch. The following code is meant to replace all the code from the [original clock](./qs-clock.eve).
 
 ## Implement system time and a race timer
 
@@ -17,7 +17,7 @@ commit
   [#race-timer #stopped #reset]
 ```
 
-Stopwatches tend to measure seconds to two decimal points, so our resolution changes to 10ms (or one centisecond) to account for that. The other thing added here is a `#race-timer` record that lets us keep track of when the stopwatch is stopped or running or has been reset back to zero.
+Stopwatches tend to measure seconds to two decimal points, so our resolution changes to 10ms (or one centisecond) to account for that. The other thing added here is a `#race-timer` record that lets us keep track of when the stopwatch is stopped, running, or reset.
 
 
 ## Draw clock face
@@ -42,7 +42,7 @@ This block closely resembles its predecessor, but the search looks for `#race-ti
 
 ### Draw the button
 
-All we need to do is add one button to cycle between start, stop, and reset.
+We'll add one button to cycle between start, stop, and reset.
 
 ```
 search
@@ -121,7 +121,7 @@ bind
   race-timer.millisecond += 0
 ```
 
-Before the stopwatch button is pressed, there are no time values anywhere, so we just manually set three attributes to the `#race-timer` for minutes, seconds, and milliseconds, and make those all 0. This way, when the page is loaded or the stopwatch is reset, the hands are zeroed out.
+The stopwatch has no values before the start button is pressed, so we add default values for the minute, second, and millisecond attributes. This way, when the page is loaded or the stopwatch is reset, the hands are zeroed out.
 
 ### Time values while running
 
@@ -195,4 +195,4 @@ bind
 
 ## Next steps
 
-A one button stopwatch is the classic, but isn't quite as useful as a two button stopwatch that has a start/stop button and a reset button. In the case of two button stopwatch, one is a stop/start button and the other is a reset button. The stop/start button will pause the stopwatch and resume counting if you hit it again without hitting reset, which adds a few more states and calculations that you need to account for. Try building it yourself or follow along with our solution!
+A one button stopwatch is the classic, but isn't quite as useful as a two button stopwatch that has a start/stop button and a reset button. In the case of two button stopwatch, one is a stop/start button and the other is a reset button. The stop/start button will pause the stopwatch and resume counting if you hit it again without hitting reset, which adds a few more states and calculations that you need to account for. Try building it yourself or [follow along with our solution](./advanced-stopwatch.eve)!
