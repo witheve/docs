@@ -56,6 +56,8 @@ bind
 
 ### Pressing Start
 
+If the button is pressed while the stopwatch is stopped and reset (thus at zero), this records the `#start-time` and changes the `#stopwatch` from `#stopped` to `#running` and removes the `#reset` tag.
+
 ```
 search
   [#time timestamp]
@@ -68,8 +70,6 @@ commit
   stopwatch -= #reset
   stopwatch += #running
 ```
-
-If the button is pressed while the stopwatch is stopped and reset (thus at zero), this records the `#start-time` and changes the `#stopwatch` from `#stopped` to `#running` and removes the `#reset` tag.
 
 ### Pressing Stop
 
