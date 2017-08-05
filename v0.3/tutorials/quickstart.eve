@@ -80,6 +80,8 @@ By making a button for each page from the list, it's easy to add more pages late
 
 ## Starting Page
 
+We want Home to be the default starting location, which we'll start to accomplish here by creating a record called `#app`.
+
 ````
 ```
 commit
@@ -87,7 +89,7 @@ commit
 ```
 ````
 
-This makes Home the default starting location. Now that we're looking at Home, we can add some content to it.
+This alone is fairly arbitrary. We've given it an attribute `page` with the value `"Home"`, but it doesn't mean anything on its own. It will, however, give us something to match patterns against in the next block.
 
 
 ## Home Page
@@ -96,10 +98,10 @@ This makes Home the default starting location. Now that we're looking at Home, w
 ```
 search
   [#app page: "Home"]
-  view = [#qs-contents]
+  contents = [#qs-contents]
 
 bind
-  view.children += ([#ui/div text: "This is the Eve Quickstart app! Choose a link above to see some of the things Eve can do."],
+  contents.children += ([#ui/div text: "This is the Eve Quickstart app! Choose a link above to see some of the things Eve can do."],
                     [#ui/img #qs-flappy src:"http://i.imgur.com/sp68LtM.gif"])
 ```
 ````
@@ -119,6 +121,8 @@ commit
 ```
 ````
 
+When you click on a navigation button, it changes the `page` attribute on the `#app` record to whichever page you clicked on the nav bar. Clicking Counter or Clock will leave you with blank pages because there aren't any blocks yet to give them content like Home.
+
 ## Next steps
 
-There's no content on the other pages yet, but it works the same way as the content we made for Home - the framework is there for you to add or modify any pages you like. To keep following the tutorials, check out how to [build a counter](./qs-counter.eve) or [draw a clock](./qs-clock.eve). Have fun!
+To keep following the tutorials and see how we filled those pages out, check out how to [build a counter](./qs-counter/) or [draw a clock](./qs-clock/). Have fun!
