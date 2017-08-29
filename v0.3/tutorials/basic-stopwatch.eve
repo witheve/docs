@@ -34,6 +34,8 @@ bind
     [#svg/circle #minute-face sort: 2, cx: 50, cy: 26, r: 12, fill: "#fff", stroke: "#000", stroke-width: 0.25]
     [#minute-hand sort: 3, degrees: 6 * minute, length: 11, stroke: "#000", stroke-width: 0.5]
     [#second-hand sort: 4, degrees: 6 * second + 0.006 * millisecond, length: 46, stroke: "#ff0000", stroke-width: 0.5]]
+
+end
 ```
 
 This block closely resembles its predecessor, but uses the record `#stopwatch` to determine the position of the hands instead of the time of day.
@@ -52,6 +54,8 @@ search
 bind
   view.children += [#ui/div sort: 2 children:
     [#ui/div #qs-stopwatch-btn text: "Start/Stop/Reset"]]
+
+end
 ```
 
 ### Pressing Start
@@ -69,6 +73,8 @@ commit
   stopwatch -= #stopped
   stopwatch -= #reset
   stopwatch += #running
+
+end
 ```
 
 ### Pressing Stop
@@ -83,6 +89,8 @@ commit
   [#stop-time timestamp]
   stopwatch += #stopped
   stopwatch -= #running
+
+end
 ```
 
 If the button is pressed with the stopwatch is running, this records the `#stop-time` and changes the `#stopwatch` from `#running` to `#stopped`.
@@ -101,6 +109,8 @@ commit
   start := none
   stop := none
   [#stopwatch #stopped #reset]
+
+end
 ```
 
 When the timer is stopped but hasn't been reset yet, and the button gets hit, this erases the `#stopwatch`, `#start-time`, and `#stop-time` records to clear the stopwatch of the previous time's data, and recommits a new `#stopwatch` without any time values on it.
@@ -119,6 +129,8 @@ bind
   stopwatch.minute += 0
   stopwatch.second += 0
   stopwatch.millisecond += 0
+
+end
 ```
 
 The stopwatch has no values before the start button is pressed, so we add default values for the minute, second, and millisecond attributes. This way, when the page is loaded or the stopwatch is reset, the hands are zeroed out.
@@ -138,6 +150,8 @@ bind
   stopwatch.minute += minutes
   stopwatch.second += seconds
   stopwatch.millisecond += milliseconds
+
+end
 ```
 
 Hooray for math functions! While the stopwatch is running, we simply take the difference between the current timestamp and the starting timestamp. From there, `math/mod` will let you extract just milliseconds, and `math/floor` yields whole seconds and minutes, which once again get added as attributes to the `#stopwatch`.
@@ -157,6 +171,8 @@ bind
   stopwatch.minute += minutes
   stopwatch.second += seconds
   stopwatch.millisecond += milliseconds
+
+end
 ```
 
 This block is almost completely identical to the last block, except `#time` was swapped out for `#stop-time`. The system timestamp is always changing, whereas the stopped timestamp is static, leaving the stopwatch hands paused in place.
@@ -177,6 +193,8 @@ search
 
 bind
   second-hand <- [#svg/line, x1: 50, y1: 50, x2, y2]
+
+end
 ```
 
 ### Drawing the minute hand
@@ -191,6 +209,8 @@ search
 
 bind
   minute-hand <- [#svg/line, x1: 50, y1: 26, x2, y2]
+
+end
 ```
 
 ## Next steps

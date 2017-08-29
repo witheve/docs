@@ -17,18 +17,17 @@ This is made to add onto the web app you made in the quickstart. Make sure you h
 
 The first thing to do is to create a system timer that will tick once per second (or 1000 milliseconds, which is the unit of measurement that resolution uses).
 
-````
 ```
 commit
   [#time #system/timer resolution: 1000]
+
+end
 ```
-````
 
 ### Drawing the clock face
 
 Next, we can draw the clock face on the `Clock` page.
 
-````
 ```
 search
   [#app page: "Clock"]
@@ -41,14 +40,14 @@ bind
     [#clock-hand #hour-hand sort: 2, degrees: 30 * hour + 0.5 * minute, length: 25, stroke: "#023963"]
     [#clock-hand #minute-hand sort: 3, degrees: 6 * minute, length: 38, stroke: "#023963"]
     [#clock-hand #second-hand sort: 4, degrees: 6 * second, length: 40, stroke: "#ce0b46"]]
+
+end
 ```
-````
 
 ### Drawing the hands
 
 By adding an svg path to the `#hour-hand`, `#minute-hand`, and `#second-hand`, we can draw the hands of the clock.
 
-````
 ```
 search
   hand = [#clock-hand degrees length]
@@ -57,8 +56,9 @@ search
 
 bind
   hand <- [#svg/line, x1: 50, y1: 50, x2, y2]
+
+end
 ```
-````
 
 ## Next steps
 

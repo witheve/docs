@@ -17,7 +17,6 @@ This is made to add onto the web app you made in the quickstart. Make sure you h
 
 The first thing to do is to create some basic content on our `Counter` page.
 
-````
 ```
 search
   [#app page: "Counter"]
@@ -25,22 +24,24 @@ search
 
 bind
   view.children += [#ui/button #qs-increment text: "+1" sort: 1]
+
+end
 ```
-````
+
 
 ## Remembering clicks
 
 To be able to count the clicks, we have to first remember them.
 
-````
 ```
 search
   event = [#html/event/click element: [#qs-increment]]
 
 commit
   [#clicked event]
+
+end
 ```
-````
 
 Click events only last for an instant in Eve before the `#html/event/click` record goes away, but we want to create a permanent record of each click so we can search for them later.
 
@@ -48,7 +49,6 @@ Click events only last for an instant in Eve before the `#html/event/click` reco
 
 Now that there's a permanent `#clicked` record for each click, we can count them and display that on the `Counter` page.
 
-````
 ```
 search
   how-many = gather/count[for: [#clicked]]
@@ -57,11 +57,11 @@ search
 
 bind
   view.children += [#ui/text text: "The button has been clicked {{how-many}} times." sort: 2]
+
+end
 ```
-````
 
 You may notice that nothing appears until you click the button at least once. When there are zero clicks, `how-many` has nothing to count, the search will fail, and so no message will be created. Once there's a click, the search passes, and the count message will show up.
-
 
 ## Next steps
 
