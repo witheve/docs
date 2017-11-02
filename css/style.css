@@ -156,6 +156,7 @@ img {
 .main {
   margin-top: 80px;
   margin: 5px;
+  min-height: 0;
 }
 
 .drawer {
