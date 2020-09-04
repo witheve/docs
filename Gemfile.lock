@@ -167,7 +167,7 @@ GEM
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
     octokit (4.7.0)
-      sawyer (~> 0.8.0, >= 0.5.3)
+      sawyer (>= 0.5.3, ~> 0.8.0)
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
     public_suffix (2.0.5)
@@ -194,6 +194,3 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-
-BUNDLED WITH
-   1.15.1
