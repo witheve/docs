@@ -90,7 +90,7 @@ html, body { /* This is required so scroll will work correctly on main article a
   overflow: hidden;
 }
 
-body {display: flex; flex-direction: column; margin: 0;background: white; color: #555; line-height: 1.7; font-family: "Open Sans", Avenir, "Helvetica neue", sans-serif;}
+body {display: flex; flex-direction: column; height: 100vh; margin: 0; background: white; color: #555; line-height: 1.7; font-family: "Open Sans", Avenir, "Helvetica neue", sans-serif;}
 
 
 pre {
@@ -146,7 +146,7 @@ em {
 }
 
 li {
-  margin-left: 20px;  
+  margin-left: 20px;
 }
 
 img {
@@ -156,6 +156,7 @@ img {
 .main {
   margin-top: 80px;
   margin: 5px;
+  flex: 1 1 0;
 }
 
 .drawer {
@@ -167,7 +168,7 @@ img {
 
 .highlight {
   margin-bottom: 20px;
-	margin-top: 20px;
+        margin-top: 20px;
 }
 
 .colored {
@@ -264,10 +265,10 @@ b {
 
 .layer-wrapper { display: flex; flex-direction: column; align-items: center; margin-top: 20px;}
 .layer {width: 95%; display: flex;align-items: center; flex-wrap: wrap;}
-.toplayer {width: 100%;display: flex; height: auto; padding: 7px; overflow: hidden;}
+.toplayer {width: 100%;display: flex; flex: 1 1 0; height: auto; padding: 7px; overflow: hidden;}
 .sub-layer { margin-top: 30px; }
 
-.header-wrapper {margin: 0px; width: 100%; padding: 10px 0px; box-shadow: 0 0 1.25rem #9da5ab; flex-shrink: 0;}
+.header-wrapper {margin: 0px; width: 100%; padding: 10px 0px; box-shadow: 0 0 1.25rem #9da5ab; flex: 0 1 auto;}
 .logo {display: flex;flex: 0 0 auto;align-items: center;padding: 0;}
 .logo > img {max-width: 45px;}
 .logo > h1 { margin: 0; margin-left: 18px; padding: 0; height: 26px; margin-top: -32px; }
@@ -333,17 +334,17 @@ code { white-space: pre-wrap; font-family: "Inconsolata", "Monaco", "Consolas", 
 
 strong { font-weight: 600; }
 
-table { 
-  border: 1px #888a8f solid; 
-  margin-bottom: 1em; 
-  min-width: 820px;   
+table {
+  border: 1px #888a8f solid;
+  margin-bottom: 1em;
+  min-width: 820px;
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-td { 
-  border: 1px #AAA solid; 
-  width: 20em; 
+td {
+  border: 1px #AAA solid;
+  width: 20em;
   padding: 10px;
 }
 
