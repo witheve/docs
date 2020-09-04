@@ -85,7 +85,12 @@ time, mark, audio, video {
         vertical-align: baseline;
 }
 
-body { display: flex; flex-direction: column; margin: 0; background: white; color: #555; line-height: 1.7; font-family: "Open Sans", Avenir, "Helvetica neue", sans-serif;}
+html, body { /* This is required so scroll will work correctly on main article and navigation */
+  height: 100%;
+  overflow: hidden;
+}
+
+body {display: flex; flex-direction: column; margin: 0;background: white; color: #555; line-height: 1.7; font-family: "Open Sans", Avenir, "Helvetica neue", sans-serif;}
 
 
 pre {
@@ -149,15 +154,15 @@ img {
 }
 
 .main {
-  display: flex;
-  align-items: stretch;
-  min-height: 100%;
+  margin-top: 80px;
+  margin: 5px;
 }
 
 .drawer {
   color: rgb(85, 85, 85);
   padding-bottom: 20px;
-  padding-top: 10px;
+  padding: 20px;
+  height: auto;
 }
 
 .highlight {
@@ -176,6 +181,7 @@ img {
 .article {
   padding-left: 50px;
   padding-bottom: 200px;
+  overflow: auto;
 }
 
 .article a {
@@ -256,14 +262,14 @@ b {
 .flex-row.double-spaced > * + * { margin-left: 60px; }
 .flex-row.stretched { align-self: stretch; }
 
-.layer-wrapper { display: flex; flex-direction: column; align-items: center; margin-top: 60px; padding: 0 40px; }
-.layer { max-width: 100%; width: 960px; display: flex; align-items: center; }
-.toplayer { max-width: 100%; width: 960px; display: flex; align-items: top; }
+.layer-wrapper { display: flex; flex-direction: column; align-items: center; margin-top: 20px;}
+.layer {width: 95%; display: flex;align-items: center; flex-wrap: wrap;}
+.toplayer {width: 100%;display: flex; height: auto; padding: 7px; overflow: hidden;}
 .sub-layer { margin-top: 30px; }
 
-.header-wrapper { }
-.logo { display: flex; flex: 0 0 auto; align-items: center; padding: 0; }
-.logo > img { max-width: 60px; }
+.header-wrapper {margin: 0px; width: 100%; padding: 10px 0px; box-shadow: 0 0 1.25rem #9da5ab; flex-shrink: 0;}
+.logo {display: flex;flex: 0 0 auto;align-items: center;padding: 0;}
+.logo > img {max-width: 45px;}
 .logo > h1 { margin: 0; margin-left: 18px; padding: 0; height: 26px; margin-top: -32px; }
 .logo > h1 > img { height: 100%; }
 
@@ -272,11 +278,6 @@ nav > * { flex: 0 0 auto; padding: 10px 20px; margin: 0; text-decoration: none; 
 nav > *:hover { background: #f2f2f2; }
 nav > *:active { background: #e9e9e9; }
 nav > .play-cta { margin: 0; padding: 10px 20px; color: white; }
-
-@media (max-width: 760px) {
-    header { flex-direction: column; }
-    header .logo { margin-bottom: 30px; }
-}
 
 @media (max-width: 540px) {
     nav { flex-wrap: wrap; }
