@@ -11,6 +11,7 @@ Install [Node](https://nodejs.org/en/download/) for your platform, then clone an
 git clone https://github.com/witheve/eve-starter.git
 cd eve-starter
 npm install
+npm update
 ```
 
 ## Usage
